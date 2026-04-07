@@ -1,0 +1,562 @@
+[
+  {
+    "page": "charcutier",
+    "card_title": "Traçabilité vétérinaire",
+    "card_desc": "Chaque lot tracé depuis la matière première jusqu'au produit fini : numéros vétérinaires, dates d'ab",
+    "link_url": "/fonctionnalites/fabrication/",
+    "link_anchor": "Gestion de la decoupe et fabrication",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "charcutier",
+    "card_title": "Coûts de revient et rendements",
+    "card_desc": "Coût matière et marge nette sur chaque recette. Prise en compte du poids après cuisson, pertes au tr",
+    "link_url": "/blog/erp-tracabilite-agroalimentaire/",
+    "link_anchor": "Tracabilite par lot",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "erp-tracabilite-agroalimentaire"
+  },
+  {
+    "page": "charcutier",
+    "card_title": "Conformité HACCP",
+    "card_desc": "Registres sanitaires complets, enregistrements des températures, traçabilité pour les contrôles DGCC",
+    "link_url": "/blog/numeros-de-lot/",
+    "link_anchor": "Suivi des numeros de lot",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "numeros-de-lot"
+  },
+  {
+    "page": "charcutier",
+    "card_title": "Promotions sur lots proches DLC",
+    "card_desc": "Lancez des promotions ciblées sur les produits proches de leur DLC. Étiquettes spécifiques imprimées",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "maraicher",
+    "card_title": "Traçabilité de la récolte au client",
+    "card_desc": "Chaque lot tracé depuis la parcelle ou le fournisseur jusqu'au client final. Origine, calibre, varié",
+    "link_url": "/fonctionnalites/gestion-de-stock/",
+    "link_anchor": "Gestion de stock poids variable",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "maraicher",
+    "card_title": "Certificats phytosanitaires",
+    "card_desc": "Génération automatique des certificats phytosanitaires exigés par vos clients ou pour l'export. Gain",
+    "link_url": "/fonctionnalites/logistique/",
+    "link_anchor": "Logistique et tournees",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "maraicher",
+    "card_title": "Préparation des commandes",
+    "card_desc": "Conditionnements multiples (au poids, à la pièce, au colis) et chargements optimisés selon vos tourn",
+    "link_url": "/blog/dlc-ddm-dluo/",
+    "link_anchor": "Gestion des DLC et DDM",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "dlc-ddm-dluo"
+  },
+  {
+    "page": "maraicher",
+    "card_title": "Agréages et contrôle qualité",
+    "card_desc": "Enregistrez les agréages à réception (calibre, maturité, aspect visuel). Refusez les lots non confor",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "traiteur",
+    "card_title": "Gestion des événements multiples",
+    "card_desc": "Planning événementiel intégré : visualisez tous vos événements, évitez les conflits et anticipez vos",
+    "link_url": "/fonctionnalites/fabrication/",
+    "link_anchor": "Production et recettes traiteur",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "traiteur",
+    "card_title": "Coûts et marges par événement",
+    "card_desc": "Calcul automatique du coût matière et de la marge nette par événement. Visualisez immédiatement la r",
+    "link_url": "/blog/facture-traiteur/",
+    "link_anchor": "Facturation evenementielle",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "facture-traiteur"
+  },
+  {
+    "page": "traiteur",
+    "card_title": "Traçabilité et conformité HACCP",
+    "card_desc": "Chaque lot tracé, chaque DLC contrôlée. Documents sanitaires générés automatiquement pour un contrôl",
+    "link_url": "/blog/bon-de-commande-traiteur/",
+    "link_anchor": "Bons de commande traiteur",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "bon-de-commande-traiteur"
+  },
+  {
+    "page": "traiteur",
+    "card_title": "Devis et fiches techniques",
+    "card_desc": "Créez des devis détaillés par événement avec fiches techniques intégrées. Chiffrez vos prestations e",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "boulanger",
+    "card_title": "Coût de revient par recette",
+    "card_desc": "Calcul du coût matière et de la marge nette pour chaque produit : baguette, croissant, entremets. Re",
+    "link_url": "/fonctionnalites/fabrication/",
+    "link_anchor": "Gestion des recettes et fabrication",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "boulanger",
+    "card_title": "Stocks sensibles (beurre, œufs...)",
+    "card_desc": "DLC surveillées, conditions de stockage contrôlées, alertes en cas d'anomalie. Vos matières première",
+    "link_url": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+    "link_anchor": "Calcul du prix de revient",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "calculer-le-prix-de-revient-en-boulangerie"
+  },
+  {
+    "page": "boulanger",
+    "card_title": "Multi-points de vente",
+    "card_desc": "Synchronisez production, stocks et ventes entre vos boutiques. Vision consolidée de votre entreprise",
+    "link_url": "/blog/cout-de-revient/",
+    "link_anchor": "Maitriser vos couts de revient",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "cout-de-revient"
+  },
+  {
+    "page": "boulanger",
+    "card_title": "Traçabilité sanitaire complète",
+    "card_desc": "Chaque lot tracé : fournisseur, numéro de lot, date de réception. Registres sanitaires générés autom",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "industrie-laitiere",
+    "card_title": "Production : recettes et affinage",
+    "card_desc": "Pilotez les process de transformation, d'affinage et de conditionnement. Qualité constante et coûts ",
+    "link_url": "/fonctionnalites/gestion-de-stock/",
+    "link_anchor": "Gestion des stocks laitiers",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "industrie-laitiere",
+    "card_title": "Paiement à la qualité",
+    "card_desc": "Automatisez le paiement du lait selon les critères de qualité : taux de matière grasse, protéines, c",
+    "link_url": "/blog/dlc-ddm-dluo/",
+    "link_anchor": "Suivi des DLC et DDM",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "dlc-ddm-dluo"
+  },
+  {
+    "page": "industrie-laitiere",
+    "card_title": "Chaîne du froid et DLC",
+    "card_desc": "Gestion des DLC/DLUO pour les produits frais. Surveillance des températures de stockage avec alertes",
+    "link_url": "/blog/erp-tracabilite-agroalimentaire/",
+    "link_anchor": "Tracabilite laitiere",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "erp-tracabilite-agroalimentaire"
+  },
+  {
+    "page": "industrie-laitiere",
+    "card_title": "Collecte et logistique laitière",
+    "card_desc": "Planifiez vos tournées de collecte, enregistrez les volumes et qualités par producteur. Optimisez vo",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "plats-cuisines-industriels",
+    "card_title": "Recettes multi-niveaux et PRI",
+    "card_desc": "Gérez des recettes arborescentes avec sous-recettes. Le Prix de Revient Industriel est calculé autom",
+    "link_url": "/fonctionnalites/fabrication/",
+    "link_anchor": "Production de plats cuisines",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "plats-cuisines-industriels",
+    "card_title": "Conformité INCO et allergènes",
+    "card_desc": "Gestion des allergènes dès la fiche matière première. À chaque modification de recette, la liste est",
+    "link_url": "/blog/conformite-haccp/",
+    "link_anchor": "Conformite HACCP",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "conformite-haccp"
+  },
+  {
+    "page": "plats-cuisines-industriels",
+    "card_title": "Traçabilité industrielle",
+    "card_desc": "Traçabilité de chaque lot du fournisseur au client final. Documentation complète pour les audits GMS",
+    "link_url": "/blog/processus-agroalimentaire-guide/",
+    "link_anchor": "Processus agroalimentaires",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "processus-agroalimentaire-guide"
+  },
+  {
+    "page": "plats-cuisines-industriels",
+    "card_title": "Étiquetage et valeurs nutritionnelles",
+    "card_desc": "Génération automatique des étiquettes conformes : liste d'ingrédients, allergènes en gras, valeurs n",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "crm",
+    "card_title": "Centralisation des données clients",
+    "card_desc": "Regroupez tous vos contacts, devis, historiques d'achats et échanges commerciaux en un seul endroit.",
+    "link_url": "/fonctionnalites/vente/",
+    "link_anchor": "Gerer vos ventes et devis",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "crm",
+    "card_title": "Automatisation des relances",
+    "card_desc": "Programmez vos relances, e-mails et rappels téléphoniques. Votre ERP CRM travaille pour vous, même l",
+    "link_url": "/fonctionnalites/facturation/",
+    "link_anchor": "Automatiser votre facturation",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "crm",
+    "card_title": "Analyse et reporting",
+    "card_desc": "Pilotez votre activité avec des rapports détaillés : performances commerciales, clients les plus ren",
+    "link_url": "/blog/relance-client/",
+    "link_anchor": "Maitriser les relances clients",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "relance-client"
+  },
+  {
+    "page": "crm",
+    "card_title": "Gestion multi-contacts et segmentation",
+    "card_desc": "Segmentez votre base clients par secteur, volume, localisation. Ciblez vos actions commerciales et p",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "facturation",
+    "card_title": "Gain de temps considérable",
+    "card_desc": "Créez vos devis, transformez-les en factures, enregistrez les paiements : tout se fait en quelques c",
+    "link_url": "/fonctionnalites/vente/",
+    "link_anchor": "Gestion commerciale integree",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "facturation",
+    "card_title": "Suivi des paiements clients",
+    "card_desc": "Identifiez instantanément qui vous doit quoi. Relances automatisées, échéanciers, alertes sur impayé",
+    "link_url": "/fonctionnalites/achat/",
+    "link_anchor": "Gestion des achats fournisseurs",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "facturation",
+    "card_title": "Vision claire du chiffre d'affaires",
+    "card_desc": "Tableaux de bord intégrés pour piloter vos revenus mois par mois, suivre vos meilleures ventes et an",
+    "link_url": "/blog/bon-de-livraison/",
+    "link_anchor": "Generer des bons de livraison",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "bon-de-livraison"
+  },
+  {
+    "page": "facturation",
+    "card_title": "Documents commerciaux complets",
+    "card_desc": "Devis, bons de commande, bons de livraison, factures, avoirs : tous vos documents sont liés et traça",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "vente",
+    "card_title": "Vision globale et instantanée",
+    "card_desc": "Gérer ses ventes avec des fichiers Excel, c'est courir après l'information. Un ERP spécialisé change",
+    "link_url": "/fonctionnalites/crm/",
+    "link_anchor": "CRM et relation client",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "vente",
+    "card_title": "Collaboration inter-équipes",
+    "card_desc": "Les informations commerciales sont accessibles à tous : service commercial, production, logistique, ",
+    "link_url": "/fonctionnalites/facturation/",
+    "link_anchor": "Facturation automatisee",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "vente",
+    "card_title": "Multi-tarifs et promotions",
+    "card_desc": "Gérez des grilles tarifaires illimitées par client, groupe ou volume. Appliquez automatiquement remi",
+    "link_url": "/blog/bon-de-commande/",
+    "link_anchor": "Gestion des bons de commande",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "bon-de-commande"
+  },
+  {
+    "page": "vente",
+    "card_title": "Suivi de marge en temps réel",
+    "card_desc": "Chaque vente affiche sa marge réelle calculée sur le coût d'achat effectif, pas un prix théorique. I",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "gestion-de-stock",
+    "card_title": "Multi-entrepôts",
+    "card_desc": "Pilotez vos stocks sur plusieurs sites depuis une seule interface. Vision globale ou détaillée par e",
+    "link_url": "/blog/fifo-fefo-lifo/",
+    "link_anchor": "Methodes FIFO, FEFO et LIFO",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "fifo-fefo-lifo"
+  },
+  {
+    "page": "gestion-de-stock",
+    "card_title": "Alertes seuils mini/maxi",
+    "card_desc": "Alertes automatiques dès que vos stocks passent en dessous ou au-dessus des seuils définis. Anticipe",
+    "link_url": "/fonctionnalites/logistique/",
+    "link_anchor": "Logistique et expeditions",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "gestion-de-stock",
+    "card_title": "Inventaires simplifiés",
+    "card_desc": "Interface intuitive pour le comptage physique, cohérence des écarts, inventaires tournants ou comple",
+    "link_url": "/blog/calcul-stock-de-securite/",
+    "link_anchor": "Calculer votre stock de securite",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "calcul-stock-de-securite"
+  },
+  {
+    "page": "gestion-de-stock",
+    "card_title": "Connexion ventes/achats",
+    "card_desc": "Toutes vos opérations de ventes et d'achats sont synchronisées en temps réel avec les stocks. Intégr",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "fabrication",
+    "card_title": "Ordonnancement de la production",
+    "card_desc": "Ajustez vos plannings en fonction des commandes, ressources disponibles et délais. Garantissez une f",
+    "link_url": "/fonctionnalites/gestion-de-stock/",
+    "link_anchor": "Gestion des stocks matieres",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "fabrication",
+    "card_title": "Nomenclatures et gammes",
+    "card_desc": "Gérez des nomenclatures complexes multi-niveaux et des gammes opératoires détaillées pour calculer p",
+    "link_url": "/blog/ordre-de-fabrication/",
+    "link_anchor": "Ordres de fabrication",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "ordre-de-fabrication"
+  },
+  {
+    "page": "fabrication",
+    "card_title": "Calcul des coûts de production",
+    "card_desc": "Calcul automatique des coûts : matières premières, main-d'œuvre, charges. Analysez vos marges et rep",
+    "link_url": "/blog/ordonnancement-planification/",
+    "link_anchor": "Planification de production",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "ordonnancement-planification"
+  },
+  {
+    "page": "fabrication",
+    "card_title": "Gestion intégrée des stocks matières",
+    "card_desc": "Stocks de matières premières intégrés au module production. Évitez les ruptures, anticipez vos appro",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "logistique",
+    "card_title": "Optimisation des tournées",
+    "card_desc": "Planifiez vos tournées de livraison en tenant compte des contraintes géographiques, des créneaux cli",
+    "link_url": "/fonctionnalites/gestion-de-stock/",
+    "link_anchor": "Gestion multi-entrepots",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "logistique",
+    "card_title": "Gestion des entrepôts (WMS)",
+    "card_desc": "Organisez vos zones de picking, optimisez les parcours de préparation et réduisez les erreurs de pré",
+    "link_url": "/fonctionnalites/vente/",
+    "link_anchor": "Suivi des commandes clients",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "logistique",
+    "card_title": "Préparation des commandes",
+    "card_desc": "Bons de préparation optimisés par zone, contrôle des quantités, validation par scan. Réduisez les er",
+    "link_url": "/blog/bon-de-livraison/",
+    "link_anchor": "Bons de livraison et expeditions",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "bon-de-livraison"
+  },
+  {
+    "page": "logistique",
+    "card_title": "Gestion multi-transporteurs",
+    "card_desc": "Comparez les tarifs transporteurs, générez les étiquettes et bordereaux, suivez les colis. Tout depu",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "achat",
+    "card_title": "Gestion des fournisseurs",
+    "card_desc": "Centralisez toutes vos fiches fournisseurs, historiques d'achats, conditions tarifaires et délais po",
+    "link_url": "/fonctionnalites/gestion-de-stock/",
+    "link_anchor": "Gestion et suivi des stocks",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "achat",
+    "card_title": "Suivi des commandes",
+    "card_desc": "Suivi en temps réel : état de traitement, délais, réceptions partielles ou complètes. Contrôle total",
+    "link_url": "/fonctionnalites/facturation/",
+    "link_anchor": "Facturation fournisseurs",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "achat",
+    "card_title": "Alertes et seuils",
+    "card_desc": "Alertes automatiques sur seuils minimums pour anticiper vos réapprovisionnements et éviter les ruptu",
+    "link_url": "/blog/reapprovisionnement-stocks/",
+    "link_anchor": "Reapprovisionnement automatise",
+    "is_blog_link": true,
+    "has_blog_article": true,
+    "blog_slug": "reapprovisionnement-stocks"
+  },
+  {
+    "page": "achat",
+    "card_title": "Commandes automatiques et réappro",
+    "card_desc": "Génération automatique de commandes d'achat basée sur les seuils de stock, les ventes prévisionnelle",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "import-export",
+    "card_title": "Formalités douanières",
+    "card_desc": "Déclarations douanières automatisées, gestion des nomenclatures TARIC et certificats d'origine pour ",
+    "link_url": "/fonctionnalites/logistique/",
+    "link_anchor": "Gestion logistique internationale",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "import-export",
+    "card_title": "Calcul des droits et taxes",
+    "card_desc": "Calcul automatique des droits de douane, TVA intracommunautaire et taxes spécifiques selon les accor",
+    "link_url": "/fonctionnalites/achat/",
+    "link_anchor": "Achats et approvisionnements",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "import-export",
+    "card_title": "Gestion multi-devises",
+    "card_desc": "Transactions en multi-devises avec conversions automatiques et intégration comptable. Vision claire ",
+    "link_url": "/fonctionnalites/facturation/",
+    "link_anchor": "Facturation multi-devises",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  },
+  {
+    "page": "import-export",
+    "card_title": "Conformité réglementaire internationale",
+    "card_desc": "Gestion des normes sanitaires par pays, certificats phytosanitaires, documents vétérinaires et traça",
+    "link_url": "https://www.youtube.com/watch?v=pANFAv6-sJk",
+    "link_anchor": "Regarder la vidéo",
+    "is_blog_link": false,
+    "has_blog_article": false,
+    "blog_slug": ""
+  }
+]

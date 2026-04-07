@@ -1,0 +1,1526 @@
+{
+  "mode": "LIVE",
+  "total_posts": 72,
+  "posts_modified": 57,
+  "total_changes": 277,
+  "changes": [
+    {
+      "post": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+      "old": "/solutions/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+      "old": "/demo/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "erp-cloud-saas-vs-on-premise",
+      "old": "/demo/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "logiciel-maree-mareyeur",
+      "old": "/demo/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "alternative-cegid",
+      "old": "/solutions/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "alternative-cegid",
+      "old": "/demo/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "erp-viande-volaille",
+      "old": "/blog/maitriser-numeros-lot-tracabilite",
+      "new": "/blog/numeros-de-lot/",
+      "count": 1
+    },
+    {
+      "post": "erp-viande-volaille",
+      "old": "/blog/calcul-prix-revient-pertes",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "erp-viande-volaille",
+      "old": "/blog/gestion-stock-reelle",
+      "new": "/blog/maitriser-la-gestion-des-stocks/",
+      "count": 1
+    },
+    {
+      "post": "erp-viande-volaille",
+      "old": "/solutions/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-gestion-approvisionnements",
+      "old": "/comparatif-des-methodes-de-gestion-de-stock-agroalimentaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-gestion-approvisionnements",
+      "old": "/logiciel-de-tracabilite-agroalimentaire/",
+      "new": "/blog/numeros-de-lot/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-maraichers-fruits-legumes",
+      "old": "/erp-fruits-et-legumes/",
+      "new": "/agroalimentaire/maraicher/",
+      "count": 1
+    },
+    {
+      "post": "erp-decoupe-viande-poisson",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "erp-decoupe-viande-poisson",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "erp-decoupe-viande-poisson",
+      "old": "/erp-agroalimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 2
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-conformite-agroalimentaire",
+      "old": "/erp-agroalimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/pourquoir-migrer-vers-un-saas/",
+      "new": "/blog/erp-saas-cloud/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/erp-production-industrielle/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 2
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "migration-erp-agroalimentaire",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 2
+    },
+    {
+      "post": "erp-saas",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 2
+    },
+    {
+      "post": "erp-saas",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "difference-prix-dachat-et-prix-de-revient",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "difference-prix-dachat-et-prix-de-revient",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "prix-dachat-definition",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "prix-dachat-definition",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "prix-dachat-definition",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "gestion-automatisee-des-variations-de-stock",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "gestion-automatisee-des-variations-de-stock",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "gestion-automatisee-des-variations-de-stock",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "gestion-automatisee-des-variations-de-stock",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "gestion-automatisee-des-variations-de-stock",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "variation-de-stock-positif-negatif",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "enregistrement-comptable-variation-de-stock",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 2
+    },
+    {
+      "post": "enregistrement-comptable-variation-de-stock",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "enregistrement-comptable-variation-de-stock",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "enregistrement-comptable-variation-de-stock",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-boulangerie",
+      "old": "/gestion-stocks/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-boulangerie",
+      "old": "/roi-calculator/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-boulangerie",
+      "old": "/formation/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "meilleurs-erp-boulangerie",
+      "old": "/demo/",
+      "new": "/contact/",
+      "count": 1
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 2
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/erp-production-industrielle/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 2
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 2
+    },
+    {
+      "post": "meilleur-erp-agroalimentaire",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "erp-pme",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "reapprovisionnement-stocks",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/erp-production-industrielle/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "opc-ua",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/erp-production-industrielle/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "ordonnancement-planification",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas-cloud",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas-cloud",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas-cloud",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 2
+    },
+    {
+      "post": "erp-saas-cloud",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "erp-saas-cloud",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 2
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "dlc-ddm-dluo",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/fefo-fifo-lifo/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "erp-grossiste-distributeur",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "processus-agroalimentaire-guide",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "processus-agroalimentaire-guide",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "processus-agroalimentaire-guide",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "processus-agroalimentaire-guide",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "conditionnement-alimentaire-erp",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "conditionnement-alimentaire-erp",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "conditionnement-alimentaire-erp",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "conditionnement-alimentaire-erp",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "conditionnement-alimentaire-erp",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/kpi-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/erp-cloud-vs-premise/",
+      "new": "/blog/erp-cloud-saas-vs-on-premise/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "erp-tracabilite-agroalimentaire",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "roi-erp",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "kpi-qualite-agroalimentaire",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "kpi-qualite-agroalimentaire",
+      "old": "/plan-de-controle-alimentaire/",
+      "new": "/blog/plan-de-controle-alimentaire/",
+      "count": 1
+    },
+    {
+      "post": "kpi-qualite-agroalimentaire",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "plan-de-controle-alimentaire",
+      "old": "/la-tracabilite-des-produits-alimentaires-tout-savoir-sur-les-numeros-de-lot/",
+      "new": "/blog/numeros-de-lot/",
+      "count": 1
+    },
+    {
+      "post": "plan-de-controle-alimentaire",
+      "old": "/erp-agro-alimentaire/tracabilite/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "plan-de-controle-alimentaire",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "plan-de-controle-alimentaire",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/maitrisez-le-calcul-du-prix-moyen-en-quelques-etapes-simples",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/couts-de-production/",
+      "new": "/blog/couts-de-production/",
+      "count": 1
+    },
+    {
+      "post": "cout-prix-au-kilo",
+      "old": "/cout-de-revient/",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "cout-marginal",
+      "old": "/maitrisez-le-calcul-du-prix-moyen-en-quelques-etapes-simples",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "cout-marginal",
+      "old": "/couts-de-production/",
+      "new": "/blog/couts-de-production/",
+      "count": 1
+    },
+    {
+      "post": "cout-marginal",
+      "old": "/cout-de-revient/",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/maitrisez-le-calcul-du-prix-moyen-en-quelques-etapes-simples",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/couts-de-production/",
+      "new": "/blog/couts-de-production/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/cout-prix-au-kilo/",
+      "new": "/blog/cout-prix-au-kilo/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/cout-de-revient/",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/cout-marginal/",
+      "new": "/blog/cout-marginal/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-cout-achat",
+      "old": "/erp-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/logiciel-gratuit-pour-calculer-le-prix-de-revient-en-boulangerie-et-patisserie/",
+      "new": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/maitrisez-le-calcul-du-prix-moyen-en-quelques-etapes-simples",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/couts-de-production/",
+      "new": "/blog/couts-de-production/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/cout-prix-au-kilo/",
+      "new": "/blog/cout-prix-au-kilo/",
+      "count": 1
+    },
+    {
+      "post": "cout-de-revient",
+      "old": "/cout-marginal/",
+      "new": "/blog/cout-marginal/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/maitrisez-le-calcul-du-prix-moyen-en-quelques-etapes-simples",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/erp-agro-alimentaire/production/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/alerte-date-peremption/",
+      "new": "/blog/alerte-date-peremption/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/cout-prix-au-kilo/",
+      "new": "/blog/cout-prix-au-kilo/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/cout-de-revient/",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "couts-de-production",
+      "old": "/cout-marginal/",
+      "new": "/blog/cout-marginal/",
+      "count": 1
+    },
+    {
+      "post": "alerte-date-peremption",
+      "old": "/erp-agro-alimentaire/production/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "alerte-date-peremption",
+      "old": "/couts-de-production/",
+      "new": "/blog/couts-de-production/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-moyen",
+      "old": "/erp-fruits-et-legumes/",
+      "new": "/agroalimentaire/maraicher/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-moyen",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "erp-as400",
+      "old": "/guide-complet-sur-les-erp-system-saas-lequel-choisir/",
+      "new": "/blog/erp-saas-cloud/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande-traiteur",
+      "old": "/logiciel-de-gestion-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande-traiteur",
+      "old": "/comparatif-erp-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande-traiteur",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande-traiteur",
+      "old": "/facture-traiteur/",
+      "new": "/blog/facture-traiteur/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande-traiteur",
+      "old": "/erp-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "facture-traiteur",
+      "old": "/bon-de-commande-traiteur/",
+      "new": "/blog/bon-de-commande-traiteur/",
+      "count": 1
+    },
+    {
+      "post": "facture-traiteur",
+      "old": "/comparatif-erp-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "facture-traiteur",
+      "old": "/logiciel-devis-traiteur/",
+      "new": "/agroalimentaire/traiteur/",
+      "count": 1
+    },
+    {
+      "post": "tracabilite-de-la-viande",
+      "old": "/la-tracabilite-des-produits-alimentaires-tout-savoir-sur-les-numeros-de-lot/",
+      "new": "/blog/numeros-de-lot/",
+      "count": 1
+    },
+    {
+      "post": "tracabilite-de-la-viande",
+      "old": "/comprendre-la-tracabilite-en-agroalimentaire-methodes-et-avantages/",
+      "new": "/blog/erp-tracabilite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "tracabilite-de-la-viande",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "calculer-le-prix-de-revient-en-boulangerie",
+      "old": "/erp-finance/",
+      "new": "/fonctionnalites/facturation/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-livraison",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 2
+    },
+    {
+      "post": "bon-de-livraison",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/la-tracabilite-des-produits-alimentaires-tout-savoir-sur-les-numeros-de-lot/",
+      "new": "/blog/numeros-de-lot/",
+      "count": 2
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/ordre-de-fabrication-of-definition-exemple-utilisation-planification/",
+      "new": "/blog/ordre-de-fabrication/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/comparatif-des-methodes-de-gestion-de-stock-agroalimentaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/erp-production-optimisez-vos-processus-de-fabrication/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 2
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/gestion-de-relation-client/",
+      "new": "/fonctionnalites/crm/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "bon-de-commande",
+      "old": "/erp-charcutier/",
+      "new": "/agroalimentaire/charcutier/",
+      "count": 1
+    },
+    {
+      "post": "maitriser-la-gestion-des-stocks",
+      "old": "/business-plan-calculer-la-marge-commerciale-et-le-taux-de-marge/",
+      "new": "/blog/calcul-du-prix-moyen/",
+      "count": 1
+    },
+    {
+      "post": "maitriser-la-gestion-des-stocks",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/logiciel-inventaire-guide-complet-pour-choisir-le-meilleur-en-2024/",
+      "new": "/blog/gestion-des-inventaires/",
+      "count": 1
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/les-meilleurs-erp-de-gestion-de-stock-agroalimentaire-en-2024/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 2
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/fifo-fefo-lifo-tout-sur-les-strategies-de-prelevement/",
+      "new": "/blog/fifo-fefo-lifo/",
+      "count": 1
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 2
+    },
+    {
+      "post": "optimisation-entrepot",
+      "old": "/gestion-de-stock/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 2
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/erp-agro-alimentaire/logiciel-gestion-des-stocks-agro-alimentaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/les-meilleurs-erp-de-gestion-de-stock-agroalimentaire-en-2024/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 2
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/etiquette-de-tracabilite-de-la-viande-guide-complet/",
+      "new": "/blog/tracabilite-de-la-viande/",
+      "count": 1
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/logiciel-gestion-des-stocks-agro-alimentaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/logiciel-bon-de-commande-simple-100-en-ligne/",
+      "new": "/blog/bon-de-commande/",
+      "count": 1
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "numeros-de-lot",
+      "old": "/erp-charcutier/",
+      "new": "/agroalimentaire/charcutier/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/la-tracabilite-des-produits-alimentaires-tout-savoir-sur-les-numeros-de-lot/",
+      "new": "/blog/numeros-de-lot/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/controle-qualite-agroalimentaire-le-guide-complet-pour-les-professionnels/",
+      "new": "/blog/conformite-haccp/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/erp-production-optimisez-vos-processus-de-fabrication/",
+      "new": "/fonctionnalites/fabrication/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/logiciel-bon-de-commande-simple-100-en-ligne/",
+      "new": "/blog/bon-de-commande/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/quel-erp-choisir-pour-une-pme-industrielle/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    },
+    {
+      "post": "ordre-de-fabrication",
+      "old": "/gestion-de-stock/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-variations-de-stock",
+      "old": "/gestion-de-stock/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-de-securite",
+      "old": "/logiciel-inventaire-guide-complet-pour-choisir-le-meilleur-en-2024/",
+      "new": "/blog/gestion-des-inventaires/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-de-securite",
+      "old": "/comment-optimiser-lagencement-de-votre-entrepot/",
+      "new": "/blog/optimisation-entrepot/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-de-securite",
+      "old": "/gestion-de-comptabilite/",
+      "new": "/fonctionnalites/facturation/",
+      "count": 1
+    },
+    {
+      "post": "calcul-stock-de-securite",
+      "old": "/gestion-de-stock/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/logiciel-gratuit-pour-calculer-le-prix-de-revient-en-boulangerie-et-patisserie/",
+      "new": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/comment-calculer-les-variations-de-stock-guide-complet/",
+      "new": "/blog/calcul-variations-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/comment-calculer-le-stock-de-securite/",
+      "new": "/blog/calcul-stock-de-securite/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/cout-prix-au-kilo/",
+      "new": "/blog/cout-prix-au-kilo/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/cout-de-revient/",
+      "new": "/blog/cout-de-revient/",
+      "count": 1
+    },
+    {
+      "post": "calcul-du-prix-moyen",
+      "old": "/erp-finance/",
+      "new": "/fonctionnalites/facturation/",
+      "count": 1
+    },
+    {
+      "post": "facture-exacompta",
+      "old": "/gestion-de-comptabilite/",
+      "new": "/fonctionnalites/facturation/",
+      "count": 2
+    },
+    {
+      "post": "contraintes-reglementations-logiciel-agroalimentaire",
+      "old": "/logiciel-gestion-des-stocks-agro-alimentaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "contraintes-reglementations-logiciel-agroalimentaire",
+      "old": "/erp-agro-alimentaire/",
+      "new": "/agroalimentaire/",
+      "count": 2
+    },
+    {
+      "post": "fifo-fefo-lifo",
+      "old": "/erp-qualite-agroalimentaire/",
+      "new": "/blog/kpi-qualite-agroalimentaire/",
+      "count": 1
+    },
+    {
+      "post": "fifo-fefo-lifo",
+      "old": "/erp-inventaire/",
+      "new": "/fonctionnalites/gestion-de-stock/",
+      "count": 1
+    },
+    {
+      "post": "fifo-fefo-lifo",
+      "old": "/erp-saas/",
+      "new": "/blog/erp-saas/",
+      "count": 1
+    },
+    {
+      "post": "fifo-fefo-lifo",
+      "old": "/roi-erp/",
+      "new": "/blog/roi-erp/",
+      "count": 1
+    },
+    {
+      "post": "fifo-fefo-lifo",
+      "old": "/erp-pme/",
+      "new": "/blog/erp-pme/",
+      "count": 1
+    }
+  ]
+}
