@@ -1,0 +1,48 @@
+{
+  "id": 138,
+  "description": "",
+  "name": "Secteurs",
+  "slug": "secteurs",
+  "meta": [],
+  "locations": [],
+  "auto_add": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus/138",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/taxonomies/nav_menu"
+      }
+    ],
+    "wp:post_type": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items?menus=138"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "items": []
+}

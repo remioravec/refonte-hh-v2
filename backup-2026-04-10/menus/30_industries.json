@@ -1,0 +1,414 @@
+{
+  "id": 30,
+  "description": "",
+  "name": "Industries",
+  "slug": "industries",
+  "meta": [],
+  "locations": [],
+  "auto_add": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus/30",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/taxonomies/nav_menu"
+      }
+    ],
+    "wp:post_type": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items?menus=30"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": 2626,
+      "title": {
+        "rendered": "ERP Agroalimentaire"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/agroalimentaire/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 1726,
+      "parent": 0,
+      "menu_order": 1,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 30,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/2626",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=2626"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/1726"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3417,
+      "title": {
+        "rendered": "ERP Pâtisserie – Boulangerie"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/agroalimentaire/boulanger/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 3309,
+      "parent": 0,
+      "menu_order": 2,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 30,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/3417",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=3417"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/3309"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3418,
+      "title": {
+        "rendered": "ERP Traiteur • Événements &#038; Production • Prêt en 5j ☁️"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/agroalimentaire/traiteur/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 2839,
+      "parent": 0,
+      "menu_order": 3,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 30,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/3418",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=3418"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/2839"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3419,
+      "title": {
+        "rendered": "ERP Fruits &#038; Légumes • Poids Variable • Top 2026 ☁️"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/agroalimentaire/maraicher/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 2824,
+      "parent": 0,
+      "menu_order": 4,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 30,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/3419",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=3419"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/2824"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3420,
+      "title": {
+        "rendered": "ERP Charcutier"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/agroalimentaire/charcutier/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 2818,
+      "parent": 0,
+      "menu_order": 5,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 30,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/3420",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=3420"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/2818"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    }
+  ]
+}

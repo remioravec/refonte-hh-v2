@@ -1,0 +1,139 @@
+{
+  "id": 193,
+  "date": "2019-06-11T21:30:21",
+  "date_gmt": "2019-06-11T19:30:21",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?page_id=193",
+    "raw": "https://www.helloharel.com/?page_id=193"
+  },
+  "modified": "2026-04-10T17:27:44",
+  "modified_gmt": "2026-04-10T15:27:44",
+  "password": "",
+  "slug": "mentions-legales",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.helloharel.com/mentions-legales/",
+  "title": {
+    "raw": "Mentions légales",
+    "rendered": "Mentions légales"
+  },
+  "content": {
+    "raw": "<p><!-- wp:paragraph --></p>\n<p>Helloharel.com est édité par la société :</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>Harel Systems SAS<br>Société par actions simplifiée au capital de 1 000,00 €<br>6 avenue de Rueil<br>92420 Vaucresson<br>France</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>RCS NANTERRE 799 992 102 000 43<br>TVA Intracommunautaire : FR87799992102</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>Pour toute question, vous pouvez contacter le service support Helloharel.com par mail support@helloharel.com ou par courrier postal à l’adresse ci-dessus.</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>Le site Helloharel.com est hébergé par Gandi.net</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à support@helloharel.com. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</p>\n<p><!-- /wp:paragraph --></p>\n<p><!-- wp:paragraph --></p>\n<p>Seule notre société est destinataire des informations que vous lui communiquez.</p>\n<p><!-- /wp:paragraph --></p>",
+    "rendered": "<style>.elementor-193 .elementor-element.elementor-element-46eb5699{text-align:start;}.elementor-193 .elementor-element.elementor-element-46eb5699 > .elementor-widget-container{margin:100px 100px 100px 100px;}</style>\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"193\" class=\"elementor elementor-193\" data-elementor-post-type=\"page\">\n\t\t\t\t\t\t<section class=\"elementor-section elementor-top-section elementor-element elementor-element-4e185280 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"4e185280\" data-element_type=\"section\" data-e-type=\"section\">\n\t\t\t\t\t\t<div class=\"elementor-container elementor-column-gap-default\">\n\t\t\t\t\t<div class=\"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3a3a5c10\" data-id=\"3a3a5c10\" data-element_type=\"column\" data-e-type=\"column\">\n\t\t\t<div class=\"elementor-widget-wrap elementor-element-populated\">\n\t\t\t\t\t\t<div class=\"elementor-element elementor-element-46eb5699 elementor-widget elementor-widget-text-editor\" data-id=\"46eb5699\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">\n\t\t\t\t<div class=\"elementor-widget-container\">\n\t\t\t\t\t\t\t\t\t<p></p>\n<p>Helloharel.com est édité par la société :</p>\n<p></p>\n<p></p>\n<p>Harel Systems SARL<br>Société à responsabilité limitée au capital de 1 000,00 €<br>6 avenue de Rueil<br>92420 Vaucresson<br>France</p>\n<p></p>\n<p></p>\n<p>RCS NANTERRE 799 992 102 000 43<br>TVA Intracommunautaire : FR87799992102</p>\n<p></p>\n<p></p>\n<p>Pour toute question, vous pouvez contacter le service support Helloharel.com par mail support@helloharel.com ou par courrier postal à l’adresse ci-dessus.</p>\n<p></p>\n<p></p>\n<p>Le site Helloharel.com est hébergé par Gandi.net</p>\n<p></p>\n<p></p>\n<p>Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à support@helloharel.com. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</p>\n<p></p>\n<p></p>\n<p>Seule notre société est destinataire des informations que vous lui communiquez.</p>\n<p></p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t</div>\n\t\t</section>\n\t\t\t\t</div>\n\t\t",
+    "protected": false,
+    "block_version": 1
+  },
+  "excerpt": {
+    "raw": "",
+    "rendered": "<p>Helloharel.com est édité par la société : Harel Systems SASSociété par actions simplifiée au capital de 1 000,00 €6 avenue de Rueil92420 VaucressonFrance RCS NANTERRE 799 992 102 000 43TVA Intracommunautaire : FR87799992102 Pour toute question, vous pouvez contacter le service support Helloharel.com par mail support@helloharel.com ou par courrier postal à l’adresse ci-dessus. Le site [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 1002,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": "",
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "wp-page",
+    "_elementor_data": "[{\"id\":\"4e185280\",\"elType\":\"section\",\"settings\":[],\"elements\":[{\"id\":\"3a3a5c10\",\"elType\":\"column\",\"settings\":{\"_column_size\":100},\"elements\":[{\"id\":\"46eb5699\",\"elType\":\"widget\",\"settings\":{\"editor\":\"<p><!-- wp:paragraph --><\\/p>\\n<p>Helloharel.com est \\u00e9dit\\u00e9 par la soci\\u00e9t\\u00e9 :<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>Harel Systems SARL<br>Soci\\u00e9t\\u00e9 \\u00e0 responsabilit\\u00e9 limit\\u00e9e au capital de 1 000,00 \\u20ac<br>6 avenue de Rueil<br>92420 Vaucresson<br>France<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>RCS NANTERRE 799 992 102 000 43<br>TVA Intracommunautaire : FR87799992102<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>Pour toute question, vous pouvez contacter le service support Helloharel.com par mail support@helloharel.com ou par courrier postal \\u00e0 l\\u2019adresse ci-dessus.<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>Le site Helloharel.com est h\\u00e9berg\\u00e9 par Gandi.net<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>Conform\\u00e9ment \\u00e0 la loi \\u00ab informatique et libert\\u00e9s \\u00bb du 6 janvier 1978 modifi\\u00e9e en 2004, vous b\\u00e9n\\u00e9ficiez d\\u2019un droit d\\u2019acc\\u00e8s et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant \\u00e0 support@helloharel.com. Vous pouvez \\u00e9galement, pour des motifs l\\u00e9gitimes, vous opposer au traitement des donn\\u00e9es vous concernant.<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\\n<p><!-- wp:paragraph --><\\/p>\\n<p>Seule notre soci\\u00e9t\\u00e9 est destinataire des informations que vous lui communiquez.<\\/p>\\n<p><!-- \\/wp:paragraph --><\\/p>\",\"align\":\"left\",\"_margin\":{\"unit\":\"px\",\"top\":\"100\",\"right\":\"100\",\"bottom\":\"100\",\"left\":\"100\",\"isLinked\":true}},\"elements\":[],\"widgetType\":\"text-editor\"}],\"isInner\":false}],\"isInner\":false}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/%pagename%/",
+  "generated_slug": "mentions-legales",
+  "class_list": [
+    "post-193",
+    "page",
+    "type-page",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/comments?post=193"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 12,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 7649,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193/revisions/7649"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media/1002"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=193"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": 1013,
+  "date": "2023-08-03T10:46:06",
+  "date_gmt": "2023-08-03T08:46:06",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?p=1013",
+    "raw": "https://www.helloharel.com/?p=1013"
+  },
+  "modified": "2023-08-03T10:46:06",
+  "modified_gmt": "2023-08-03T08:46:06",
+  "password": "",
+  "slug": "kit-par-defaut",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=kit-par-defaut",
+  "title": {
+    "raw": "Kit par défaut",
+    "rendered": "Kit par défaut"
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "kit",
+    "_elementor_data": "",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=kit-par-defaut",
+  "generated_slug": "kit-par-defaut",
+  "class_list": [
+    "post-1013",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1013",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1013/revisions"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=1013"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1013"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1013"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1013"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

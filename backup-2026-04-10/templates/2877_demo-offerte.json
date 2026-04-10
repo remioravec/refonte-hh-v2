@@ -1,0 +1,110 @@
+{
+  "id": 2877,
+  "date": "2024-06-19T23:46:52",
+  "date_gmt": "2024-06-19T21:46:52",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=demo-offerte",
+    "raw": "https://www.helloharel.com/?elementor_library=demo-offerte"
+  },
+  "modified": "2024-06-19T23:46:53",
+  "modified_gmt": "2024-06-19T21:46:53",
+  "password": "",
+  "slug": "demo-offerte",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=demo-offerte",
+  "title": {
+    "raw": "DEMO OFFERTE",
+    "rendered": "DEMO OFFERTE"
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "section",
+    "_elementor_data": "[{\"id\":\"6eceb7f6\",\"elType\":\"section\",\"settings\":{\"gap\":\"no\",\"structure\":\"21\",\"background_background\":\"classic\",\"border_radius\":{\"unit\":\"px\",\"top\":\"24\",\"right\":\"24\",\"bottom\":\"24\",\"left\":\"24\",\"isLinked\":\"1\"},\"border_radius_tablet\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"box_shadow_box_shadow_type\":\"yes\",\"box_shadow_box_shadow\":{\"horizontal\":\"0\",\"vertical\":\"10\",\"blur\":\"50\",\"spread\":\"0\",\"color\":\"rgba(61.999999999999815, 54.99999999999995, 177.99999999999994, 0.18)\"},\"padding\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"2\",\"bottom\":\"2\",\"left\":\"2\",\"isLinked\":\"1\"},\"padding_tablet\":{\"unit\":\"em\",\"top\":\"3\",\"right\":\"3\",\"bottom\":\"3\",\"left\":\"3\",\"isLinked\":\"1\"},\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1.5\",\"right\":\"1.5\",\"bottom\":\"2\",\"left\":\"1.5\",\"isLinked\":\"\"},\"__globals__\":{\"background_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[{\"id\":\"5af04139\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"33\",\"_inline_size\":\"40\",\"_inline_size_tablet\":\"100\",\"background_background\":\"gradient\",\"background_gradient_angle\":{\"unit\":\"deg\",\"size\":\"150\",\"sizes\":[]},\"background_overlay_background\":\"classic\",\"background_overlay_image\":{\"id\":1531,\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/Design-sans-titre-7.svg\",\"alt\":\"\",\"source\":\"library\",\"size\":\"\"},\"background_overlay_position\":\"bottom center\",\"background_overlay_attachment\":\"scroll\",\"background_overlay_repeat\":\"no-repeat\",\"background_overlay_size\":\"contain\",\"background_overlay_size_tablet\":\"initial\",\"background_overlay_size_mobile\":\"contain\",\"background_overlay_bg_width_tablet\":{\"unit\":\"%\",\"size\":\"53\",\"sizes\":[]},\"background_overlay_bg_width_mobile\":{\"unit\":\"%\",\"size\":\"\",\"sizes\":[]},\"background_overlay_opacity\":{\"unit\":\"px\",\"size\":\"1\",\"sizes\":[]},\"border_radius\":{\"unit\":\"px\",\"top\":\"24\",\"right\":\"24\",\"bottom\":\"24\",\"left\":\"24\",\"isLinked\":\"1\"},\"border_radius_tablet\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"padding\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"2\",\"bottom\":\"0\",\"left\":\"2\",\"isLinked\":\"\"},\"padding_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"padding_mobile\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"1.5\",\"bottom\":\"0\",\"left\":\"1.5\",\"isLinked\":\"\"},\"__globals__\":{\"background_color\":\"\",\"background_color_b\":\"\"},\"background_color\":\"#00B4FC\",\"background_color_b\":\"#00B4FC\"},\"elements\":[{\"id\":\"2ba96d04\",\"elType\":\"widget\",\"settings\":{\"title\":\"Une question ?\",\"header_size\":\"h4\",\"__globals__\":{\"title_color\":\"globals\\/colors?id=bfca241\"},\"typography_typography\":\"custom\",\"typography_font_size\":{\"unit\":\"px\",\"size\":47,\"sizes\":[]}},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"546bc6a7\",\"elType\":\"widget\",\"settings\":{\"editor\":\"<p>Nous sommes ici pour r\\u00e9pondre \\u00e0 vos questions.<\\/p>\",\"__globals__\":{\"text_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[],\"widgetType\":\"text-editor\"},{\"id\":\"3ac3825f\",\"elType\":\"widget\",\"settings\":{\"space\":{\"unit\":\"px\",\"size\":\"450\",\"sizes\":[]},\"space_tablet\":{\"unit\":\"em\",\"size\":\"15.2\",\"sizes\":[]},\"space_mobile\":{\"unit\":\"em\",\"size\":\"14\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"spacer\"}],\"isInner\":\"1\"},{\"id\":\"29766457\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"66\",\"_inline_size\":\"59.552\",\"margin\":{\"unit\":\"%\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"10\",\"isLinked\":\"\"},\"margin_tablet\":{\"unit\":\"em\",\"top\":\"4\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"margin_mobile\":{\"unit\":\"em\",\"top\":\"3\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_inline_size_tablet\":\"100\",\"content_position\":\"center\"},\"elements\":[{\"id\":\"6d5773bd\",\"elType\":\"widget\",\"settings\":{\"form_name\":\"Formulaire de contact\",\"form_fields\":[{\"custom_id\":\"name\",\"field_label\":\"Pr\\u00e9nom\",\"placeholder\":\"ex. Adeline\",\"width\":\"50\",\"_id\":\"b8b33fe\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"},{\"custom_id\":\"field_e343a22\",\"field_label\":\"Nom\",\"placeholder\":\"ex. Dubois\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"e343a22\"},{\"custom_id\":\"field_d5fbe00\",\"field_label\":\"Entreprise\",\"placeholder\":\"ex. Orus\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"d5fbe00\"},{\"custom_id\":\"field_9e1836c\",\"field_label\":\"Secteur d'activit\\u00e9\",\"placeholder\":\"ex. Responsable qualit\\u00e9\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"9e1836c\"},{\"custom_id\":\"email\",\"field_type\":\"email\",\"required\":\"true\",\"field_label\":\"Email\",\"placeholder\":\"example@mail.com\",\"width\":\"50\",\"_id\":\"781a921\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"},{\"custom_id\":\"field_187fd6b\",\"field_type\":\"tel\",\"required\":\"true\",\"field_label\":\"T\\u00e9l\\u00e9phone\",\"placeholder\":\"(+12) 6000 8012\",\"width\":\"50\",\"_id\":\"187fd6b\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"}],\"input_size\":\"lg\",\"button_size\":\"lg\",\"button_width\":\"80\",\"step_next_label\":\"Suivant\",\"step_previous_label\":\"Retour\",\"button_text\":\"Obtenir ma demo offerte\",\"email_content\":\"[all-fields]\",\"email_content_2\":\"[all-fields]\",\"success_message\":\"The form was sent successfully.\",\"error_message\":\"An error occurred.\",\"required_field_message\":\"This field is required.\",\"invalid_message\":\"There&#039;s something wrong. The form is invalid.\",\"column_gap\":{\"unit\":\"px\",\"size\":\"20\",\"sizes\":[]},\"row_gap\":{\"unit\":\"px\",\"size\":\"20\",\"sizes\":[]},\"label_spacing\":{\"unit\":\"px\",\"size\":\"4\",\"sizes\":[]},\"field_background_color\":\"\",\"button_text_color\":\"\",\"previous_button_text_color\":\"\",\"button_hover_color\":\"\",\"previous_button_text_color_hover\":\"\",\"mailchimp_fields_map\":[],\"drip_fields_map\":[],\"activecampaign_fields_map\":[],\"getresponse_fields_map\":[],\"convertkit_fields_map\":[],\"mailerlite_fields_map\":[],\"mark_required\":\"yes\",\"email_to\":\"timothy.jollivet@harelsystems.com\",\"email_subject\":\"Nouveau message depuis \\u00ab\\u00a0Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\\u00a0\\u00bb\",\"email_from\":\"email@helloharel.com\",\"email_from_name\":\"Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\",\"email_to_2\":\"timothy.jollivet@harelsystems.com\",\"email_subject_2\":\"Nouveau message depuis \\u00ab\\u00a0Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\\u00a0\\u00bb\",\"email_from_2\":\"email@helloharel.com\",\"email_from_name_2\":\"Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\",\"email_reply_to_2\":\"timothy.jollivet@harelsystems.com\",\"server_message\":\"Your submission failed because of a server error.\",\"button_background_color\":\"#00B4FC\",\"button_css_id\":\"demo\",\"form_id\":\"demo\"},\"elements\":[],\"widgetType\":\"form\"}],\"isInner\":\"1\"}],\"isInner\":\"1\"}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=demo-offerte",
+  "generated_slug": "demo-offerte",
+  "class_list": [
+    "post-2877",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 2879,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877/revisions/2879"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=2877"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/2877"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

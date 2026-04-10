@@ -1,0 +1,110 @@
+{
+  "id": 3842,
+  "date": "2024-10-18T00:34:00",
+  "date_gmt": "2024-10-17T22:34:00",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=blog-blog",
+    "raw": "https://www.helloharel.com/?elementor_library=blog-blog"
+  },
+  "modified": "2024-10-18T00:34:01",
+  "modified_gmt": "2024-10-17T22:34:01",
+  "password": "",
+  "slug": "blog-blog",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=blog-blog",
+  "title": {
+    "raw": "BLOG BLOG",
+    "rendered": "BLOG BLOG"
+  },
+  "author": 5,
+  "featured_media": 0,
+  "template": "elementor_header_footer",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "page",
+    "_elementor_data": "[{\"id\":\"54fb9b44\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"column\",\"background_background\":\"classic\",\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\"}},\"elements\":[{\"id\":\"2d3d9db1\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"title\":\"Nos conseils par fonctionnalit\\u00e9s\",\"header_size\":\"span\",\"typography_typography\":\"custom\",\"typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]},\"_margin\":{\"unit\":\"px\",\"top\":\"30\",\"right\":\"0\",\"bottom\":\"30\",\"left\":\"0\",\"isLinked\":false},\"__globals__\":{\"title_color\":\"globals\\/colors?id=accent\"}},\"elements\":[],\"widgetType\":\"heading\"}],\"isInner\":false},{\"id\":\"1c19fe30\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"row\",\"background_background\":\"classic\",\"margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\"}},\"elements\":[{\"id\":\"176e14b9\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Comptabilit\\u00e9\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%2216%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"},{\"id\":\"6ab152b2\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Commercial\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%2225%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"},{\"id\":\"4e91c2fc\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Gestion des stocks\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%2224%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"},{\"id\":\"2101305e\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Relation client\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%2223%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"}],\"isInner\":false},{\"id\":\"4fb54d34\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"column\",\"background_background\":\"classic\",\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\"}},\"elements\":[{\"id\":\"50a83fbb\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"title\":\"Nos conseils par secteurs\",\"header_size\":\"span\",\"typography_typography\":\"custom\",\"typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]},\"_margin\":{\"unit\":\"px\",\"top\":\"30\",\"right\":\"0\",\"bottom\":\"30\",\"left\":\"0\",\"isLinked\":false},\"__globals__\":{\"title_color\":\"globals\\/colors?id=accent\"}},\"elements\":[],\"widgetType\":\"heading\"}],\"isInner\":false},{\"id\":\"7e0ceed0\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"row\",\"background_background\":\"classic\",\"margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\"}},\"elements\":[{\"id\":\"5cf40b24\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Agroalimentaire\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%22148%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"},{\"id\":\"523975ca\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Cosmetique\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%22150%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"},{\"id\":\"545a5e82\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"sg_content_label\":\"Medical\",\"st_button_normal_background_background_background\":\"classic\",\"st_button_normal_background_background_color\":\"#F7F9FC\",\"__globals__\":{\"st_button_normal_color_responsive\":\"globals\\/colors?id=primary\",\"st_button_normal_background_background_color\":\"globals\\/colors?id=accent\"},\"__dynamic__\":{\"sg_content_link\":\"[elementor-tag id=\\\"82c5185\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22taxonomy%22%2C%22taxonomy_id%22%3A%22149%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"jkit_button\"}],\"isInner\":false},{\"id\":\"346252fa\",\"elType\":\"section\",\"settings\":{\"padding\":{\"unit\":\"px\",\"top\":\"50\",\"right\":\"0\",\"bottom\":\"120\",\"left\":\"0\",\"isLinked\":\"\"},\"background_background\":\"classic\",\"z_index\":\"6\",\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\",\"background_color_b\":\"\"},\"content_width\":{\"unit\":\"px\",\"size\":\"1200\",\"sizes\":[]},\"background_overlay_background\":\"classic\",\"background_overlay_image\":{\"url\":\"\",\"id\":\"\",\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"background_overlay_position\":\"bottom center\",\"background_overlay_attachment\":\"fixed\",\"background_overlay_repeat\":\"no-repeat\",\"background_overlay_size\":\"cover\",\"background_color_stop\":{\"unit\":\"%\",\"size\":\"20\",\"sizes\":[]},\"background_color_b\":\"#EBF6FF\",\"background_color_b_stop\":{\"unit\":\"%\",\"size\":\"80\",\"sizes\":[]},\"background_gradient_type\":\"radial\",\"background_gradient_position\":\"bottom center\",\"background_overlay_color_stop\":{\"unit\":\"%\",\"size\":\"16\",\"sizes\":[]},\"background_overlay_color_b\":\"#EBF6FF\",\"background_overlay_color_b_stop\":{\"unit\":\"%\",\"size\":\"88\",\"sizes\":[]},\"background_overlay_gradient_type\":\"radial\",\"background_overlay_opacity\":{\"unit\":\"px\",\"size\":\"0.32\",\"sizes\":[]},\"padding_tablet\":{\"unit\":\"px\",\"top\":\"100\",\"right\":\"10\",\"bottom\":\"100\",\"left\":\"10\",\"isLinked\":\"\"},\"padding_mobile\":{\"unit\":\"px\",\"top\":\"60\",\"right\":\"10\",\"bottom\":\"60\",\"left\":\"10\",\"isLinked\":\"\"}},\"elements\":[{\"id\":\"6f7588d5\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"100\",\"padding_mobile\":{\"unit\":\"px\",\"top\":\"10\",\"right\":\"10\",\"bottom\":\"10\",\"left\":\"10\",\"isLinked\":\"\"},\"background_background\":\"classic\"},\"elements\":[{\"id\":\"65f80494\",\"elType\":\"widget\",\"settings\":{\"sg_content_postblock_type\":\"type-2\",\"sg_content_element_order\":\"title\",\"sg_content_image_size_imagesize_size\":\"full\",\"sg_content_column_responsive\":{\"unit\":\"px\",\"size\":3,\"sizes\":[]},\"sg_content_title_html_tag\":\"h2\",\"sg_content_category_enable\":\"\",\"sg_content_excerpt_enable\":\"\",\"sg_content_excerpt_more\":\"...\",\"sg_content_readmore_enable\":\"\",\"sg_content_readmore_text\":\"Lire plus\",\"sg_content_comment_enable\":\"\",\"sg_content_meta_enable\":\"\",\"sg_content_meta_author_by_text\":\"par\",\"sg_content_meta_date_format_custom\":\"j F Y\",\"number_post\":{\"unit\":\"px\",\"size\":6,\"sizes\":[]},\"pagination_mode\":\"loadmore\",\"pagination_prev_text\":\"Previous\",\"pagination_next_text\":\"Next\",\"pagination_loadmore_text\":\"D'autres articles\",\"pagination_loading_text\":\"En cours....\",\"pagination_number_post\":{\"unit\":\"px\",\"size\":15,\"sizes\":[]},\"st_nocontent_text\":\"Aucun contenu disponible\"},\"elements\":[],\"widgetType\":\"jkit_post_block\"}],\"isInner\":\"\"}],\"isInner\":\"\"}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=blog-blog",
+  "generated_slug": "blog-blog",
+  "class_list": [
+    "post-3842",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/5"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 3844,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842/revisions/3844"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=3842"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3842"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

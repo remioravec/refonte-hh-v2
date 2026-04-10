@@ -1,0 +1,116 @@
+{
+  "id": 5706,
+  "date": "2026-01-15T16:25:44",
+  "date_gmt": "2026-01-15T15:25:44",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=heroe",
+    "raw": "https://www.helloharel.com/?elementor_library=heroe"
+  },
+  "modified": "2026-01-15T16:25:44",
+  "modified_gmt": "2026-01-15T15:25:44",
+  "password": "",
+  "slug": "heroe",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=heroe",
+  "title": {
+    "raw": "HEROE",
+    "rendered": "HEROE"
+  },
+  "author": 5,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "container",
+    "_elementor_data": "[{\"id\":\"336a1c15\",\"elType\":\"container\",\"settings\":{\"margin\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"padding\":{\"top\":\"112px\",\"left\":\"5%\",\"unit\":\"custom\",\"right\":\"5%\",\"bottom\":\"112px\",\"isLinked\":false},\"flex_gap\":{\"row\":\"0\",\"size\":0,\"unit\":\"px\",\"column\":\"0\",\"isLinked\":false},\"min_height\":{\"size\":900,\"unit\":\"px\",\"sizes\":[]},\"boxed_width\":{\"size\":1080,\"unit\":\"px\",\"sizes\":[]},\"flex_direction\":\"column\",\"padding_mobile\":{\"top\":\"64px\",\"left\":\"5%\",\"unit\":\"custom\",\"right\":\"5%\",\"bottom\":\"64px\",\"isLinked\":false},\"padding_tablet\":{\"top\":\"96px\",\"left\":\"5%\",\"unit\":\"custom\",\"right\":\"5%\",\"bottom\":\"96px\",\"isLinked\":false},\"background_size\":\"cover\",\"background_image\":{\"id\":5089,\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2025\\/07\\/Logiciel-de-gestion-des-achats-1.png\",\"alt\":\"ERP de gestion dans l'agroalimentaire\",\"source\":\"library\",\"size\":\"\"},\"flex_align_items\":\"flex-start\",\"background_repeat\":\"no-repeat\",\"min_height_mobile\":{\"size\":812,\"unit\":\"px\",\"sizes\":[]},\"background_position\":\"top center\",\"flex_justify_content\":\"center\",\"background_background\":\"classic\",\"background_overlay_color\":\"#000000\",\"background_overlay_opacity\":{\"size\":0.6,\"unit\":\"px\",\"sizes\":[]},\"background_overlay_background\":\"classic\"},\"elements\":[{\"id\":\"3572c434\",\"elType\":\"container\",\"settings\":{\"width\":{\"size\":568,\"unit\":\"px\",\"sizes\":[]},\"margin\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"padding\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"flex_gap\":{\"row\":\"16\",\"size\":16,\"unit\":\"px\",\"column\":\"16\",\"isLinked\":true},\"flex_wrap\":\"wrap\",\"width_mobile\":{\"size\":100,\"unit\":\"%\",\"sizes\":[]},\"content_width\":\"full\",\"flex_direction\":\"row\",\"flex_gap_mobile\":{\"row\":\"\",\"size\":null,\"unit\":\"px\",\"column\":\"\",\"isLinked\":true},\"flex_gap_tablet\":{\"row\":\"\",\"size\":null,\"unit\":\"px\",\"column\":\"\",\"isLinked\":true}},\"elements\":[{\"id\":\"1002b791\",\"elType\":\"widget\",\"settings\":{\"title\":\"Ma\\u00eetrisez vos marges\\net vos stocks en temps r\\u00e9el\",\"_margin\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"8\",\"isLinked\":false},\"_padding\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"__globals__\":{\"title_color\":\"\"},\"header_size\":\"h1\",\"title_color\":\"#FFFFFF\",\"_margin_mobile\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"4\",\"isLinked\":false},\"typography_font_size\":{\"size\":56,\"unit\":\"px\",\"sizes\":[]},\"typography_typography\":\"custom\",\"typography_font_family\":\"Inter\",\"typography_font_weight\":\"600\",\"typography_line_height\":{\"size\":\"120%\",\"unit\":\"custom\",\"sizes\":[]},\"typography_letter_spacing\":{\"size\":-1.12,\"unit\":\"px\",\"sizes\":[]},\"typography_font_size_mobile\":{\"size\":40,\"unit\":\"px\",\"sizes\":[]},\"typography_font_size_tablet\":{\"size\":52,\"unit\":\"px\",\"sizes\":[]},\"typography_line_height_mobile\":{\"size\":\"\",\"unit\":\"custom\",\"sizes\":[]},\"typography_line_height_tablet\":{\"size\":\"\",\"unit\":\"custom\",\"sizes\":[]},\"typography_letter_spacing_mobile\":{\"size\":-0.8,\"unit\":\"px\",\"sizes\":[]},\"typography_letter_spacing_tablet\":{\"size\":-1.04,\"unit\":\"px\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"5ef2cf82\",\"elType\":\"widget\",\"settings\":{\"editor\":\"<p>\\u00catre grossiste, c\\u2019est g\\u00e9rer des volumes importants, des r\\u00e9f\\u00e9rences multiples et des marges serr\\u00e9es. Avec notre <strong data-start=\\\"839\\\" data-end=\\\"867\\\">logiciel pour grossistes<\\/strong>, pilotez vos achats, vos ventes et vos stocks avec une pr\\u00e9cision maximale et gagnez du temps au quotidien.<\\/p>\",\"_margin\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"24\",\"isLinked\":false},\"_padding\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"text_color\":\"#FFFFFF\",\"__globals__\":{\"text_color\":\"\"},\"align_mobile\":\"left\",\"_margin_mobile\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"-6\",\"isLinked\":false},\"typography_font_size\":{\"size\":18,\"unit\":\"px\"},\"typography_typography\":\"custom\",\"typography_font_family\":\"Inter\",\"typography_font_weight\":\"400\",\"typography_line_height\":{\"size\":\"150%\",\"unit\":\"custom\",\"sizes\":[]},\"typography_font_size_mobile\":{\"size\":16,\"unit\":\"px\",\"sizes\":[]},\"typography_line_height_mobile\":{\"size\":\"150%\",\"unit\":\"custom\",\"sizes\":[]},\"typography_line_height_tablet\":{\"size\":\"\",\"unit\":\"custom\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"text-editor\"},{\"id\":\"5100e567\",\"elType\":\"widget\",\"settings\":{\"text\":\"Contactez-nous pour une d\\u00e9monstration\",\"_margin\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"_padding\":{\"top\":\"0\",\"left\":\"0\",\"unit\":\"px\",\"right\":\"0\",\"bottom\":\"0\",\"isLinked\":false},\"__globals__\":{\"hover_color\":\"\",\"border_color\":\"\",\"background_color\":\"\",\"button_text_color\":\"\",\"button_hover_border_color\":\"\",\"button_background_hover_color\":\"\"},\"hover_color\":\"#FFFFFF\",\"icon_indent\":{\"size\":0,\"unit\":\"px\",\"sizes\":[]},\"border_color\":\"#16DB7F\",\"border_width\":{\"top\":\"1\",\"left\":\"1\",\"unit\":\"px\",\"right\":\"1\",\"bottom\":\"1\",\"isLinked\":true},\"text_padding\":{\"top\":\"12\",\"left\":\"20\",\"unit\":\"px\",\"right\":\"20\",\"bottom\":\"12\",\"isLinked\":false},\"border_border\":\"solid\",\"border_radius\":{\"top\":\"8\",\"left\":\"8\",\"unit\":\"px\",\"right\":\"8\",\"bottom\":\"8\",\"isLinked\":true},\"content_width\":\"full\",\"background_color\":\"#16DB7F\",\"button_text_color\":\"#FFFFFF\",\"border_width_mobile\":{\"top\":\"1\",\"left\":\"1\",\"unit\":\"px\",\"right\":\"1\",\"bottom\":\"1\",\"isLinked\":true},\"border_width_tablet\":{\"top\":\"1\",\"left\":\"1\",\"unit\":\"px\",\"right\":\"1\",\"bottom\":\"1\",\"isLinked\":true},\"border_radius_mobile\":{\"top\":\"8\",\"left\":\"8\",\"unit\":\"px\",\"right\":\"8\",\"bottom\":\"8\",\"isLinked\":true},\"border_radius_tablet\":{\"top\":\"8\",\"left\":\"8\",\"unit\":\"px\",\"right\":\"8\",\"bottom\":\"8\",\"isLinked\":true},\"typography_font_size\":{\"size\":16,\"unit\":\"px\",\"sizes\":[]},\"typography_typography\":\"custom\",\"typography_font_family\":\"Inter\",\"typography_font_weight\":\"500\",\"typography_line_height\":{\"size\":\"150%\",\"unit\":\"custom\",\"sizes\":[]},\"button_hover_border_color\":\"#16DB7F\",\"typography_font_size_mobile\":{\"size\":16,\"unit\":\"px\",\"sizes\":[]},\"typography_font_size_tablet\":{\"size\":16,\"unit\":\"px\",\"sizes\":[]},\"button_background_hover_color\":\"#16DB7F\",\"typography_line_height_mobile\":{\"size\":\"150%\",\"unit\":\"custom\",\"sizes\":[]},\"typography_line_height_tablet\":{\"size\":\"150%\",\"unit\":\"custom\",\"sizes\":[]},\"hover_animation\":\"buzz-out\",\"__dynamic__\":{\"link\":\"[elementor-tag id=\\\"59844c0\\\" name=\\\"internal-url\\\" settings=\\\"%7B%22type%22%3A%22post%22%2C%22post_id%22%3A%22661%22%7D\\\"]\"}},\"elements\":[],\"widgetType\":\"button\"}],\"isInner\":true}],\"isInner\":false}]",
+    "_elementor_page_settings": {
+      "background_background": "classic",
+      "__globals__": {
+        "background_color": "globals/colors?id=bfca241"
+      },
+      "custom_css": "html, body {\n  overflow-x: hidden;\n}\n"
+    },
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=heroe",
+  "generated_slug": "heroe",
+  "class_list": [
+    "post-5706",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/5"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 5708,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706/revisions/5708"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=5706"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/5706"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

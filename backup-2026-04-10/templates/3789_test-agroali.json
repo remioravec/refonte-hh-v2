@@ -1,0 +1,110 @@
+{
+  "id": 3789,
+  "date": "2024-10-10T22:33:21",
+  "date_gmt": "2024-10-10T20:33:21",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=test-agroali",
+    "raw": "https://www.helloharel.com/?elementor_library=test-agroali"
+  },
+  "modified": "2024-10-10T22:33:22",
+  "modified_gmt": "2024-10-10T20:33:22",
+  "password": "",
+  "slug": "test-agroali",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=test-agroali",
+  "title": {
+    "raw": "TEST AGROALI",
+    "rendered": "TEST AGROALI"
+  },
+  "author": 5,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "container",
+    "_elementor_data": "[{\"id\":\"71f12143\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"row\",\"flex_gap\":{\"unit\":\"px\",\"size\":0,\"column\":\"0\",\"row\":\"0\"}},\"elements\":[{\"id\":\"230bc592\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"column\",\"content_width\":\"full\",\"width\":{\"unit\":\"%\",\"size\":\"33.3333\"},\"jkit_sticky_section\":\"enabled\",\"jkit_sticky_top_position\":{\"unit\":\"px\",\"size\":20,\"sizes\":[]}},\"elements\":[{\"id\":\"37969e52\",\"elType\":\"widget\",\"settings\":{\"form_name\":\"Formulaire de contact\",\"form_fields\":[{\"custom_id\":\"name\",\"field_label\":\"Pr\\u00e9nom\",\"placeholder\":\"ex. Adeline\",\"width\":\"50\",\"_id\":\"b8b33fe\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"},{\"custom_id\":\"field_e343a22\",\"field_label\":\"Nom\",\"placeholder\":\"ex. Dubois\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"e343a22\"},{\"custom_id\":\"field_d5fbe00\",\"field_label\":\"Entreprise\",\"placeholder\":\"ex. Orus\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"d5fbe00\"},{\"custom_id\":\"field_9e1836c\",\"field_label\":\"Secteur d'activit\\u00e9\",\"placeholder\":\"ex. Responsable qualit\\u00e9\",\"width\":\"50\",\"required\":\"true\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\",\"_id\":\"9e1836c\"},{\"custom_id\":\"email\",\"field_type\":\"email\",\"required\":\"true\",\"field_label\":\"Email\",\"placeholder\":\"example@mail.com\",\"width\":\"50\",\"_id\":\"781a921\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"},{\"custom_id\":\"field_187fd6b\",\"field_type\":\"tel\",\"required\":\"true\",\"field_label\":\"T\\u00e9l\\u00e9phone\",\"placeholder\":\"(+12) 6000 8012\",\"width\":\"50\",\"_id\":\"187fd6b\",\"previous_button\":\"\",\"next_button\":\"\",\"file_sizes\":\"\",\"file_types\":\"\",\"allow_multiple_upload\":\"\",\"max_files\":\"\",\"acceptance_text\":\"\",\"checked_by_default\":\"\",\"field_min\":\"\",\"field_max\":\"\",\"min_date\":\"\",\"max_date\":\"\",\"use_native_date\":\"\",\"use_native_time\":\"\"}],\"button_size\":\"md\",\"button_width\":\"80\",\"step_next_label\":\"Suivant\",\"step_previous_label\":\"Retour\",\"button_text\":\"Obtenir ma demo offerte\",\"email_content\":\"[all-fields]\",\"email_content_2\":\"[all-fields]\",\"success_message\":\"The form was sent successfully.\",\"error_message\":\"An error occurred.\",\"required_field_message\":\"This field is required.\",\"invalid_message\":\"There&#039;s something wrong. The form is invalid.\",\"column_gap\":{\"unit\":\"px\",\"size\":\"20\",\"sizes\":[]},\"row_gap\":{\"unit\":\"px\",\"size\":\"20\",\"sizes\":[]},\"label_spacing\":{\"unit\":\"px\",\"size\":\"4\",\"sizes\":[]},\"field_background_color\":\"\",\"button_text_color\":\"\",\"previous_button_text_color\":\"\",\"button_hover_color\":\"\",\"previous_button_text_color_hover\":\"\",\"mailchimp_fields_map\":[],\"drip_fields_map\":[],\"activecampaign_fields_map\":[],\"getresponse_fields_map\":[],\"convertkit_fields_map\":[],\"mailerlite_fields_map\":[],\"mark_required\":\"yes\",\"email_to\":\"timothy.jollivet@harelsystems.com,administration@remi-oravec.fr,maxence.flavigny@harelsystems.com\",\"email_subject\":\"Nouveau message depuis \\u00ab\\u00a0Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\\u00a0\\u00bb\",\"email_from\":\"email@helloharel.com\",\"email_from_name\":\"Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\",\"email_to_2\":\"timothy.jollivet@harelsystems.com\",\"email_subject_2\":\"Nouveau message depuis \\u00ab\\u00a0Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\\u00a0\\u00bb\",\"email_from_2\":\"email@helloharel.com\",\"email_from_name_2\":\"Hello Harel - Logiciel de facturation en ligne - ERP N\\u00b01 des TPE et PME\",\"email_reply_to_2\":\"timothy.jollivet@harelsystems.com\",\"server_message\":\"Your submission failed because of a server error.\",\"button_background_color\":\"#00B4FC\",\"button_css_id\":\"demo\",\"form_id\":\"demo\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"10\",\"bottom\":\"0\",\"left\":\"10\",\"isLinked\":false},\"sticky_effects_offset\":30,\"sticky_parent\":\"yes\",\"submit_actions\":[\"save-to-database\",\"email\"],\"webhooks\":\"https:\\/\\/hooks.zapier.com\\/hooks\\/catch\\/17835110\\/2tfh6hl\\/\",\"content_width\":\"full\",\"sticky\":\"top\",\"sticky_offset\":20,\"hide_mobile\":\"hidden-mobile\"},\"elements\":[],\"widgetType\":\"form\"}],\"isInner\":true},{\"id\":\"5948ebf7\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"column\",\"content_width\":\"full\",\"width\":{\"unit\":\"%\",\"size\":\"66.6666\"}},\"elements\":[{\"id\":\"f9c5e7f\",\"elType\":\"widget\",\"settings\":{\"content_width\":\"full\",\"editor\":\"<h2>Qu\\u2019est-ce qu\\u2019un ERP pour les grossistes ?<\\/h2><p>Un <strong>ERP (Enterprise Resource Planning)<\\/strong> pour grossiste est un logiciel de gestion int\\u00e9gr\\u00e9 sp\\u00e9cialement con\\u00e7u pour r\\u00e9pondre aux besoins des entreprises de vente en gros. Il permet de centraliser et d\\u2019automatiser les processus cl\\u00e9s, comme la <strong>gestion des stocks<\\/strong>, des <strong>commandes<\\/strong>, des <strong>ventes<\\/strong> et des <strong>relations clients<\\/strong>. Gr\\u00e2ce \\u00e0 une vue d\\u2019ensemble sur l\\u2019ensemble de vos activit\\u00e9s, l\\u2019ERP facilite la prise de d\\u00e9cisions \\u00e9clair\\u00e9es et am\\u00e9liore l\\u2019efficacit\\u00e9 globale de l\\u2019entreprise.<\\/p><h2>Pourquoi un ERP est-il indispensable pour les grossistes ?<\\/h2><p>Les grossistes g\\u00e8rent souvent des volumes importants de produits, de fournisseurs et de clients. Un <strong>ERP<\\/strong> est essentiel pour :<\\/p><ul><li><strong>Am\\u00e9liorer l\\u2019efficacit\\u00e9<\\/strong> : En automatisant les t\\u00e2ches r\\u00e9p\\u00e9titives, l\\u2019ERP r\\u00e9duit les erreurs humaines et les pertes de temps.<\\/li><li><strong>Optimiser les co\\u00fbts<\\/strong> : Une meilleure gestion des stocks et des commandes permet de minimiser les surco\\u00fbts li\\u00e9s \\u00e0 la mauvaise gestion.<\\/li><li><strong>Centraliser les donn\\u00e9es<\\/strong> : Toutes les informations sont regroup\\u00e9es dans un m\\u00eame syst\\u00e8me, facilitant la gestion et la coordination entre les d\\u00e9partements.<\\/li><li><strong>Prendre des d\\u00e9cisions rapides<\\/strong> : Gr\\u00e2ce \\u00e0 des rapports en temps r\\u00e9el, l'ERP permet d'anticiper les besoins et d\\u2019ajuster la strat\\u00e9gie en fonction des donn\\u00e9es disponibles.<\\/li><\\/ul><h2>Les fonctionnalit\\u00e9s cl\\u00e9s d\\u2019un ERP pour les grossistes<\\/h2><h3>Gestion des stocks en temps r\\u00e9el<\\/h3><p>Un ERP pour grossiste permet de suivre les <strong>stocks en temps r\\u00e9el<\\/strong>, offrant une vue pr\\u00e9cise et instantan\\u00e9e des niveaux d\\u2019inventaire, quel que soit le nombre de d\\u00e9p\\u00f4ts ou d\\u2019entrep\\u00f4ts g\\u00e9r\\u00e9s.<\\/p><h4>Optimisation des niveaux de stock<\\/h4><p>L'ERP aide \\u00e0 maintenir les <strong>niveaux de stock optimaux<\\/strong>, \\u00e9vitant ainsi les exc\\u00e9dents co\\u00fbteux ou les manques qui perturbent l\\u2019activit\\u00e9.<\\/p><h4>Pr\\u00e9vention des ruptures et surstockages<\\/h4><p>En analysant les tendances de vente et les historiques de commande, le syst\\u00e8me <strong>pr\\u00e9vient les ruptures<\\/strong> de stock tout en \\u00e9vitant les surapprovisionnements inutiles.<\\/p><h3>Gestion des commandes et des approvisionnements<\\/h3><p>Avec un ERP, vous pouvez <strong>automatiser le suivi des commandes<\\/strong> et faciliter la gestion des relations avec les fournisseurs.<\\/p><h4>Suivi des commandes clients et fournisseurs<\\/h4><p>L'ERP assure un suivi pr\\u00e9cis des <strong>commandes clients<\\/strong> et des <strong>approvisionnements fournisseurs<\\/strong>, garantissant des livraisons dans les d\\u00e9lais.<\\/p><h4>Automatisation du r\\u00e9approvisionnement<\\/h4><p>L\\u2019ERP d\\u00e9tecte automatiquement les besoins en r\\u00e9approvisionnement et peut lancer des commandes aupr\\u00e8s des fournisseurs d\\u00e8s que les stocks atteignent un seuil critique, optimisant ainsi l\\u2019approvisionnement.<\\/p><h3>Gestion des ventes et de la relation client<\\/h3><p>L\\u2019ERP facilite \\u00e9galement la <strong>gestion des ventes<\\/strong> et am\\u00e9liore les relations avec les clients gr\\u00e2ce \\u00e0 des outils de suivi et d\\u2019analyse.<\\/p><h4>Suivi des ventes et des marges<\\/h4><p>Il vous permet de suivre de pr\\u00e8s les <strong>ventes<\\/strong>, les <strong>marges<\\/strong> b\\u00e9n\\u00e9ficiaires et d\\u2019ajuster votre strat\\u00e9gie de tarification en cons\\u00e9quence.<\\/p><h4>Gestion des clients et de la satisfaction client<\\/h4><p>L'ERP offre des fonctionnalit\\u00e9s pour g\\u00e9rer efficacement les <strong>clients<\\/strong>, am\\u00e9liorer leur satisfaction et fid\\u00e9liser votre client\\u00e8le gr\\u00e2ce \\u00e0 une meilleure connaissance de leurs besoins et de leurs habitudes d\\u2019achat.<\\/p><h2>Mise en place d\\u2019un ERP pour grossiste : \\u00e9tapes et bonnes pratiques<\\/h2><h3>Analyse de vos besoins et objectifs<\\/h3><p>Avant de d\\u00e9ployer un ERP, il est essentiel d\\u2019analyser en profondeur vos <strong>besoins sp\\u00e9cifiques<\\/strong> et vos objectifs commerciaux.<\\/p><h4>\\u00c9valuation des processus actuels<\\/h4><p>Commencez par \\u00e9valuer vos <strong>processus actuels<\\/strong> : Quels sont les points \\u00e0 am\\u00e9liorer ? Quelles sont les \\u00e9tapes les plus chronophages ou sujettes aux erreurs ?<\\/p><h4>D\\u00e9finition des priorit\\u00e9s d\\u2019optimisation<\\/h4><p>D\\u00e9finissez ensuite les <strong>priorit\\u00e9s<\\/strong> : Quelles fonctionnalit\\u00e9s sont essentielles pour l\\u2019optimisation de votre activit\\u00e9 de grossiste ? Cet exercice vous aidera \\u00e0 s\\u00e9lectionner un ERP adapt\\u00e9.<\\/p><h3>D\\u00e9ploiement et formation des \\u00e9quipes<\\/h3><p>La r\\u00e9ussite du d\\u00e9ploiement d\\u2019un ERP repose aussi sur la <strong>formation des \\u00e9quipes<\\/strong> et leur accompagnement tout au long du processus de mise en \\u0153uvre.<\\/p><h4>Accompagnement au changement<\\/h4><p>Pour une transition r\\u00e9ussie, il est important de pr\\u00e9voir un <strong>accompagnement au changement<\\/strong> afin que vos \\u00e9quipes adoptent l\\u2019ERP de mani\\u00e8re efficace et proactive.<\\/p><h4>Suivi post-d\\u00e9ploiement et ajustements<\\/h4><p>Enfin, apr\\u00e8s le d\\u00e9ploiement, un suivi r\\u00e9gulier est n\\u00e9cessaire pour ajuster les param\\u00e8tres et s\\u2019assurer que l\\u2019ERP continue de r\\u00e9pondre aux besoins de l\\u2019entreprise au fil du temps.<\\/p>\",\"typography_typography\":\"custom\",\"typography_font_size\":{\"unit\":\"px\",\"size\":15,\"sizes\":[]}},\"elements\":[],\"widgetType\":\"text-editor\"}],\"isInner\":true}],\"isInner\":false}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=test-agroali",
+  "generated_slug": "test-agroali",
+  "class_list": [
+    "post-3789",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/5"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 3791,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789/revisions/3791"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=3789"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3789"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

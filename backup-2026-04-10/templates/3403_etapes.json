@@ -1,0 +1,110 @@
+{
+  "id": 3403,
+  "date": "2024-08-20T11:56:44",
+  "date_gmt": "2024-08-20T09:56:44",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=etapes",
+    "raw": "https://www.helloharel.com/?elementor_library=etapes"
+  },
+  "modified": "2024-08-20T11:56:44",
+  "modified_gmt": "2024-08-20T09:56:44",
+  "password": "",
+  "slug": "etapes",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=etapes",
+  "title": {
+    "raw": "ETAPES",
+    "rendered": "ETAPES"
+  },
+  "author": 5,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "section",
+    "_elementor_data": "[{\"id\":\"b2ddc8d\",\"elType\":\"section\",\"settings\":{\"gap\":\"no\",\"padding\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"0\",\"bottom\":\"4\",\"left\":\"0\",\"isLinked\":\"\"},\"padding_tablet\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"1.5\",\"bottom\":\"2\",\"left\":\"1.5\",\"isLinked\":\"\"},\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"1.5\",\"bottom\":\"3\",\"left\":\"1.5\",\"isLinked\":\"\"},\"content_width\":{\"unit\":\"px\",\"size\":\"1250\",\"sizes\":[]},\"overflow\":\"hidden\",\"background_background\":\"classic\",\"__globals__\":{\"background_color\":\"globals\\/colors?id=primary\"},\"_title\":\"How it works\"},\"elements\":[{\"id\":\"5c430beb\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"100\"},\"elements\":[{\"id\":\"3ce86e36\",\"elType\":\"section\",\"settings\":{\"content_width\":{\"unit\":\"px\",\"size\":\"590\",\"sizes\":[]},\"gap\":\"no\",\"padding_mobile\":{\"unit\":\"em\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"1\"},\"animation\":\"fadeInUp\",\"content_width_tablet\":{\"unit\":\"px\",\"size\":\"528\",\"sizes\":[]},\"padding\":{\"unit\":\"em\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"1\",\"left\":\"0\",\"isLinked\":\"\"},\"padding_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"}},\"elements\":[{\"id\":\"46119cff\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"100\"},\"elements\":[{\"id\":\"2e97ffff\",\"elType\":\"widget\",\"settings\":{\"title\":\"Comment \\u00e7a fonctionne?\",\"align\":\"center\"},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"394a1598\",\"elType\":\"widget\",\"settings\":{\"align\":\"center\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"editor\":\"<p>Voici les diff\\u00e9rentes \\u00e9tapes simples pour mettre en place notre Erp au sein de votre soci\\u00e9t\\u00e9.<\\/p>\"},\"elements\":[],\"widgetType\":\"text-editor\"}],\"isInner\":\"1\"}],\"isInner\":\"1\"},{\"id\":\"3da7c23f\",\"elType\":\"section\",\"settings\":{\"gap\":\"extended\",\"structure\":\"40\",\"layout\":\"full_width\"},\"elements\":[{\"id\":\"63c51317\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"25\",\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"left\":\"1\",\"isLinked\":\"1\"},\"_inline_size_tablet\":\"50\",\"align\":\"center\"},\"elements\":[{\"id\":\"74576de6\",\"elType\":\"widget\",\"settings\":{\"text\":\"01\",\"link\":{\"url\":\"\",\"is_external\":\"\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"border_border\":\"solid\",\"border_width\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"1\"},\"text_padding\":{\"unit\":\"px\",\"top\":\"4\",\"right\":\"10\",\"bottom\":\"4\",\"left\":\"10\",\"isLinked\":\"\"},\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-68\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-75\",\"isLinked\":\"\"},\"_z_index\":\"1\",\"_transform_translateX_effect\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"_transform_translateX_effect_tablet\":{\"unit\":\"px\",\"size\":\"105\",\"sizes\":[]},\"_transform_translateY_effect\":{\"unit\":\"px\",\"size\":\"45\",\"sizes\":[]},\"__globals__\":{\"typography_typography\":\"globals\\/typography?id=7bb9790\",\"button_text_color\":\"globals\\/colors?id=bfca241\",\"background_color\":\"globals\\/colors?id=accent\"},\"align\":\"center\",\"_transform_translateX_effect_mobile\":{\"unit\":\"px\",\"size\":\"80\",\"sizes\":[]},\"_transform_translateY_effect_mobile\":{\"unit\":\"px\",\"size\":\"40\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"button\"},{\"id\":\"7a5a1b1e\",\"elType\":\"widget\",\"settings\":{\"image\":{\"id\":\"1273\",\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/how-it-works-03.png\"},\"image_box_shadow_box_shadow_type\":\"yes\",\"image_box_shadow_box_shadow\":{\"horizontal\":\"0\",\"vertical\":\"10\",\"blur\":\"40\",\"spread\":\"0\",\"color\":\"rgba(61.999999999999815, 54.99999999999995, 177.99999999999994, 0.25)\"},\"width_tablet\":{\"unit\":\"px\",\"size\":\"75\",\"sizes\":[]},\"width_mobile\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"image_border_radius\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"_margin\":{\"unit\":\"px\",\"top\":\"-6\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"-5\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_element_width\":\"auto\"},\"elements\":[],\"widgetType\":\"image\"},{\"id\":\"5053df47\",\"elType\":\"widget\",\"settings\":{\"image\":{\"url\":\"\",\"id\":\"\",\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"title_text\":\"Demander une demo offerte\",\"description_text\":\"N'h\\u00e9sitez pas \\u00e0 demander une d\\u00e9mo offerte pour d\\u00e9couvrir toutes les fonctionnalit\\u00e9s !\",\"image_space\":{\"unit\":\"px\",\"size\":\"0\",\"sizes\":[]},\"_element_custom_width\":{\"unit\":\"%\",\"size\":\"33\",\"sizes\":[]},\"title_bottom_space\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"_margin\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"title_typography_typography\":\"custom\",\"title_typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]}},\"elements\":[],\"widgetType\":\"image-box\"}],\"isInner\":\"1\"},{\"id\":\"727a1b07\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"25\",\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"left\":\"1\",\"isLinked\":\"1\"},\"_inline_size_tablet\":\"50\",\"align\":\"center\"},\"elements\":[{\"id\":\"609becc6\",\"elType\":\"widget\",\"settings\":{\"text\":\"02\",\"link\":{\"url\":\"\",\"is_external\":\"\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"border_border\":\"solid\",\"border_width\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"1\"},\"text_padding\":{\"unit\":\"px\",\"top\":\"4\",\"right\":\"10\",\"bottom\":\"4\",\"left\":\"10\",\"isLinked\":\"\"},\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-68\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-75\",\"isLinked\":\"\"},\"_z_index\":\"1\",\"_transform_translateX_effect\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"_transform_translateX_effect_tablet\":{\"unit\":\"px\",\"size\":\"105\",\"sizes\":[]},\"_transform_translateY_effect\":{\"unit\":\"px\",\"size\":\"45\",\"sizes\":[]},\"__globals__\":{\"typography_typography\":\"globals\\/typography?id=7bb9790\",\"button_text_color\":\"globals\\/colors?id=bfca241\",\"background_color\":\"globals\\/colors?id=accent\"},\"align\":\"center\",\"_transform_translateX_effect_mobile\":{\"unit\":\"px\",\"size\":\"80\",\"sizes\":[]},\"_transform_translateY_effect_mobile\":{\"unit\":\"px\",\"size\":\"40\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"button\"},{\"id\":\"9b6cc5e\",\"elType\":\"widget\",\"settings\":{\"image\":{\"id\":\"1274\",\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/how-it-works-02.png\"},\"image_box_shadow_box_shadow_type\":\"yes\",\"image_box_shadow_box_shadow\":{\"horizontal\":\"0\",\"vertical\":\"10\",\"blur\":\"40\",\"spread\":\"0\",\"color\":\"rgba(61.999999999999815, 54.99999999999995, 177.99999999999994, 0.25)\"},\"width_tablet\":{\"unit\":\"px\",\"size\":\"75\",\"sizes\":[]},\"width_mobile\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"image_border_radius\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"_margin\":{\"unit\":\"px\",\"top\":\"-6\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"-5\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_element_width\":\"auto\"},\"elements\":[],\"widgetType\":\"image\"},{\"id\":\"7ed071bd\",\"elType\":\"widget\",\"settings\":{\"image\":{\"url\":\"\",\"id\":\"\",\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"title_text\":\"Accompagnement de mise en place\",\"description_text\":\"Nous vous accompagnons \\u00e9tape par \\u00e9tape dans la mise en place et la compr\\u00e9hension de notre plateforme.\",\"image_space\":{\"unit\":\"px\",\"size\":\"0\",\"sizes\":[]},\"_element_custom_width\":{\"unit\":\"%\",\"size\":\"33\",\"sizes\":[]},\"title_bottom_space\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"_margin\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"title_typography_typography\":\"custom\",\"title_typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]}},\"elements\":[],\"widgetType\":\"image-box\"}],\"isInner\":\"1\"},{\"id\":\"63a56913\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"25\",\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"left\":\"1\",\"isLinked\":\"1\"},\"_inline_size_tablet\":\"50\",\"align\":\"center\"},\"elements\":[{\"id\":\"489873ce\",\"elType\":\"widget\",\"settings\":{\"text\":\"03\",\"link\":{\"url\":\"\",\"is_external\":\"\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"border_border\":\"solid\",\"border_width\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"1\"},\"text_padding\":{\"unit\":\"px\",\"top\":\"4\",\"right\":\"10\",\"bottom\":\"4\",\"left\":\"10\",\"isLinked\":\"\"},\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-68\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-75\",\"isLinked\":\"\"},\"_z_index\":\"1\",\"_transform_translateX_effect\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"_transform_translateX_effect_tablet\":{\"unit\":\"px\",\"size\":\"105\",\"sizes\":[]},\"_transform_translateY_effect\":{\"unit\":\"px\",\"size\":\"45\",\"sizes\":[]},\"__globals__\":{\"typography_typography\":\"globals\\/typography?id=7bb9790\",\"button_text_color\":\"globals\\/colors?id=bfca241\",\"background_color\":\"globals\\/colors?id=accent\"},\"align\":\"center\",\"_transform_translateX_effect_mobile\":{\"unit\":\"px\",\"size\":\"80\",\"sizes\":[]},\"_transform_translateY_effect_mobile\":{\"unit\":\"px\",\"size\":\"40\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"button\"},{\"id\":\"7b1e8563\",\"elType\":\"widget\",\"settings\":{\"image\":{\"id\":\"1056\",\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/feature-icon-v2-04.png\"},\"image_box_shadow_box_shadow_type\":\"yes\",\"image_box_shadow_box_shadow\":{\"horizontal\":\"0\",\"vertical\":\"10\",\"blur\":\"40\",\"spread\":\"0\",\"color\":\"rgba(61.999999999999815, 54.99999999999995, 177.99999999999994, 0.25)\"},\"width_tablet\":{\"unit\":\"px\",\"size\":\"75\",\"sizes\":[]},\"width_mobile\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"image_border_radius\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"_margin\":{\"unit\":\"px\",\"top\":\"-6\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"-5\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_element_width\":\"auto\"},\"elements\":[],\"widgetType\":\"image\"},{\"id\":\"68360c85\",\"elType\":\"widget\",\"settings\":{\"image\":{\"url\":\"\",\"id\":\"\",\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"title_text\":\"Param\\u00e9trage de vos outils\",\"description_text\":\"Nous sommes \\u00e0 vos c\\u00f4t\\u00e9s pour le param\\u00e9trage des outils, garantissant une configuration adapt\\u00e9e \\u00e0 vos besoins.\",\"image_space\":{\"unit\":\"px\",\"size\":\"0\",\"sizes\":[]},\"_element_custom_width\":{\"unit\":\"%\",\"size\":\"33\",\"sizes\":[]},\"title_bottom_space\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"_margin\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"title_typography_typography\":\"custom\",\"title_typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]}},\"elements\":[],\"widgetType\":\"image-box\"}],\"isInner\":\"1\"},{\"id\":\"2c5e8baa\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"25\",\"padding_mobile\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"1\",\"bottom\":\"1\",\"left\":\"1\",\"isLinked\":\"1\"},\"_inline_size_tablet\":\"50\",\"align\":\"center\"},\"elements\":[{\"id\":\"1726dcde\",\"elType\":\"widget\",\"settings\":{\"text\":\"04\",\"link\":{\"url\":\"\",\"is_external\":\"\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"border_border\":\"solid\",\"border_width\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"1\"},\"text_padding\":{\"unit\":\"px\",\"top\":\"4\",\"right\":\"10\",\"bottom\":\"4\",\"left\":\"10\",\"isLinked\":\"\"},\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-68\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"-30\",\"left\":\"-75\",\"isLinked\":\"\"},\"_z_index\":\"1\",\"_transform_translateX_effect\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"_transform_translateX_effect_tablet\":{\"unit\":\"px\",\"size\":\"105\",\"sizes\":[]},\"_transform_translateY_effect\":{\"unit\":\"px\",\"size\":\"45\",\"sizes\":[]},\"__globals__\":{\"typography_typography\":\"globals\\/typography?id=7bb9790\",\"button_text_color\":\"globals\\/colors?id=bfca241\",\"background_color\":\"globals\\/colors?id=accent\"},\"align\":\"center\",\"_transform_translateX_effect_mobile\":{\"unit\":\"px\",\"size\":\"80\",\"sizes\":[]},\"_transform_translateY_effect_mobile\":{\"unit\":\"px\",\"size\":\"40\",\"sizes\":[]}},\"elements\":[],\"widgetType\":\"button\"},{\"id\":\"7b106ea\",\"elType\":\"widget\",\"settings\":{\"image\":{\"id\":\"1275\",\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/how-it-works-01.png\"},\"image_box_shadow_box_shadow_type\":\"yes\",\"image_box_shadow_box_shadow\":{\"horizontal\":\"0\",\"vertical\":\"10\",\"blur\":\"40\",\"spread\":\"0\",\"color\":\"rgba(61.999999999999815, 54.99999999999995, 177.99999999999994, 0.25)\"},\"width_tablet\":{\"unit\":\"px\",\"size\":\"75\",\"sizes\":[]},\"width_mobile\":{\"unit\":\"px\",\"size\":\"85\",\"sizes\":[]},\"image_border_radius\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"1\"},\"_margin\":{\"unit\":\"px\",\"top\":\"-6\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_mobile\":{\"unit\":\"px\",\"top\":\"-5\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_element_width\":\"auto\"},\"elements\":[],\"widgetType\":\"image\"},{\"id\":\"6348ebfc\",\"elType\":\"widget\",\"settings\":{\"image\":{\"url\":\"\",\"id\":\"\",\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"title_text\":\"Explosion de votre productivit\\u00e9\",\"description_text\":\"Avec tout en place, il ne vous reste plus qu'\\u00e0 observer votre productivit\\u00e9 s'envoler.\",\"image_space\":{\"unit\":\"px\",\"size\":\"0\",\"sizes\":[]},\"_element_custom_width\":{\"unit\":\"%\",\"size\":\"33\",\"sizes\":[]},\"title_bottom_space\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"title_typography_typography\":\"custom\",\"title_typography_font_size\":{\"unit\":\"px\",\"size\":30,\"sizes\":[]},\"_margin\":{\"unit\":\"em\",\"top\":\"1\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":\"\"},\"_margin_tablet\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"},\"_margin_mobile\":{\"unit\":\"em\",\"top\":\"\",\"right\":\"\",\"bottom\":\"\",\"left\":\"\",\"isLinked\":\"1\"}},\"elements\":[],\"widgetType\":\"image-box\"}],\"isInner\":\"1\"}],\"isInner\":\"1\"}],\"isInner\":\"\"}],\"isInner\":\"\"}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=etapes",
+  "generated_slug": "etapes",
+  "class_list": [
+    "post-3403",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/5"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 3405,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403/revisions/3405"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=3403"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3403"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": 1705,
+  "date": "2023-09-07T16:08:33",
+  "date_gmt": "2023-09-07T14:08:33",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=menu_ordi-2",
+    "raw": "https://www.helloharel.com/?elementor_library=menu_ordi-2"
+  },
+  "modified": "2023-09-07T16:08:33",
+  "modified_gmt": "2023-09-07T14:08:33",
+  "password": "",
+  "slug": "menu_ordi-2",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=menu_ordi-2",
+  "title": {
+    "raw": "MENU_ORDI",
+    "rendered": "MENU_ORDI"
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "widget",
+    "_elementor_data": "[{\"id\":\"4208a56\",\"elType\":\"widget\",\"settings\":{\"align_items\":\"center\",\"pointer\":\"background\",\"animation_background\":\"sweep-left\",\"submenu_icon\":{\"value\":\"fas fa-chevron-down\",\"library\":\"fa-solid\"},\"full_width\":\"stretch\",\"toggle_align\":\"right\",\"padding_horizontal_menu_item\":{\"unit\":\"px\",\"size\":\"16\",\"sizes\":[]},\"padding_vertical_menu_item\":{\"unit\":\"px\",\"size\":\"4\",\"sizes\":[]},\"menu_space_between\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"border_radius_menu_item\":{\"unit\":\"px\",\"size\":\"6\",\"sizes\":[]},\"dropdown_border_border\":\"solid\",\"dropdown_border_width\":{\"unit\":\"px\",\"top\":\"16\",\"right\":\"16\",\"bottom\":\"16\",\"left\":\"16\",\"isLinked\":\"\"},\"dropdown_border_radius\":{\"unit\":\"px\",\"top\":\"8\",\"right\":\"8\",\"bottom\":\"8\",\"left\":\"8\",\"isLinked\":\"1\"},\"padding_horizontal_dropdown_item\":{\"unit\":\"px\",\"size\":\"30\",\"sizes\":[]},\"dropdown_top_distance\":{\"unit\":\"px\",\"size\":\"10\",\"sizes\":[]},\"toggle_size_tablet\":{\"unit\":\"px\",\"size\":\"34\",\"sizes\":[]},\"toggle_size_mobile\":{\"unit\":\"px\",\"size\":\"32\",\"sizes\":[]},\"toggle_border_radius_tablet\":{\"unit\":\"px\",\"size\":\"8\",\"sizes\":[]},\"__globals__\":{\"color_menu_item\":\"globals\\/colors?id=bfca241\",\"menu_typography_typography\":\"globals\\/typography?id=text\",\"color_menu_item_hover_pointer_bg\":\"globals\\/colors?id=bfca241\",\"pointer_color_menu_item_hover\":\"globals\\/colors?id=6d40487\",\"color_menu_item_active\":\"globals\\/colors?id=bfca241\",\"pointer_color_menu_item_active\":\"globals\\/colors?id=6d40487\",\"dropdown_border_color\":\"globals\\/colors?id=bfca241\",\"color_dropdown_item\":\"globals\\/colors?id=text\",\"background_color_dropdown_item\":\"globals\\/colors?id=bfca241\",\"dropdown_typography_typography\":\"globals\\/typography?id=text\",\"color_dropdown_item_hover\":\"globals\\/colors?id=accent\",\"background_color_dropdown_item_hover\":\"globals\\/colors?id=2ac0027\",\"color_dropdown_item_active\":\"globals\\/colors?id=accent\",\"background_color_dropdown_item_active\":\"globals\\/colors?id=2ac0027\",\"toggle_color\":\"globals\\/colors?id=bfca241\",\"toggle_background_color\":\"globals\\/colors?id=6d40487\",\"toggle_color_hover\":\"globals\\/colors?id=primary\",\"toggle_background_color_hover\":\"globals\\/colors?id=6d40487\"},\"menu\":\"header-menu\"},\"elements\":[],\"widgetType\":\"nav-menu\"}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=menu_ordi-2",
+  "generated_slug": "menu_ordi-2",
+  "class_list": [
+    "post-1705",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1707,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705/revisions/1707"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=1705"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1705"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

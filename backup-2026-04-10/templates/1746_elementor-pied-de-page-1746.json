@@ -1,0 +1,112 @@
+{
+  "id": 1746,
+  "date": "2023-09-07T16:40:18",
+  "date_gmt": "2023-09-07T14:40:18",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?post_type=elementor_library&#038;p=1746",
+    "raw": "https://www.helloharel.com/?post_type=elementor_library&#038;p=1746"
+  },
+  "modified": "2026-03-31T16:20:40",
+  "modified_gmt": "2026-03-31T14:20:40",
+  "password": "",
+  "slug": "elementor-pied-de-page-1746",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=elementor-pied-de-page-1746",
+  "title": {
+    "raw": "Elementor Pied de page #1746",
+    "rendered": "Elementor Pied de page #1746"
+  },
+  "author": 2,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "footer",
+    "_elementor_data": "[{\"id\":\"1f2c490b\",\"elType\":\"section\",\"settings\":{\"gap\":\"no\",\"background_background\":\"classic\",\"background_overlay_background\":\"classic\",\"background_overlay_image\":{\"id\":\"1035\",\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/08\\/bg-gradient-blur-v3.png\"},\"background_overlay_position\":\"top right\",\"background_overlay_xpos\":{\"unit\":\"%\",\"size\":\"100\",\"sizes\":[]},\"background_overlay_xpos_tablet\":{\"unit\":\"%\",\"size\":\"0\",\"sizes\":[]},\"background_overlay_xpos_mobile\":{\"unit\":\"%\",\"size\":\"0\",\"sizes\":[]},\"background_overlay_ypos\":{\"unit\":\"px\",\"size\":\"25\",\"sizes\":[]},\"background_overlay_attachment\":\"scroll\",\"background_overlay_repeat\":\"no-repeat\",\"background_overlay_opacity\":{\"unit\":\"px\",\"size\":\"1\",\"sizes\":[]},\"padding\":{\"unit\":\"em\",\"top\":\"2\",\"right\":\"0\",\"bottom\":\"4\",\"left\":\"0\",\"isLinked\":\"\"},\"padding_tablet\":{\"unit\":\"em\",\"top\":\"5\",\"right\":\"1.5\",\"bottom\":\"1.5\",\"left\":\"1.5\",\"isLinked\":\"\"},\"padding_mobile\":{\"unit\":\"em\",\"top\":\"4\",\"right\":\"2\",\"bottom\":\"1.5\",\"left\":\"2\",\"isLinked\":\"\"},\"__globals__\":{\"background_color\":\"globals\\/colors?id=text\"},\"margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":0,\"bottom\":\"0\",\"left\":0,\"isLinked\":false}},\"elements\":[{\"id\":\"4d820461\",\"elType\":\"column\",\"settings\":{\"_column_size\":\"100\"},\"elements\":[{\"id\":\"2c9c43bc\",\"elType\":\"section\",\"settings\":{\"gap\":\"no\",\"structure\":\"40\",\"margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":0,\"bottom\":\"0\",\"left\":0,\"isLinked\":true},\"padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true}},\"elements\":[{\"id\":\"656edde9\",\"elType\":\"column\",\"settings\":{\"_column_size\":25,\"_inline_size\":null,\"_inline_size_tablet\":\"28\",\"margin_mobile\":{\"unit\":\"em\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"1.5\",\"left\":\"0\",\"isLinked\":\"\"}},\"elements\":[{\"id\":\"9c978c2\",\"elType\":\"widget\",\"settings\":{\"image\":{\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2019\\/05\\/hello-harel-logo-white.svg\",\"id\":132,\"size\":\"\",\"alt\":\"hello-harel-logo-white\",\"source\":\"library\"},\"align\":\"left\",\"width\":{\"unit\":\"%\",\"size\":70,\"sizes\":[]},\"image_border_radius\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"css_filters_brightness\":{\"unit\":\"px\",\"size\":200,\"sizes\":[]},\"css_filters_contrast\":{\"unit\":\"px\",\"size\":0,\"sizes\":[]},\"_padding\":{\"unit\":\"px\",\"top\":\"30\",\"right\":\"30\",\"bottom\":\"30\",\"left\":\"0\",\"isLinked\":false}},\"elements\":[],\"widgetType\":\"image\"},{\"id\":\"93b12d9\",\"elType\":\"widget\",\"settings\":{\"social_icon_list\":[{\"social_icon\":{\"value\":\"fab fa-linkedin\",\"library\":\"fa-brands\"},\"_id\":\"4fbf6aa\",\"link\":{\"url\":\"https:\\/\\/www.linkedin.com\\/company\\/26042947\\/\",\"is_external\":\"true\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"item_icon_color\":\"custom\",\"__globals__\":{\"item_icon_primary_color\":\"globals\\/colors?id=6d40487\",\"item_icon_secondary_color\":\"globals\\/colors?id=primary\"}},{\"social_icon\":{\"value\":\"fab fa-youtube\",\"library\":\"fa-brands\"},\"_id\":\"9a5da8b\",\"link\":{\"url\":\"https:\\/\\/www.youtube.com\\/@HelloHarel\",\"is_external\":\"true\",\"nofollow\":\"\",\"custom_attributes\":\"\"},\"item_icon_color\":\"custom\",\"__globals__\":{\"item_icon_primary_color\":\"globals\\/colors?id=6d40487\"}}],\"align\":\"left\",\"_flex_align_self\":\"flex-start\"},\"elements\":[],\"widgetType\":\"social-icons\"},{\"id\":\"c96fcca\",\"elType\":\"widget\",\"settings\":{\"editor\":\"<p>Hello Harel est un ERP SAAS pour l'industrie de l'agroalimentaire. Ce logiciel vous permet de g\\u00e9rer l'ensemble de votre entreprise. De la gestion des stocks \\u00e0 la gestion des achats en passant par la gestion relation client.<\\/p>\",\"column_gap\":{\"unit\":\"px\",\"size\":0,\"sizes\":[]},\"__globals__\":{\"text_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[],\"widgetType\":\"text-editor\"}],\"isInner\":\"1\"},{\"id\":\"400ec8b\",\"elType\":\"column\",\"settings\":{\"_column_size\":25,\"_inline_size\":null},\"elements\":[{\"id\":\"a881cf9\",\"elType\":\"widget\",\"settings\":{\"title\":\"Fonctionnalit\\u00e9s\",\"header_size\":\"span\",\"_margin\":{\"unit\":\"px\",\"top\":\"20\",\"right\":\"20\",\"bottom\":\"20\",\"left\":\"20\",\"isLinked\":true},\"typography_typography\":\"custom\",\"typography_font_weight\":\"700\",\"__globals__\":{\"title_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"6026fd1\",\"elType\":\"widget\",\"settings\":{\"menu\":\"fonctions\",\"dropdown\":\"none\",\"menu_name\":\"Menu\",\"layout\":\"vertical\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"_padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"__globals__\":{\"color_menu_item\":\"globals\\/colors?id=primary\"}},\"elements\":[],\"widgetType\":\"nav-menu\"}],\"isInner\":true},{\"id\":\"70ea8ea\",\"elType\":\"column\",\"settings\":{\"_column_size\":25,\"_inline_size\":null},\"elements\":[{\"id\":\"a5ae21b\",\"elType\":\"widget\",\"settings\":{\"title\":\"Industries\",\"header_size\":\"span\",\"_margin\":{\"unit\":\"px\",\"top\":\"20\",\"right\":\"20\",\"bottom\":\"20\",\"left\":\"20\",\"isLinked\":true},\"typography_typography\":\"custom\",\"typography_font_weight\":\"700\",\"__globals__\":{\"title_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"b83440e\",\"elType\":\"widget\",\"settings\":{\"menu\":\"industries\",\"dropdown\":\"none\",\"menu_name\":\"Menu\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"_padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"__globals__\":{\"color_menu_item\":\"globals\\/colors?id=primary\"}},\"elements\":[],\"widgetType\":\"nav-menu\"}],\"isInner\":true},{\"id\":\"7a2b083\",\"elType\":\"column\",\"settings\":{\"_column_size\":25,\"_inline_size\":null,\"_inline_size_tablet\":\"28\",\"margin_mobile\":{\"unit\":\"em\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"1.5\",\"left\":\"0\",\"isLinked\":\"\"}},\"elements\":[{\"id\":\"1540293\",\"elType\":\"widget\",\"settings\":{\"title\":\"Informations\",\"header_size\":\"span\",\"_margin\":{\"unit\":\"px\",\"top\":\"20\",\"right\":\"20\",\"bottom\":\"20\",\"left\":\"20\",\"isLinked\":true},\"typography_typography\":\"custom\",\"typography_font_weight\":\"700\",\"__globals__\":{\"title_color\":\"globals\\/colors?id=bfca241\"}},\"elements\":[],\"widgetType\":\"heading\"},{\"id\":\"9be297e\",\"elType\":\"widget\",\"settings\":{\"menu\":\"footer-menu\",\"layout\":\"vertical\",\"align_items\":\"left\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"_padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"dropdown\":\"none\",\"menu_name\":\"Menu\",\"__globals__\":{\"color_menu_item\":\"globals\\/colors?id=primary\"}},\"elements\":[],\"widgetType\":\"nav-menu\"}],\"isInner\":true}],\"isInner\":\"1\"}],\"isInner\":\"\"}],\"isInner\":\"\"},{\"id\":\"9d34177\",\"elType\":\"container\",\"settings\":{\"flex_direction\":\"row\",\"background_background\":\"classic\",\"background_color\":\"#5F5F5F\",\"margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true}},\"elements\":[{\"id\":\"34fc110\",\"elType\":\"widget\",\"settings\":{\"menu\":\"footer-juridique\",\"align_items\":\"end\",\"_margin\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"_padding\":{\"unit\":\"px\",\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\",\"isLinked\":true},\"dropdown\":\"none\",\"menu_name\":\"Menu\",\"__globals__\":{\"color_menu_item\":\"globals\\/colors?id=primary\"},\"menu_typography_typography\":\"custom\",\"menu_typography_font_size\":{\"unit\":\"px\",\"size\":13,\"sizes\":[]},\"_flex_align_self\":\"center\",\"_flex_order\":\"end\",\"_flex_size\":\"grow\"},\"elements\":[],\"widgetType\":\"nav-menu\"}],\"isInner\":false}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": [
+      "include/general"
+    ]
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=elementor-pied-de-page-1746",
+  "generated_slug": "elementor-pied-de-page-1746",
+  "class_list": [
+    "post-1746",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 27,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 4937,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746/revisions/4937"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=1746"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/1746"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

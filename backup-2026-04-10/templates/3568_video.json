@@ -1,0 +1,110 @@
+{
+  "id": 3568,
+  "date": "2024-10-03T22:12:47",
+  "date_gmt": "2024-10-03T20:12:47",
+  "guid": {
+    "rendered": "https://www.helloharel.com/?elementor_library=video",
+    "raw": "https://www.helloharel.com/?elementor_library=video"
+  },
+  "modified": "2024-10-07T22:31:37",
+  "modified_gmt": "2024-10-07T20:31:37",
+  "password": "",
+  "slug": "video",
+  "status": "publish",
+  "type": "elementor_library",
+  "link": "https://www.helloharel.com/?elementor_library=video",
+  "title": {
+    "raw": "VIDEO",
+    "rendered": "VIDEO"
+  },
+  "author": 5,
+  "featured_media": 0,
+  "template": "",
+  "meta": {
+    "_elementor_edit_mode": "builder",
+    "_elementor_template_type": "widget",
+    "_elementor_data": "[{\"id\":\"3568\",\"elType\":\"widget\",\"settings\":{\"youtube_url\":\"https:\\/\\/www.youtube.com\\/watch?v=pANFAv6-sJk&ab_channel=Sightfilms\",\"vimeo_url\":\"https:\\/\\/vimeo.com\\/235215203\",\"dailymotion_url\":\"https:\\/\\/www.dailymotion.com\\/video\\/x6tqhqb\",\"hosted_url\":{\"url\":\"https:\\/\\/www.helloharel.com\\/wp-content\\/uploads\\/2023\\/10\\/Hello_Harel_V3_sous_titre.mp4\",\"id\":3547,\"size\":\"\",\"alt\":\"\",\"source\":\"library\"},\"videopress_url\":\"https:\\/\\/videopress.com\\/v\\/ZCAOzTNk\",\"_padding\":{\"unit\":\"px\",\"top\":\"20\",\"right\":\"100\",\"bottom\":\"20\",\"left\":\"100\",\"isLinked\":false},\"_padding_mobile\":{\"unit\":\"px\",\"top\":\"20\",\"right\":\"20\",\"bottom\":\"20\",\"left\":\"20\",\"isLinked\":false},\"autoplay\":\"yes\",\"preload\":\"auto\"},\"elements\":[],\"widgetType\":\"video\"}]",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/?elementor_library=video",
+  "generated_slug": "video",
+  "class_list": [
+    "post-3568",
+    "elementor_library",
+    "type-elementor_library",
+    "status-publish",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/elementor_library"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/5"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 5,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 3697,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568/revisions/3697"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=3568"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/elementor_library/3568"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": 41,
+  "date": "2019-05-17T17:29:02",
+  "date_gmt": "2019-05-17T15:29:02",
+  "guid": {
+    "rendered": "https://clients.creano.paris/hello/?page_id=41",
+    "raw": "https://clients.creano.paris/hello/?page_id=41"
+  },
+  "modified": "2024-11-29T10:18:22",
+  "modified_gmt": "2024-11-29T09:18:22",
+  "password": "",
+  "slug": "conformite-loi-anti-fraude-tva",
+  "status": "publish",
+  "type": "page",
+  "link": "https://www.helloharel.com/conformite-loi-anti-fraude-tva/",
+  "title": {
+    "raw": "Conformité loi anti-fraude TVA",
+    "rendered": "Conformité loi anti-fraude TVA"
+  },
+  "content": {
+    "raw": "",
+    "rendered": "",
+    "protected": false,
+    "block_version": 0
+  },
+  "excerpt": {
+    "raw": "",
+    "rendered": "",
+    "protected": false
+  },
+  "author": 2,
+  "featured_media": 1002,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_header_footer",
+  "meta": {
+    "footnotes": "",
+    "_elementor_edit_mode": "",
+    "_elementor_template_type": "",
+    "_elementor_data": "",
+    "_elementor_page_settings": null,
+    "_elementor_conditions": []
+  },
+  "permalink_template": "https://www.helloharel.com/%pagename%/",
+  "generated_slug": "conformite-loi-anti-fraude-tva",
+  "class_list": [
+    "post-41",
+    "page",
+    "type-page",
+    "status-publish",
+    "has-post-thumbnail",
+    "hentry"
+  ],
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/users/2"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/comments?post=41"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 2,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 136,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41/revisions/136"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media/1002"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/media?parent=41"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/pages/41"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

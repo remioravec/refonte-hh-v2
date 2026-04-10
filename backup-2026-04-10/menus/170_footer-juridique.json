@@ -1,0 +1,268 @@
+{
+  "id": 170,
+  "description": "",
+  "name": "Footer-Juridique",
+  "slug": "footer-juridique",
+  "meta": [],
+  "locations": [],
+  "auto_add": false,
+  "_links": {
+    "self": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus/170",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menus"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/taxonomies/nav_menu"
+      }
+    ],
+    "wp:post_type": [
+      {
+        "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items?menus=170"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": 4930,
+      "title": {
+        "rendered": "Mentions légales"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/mentions-legales/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 193,
+      "parent": 0,
+      "menu_order": 1,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 170,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/4930",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=4930"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/193"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 4928,
+      "title": {
+        "rendered": "Politique de confidentialité"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/politique-de-confidentialite/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page de politique de confidentialité",
+      "object": "page",
+      "object_id": 3,
+      "parent": 0,
+      "menu_order": 2,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 170,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/4928",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=4928"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/3"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 4929,
+      "title": {
+        "rendered": "Conditions générales d’utilisation"
+      },
+      "status": "publish",
+      "url": "https://www.helloharel.com/cgu/",
+      "attr_title": "",
+      "description": "",
+      "type": "post_type",
+      "type_label": "Page",
+      "object": "page",
+      "object_id": 196,
+      "parent": 0,
+      "menu_order": 3,
+      "target": "",
+      "classes": [
+        ""
+      ],
+      "xfn": [
+        ""
+      ],
+      "invalid": false,
+      "meta": [],
+      "menus": 170,
+      "_links": {
+        "self": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items/4929",
+            "targetHints": {
+              "allow": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menu-items"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://www.helloharel.com/wp-json/wp/v2/types/nav_menu_item"
+          }
+        ],
+        "wp:term": [
+          {
+            "taxonomy": "nav_menu",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/menus?post=4929"
+          }
+        ],
+        "wp:menu-item-object": [
+          {
+            "post_type": "page",
+            "embeddable": true,
+            "href": "https://www.helloharel.com/wp-json/wp/v2/pages/196"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      }
+    }
+  ]
+}
