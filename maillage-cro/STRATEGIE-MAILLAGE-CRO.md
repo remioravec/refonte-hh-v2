@@ -96,7 +96,23 @@ Le toolkit a été exécuté en production via `apply.py --live` :
 - **Vérification** : échantillon de 12 articles → HTTP 200 + outil/CTA rendus ;
   pages money 200 ; liens insérés résolvent en 200 (aucun 404 créé).
 - **Points de restauration** : `backup-live-<ts>/` (objet complet pré‑modif par
-  article). Rollback : `python3 restore.py backup-live-<ts> --live`.
+  article). Rollback complet vers l'original :
+  `python3 restore.py backup-live-20260529-223414 --live` (97 articles)
+  puis `python3 restore.py backup-live-20260529-223301 --live` (2 articles pilote).
+
+### Santé globale post‑déploiement
+Balayage des 99 articles (cache‑buster) : **98/99 sains** (HTTP 200 + outil/CTA
+rendus + marqueurs équilibrés).
+
+⚠️ **1 anomalie PRÉEXISTANTE, non liée à ce déploiement** :
+`/blog/logiciel-maree-mareyeur/` (post id 5910) renvoie **404 côté front**, y
+compris via `/?p=5910` (qui contourne les permaliens) et avec `x-cache: MISS`.
+Le post est pourtant `publish` et son contenu est intact (7/7 marqueurs, `<main>`
++ `<footer>` présents). Un 404 est une décision de **routage** antérieure au
+rendu : l'injection (bornée à `<main>`) ne peut pas en être la cause.
+**À corriger en admin WP** : re‑sauvegarder Réglages > Permaliens (flush des
+rewrite rules), et vérifier une éventuelle condition Elementor / règle de
+redirection (plugin SEO/sécurité) sur ce post.
 
 ### ⚠️ Action manuelle : purger le cache
 Les changements sont en base immédiatement (REST), mais le **cache page/CDN**
