@@ -1,0 +1,501 @@
+{
+ "mode": "live",
+ "count": 99,
+ "items": [
+  {
+   "slug": "tracabilite-viande-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "calcul-freinte-charcuterie-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "gestion-decoupe-viande-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-gestion-calibre-fruits-legumes",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-prix-du-jour-fruits-legumes",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-tracabilite-dlc-traiteur",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-calcul-cout-de-revient-traiteur",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-commande-grande-surface-traiteur",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-gestion-recette-multi-niveaux-traiteur",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "gestion-stock-multi-entrepots",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "alternatives-copilote-traiteur",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "alternatives-silog-agroalimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "alternatives-divalto-agroalimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "alternatives-sage-agroalimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "hello-harel-vs-sage",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "hello-harel-vs-odoo",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "hello-harel-vs-silog",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "hello-harel-vs-divalto",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "remplacer-excel-gestion-agroalimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "alternatives-cegid-distribution-alimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "alternatives-odoo-agroalimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "calcul-cout-de-revient-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-grossiste-alimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "erp-boissons",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "factur-x-e-facturation-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-televente-alimentaire",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "tracabilite-lot-dlc-logiciel",
+   "status": "stripped",
+   "blocks": 2
+  },
+  {
+   "slug": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "erp-cloud-saas-vs-on-premise",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "logiciel-maree-mareyeur",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "alternative-cegid",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-viande-volaille",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "alternative-sage-erp",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "alternative-akanea-erp",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "meilleurs-erp-gestion-approvisionnements",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "meilleurs-erp-import-export",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "meilleurs-erp-maraichers-fruits-legumes",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "alternative-archipelia",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "alternative-vif-erp",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-decoupe-viande-poisson",
+   "status": "stripped",
+   "blocks": 6
+  },
+  {
+   "slug": "erp-conformite-agroalimentaire",
+   "status": "stripped",
+   "blocks": 6
+  },
+  {
+   "slug": "migration-erp-agroalimentaire",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "integrateur-erp-lyon",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "integrateur-erp-paris",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "cuisine-centrale",
+   "status": "stripped",
+   "blocks": 12
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "stripped",
+   "blocks": 12
+  },
+  {
+   "slug": "partenariat-toncarton",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-saas",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "difference-prix-dachat-et-prix-de-revient",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "prix-dachat-definition",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "gestion-automatisee-des-variations-de-stock",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "variation-de-stock-positif-negatif",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "enregistrement-comptable-variation-de-stock",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "meilleurs-erp-boulangerie",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "erp-agroalimentaire",
+   "status": "stripped",
+   "blocks": 6
+  },
+  {
+   "slug": "erp-pme",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "reapprovisionnement-stocks",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "opc-ua",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "ordonnancement-planification",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-saas-cloud",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "min",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "dlc-ddm-dluo",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-grossiste-distributeur",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "agreage-agroalimentaire",
+   "status": "stripped",
+   "blocks": 6
+  },
+  {
+   "slug": "processus-agroalimentaire-guide",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "conditionnement-alimentaire-erp",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "erp-tracabilite-agroalimentaire",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "alerte-stock-securite",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "gestion-des-inventaires",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "relance-client",
+   "status": "stripped",
+   "blocks": 16
+  },
+  {
+   "slug": "roi-erp",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "kpi-qualite-agroalimentaire",
+   "status": "stripped",
+   "blocks": 11
+  },
+  {
+   "slug": "plan-de-controle-alimentaire",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "cout-prix-au-kilo",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "cout-marginal",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "calcul-du-cout-achat",
+   "status": "stripped",
+   "blocks": 12
+  },
+  {
+   "slug": "cout-de-revient",
+   "status": "stripped",
+   "blocks": 10
+  },
+  {
+   "slug": "couts-de-production",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "alerte-date-peremption",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "calcul-stock-moyen",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "erp-as400",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "bon-de-commande-traiteur",
+   "status": "stripped",
+   "blocks": 9
+  },
+  {
+   "slug": "facture-traiteur",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "tracabilite-de-la-viande",
+   "status": "stripped",
+   "blocks": 6
+  },
+  {
+   "slug": "calculer-le-prix-de-revient-en-boulangerie",
+   "status": "stripped",
+   "blocks": 8
+  },
+  {
+   "slug": "bon-de-livraison",
+   "status": "stripped",
+   "blocks": 11
+  },
+  {
+   "slug": "bon-de-commande",
+   "status": "stripped",
+   "blocks": 30
+  },
+  {
+   "slug": "maitriser-la-gestion-des-stocks",
+   "status": "stripped",
+   "blocks": 37
+  },
+  {
+   "slug": "optimisation-entrepot",
+   "status": "stripped",
+   "blocks": 28
+  },
+  {
+   "slug": "numeros-de-lot",
+   "status": "stripped",
+   "blocks": 31
+  },
+  {
+   "slug": "ordre-de-fabrication",
+   "status": "stripped",
+   "blocks": 15
+  },
+  {
+   "slug": "calcul-variations-de-stock",
+   "status": "stripped",
+   "blocks": 24
+  },
+  {
+   "slug": "calcul-stock-de-securite",
+   "status": "stripped",
+   "blocks": 20
+  },
+  {
+   "slug": "calcul-du-prix-moyen",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "facture-exacompta",
+   "status": "stripped",
+   "blocks": 13
+  },
+  {
+   "slug": "contraintes-reglementations-logiciel-agroalimentaire",
+   "status": "stripped",
+   "blocks": 7
+  },
+  {
+   "slug": "fifo-fefo-lifo",
+   "status": "stripped",
+   "blocks": 9
+  }
+ ]
+}

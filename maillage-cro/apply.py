@@ -132,8 +132,19 @@ def transform(raw, slug, title):
                  "up": len(up), "lateral": len(lat), "delta": len(out) - len(raw)}
 
 
+def strip_only(raw):
+    """Remove all HH-CRO blocks; return (new_raw, removed_count) or (None, reason)."""
+    new = STRIP_RE.sub("", raw)
+    for token, label in [(MAIN_RE, "main"), (re.compile(r'<footer', re.I), "footer"),
+                         (re.compile(r'<h1', re.I), "h1")]:
+        if len(token.findall(new)) != len(token.findall(raw)):
+            return None, f"guard failed: {label}"
+    return new, raw.count("<!-- HH-CRO:START -->")
+
+
 def main():
     live = "--live" in sys.argv
+    strip = "--strip" in sys.argv
     slugs = None
     if "--slugs" in sys.argv:
         i = sys.argv.index("--slugs")
@@ -149,13 +160,28 @@ def main():
     os.makedirs(bdir if live else pdir, exist_ok=True)
 
     log = []
-    print(f"Mode: {'LIVE WRITE' if live else 'DRY-RUN'} | posts: {len(posts)}")
+    mode = ("STRIP " if strip else "") + ("LIVE WRITE" if live else "DRY-RUN")
+    print(f"Mode: {mode} | posts: {len(posts)}")
     for x in posts:
         slug = C.slug_of(x["path"])
         title = x.get("title") or slug
         # Always work from FRESH content at apply time
         full = wp.get_raw("posts", x["id"])
         raw = (full.get("content") or {}).get("raw", "") or ""
+        if strip:
+            new_raw, info = strip_only(raw)
+            if new_raw is None:
+                print(f"  SKIP {slug}: {info}"); log.append({"slug": slug, "status": "skip", "reason": info}); continue
+            if info == 0:
+                log.append({"slug": slug, "status": "noop"}); continue
+            if live:
+                wp.update_content("posts", x["id"], new_raw, live=True)
+                print(f"  STRIPPED {slug}: -{info} blocks")
+                log.append({"slug": slug, "status": "stripped", "blocks": info})
+            else:
+                print(f"  dry strip {slug}: -{info} blocks")
+                log.append({"slug": slug, "status": "dry-strip", "blocks": info})
+            continue
         new_raw, stats = transform(raw, slug, title)
         if new_raw is None:
             print(f"  SKIP {slug}: {stats}")
