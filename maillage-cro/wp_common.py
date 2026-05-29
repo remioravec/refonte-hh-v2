@@ -71,8 +71,8 @@ def get_all(kind, fields="id,slug,link,title,status", per_page=50, status="publi
 
 
 def get_raw(kind, item_id):
-    """Fetch a single item with edit context (raw content + meta)."""
-    return api(f"{kind}/{item_id}?context=edit&_fields=id,slug,link,title,content,meta")
+    """Fetch a single item with edit context (raw content + meta + date)."""
+    return api(f"{kind}/{item_id}?context=edit&_fields=id,slug,link,title,content,meta,date")
 
 
 def update_content(kind, item_id, new_content, live=False):
