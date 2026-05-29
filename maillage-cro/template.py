@@ -49,13 +49,30 @@ STRIP_HHCRO = re.compile(r"\s*<!-- HH-CRO:START -->.*?<!-- HH-CRO:END -->", re.S
 MONTHS = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet",
           "août", "septembre", "octobre", "novembre", "décembre"]
 
-# Known author photos + bios (article bios only carry the default gravatar).
-AUTHOR_PHOTO = {
-    "timothy jollivet": "https://www.helloharel.com/wp-content/uploads/2024/10/Timothy-Jolliver-President-de-Hello-Harel.jpeg",
+# Authors resolved reliably by WordPress user id (the article HTML only carries
+# the default gravatar, so we never trust the markup for the photo).
+AUTHOR_BY_ID = {
+    2: {"name": "Timothy Jollivet",
+        "role": "Président de Hello Harel · Expert ERP agroalimentaire depuis 2014",
+        "photo": "https://www.helloharel.com/wp-content/uploads/2024/10/Timothy-Jolliver-President-de-Hello-Harel.jpeg"},
+    5: {"name": "Rémi Oravec", "role": "Hello Harel · ERP agroalimentaire", "photo": ""},
+    6: {"name": "Maxime Corteel", "role": "Hello Harel · ERP agroalimentaire", "photo": ""},
 }
-AUTHOR_ROLE = {
-    "timothy jollivet": "Président de Hello Harel · Expert ERP agroalimentaire depuis 2014",
-}
+DEFAULT_AUTHOR = AUTHOR_BY_ID[2]
+
+# Footer (Elementor footer isn't rendered on single posts by the theme, so we
+# ship a faithful one inside the template; the site header stays visible).
+FOOTER_NAV = [
+    ("Accueil", "/"), ("ERP agroalimentaire", "/agroalimentaire/"),
+    ("Fonctionnalités", "/fonctionnalites/"), ("Négoce", "/negoce/"),
+    ("Comparatifs", "/comparatifs/"), ("Blog", "/blog/"),
+    ("Tarifs", "/tarifs/"), ("Qui sommes-nous", "/qui-sommes-nous/"),
+    ("Contact", "/contact/"),
+]
+FOOTER_LEGAL = [
+    ("Mentions légales", "/mentions-legales/"), ("CGU", "/cgu/"),
+    ("Politique de confidentialité", "/politique-de-confidentialite/"),
+]
 
 CLUSTER_LABEL = {
     "stock": "Gestion de stock", "couts": "Coût de revient", "tracabilite": "Traçabilité & qualité",
@@ -100,30 +117,6 @@ def extract(raw):
     m = re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.S)
     title = txt(m.group(1)) if m else ""
 
-    block = ""
-    am = re.search(r'<div class="article-author">(.*?)</div>\s*</div>', raw, re.S)
-    if am:
-        block = am.group(1)
-        name = re.search(r'article-author-name">(.*?)<', block)
-        role = re.search(r'article-author-role">(.*?)<', block)
-    else:
-        am = re.search(r'<div class="hha-bio-txt">(.*?)</div>', raw, re.S)
-        block = am.group(1) if am else ""
-        name = re.search(r'class="hha-bio-name">(.*?)<', block)
-        role = re.search(r'class="hha-bio-role">(.*?)<', block)
-    mv = re.search(r'<img[^>]+src="([^"]+)"', block) if block else None
-    name = txt(name.group(1)) if name else "Hello Harel"
-    role = txt(role.group(1)) if role else "Expert ERP agroalimentaire"
-    avatar = mv.group(1) if mv else ""
-    if avatar and ("d=mp" in avatar or "d=blank" in avatar or "gravatar.com" in avatar):
-        avatar = ""
-    # Prefer a known real author photo / role over the default gravatar.
-    key = name.strip().lower()
-    if key in AUTHOR_PHOTO:
-        avatar = AUTHOR_PHOTO[key]
-    if key in AUTHOR_ROLE:
-        role = AUTHOR_ROLE[key]
-
     # Editorial body: prefer the original <main>, else a prior templated <article>
     mo = MAIN_OPEN.search(raw)
     if mo:
@@ -155,7 +148,7 @@ def extract(raw):
         return tag
 
     body = re.sub(r"<h2[^>]*>(.*?)</h2>", ensure_id, body, flags=re.S)
-    return {"title": title, "name": name, "role": role, "avatar": avatar, "body": body, "toc": toc}
+    return {"title": title, "body": body, "toc": toc}
 
 
 # Self-contained, scoped styles. No global selectors -> no conflict, no chrome hiding.
@@ -265,6 +258,16 @@ box-shadow:0 8px 20px rgba(2,88,127,.3)}.hha-btn:hover{filter:brightness(1.08)}.
 .hha-toast{position:fixed;bottom:24px;right:24px;background:#0f172a;color:#fff;font-size:.85rem;border-radius:12px;
 padding:12px 16px;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:translateY(120px);opacity:0;
 transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:1}
+.hha-foot{background:#0D2B44;color:#cbd5e1;margin-top:48px}
+.hha-foot-in{max-width:1180px;margin:0 auto;padding:40px 20px 28px}
+.hha-foot-brand{font-weight:800;color:#fff;font-size:1.15rem;letter-spacing:-.01em}
+.hha-foot-tag{color:#94a3b8;font-size:.85rem;margin:6px 0 20px;max-width:46ch}
+.hha-foot-nav{display:flex;flex-wrap:wrap;gap:10px 22px;padding-bottom:20px;border-bottom:1px solid #1e3147}
+.hha-foot-nav a{color:#cbd5e1;text-decoration:none;font-size:.9rem}.hha-foot-nav a:hover{color:#fff}
+.hha-foot-bot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-top:18px}
+.hha-foot-legal{display:flex;flex-wrap:wrap;gap:8px 16px}
+.hha-foot-legal a{color:#94a3b8;text-decoration:none;font-size:.8rem}.hha-foot-legal a:hover{color:#fff}
+.hha-foot-cp{color:#64748b;font-size:.78rem}
 @media(min-width:1024px){
 .hha-grid{grid-template-columns:minmax(0,1fr) 340px;gap:32px}
 .hha-aside{position:sticky;top:24px}
@@ -312,7 +315,7 @@ document.querySelectorAll('.hha-art .faq-btn').forEach(function(b){b.addEventLis
 </script>"""
 
 
-def render(slug, data, date_iso):
+def render(slug, data, date_iso, author_id):
     title = html.escape(data["title"])
     primary, _ = C.cluster_of(slug)
     cat = html.escape(CLUSTER_LABEL.get(primary, "ERP agroalimentaire"))
@@ -320,10 +323,12 @@ def render(slug, data, date_iso):
     explorer, _ev, _cv, decision = cta_targets_for(slug)
     date_fr = fr_date(date_iso)
 
-    if data["avatar"]:
-        av = f'<img src="{data["avatar"]}" alt="{html.escape(data["name"])}" loading="lazy">'
+    author = AUTHOR_BY_ID.get(author_id, DEFAULT_AUTHOR)
+    a_name, a_role, a_photo = author["name"], author["role"], author["photo"]
+    if a_photo:
+        av = f'<img src="{a_photo}" alt="{html.escape(a_name)}" loading="lazy">'
     else:
-        av = initials(data["name"])
+        av = initials(a_name)
 
     toc = "\n".join(f'<a href="#{hid}">{html.escape(t)}</a>' for hid, t in data["toc"]) or \
         '<span style="font-size:.85rem;color:#94a3b8">—</span>'
@@ -336,6 +341,9 @@ def render(slug, data, date_iso):
                f'<nav>{items}</nav></div>')
 
     meta = f'<span class="hha-bio-meta">• Publié le {date_fr}</span>' if date_fr else ""
+    foot_nav = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_NAV)
+    foot_legal = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_LEGAL)
+    year = datetime.datetime.now().year
 
     body = f"""<!-- wp:html -->
 {CSS}
@@ -349,8 +357,8 @@ def render(slug, data, date_iso):
     <div class="hha-bio">
       <div class="hha-bio-av">{av}</div>
       <div class="hha-bio-txt">
-        <div><span class="hha-bio-name">{html.escape(data['name'])}</span>{meta}</div>
-        <div class="hha-bio-role">{html.escape(data['role'])}</div>
+        <div><span class="hha-bio-name">{html.escape(a_name)}</span>{meta}</div>
+        <div class="hha-bio-role">{html.escape(a_role)}</div>
       </div>
     </div>
   </div>
@@ -393,6 +401,17 @@ def render(slug, data, date_iso):
   </div>
 </div>
 <div class="hha-toast" id="hha-toast"></div>
+<footer class="hha-foot">
+  <div class="hha-foot-in">
+    <div class="hha-foot-brand">Hello Harel</div>
+    <p class="hha-foot-tag">L'ERP cloud spécialisé pour l'agroalimentaire : traçabilité, production, coûts de revient, négoce et conformité.</p>
+    <nav class="hha-foot-nav">{foot_nav}</nav>
+    <div class="hha-foot-bot">
+      <div class="hha-foot-legal">{foot_legal}</div>
+      <div class="hha-foot-cp">© {year} Hello Harel — Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
 </div>
 {JS}
 <!-- /wp:html -->"""
@@ -426,7 +445,7 @@ def main():
             print(f"  SKIP {slug}: extraction failed")
             log.append({"slug": slug, "status": "skip"})
             continue
-        new_raw = render(slug, data, full.get("date", ""))
+        new_raw = render(slug, data, full.get("date", ""), full.get("author"))
         if "hha-tpl" not in new_raw or "<h1" not in new_raw:
             print(f"  SKIP {slug}: guard failed")
             log.append({"slug": slug, "status": "skip-guard"})
