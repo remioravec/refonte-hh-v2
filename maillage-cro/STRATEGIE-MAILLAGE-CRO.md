@@ -84,6 +84,25 @@ Previews navigables dans `preview/<slug>.html`.
    - est **idempotent** (marqueurs `<!-- HH-CRO:* -->` et détection des liens
      existants).
 
+## 6 bis. Statut : APPLIQUÉ EN LIVE (29 mai 2026)
+
+Le toolkit a été exécuté en production via `apply.py --live` :
+
+- **99/99 articles** mis à jour, **0 skip**.
+- Injecté : **617 visuels** inter‑H2, **61 liens montants**, **193 liens latéraux**,
+  + 1 outil interactif et 1 échelle de CTA par article.
+- Injection bornée à `<main class="article-content">` (hero/header/footer intacts).
+- Idempotent : ré‑exécutable sans doublon (marqueurs `<!-- HH-CRO:START/END -->`).
+- **Vérification** : échantillon de 12 articles → HTTP 200 + outil/CTA rendus ;
+  pages money 200 ; liens insérés résolvent en 200 (aucun 404 créé).
+- **Points de restauration** : `backup-live-<ts>/` (objet complet pré‑modif par
+  article). Rollback : `python3 restore.py backup-live-<ts> --live`.
+
+### ⚠️ Action manuelle : purger le cache
+Les changements sont en base immédiatement (REST), mais le **cache page/CDN**
+(WP Rocket / LiteSpeed / Cloudflare) peut servir l'ancienne version. Purger le
+cache pour une prise d'effet immédiate côté visiteurs.
+
 ## 7. Sécurité
 
 - Identifiants lus en **variables d'environnement** (`WP_USER`, `WP_PASS`),
