@@ -8,25 +8,24 @@
 </head><body>
 <h1>Conformité HACCP • Logiciel & Automatisation • Guide</h1>
 <div class="note">Preview DRY-RUN — outil interactif (haut d'article), visuel inter-H2, échelle de CTA. Aucune écriture WordPress.</div>
-<!-- HH-CRO:tool:diagnostic -->
-<section class="hh-tool" data-tool="diagnostic">
+<!-- HH-CRO:tool:haccp -->
+<section class="hh-tool" data-tool="haccp">
   <div class="hh-tool-head">
     <span class="hh-tool-badge">Outil interactif</span>
-    <h2 class="hh-tool-title">Par où commencer ?</h2>
-    <p class="hh-tool-intro">Un mini-diagnostic pour vous orienter vers la ressource la plus utile selon votre situation.</p>
+    <h2 class="hh-tool-title">Évaluez votre conformité en 30 secondes</h2>
+    <p class="hh-tool-intro">HACCP, INCO, traçabilité : mesurez votre niveau de préparation à un contrôle.</p>
   </div>
   <div class="hh-tool-body">
-    <div class="hh-field"><label>Où en êtes-vous sur « Conformité HACCP • Logiciel & Automatisation • Guide » ?</label>
-      <select id="dg_s">
-        <option value="0">Je découvre le sujet</option>
-        <option value="1">Je compare des solutions</option>
-        <option value="2">Je veux mettre en place une solution</option>
-      </select></div>
+    <p style="margin:.2rem 0 1rem;color:#475569;font-size:.9rem">Cochez ce qui est déjà en place :</p>
+    <div id="hc_list"><label class="hh-chk"><input type="checkbox"> Traçabilité par numéro de lot</label><label class="hh-chk"><input type="checkbox"> Gestion DLC/DDM & alertes</label><label class="hh-chk"><input type="checkbox"> Plan de contrôle & enregistrements</label><label class="hh-chk"><input type="checkbox"> Gestion des allergènes / INCO</label><label class="hh-chk"><input type="checkbox"> Procédure de rappel / retrait</label><label class="hh-chk"><input type="checkbox"> Audit-readiness (IFS, BRC, ISO 22000)</label></div>
     <div class="hh-result">
-      <div class="lbl">Prochaine étape recommandée</div>
-      <div class="big" id="dg_out" style="font-size:1.15rem">—</div>
-      <a class="hh-cta" id="dg_cta" href="/contact/">Continuer →</a>
-    </div></div>
+      <div class="lbl">Niveau de préparation conformité</div>
+      <div class="big" id="hc_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="hc_note"></p>
+      <a class="hh-cta" href="/agroalimentaire/">Sécuriser ma conformité avec un ERP →</a>
+    </div>
+    <style>.hh-chk{display:flex;gap:.5rem;align-items:center;font-size:.92rem;color:#334155;margin:.35rem 0}
+    .hh-chk input{width:auto}</style></div>
 </section>
 <style>
 .hh-tool{font-family:'Inter',sans-serif;max-width:760px;margin:1.5rem auto 2.5rem;background:linear-gradient(180deg,#f8fbff,#fff);
@@ -49,12 +48,12 @@ padding:.7rem 1.5rem;border-radius:10px;font-weight:700;text-decoration:none;fon
 @media(max-width:600px){.hh-grid{grid-template-columns:1fr}}
 </style>
 <script>(function(){
-    var map=[['Lisez ce guide en entier, puis explorez nos ressources liées.','/blog/','Voir les ressources →'],
-    ['Comparez Hello Harel aux solutions du marché.','/comparatifs/','Voir le comparatif →'],
-    ['Réservez une démonstration personnalisée.','/contact/','Demander une démo →']];
-    function f(){var i=+document.getElementById('dg_s').value;document.getElementById('dg_out').textContent=map[i][0];
-    var c=document.getElementById('dg_cta');c.href=map[i][1];c.textContent=map[i][2];}
-    document.getElementById('dg_s').addEventListener('change',f);f();})();</script>
+    var box=document.getElementById('hc_list');
+    function f(){var cb=box.querySelectorAll('input'),n=0,t=cb.length;cb.forEach(function(c){if(c.checked)n++});
+    var pct=Math.round(n/t*100);document.getElementById('hc_out').textContent=pct+'% prêt';
+    var msg=pct>=80?'Solide. Un ERP fiabilise et automatise vos preuves.':pct>=40?'À renforcer : centralisez vos enregistrements.':'À risque en cas d\'audit : priorisez la traçabilité.';
+    document.getElementById('hc_note').textContent=n+'/'+t+' éléments en place. '+msg;}
+    box.addEventListener('change',f);f();})();</script>
 
 <h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">🔬 Qu’est-ce que HACCP ?</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
 <!-- HH-CRO:visual:0 -->

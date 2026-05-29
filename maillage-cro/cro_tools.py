@@ -40,6 +40,35 @@ TOOL_REGISTRY = {
     # FEFO / rotation
     "fifo-fefo-lifo": "fefo", "dlc-ddm-dluo": "fefo", "alerte-date-peremption": "fefo",
     "tracabilite-lot-dlc-logiciel": "fefo", "logiciel-tracabilite-dlc-traiteur": "fefo",
+    # Comparateur (alternatives / vs / meilleurs)
+    "alternative-akanea-erp": "compare", "alternative-archipelia": "compare",
+    "alternative-cegid": "compare", "alternative-sage-erp": "compare", "alternative-vif-erp": "compare",
+    "alternatives-cegid-distribution-alimentaire": "compare", "alternatives-copilote-traiteur": "compare",
+    "alternatives-divalto-agroalimentaire": "compare", "alternatives-odoo-agroalimentaire": "compare",
+    "alternatives-sage-agroalimentaire": "compare", "alternatives-silog-agroalimentaire": "compare",
+    "hello-harel-vs-divalto": "compare", "hello-harel-vs-odoo": "compare",
+    "hello-harel-vs-sage": "compare", "hello-harel-vs-silog": "compare",
+    "meilleurs-erp-import-export": "compare", "meilleurs-erp-boulangerie": "compare",
+    "meilleurs-erp-maraichers-fruits-legumes": "compare", "meilleurs-erp-gestion-approvisionnements": "compare",
+    "meilleur-erp-agroalimentaire": "compare",
+    # HACCP / traçabilité / conformité — readiness checklist
+    "conformite-haccp": "haccp", "plan-de-controle-alimentaire": "haccp",
+    "kpi-qualite-agroalimentaire": "haccp", "numeros-de-lot": "haccp",
+    "tracabilite-de-la-viande": "haccp", "tracabilite-viande-logiciel": "haccp",
+    "erp-tracabilite-agroalimentaire": "haccp", "erp-conformite-agroalimentaire": "haccp",
+    "agreage-agroalimentaire": "haccp", "processus-agroalimentaire-guide": "haccp",
+    "contraintes-reglementations-logiciel-agroalimentaire": "haccp", "conditionnement-alimentaire-erp": "haccp",
+    "conformite-loi-anti-fraude-tva": "haccp",
+    # Traiteur — quick quote estimator
+    "facture-traiteur": "quote", "bon-de-commande-traiteur": "quote",
+    "logiciel-commande-grande-surface-traiteur": "quote",
+    "logiciel-gestion-recette-multi-niveaux-traiteur": "quote", "cuisine-centrale": "quote",
+    # Négoce / grossiste — margin calculator
+    "erp-grossiste-distributeur": "margin", "logiciel-grossiste-alimentaire": "margin",
+    "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises": "margin",
+    "erp-boissons": "margin", "logiciel-maree-mareyeur": "margin",
+    "logiciel-televente-alimentaire": "margin", "min": "margin",
+    "logiciel-prix-du-jour-fruits-legumes": "margin", "logiciel-gestion-calibre-fruits-legumes": "margin",
 }
 
 
@@ -215,10 +244,121 @@ def tool_diagnostic(slug, title):
                   body, js)
 
 
+def tool_compare():
+    body = """
+    <p style="margin:.2rem 0 1rem;color:#475569;font-size:.9rem">Cochez vos besoins prioritaires :</p>
+    <div id="cmp_list">
+      <label class="hh-chk"><input type="checkbox" value="1" checked> Traçabilité ascendante/descendante par lot</label>
+      <label class="hh-chk"><input type="checkbox" value="1" checked> Gestion du poids variable & rendements</label>
+      <label class="hh-chk"><input type="checkbox" value="1"> Conformité HACCP / INCO / Factur-X</label>
+      <label class="hh-chk"><input type="checkbox" value="1" checked> Déploiement rapide & SaaS</label>
+      <label class="hh-chk"><input type="checkbox" value="1"> Multi-dépôts & télévente</label>
+      <label class="hh-chk"><input type="checkbox" value="1"> Calcul du coût de revient réel</label>
+    </div>
+    <div class="hh-result">
+      <div class="lbl">Adéquation Hello Harel</div>
+      <div class="big" id="cmp_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="cmp_note"></p>
+      <a class="hh-cta" href="/comparatifs/">Voir le comparatif détaillé →</a>
+    </div>
+    <style>.hh-chk{display:flex;gap:.5rem;align-items:center;font-size:.92rem;color:#334155;margin:.35rem 0}
+    .hh-chk input{width:auto}</style>"""
+    js = """
+    var box=document.getElementById('cmp_list');
+    function f(){var cb=box.querySelectorAll('input'),n=0,t=cb.length;cb.forEach(function(c){if(c.checked)n++});
+    var pct=Math.round(n/t*100);document.getElementById('cmp_out').textContent=pct+'%';
+    document.getElementById('cmp_note').textContent='Hello Harel couvre nativement '+n+' de vos '+t+' besoins agroalimentaires sélectionnés.';}
+    box.addEventListener('change',f);f();"""
+    return _shell("compare", "Hello Harel est-il fait pour vous ?",
+                  "Sélectionnez vos priorités : mesurez en un instant l'adéquation par rapport à votre cahier des charges.",
+                  body, js)
+
+
+def tool_haccp():
+    items = ["Traçabilité par numéro de lot", "Gestion DLC/DDM & alertes",
+             "Plan de contrôle & enregistrements", "Gestion des allergènes / INCO",
+             "Procédure de rappel / retrait", "Audit-readiness (IFS, BRC, ISO 22000)"]
+    rows = "".join(f'<label class="hh-chk"><input type="checkbox"> {it}</label>' for it in items)
+    body = f"""
+    <p style="margin:.2rem 0 1rem;color:#475569;font-size:.9rem">Cochez ce qui est déjà en place :</p>
+    <div id="hc_list">{rows}</div>
+    <div class="hh-result">
+      <div class="lbl">Niveau de préparation conformité</div>
+      <div class="big" id="hc_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="hc_note"></p>
+      <a class="hh-cta" href="/agroalimentaire/">Sécuriser ma conformité avec un ERP →</a>
+    </div>
+    <style>.hh-chk{{display:flex;gap:.5rem;align-items:center;font-size:.92rem;color:#334155;margin:.35rem 0}}
+    .hh-chk input{{width:auto}}</style>"""
+    js = """
+    var box=document.getElementById('hc_list');
+    function f(){var cb=box.querySelectorAll('input'),n=0,t=cb.length;cb.forEach(function(c){if(c.checked)n++});
+    var pct=Math.round(n/t*100);document.getElementById('hc_out').textContent=pct+'% prêt';
+    var msg=pct>=80?'Solide. Un ERP fiabilise et automatise vos preuves.':pct>=40?'À renforcer : centralisez vos enregistrements.':'À risque en cas d\\'audit : priorisez la traçabilité.';
+    document.getElementById('hc_note').textContent=n+'/'+t+' éléments en place. '+msg;}
+    box.addEventListener('change',f);f();"""
+    return _shell("haccp", "Évaluez votre conformité en 30 secondes",
+                  "HACCP, INCO, traçabilité : mesurez votre niveau de préparation à un contrôle.",
+                  body, js)
+
+
+def tool_quote():
+    body = """
+    <div class="hh-grid">
+      <div class="hh-field"><label>Nombre de couverts</label><input type="number" id="q_n" value="80" min="1"></div>
+      <div class="hh-field"><label>Prix / couvert (€)</label><input type="number" id="q_p" value="24" step="0.5" min="0"></div>
+      <div class="hh-field"><label>Coût matières / couvert (€)</label><input type="number" id="q_c" value="8.5" step="0.5" min="0"></div>
+      <div class="hh-field"><label>Frais fixes prestation (€)</label><input type="number" id="q_f" value="150" min="0"></div>
+    </div>
+    <div class="hh-result">
+      <div class="lbl">Total prestation / Marge brute</div>
+      <div class="big" id="q_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="q_note"></p>
+      <a class="hh-cta" href="/agroalimentaire/traiteur/">Générer mes devis traiteur →</a>
+    </div>"""
+    js = """
+    function f(){var n=+document.getElementById('q_n').value||0,p=+document.getElementById('q_p').value||0,
+    c=+document.getElementById('q_c').value||0,f=+document.getElementById('q_f').value||0;
+    var ca=n*p, marge=ca-(n*c)-f, tx=ca?marge/ca*100:0;
+    document.getElementById('q_out').textContent=ca.toLocaleString('fr-FR')+' € → '+marge.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';
+    document.getElementById('q_note').textContent='Marge brute '+tx.toFixed(0)+' % sur cette prestation ('+n+' couverts).';}
+    ['q_n','q_p','q_c','q_f'].forEach(function(i){document.getElementById(i).addEventListener('input',f)});f();"""
+    return _shell("quote", "Estimez votre prestation traiteur",
+                  "Couverts, prix, coûts : obtenez le total et la marge brute de votre devis en direct.",
+                  body, js)
+
+
+def tool_margin():
+    body = """
+    <div class="hh-grid">
+      <div class="hh-field"><label>Prix d'achat HT (€)</label><input type="number" id="mg_a" value="1.80" step="0.01" min="0"></div>
+      <div class="hh-field"><label>Coefficient multiplicateur</label><input type="number" id="mg_k" value="1.35" step="0.01" min="1"></div>
+      <div class="hh-field"><label>Remise client (%)</label><input type="number" id="mg_r" value="5" min="0" max="100"></div>
+      <div class="hh-field"><label>Volume (unités)</label><input type="number" id="mg_v" value="500" min="0"></div>
+    </div>
+    <div class="hh-result">
+      <div class="lbl">Prix de vente / Marge sur volume</div>
+      <div class="big" id="mg_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="mg_note"></p>
+      <a class="hh-cta" href="/negoce/">Piloter mes marges en négoce →</a>
+    </div>"""
+    js = """
+    function f(){var a=+document.getElementById('mg_a').value||0,k=+document.getElementById('mg_k').value||0,
+    r=(+document.getElementById('mg_r').value||0)/100,v=+document.getElementById('mg_v').value||0;
+    var pv=a*k*(1-r), mu=pv-a, tx=pv?mu/pv*100:0;
+    document.getElementById('mg_out').textContent=pv.toFixed(2)+' € → '+(mu*v).toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';
+    document.getElementById('mg_note').textContent='Marge unitaire '+mu.toFixed(2)+' € ('+tx.toFixed(0)+' %), soit '+(mu*v).toLocaleString('fr-FR',{maximumFractionDigits:0})+' € sur '+v+' unités.';}
+    ['mg_a','mg_k','mg_r','mg_v'].forEach(function(i){document.getElementById(i).addEventListener('input',f)});f();"""
+    return _shell("margin", "Calculez votre marge en négoce",
+                  "Prix d'achat, coefficient, remise : visualisez votre prix de vente et votre marge sur volume.",
+                  body, js)
+
+
 def interactive_tool(slug, title=""):
     tid = tool_for(slug)
     return {"roi": tool_roi, "safety_stock": tool_safety_stock, "cost": tool_cost,
-            "fefo": tool_fefo}.get(tid, lambda: tool_diagnostic(slug, title))()
+            "fefo": tool_fefo, "compare": tool_compare, "haccp": tool_haccp,
+            "quote": tool_quote, "margin": tool_margin}.get(tid, lambda: tool_diagnostic(slug, title))()
 
 
 # ---- 2) Inter-H2 illustrative visual -------------------------------------
