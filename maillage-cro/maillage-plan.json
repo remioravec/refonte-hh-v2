@@ -1,0 +1,2513 @@
+{
+ "site": "https://www.helloharel.com",
+ "articles_planned": 81,
+ "plan": {
+  "/blog/tracabilite-viande-logiciel/": {
+   "title": "Traçabilité viande logiciel : suivi lot charcutier & numéro de lot réglementation",
+   "words": 1964,
+   "cluster": "viande",
+   "existing_ctx_links": 4,
+   "budget": 10,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/charcutier/",
+     "anchor": "logiciel pour charcutier-traiteur",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: tracabilite-viande-logiciel → viande (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "logiciel ERP agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: tracabilite-viande-logiciel → viande (montant)"
+    },
+    {
+     "target": "/blog/erp-viande-volaille/",
+     "anchor": "ERP Viande & Volaille",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-decoupe-viande-poisson/",
+     "anchor": "ERP Découpe",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-freinte-charcuterie-logiciel/": {
+   "title": "Calcul freinte charcuterie : pilotage perte de séchage salaison au logiciel ERP",
+   "words": 1878,
+   "cluster": "fabrication",
+   "existing_ctx_links": 4,
+   "budget": 10,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "ERP de production agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: calcul-freinte-charcuterie-logiciel → fabrication (montant)"
+    },
+    {
+     "target": "/fonctionnalites/planification-production-erp/",
+     "anchor": "ordonnancement de la production",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: calcul-freinte-charcuterie-logiciel → fabrication (montant)"
+    },
+    {
+     "target": "/blog/ordre-de-fabrication/",
+     "anchor": "Ordre de Fabrication",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/ordonnancement-planification/",
+     "anchor": "Ordonnancement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/opc-ua/",
+     "anchor": "OPC UA",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    }
+   ]
+  },
+  "/blog/gestion-decoupe-viande-logiciel/": {
+   "title": "Gestion découpe viande au logiciel : rendement matière charcuterie & taux découpe porc",
+   "words": 2112,
+   "cluster": "fabrication",
+   "existing_ctx_links": 5,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "gestion de la production",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: gestion-decoupe-viande-logiciel → fabrication (montant)"
+    },
+    {
+     "target": "/fonctionnalites/planification-production-erp/",
+     "anchor": "logiciel de planification industrielle",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: gestion-decoupe-viande-logiciel → fabrication (montant)"
+    },
+    {
+     "target": "/blog/ordre-de-fabrication/",
+     "anchor": "Ordre de Fabrication",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/ordonnancement-planification/",
+     "anchor": "Ordonnancement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-gestion-calibre-fruits-legumes/": {
+   "title": "Logiciel gestion calibre fruits et légumes",
+   "words": 1336,
+   "cluster": "maraicher",
+   "existing_ctx_links": 2,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/maraicher/",
+     "anchor": "logiciel pour maraîchers",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-gestion-calibre-fruits-legumes → maraicher (montant)"
+    },
+    {
+     "target": "/negoce/",
+     "anchor": "ERP négoce alimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-gestion-calibre-fruits-legumes → maraicher (montant)"
+    },
+    {
+     "target": "/blog/meilleurs-erp-maraichers-fruits-legumes/",
+     "anchor": "Top 8 ERP Fruits & Légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    },
+    {
+     "target": "/blog/min/",
+     "anchor": "MIN",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-prix-du-jour-fruits-legumes/": {
+   "title": "Logiciel prix du jour fruits et légumes",
+   "words": 1333,
+   "cluster": "maraicher",
+   "existing_ctx_links": 0,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/maraicher/",
+     "anchor": "ERP pour grossistes en fruits et légumes",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-prix-du-jour-fruits-legumes → maraicher (montant)"
+    },
+    {
+     "target": "/negoce/",
+     "anchor": "logiciel pour grossistes alimentaires",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-prix-du-jour-fruits-legumes → maraicher (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP pour l'industrie agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-prix-du-jour-fruits-legumes → maraicher (montant)"
+    },
+    {
+     "target": "/blog/meilleurs-erp-maraichers-fruits-legumes/",
+     "anchor": "Top 8 ERP Fruits & Légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    },
+    {
+     "target": "/blog/min/",
+     "anchor": "MIN",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-gestion-calibre-fruits-legumes/",
+     "anchor": "Logiciel gestion calibre fruits et légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-tracabilite-dlc-traiteur/": {
+   "title": "Logiciel traçabilité DLC traiteur",
+   "words": 1286,
+   "cluster": "traiteur",
+   "existing_ctx_links": 2,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/traiteur/",
+     "anchor": "solution traiteur",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-tracabilite-dlc-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP PME agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-tracabilite-dlc-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/blog/alternatives-copilote-traiteur/",
+     "anchor": "Alternatives à Copilote pour les Traiteurs",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/cuisine-centrale/",
+     "anchor": "Cuisine Centrale",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-calcul-cout-de-revient-traiteur/",
+     "anchor": "Logiciel calcul coût de revient traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-calcul-cout-de-revient-traiteur/": {
+   "title": "Logiciel calcul coût de revient traiteur",
+   "words": 1321,
+   "cluster": "traiteur",
+   "existing_ctx_links": 2,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/traiteur/",
+     "anchor": "gestion de commandes traiteur",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-calcul-cout-de-revient-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP métier agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-calcul-cout-de-revient-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/blog/logiciel-commande-grande-surface-traiteur/",
+     "anchor": "Logiciel commande grande surface traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-tracabilite-dlc-traiteur/",
+     "anchor": "Logiciel traçabilité DLC traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/agroalimentaire/plats-cuisines-industriels/",
+     "anchor": "ERP pour la cuisine industrielle",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/logiciel-commande-grande-surface-traiteur/": {
+   "title": "Logiciel commande grande surface traiteur",
+   "words": 1315,
+   "cluster": "traiteur",
+   "existing_ctx_links": 0,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/traiteur/",
+     "anchor": "logiciel pour traiteurs et cuisines centrales",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-commande-grande-surface-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP spécialisé agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-commande-grande-surface-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/blog/logiciel-gestion-recette-multi-niveaux-traiteur/",
+     "anchor": "Logiciel gestion recette multi-niveaux traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-tracabilite-dlc-traiteur/",
+     "anchor": "Logiciel traçabilité DLC traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-copilote-traiteur/",
+     "anchor": "Alternatives à Copilote pour les Traiteurs",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-gestion-recette-multi-niveaux-traiteur/": {
+   "title": "Logiciel gestion recette multi-niveaux traiteur",
+   "words": 1249,
+   "cluster": "traiteur",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP pour l'agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-gestion-recette-multi-niveaux-traiteur → traiteur (montant)"
+    },
+    {
+     "target": "/blog/logiciel-tracabilite-dlc-traiteur/",
+     "anchor": "Logiciel traçabilité DLC traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-copilote-traiteur/",
+     "anchor": "Alternatives à Copilote pour les Traiteurs",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/cuisine-centrale/",
+     "anchor": "Cuisine Centrale",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/agroalimentaire/plats-cuisines-industriels/",
+     "anchor": "gestion des recettes et conformité INCO",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/alternatives-divalto-agroalimentaire/": {
+   "title": "Alternatives à Divalto pour les PME Agro • ERP Plus Agile",
+   "words": 3002,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 9,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/comparatifs/",
+     "anchor": "comparatif des ERP agroalimentaires",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: alternatives-divalto-agroalimentaire → comparatifs (montant)"
+    },
+    {
+     "target": "/blog/alternatives-odoo-agroalimentaire/",
+     "anchor": "Alternatives à Odoo pour l’Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alternatives-sage-agroalimentaire/": {
+   "title": "Alternatives à Sage pour l’Agroalimentaire • ERP Agro Spécialisé",
+   "words": 3116,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 10,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/comparatifs/",
+     "anchor": "comparer les ERP du marché",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: alternatives-sage-agroalimentaire → comparatifs (montant)"
+    }
+   ]
+  },
+  "/blog/hello-harel-vs-sage/": {
+   "title": "Hello Harel vs Sage • PME Agro : Spécialisé vs Généraliste",
+   "words": 2764,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 9,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/comparatifs/",
+     "anchor": "meilleur ERP agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: hello-harel-vs-sage → comparatifs (montant)"
+    },
+    {
+     "target": "/blog/hello-harel-vs-silog/",
+     "anchor": "Hello Harel vs Silog",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/hello-harel-vs-odoo/": {
+   "title": "Hello Harel vs Odoo • ERP Spécialisé vs Généraliste 2026",
+   "words": 2833,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 8,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/comparatifs/",
+     "anchor": "guide comparatif ERP",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: hello-harel-vs-odoo → comparatifs (montant)"
+    },
+    {
+     "target": "/blog/hello-harel-vs-sage/",
+     "anchor": "Hello Harel vs Sage",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/hello-harel-vs-silog/",
+     "anchor": "Hello Harel vs Silog",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/hello-harel-vs-silog/": {
+   "title": "Hello Harel vs Silog • Comparatif ERP Agro PME 2026",
+   "words": 2652,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 10,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/meilleurs-erp-import-export/",
+     "anchor": "Meilleurs ERP Import-Export",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/hello-harel-vs-divalto/": {
+   "title": "Hello Harel vs Divalto • Comparatif ERP Agroalimentaire 2026",
+   "words": 2719,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 8,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/hello-harel-vs-odoo/",
+     "anchor": "Hello Harel vs Odoo",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/hello-harel-vs-sage/",
+     "anchor": "Hello Harel vs Sage",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/hello-harel-vs-silog/",
+     "anchor": "Hello Harel vs Silog",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-cout-de-revient-logiciel/": {
+   "title": "Coût de Revient Agro • Calcul & Logiciel ERP • Guide PME 2026",
+   "words": 5220,
+   "cluster": "couts",
+   "existing_ctx_links": 10,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+     "anchor": "Prix Revient Boulangerie",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-boissons/": {
+   "title": "ERP Boissons • Négoce, Accises & Consignes • Logiciel Spécialisé",
+   "words": 4564,
+   "cluster": "negoce",
+   "existing_ctx_links": 8,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/negoce/",
+     "anchor": "ERP distribution et négoce",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-boissons → negoce (montant)"
+    },
+    {
+     "target": "/agroalimentaire/maraicher/",
+     "anchor": "gestion du calibre et du poids variable",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-boissons → negoce (montant)"
+    },
+    {
+     "target": "/blog/logiciel-maree-mareyeur/",
+     "anchor": "Logiciel Marée & Mareyeur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    }
+   ]
+  },
+  "/blog/factur-x-e-facturation-logiciel/": {
+   "title": "Factur-X • E-Facturation Obligatoire 2026 • Guide PME Agro",
+   "words": 4652,
+   "cluster": "facturation",
+   "existing_ctx_links": 9,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/bon-de-commande/",
+     "anchor": "Bon de Commande",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/bon-de-commande-traiteur/",
+     "anchor": "Bon de Commande Traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-televente-alimentaire/": {
+   "title": "Télévente Alimentaire • Logiciel Saisie Rapide • 50+ Cmd/Jour",
+   "words": 4111,
+   "cluster": "negoce",
+   "existing_ctx_links": 9,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/meilleurs-erp-gestion-approvisionnements/",
+     "anchor": "ERP Approvisionnement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-grossiste-alimentaire/",
+     "anchor": "Logiciel Grossiste Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    }
+   ]
+  },
+  "/blog/tracabilite-lot-dlc-logiciel/": {
+   "title": "Traçabilité Lot & DLC • Logiciel de Suivi Réglementaire • Guide 2026",
+   "words": 4649,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 10,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/plan-de-controle-alimentaire/",
+     "anchor": "Plan Contrôle Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises/": {
+   "title": "Logiciel Boissons & Cave • Consignes & Accises • 2026",
+   "words": 915,
+   "cluster": "negoce",
+   "existing_ctx_links": 3,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/negoce/",
+     "anchor": "logiciel de négoce alimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises → negoce (montant)"
+    },
+    {
+     "target": "/agroalimentaire/maraicher/",
+     "anchor": "logiciel pour exportateurs de fruits et légumes",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises → negoce (montant)"
+    }
+   ]
+  },
+  "/blog/erp-cloud-saas-vs-on-premise/": {
+   "title": "ERP Cloud vs On-Premise • Le Bon Choix PME • 2026",
+   "words": 1905,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 4,
+   "budget": 10,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP de traçabilité alimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-cloud-saas-vs-on-premise → erp_techno (montant)"
+    },
+    {
+     "target": "/blog/erp-pme/",
+     "anchor": "ERP Pour PME",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-agroalimentaire/",
+     "anchor": "Meilleur ERP Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/migration-erp-agroalimentaire/",
+     "anchor": "Migration ERP Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/logiciel-maree-mareyeur/": {
+   "title": "Logiciel Marée & Mareyeur • Rendements & Criée • 2026",
+   "words": 1425,
+   "cluster": "negoce",
+   "existing_ctx_links": 3,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/blog/logiciel-televente-alimentaire/",
+     "anchor": "Télévente Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/meilleurs-erp-gestion-approvisionnements/",
+     "anchor": "ERP Approvisionnement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-grossiste-distributeur/",
+     "anchor": "ERP Grossiste",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alternative-cegid/": {
+   "title": "Alternative Cegid • ERP Agro Agile & Accessible • PME",
+   "words": 1720,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 0,
+   "budget": 9,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "solution de gestion pour l'agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: alternative-cegid → comparatifs (montant)"
+    },
+    {
+     "target": "/blog/alternative-sage-erp/",
+     "anchor": "Alternative Sage",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-vif-erp/",
+     "anchor": "Alternative VIF ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-cegid-distribution-alimentaire/",
+     "anchor": "Alternatives à Cegid pour la Distribution Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-viande-volaille/": {
+   "title": "ERP Viande & Volaille • Traçabilité & Poids Variable",
+   "words": 1120,
+   "cluster": "viande",
+   "existing_ctx_links": 1,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/charcutier/",
+     "anchor": "gestion de la découpe et des rendements",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-viande-volaille → viande (montant)"
+    },
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "ERP distribution alimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-viande-volaille → viande (montant)"
+    },
+    {
+     "target": "/blog/erp-decoupe-viande-poisson/",
+     "anchor": "ERP Découpe",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    },
+    {
+     "target": "/blog/tracabilite-viande-logiciel/",
+     "anchor": "Traçabilité viande logiciel : suivi lot charcutier & numéro de lot réglementation",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alternative-sage-erp/": {
+   "title": "Alternative Sage • Spécialiste Négoce Agro • +200",
+   "words": 1308,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 0,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/",
+     "anchor": "logiciel de production agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: alternative-sage-erp → comparatifs (montant)"
+    },
+    {
+     "target": "/blog/alternative-vif-erp/",
+     "anchor": "Alternative VIF ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-cegid-distribution-alimentaire/",
+     "anchor": "Alternatives à Cegid pour la Distribution Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-divalto-agroalimentaire/",
+     "anchor": "Alternatives à Divalto pour les PME Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alternative-akanea-erp/": {
+   "title": "Alternative Akanea • ERP Agro Plus Agile • Depuis 2014",
+   "words": 1653,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 0,
+   "budget": 9,
+   "new_links": [
+    {
+     "target": "/blog/alternative-archipelia/",
+     "anchor": "Alternative Archipelia",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-cegid/",
+     "anchor": "Alternative Cegid",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-sage-erp/",
+     "anchor": "Alternative Sage",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/meilleurs-erp-gestion-approvisionnements/": {
+   "title": "ERP Approvisionnement • Supply Chain & MRP • 2026",
+   "words": 989,
+   "cluster": "negoce",
+   "existing_ctx_links": 1,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/erp-grossiste-distributeur/",
+     "anchor": "ERP Grossiste",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-grossiste-alimentaire/",
+     "anchor": "Logiciel Grossiste Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises/",
+     "anchor": "Logiciel Boissons & Cave",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/fonctionnalites/achat/",
+     "anchor": "pilotage des achats",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/meilleurs-erp-import-export/": {
+   "title": "Meilleurs ERP Import-Export • Négoce International • 2026",
+   "words": 1188,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 1,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/alternative-akanea-erp/",
+     "anchor": "Alternative Akanea",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-archipelia/",
+     "anchor": "Alternative Archipelia",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-cegid/",
+     "anchor": "Alternative Cegid",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/fonctionnalites/import-export/",
+     "anchor": "logiciel import-export agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/alternative-archipelia/": {
+   "title": "Alternative Archipelia • 100% Négoce Agro • Expert",
+   "words": 1202,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/alternative-cegid/",
+     "anchor": "Alternative Cegid",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-sage-erp/",
+     "anchor": "Alternative Sage",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternative-vif-erp/",
+     "anchor": "Alternative VIF ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alternative-vif-erp/": {
+   "title": "Alternative VIF ERP • Négoce Plutôt Qu’Industrie • SaaS",
+   "words": 1318,
+   "cluster": "comparatifs",
+   "existing_ctx_links": 0,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/blog/alternatives-cegid-distribution-alimentaire/",
+     "anchor": "Alternatives à Cegid pour la Distribution Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-divalto-agroalimentaire/",
+     "anchor": "Alternatives à Divalto pour les PME Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    },
+    {
+     "target": "/blog/alternatives-odoo-agroalimentaire/",
+     "anchor": "Alternatives à Odoo pour l’Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau comparatifs: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-decoupe-viande-poisson/": {
+   "title": "ERP Découpe • Viande & Poisson • Rendements Matière",
+   "words": 1381,
+   "cluster": "viande",
+   "existing_ctx_links": 4,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/charcutier/",
+     "anchor": "ERP pour les métiers de la viande",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: erp-decoupe-viande-poisson → viande (montant)"
+    },
+    {
+     "target": "/blog/tracabilite-viande-logiciel/",
+     "anchor": "Traçabilité viande logiciel : suivi lot charcutier & numéro de lot réglementation",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-viande-volaille/",
+     "anchor": "ERP Viande & Volaille",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau viande: maillage latéral"
+    }
+   ]
+  },
+  "/blog/migration-erp-agroalimentaire/": {
+   "title": "Migration ERP Agro • Sécurisée & Rapide • En 5 Jours",
+   "words": 1871,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 8,
+   "budget": 10,
+   "new_links": [
+    {
+     "target": "/blog/erp-as400/",
+     "anchor": "Migration AS400",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-saas/",
+     "anchor": "ERP SaaS",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/integrateur-erp-lyon/": {
+   "title": "Intégrateur ERP Lyon • Agro & Négoce • Éditeur Direct",
+   "words": 1323,
+   "cluster": "integrateur",
+   "existing_ctx_links": 0,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/blog/integrateur-erp-paris/",
+     "anchor": "Intégrateur ERP Paris",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau integrateur: maillage latéral"
+    }
+   ]
+  },
+  "/blog/integrateur-erp-paris/": {
+   "title": "Intégrateur ERP Paris • Agro & Négoce • Direct",
+   "words": 1468,
+   "cluster": "integrateur",
+   "existing_ctx_links": 0,
+   "budget": 8,
+   "new_links": [
+    {
+     "target": "/blog/integrateur-erp-lyon/",
+     "anchor": "Intégrateur ERP Lyon",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau integrateur: maillage latéral"
+    }
+   ]
+  },
+  "/blog/cuisine-centrale/": {
+   "title": "Cuisine Centrale • Logiciel & Gestion • Guide Complet",
+   "words": 2418,
+   "cluster": "traiteur",
+   "existing_ctx_links": 0,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/logiciel-calcul-cout-de-revient-traiteur/",
+     "anchor": "Logiciel calcul coût de revient traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-commande-grande-surface-traiteur/",
+     "anchor": "Logiciel commande grande surface traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-gestion-recette-multi-niveaux-traiteur/",
+     "anchor": "Logiciel gestion recette multi-niveaux traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau traiteur: maillage latéral"
+    },
+    {
+     "target": "/agroalimentaire/plats-cuisines-industriels/",
+     "anchor": "logiciel pour plats cuisinés industriels",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/conformite-haccp/": {
+   "title": "Conformité HACCP • Logiciel & Automatisation • Guide",
+   "words": 3022,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 0,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "ERP gestion de stock",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: conformite-haccp → tracabilite (montant)"
+    },
+    {
+     "target": "/blog/plan-de-controle-alimentaire/",
+     "anchor": "Plan Contrôle Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/kpi-qualite-agroalimentaire/",
+     "anchor": "KPI Qualité Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/dlc-ddm-dluo/",
+     "anchor": "DLC, DDM & DLUO",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-saas/": {
+   "title": "ERP SaaS • Avantages & Fonctionnalités • Guide 2026",
+   "words": 988,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/erp-saas-cloud/",
+     "anchor": "ERP SaaS Cloud",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-cloud-saas-vs-on-premise/",
+     "anchor": "ERP Cloud vs On-Premise",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-pme/",
+     "anchor": "ERP Pour PME",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/difference-prix-dachat-et-prix-de-revient/": {
+   "title": "Prix d’Achat vs Prix de Revient • La Différence • Guide",
+   "words": 1070,
+   "cluster": "couts",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "pilotage de la production agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: difference-prix-dachat-et-prix-de-revient → couts (montant)"
+    },
+    {
+     "target": "/blog/calcul-cout-de-revient-logiciel/",
+     "anchor": "Coût de Revient Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+     "anchor": "Prix Revient Boulangerie",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/blog/cout-de-revient/",
+     "anchor": "Coût de Revient",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/fonctionnalites/achat/",
+     "anchor": "logiciel de gestion des achats",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/prix-dachat-definition/": {
+   "title": "Prix d’Achat • Définition & Calcul • Guide Comptable",
+   "words": 979,
+   "cluster": "couts",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "gestion des nomenclatures",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: prix-dachat-definition → couts (montant)"
+    },
+    {
+     "target": "/blog/difference-prix-dachat-et-prix-de-revient/",
+     "anchor": "Prix d’Achat vs Prix de Revient",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-cout-de-revient-logiciel/",
+     "anchor": "Coût de Revient Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+     "anchor": "Prix Revient Boulangerie",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    },
+    {
+     "target": "/fonctionnalites/achat/",
+     "anchor": "module achats et approvisionnements",
+     "zone": "top",
+     "type": "up",
+     "reason": "équilibrage: page money sous le plancher d'ancres"
+    }
+   ]
+  },
+  "/blog/gestion-automatisee-des-variations-de-stock/": {
+   "title": "Variation Stock Auto • ERP & Automatisation • Guide",
+   "words": 1014,
+   "cluster": "stock",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "gestion des stocks en temps réel",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: gestion-automatisee-des-variations-de-stock → stock (montant)"
+    },
+    {
+     "target": "/blog/enregistrement-comptable-variation-de-stock/",
+     "anchor": "Écriture Comptable Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/",
+     "anchor": "Variation Stock & Résultat Fiscal",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/",
+     "anchor": "Variation Stock CUMP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/variation-de-stock-positif-negatif/": {
+   "title": "Variation Stock + ou – • Impact & Analyse • Guide",
+   "words": 1142,
+   "cluster": "stock",
+   "existing_ctx_links": 1,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "suivi de stock multi-entrepôts",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: variation-de-stock-positif-negatif → stock (montant)"
+    },
+    {
+     "target": "/blog/gestion-automatisee-des-variations-de-stock/",
+     "anchor": "Variation Stock Auto",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/enregistrement-comptable-variation-de-stock/",
+     "anchor": "Écriture Comptable Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/",
+     "anchor": "Variation Stock & Résultat Fiscal",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/": {
+   "title": "Variation Stock & Résultat Fiscal • Impact • Guide",
+   "words": 1051,
+   "cluster": "stock",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "optimisation des stocks alimentaires",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025 → stock (montant)"
+    },
+    {
+     "target": "/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/",
+     "anchor": "Variation Stock CUMP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-stock-de-securite/",
+     "anchor": "Stock de Sécurité",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-stock-moyen/",
+     "anchor": "Calcul Stock Moyen",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/": {
+   "title": "Variation Stock CUMP • Méthode & Exemples • Guide",
+   "words": 1171,
+   "cluster": "stock",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "gestion de stock agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025 → stock (montant)"
+    },
+    {
+     "target": "/blog/calcul-stock-de-securite/",
+     "anchor": "Stock de Sécurité",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-stock-moyen/",
+     "anchor": "Calcul Stock Moyen",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-variations-de-stock/",
+     "anchor": "Variation de Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/enregistrement-comptable-variation-de-stock/": {
+   "title": "Écriture Comptable Stock • Enregistrement • Guide",
+   "words": 1095,
+   "cluster": "stock",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "pilotage des stocks",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: enregistrement-comptable-variation-de-stock → stock (montant)"
+    },
+    {
+     "target": "/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/",
+     "anchor": "Variation Stock & Résultat Fiscal",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/",
+     "anchor": "Variation Stock CUMP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-stock-de-securite/",
+     "anchor": "Stock de Sécurité",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/meilleurs-erp-boulangerie/": {
+   "title": "Meilleurs ERP Boulangerie • Comparatif Complet • 2026",
+   "words": 1796,
+   "cluster": "boulanger",
+   "existing_ctx_links": 0,
+   "budget": 9,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/boulanger/",
+     "anchor": "logiciel boulangerie-pâtisserie",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: meilleurs-erp-boulangerie → boulanger (montant)"
+    },
+    {
+     "target": "/blog/calculer-le-prix-de-revient-en-boulangerie/",
+     "anchor": "Prix Revient Boulangerie",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau boulanger: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-agroalimentaire/": {
+   "title": "Meilleur ERP Agroalimentaire • Comparatif PME • 2026",
+   "words": 1002,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/migration-erp-agroalimentaire/",
+     "anchor": "Migration ERP Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/roi-erp/",
+     "anchor": "ROI d’un ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-as400/",
+     "anchor": "Migration AS400",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-pme/": {
+   "title": "ERP Pour PME • Simple & Rentable • Guide Complet 2026",
+   "words": 881,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/erp-agroalimentaire/",
+     "anchor": "Meilleur ERP Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/migration-erp-agroalimentaire/",
+     "anchor": "Migration ERP Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/roi-erp/",
+     "anchor": "ROI d’un ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/reapprovisionnement-stocks/": {
+   "title": "Réapprovisionnement • Méthodes & ERP • Guide 2026",
+   "words": 850,
+   "cluster": "stock",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/gestion-de-stock/",
+     "anchor": "gestion multi-dépôts",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: reapprovisionnement-stocks → stock (montant)"
+    },
+    {
+     "target": "/blog/alerte-stock-securite/",
+     "anchor": "Alerte Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/optimisation-entrepot/",
+     "anchor": "Optimisation Entrepôt",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/maitriser-la-gestion-des-stocks/",
+     "anchor": "Maîtriser Ses Stocks",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/opc-ua/": {
+   "title": "OPC UA • Protocole Industriel & ERP • Guide Tech",
+   "words": 896,
+   "cluster": "fabrication",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "calcul du coût de revient en production",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: opc-ua → fabrication (montant)"
+    },
+    {
+     "target": "/fonctionnalites/planification-production-erp/",
+     "anchor": "planifier vos fournées et ordres de fabrication",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: opc-ua → fabrication (montant)"
+    },
+    {
+     "target": "/blog/gestion-decoupe-viande-logiciel/",
+     "anchor": "Gestion découpe viande au logiciel : rendement matière charcuterie & taux découpe porc",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-freinte-charcuterie-logiciel/",
+     "anchor": "Calcul freinte charcuterie : pilotage perte de séchage salaison au logiciel ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/ordre-de-fabrication/",
+     "anchor": "Ordre de Fabrication",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    }
+   ]
+  },
+  "/blog/ordonnancement-planification/": {
+   "title": "Ordonnancement • Planification & Production • Guide",
+   "words": 1109,
+   "cluster": "fabrication",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/fabrication/",
+     "anchor": "logiciel de production alimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: ordonnancement-planification → fabrication (montant)"
+    },
+    {
+     "target": "/blog/opc-ua/",
+     "anchor": "OPC UA",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-decoupe-viande-logiciel/",
+     "anchor": "Gestion découpe viande au logiciel : rendement matière charcuterie & taux découpe porc",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/calcul-freinte-charcuterie-logiciel/",
+     "anchor": "Calcul freinte charcuterie : pilotage perte de séchage salaison au logiciel ERP",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-saas-cloud/": {
+   "title": "ERP SaaS Cloud • Mobilité & Sécurité • Éditeur FR",
+   "words": 1006,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/erp-cloud-saas-vs-on-premise/",
+     "anchor": "ERP Cloud vs On-Premise",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-pme/",
+     "anchor": "ERP Pour PME",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-agroalimentaire/",
+     "anchor": "Meilleur ERP Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/min/": {
+   "title": "MIN • Marché d’Intérêt National • Guide & Logiciel",
+   "words": 1032,
+   "cluster": "maraicher",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/logiciel-gestion-calibre-fruits-legumes/",
+     "anchor": "Logiciel gestion calibre fruits et légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-prix-du-jour-fruits-legumes/",
+     "anchor": "Logiciel prix du jour fruits et légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    },
+    {
+     "target": "/blog/meilleurs-erp-maraichers-fruits-legumes/",
+     "anchor": "Top 8 ERP Fruits & Légumes",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau maraicher: maillage latéral"
+    }
+   ]
+  },
+  "/blog/dlc-ddm-dluo/": {
+   "title": "DLC, DDM & DLUO • Différences & Gestion • Guide 2026",
+   "words": 839,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/alerte-date-peremption/",
+     "anchor": "Alerte Péremption",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/agreage-agroalimentaire/",
+     "anchor": "Agréage Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/contraintes-reglementations-logiciel-agroalimentaire/",
+     "anchor": "Réglementation Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-grossiste-distributeur/": {
+   "title": "ERP Grossiste • Distribution & Marges • Spécialiste",
+   "words": 931,
+   "cluster": "negoce",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/logiciel-grossiste-alimentaire/",
+     "anchor": "Logiciel Grossiste Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises/",
+     "anchor": "Logiciel Boissons & Cave",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-boissons/",
+     "anchor": "ERP Boissons",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau negoce: maillage latéral"
+    }
+   ]
+  },
+  "/blog/agreage-agroalimentaire/": {
+   "title": "Agréage Agroalimentaire • Contrôle & Qualité • Guide",
+   "words": 903,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 0,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/contraintes-reglementations-logiciel-agroalimentaire/",
+     "anchor": "Réglementation Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/processus-agroalimentaire-guide/",
+     "anchor": "Processus Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/conditionnement-alimentaire-erp/",
+     "anchor": "Conditionnement Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alerte-stock-securite/": {
+   "title": "Alerte Stock • Seuils & Réappro Auto • Guide ERP",
+   "words": 870,
+   "cluster": "stock",
+   "existing_ctx_links": 1,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/optimisation-entrepot/",
+     "anchor": "Optimisation Entrepôt",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/maitriser-la-gestion-des-stocks/",
+     "anchor": "Maîtriser Ses Stocks",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/fifo-fefo-lifo/",
+     "anchor": "FIFO, FEFO & LIFO",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/gestion-des-inventaires/": {
+   "title": "Gestion des Inventaires • Méthode & Logiciel • Guide",
+   "words": 1220,
+   "cluster": "stock",
+   "existing_ctx_links": 1,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/gestion-stock-multi-entrepots/",
+     "anchor": "Gestion Stock Multi-Entrepôts",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/reapprovisionnement-stocks/",
+     "anchor": "Réapprovisionnement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/alerte-stock-securite/",
+     "anchor": "Alerte Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/relance-client/": {
+   "title": "Relance Client • Automatisation & ERP • Guide Pratique",
+   "words": 1578,
+   "cluster": "facturation",
+   "existing_ctx_links": 1,
+   "budget": 8,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/facturation/",
+     "anchor": "facturation automatisée",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: relance-client → facturation (montant)"
+    },
+    {
+     "target": "/fonctionnalites/vente/",
+     "anchor": "logiciel de gestion commerciale",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: relance-client → facturation (montant)"
+    },
+    {
+     "target": "/blog/facture-exacompta/",
+     "anchor": "Facture Exacompta",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/facture-traiteur/",
+     "anchor": "Facture Traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/factur-x-e-facturation-logiciel/",
+     "anchor": "Factur-X",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/roi-erp/": {
+   "title": "ROI d’un ERP • Calcul & Résultats Concrets • Guide",
+   "words": 1238,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 0,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/erp-as400/",
+     "anchor": "Migration AS400",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-saas/",
+     "anchor": "ERP SaaS",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-saas-cloud/",
+     "anchor": "ERP SaaS Cloud",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/kpi-qualite-agroalimentaire/": {
+   "title": "KPI Qualité Agro • 7 Indicateurs Clés • Guide Expert",
+   "words": 1651,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 1,
+   "budget": 9,
+   "new_links": [
+    {
+     "target": "/blog/dlc-ddm-dluo/",
+     "anchor": "DLC, DDM & DLUO",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/alerte-date-peremption/",
+     "anchor": "Alerte Péremption",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/agreage-agroalimentaire/",
+     "anchor": "Agréage Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/plan-de-controle-alimentaire/": {
+   "title": "Plan Contrôle Alimentaire • Méthode & Outils • 2026",
+   "words": 1434,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 1,
+   "budget": 7,
+   "new_links": [
+    {
+     "target": "/blog/kpi-qualite-agroalimentaire/",
+     "anchor": "KPI Qualité Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/dlc-ddm-dluo/",
+     "anchor": "DLC, DDM & DLUO",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/alerte-date-peremption/",
+     "anchor": "Alerte Péremption",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/cout-marginal/": {
+   "title": "Coût Marginal • Définition & Calcul • Guide Pratique",
+   "words": 1066,
+   "cluster": "couts",
+   "existing_ctx_links": 4,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/cout-prix-au-kilo/",
+     "anchor": "Prix au Kilo",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau couts: maillage latéral"
+    }
+   ]
+  },
+  "/blog/alerte-date-peremption/": {
+   "title": "Alerte Péremption • Automatisez Vos DLC • Zéro Perte",
+   "words": 815,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 1,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/agreage-agroalimentaire/",
+     "anchor": "Agréage Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/contraintes-reglementations-logiciel-agroalimentaire/",
+     "anchor": "Réglementation Agro",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/processus-agroalimentaire-guide/",
+     "anchor": "Processus Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-stock-moyen/": {
+   "title": "Calcul Stock Moyen • Méthode & Exemples • Outil Gratuit",
+   "words": 1225,
+   "cluster": "stock",
+   "existing_ctx_links": 2,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/calcul-variations-de-stock/",
+     "anchor": "Variation de Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-des-inventaires/",
+     "anchor": "Gestion des Inventaires",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-stock-multi-entrepots/",
+     "anchor": "Gestion Stock Multi-Entrepôts",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/erp-as400/": {
+   "title": "Migration AS400 • Vers un ERP Moderne & SaaS • 2026",
+   "words": 1026,
+   "cluster": "erp_techno",
+   "existing_ctx_links": 2,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/erp-saas/",
+     "anchor": "ERP SaaS",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-cloud-saas-vs-on-premise/",
+     "anchor": "ERP Cloud vs On-Premise",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau erp_techno: maillage latéral"
+    }
+   ]
+  },
+  "/blog/bon-de-commande-traiteur/": {
+   "title": "Bon de Commande Traiteur • Modèle & Astuces • Guide",
+   "words": 999,
+   "cluster": "facturation",
+   "existing_ctx_links": 3,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/facturation/",
+     "anchor": "module de facturation",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: bon-de-commande-traiteur → facturation (montant)"
+    },
+    {
+     "target": "/fonctionnalites/vente/",
+     "anchor": "module de vente et devis",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: bon-de-commande-traiteur → facturation (montant)"
+    }
+   ]
+  },
+  "/blog/facture-traiteur/": {
+   "title": "Facture Traiteur • Modèle & Mentions • Guide 2026",
+   "words": 1180,
+   "cluster": "facturation",
+   "existing_ctx_links": 3,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/facturation/",
+     "anchor": "gestion des factures et échéances",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: facture-traiteur → facturation (montant)"
+    },
+    {
+     "target": "/fonctionnalites/vente/",
+     "anchor": "gestion commerciale agroalimentaire",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: facture-traiteur → facturation (montant)"
+    },
+    {
+     "target": "/blog/factur-x-e-facturation-logiciel/",
+     "anchor": "Factur-X",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/tracabilite-de-la-viande/": {
+   "title": "Traçabilité Viande • Lots & Normes • Guide Complet",
+   "words": 1250,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 3,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/tracabilite-viande-logiciel/",
+     "anchor": "Traçabilité viande logiciel : suivi lot charcutier & numéro de lot réglementation",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/tracabilite-lot-dlc-logiciel/",
+     "anchor": "Traçabilité Lot & DLC",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calculer-le-prix-de-revient-en-boulangerie/": {
+   "title": "Prix Revient Boulangerie • Calcul & Exercices • Guide",
+   "words": 1152,
+   "cluster": "boulanger",
+   "existing_ctx_links": 4,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/agroalimentaire/boulanger/",
+     "anchor": "gestion boulangerie",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: calculer-le-prix-de-revient-en-boulangerie → boulanger (montant)"
+    },
+    {
+     "target": "/blog/meilleurs-erp-boulangerie/",
+     "anchor": "Meilleurs ERP Boulangerie",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau boulanger: maillage latéral"
+    }
+   ]
+  },
+  "/blog/bon-de-livraison/": {
+   "title": "Bon de Livraison • Modèle & Automatisation • Guide",
+   "words": 1057,
+   "cluster": "facturation",
+   "existing_ctx_links": 1,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/fonctionnalites/facturation/",
+     "anchor": "facturation électronique",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: bon-de-livraison → facturation (montant)"
+    },
+    {
+     "target": "/fonctionnalites/vente/",
+     "anchor": "accélérer vos ventes et devis",
+     "zone": "top",
+     "type": "up",
+     "reason": "cocon: bon-de-livraison → facturation (montant)"
+    },
+    {
+     "target": "/blog/bon-de-commande-traiteur/",
+     "anchor": "Bon de Commande Traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/relance-client/",
+     "anchor": "Relance Client",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/bon-de-commande/": {
+   "title": "Bon de Commande • Modèle & Gestion ERP • Guide 2026",
+   "words": 2156,
+   "cluster": "facturation",
+   "existing_ctx_links": 6,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/bon-de-livraison/",
+     "anchor": "Bon de Livraison",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/bon-de-commande-traiteur/",
+     "anchor": "Bon de Commande Traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/relance-client/",
+     "anchor": "Relance Client",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/maitriser-la-gestion-des-stocks/": {
+   "title": "Maîtriser Ses Stocks • 6 Exercices Corrigés • Guide",
+   "words": 3008,
+   "cluster": "stock",
+   "existing_ctx_links": 1,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/fifo-fefo-lifo/",
+     "anchor": "FIFO, FEFO & LIFO",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/variation-de-stock-positif-negatif/",
+     "anchor": "Variation Stock + ou",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-automatisee-des-variations-de-stock/",
+     "anchor": "Variation Stock Auto",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/optimisation-entrepot/": {
+   "title": "Optimisation Entrepôt • Logistique & ERP • Guide PME",
+   "words": 1945,
+   "cluster": "stock",
+   "existing_ctx_links": 6,
+   "budget": 10,
+   "new_links": [
+    {
+     "target": "/blog/maitriser-la-gestion-des-stocks/",
+     "anchor": "Maîtriser Ses Stocks",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/variation-de-stock-positif-negatif/",
+     "anchor": "Variation Stock + ou",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/numeros-de-lot/": {
+   "title": "Numéros de Lot • Gestion & Traçabilité • Guide Pratique",
+   "words": 1674,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 6,
+   "budget": 9,
+   "new_links": [
+    {
+     "target": "/blog/tracabilite-viande-logiciel/",
+     "anchor": "Traçabilité viande logiciel : suivi lot charcutier & numéro de lot réglementation",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/tracabilite-lot-dlc-logiciel/",
+     "anchor": "Traçabilité Lot & DLC",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/ordre-de-fabrication/": {
+   "title": "Ordre de Fabrication • Gestion & ERP • Guide Complet",
+   "words": 1192,
+   "cluster": "fabrication",
+   "existing_ctx_links": 2,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/ordonnancement-planification/",
+     "anchor": "Ordonnancement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/opc-ua/",
+     "anchor": "OPC UA",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-decoupe-viande-logiciel/",
+     "anchor": "Gestion découpe viande au logiciel : rendement matière charcuterie & taux découpe porc",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau fabrication: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-variations-de-stock/": {
+   "title": "Variation de Stock • Calcul & Formules • Guide 2026",
+   "words": 1036,
+   "cluster": "stock",
+   "existing_ctx_links": 1,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/gestion-des-inventaires/",
+     "anchor": "Gestion des Inventaires",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-stock-multi-entrepots/",
+     "anchor": "Gestion Stock Multi-Entrepôts",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/reapprovisionnement-stocks/",
+     "anchor": "Réapprovisionnement",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/calcul-stock-de-securite/": {
+   "title": "Stock de Sécurité • Calcul & Formules • Guide Pratique",
+   "words": 1246,
+   "cluster": "stock",
+   "existing_ctx_links": 5,
+   "budget": 6,
+   "new_links": [
+    {
+     "target": "/blog/calcul-stock-moyen/",
+     "anchor": "Calcul Stock Moyen",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/facture-exacompta/": {
+   "title": "Facture Exacompta • Alternative Numérique • ERP Agro",
+   "words": 1453,
+   "cluster": "facturation",
+   "existing_ctx_links": 1,
+   "budget": 8,
+   "new_links": [
+    {
+     "target": "/blog/facture-traiteur/",
+     "anchor": "Facture Traiteur",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/factur-x-e-facturation-logiciel/",
+     "anchor": "Factur-X",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    },
+    {
+     "target": "/blog/bon-de-commande/",
+     "anchor": "Bon de Commande",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau facturation: maillage latéral"
+    }
+   ]
+  },
+  "/blog/contraintes-reglementations-logiciel-agroalimentaire/": {
+   "title": "Réglementation Agro • Logiciel & Conformité • 2026",
+   "words": 830,
+   "cluster": "tracabilite",
+   "existing_ctx_links": 2,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/processus-agroalimentaire-guide/",
+     "anchor": "Processus Agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/conditionnement-alimentaire-erp/",
+     "anchor": "Conditionnement Alimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/numeros-de-lot/",
+     "anchor": "Numéros de Lot",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau tracabilite: maillage latéral"
+    }
+   ]
+  },
+  "/blog/fifo-fefo-lifo/": {
+   "title": "FIFO, FEFO & LIFO • Méthodes de Stock • Guide 2026",
+   "words": 980,
+   "cluster": "stock",
+   "existing_ctx_links": 2,
+   "budget": 5,
+   "new_links": [
+    {
+     "target": "/blog/variation-de-stock-positif-negatif/",
+     "anchor": "Variation Stock + ou",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/gestion-automatisee-des-variations-de-stock/",
+     "anchor": "Variation Stock Auto",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/enregistrement-comptable-variation-de-stock/",
+     "anchor": "Écriture Comptable Stock",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  }
+ }
+}
