@@ -73,6 +73,13 @@ FOOTER_LEGAL = [
     ("Mentions légales", "/mentions-legales/"), ("CGU", "/cgu/"),
     ("Politique de confidentialité", "/politique-de-confidentialite/"),
 ]
+# Site nav (the theme builds the real menu in JS and does not render it on single
+# posts, so we ship a faithful sticky header here so the menu is always visible).
+HEADER_NAV = [
+    ("ERP Agroalimentaire", "/agroalimentaire/"), ("Fonctionnalités", "/fonctionnalites/"),
+    ("Négoce", "/negoce/"), ("Comparatifs", "/comparatifs/"), ("Blog", "/blog/"),
+    ("Tarifs", "/tarifs/"),
+]
 
 CLUSTER_LABEL = {
     "stock": "Gestion de stock", "couts": "Coût de revient", "tracabilite": "Traçabilité & qualité",
@@ -131,6 +138,9 @@ def extract(raw):
         end = re.search(r"</article>", body, re.I)
         body = body[:end.start()] if end else body
     body = STRIP_HHCRO.sub("", body).strip()
+    # Remove literal {{ }} artifacts left by an earlier buggy templating pass
+    # (legitimate ERP article text never contains double braces).
+    body = body.replace("{{", "").replace("}}", "")
 
     toc = []
     counter = [0]
@@ -159,8 +169,20 @@ font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1f
 background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
 .hha-tpl *,.hha-tpl *::before,.hha-tpl *::after{box-sizing:border-box}
 .hha-tpl a{color:var(--blue)}
-.hha-progress{position:fixed;top:0;left:0;height:5px;width:0;z-index:9999;
+.hha-progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:10000;
 background:linear-gradient(90deg,var(--blue),var(--sky));transition:width .1s}
+.hha-nav{position:sticky;top:0;z-index:9000;background:rgba(255,255,255,.96);
+backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
+.hha-nav-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.hha-logo{font-weight:800;color:var(--ink);font-size:1.15rem;text-decoration:none;letter-spacing:-.01em;flex:0 0 auto}
+.hha-logo span{color:var(--blue)}
+.hha-nav-links{display:none;gap:20px;margin-left:8px}
+.hha-nav-links a{color:#334155;text-decoration:none;font-size:.92rem;font-weight:500}
+.hha-nav-links a:hover{color:var(--blue)}
+.hha-nav-cta{margin-left:auto;background:linear-gradient(135deg,var(--blue),#0284c7);color:#fff;
+text-decoration:none;font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:10px;white-space:nowrap}
+.hha-nav-cta:hover{filter:brightness(1.08)}
+@media(min-width:900px){.hha-nav-links{display:flex}}
 .hha-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0D2B44,#0b2238 60%,#0f172a);
 color:#fff;padding:48px 20px 96px;text-align:center;border-bottom:1px solid #1e293b}
 .hha-hero::after{content:"";position:absolute;top:-120px;right:-80px;width:420px;height:420px;
@@ -341,6 +363,7 @@ def render(slug, data, date_iso, author_id):
                f'<nav>{items}</nav></div>')
 
     meta = f'<span class="hha-bio-meta">• Publié le {date_fr}</span>' if date_fr else ""
+    nav_links = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in HEADER_NAV)
     foot_nav = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_NAV)
     foot_legal = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_LEGAL)
     year = datetime.datetime.now().year
@@ -349,6 +372,13 @@ def render(slug, data, date_iso, author_id):
 {CSS}
 <div class="hha-tpl">
 <div class="hha-progress" id="hha-progress"></div>
+<nav class="hha-nav">
+  <div class="hha-nav-in">
+    <a class="hha-logo" href="/">Hello <span>Harel</span></a>
+    <div class="hha-nav-links">{nav_links}</div>
+    <a class="hha-nav-cta" href="/contact/">Demander une démo</a>
+  </div>
+</nav>
 <header class="hha-hero">
   <div class="hha-hero-in">
     <nav class="hha-bc"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span>{bc}</nav>
