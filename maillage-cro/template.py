@@ -355,6 +355,17 @@ font-weight:700;text-decoration:none;padding:11px 20px;border-radius:11px;white-
 box-shadow:0 8px 18px rgba(34,197,94,.3)}
 .hha-ctab-btn:hover{filter:brightness(1.07)}
 @media(max-width:560px){.hha-ctab{flex-direction:column;align-items:stretch;text-align:center}.hha-ctab-btn{text-align:center}}
+/* Re-assert link styles: the home CSS sets `#hh-page a{color:inherit!important;
+   text-decoration:none!important}`, so we override it with equal id-specificity. */
+#hh-page .hha-art a{color:var(--blue)!important;text-decoration:underline!important;text-underline-offset:2px}
+#hh-page .hha-inline-links a{color:var(--blue)!important;text-decoration:none!important;font-weight:600}
+#hh-page .hha-toc a{color:#475569!important}
+#hh-page .hha-toc a.active{color:var(--ink)!important}
+#hh-page .hha-aux a{color:var(--blue)!important}
+#hh-page .hha-cta .sec{color:var(--blue)!important}
+#hh-page .hha-ctab-btn{color:#fff!important;text-decoration:none!important}
+#hh-page .hha-share a,#hh-page .hha-share button{text-decoration:none!important}
+#hh-page .hha-share a.tw,#hh-page .hha-share a.li{color:#fff!important}
 .skimming-active .hha-art p{color:#94a3b8}
 .skimming-active .hha-art strong{background:rgba(2,88,127,.14);color:var(--blue);font-weight:600;padding:0 4px;border-radius:4px}
 .hha-share{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
@@ -384,36 +395,42 @@ background:radial-gradient(circle,rgba(2,88,127,.10),transparent 70%)}
 display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative}.hha-cta-ic svg{width:24px;height:24px}
 .hha-cta h3{margin:0 0 8px;font-size:1.2rem;font-weight:800;line-height:1.3;position:relative;color:var(--ink)}
 .hha-cta p{margin:0 0 16px;font-size:.82rem;color:var(--muted);position:relative}
-.hha-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--blue),#0284c7);
-color:#fff;font-weight:700;font-size:.9rem;padding:12px 16px;border-radius:12px;text-decoration:none;position:relative;
-box-shadow:0 8px 20px rgba(2,88,127,.25)}.hha-btn:hover{filter:brightness(1.08)}.hha-btn svg{width:16px;height:16px}
+#hh-page .hha-btn{display:flex;align-items:center;justify-content:center;gap:8px;background-color:#16a34a!important;background-image:linear-gradient(135deg,#22c55e,#16a34a)!important;
+color:#fff!important;font-weight:700;font-size:.95rem;padding:14px 18px;border-radius:12px;text-decoration:none!important;position:relative;
+box-shadow:0 10px 22px rgba(34,197,94,.3);transition:transform .15s ease,box-shadow .15s ease}
+#hh-page .hha-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(34,197,94,.4)}.hha-btn svg{width:16px;height:16px}
 .hha-cta .sec{display:block;text-align:center;color:var(--blue);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative;font-weight:600}
 .hha-cta .fine{margin:10px 0 0;font-size:.66rem;color:#94a3b8;text-align:center;position:relative}
-/* Inter-H2 schema figures — generous spacing, clear hierarchy */
-.hha-fig{margin:2.4rem 0;border:1px solid var(--line);border-radius:16px;
-background:linear-gradient(180deg,#fbfdff,#fff);padding:22px 24px;box-shadow:0 6px 22px rgba(13,43,68,.05)}
-.hha-fig-cap{font-size:1rem;font-weight:800;color:var(--ink);margin:0;display:flex;align-items:center;gap:9px;line-height:1.3}
-.hha-fig-cap svg{width:20px;height:20px;color:var(--blue);flex:0 0 20px}
-.hha-fig-sub{margin:6px 0 18px;font-size:.86rem;color:var(--muted);line-height:1.5}
-.hha-fig-body{margin-top:4px}
-.hha-flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
-.hha-flow-step{flex:1 1 0;min-width:104px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px;text-align:center;box-shadow:0 2px 8px rgba(13,43,68,.04)}
-.hha-flow-step b{display:block;font-size:.95rem;color:var(--blue);margin-bottom:3px}
-.hha-flow-step span{font-size:.74rem;color:var(--muted)}
-.hha-flow-arrow{display:flex;align-items:center;color:#94a3b8}.hha-flow-arrow svg{width:18px;height:18px}
-.hha-bars{display:flex;flex-direction:column;gap:12px}
-.hha-bar-row{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--ink)}
-.hha-bar-row .lab{flex:0 0 150px;color:#334155;font-weight:500}
-.hha-bar-track{flex:1;height:14px;background:#eef2f7;border-radius:999px;overflow:hidden}
-.hha-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--sky))}
-.hha-bar-val{flex:0 0 42px;text-align:right;font-weight:700;color:var(--ink)}
-.hha-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
-.hha-kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;box-shadow:0 2px 8px rgba(13,43,68,.04)}
-.hha-kpi .v{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1}
-.hha-kpi .l{font-size:.74rem;color:var(--muted);margin-top:6px}
-.hha-cycle{display:flex;align-items:center;justify-content:flex-start;gap:8px;flex-wrap:wrap}
-.hha-cycle-node{background:var(--mykonosLight,#EBF5FA);color:var(--blue);border:1px solid #cfe9fb;border-radius:999px;padding:9px 16px;font-size:.84rem;font-weight:600}
-@media(max-width:560px){.hha-fig{padding:18px 16px}.hha-bar-row .lab{flex:0 0 110px}}
+/* Inter-H2 schema figures — airy, premium, lots of breathing room */
+.hha-fig{margin:3rem 0;border:1px solid #e8eef5;border-radius:20px;
+background:radial-gradient(120% 140% at 0% 0%,#f4f9ff 0%,#fff 55%);
+padding:30px 32px;box-shadow:0 14px 40px rgba(13,43,68,.07)}
+.hha-fig-cap{font-size:1.12rem;font-weight:800;color:var(--ink);margin:0;display:flex;align-items:center;gap:11px;line-height:1.35}
+.hha-fig-cap svg{width:18px;height:18px;color:#fff;flex:0 0 34px;height:34px;width:34px;padding:8px;border-radius:10px;
+background:linear-gradient(135deg,var(--blue),var(--sky));box-shadow:0 6px 14px rgba(2,88,127,.25)}
+.hha-fig-sub{margin:10px 0 26px;font-size:.92rem;color:var(--muted);line-height:1.6;max-width:60ch}
+.hha-fig-body{margin-top:6px}
+.hha-flow{display:flex;align-items:stretch;gap:14px;flex-wrap:wrap}
+.hha-flow-step{flex:1 1 0;min-width:120px;background:#fff;border:1px solid #e8eef5;border-radius:14px;
+padding:18px 14px;text-align:center;box-shadow:0 4px 14px rgba(13,43,68,.05)}
+.hha-flow-step b{display:block;font-size:1.05rem;color:var(--blue);margin-bottom:5px;line-height:1.2}
+.hha-flow-step span{font-size:.78rem;color:var(--muted);line-height:1.4}
+.hha-flow-arrow{display:flex;align-items:center;color:#b8c6d6}.hha-flow-arrow svg{width:22px;height:22px}
+.hha-bars{display:flex;flex-direction:column;gap:18px}
+.hha-bar-row{display:flex;align-items:center;gap:16px;font-size:.9rem;color:var(--ink)}
+.hha-bar-row .lab{flex:0 0 170px;color:#334155;font-weight:600}
+.hha-bar-track{flex:1;height:20px;background:#eef3f8;border-radius:999px;overflow:hidden}
+.hha-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--sky));
+box-shadow:inset 0 -2px 4px rgba(0,0,0,.08);transition:width .6s ease}
+.hha-bar-val{flex:0 0 48px;text-align:right;font-weight:800;color:var(--ink)}
+.hha-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.hha-kpi{background:#fff;border:1px solid #e8eef5;border-radius:16px;padding:22px 14px;text-align:center;box-shadow:0 4px 14px rgba(13,43,68,.05)}
+.hha-kpi .v{font-size:1.85rem;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-.02em}
+.hha-kpi .l{font-size:.78rem;color:var(--muted);margin-top:8px;line-height:1.35}
+.hha-cycle{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.hha-cycle-node{background:#fff;color:var(--blue);border:1px solid #cfe3f2;border-radius:999px;
+padding:12px 20px;font-size:.88rem;font-weight:700;box-shadow:0 3px 10px rgba(2,88,127,.08)}
+@media(max-width:560px){.hha-fig{padding:22px 18px;margin:2.2rem 0}.hha-bar-row{gap:10px}.hha-bar-row .lab{flex:0 0 105px;font-size:.82rem}.hha-flow{gap:10px}}
 /* Top interactive tool (light) */
 .hha-tool{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#f8fbff,#fff);
 margin:0 0 26px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
@@ -430,8 +447,11 @@ font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;
 .hha-out .v{font-size:1.5rem;font-weight:800;color:var(--blue);line-height:1.1}
 .hha-out .l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .hha-out .n{margin:.3rem 0 0;font-size:.8rem;color:#475569}
-.hha-tool .hha-tbtn{display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--blue),#0284c7);color:#fff;
-padding:9px 16px;border-radius:9px;font-weight:700;text-decoration:none;font-size:.84rem}
+#hh-page .hha-tool .hha-tbtn{display:inline-flex!important;align-items:center;gap:8px;margin-top:14px;
+background-color:#16a34a!important;background-image:linear-gradient(135deg,#22c55e,#16a34a)!important;color:#fff!important;padding:13px 24px;border-radius:12px;
+font-weight:700;text-decoration:none!important;font-size:.92rem;box-shadow:0 10px 22px rgba(34,197,94,.28);
+transition:transform .15s ease,box-shadow .15s ease;letter-spacing:.01em}
+#hh-page .hha-tool .hha-tbtn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(34,197,94,.36)}
 .hha-chk{display:flex;gap:8px;align-items:center;font-size:.86rem;color:#334155;margin:5px 0}
 .hha-chk input{width:auto}
 @media(max-width:560px){.hha-tg{grid-template-columns:1fr}}
