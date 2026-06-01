@@ -345,7 +345,7 @@ border-radius:0 10px 10px 0;padding:.7rem 1rem;font-size:.95rem;margin:1.2rem 0}
 .hha-inline-links strong{color:var(--ink)}
 .hha-inline-links a{color:var(--blue);font-weight:600}
 .hha-ctab{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
-margin:3rem 0;padding:22px 26px;border-radius:18px;
+margin:4rem 0;padding:24px 28px;border-radius:18px;
 background:radial-gradient(120% 160% at 0% 0%,#f4f9ff 0%,#fff 60%);
 border:1px solid #d6e8f6;border-left:5px solid var(--blue);color:var(--ink);
 box-shadow:0 10px 30px rgba(13,43,68,.07)}
@@ -404,9 +404,9 @@ box-shadow:0 10px 22px rgba(34,197,94,.3);transition:transform .15s ease,box-sha
 .hha-cta .sec{display:block;text-align:center;color:var(--blue);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative;font-weight:600}
 .hha-cta .fine{margin:10px 0 0;font-size:.66rem;color:#94a3b8;text-align:center;position:relative}
 /* Inter-H2 schema figures — airy, premium, lots of breathing room */
-.hha-fig{margin:3.75rem 0;border:1px solid #e8eef5;border-radius:20px;
+.hha-fig{margin:4.5rem 0;border:1px solid #e8eef5;border-radius:20px;
 background:radial-gradient(120% 140% at 0% 0%,#f4f9ff 0%,#fff 55%);
-padding:30px 32px;box-shadow:0 14px 40px rgba(13,43,68,.07)}
+padding:38px 32px;box-shadow:0 14px 40px rgba(13,43,68,.07)}
 .hha-fig-cap{font-size:1.12rem;font-weight:800;color:var(--ink);margin:0;display:flex;align-items:center;gap:11px;line-height:1.35}
 .hha-fig-cap svg{width:18px;height:18px;color:#fff;flex:0 0 34px;height:34px;width:34px;padding:8px;border-radius:10px;
 background:linear-gradient(135deg,var(--blue),var(--sky));box-shadow:0 6px 14px rgba(2,88,127,.25)}
@@ -432,10 +432,10 @@ box-shadow:inset 0 -2px 4px rgba(0,0,0,.08);transition:width .6s ease}
 .hha-cycle{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
 .hha-cycle-node{background:#fff;color:var(--blue);border:1px solid #cfe3f2;border-radius:999px;
 padding:12px 20px;font-size:.88rem;font-weight:700;box-shadow:0 3px 10px rgba(2,88,127,.08)}
-@media(max-width:560px){.hha-fig{padding:22px 18px;margin:2.8rem 0}.hha-bar-row{gap:10px}.hha-bar-row .lab{flex:0 0 105px;font-size:.82rem}.hha-flow{gap:10px}}
+@media(max-width:560px){.hha-fig{padding:28px 18px;margin:3.4rem 0}.hha-bar-row{gap:10px}.hha-bar-row .lab{flex:0 0 105px;font-size:.82rem}.hha-flow{gap:10px}}
 /* Top interactive tool (light) */
 .hha-tool{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#f8fbff,#fff);
-margin:0 0 26px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
+margin:0 0 34px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
 .hha-tool-h{padding:16px 18px 8px}
 .hha-tool-badge{display:inline-block;background:var(--mykonosLight,#EBF5FA);color:var(--blue);font-weight:700;
 font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
