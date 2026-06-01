@@ -344,16 +344,18 @@ background:#f1f8fc;color:#334155;border-radius:0 10px 10px 0}
 border-radius:0 10px 10px 0;padding:.7rem 1rem;font-size:.95rem;margin:1.2rem 0}
 .hha-inline-links strong{color:var(--ink)}
 .hha-inline-links a{color:var(--blue);font-weight:600}
-.hha-ctab{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-margin:2.4rem 0;padding:18px 22px;border-radius:16px;background:linear-gradient(135deg,#0D2B44,#0f172a);
-color:#fff;box-shadow:0 10px 26px rgba(13,43,68,.18)}
-.hha-ctab-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
-.hha-ctab-txt strong{font-size:1.05rem;font-weight:800}
-.hha-ctab-txt span{font-size:.85rem;color:#cbd5e1}
-.hha-ctab-btn{flex:0 0 auto;background:linear-gradient(135deg,var(--green),#16a34a);color:#fff;
-font-weight:700;text-decoration:none;padding:11px 20px;border-radius:11px;white-space:nowrap;
-box-shadow:0 8px 18px rgba(34,197,94,.3)}
-.hha-ctab-btn:hover{filter:brightness(1.07)}
+.hha-ctab{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+margin:3rem 0;padding:22px 26px;border-radius:18px;
+background:radial-gradient(120% 160% at 0% 0%,#f4f9ff 0%,#fff 60%);
+border:1px solid #d6e8f6;border-left:5px solid var(--blue);color:var(--ink);
+box-shadow:0 10px 30px rgba(13,43,68,.07)}
+.hha-ctab-txt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hha-ctab-txt strong{font-size:1.1rem;font-weight:800;color:var(--ink)}
+.hha-ctab-txt span{font-size:.88rem;color:var(--muted)}
+.hha-ctab-btn{flex:0 0 auto;background-color:#16a34a;background-image:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;
+font-weight:700;text-decoration:none;padding:13px 24px;border-radius:12px;white-space:nowrap;
+box-shadow:0 10px 22px rgba(34,197,94,.28);transition:transform .15s ease,box-shadow .15s ease}
+.hha-ctab-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(34,197,94,.36)}
 @media(max-width:560px){.hha-ctab{flex-direction:column;align-items:stretch;text-align:center}.hha-ctab-btn{text-align:center}}
 /* Re-assert link styles: the home CSS sets `#hh-page a{color:inherit!important;
    text-decoration:none!important}`, so we override it with equal id-specificity. */
@@ -363,7 +365,7 @@ box-shadow:0 8px 18px rgba(34,197,94,.3)}
 #hh-page .hha-toc a.active{color:var(--ink)!important}
 #hh-page .hha-aux a{color:var(--blue)!important}
 #hh-page .hha-cta .sec{color:var(--blue)!important}
-#hh-page .hha-ctab-btn{color:#fff!important;text-decoration:none!important}
+#hh-page .hha-art a.hha-ctab-btn,#hh-page .hha-ctab a.hha-ctab-btn{color:#fff!important;text-decoration:none!important}
 #hh-page .hha-share a,#hh-page .hha-share button{text-decoration:none!important}
 #hh-page .hha-share a.tw,#hh-page .hha-share a.li{color:#fff!important}
 .skimming-active .hha-art p{color:#94a3b8}
@@ -402,7 +404,7 @@ box-shadow:0 10px 22px rgba(34,197,94,.3);transition:transform .15s ease,box-sha
 .hha-cta .sec{display:block;text-align:center;color:var(--blue);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative;font-weight:600}
 .hha-cta .fine{margin:10px 0 0;font-size:.66rem;color:#94a3b8;text-align:center;position:relative}
 /* Inter-H2 schema figures — airy, premium, lots of breathing room */
-.hha-fig{margin:3rem 0;border:1px solid #e8eef5;border-radius:20px;
+.hha-fig{margin:3.75rem 0;border:1px solid #e8eef5;border-radius:20px;
 background:radial-gradient(120% 140% at 0% 0%,#f4f9ff 0%,#fff 55%);
 padding:30px 32px;box-shadow:0 14px 40px rgba(13,43,68,.07)}
 .hha-fig-cap{font-size:1.12rem;font-weight:800;color:var(--ink);margin:0;display:flex;align-items:center;gap:11px;line-height:1.35}
@@ -430,7 +432,7 @@ box-shadow:inset 0 -2px 4px rgba(0,0,0,.08);transition:width .6s ease}
 .hha-cycle{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
 .hha-cycle-node{background:#fff;color:var(--blue);border:1px solid #cfe3f2;border-radius:999px;
 padding:12px 20px;font-size:.88rem;font-weight:700;box-shadow:0 3px 10px rgba(2,88,127,.08)}
-@media(max-width:560px){.hha-fig{padding:22px 18px;margin:2.2rem 0}.hha-bar-row{gap:10px}.hha-bar-row .lab{flex:0 0 105px;font-size:.82rem}.hha-flow{gap:10px}}
+@media(max-width:560px){.hha-fig{padding:22px 18px;margin:2.8rem 0}.hha-bar-row{gap:10px}.hha-bar-row .lab{flex:0 0 105px;font-size:.82rem}.hha-flow{gap:10px}}
 /* Top interactive tool (light) */
 .hha-tool{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#f8fbff,#fff);
 margin:0 0 26px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
