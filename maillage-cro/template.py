@@ -506,9 +506,12 @@ transition:transform .15s ease,box-shadow .15s ease;letter-spacing:.01em}
 .hb-spark span{flex:1;background:linear-gradient(180deg,var(--sky),var(--blue));border-radius:3px 3px 0 0;min-height:4px}
 .hb-badge{display:inline-block;font-weight:800;border-radius:10px;padding:6px 14px;font-size:1rem}
 @media(max-width:560px){.hb-cmp{grid-template-columns:1fr}.hb-lots{grid-template-columns:1fr}.hb-wrow .lab{flex:0 0 110px}}
-.hha-aux nav{display:flex;flex-direction:column;gap:2px}
-.hha-aux a{font-size:.88rem;font-weight:600;color:var(--blue);text-decoration:none;padding:7px 10px;border-radius:8px}
-.hha-aux a:hover{background:#EBF5FA}
+.hha-aux{margin-top:32px}
+.hha-aux nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}
+.hha-aux a{font-size:.9rem;font-weight:600;color:var(--blue);text-decoration:none;padding:12px 14px;border-radius:10px;
+border:1px solid var(--line);background:var(--bg);display:flex;align-items:center;gap:8px;line-height:1.3}
+.hha-aux a::before{content:"›";color:var(--blue);font-weight:800}
+.hha-aux a:hover{background:#EBF5FA;border-color:var(--blue)}
 .hha-toast{position:fixed;bottom:24px;right:24px;background:#0f172a;color:#fff;font-size:.85rem;border-radius:12px;
 padding:12px 16px;box-shadow:0 12px 30px rgba(0,0,0,.25);transform:translateY(120px);opacity:0;
 transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:1}
@@ -532,7 +535,10 @@ transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:
 @media(min-width:1024px){
 .hha-grid{grid-template-columns:minmax(0,1fr) 336px;gap:40px}
 .hha-main{grid-column:1;grid-row:1;padding:40px}
-.hha-aside{grid-column:2;grid-row:1;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow:auto}
+.hha-aside{grid-column:2;grid-row:1;position:sticky;top:96px;align-self:start}
+/* cap the TOC so TOC + CTA always fit the viewport and the demo CTA is never
+   clipped (the aside is no longer scroll-cropped) */
+.hha-toc-desk .hha-toc{max-height:34vh}
 .hha-toc-top{display:none}
 .hha-toc-desk{display:block}
 }
@@ -766,6 +772,7 @@ def render(slug, data, date_iso, author_id):
           <a class="li" href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
+      {aux}
     </div>
     <aside class="hha-aside">
       <div class="hha-side-card hha-toc-desk">
@@ -780,7 +787,6 @@ def render(slug, data, date_iso, author_id):
         <a class="sec" href="/contact/">Parler à un expert agroalimentaire →</a>
         <p class="fine">Présentation personnalisée en visioconférence sous 48h.</p>
       </div>
-      {aux}
     </aside>
   </div>
 </div>

@@ -113,8 +113,8 @@ CSS = """
 padding:128px 20px 56px;text-align:center;position:relative;overflow:hidden}
 #hh-page .bgx-hero::after{content:"";position:absolute;top:-120px;right:-80px;width:460px;height:460px;
 background:radial-gradient(circle,rgba(0,177,245,.25),transparent 70%);pointer-events:none}
-#hh-page .bgx-hero h1{font-size:clamp(2rem,4.4vw,3rem);font-weight:800;margin:0 0 14px;letter-spacing:-.01em}
-#hh-page .bgx-hero p{color:#cbd5e1;font-size:1.05rem;max-width:62ch;margin:0 auto}
+#hh-page .bgx-hero h1{color:#fff!important;font-size:clamp(2rem,4.4vw,3rem);font-weight:800;margin:0 0 14px;letter-spacing:-.01em;position:relative}
+#hh-page .bgx-hero p{color:#cbd5e1!important;font-size:1.05rem;max-width:62ch;margin:0 auto;position:relative}
 #hh-page .blog-section .container{max-width:1180px;margin:0 auto;padding:0 20px}
 #hh-page .bgx-tools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;
 margin:-28px auto 30px;max-width:1180px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;
