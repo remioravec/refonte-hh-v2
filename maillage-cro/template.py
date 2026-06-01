@@ -338,28 +338,30 @@ background:#cbd5e1;cursor:pointer;transition:background .2s}
 .hha-switch span{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;
 box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
 .hha-switch[aria-checked="true"] span{transform:translateX(20px)}
-/* article typography (uniform across all posts) */
-.hha-art{overflow-wrap:anywhere}
-.hha-art>section{margin:0 0 1.5rem}
-.hha-art h2{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.35;margin:3.2rem 0 1.3rem;
-scroll-margin-top:90px;display:flex;gap:10px;align-items:flex-start}
+/* article typography (uniform across all posts) — generous, airy spacing */
+.hha-art{overflow-wrap:anywhere;font-size:1.05rem;line-height:1.85}
+.hha-art>*:first-child{margin-top:0}
+.hha-art>section{margin:0 0 2rem}
+.hha-art h2{font-size:1.55rem;font-weight:800;color:var(--ink);line-height:1.35;margin:3.6rem 0 1.4rem;
+scroll-margin-top:100px;display:flex;gap:11px;align-items:flex-start}
 .hha-art h2::before{content:"";flex:0 0 6px;width:6px;height:1.4em;border-radius:999px;background:var(--blue);margin-top:.05em}
-.hha-art h3{font-size:1.18rem;font-weight:700;color:var(--ink);margin:2.2rem 0 .8rem}
-.hha-art p{margin:0 0 1.35rem;font-size:1.02rem;line-height:1.8}
-.hha-art ul,.hha-art ol{margin:1rem 0 1.6rem;padding-left:1.4rem}
-.hha-art li{margin:.6rem 0;line-height:1.7;padding-left:.2rem}.hha-art li::marker{color:var(--blue)}
+.hha-art h3{font-size:1.2rem;font-weight:700;color:var(--ink);margin:2.6rem 0 .9rem;scroll-margin-top:100px}
+.hha-art h4{font-size:1.05rem;font-weight:700;color:var(--ink);margin:2rem 0 .7rem}
+.hha-art p{margin:0 0 1.55rem;line-height:1.85}
+.hha-art ul,.hha-art ol{margin:1.2rem 0 1.9rem;padding-left:1.5rem}
+.hha-art li{margin:.75rem 0;line-height:1.75;padding-left:.25rem}.hha-art li::marker{color:var(--blue)}
 .hha-art a{color:var(--blue);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
-.hha-art img{max-width:100%!important;height:auto;border-radius:12px;margin:1rem 0}
-.hha-art figure{margin:1.2rem 0;max-width:100%}
-.hha-art figure.wp-block-table,.hha-art .wp-block-table{display:block;overflow-x:auto}
-.hha-art table{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0}
-.hha-art th,.hha-art td{border:1px solid var(--line);padding:.6rem .7rem;text-align:left;vertical-align:top}
+.hha-art img{max-width:100%!important;height:auto;border-radius:12px;margin:1.8rem 0}
+.hha-art figure{margin:2rem 0;max-width:100%}
+.hha-art figure.wp-block-table,.hha-art .wp-block-table{display:block;overflow-x:auto;margin:2rem 0}
+.hha-art table{width:100%;border-collapse:collapse;font-size:.92rem;margin:2rem 0}
+.hha-art th,.hha-art td{border:1px solid var(--line);padding:.75rem .85rem;text-align:left;vertical-align:top;line-height:1.6}
 .hha-art thead th{background:var(--ink);color:#fff;font-weight:600}
-.hha-art blockquote{margin:1.2rem 0;padding:.7rem 1.1rem;border-left:4px solid var(--blue);
+.hha-art blockquote{margin:2rem 0;padding:1rem 1.3rem;border-left:4px solid var(--blue);
 background:#f1f8fc;color:#334155;border-radius:0 10px 10px 0}
 .hha-art pre{overflow-x:auto;background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:12px}
 .hha-inline-links{background:#f1f8fc;border:1px solid #cfe9fb;border-left:4px solid var(--blue);
-border-radius:0 10px 10px 0;padding:.7rem 1rem;font-size:.95rem;margin:1.2rem 0}
+border-radius:0 10px 10px 0;padding:1rem 1.2rem;font-size:.95rem;line-height:1.7;margin:2rem 0}
 .hha-inline-links strong{color:var(--ink)}
 .hha-inline-links a{color:var(--blue);font-weight:600}
 .hha-ctab{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
@@ -388,7 +390,8 @@ box-shadow:0 10px 22px rgba(34,197,94,.28);transition:transform .15s ease,box-sh
 #hh-page .hha-share a.tw,#hh-page .hha-share a.li{color:#fff!important}
 .skimming-active .hha-art p{color:#94a3b8}
 .skimming-active .hha-art strong{background:rgba(2,88,127,.14);color:var(--blue);font-weight:600;padding:0 4px;border-radius:4px}
-.hha-share{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+
+.hha-share{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
 background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
 .hha-share span.lbl{font-size:.85rem;font-weight:600;color:#475569}
 .hha-share .btns{display:flex;gap:8px;align-items:center}
@@ -520,14 +523,18 @@ transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:
 .hha-foot-legal a{color:#94a3b8;text-decoration:none;font-size:.8rem}.hha-foot-legal a:hover{color:#fff}
 .hha-foot-cp{color:#64748b;font-size:.78rem}
 /* DOM order is: TOC, main, extras(CTA+related).
-   MOBILE (single column) => TOC above content, CTA after content. */
-.hha-toc-card{margin-bottom:0}
-.hha-extras{display:flex;flex-direction:column;gap:20px}
+   MOBILE (single column) => TOC above content, CTA after content.
+   DESKTOP => left article + ONE sticky right column (no two-sticky overlap),
+   offset 96px to clear the fixed site header (72px). */
+.hha-toc-top{margin-bottom:0}
+.hha-toc-desk{display:none}
+.hha-aside{display:flex;flex-direction:column;gap:22px}
 @media(min-width:1024px){
-.hha-grid{grid-template-columns:minmax(0,1fr) 340px;gap:32px}
-.hha-main{grid-column:1;grid-row:1 / span 2;padding:36px}
-.hha-toc-card{grid-column:2;grid-row:1;position:sticky;top:24px}
-.hha-extras{grid-column:2;grid-row:2;position:sticky;top:24px}
+.hha-grid{grid-template-columns:minmax(0,1fr) 336px;gap:40px}
+.hha-main{grid-column:1;grid-row:1;padding:40px}
+.hha-aside{grid-column:2;grid-row:1;position:sticky;top:96px;align-self:start;max-height:calc(100vh - 112px);overflow:auto}
+.hha-toc-top{display:none}
+.hha-toc-desk{display:block}
 }
 </style>"""
 
@@ -737,7 +744,7 @@ def render(slug, data, date_iso, author_id):
 {hero}
 <div class="hha-shell">
   <div class="hha-grid">
-    <div class="hha-side-card hha-toc-card">
+    <div class="hha-side-card hha-toc-card hha-toc-top">
       <p class="hha-side-h">{ICON["list"]} Sommaire de l'article</p>
       <nav class="hha-toc">{toc}</nav>
     </div>
@@ -760,7 +767,11 @@ def render(slug, data, date_iso, author_id):
         </div>
       </div>
     </div>
-    <div class="hha-extras">
+    <aside class="hha-aside">
+      <div class="hha-side-card hha-toc-desk">
+        <p class="hha-side-h">{ICON["list"]} Sommaire de l'article</p>
+        <nav class="hha-toc">{toc}</nav>
+      </div>
       <div class="hha-cta">
         <div class="hha-cta-ic">{ICON["spark"]}</div>
         <h3>Révolutionnez votre gestion agroalimentaire</h3>
@@ -770,7 +781,7 @@ def render(slug, data, date_iso, author_id):
         <p class="fine">Présentation personnalisée en visioconférence sous 48h.</p>
       </div>
       {aux}
-    </div>
+    </aside>
   </div>
 </div>
 <div class="hha-toast" id="hha-toast"></div>
