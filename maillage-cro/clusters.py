@@ -96,7 +96,7 @@ CLUSTERS = {
             "erp-grossiste-distributeur", "logiciel-grossiste-alimentaire",
             "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises", "erp-boissons",
             "logiciel-maree-mareyeur", "logiciel-televente-alimentaire",
-            "meilleurs-erp-gestion-approvisionnements",
+            "meilleurs-erp-gestion-approvisionnements", "edi-logiciel-agroalimentaire",
         ],
     },
     "erp_techno": {
