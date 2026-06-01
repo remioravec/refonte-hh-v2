@@ -23,49 +23,82 @@ def _kw(h2):
     return h2.lower()
 
 
-def schema_for(index, h2_text):
-    """Pick a schema type from the H2 wording; rotate styles otherwise."""
+def _fig(h2_text, sub, inner):
+    cap = html.escape(h2_text.strip()[:80])
+    return (f'<figure class="hha-fig" role="group">'
+            f'<figcaption class="hha-fig-cap">{IC}<span>{cap}</span></figcaption>'
+            f'<p class="hha-fig-sub">{html.escape(sub)}</p>'
+            f'<div class="hha-fig-body">{inner}</div></figure>')
+
+
+def schema_for(h2_text):
+    """Return a high-quality, on-topic schema ONLY when the H2 clearly maps to a
+    known visual; otherwise return None (no figure). Coherence over coverage."""
     k = _kw(h2_text)
-    cap = html.escape(h2_text.strip()[:70])
-    head = f'<p class="hha-fig-cap">{IC} {cap}</p>'
 
-    def fig(inner):
-        return f'<figure class="hha-fig" aria-hidden="true">{head}{inner}</figure>'
-
-    # process / steps
-    if any(w in k for w in ["étape", "etape", "process", "comment", "méthode", "methode", "déploiement", "deploiement", "migrer", "migration"]):
-        steps = [("1", "Analyse"), ("2", "Paramétrage"), ("3", "Déploiement"), ("4", "Suivi")]
-        cells = ARROW.join(f'<div class="hha-flow-step"><b>{n}</b><span>{l}</span></div>' for n, l in steps)
-        return fig(f'<div class="hha-flow">{cells}</div>')
-    # comparison / vs / alternative
-    if any(w in k for w in ["vs", "comparat", "alternativ", "différence", "difference", "choisir", "meilleur"]):
-        rows = [("Solution spécialisée", 88), ("ERP généraliste", 55), ("Tableur / Excel", 28)]
-        bars = "".join(
-            f'<div class="hha-bar-row"><span class="lab">{l}</span>'
-            f'<div class="hha-bar-track"><div class="hha-bar-fill" style="width:{p}%"></div></div>'
-            f'<b style="flex:0 0 38px;text-align:right">{p}%</b></div>' for l, p in rows)
-        return fig(f'<div class="hha-bars">{bars}</div>')
-    # KPI / chiffres / ROI / coût
-    if any(w in k for w in ["roi", "kpi", "coût", "cout", "marge", "rentab", "gain", "chiffre", "résultat", "resultat", "prix"]):
-        kpis = [("-35%", "temps de saisie"), ("+12%", "marge nette"), ("x3", "vitesse d'inventaire"), ("0", "ressaisie")]
-        cells = "".join(f'<div class="hha-kpi"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in kpis)
-        return fig(f'<div class="hha-kpis">{cells}</div>')
-    # traceability / cycle / stock rotation
-    if any(w in k for w in ["traçab", "tracab", "lot", "fefo", "fifo", "rotation", "stock", "inventaire", "cycle", "flux"]):
+    # FEFO / rotation of stock
+    if any(w in k for w in ["fefo", "fifo", "lifo", "rotation", "péremption", "peremption", "dlc", "ddm"]):
         nodes = ["Réception", "Lot + DLC", "Stockage FEFO", "Préparation", "Expédition"]
-        cells = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
-        return fig(f'<div class="hha-cycle">{cells}</div>')
-    # default: rotate between bars and kpis so every section has a visual
-    if index % 2 == 0:
-        rows = [("Avant Hello Harel", 40), ("Avec Hello Harel", 90)]
-        bars = "".join(
+        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
+        return _fig(h2_text, "Le flux FEFO : premier périmé, premier sorti.",
+                    f'<div class="hha-cycle">{inner}</div>')
+
+    # Traceability chain
+    if any(w in k for w in ["traçab", "tracab", "numéro de lot", "numero de lot", "rappel"]):
+        nodes = ["Matière première", "Lot fournisseur", "Production", "Lot fini", "Client"]
+        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
+        return _fig(h2_text, "Traçabilité ascendante et descendante, du fournisseur au client.",
+                    f'<div class="hha-cycle">{inner}</div>')
+
+    # Steps / method / deployment / migration
+    if any(w in k for w in ["étape", "etape", "déploiement", "deploiement", "migrer", "migration", "mettre en place", "méthode", "methode"]):
+        steps = [("1", "Cadrage"), ("2", "Paramétrage"), ("3", "Reprise des données"), ("4", "Formation"), ("5", "Go-live")]
+        inner = ARROW.join(f'<div class="hha-flow-step"><b>{n}</b><span>{l}</span></div>' for n, l in steps)
+        return _fig(h2_text, "Les étapes clés d'un déploiement ERP maîtrisé.",
+                    f'<div class="hha-flow">{inner}</div>')
+
+    # Cost / margin breakdown
+    if any(w in k for w in ["coût de revient", "cout de revient", "prix de revient", "marge", "rentab", "calcul du coût", "calcul du cout"]):
+        rows = [("Matières premières", 55), ("Main d'œuvre", 22), ("Charges & freinte", 13), ("Marge nette", 10)]
+        inner = "".join(
             f'<div class="hha-bar-row"><span class="lab">{l}</span>'
             f'<div class="hha-bar-track"><div class="hha-bar-fill" style="width:{p}%"></div></div>'
-            f'<b style="flex:0 0 38px;text-align:right">{p}%</b></div>' for l, p in rows)
-        return fig(f'<div class="hha-bars">{bars}</div>')
-    nodes = ["Données", "Automatisation", "Contrôle", "Décision"]
-    cells = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
-    return fig(f'<div class="hha-cycle">{cells}</div>')
+            f'<b class="hha-bar-val">{p}%</b></div>' for l, p in rows)
+        return _fig(h2_text, "Décomposition type d'un prix de vente agroalimentaire.",
+                    f'<div class="hha-bars">{inner}</div>')
+
+    # Safety stock / replenishment
+    if any(w in k for w in ["stock de sécurité", "stock de securite", "réapprovision", "reapprovision", "point de commande", "seuil"]):
+        steps = [("Conso", "moyenne/jour"), ("× Délai", "fournisseur"), ("+ Marge", "sécurité"), ("= Seuil", "de commande")]
+        inner = ARROW.join(f'<div class="hha-flow-step"><b>{a}</b><span>{b}</span></div>' for a, b in steps)
+        return _fig(h2_text, "Du besoin quotidien au point de commande automatique.",
+                    f'<div class="hha-flow">{inner}</div>')
+
+    # Comparison: specialized vs generalist vs Excel
+    if any(w in k for w in ["pourquoi", "spécialisé", "specialise", "généraliste", "generaliste", "vs ", "comparatif", "alternative", "différence entre", "difference entre", "excel"]):
+        rows = [("ERP spécialisé agro", 90), ("ERP généraliste", 55), ("Tableur Excel", 25)]
+        inner = "".join(
+            f'<div class="hha-bar-row"><span class="lab">{l}</span>'
+            f'<div class="hha-bar-track"><div class="hha-bar-fill" style="width:{p}%"></div></div>'
+            f'<b class="hha-bar-val">{p}%</b></div>' for l, p in rows)
+        return _fig(h2_text, "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
+                    f'<div class="hha-bars">{inner}</div>')
+
+    # HACCP / quality / compliance
+    if any(w in k for w in ["haccp", "conformité", "conformite", "qualité", "qualite", "réglementation", "reglementation", "inco", "norme"]):
+        nodes = ["Dangers", "Points critiques (CCP)", "Surveillance", "Actions correctives", "Enregistrements"]
+        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
+        return _fig(h2_text, "Les piliers d'un plan HACCP opérationnel.",
+                    f'<div class="hha-cycle">{inner}</div>')
+
+    # ROI / gains
+    if any(w in k for w in ["roi", "retour sur investissement", "gains", "bénéfices", "benefices", "économies", "economies"]):
+        kpis = [("−35%", "temps de saisie"), ("+12%", "marge nette"), ("×3", "vitesse d'inventaire"), ("0", "ressaisie")]
+        inner = "".join(f'<div class="hha-kpi"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in kpis)
+        return _fig(h2_text, "Gains typiques observés après le déploiement d'un ERP métier.",
+                    f'<div class="hha-kpis">{inner}</div>')
+
+    return None  # not pertinent -> no schema
 
 
 # ---- Top micro-intention tools (light theme) ----
@@ -122,7 +155,7 @@ def _roi(slug):
             '<div class="hha-fld"><label>Gain visé (%)</label><input type="number" id="r_g" value="35" min="0" max="100"></div>'
             '</div><div class="hha-out"><div class="l">Économies annuelles estimées</div>'
             '<div class="v" id="r_o">—</div><p class="n" id="r_n"></p>'
-            '<a class="hha-tbtn" href="/contact/">Chiffrer mon ROI →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("function f(){var u=+r_u.value||0,h=+r_h.value||0,c=+r_c.value||0,g=(+r_g.value||0)/100;"
           "var s=u*h*52*c*g;document.getElementById('r_o').textContent=s.toLocaleString('fr-FR',{maximumFractionDigits:0})+' € / an';"
           "document.getElementById('r_n').textContent='Soit '+(u*h*g).toFixed(1)+' h récupérées/semaine.';}"
@@ -139,7 +172,7 @@ def _stock(slug):
             '<div class="hha-fld"><label>Délai max (j)</label><input type="number" id="s_lm" value="8" min="0"></div>'
             '</div><div class="hha-out"><div class="l">Stock de sécurité conseillé</div>'
             '<div class="v" id="s_o">—</div><p class="n" id="s_n"></p>'
-            '<a class="hha-tbtn" href="/fonctionnalites/gestion-de-stock/">Automatiser dans l\'ERP →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("function f(){var d=+s_d.value||0,l=+s_l.value||0,dm=+s_dm.value||0,lm=+s_lm.value||0;var ss=(dm*lm)-(d*l);if(ss<0)ss=0;"
           "document.getElementById('s_o').textContent=ss.toLocaleString('fr-FR')+' unités';"
           "document.getElementById('s_n').textContent='Point de commande : '+((d*l)+ss).toLocaleString('fr-FR')+' unités.';}"
@@ -157,7 +190,7 @@ def _cost(slug):
             '<div class="hha-fld"><label>Marge visée (%)</label><input type="number" id="c_g" value="30" min="0" max="100"></div>'
             '</div><div class="hha-out"><div class="l">Coût de revient → Prix de vente</div>'
             '<div class="v" id="c_oo">—</div><p class="n" id="c_n"></p>'
-            '<a class="hha-tbtn" href="/fonctionnalites/fabrication/">Fiabiliser mes coûts →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("function f(){var m=+c_m.value||0,l=+c_l.value||0,o=+c_o.value||0,fr=(+c_f.value||0)/100,g=(+c_g.value||0)/100;"
           "var cr=(m+l+o)/(1-fr);var pv=g<1?cr/(1-g):cr;"
           "document.getElementById('c_oo').textContent=cr.toFixed(2)+' € → '+pv.toFixed(2)+' €';"
@@ -175,7 +208,7 @@ def _fefo(slug):
             '<select id="fe_s"><option value="non">Non</option><option value="oui">Oui</option></select></div>'
             '<div class="hha-out"><div class="l">Méthode de rotation conseillée</div>'
             '<div class="v" id="fe_o">—</div><p class="n" id="fe_n"></p>'
-            '<a class="hha-tbtn" href="/fonctionnalites/gestion-de-stock/">Appliquer le FEFO →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("function f(){var t=fe_t.value,s=fe_s.value,m,n;"
           "if(t==='dlc'){m='FEFO';n='Premier périmé, premier sorti : impératif sur DLC courtes.';}"
           "else if(t==='ddm'){m=(s==='oui')?'FEFO':'FIFO';n='FIFO suffit hors promos ; FEFO si pics de dates.';}"
@@ -194,7 +227,7 @@ def _margin(slug):
             '<div class="hha-fld"><label>Volume</label><input type="number" id="m_v" value="500" min="0"></div>'
             '</div><div class="hha-out"><div class="l">Prix de vente → Marge sur volume</div>'
             '<div class="v" id="m_o">—</div><p class="n" id="m_n"></p>'
-            '<a class="hha-tbtn" href="/negoce/">Piloter mes marges →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("function f(){var a=+m_a.value||0,k=+m_k.value||0,r=(+m_r.value||0)/100,v=+m_v.value||0;"
           "var pv=a*k*(1-r),mu=pv-a,tx=pv?mu/pv*100:0;"
           "document.getElementById('m_o').textContent=pv.toFixed(2)+' € → '+(mu*v).toLocaleString('fr-FR',{maximumFractionDigits:0})+' €';"
@@ -214,7 +247,7 @@ def _compare(slug):
             '<label class="hha-chk"><input type="checkbox"> Coût de revient réel</label>'
             '<div class="hha-out"><div class="l">Adéquation Hello Harel</div>'
             '<div class="v" id="cmp_o">—</div><p class="n" id="cmp_n"></p>'
-            '<a class="hha-tbtn" href="/comparatifs/">Voir le comparatif →</a></div>')
+            '<a class="hha-tbtn" href="/contact/">Demander une démo →</a></div>')
     js = ("var box=document.currentScript.previousElementSibling;"
           "function f(){var cb=box.querySelectorAll('.hha-chk input'),n=0;cb.forEach(function(c){if(c.checked)n++});"
           "var t=cb.length,p=Math.round(n/t*100);"

@@ -377,27 +377,31 @@ color:#fff;font-weight:700;font-size:.9rem;padding:12px 16px;border-radius:12px;
 box-shadow:0 8px 20px rgba(2,88,127,.25)}.hha-btn:hover{filter:brightness(1.08)}.hha-btn svg{width:16px;height:16px}
 .hha-cta .sec{display:block;text-align:center;color:var(--blue);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative;font-weight:600}
 .hha-cta .fine{margin:10px 0 0;font-size:.66rem;color:#94a3b8;text-align:center;position:relative}
-/* Inter-H2 schema figures */
-.hha-fig{margin:1.6rem 0;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#fff);
-padding:16px 18px;box-shadow:0 4px 16px rgba(13,43,68,.04)}
-.hha-fig-cap{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 12px;display:flex;align-items:center;gap:7px}
-.hha-fig-cap svg{width:15px;height:15px;color:var(--blue)}
-.hha-flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
-.hha-flow-step{flex:1 1 0;min-width:90px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:center}
-.hha-flow-step b{display:block;font-size:.82rem;color:var(--ink)}
-.hha-flow-step span{font-size:.7rem;color:var(--muted)}
-.hha-flow-arrow{display:flex;align-items:center;color:var(--blue)}.hha-flow-arrow svg{width:18px;height:18px}
-.hha-bars{display:flex;flex-direction:column;gap:8px}
-.hha-bar-row{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--ink)}
-.hha-bar-row .lab{flex:0 0 130px;color:var(--muted)}
-.hha-bar-track{flex:1;height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}
+/* Inter-H2 schema figures — generous spacing, clear hierarchy */
+.hha-fig{margin:2.4rem 0;border:1px solid var(--line);border-radius:16px;
+background:linear-gradient(180deg,#fbfdff,#fff);padding:22px 24px;box-shadow:0 6px 22px rgba(13,43,68,.05)}
+.hha-fig-cap{font-size:1rem;font-weight:800;color:var(--ink);margin:0;display:flex;align-items:center;gap:9px;line-height:1.3}
+.hha-fig-cap svg{width:20px;height:20px;color:var(--blue);flex:0 0 20px}
+.hha-fig-sub{margin:6px 0 18px;font-size:.86rem;color:var(--muted);line-height:1.5}
+.hha-fig-body{margin-top:4px}
+.hha-flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.hha-flow-step{flex:1 1 0;min-width:104px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 12px;text-align:center;box-shadow:0 2px 8px rgba(13,43,68,.04)}
+.hha-flow-step b{display:block;font-size:.95rem;color:var(--blue);margin-bottom:3px}
+.hha-flow-step span{font-size:.74rem;color:var(--muted)}
+.hha-flow-arrow{display:flex;align-items:center;color:#94a3b8}.hha-flow-arrow svg{width:18px;height:18px}
+.hha-bars{display:flex;flex-direction:column;gap:12px}
+.hha-bar-row{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--ink)}
+.hha-bar-row .lab{flex:0 0 150px;color:#334155;font-weight:500}
+.hha-bar-track{flex:1;height:14px;background:#eef2f7;border-radius:999px;overflow:hidden}
 .hha-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--sky))}
-.hha-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
-.hha-kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
-.hha-kpi .v{font-size:1.4rem;font-weight:800;color:var(--blue);line-height:1}
-.hha-kpi .l{font-size:.72rem;color:var(--muted);margin-top:4px}
-.hha-cycle{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
-.hha-cycle-node{background:var(--mykonosLight,#EBF5FA);color:var(--blue);border:1px solid #cfe9fb;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:600}
+.hha-bar-val{flex:0 0 42px;text-align:right;font-weight:700;color:var(--ink)}
+.hha-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.hha-kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;box-shadow:0 2px 8px rgba(13,43,68,.04)}
+.hha-kpi .v{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1}
+.hha-kpi .l{font-size:.74rem;color:var(--muted);margin-top:6px}
+.hha-cycle{display:flex;align-items:center;justify-content:flex-start;gap:8px;flex-wrap:wrap}
+.hha-cycle-node{background:var(--mykonosLight,#EBF5FA);color:var(--blue);border:1px solid #cfe9fb;border-radius:999px;padding:9px 16px;font-size:.84rem;font-weight:600}
+@media(max-width:560px){.hha-fig{padding:18px 16px}.hha-bar-row .lab{flex:0 0 110px}}
 /* Top interactive tool (light) */
 .hha-tool{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#f8fbff,#fff);
 margin:0 0 26px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
@@ -556,16 +560,21 @@ def render(slug, data, date_iso, author_id):
         aux = (f'<div class="hha-side-card hha-aux"><p class="hha-side-h">{ICON["book"]} À lire aussi</p>'
                f'<nav>{items}</nav></div>')
 
-    # Insert an auto CSS/SVG schema before each <h2> (skip the very first so the
-    # article doesn't open on a figure).
-    h2_seen = [0]
+    # Insert a schema ONLY before pertinent H2s (keyword match), at most 2 per
+    # article, never on the first H2, and never two in a row.
+    state = {"n": 0, "placed": 0, "last": -9}
 
     def _ins(m):
-        i = h2_seen[0]
-        h2_seen[0] += 1
-        if i == 0:
+        i = state["n"]
+        state["n"] += 1
+        if i == 0 or state["placed"] >= 2 or (i - state["last"]) < 2:
             return m.group(0)
-        return W.schema_for(i, txt(re.sub(r"<[^>]+>", " ", m.group(1)))) + m.group(0)
+        fig = W.schema_for(txt(re.sub(r"<[^>]+>", " ", m.group(1))))
+        if not fig:
+            return m.group(0)
+        state["placed"] += 1
+        state["last"] = i
+        return fig + m.group(0)
 
     body_html = re.sub(r"<h2[^>]*>(.*?)</h2>", _ins, data["body"], flags=re.S)
     body_html = inject_mesh(slug, body_html)
