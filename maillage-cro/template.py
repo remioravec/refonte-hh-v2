@@ -35,6 +35,7 @@ import datetime
 
 import wp_common as wp
 import clusters as C
+import widgets as W
 from cro_article import cta_targets_for
 
 HERE = os.path.dirname(__file__)
@@ -329,19 +330,62 @@ margin:0 0 14px;display:flex;align-items:center;gap:8px}.hha-side-h svg{width:16
 border-left:2px solid transparent}
 .hha-toc a:hover{color:var(--ink);background:var(--bg)}
 .hha-toc a.active{color:var(--ink);background:var(--bg);border-left-color:var(--blue);font-weight:600}
-.hha-cta{background:linear-gradient(155deg,#0D2B44,#0f172a);color:#fff;border:1px solid #1e293b;
-border-radius:18px;padding:22px;position:relative;overflow:hidden}
+/* CTA — light version */
+.hha-cta{background:#fff;color:var(--ink);border:1px solid var(--line);
+border-radius:18px;padding:22px;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(13,43,68,.06)}
 .hha-cta::after{content:"";position:absolute;top:-50px;right:-50px;width:140px;height:140px;
-background:radial-gradient(circle,rgba(2,88,127,.4),transparent 70%)}
-.hha-cta-ic{width:46px;height:46px;border-radius:12px;background:rgba(2,88,127,.2);color:var(--sky);
+background:radial-gradient(circle,rgba(2,88,127,.10),transparent 70%)}
+.hha-cta-ic{width:46px;height:46px;border-radius:12px;background:var(--mykonosLight,#EBF5FA);color:var(--blue);
 display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative}.hha-cta-ic svg{width:24px;height:24px}
-.hha-cta h3{margin:0 0 8px;font-size:1.2rem;font-weight:800;line-height:1.3;position:relative}
-.hha-cta p{margin:0 0 16px;font-size:.82rem;color:#cbd5e1;position:relative}
+.hha-cta h3{margin:0 0 8px;font-size:1.2rem;font-weight:800;line-height:1.3;position:relative;color:var(--ink)}
+.hha-cta p{margin:0 0 16px;font-size:.82rem;color:var(--muted);position:relative}
 .hha-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--blue),#0284c7);
 color:#fff;font-weight:700;font-size:.9rem;padding:12px 16px;border-radius:12px;text-decoration:none;position:relative;
-box-shadow:0 8px 20px rgba(2,88,127,.3)}.hha-btn:hover{filter:brightness(1.08)}.hha-btn svg{width:16px;height:16px}
-.hha-cta .sec{display:block;text-align:center;color:var(--sky);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative}
+box-shadow:0 8px 20px rgba(2,88,127,.25)}.hha-btn:hover{filter:brightness(1.08)}.hha-btn svg{width:16px;height:16px}
+.hha-cta .sec{display:block;text-align:center;color:var(--blue);font-size:.78rem;text-decoration:none;margin-top:10px;position:relative;font-weight:600}
 .hha-cta .fine{margin:10px 0 0;font-size:.66rem;color:#94a3b8;text-align:center;position:relative}
+/* Inter-H2 schema figures */
+.hha-fig{margin:1.6rem 0;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fbfdff,#fff);
+padding:16px 18px;box-shadow:0 4px 16px rgba(13,43,68,.04)}
+.hha-fig-cap{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 12px;display:flex;align-items:center;gap:7px}
+.hha-fig-cap svg{width:15px;height:15px;color:var(--blue)}
+.hha-flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.hha-flow-step{flex:1 1 0;min-width:90px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:center}
+.hha-flow-step b{display:block;font-size:.82rem;color:var(--ink)}
+.hha-flow-step span{font-size:.7rem;color:var(--muted)}
+.hha-flow-arrow{display:flex;align-items:center;color:var(--blue)}.hha-flow-arrow svg{width:18px;height:18px}
+.hha-bars{display:flex;flex-direction:column;gap:8px}
+.hha-bar-row{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--ink)}
+.hha-bar-row .lab{flex:0 0 130px;color:var(--muted)}
+.hha-bar-track{flex:1;height:12px;background:#eef2f7;border-radius:999px;overflow:hidden}
+.hha-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--sky))}
+.hha-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.hha-kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.hha-kpi .v{font-size:1.4rem;font-weight:800;color:var(--blue);line-height:1}
+.hha-kpi .l{font-size:.72rem;color:var(--muted);margin-top:4px}
+.hha-cycle{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.hha-cycle-node{background:var(--mykonosLight,#EBF5FA);color:var(--blue);border:1px solid #cfe9fb;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:600}
+/* Top interactive tool (light) */
+.hha-tool{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#f8fbff,#fff);
+margin:0 0 26px;overflow:hidden;box-shadow:0 6px 20px rgba(13,43,68,.05)}
+.hha-tool-h{padding:16px 18px 8px}
+.hha-tool-badge{display:inline-block;background:var(--mykonosLight,#EBF5FA);color:var(--blue);font-weight:700;
+font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.hha-tool-h h3{margin:.5rem 0 .2rem;font-size:1.12rem;font-weight:800;color:var(--ink)}
+.hha-tool-h p{margin:0;color:var(--muted);font-size:.85rem}
+.hha-tool-b{padding:14px 18px 18px}
+.hha-tg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hha-fld label{display:block;font-size:.78rem;font-weight:600;color:#334155;margin-bottom:4px}
+.hha-fld input,.hha-fld select{width:100%;padding:9px 10px;border:1px solid #cbd5e1;border-radius:9px;font-size:.9rem}
+.hha-out{margin-top:12px;padding:12px 14px;background:var(--mykonosLight,#EBF5FA);border:1px solid #cfe9fb;border-radius:11px}
+.hha-out .v{font-size:1.5rem;font-weight:800;color:var(--blue);line-height:1.1}
+.hha-out .l{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.hha-out .n{margin:.3rem 0 0;font-size:.8rem;color:#475569}
+.hha-tool .hha-tbtn{display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--blue),#0284c7);color:#fff;
+padding:9px 16px;border-radius:9px;font-weight:700;text-decoration:none;font-size:.84rem}
+.hha-chk{display:flex;gap:8px;align-items:center;font-size:.86rem;color:#334155;margin:5px 0}
+.hha-chk input{width:auto}
+@media(max-width:560px){.hha-tg{grid-template-columns:1fr}}
 .hha-aux nav{display:flex;flex-direction:column;gap:2px}
 .hha-aux a{font-size:.88rem;font-weight:600;color:var(--blue);text-decoration:none;padding:7px 10px;border-radius:8px}
 .hha-aux a:hover{background:#EBF5FA}
@@ -435,6 +479,20 @@ def render(slug, data, date_iso, author_id):
         aux = (f'<div class="hha-side-card hha-aux"><p class="hha-side-h">{ICON["book"]} À lire aussi</p>'
                f'<nav>{items}</nav></div>')
 
+    # Insert an auto CSS/SVG schema before each <h2> (skip the very first so the
+    # article doesn't open on a figure).
+    h2_seen = [0]
+
+    def _ins(m):
+        i = h2_seen[0]
+        h2_seen[0] += 1
+        if i == 0:
+            return m.group(0)
+        return W.schema_for(i, txt(re.sub(r"<[^>]+>", " ", m.group(1)))) + m.group(0)
+
+    body_html = re.sub(r"<h2[^>]*>(.*?)</h2>", _ins, data["body"], flags=re.S)
+    top = W.top_tool(slug, data["title"])
+
     # Reading time from word count (~200 wpm).
     words = len(re.findall(r"[A-Za-zÀ-ÿ0-9]+", re.sub(r"<[^>]+>", " ", data["body"])))
     reading = max(1, round(words / 200))
@@ -481,13 +539,14 @@ def render(slug, data, date_iso, author_id):
       <nav class="hha-toc">{toc}</nav>
     </div>
     <div class="hha-card hha-main">
+      {top}
       <div class="hha-skim">
         <div class="hha-skim-l"><span class="hha-skim-ic">{ICON["zap"]}</span>
           <div><h4>Mode Lecture Rapide</h4><p>Surlignez l'essentiel pour un survol efficace</p></div></div>
         <button class="hha-switch" id="hha-skim" role="switch" aria-checked="false"><span></span></button>
       </div>
       <article class="hha-art" id="article-content">
-{data['body']}
+{body_html}
       </article>
       <div class="hha-share">
         <span class="lbl">Partager cet article</span>
