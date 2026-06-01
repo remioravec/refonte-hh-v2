@@ -120,6 +120,76 @@ def initials(name):
     return (parts[0][:2] if len(parts) == 1 else parts[0][0] + parts[-1][0]).upper()
 
 
+# Markers that signal the END of editorial prose inside the original <main>:
+# the legacy per-article CTA blocks / share / related boxes. Everything from the
+# first occurrence onward is dropped (we ship our own footer + CTA + related).
+TAIL_MARKERS = [
+    r'<div[^>]*class="[^"]*hh-cta-final', r'<div[^>]*class="[^"]*hh-cta',
+    r'<div[^>]*class="[^"]*hh-related', r'<section[^>]*class="[^"]*hh-related',
+    r'<div[^>]*class="[^"]*hh-share', r'<div[^>]*class="[^"]*hh-author',
+    r'<div[^>]*class="[^"]*blog-cta', r'<div[^>]*class="[^"]*post-cta',
+    r'<div[^>]*class="[^"]*hh-newsletter', r'<form\b',
+]
+
+
+# Dead/redirect links that must never ship in the prose (keeps SEO clean).
+LINK_FIXES = {
+    "/demo/": "/contact/", "/roi-calculator/": "/blog/roi-erp/",
+    "/formation/": "/contact/", "/solutions/": "/agroalimentaire/",
+}
+
+
+def _balance_tags(body, tag):
+    """Remove unmatched </tag> closers (which would break our wrappers) and
+    append any missing closers for tags left open. Order-aware via a depth walk."""
+    token = re.compile(rf"<{tag}\b[^>]*>|</{tag}>", re.I)
+    out, depth, last = [], 0, 0
+    for m in token.finditer(body):
+        out.append(body[last:m.start()])
+        tok = m.group(0)
+        if tok.lower().startswith(f"</{tag}"):
+            if depth == 0:
+                pass  # drop this unmatched closer
+            else:
+                depth -= 1
+                out.append(tok)
+        else:
+            depth += 1
+            out.append(tok)
+        last = m.end()
+    out.append(body[last:])
+    res = "".join(out)
+    if depth > 0:
+        res += f"\n</{tag}>" * depth
+    return res
+
+
+def clean_body(body):
+    """Truncate trailing legacy CTA/share blocks and balance stray tags so the
+    extracted prose can't corrupt the template grid."""
+    # Cut trailing legacy CTA/share blocks FIRST (before unwrapping), then unwrap
+    # every <div>/<section> layout container (keep inner content). The article
+    # prose then becomes pure semantic flow (h2/h3/p/ul/table/blockquote/img),
+    # which cannot escape or break our grid — the key to a stable, identical
+    # rendering on every post.
+    cut = len(body)
+    for pat in TAIL_MARKERS:
+        m = re.search(pat, body, re.I)
+        if m and m.start() < cut:
+            cut = m.start()
+    body = body[:cut].rstrip()
+    # Unwrap ALL layout containers: remove every <div>/<section> open & close tag
+    # (keep inner content). Leaves pure semantic prose that can't break the grid.
+    body = re.sub(r"</?(?:div|section|main|article)\b[^>]*>", "", body, flags=re.I)
+    # Also drop empty figures left behind and collapse blank lines.
+    body = re.sub(r"<figure[^>]*>\s*</figure>", "", body, flags=re.I)
+    body = re.sub(r"\n{3,}", "\n\n", body).strip()
+    # Rewrite dead/redirect links (handle querystrings: /demo/?from=...).
+    for dead, good in LINK_FIXES.items():
+        body = re.sub(r'href="' + re.escape(dead) + r'[^"]*"', f'href="{good}"', body)
+    return body.strip()
+
+
 def extract(raw):
     m = re.search(r"<h1[^>]*>(.*?)</h1>", raw, re.S)
     title = txt(m.group(1)) if m else ""
@@ -141,6 +211,7 @@ def extract(raw):
     # Remove literal {{ }} artifacts left by an earlier buggy templating pass
     # (legitimate ERP article text never contains double braces).
     body = body.replace("{{", "").replace("}}", "")
+    body = clean_body(body)
 
     toc = []
     counter = [0]
