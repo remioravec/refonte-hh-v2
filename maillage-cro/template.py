@@ -42,6 +42,20 @@ INV = json.load(open(os.path.join(HERE, "inventory.json")))
 ITEMS = {x["path"]: x for x in INV["items"]}
 PLAN = json.load(open(os.path.join(HERE, "maillage-plan.json")))["plan"]
 
+
+def _asset(name):
+    return open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
+
+
+# Verbatim site chrome captured from the HOME page (so header/footer are EXACTLY
+# the same as the home) + the ORIGINAL article hero ("hero d'avant").
+HOME_HEADER = _asset("home_header.html")
+HOME_MOBILEMENU = _asset("home_mobilemenu.html")
+HOME_FOOTER = _asset("home_footer.html")
+HOME_CSS = _asset("home_header.css")          # scoped to #hh-page (+ harmless body rules)
+HERO_CSS = _asset("article_hero.css")         # scoped to #hh-page
+NAV_JS = _asset("home_nav.js")
+
 TAGS = re.compile(r"<[^>]+>")
 MAIN_OPEN = re.compile(r'<main class="(?:article-content|hha-content)"[^>]*>', re.I)
 ARTICLE_OPEN = re.compile(r'<article[^>]*id="article-content"[^>]*>', re.I)
@@ -98,6 +112,8 @@ ICON = {
     "book": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
     "link": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
     "tag": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>',
+    "chev": '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:12px;height:12px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>',
+    "clock": '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
 }
 
 
@@ -243,50 +259,20 @@ def extract(raw):
     return {"title": title, "body": body, "toc": toc}
 
 
-# Self-contained, scoped styles. No global selectors -> no conflict, no chrome hiding.
+# Styles: home chrome CSS (verbatim, scoped to #hh-page) + original hero CSS +
+# our own content/grid/TOC/CTA CSS (scoped to .hha-tpl). No global selectors.
 CSS = """
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style id="hha-home-css">""" + HOME_CSS + """</style>
+<style id="hha-hero-css">""" + HERO_CSS + """</style>
 <style id="hha-tpl-css">
 .hha-tpl{--ink:#0D2B44;--blue:#02587F;--sky:#38bdf8;--muted:#64748b;--line:#e2e8f0;--bg:#F8FAFC;
 font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1f2937;
-background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+line-height:1.7;-webkit-font-smoothing:antialiased}
 .hha-tpl *,.hha-tpl *::before,.hha-tpl *::after{box-sizing:border-box}
-.hha-tpl a{color:var(--blue)}
 .hha-progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:10000;
 background:linear-gradient(90deg,var(--blue),var(--sky));transition:width .1s}
-.hha-nav{position:sticky;top:0;z-index:9000;background:rgba(255,255,255,.96);
-backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line)}
-.hha-nav-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
-.hha-logo{font-weight:800;color:var(--ink);font-size:1.15rem;text-decoration:none;letter-spacing:-.01em;flex:0 0 auto}
-.hha-logo span{color:var(--blue)}
-.hha-nav-links{display:none;gap:20px;margin-left:8px}
-.hha-nav-links a{color:#334155;text-decoration:none;font-size:.92rem;font-weight:500}
-.hha-nav-links a:hover{color:var(--blue)}
-.hha-nav-cta{margin-left:auto;background:linear-gradient(135deg,var(--blue),#0284c7);color:#fff;
-text-decoration:none;font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:10px;white-space:nowrap}
-.hha-nav-cta:hover{filter:brightness(1.08)}
-@media(min-width:900px){.hha-nav-links{display:flex}}
-.hha-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0D2B44,#0b2238 60%,#0f172a);
-color:#fff;padding:48px 20px 96px;text-align:center;border-bottom:1px solid #1e293b}
-.hha-hero::after{content:"";position:absolute;top:-120px;right:-80px;width:420px;height:420px;
-background:radial-gradient(circle,rgba(2,88,127,.35),transparent 70%);pointer-events:none}
-.hha-hero-in{max-width:880px;margin:0 auto;position:relative;z-index:1}
-.hha-bc{font-size:.8rem;color:#94a3b8;margin:0 0 18px}
-.hha-bc a{color:#94a3b8;text-decoration:none}.hha-bc a:hover{color:#fff}.hha-bc .sep{color:#475569;margin:0 8px}
-.hha-cat{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;text-transform:uppercase;
-letter-spacing:.06em;color:var(--sky);background:rgba(15,23,42,.6);border:1px solid #334155;
-padding:6px 12px;border-radius:999px;margin-bottom:22px}
-.hha-cat svg{width:14px;height:14px}
-.hha-hero h1{font-size:clamp(1.7rem,3.4vw,2.8rem);line-height:1.18;font-weight:800;letter-spacing:-.01em;
-margin:0 auto 26px;max-width:18ch;overflow-wrap:anywhere}
-.hha-bio{display:flex;gap:14px;align-items:center;text-align:left;max-width:520px;margin:0 auto;
-background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 18px}
-.hha-bio-av{flex:0 0 52px;width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid #fff;
-display:flex;align-items:center;justify-content:center;background:#1e293b;color:#fff;font-weight:700;font-size:1.05rem}
-.hha-bio-av img{width:100%;height:100%;object-fit:cover}
-.hha-bio-name{font-weight:700;color:#fff;font-size:.95rem}
-.hha-bio-meta{color:#94a3b8;font-size:.78rem;margin-left:6px}
-.hha-bio-role{color:var(--sky);font-size:.8rem;font-weight:500;margin-top:2px}
-.hha-shell{max-width:1180px;margin:-60px auto 0;padding:0 20px 64px;position:relative;z-index:2}
+.hha-shell{max-width:1180px;margin:0 auto;padding:36px 20px 64px;position:relative;z-index:2;background:var(--bg)}
 .hha-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
 .hha-card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 24px rgba(13,43,68,.06)}
 .hha-main{min-width:0;padding:26px}
@@ -372,10 +358,15 @@ transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:
 .hha-foot-legal{display:flex;flex-wrap:wrap;gap:8px 16px}
 .hha-foot-legal a{color:#94a3b8;text-decoration:none;font-size:.8rem}.hha-foot-legal a:hover{color:#fff}
 .hha-foot-cp{color:#64748b;font-size:.78rem}
+/* DOM order is: TOC, main, extras(CTA+related).
+   MOBILE (single column) => TOC above content, CTA after content. */
+.hha-toc-card{margin-bottom:0}
+.hha-extras{display:flex;flex-direction:column;gap:20px}
 @media(min-width:1024px){
 .hha-grid{grid-template-columns:minmax(0,1fr) 340px;gap:32px}
-.hha-aside{position:sticky;top:24px}
-.hha-main{padding:36px}
+.hha-main{grid-column:1;grid-row:1 / span 2;padding:36px}
+.hha-toc-card{grid-column:2;grid-row:1;position:sticky;top:24px}
+.hha-extras{grid-column:2;grid-row:2;position:sticky;top:24px}
 }
 </style>"""
 
@@ -444,39 +435,51 @@ def render(slug, data, date_iso, author_id):
         aux = (f'<div class="hha-side-card hha-aux"><p class="hha-side-h">{ICON["book"]} À lire aussi</p>'
                f'<nav>{items}</nav></div>')
 
-    meta = f'<span class="hha-bio-meta">• Publié le {date_fr}</span>' if date_fr else ""
-    nav_links = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in HEADER_NAV)
-    foot_nav = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_NAV)
-    foot_legal = "".join(f'<a href="{u}">{html.escape(t)}</a>' for t, u in FOOTER_LEGAL)
-    year = datetime.datetime.now().year
+    # Reading time from word count (~200 wpm).
+    words = len(re.findall(r"[A-Za-zÀ-ÿ0-9]+", re.sub(r"<[^>]+>", " ", data["body"])))
+    reading = max(1, round(words / 200))
+
+    # Author avatar for the ORIGINAL hero (real photo, else initials chip).
+    if a_photo:
+        hero_av = f'<img src="{a_photo}" alt="{html.escape(a_name)}" loading="lazy">'
+    else:
+        hero_av = (f'<span style="display:flex;width:100%;height:100%;align-items:center;'
+                   f'justify-content:center;background:#1e293b;color:#fff;font-weight:700">{initials(a_name)}</span>')
+
+    hero = f"""<section class="article-hero">
+    <div class="article-hero-inner">
+        <div class="article-breadcrumb">
+            <a href="/">Accueil</a><span class="bc-sep">{ICON["chev"]}</span><a href="/blog/">Blog</a><span class="bc-sep">{ICON["chev"]}</span><span style="color:rgba(255,255,255,0.5)">{bc}</span>
+        </div>
+        <div class="article-hero-meta">
+            <span class="article-cat">{cat}</span>
+            {f'<span class="article-date">{date_fr}</span>' if date_fr else ''}
+            <span class="article-reading-time">{ICON["clock"]}<span>{reading} min de lecture</span></span>
+        </div>
+        <h1>{title}</h1>
+        <div class="article-author">
+            <div class="article-author-avatar">{hero_av}</div>
+            <div class="article-author-info">
+                <span class="article-author-name">{html.escape(a_name)}</span>
+                <span class="article-author-role">{html.escape(a_role)}</span>
+            </div>
+        </div>
+    </div>
+</section>"""
 
     body = f"""<!-- wp:html -->
 {CSS}
-<div class="hha-tpl">
+<div id="hh-page" class="hha-tpl">
 <div class="hha-progress" id="hha-progress"></div>
-<nav class="hha-nav">
-  <div class="hha-nav-in">
-    <a class="hha-logo" href="/">Hello <span>Harel</span></a>
-    <div class="hha-nav-links">{nav_links}</div>
-    <a class="hha-nav-cta" href="/contact/">Demander une démo</a>
-  </div>
-</nav>
-<header class="hha-hero">
-  <div class="hha-hero-in">
-    <nav class="hha-bc"><a href="/">Accueil</a><span class="sep">/</span><a href="/blog/">Blog</a><span class="sep">/</span>{bc}</nav>
-    <span class="hha-cat">{ICON["tag"]} {cat}</span>
-    <h1>{title}</h1>
-    <div class="hha-bio">
-      <div class="hha-bio-av">{av}</div>
-      <div class="hha-bio-txt">
-        <div><span class="hha-bio-name">{html.escape(a_name)}</span>{meta}</div>
-        <div class="hha-bio-role">{html.escape(a_role)}</div>
-      </div>
-    </div>
-  </div>
-</header>
+{HOME_HEADER}
+{HOME_MOBILEMENU}
+{hero}
 <div class="hha-shell">
   <div class="hha-grid">
+    <div class="hha-side-card hha-toc-card">
+      <p class="hha-side-h">{ICON["list"]} Sommaire de l'article</p>
+      <nav class="hha-toc">{toc}</nav>
+    </div>
     <div class="hha-card hha-main">
       <div class="hha-skim">
         <div class="hha-skim-l"><span class="hha-skim-ic">{ICON["zap"]}</span>
@@ -495,11 +498,7 @@ def render(slug, data, date_iso, author_id):
         </div>
       </div>
     </div>
-    <aside class="hha-aside">
-      <div class="hha-side-card">
-        <p class="hha-side-h">{ICON["list"]} Sommaire de l'article</p>
-        <nav class="hha-toc">{toc}</nav>
-      </div>
+    <div class="hha-extras">
       <div class="hha-cta">
         <div class="hha-cta-ic">{ICON["spark"]}</div>
         <h3>Révolutionnez votre gestion agroalimentaire</h3>
@@ -509,22 +508,13 @@ def render(slug, data, date_iso, author_id):
         <p class="fine">Présentation personnalisée en visioconférence sous 48h.</p>
       </div>
       {aux}
-    </aside>
+    </div>
   </div>
 </div>
 <div class="hha-toast" id="hha-toast"></div>
-<footer class="hha-foot">
-  <div class="hha-foot-in">
-    <div class="hha-foot-brand">Hello Harel</div>
-    <p class="hha-foot-tag">L'ERP cloud spécialisé pour l'agroalimentaire : traçabilité, production, coûts de revient, négoce et conformité.</p>
-    <nav class="hha-foot-nav">{foot_nav}</nav>
-    <div class="hha-foot-bot">
-      <div class="hha-foot-legal">{foot_legal}</div>
-      <div class="hha-foot-cp">© {year} Hello Harel — Tous droits réservés.</div>
-    </div>
-  </div>
-</footer>
+{HOME_FOOTER}
 </div>
+<script>{NAV_JS}</script>
 {JS}
 <!-- /wp:html -->"""
     return body
