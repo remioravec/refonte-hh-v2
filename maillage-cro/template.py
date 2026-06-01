@@ -128,7 +128,7 @@ TAIL_MARKERS = [
     r'<div[^>]*class="[^"]*hh-related', r'<section[^>]*class="[^"]*hh-related',
     r'<div[^>]*class="[^"]*hh-share', r'<div[^>]*class="[^"]*hh-author',
     r'<div[^>]*class="[^"]*blog-cta', r'<div[^>]*class="[^"]*post-cta',
-    r'<div[^>]*class="[^"]*hh-newsletter', r'<form\b',
+    r'<div[^>]*class="[^"]*hh-newsletter',
 ]
 
 
@@ -178,6 +178,17 @@ def clean_body(body):
         if m and m.start() < cut:
             cut = m.start()
     body = body[:cut].rstrip()
+    # Some articles have a FULL nested HTML document pasted inside the content
+    # (<!DOCTYPE><html><head>…</head><body>…). Strip the scaffolding and drop the
+    # <head> entirely (its CSS/meta must not leak); keep everything else as prose.
+    body = re.sub(r"<!DOCTYPE[^>]*>", "", body, flags=re.I)
+    body = re.sub(r"<head\b[^>]*>.*?</head>", "", body, flags=re.I | re.S)
+    body = re.sub(r"</?(?:html|head|body|meta|title|link)\b[^>]*>", "", body, flags=re.I)
+    # Strip embedded forms / interactive widgets pasted into the prose (we ship
+    # our own CTA); they must not capture leads or break layout.
+    body = re.sub(r"<form\b.*?</form>", "", body, flags=re.I | re.S)
+    body = re.sub(r"<(?:button|input|select|textarea)\b[^>]*>(?:.*?</(?:button|select|textarea)>)?",
+                  "", body, flags=re.I | re.S)
     # Unwrap ALL layout containers: remove every <div>/<section> open & close tag
     # (keep inner content). Leaves pure semantic prose that can't break the grid.
     body = re.sub(r"</?(?:div|section|main|article)\b[^>]*>", "", body, flags=re.I)
@@ -519,12 +530,33 @@ def render(slug, data, date_iso, author_id):
     return body
 
 
+def load_backup_sources(dirs):
+    """Map slug -> original post object from backup folders (first wins)."""
+    import glob
+    src = {}
+    for d in dirs:
+        for f in sorted(glob.glob(os.path.join(HERE, d, "post_*.json"))):
+            m = re.search(r"post_\d+_(.+)\.before\.json$", os.path.basename(f))
+            if m and m.group(1) not in src:
+                src[m.group(1)] = json.load(open(f))
+    return src
+
+
 def main():
     live = "--live" in sys.argv
     slugs = None
     if "--slugs" in sys.argv:
         i = sys.argv.index("--slugs")
         slugs = [s for s in sys.argv[i + 1:] if not s.startswith("--")]
+
+    # Re-template from pristine originals rather than the (possibly already
+    # templated/thinned) live content: --source-backup DIR1[,DIR2]
+    src_backups = {}
+    if "--source-backup" in sys.argv:
+        i = sys.argv.index("--source-backup")
+        dirs = sys.argv[i + 1].split(",")
+        src_backups = load_backup_sources(dirs)
+        print(f"Source backups loaded: {len(src_backups)} articles from {dirs}")
 
     posts = [x for x in INV["items"] if x["kind"] == "post" and x["path"].startswith("/blog/")]
     if slugs:
@@ -539,8 +571,13 @@ def main():
     print(f"Mode: {'LIVE WRITE' if live else 'DRY-RUN'} | posts: {len(posts)}")
     for x in posts:
         slug = C.slug_of(x["path"])
-        full = wp.get_raw("posts", x["id"])
-        raw = (full.get("content") or {}).get("raw", "") or ""
+        # Prefer pristine original content from backup; fall back to live.
+        src = src_backups.get(slug)
+        full = wp.get_raw("posts", x["id"])  # always get fresh author/date
+        if src:
+            raw = (src.get("content") or {}).get("raw", "") or ""  # pristine content
+        else:
+            raw = (full.get("content") or {}).get("raw", "") or ""
         data = extract(raw)
         if not data or not data["body"] or not data["title"] or len(data["body"]) < 200:
             print(f"  SKIP {slug}: extraction failed")
