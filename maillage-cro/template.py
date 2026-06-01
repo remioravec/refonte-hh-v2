@@ -153,6 +153,15 @@ TAIL_MARKERS = [
 LINK_FIXES = {
     "/demo/": "/contact/", "/roi-calculator/": "/blog/roi-erp/",
     "/formation/": "/contact/", "/solutions/": "/agroalimentaire/",
+    "/demonstration/": "/contact/", "/fonctionnalites/comptabilite/": "/fonctionnalites/facturation/",
+    "/negoce/stocks-multi-dépôts/": "/negoce/stocks-multi-depots/",
+    # comparatif slugs are blog posts -> prepend /blog/
+    "/alternatives-sage-agroalimentaire/": "/blog/alternatives-sage-agroalimentaire/",
+    "/alternatives-odoo-agroalimentaire/": "/blog/alternatives-odoo-agroalimentaire/",
+    "/alternatives-silog-agroalimentaire/": "/blog/alternatives-silog-agroalimentaire/",
+    "/alternatives-divalto-agroalimentaire/": "/blog/alternatives-divalto-agroalimentaire/",
+    "/alternatives-cegid-distribution-alimentaire/": "/blog/alternatives-cegid-distribution-alimentaire/",
+    "/alternatives-copilote-traiteur/": "/blog/alternatives-copilote-traiteur/",
 }
 
 
