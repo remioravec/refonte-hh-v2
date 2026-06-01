@@ -37,6 +37,7 @@ import wp_common as wp
 import clusters as C
 import widgets as W
 import bespoke as B
+import faqs as FQ
 from cro_article import cta_targets_for
 
 HERE = os.path.dirname(__file__)
@@ -269,6 +270,21 @@ def extract(raw):
     # Remove literal {{ }} artifacts left by an earlier buggy templating pass
     # (legitimate ERP article text never contains double braces).
     body = body.replace("{{", "").replace("}}", "")
+
+    # Extract the FAQ section from the RAW body (divs still intact) BEFORE
+    # clean_body() unwraps containers, then remove it from the prose so it is
+    # rebuilt in the home card+drawer style.
+    faq_qa = []
+    fh = list(re.finditer(r'<h2([^>]*)>(.*?)</h2>', body, re.S))
+    for i, mm in enumerate(fh):
+        if re.search(r'faq|questions?\s+fr[ée]quentes', txt(mm.group(2)), re.I):
+            end = fh[i + 1].start() if i + 1 < len(fh) else len(body)
+            qa = FQ.parse(body[mm.end():end])
+            if len(qa) >= 2:
+                faq_qa = qa
+                body = body[:mm.start()] + body[end:]
+            break
+
     body = clean_body(body)
 
     toc = []
@@ -287,7 +303,9 @@ def extract(raw):
         return tag
 
     body = re.sub(r"<h2[^>]*>(.*?)</h2>", ensure_id, body, flags=re.S)
-    return {"title": title, "body": body, "toc": toc}
+    if faq_qa:
+        toc.append(("faq", "Questions fréquentes"))
+    return {"title": title, "body": body, "toc": toc, "faq_qa": faq_qa}
 
 
 # Styles: home chrome CSS (verbatim, scoped to #hh-page) + original hero CSS +
@@ -670,6 +688,12 @@ def render(slug, data, date_iso, author_id):
     body_html = re.sub(r"<h2[^>]*>(.*?)</h2>", _ins, data["body"], flags=re.S)
     body_html = inject_mesh(slug, body_html)
     body_html = inject_cta_banner(body_html)
+    faq_drawer = ""
+    if data.get("faq_qa"):
+        section, drawer = FQ.build(data["faq_qa"], "faq")
+        if section:
+            body_html += section
+            faq_drawer = drawer
     top = B.tool(slug) or W.top_tool(slug, data["title"])
 
     # Reading time from word count (~200 wpm).
@@ -750,6 +774,7 @@ def render(slug, data, date_iso, author_id):
   </div>
 </div>
 <div class="hha-toast" id="hha-toast"></div>
+{faq_drawer}
 {HOME_FOOTER}
 </div>
 <script>{NAV_JS}</script>
