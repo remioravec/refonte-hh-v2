@@ -36,6 +36,7 @@ import datetime
 import wp_common as wp
 import clusters as C
 import widgets as W
+import bespoke as B
 from cro_article import cta_targets_for
 
 HERE = os.path.dirname(__file__)
@@ -343,6 +344,17 @@ background:#f1f8fc;color:#334155;border-radius:0 10px 10px 0}
 border-radius:0 10px 10px 0;padding:.7rem 1rem;font-size:.95rem;margin:1.2rem 0}
 .hha-inline-links strong{color:var(--ink)}
 .hha-inline-links a{color:var(--blue);font-weight:600}
+.hha-ctab{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+margin:2.4rem 0;padding:18px 22px;border-radius:16px;background:linear-gradient(135deg,#0D2B44,#0f172a);
+color:#fff;box-shadow:0 10px 26px rgba(13,43,68,.18)}
+.hha-ctab-txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.hha-ctab-txt strong{font-size:1.05rem;font-weight:800}
+.hha-ctab-txt span{font-size:.85rem;color:#cbd5e1}
+.hha-ctab-btn{flex:0 0 auto;background:linear-gradient(135deg,var(--green),#16a34a);color:#fff;
+font-weight:700;text-decoration:none;padding:11px 20px;border-radius:11px;white-space:nowrap;
+box-shadow:0 8px 18px rgba(34,197,94,.3)}
+.hha-ctab-btn:hover{filter:brightness(1.07)}
+@media(max-width:560px){.hha-ctab{flex-direction:column;align-items:stretch;text-align:center}.hha-ctab-btn{text-align:center}}
 .skimming-active .hha-art p{color:#94a3b8}
 .skimming-active .hha-art strong{background:rgba(2,88,127,.14);color:var(--blue);font-weight:600;padding:0 4px;border-radius:4px}
 .hha-share{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
@@ -423,6 +435,34 @@ padding:9px 16px;border-radius:9px;font-weight:700;text-decoration:none;font-siz
 .hha-chk{display:flex;gap:8px;align-items:center;font-size:.86rem;color:#334155;margin:5px 0}
 .hha-chk input{width:auto}
 @media(max-width:560px){.hha-tg{grid-template-columns:1fr}}
+/* Bespoke (hb-) visual primitives for the 10 flagship articles */
+.hb-water{display:flex;flex-direction:column;gap:8px}
+.hb-wrow{display:flex;align-items:center;gap:10px;font-size:.85rem}
+.hb-wrow .lab{flex:0 0 150px;color:#334155}
+.hb-wtrack{flex:1;height:18px;background:#eef2f7;border-radius:6px;overflow:hidden;display:flex}
+.hb-wseg{height:100%}
+.hb-wrow .val{flex:0 0 70px;text-align:right;font-weight:700;color:var(--ink)}
+.hb-cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hb-card{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;background:#fff}
+.hb-card .big{font-size:1.5rem;font-weight:800;line-height:1.1}
+.hb-card .lbl{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
+.hb-card.win{border-color:var(--green);background:#f0fdf4}.hb-card.win .big{color:#16a34a}
+.hb-gauge{height:14px;border-radius:999px;background:linear-gradient(90deg,#22c55e,#f59e0b,#ef4444);position:relative;margin:10px 0 6px}
+.hb-gauge .mk{position:absolute;top:-5px;width:3px;height:24px;background:#0f172a;border-radius:2px;transition:left .3s}
+.hb-gscale{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted)}
+.hb-lots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hb-lot{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;text-align:center;transition:all .25s}
+.hb-lot.first{border-color:var(--blue);background:var(--mykonosLight,#EBF5FA);box-shadow:0 6px 18px rgba(2,88,127,.18);transform:translateY(-3px)}
+.hb-lot .n{font-weight:700;color:var(--ink);font-size:.85rem}.hb-lot .d{font-size:.72rem;color:var(--muted);margin-top:3px}
+.hb-lot .tag{display:none;margin-top:8px;font-size:.68rem;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:3px 8px}
+.hb-lot.first .tag{display:inline-block}
+.hb-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.hb-pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:600;color:#334155;cursor:pointer}
+.hb-pill.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.hb-spark{display:flex;align-items:flex-end;gap:4px;height:60px}
+.hb-spark span{flex:1;background:linear-gradient(180deg,var(--sky),var(--blue));border-radius:3px 3px 0 0;min-height:4px}
+.hb-badge{display:inline-block;font-weight:800;border-radius:10px;padding:6px 14px;font-size:1rem}
+@media(max-width:560px){.hb-cmp{grid-template-columns:1fr}.hb-lots{grid-template-columns:1fr}.hb-wrow .lab{flex:0 0 110px}}
 .hha-aux nav{display:flex;flex-direction:column;gap:2px}
 .hha-aux a{font-size:.88rem;font-weight:600;color:var(--blue);text-decoration:none;padding:7px 10px;border-radius:8px}
 .hha-aux a:hover{background:#EBF5FA}
@@ -454,7 +494,6 @@ transition:all .3s;z-index:9999}.hha-toast.show{transform:translateY(0);opacity:
 JS = """
 <script>
 (function(){
-var root=document.currentScript&&document.currentScript.closest?document.currentScript.parentNode:document;
 var bar=document.getElementById('hha-progress');
 var sections=Array.prototype.slice.call(document.querySelectorAll('.hha-art [id]'));
 var links=Array.prototype.slice.call(document.querySelectorAll('.hha-toc a'));
@@ -465,7 +504,7 @@ function onScroll(){
   var idx=-1;
   for(var i=0;i<sections.length;i++){if(st+150>=sections[i].offsetTop)idx=i;}
   links.forEach(function(l){l.classList.remove('active');});
-  if(idx>=0&&links[idx])links[idx].classList.add('active');
+  if(idx>=0){if(links[idx])links[idx].classList.add('active');}
 }
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 var sw=document.getElementById('hha-skim');
@@ -535,6 +574,23 @@ def inject_mesh(slug, body_html):
     return inserted
 
 
+CTA_BANNER = (
+    '<aside class="hha-ctab"><div class="hha-ctab-txt">'
+    '<strong>Envie de voir Hello Harel sur vos données ?</strong>'
+    '<span>Démonstration personnalisée, sans engagement — réponse sous 24&nbsp;h.</span></div>'
+    '<a class="hha-ctab-btn" href="/contact/">Demander une démo</a></aside>')
+
+
+def inject_cta_banner(body_html):
+    """Insert ONE demo CTA banner before a mid-article H2 (after ~45% of the H2s).
+    100% of CTAs point to /contact/ (demo request)."""
+    h2s = list(re.finditer(r"<h2[^>]*>", body_html, re.I))
+    if len(h2s) < 4:
+        return body_html
+    pos = h2s[int(len(h2s) * 0.55)].start()
+    return body_html[:pos] + CTA_BANNER + body_html[pos:]
+
+
 def render(slug, data, date_iso, author_id):
     title = html.escape(data["title"])
     primary, _ = C.cluster_of(slug)
@@ -560,16 +616,29 @@ def render(slug, data, date_iso, author_id):
         aux = (f'<div class="hha-side-card hha-aux"><p class="hha-side-h">{ICON["book"]} À lire aussi</p>'
                f'<nav>{items}</nav></div>')
 
-    # Insert a schema ONLY before pertinent H2s (keyword match), at most 2 per
-    # article, never on the first H2, and never two in a row.
-    state = {"n": 0, "placed": 0, "last": -9}
+    # Visuals before pertinent H2s. Flagship articles (bespoke) use hand-crafted
+    # visuals matched to their real H2 wording; others use the generic library.
+    bvis = B.visuals_for(slug)
+    state = {"n": 0, "placed": 0, "last": -9, "used": set()}
 
     def _ins(m):
         i = state["n"]
         state["n"] += 1
-        if i == 0 or state["placed"] >= 2 or (i - state["last"]) < 2:
+        h2txt = txt(re.sub(r"<[^>]+>", " ", m.group(1)))
+        if i == 0 or state["placed"] >= 3 or (i - state["last"]) < 1:
             return m.group(0)
-        fig = W.schema_for(txt(re.sub(r"<[^>]+>", " ", m.group(1))))
+        fig = None
+        if bvis:
+            kl = h2txt.lower()
+            for j, (kws, html_) in enumerate(bvis):
+                if j in state["used"]:
+                    continue
+                if any(kw in kl for kw in kws):
+                    fig = html_
+                    state["used"].add(j)
+                    break
+        else:
+            fig = W.schema_for(h2txt)
         if not fig:
             return m.group(0)
         state["placed"] += 1
@@ -578,7 +647,8 @@ def render(slug, data, date_iso, author_id):
 
     body_html = re.sub(r"<h2[^>]*>(.*?)</h2>", _ins, data["body"], flags=re.S)
     body_html = inject_mesh(slug, body_html)
-    top = W.top_tool(slug, data["title"])
+    body_html = inject_cta_banner(body_html)
+    top = B.tool(slug) or W.top_tool(slug, data["title"])
 
     # Reading time from word count (~200 wpm).
     words = len(re.findall(r"[A-Za-zÀ-ÿ0-9]+", re.sub(r"<[^>]+>", " ", data["body"])))
@@ -649,8 +719,8 @@ def render(slug, data, date_iso, author_id):
         <div class="hha-cta-ic">{ICON["spark"]}</div>
         <h3>Révolutionnez votre gestion agroalimentaire</h3>
         <p>Traçabilité, coûts de revient, production et commandes : tout dans un ERP cloud spécialisé.</p>
-        <a class="hha-btn" href="{decision}">Demander une démo {ICON["arrow"]}</a>
-        <a class="sec" href="{explorer}">Découvrir la solution →</a>
+        <a class="hha-btn" href="/contact/">Demander une démo {ICON["arrow"]}</a>
+        <a class="sec" href="/contact/">Parler à un expert agroalimentaire →</a>
         <p class="fine">Présentation personnalisée en visioconférence sous 48h.</p>
       </div>
       {aux}
