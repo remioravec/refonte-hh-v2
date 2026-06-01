@@ -1151,6 +1151,13 @@
      "zone": "body",
      "type": "lateral",
      "reason": "anneau tracabilite: maillage latéral"
+    },
+    {
+     "target": "/blog/erp-conformite-agroalimentaire/",
+     "anchor": "ERP de conformité agroalimentaire",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "combler orphelin"
     }
    ]
   },
@@ -1775,6 +1782,13 @@
      "zone": "body",
      "type": "lateral",
      "reason": "anneau negoce: maillage latéral"
+    },
+    {
+     "target": "/blog/logiciel-maree-mareyeur/",
+     "anchor": "logiciel pour mareyeurs",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "combler orphelin"
     }
    ]
   },
@@ -2317,6 +2331,13 @@
      "zone": "body",
      "type": "lateral",
      "reason": "anneau stock: maillage latéral"
+    },
+    {
+     "target": "/blog/partenariat-toncarton/",
+     "anchor": "notre partenariat TonCarton",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "combler orphelin"
     }
    ]
   },
@@ -2506,6 +2527,22 @@
      "zone": "body",
      "type": "lateral",
      "reason": "anneau stock: maillage latéral"
+    }
+   ]
+  },
+  "/blog/cout-de-revient/": {
+   "title": "/blog/cout-de-revient/",
+   "words": 0,
+   "cluster": null,
+   "existing_ctx_links": 0,
+   "budget": 11,
+   "new_links": [
+    {
+     "target": "/blog/calcul-du-cout-achat/",
+     "anchor": "calculer le coût d’achat",
+     "zone": "body",
+     "type": "lateral",
+     "reason": "combler orphelin"
     }
    ]
   }

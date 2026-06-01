@@ -43,6 +43,12 @@ INV = json.load(open(os.path.join(HERE, "inventory.json")))
 ITEMS = {x["path"]: x for x in INV["items"]}
 PLAN = json.load(open(os.path.join(HERE, "maillage-plan.json")))["plan"]
 
+# Live URL status map (from the last full crawl) to never ship a link to a 404.
+try:
+    LIVE_STATUS = json.load(open(os.path.join(HERE, "crawl.json")))["status"]
+except Exception:
+    LIVE_STATUS = {}
+
 
 def _asset(name):
     return open(os.path.join(HERE, "assets", name), encoding="utf-8").read()
@@ -162,6 +168,18 @@ LINK_FIXES = {
     "/alternatives-divalto-agroalimentaire/": "/blog/alternatives-divalto-agroalimentaire/",
     "/alternatives-cegid-distribution-alimentaire/": "/blog/alternatives-cegid-distribution-alimentaire/",
     "/alternatives-copilote-traiteur/": "/blog/alternatives-copilote-traiteur/",
+    # non-existent feature pages -> closest real module/page
+    "/fonctionnalites/business-intelligence/": "/fonctionnalites/",
+    "/fonctionnalites/commande-fournisseur/": "/fonctionnalites/achat/",
+    "/fonctionnalites/gestion-commerciale/": "/fonctionnalites/vente/",
+    "/fonctionnalites/haccp/": "/blog/conformite-haccp/",
+    "/fonctionnalites/tarifs/": "/tarifs/",
+    "/fonctionnalites/traçabilite/": "/fonctionnalites/gestion-de-stock/",
+    "/fonctionnalites/tracabilite/": "/fonctionnalites/gestion-de-stock/",
+    "/les-meilleurs-logiciels-de-prise-de-commande-en-2024/": "/blog/bon-de-commande/",
+    # Post 5910 front-404 (server permalink issue) — route inbound links to a
+    # live, relevant page until permalinks are flushed in WP admin.
+    "/blog/logiciel-maree-mareyeur/": "/negoce/",
 }
 
 
@@ -221,9 +239,11 @@ def clean_body(body):
     # Also drop empty figures left behind and collapse blank lines.
     body = re.sub(r"<figure[^>]*>\s*</figure>", "", body, flags=re.I)
     body = re.sub(r"\n{3,}", "\n\n", body).strip()
-    # Rewrite dead/redirect links (handle querystrings: /demo/?from=...).
+    # Rewrite dead/redirect links — both relative and absolute forms, with any
+    # trailing querystring (e.g. /demo/?from=...).
     for dead, good in LINK_FIXES.items():
-        body = re.sub(r'href="' + re.escape(dead) + r'[^"]*"', f'href="{good}"', body)
+        for prefix in ('', 'https://www.helloharel.com', 'http://www.helloharel.com', 'https://helloharel.com'):
+            body = re.sub(r'href="' + re.escape(prefix + dead) + r'[^"]*"', f'href="{good}"', body)
     return body.strip()
 
 
@@ -319,6 +339,10 @@ scroll-margin-top:90px;display:flex;gap:10px;align-items:flex-start}
 .hha-art blockquote{margin:1.2rem 0;padding:.7rem 1.1rem;border-left:4px solid var(--blue);
 background:#f1f8fc;color:#334155;border-radius:0 10px 10px 0}
 .hha-art pre{overflow-x:auto;background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:12px}
+.hha-inline-links{background:#f1f8fc;border:1px solid #cfe9fb;border-left:4px solid var(--blue);
+border-radius:0 10px 10px 0;padding:.7rem 1rem;font-size:.95rem;margin:1.2rem 0}
+.hha-inline-links strong{color:var(--ink)}
+.hha-inline-links a{color:var(--blue);font-weight:600}
 .skimming-active .hha-art p{color:#94a3b8}
 .skimming-active .hha-art strong{background:rgba(2,88,127,.14);color:var(--blue);font-weight:600;padding:0 4px;border-radius:4px}
 .hha-share{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
@@ -463,6 +487,50 @@ document.querySelectorAll('.hha-art .faq-btn').forEach(function(b){b.addEventLis
 </script>"""
 
 
+def inject_mesh(slug, body_html):
+    """Weave the planned CONTEXTUAL internal links (diversified anchors, from
+    maillage-plan.json) into the prose so they survive every rebuild. Up-links
+    (money pages) go in a box after the 1st paragraph; lateral links mid-article.
+    All targets are validated against the live status map if available."""
+    plan = PLAN.get(f"/blog/{slug}/")
+    if not plan:
+        return body_html
+    up = [l for l in plan["new_links"] if l["type"] == "up"]
+    lat = [l for l in plan["new_links"] if l["type"] == "lateral"]
+    if not up and not lat:
+        return body_html
+
+    def good(t):
+        st = LIVE_STATUS.get(t)
+        return st is None or st == 200  # keep if unknown or 200; drop known-404
+
+    up = [l for l in up if good(l["target"])][:3]
+    lat = [l for l in lat if good(l["target"])][:3]
+
+    def links(ls):
+        return ", ".join(f'<a href="{l["target"]}">{html.escape(l["anchor"])}</a>' for l in ls)
+
+    inserted = body_html
+    # Up-links box after the first closing </p>
+    if up:
+        box = (f'<p class="hha-inline-links"><strong>À découvrir :</strong> {links(up)}.</p>')
+        m = re.search(r"</p>", inserted, re.I)
+        if m:
+            inserted = inserted[:m.end()] + box + inserted[m.end():]
+        else:
+            inserted = box + inserted
+    # Lateral links box before the last third (after a mid <h2> if present)
+    if lat:
+        box = (f'<p class="hha-inline-links"><strong>Sur le même thème :</strong> {links(lat)}.</p>')
+        h2s = list(re.finditer(r"<h2[^>]*>", inserted, re.I))
+        if len(h2s) >= 2:
+            pos = h2s[len(h2s) // 2].start()
+            inserted = inserted[:pos] + box + inserted[pos:]
+        else:
+            inserted += box
+    return inserted
+
+
 def render(slug, data, date_iso, author_id):
     title = html.escape(data["title"])
     primary, _ = C.cluster_of(slug)
@@ -500,6 +568,7 @@ def render(slug, data, date_iso, author_id):
         return W.schema_for(i, txt(re.sub(r"<[^>]+>", " ", m.group(1)))) + m.group(0)
 
     body_html = re.sub(r"<h2[^>]*>(.*?)</h2>", _ins, data["body"], flags=re.S)
+    body_html = inject_mesh(slug, body_html)
     top = W.top_tool(slug, data["title"])
 
     # Reading time from word count (~200 wpm).

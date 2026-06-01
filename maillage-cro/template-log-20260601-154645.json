@@ -1,0 +1,25 @@
+{
+ "mode": "live",
+ "items": [
+  {
+   "slug": "conformite-haccp",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "erp-grossiste-distributeur",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "cout-de-revient",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "optimisation-entrepot",
+   "status": "wrote",
+   "h2": 26
+  }
+ ]
+}
