@@ -31,34 +31,88 @@ def _fig(h2_text, sub, inner):
             f'<div class="hha-fig-body">{inner}</div></figure>')
 
 
+def _has(k, words):
+    return any(w in k for w in words)
+
+
 def schema_for(h2_text):
     """Return a high-quality, on-topic schema ONLY when the H2 clearly maps to a
-    known visual; otherwise return None (no figure). Coherence over coverage."""
+    known visual; otherwise return None (no figure). Coherence over coverage.
+
+    Hardened per QA review: no generic 'feature coverage' filler, deployment flow
+    reserved to migration/projet H2, FEFO/HACCP/traceability strictly gated, and
+    conclusions/FAQ/definitions never get a schema."""
     k = _kw(h2_text)
 
-    # FEFO / rotation of stock
-    if any(w in k for w in ["fefo", "fifo", "lifo", "rotation", "péremption", "peremption", "dlc", "ddm"]):
-        nodes = ["Réception", "Lot + DLC", "Stockage FEFO", "Préparation", "Expédition"]
-        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
-        return _fig(h2_text, "Le flux FEFO : premier périmé, premier sorti.",
-                    f'<div class="hha-cycle">{inner}</div>')
+    # Never decorate meta sections.
+    if _has(k, ["faq", "questions fréquentes", "questions frequentes", "conclusion",
+                "pour aller plus loin", "en résumé", "en resume", "sommaire"]):
+        return None
 
-    # Traceability chain
-    if any(w in k for w in ["traçab", "tracab", "numéro de lot", "numero de lot", "rappel"]):
+    # ROI / gains — only when explicitly about ROI/ERP gains (not generic "bénéfices").
+    roi_explicit = _has(k, ["roi", "retour sur investissement", "rentabilité d'un erp", "rentabilite d'un erp"])
+    roi_gains = _has(k, ["gains concrets", "bénéfices", "benefices", "économies", "economies", "bénéfices mesurables"]) \
+        and _has(k, ["erp", "logiciel"])
+    if roi_explicit or roi_gains:
+        kpis = [("−35%", "temps de saisie"), ("+12%", "marge nette"), ("×3", "vitesse d'inventaire"), ("0", "ressaisie")]
+        inner = "".join(f'<div class="hha-kpi"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in kpis)
+        return _fig(h2_text, "Gains typiques observés après le déploiement d'un ERP métier.",
+                    f'<div class="hha-kpis">{inner}</div>')
+
+    # Quality KPIs list -> kpis (not HACCP flow).
+    if _has(k, ["indicateur", "kpi"]) and _has(k, ["qualité", "qualite"]):
+        kpis = [("Taux", "de conformité"), ("Taux", "de réclamations"), ("Coût", "de non-qualité"), ("Délai", "de rappel")]
+        inner = "".join(f'<div class="hha-kpi"><div class="v">{a}</div><div class="l">{b}</div></div>' for a, b in kpis)
+        return _fig(h2_text, "Les indicateurs qualité à suivre en agroalimentaire.",
+                    f'<div class="hha-kpis">{inner}</div>')
+
+    # FEFO flow — only when the H2 is about expiry rotation, NOT date definitions.
+    if _has(k, ["fefo", "premier périmé", "premier perime", "rotation des stocks", "rotation de stock"]) or \
+       (_has(k, ["fifo", "lifo"]) and _has(k, ["méthode", "methode", "rotation", "stock", "prélèvement", "prelevement"])):
+        if not _has(k, ["qu'est-ce", "qu est-ce", "définition", "definition", "que signifie"]):
+            # LIFO sections must not carry the FEFO "premier périmé" subtitle.
+            if "lifo" in k and "fefo" not in k and "fifo" not in k:
+                sub = "Méthodes de rotation des stocks : FIFO, FEFO et LIFO comparées."
+            else:
+                sub = "Le flux FEFO : premier périmé, premier sorti."
+            nodes = ["Réception", "Lot + DLC", "Stockage FEFO", "Préparation", "Expédition"]
+            inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
+            return _fig(h2_text, sub, f'<div class="hha-cycle">{inner}</div>')
+
+    # Traceability chain — explicit traceability/lot recall H2.
+    if _has(k, ["traçabilité", "tracabilite", "traçab", "tracab"]) and not _has(k, ["qu'est-ce", "définition", "definition"]):
         nodes = ["Matière première", "Lot fournisseur", "Production", "Lot fini", "Client"]
         inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
         return _fig(h2_text, "Traçabilité ascendante et descendante, du fournisseur au client.",
                     f'<div class="hha-cycle">{inner}</div>')
 
-    # Steps / method / deployment / migration
-    if any(w in k for w in ["étape", "etape", "déploiement", "deploiement", "migrer", "migration", "mettre en place", "méthode", "methode"]):
+    # HACCP — strictly HACCP / food-safety principles.
+    if _has(k, ["haccp", "plan de maîtrise", "plan de maitrise", "sécurité sanitaire", "securite sanitaire",
+                "points critiques", "ccp"]):
+        nodes = ["Dangers", "Points critiques (CCP)", "Surveillance", "Actions correctives", "Enregistrements"]
+        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
+        return _fig(h2_text, "Les piliers d'un plan HACCP opérationnel.",
+                    f'<div class="hha-cycle">{inner}</div>')
+
+    # ERP deployment/migration — reserved wording.
+    if _has(k, ["déploiement", "deploiement", "migrer", "migration", "projet erp", "mise en place d'un erp",
+                "mettre en place un erp", "intégration erp", "integration erp", "go-live"]):
         steps = [("1", "Cadrage"), ("2", "Paramétrage"), ("3", "Reprise des données"), ("4", "Formation"), ("5", "Go-live")]
         inner = ARROW.join(f'<div class="hha-flow-step"><b>{n}</b><span>{l}</span></div>' for n, l in steps)
         return _fig(h2_text, "Les étapes clés d'un déploiement ERP maîtrisé.",
                     f'<div class="hha-flow">{inner}</div>')
 
-    # Cost / margin breakdown
-    if any(w in k for w in ["coût de revient", "cout de revient", "prix de revient", "marge", "rentab", "calcul du coût", "calcul du cout"]):
+    # Safety stock / replenishment.
+    if _has(k, ["stock de sécurité", "stock de securite", "réapprovision", "reapprovision",
+                "point de commande", "seuil de réappro", "seuil de reappro"]):
+        steps = [("Conso", "moyenne/jour"), ("× Délai", "fournisseur"), ("+ Marge", "sécurité"), ("= Seuil", "de commande")]
+        inner = ARROW.join(f'<div class="hha-flow-step"><b>{a}</b><span>{b}</span></div>' for a, b in steps)
+        return _fig(h2_text, "Du besoin quotidien au point de commande automatique.",
+                    f'<div class="hha-flow">{inner}</div>')
+
+    # Cost / margin breakdown — only true cost-of-goods H2.
+    if _has(k, ["coût de revient", "cout de revient", "prix de revient", "décomposition du prix",
+                "decomposition du prix", "structure de coût", "structure de cout"]):
         rows = [("Matières premières", 55), ("Main d'œuvre", 22), ("Charges & freinte", 13), ("Marge nette", 10)]
         inner = "".join(
             f'<div class="hha-bar-row"><span class="lab">{l}</span>'
@@ -67,15 +121,25 @@ def schema_for(h2_text):
         return _fig(h2_text, "Décomposition type d'un prix de vente agroalimentaire.",
                     f'<div class="hha-bars">{inner}</div>')
 
-    # Safety stock / replenishment
-    if any(w in k for w in ["stock de sécurité", "stock de securite", "réapprovision", "reapprovision", "point de commande", "seuil"]):
-        steps = [("Conso", "moyenne/jour"), ("× Délai", "fournisseur"), ("+ Marge", "sécurité"), ("= Seuil", "de commande")]
-        inner = ARROW.join(f'<div class="hha-flow-step"><b>{a}</b><span>{b}</span></div>' for a, b in steps)
-        return _fig(h2_text, "Du besoin quotidien au point de commande automatique.",
-                    f'<div class="hha-flow">{inner}</div>')
+    # Comparison bars — STRICTLY for ERP-family comparisons (specialized vs
+    # generalist vs Excel). Requires both an ERP/logiciel mention AND a
+    # comparison/generalist/Excel signal; excludes conceptual "X vs Y" H2s.
+    # SaaS vs On-Premise = deployment-model comparison (distinct subtitle + rows).
+    if _has(k, ["saas", "on-premise", "on premise", "cloud", "hébergé", "heberge"]) and \
+       _has(k, [" vs ", "vs ", "lequel choisir", "comparateur", "comparatif"]):
+        rows = [("ERP SaaS (cloud)", 90), ("ERP On-Premise", 50)]
+        inner = "".join(
+            f'<div class="hha-bar-row"><span class="lab">{l}</span>'
+            f'<div class="hha-bar-track"><div class="hha-bar-fill" style="width:{p}%"></div></div>'
+            f'<b class="hha-bar-val">{p}%</b></div>' for l, p in rows)
+        return _fig(h2_text, "Modèles de déploiement : SaaS cloud vs On-Premise.",
+                    f'<div class="hha-bars">{inner}</div>')
 
-    # Comparison: specialized vs generalist vs Excel
-    if any(w in k for w in ["pourquoi", "spécialisé", "specialise", "généraliste", "generaliste", "vs ", "comparatif", "alternative", "différence entre", "difference entre", "excel"]):
+    erp_ctx = _has(k, ["erp", "logiciel"])
+    # Require a genuine comparison signal (two-sided), not just "spécialisé".
+    comp_sig = _has(k, ["généraliste", "generaliste", "excel", "tableur",
+                        "comparatif erp", "comparatif des erp", " vs ", "ou erp", "erp ou"])
+    if erp_ctx and comp_sig:
         rows = [("ERP spécialisé agro", 90), ("ERP généraliste", 55), ("Tableur Excel", 25)]
         inner = "".join(
             f'<div class="hha-bar-row"><span class="lab">{l}</span>'
@@ -83,20 +147,6 @@ def schema_for(h2_text):
             f'<b class="hha-bar-val">{p}%</b></div>' for l, p in rows)
         return _fig(h2_text, "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
                     f'<div class="hha-bars">{inner}</div>')
-
-    # HACCP / quality / compliance
-    if any(w in k for w in ["haccp", "conformité", "conformite", "qualité", "qualite", "réglementation", "reglementation", "inco", "norme"]):
-        nodes = ["Dangers", "Points critiques (CCP)", "Surveillance", "Actions correctives", "Enregistrements"]
-        inner = ARROW.join(f'<span class="hha-cycle-node">{n}</span>' for n in nodes)
-        return _fig(h2_text, "Les piliers d'un plan HACCP opérationnel.",
-                    f'<div class="hha-cycle">{inner}</div>')
-
-    # ROI / gains
-    if any(w in k for w in ["roi", "retour sur investissement", "gains", "bénéfices", "benefices", "économies", "economies"]):
-        kpis = [("−35%", "temps de saisie"), ("+12%", "marge nette"), ("×3", "vitesse d'inventaire"), ("0", "ressaisie")]
-        inner = "".join(f'<div class="hha-kpi"><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in kpis)
-        return _fig(h2_text, "Gains typiques observés après le déploiement d'un ERP métier.",
-                    f'<div class="hha-kpis">{inner}</div>')
 
     return None  # not pertinent -> no schema
 
