@@ -322,14 +322,14 @@ box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
 .hha-switch[aria-checked="true"] span{transform:translateX(20px)}
 /* article typography (uniform across all posts) */
 .hha-art{overflow-wrap:anywhere}
-.hha-art>section{margin:0 0 8px}
-.hha-art h2{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.3;margin:2.2rem 0 1rem;
+.hha-art>section{margin:0 0 1.5rem}
+.hha-art h2{font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.35;margin:3.2rem 0 1.3rem;
 scroll-margin-top:90px;display:flex;gap:10px;align-items:flex-start}
 .hha-art h2::before{content:"";flex:0 0 6px;width:6px;height:1.4em;border-radius:999px;background:var(--blue);margin-top:.05em}
-.hha-art h3{font-size:1.18rem;font-weight:700;color:var(--ink);margin:1.6rem 0 .6rem}
-.hha-art p{margin:0 0 1.1rem;font-size:1.02rem}
-.hha-art ul,.hha-art ol{margin:0 0 1.2rem;padding-left:1.3rem}
-.hha-art li{margin:.4rem 0}.hha-art li::marker{color:var(--blue)}
+.hha-art h3{font-size:1.18rem;font-weight:700;color:var(--ink);margin:2.2rem 0 .8rem}
+.hha-art p{margin:0 0 1.35rem;font-size:1.02rem;line-height:1.8}
+.hha-art ul,.hha-art ol{margin:1rem 0 1.6rem;padding-left:1.4rem}
+.hha-art li{margin:.6rem 0;line-height:1.7;padding-left:.2rem}.hha-art li::marker{color:var(--blue)}
 .hha-art a{color:var(--blue);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
 .hha-art img{max-width:100%!important;height:auto;border-radius:12px;margin:1rem 0}
 .hha-art figure{margin:1.2rem 0;max-width:100%}
