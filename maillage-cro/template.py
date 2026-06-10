@@ -720,6 +720,26 @@ def render(slug, data, date_iso, author_id):
         hero_av = (f'<span style="display:flex;width:100%;height:100%;align-items:center;'
                    f'justify-content:center;background:#1e293b;color:#fff;font-weight:700">{initials(a_name)}</span>')
 
+    # BreadcrumbList JSON-LD mirroring the visual breadcrumb (Accueil > Blog >
+    # article). Rank Math emits it on pages but NOT on posts, so we ship it in
+    # the post content to give every article a breadcrumb rich-result.
+    breadcrumb_jsonld = (
+        '<script type="application/ld+json">'
+        + json.dumps({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Accueil",
+                 "item": "https://www.helloharel.com/"},
+                {"@type": "ListItem", "position": 2, "name": "Blog",
+                 "item": "https://www.helloharel.com/blog/"},
+                {"@type": "ListItem", "position": 3, "name": data["title"],
+                 "item": f"https://www.helloharel.com/blog/{slug}/"},
+            ],
+        }, ensure_ascii=False)
+        + "</script>"
+    )
+
     hero = f"""<section class="article-hero">
     <div class="article-hero-inner">
         <div class="article-breadcrumb">
@@ -744,6 +764,7 @@ def render(slug, data, date_iso, author_id):
     body = f"""<!-- wp:html -->
 {CSS}
 <div id="hh-page" class="hha-tpl">
+{breadcrumb_jsonld}
 <div class="hha-progress" id="hha-progress"></div>
 {HOME_HEADER}
 {HOME_MOBILEMENU}
