@@ -12,7 +12,8 @@ Run: python3 build_table.py
 import csv, glob, json, html, datetime
 
 COLS = ["salon", "edition_annee", "entreprise", "secteur_metier", "site_web", "email",
-        "type_email", "nom_contact", "fonction", "ville", "departement", "telephone",
+        "type_email", "email_origine", "email_annuaire", "email_site", "email_site_source",
+        "nom_contact", "fonction", "ville", "departement", "telephone",
         "source_url", "date_collecte", "statut_validation", "segment_ICP"]
 
 
@@ -86,6 +87,8 @@ TEMPLATE = r"""<!DOCTYPE html>
   .chip.lo{background:#f1f5f9;color:#64748b}
   .chip.gen{background:#eff6ff;color:#1d4ed8}
   .chip.nom{background:#fef3c7;color:#92400e}
+  .chip.src-site{background:#ecfeff;color:#0e7490}
+  .chip.src-ann{background:#f5f3ff;color:#6d28d9}
   .pager{display:flex;gap:6px;align-items:center;justify-content:center;margin-top:16px}
   .pager button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer}
   .pager button:disabled{opacity:.4;cursor:default}
@@ -124,8 +127,8 @@ let view = DATA.slice(), sortKey="entreprise", sortDir=1, page=1;
 const COLS=[
  {k:"entreprise",t:"Entreprise"},{k:"secteur_metier",t:"Secteur / métier"},
  {k:"ville",t:"Ville"},{k:"email",t:"Email"},{k:"type_email",t:"Type"},
- {k:"telephone",t:"Tél"},{k:"site_web",t:"Site"},{k:"salon",t:"Salon"},
- {k:"segment_ICP",t:"ICP"}
+ {k:"email_origine",t:"Origine"},{k:"telephone",t:"Tél"},{k:"site_web",t:"Site"},
+ {k:"salon",t:"Salon"},{k:"segment_ICP",t:"ICP"}
 ];
 
 function cards(){
@@ -169,10 +172,11 @@ function render(){
     <td>${esc(r.ville)}${r.departement?` <span class="muted">(${esc(r.departement)})</span>`:''}</td>
     <td>${r.email?`<a href="mailto:${esc(r.email)}">${esc(r.email)}</a>`:'<span class="muted">—</span>'}</td>
     <td>${chipType(r.type_email)}</td>
+    <td>${r.email_origine==='site'?'<span class="chip src-site">site</span>':r.email_origine==='annuaire'?'<span class="chip src-ann">annuaire</span>':'<span class="muted">—</span>'}</td>
     <td class="muted">${esc(r.telephone)}</td>
     <td>${r.site_web?`<a href="${esc(r.site_web)}" target="_blank" rel="noopener">↗</a>`:''}</td>
     <td class="muted">${esc(r.salon)}</td>
-    <td>${chipIcp(r.segment_ICP)}</td></tr>`).join('') || '<tr><td colspan="9" class="muted" style="padding:30px;text-align:center">Aucun résultat</td></tr>';
+    <td>${chipIcp(r.segment_ICP)}</td></tr>`).join('') || '<tr><td colspan="10" class="muted" style="padding:30px;text-align:center">Aucun résultat</td></tr>';
   head();
   document.getElementById('count').textContent=`${view.length} / ${DATA.length} exposants`;
   document.getElementById('pager').innerHTML=
@@ -183,7 +187,7 @@ function render(){
   if(pv)pv.onclick=()=>{page--;render();}; if(nx)nx.onclick=()=>{page++;render();};
 }
 function exportCSV(){
-  const cols=["salon","entreprise","secteur_metier","ville","departement","email","type_email","nom_contact","telephone","site_web","segment_ICP","source_url","date_collecte"];
+  const cols=["salon","entreprise","secteur_metier","ville","departement","email","type_email","email_origine","email_site_source","nom_contact","telephone","site_web","segment_ICP","source_url","date_collecte"];
   const lines=[cols.join(';')].concat(view.map(r=>cols.map(c=>`"${(r[c]||'').replace(/"/g,'""')}"`).join(';')));
   const blob=new Blob(["﻿"+lines.join('\n')],{type:'text/csv;charset=utf-8'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='base-outbound-filtre.csv';a.click();
