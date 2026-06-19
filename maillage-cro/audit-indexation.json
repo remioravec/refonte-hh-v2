@@ -449,8 +449,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -461,7 +463,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alerte-stock-securite/": {
    "kind": "post",
@@ -478,8 +480,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -490,7 +494,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternative-akanea-erp/": {
    "kind": "post",
@@ -507,8 +511,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -519,7 +525,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/alternative-archipelia/": {
    "kind": "post",
@@ -536,8 +542,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -548,7 +556,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/alternative-cegid/": {
    "kind": "post",
@@ -565,8 +573,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -577,7 +587,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 29
+   "schema_count": 33
   },
   "/blog/alternative-sage-erp/": {
    "kind": "post",
@@ -594,8 +604,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -606,7 +618,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/alternative-vif-erp/": {
    "kind": "post",
@@ -623,8 +635,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -635,7 +649,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-cegid-distribution-alimentaire/": {
    "kind": "post",
@@ -652,8 +666,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -664,7 +680,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-copilote-traiteur/": {
    "kind": "post",
@@ -681,8 +697,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -693,7 +711,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-divalto-agroalimentaire/": {
    "kind": "post",
@@ -710,8 +728,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -722,7 +742,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-odoo-agroalimentaire/": {
    "kind": "post",
@@ -739,8 +759,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -751,7 +773,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-sage-agroalimentaire/": {
    "kind": "post",
@@ -768,8 +790,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -780,7 +804,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/alternatives-silog-agroalimentaire/": {
    "kind": "post",
@@ -797,8 +821,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -809,7 +835,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/bon-de-commande-traiteur/": {
    "kind": "post",
@@ -824,18 +850,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/bon-de-commande/": {
    "kind": "post",
@@ -852,8 +883,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -864,7 +897,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/bon-de-livraison/": {
    "kind": "post",
@@ -881,8 +914,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -893,7 +928,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 29
+   "schema_count": 33
   },
   "/blog/calcul-cout-de-revient-logiciel/": {
    "kind": "post",
@@ -910,8 +945,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -922,7 +959,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/": {
    "kind": "post",
@@ -939,8 +976,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -951,7 +990,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 29
+   "schema_count": 33
   },
   "/blog/calcul-du-cout-achat/": {
    "kind": "post",
@@ -966,18 +1005,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/calcul-du-prix-moyen/": {
    "kind": "post",
@@ -992,18 +1036,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/calcul-freinte-charcuterie-logiciel/": {
    "kind": "post",
@@ -1020,8 +1069,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1032,7 +1083,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/calcul-stock-de-securite/": {
    "kind": "post",
@@ -1047,18 +1098,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/calcul-stock-moyen/": {
    "kind": "post",
@@ -1073,18 +1129,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/calcul-variations-de-stock/": {
    "kind": "post",
@@ -1099,18 +1160,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/calculer-le-prix-de-revient-en-boulangerie/": {
    "kind": "post",
@@ -1125,18 +1191,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/conditionnement-alimentaire-erp/": {
    "kind": "post",
@@ -1153,8 +1224,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1165,7 +1238,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/conformite-haccp/": {
    "kind": "post",
@@ -1182,8 +1255,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1194,7 +1269,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 27
+   "schema_count": 31
   },
   "/blog/contraintes-reglementations-logiciel-agroalimentaire/": {
    "kind": "post",
@@ -1209,18 +1284,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/cout-de-revient/": {
    "kind": "post",
@@ -1237,8 +1317,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1249,7 +1331,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 23
+   "schema_count": 27
   },
   "/blog/cout-marginal/": {
    "kind": "post",
@@ -1266,8 +1348,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1278,7 +1362,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 25
+   "schema_count": 29
   },
   "/blog/cout-prix-au-kilo/": {
    "kind": "post",
@@ -1293,18 +1377,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/couts-de-production/": {
    "kind": "post",
@@ -1319,18 +1408,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/cuisine-centrale/": {
    "kind": "post",
@@ -1347,8 +1441,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1359,7 +1455,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/difference-prix-dachat-et-prix-de-revient/": {
    "kind": "post",
@@ -1376,8 +1472,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1388,7 +1486,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/dlc-ddm-dluo/": {
    "kind": "post",
@@ -1434,8 +1532,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1446,7 +1546,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/erp-agroalimentaire/": {
    "kind": "post",
@@ -1463,8 +1563,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1475,7 +1577,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/erp-as400/": {
    "kind": "post",
@@ -1490,18 +1592,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/erp-boissons/": {
    "kind": "post",
@@ -1518,8 +1625,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1530,7 +1639,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/erp-cloud-saas-vs-on-premise/": {
    "kind": "post",
@@ -1547,8 +1656,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1559,7 +1670,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/erp-conformite-agroalimentaire/": {
    "kind": "post",
@@ -1576,8 +1687,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1588,7 +1701,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/erp-decoupe-viande-poisson/": {
    "kind": "post",
@@ -1605,8 +1718,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1617,7 +1732,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/erp-grossiste-distributeur/": {
    "kind": "post",
@@ -1634,8 +1749,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1646,7 +1763,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 23
+   "schema_count": 27
   },
   "/blog/erp-pme/": {
    "kind": "post",
@@ -1663,8 +1780,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1675,7 +1794,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 25
+   "schema_count": 29
   },
   "/blog/erp-saas-cloud/": {
    "kind": "post",
@@ -1721,8 +1840,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1733,7 +1854,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 27
+   "schema_count": 31
   },
   "/blog/erp-tracabilite-agroalimentaire/": {
    "kind": "post",
@@ -1779,8 +1900,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1791,7 +1914,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/factur-x-e-facturation-logiciel/": {
    "kind": "post",
@@ -1808,8 +1931,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1820,7 +1945,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/facture-exacompta/": {
    "kind": "post",
@@ -1835,18 +1960,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/facture-traiteur/": {
    "kind": "post",
@@ -1861,18 +1991,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/fifo-fefo-lifo/": {
    "kind": "post",
@@ -1918,8 +2053,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1930,7 +2067,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 29
+   "schema_count": 33
   },
   "/blog/gestion-decoupe-viande-logiciel/": {
    "kind": "post",
@@ -1947,8 +2084,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -1959,7 +2098,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/gestion-des-inventaires/": {
    "kind": "post",
@@ -2005,8 +2144,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2017,7 +2158,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/hello-harel-vs-divalto/": {
    "kind": "post",
@@ -2034,8 +2175,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2046,7 +2189,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/hello-harel-vs-odoo/": {
    "kind": "post",
@@ -2063,8 +2206,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2075,7 +2220,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/hello-harel-vs-sage/": {
    "kind": "post",
@@ -2092,8 +2237,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2104,7 +2251,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/hello-harel-vs-silog/": {
    "kind": "post",
@@ -2121,8 +2268,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2133,7 +2282,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/": {
    "kind": "post",
@@ -2150,8 +2299,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2162,7 +2313,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 29
+   "schema_count": 33
   },
   "/blog/integrateur-erp-lyon/": {
    "kind": "post",
@@ -2179,8 +2330,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2191,7 +2344,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/integrateur-erp-paris/": {
    "kind": "post",
@@ -2208,8 +2361,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2220,7 +2375,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/kpi-qualite-agroalimentaire/": {
    "kind": "post",
@@ -2266,8 +2421,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2278,7 +2435,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/logiciel-commande-grande-surface-traiteur/": {
    "kind": "post",
@@ -2295,8 +2452,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2307,7 +2466,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/logiciel-gestion-calibre-fruits-legumes/": {
    "kind": "post",
@@ -2324,8 +2483,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2336,7 +2497,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/logiciel-gestion-recette-multi-niveaux-traiteur/": {
    "kind": "post",
@@ -2353,8 +2514,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2365,7 +2528,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/logiciel-grossiste-alimentaire/": {
    "kind": "post",
@@ -2382,8 +2545,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2394,7 +2559,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises/": {
    "kind": "post",
@@ -2411,8 +2576,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2423,7 +2590,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 23
+   "schema_count": 27
   },
   "/blog/logiciel-maree-mareyeur/": {
    "kind": "post",
@@ -2447,8 +2614,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2459,7 +2628,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/logiciel-televente-alimentaire/": {
    "kind": "post",
@@ -2476,8 +2645,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2488,7 +2659,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/logiciel-tracabilite-dlc-traiteur/": {
    "kind": "post",
@@ -2505,8 +2676,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2517,7 +2690,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/maitriser-la-gestion-des-stocks/": {
    "kind": "post",
@@ -2532,18 +2705,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/meilleurs-erp-boulangerie/": {
    "kind": "post",
@@ -2560,8 +2738,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2572,7 +2752,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/blog/meilleurs-erp-gestion-approvisionnements/": {
    "kind": "post",
@@ -2589,8 +2769,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2601,7 +2783,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/meilleurs-erp-import-export/": {
    "kind": "post",
@@ -2618,8 +2800,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2630,7 +2814,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 21
+   "schema_count": 25
   },
   "/blog/meilleurs-erp-maraichers-fruits-legumes/": {
    "kind": "post",
@@ -2647,8 +2831,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2659,7 +2845,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/migration-erp-agroalimentaire/": {
    "kind": "post",
@@ -2676,8 +2862,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2688,7 +2876,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/min/": {
    "kind": "post",
@@ -2705,8 +2893,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2717,7 +2907,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 27
+   "schema_count": 31
   },
   "/blog/numeros-de-lot/": {
    "kind": "post",
@@ -2732,18 +2922,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/opc-ua/": {
    "kind": "post",
@@ -2787,18 +2982,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/ordonnancement-planification/": {
    "kind": "post",
@@ -2813,18 +3013,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/ordre-de-fabrication/": {
    "kind": "post",
@@ -2841,8 +3046,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2853,7 +3060,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/partenariat-toncarton/": {
    "kind": "post",
@@ -2869,7 +3076,9 @@
    "schema_types": [
     "AggregateRating",
     "Article",
+    "BreadcrumbList",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2879,7 +3088,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 18
   },
   "/blog/plan-de-controle-alimentaire/": {
    "kind": "post",
@@ -2925,8 +3134,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2937,7 +3148,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 25
+   "schema_count": 29
   },
   "/blog/processus-agroalimentaire-guide/": {
    "kind": "post",
@@ -2983,8 +3194,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -2995,7 +3208,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 25
+   "schema_count": 29
   },
   "/blog/relance-client/": {
    "kind": "post",
@@ -3012,8 +3225,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -3024,7 +3239,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 23
+   "schema_count": 27
   },
   "/blog/remplacer-excel-gestion-agroalimentaire/": {
    "kind": "post",
@@ -3041,8 +3256,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -3053,7 +3270,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/roi-erp/": {
    "kind": "post",
@@ -3097,18 +3314,23 @@
    "noindex": false,
    "schema_types": [
     "AggregateRating",
+    "Answer",
     "Article",
+    "BreadcrumbList",
+    "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
     "PostalAddress",
+    "Question",
     "SoftwareApplication",
     "Thing",
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 14
+   "schema_count": 23
   },
   "/blog/tracabilite-lot-dlc-logiciel/": {
    "kind": "post",
@@ -3125,8 +3347,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -3137,7 +3361,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/tracabilite-viande-logiciel/": {
    "kind": "post",
@@ -3154,8 +3378,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -3166,7 +3392,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 19
+   "schema_count": 23
   },
   "/blog/variation-de-stock-positif-negatif/": {
    "kind": "post",
@@ -3183,8 +3409,10 @@
     "AggregateRating",
     "Answer",
     "Article",
+    "BreadcrumbList",
     "FAQPage",
     "ImageObject",
+    "ListItem",
     "Offer",
     "Organization",
     "Person",
@@ -3195,7 +3423,7 @@
     "WebPage",
     "WebSite"
    ],
-   "schema_count": 31
+   "schema_count": 35
   },
   "/cgu/": {
    "kind": "page",
