@@ -1,16 +1,16 @@
 salon;edition_annee;entreprise;secteur_metier;site_web;email;type_email;email_origine;email_annuaire;email_site;email_site_source;nom_contact;fonction;ville;departement;telephone;source_url;date_collecte;statut_validation;segment_ICP
-Medfel;2026;MEDIMAT;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/medimat/;2026-06-20;a_enrichir;Haute
-Medfel;2026;TUNISUD;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/tunisud/;2026-06-20;a_enrichir;Haute
-Medfel;2026;EMBALATGES GIRONA SL;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/embalatges-girona-sl/;2026-06-20;a_enrichir;Haute
-Medfel;2026;EURL MAHMOUDI EXPORT;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/eurl-mahmoudi-export/;2026-06-20;a_enrichir;Haute
-Medfel;2026;SARL NASRI TRADIN;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/gerant-de-la-salr-abd-elghani/;2026-06-20;a_enrichir;Haute
-Medfel;2026;BENOIT ESCANDE EDITIONS SARL;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/benoit-escande-editions-sarl/;2026-06-20;a_enrichir;Haute
-Medfel;2026;PEPINIERES IBANEZ;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/pepinieres-ibanez/;2026-06-20;a_enrichir;Haute
-Medfel;2026;VEGETABLE;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/vegetable/;2026-06-20;a_enrichir;Haute
+Medfel;2026;MEDIMAT;Fruits & légumes / négoce (Medfel);https://medimat.fr/accueil/v2/;contact@medimat.fr;generique;site;;contact@medimat.fr;https://www.medimat.fr/mentions-legales;;;;;;https://www.medimat.fr/mentions-legales;2026-06-20;valide;Haute
+Medfel;2026;TUNISUD;Fruits & légumes / négoce (Medfel);https://www.tunisud.com/;contact@tunisud.fr;generique;site;;contact@tunisud.fr;https://www.tunisud.com/mentions_legales.php;;;;;;https://www.tunisud.com/mentions_legales.php;2026-06-20;valide;Haute
+Medfel;2026;EMBALATGES GIRONA SL;Fruits & légumes / négoce (Medfel);https://embalatgesgirona.com/es/inicio/;info@embalatgesgirona.com;generique;site;;info@embalatgesgirona.com;https://embalatgesgirona.com/es/contacto/;;;;;;https://embalatgesgirona.com/es/contacto/;2026-06-20;valide;Haute
+Medfel;2026;EURL MAHMOUDI EXPORT;Fruits & légumes / négoce (Medfel);http://groupe-mahmoudi.com/;;;;;;;;;;;;https://medfel.com/exposants/eurl-mahmoudi-export/;2026-06-20;a_enrichir;Haute
+Medfel;2026;SARL NASRI TRADIN;Fruits & légumes / négoce (Medfel);https://ntc.group/;;;;;;;;;;;;https://medfel.com/exposants/gerant-de-la-salr-abd-elghani/;2026-06-20;a_enrichir;Haute
+Medfel;2026;BENOIT ESCANDE EDITIONS SARL;Fruits & légumes / négoce (Medfel);https://www.pepinieres-escande.com/;info@pepinieres-escande.com;generique;site;;info@pepinieres-escande.com;https://www.pepinieres-escande.com/contact/;;;;;;https://www.pepinieres-escande.com/contact/;2026-06-20;valide;Haute
+Medfel;2026;PEPINIERES IBANEZ;Fruits & légumes / négoce (Medfel);https://www.ibanez.com/usa/products/;ibanez@hoshinousa.com;nominatif;site;;ibanez@hoshinousa.com;https://www.ibanez.com/usa/support/contact/;;;;;;https://www.ibanez.com/usa/support/contact/;2026-06-20;valide;Haute
+Medfel;2026;VEGETABLE;Fruits & légumes / négoce (Medfel);https://www.vegetableorchestra.org/;booking@vegetableorchestra.org;nominatif;site;;booking@vegetableorchestra.org;https://www.vegetableorchestra.org/contact.php;;;;;;https://www.vegetableorchestra.org/contact.php;2026-06-20;valide;Haute
 Medfel;2026;GHECHAM ISLEM – POMMES D’ALGÉRIE;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/production-de-pommes-islem/;2026-06-20;a_enrichir;Haute
-Medfel;2026;FIMAT SPA GROUPE CARTONPACK;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/fimat-spa-groupe-cartonpack/;2026-06-20;a_enrichir;Haute
-Medfel;2026;COMPAGNIE FRUITIERE;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/compagnie-fruitiere/;2026-06-20;a_enrichir;Haute
-Medfel;2026;SUDESPA;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/sudespa/;2026-06-20;a_enrichir;Haute
+Medfel;2026;FIMAT SPA GROUPE CARTONPACK;Fruits & légumes / négoce (Medfel);https://www.cartonpackgroup.com/fimat-landing;info@cartonpack.com;generique;site;;info@cartonpack.com;https://www.cartonpackgroup.com/contacts;;;;;;https://www.cartonpackgroup.com/contacts;2026-06-20;valide;Haute
+Medfel;2026;COMPAGNIE FRUITIERE;Fruits & légumes / négoce (Medfel);https://www.compagniefruitiere.fr/en/;;;;;;;;;;;;https://medfel.com/exposants/compagnie-fruitiere/;2026-06-20;a_enrichir;Haute
+Medfel;2026;SUDESPA;Fruits & légumes / négoce (Medfel);https://suddefrance-arena.fr/;;;;;;;;;;;;https://medfel.com/exposants/sudespa/;2026-06-20;a_enrichir;Haute
 Medfel;2026;Maison FERRIER-FRUIDOR Terroirs;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/maison-ferrier-fruidor-terroirs/;2026-06-20;a_enrichir;Haute
 Medfel;2026;COMITE DE AGRICULTURA ECOLÓGICA DE LA CV;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/comite-de-agricultura-ecologica-de-la-cv/;2026-06-20;a_enrichir;Haute
 Medfel;2026;RACAMIER;Fruits & légumes / négoce (Medfel);;;;;;;;;;;;;https://medfel.com/exposants/racamier/;2026-06-20;a_enrichir;Haute
