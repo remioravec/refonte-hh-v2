@@ -76,6 +76,7 @@ def main():
     if len(sys.argv) < 2:
         print("usage: verify_emails.py <csv> [--strict]"); return
     path = sys.argv[1]; strict = "--strict" in sys.argv
+    trust = "--trust-source" in sys.argv  # source fiable (annuaire) : MX only, pas de check nom↔domaine
     rows = list(csv.DictReader(open(path, encoding="utf-8"), delimiter=";"))
     n_mail = n_valide = n_verif = n_dead = 0
     for r in rows:
@@ -93,6 +94,10 @@ def main():
             r["statut_validation"] = "email_invalide"
             r["email"] = ""; r["email_site"] = ""; r["type_email"] = ""
             n_dead += 1
+            continue
+        if trust:
+            # source fiable : MX ok suffit
+            r["statut_validation"] = "valide"; n_valide += 1
             continue
         score = match_score(r["entreprise"], em, r.get("site_web", ""))
         local = em.split("@")[0].lower()
