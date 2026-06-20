@@ -89,9 +89,9 @@ def main():
         dom = em.split("@")[1]
         dstat = domain_status(dom)
         if dstat == "dead":
+            # email invalide (domaine sans MX et ne résout pas) -> supprimé
             r["statut_validation"] = "email_invalide"
-            if strict:
-                r["email"] = ""
+            r["email"] = ""; r["email_site"] = ""; r["type_email"] = ""
             n_dead += 1
             continue
         score = match_score(r["entreprise"], em, r.get("site_web", ""))
