@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--
+  ============================================================================
+  PAGE PERSONNALISÉE PROSPECT — Hello Harel (ERP agroalimentaire)
+  ----------------------------------------------------------------------------
+  Landing 1:1 à envoyer en outbound (lien personnalisé par prospect).
+  Style aligné sur le site actuel : primaire #00B1F5, slate #0f172a / #334155.
+
+  VARIABLES SIMPLES (remplacer {{...}} — alimentables depuis base-outbound) :
+    {{prenom}}            -> nom_contact (prénom) ou ""
+    {{nom_entreprise}}    -> entreprise
+    {{secteur_metier}}    -> secteur_metier (ex. "fromagerie", "métiers de bouche")
+    {{ville}}             -> ville (ou "votre région" si vide)
+    {{salon}}             -> salon (ex. "Serbotel", "Medfel")
+    {{lien_demo}}         -> URL de prise de RDV (Calendly/HubSpot)
+    {{prenom_commercial}} -> votre prénom (expéditeur)
+  Valeur par défaut gérée côté générateur : si une variable est vide, voir
+  generate_pages.py (remplacements de repli).
+  ============================================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{nom_entreprise}} × Hello Harel — l'ERP des PME agroalimentaires</title>
+<style>
+  :root{
+    --bleu:#00B1F5; --bleu-fonce:#0090c8; --ink:#0f172a; --gris:#334155;
+    --gris-clair:#64748b; --bg:#f8fafc; --bord:#e2e8f0; --vert:#16a34a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--gris);line-height:1.6;background:#fff;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem}
+  a{color:var(--bleu);text-decoration:none}
+  .btn{display:inline-block;background:var(--bleu);color:#fff;font-weight:700;
+       padding:1rem 2rem;border-radius:10px;font-size:1.05rem;transition:.2s;
+       box-shadow:0 6px 18px rgba(0,177,245,.28)}
+  .btn:hover{background:var(--bleu-fonce);transform:translateY(-1px)}
+  .eyebrow{display:inline-block;background:rgba(0,177,245,.1);color:var(--bleu-fonce);
+       font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;
+       padding:.4rem .9rem;border-radius:999px;margin-bottom:1.25rem}
+
+  /* HERO */
+  header.hero{background:linear-gradient(160deg,#f0faff 0%,#fff 60%);
+       padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem);border-bottom:1px solid var(--bord)}
+  .hero h1{font-size:clamp(1.8rem,4.2vw,2.8rem);font-weight:800;color:var(--ink);
+       line-height:1.18;margin-bottom:1.1rem}
+  .hero h1 .hl{color:var(--bleu)}
+  .hero p.lead{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--gris);max-width:640px;margin-bottom:1.8rem}
+  .hero .meet{font-size:.95rem;color:var(--gris-clair);margin-top:1.4rem}
+
+  /* SECTIONS */
+  section{padding:clamp(2.5rem,5vw,4rem) 0}
+  h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;color:var(--ink);margin-bottom:1.5rem;line-height:1.25}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
+  .card{background:var(--bg);border:1px solid var(--bord);border-radius:14px;padding:1.5rem}
+  .card .ic{width:42px;height:42px;border-radius:10px;background:rgba(0,177,245,.12);
+       display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.9rem}
+  .card h3{font-size:1.05rem;color:var(--ink);font-weight:700;margin-bottom:.4rem}
+  .card p{font-size:.95rem;color:var(--gris)}
+
+  /* STATS */
+  .stats{background:var(--ink);color:#fff;border-radius:18px;padding:2.2rem;display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;text-align:center}
+  .stats .n{font-size:2rem;font-weight:800;color:var(--bleu);display:block}
+  .stats .l{font-size:.9rem;color:#cbd5e1;margin-top:.3rem}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--bleu) 0%,var(--bleu-fonce) 100%);
+       border-radius:18px;padding:clamp(2rem,4vw,3rem);text-align:center;color:#fff}
+  .cta h2{color:#fff}
+  .cta p{color:rgba(255,255,255,.92);max-width:520px;margin:0 auto 1.6rem}
+  .cta .btn{background:#fff;color:var(--bleu-fonce);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .sign{margin-top:1.4rem;font-size:.9rem;color:rgba(255,255,255,.85)}
+
+  footer{padding:2rem 0;text-align:center;color:var(--gris-clair);font-size:.85rem;border-top:1px solid var(--bord)}
+  ul.checks{list-style:none;margin:1rem 0}
+  ul.checks li{padding-left:1.8rem;position:relative;margin-bottom:.6rem;color:var(--gris)}
+  ul.checks li:before{content:"✓";position:absolute;left:0;color:var(--vert);font-weight:800}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Hello Harel · ERP agroalimentaire</span>
+    <h1>{{nom_entreprise}}, et si la traçabilité, les marges et la conformité tenaient dans <span class="hl">un seul outil</span> ?</h1>
+    <p class="lead">Bonjour {{prenom}}, on conçoit l'ERP pensé pour les PME {{secteur_metier}} comme la vôtre — pas un logiciel généraliste qu'on tord pour entrer dans vos process.</p>
+    <a class="btn" href="{{lien_demo}}">Voir une démo adaptée à {{nom_entreprise}}</a>
+    <p class="meet">👋 Échange initié au salon <strong>{{salon}}</strong> · solution déployée chez des producteurs à {{ville}} et partout en France.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Ce que vit une PME {{secteur_metier}} sans ERP spécialisé</h2>
+    <p style="margin-bottom:1.5rem;max-width:680px">Un fichier Excel pour les recettes, un autre pour les DLC, un cahier papier pour les lots, et trois heures de stress le vendredi quand un client GMS réclame un certificat. Hello Harel remplace cette mosaïque par une plateforme unique.</p>
+    <div class="cards">
+      <div class="card"><div class="ic">🔎</div><h3>Traçabilité en quelques clics</h3><p>Ascendante et descendante (CE 178/2002). Isolez un lot suspect en minutes, pas en jours.</p></div>
+      <div class="card"><div class="ic">📈</div><h3>Coût de revient réel</h3><p>Nomenclatures multi-niveaux, rendements, freintes, poids variable. Votre PRI recalculé à chaque variation de cours.</p></div>
+      <div class="card"><div class="ic">🗓️</div><h3>Stocks & DLC (FEFO)</h3><p>Rotation FEFO, alertes péremption, multi-dépôts. Des pertes ramenées sous 1,5 % du CA.</p></div>
+      <div class="card"><div class="ic">✅</div><h3>Conformité « audit-ready »</h3><p>HACCP, IFS, INCO, allergènes propagés, étiquettes conformes, EGALIM. Prêt pour l'audit en quelques clics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div><span class="n">8–14 mois</span><span class="l">ROI moyen constaté</span></div>
+      <div><span class="n">2–5 pts</span><span class="l">de marge brute regagnés</span></div>
+      <div><span class="n">10–15 h</span><span class="l">d'admin économisées / semaine</span></div>
+      <div><span class="n">4–10 sem.</span><span class="l">de déploiement (vs 6–12 mois)</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pourquoi {{nom_entreprise}} plutôt qu'un ERP généraliste</h2>
+    <ul class="checks">
+      <li>Pensé pour l'alimentaire : poids variable, rendements, FEFO, étiquetage INCO <strong>nativement</strong> — pas en développement spécifique.</li>
+      <li>Processus métier {{secteur_metier}} préconfigurés : opérationnel en semaines, pas en mois.</li>
+      <li>Coût total de possession 2 à 4× inférieur sur 5 ans.</li>
+      <li>Un interlocuteur qui parle votre métier, pas un intégrateur générique.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>15 minutes pour voir Hello Harel sur vos cas concrets</h2>
+      <p>On vous montre la traçabilité, le calcul de PRI et l'étiquetage INCO sur un produit de {{nom_entreprise}} — pas une démo générique.</p>
+      <a class="btn" href="{{lien_demo}}">Réserver mon créneau</a>
+      <p class="sign">— {{prenom_commercial}}, Hello Harel</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Hello Harel — l'ERP des PME agroalimentaires · Cette page a été préparée pour {{nom_entreprise}}.</div>
+</footer>
+
+</body>
+</html>
