@@ -87,7 +87,7 @@ def main():
                 r["email_site_source"] = src; r["email_origine"] = "site"
                 r["source_url"] = src; r["date_collecte"] = TODAY
                 r["statut_validation"] = "valide"; mail_hits += 1
-        time.sleep(1.0)  # politesse moteur de recherche
+        time.sleep(0.4)  # politesse moteur de recherche
         if i % 10 == 0:
             print(f"  {i}/{len(todo)} — sites {site_hits} / emails {mail_hits}")
     cols = list(rows[0].keys())
