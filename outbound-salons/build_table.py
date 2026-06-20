@@ -53,15 +53,20 @@ TEMPLATE = r"""<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Base Outbound — Salons Agroalimentaire · Hello Harel</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--green:#16a34a;--green-d:#15803d;--ink:#0f172a;--muted:#64748b;--bg:#f8fafc;
-        --line:#e2e8f0;--card:#fff;--chip:#ecfdf5;--chipink:#166534;}
+  /* charte commune Hello Harel (cf. hh-brand.css) */
+  :root{--bleu:#00B1F5;--bleu-fonce:#0090c8;--green:#00B1F5;--green-d:#0090c8;--ink:#0f172a;--muted:#64748b;--bg:#f8fafc;
+        --line:#e2e8f0;--card:#fff;--chip:#e6f7ff;--chipink:#0369a1;}
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
        color:var(--ink);background:var(--bg);font-size:14px}
-  header{background:linear-gradient(120deg,#0f172a,#15803d);color:#fff;padding:22px 26px}
-  header h1{margin:0;font-size:1.25rem;font-weight:700}
-  header p{margin:4px 0 0;color:#cbd5e1;font-size:.85rem}
+  .hh-top{background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu));color:#fff;padding:18px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .hh-top .hh-logo{height:30px}
+  .hh-top .hh-title{font-weight:800;font-size:1.18rem;line-height:1.2}
+  .hh-top .hh-sub{color:rgba(255,255,255,.85);font-size:.82rem;margin-top:2px}
   .wrap{padding:18px 26px 60px}
   .cards{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:130px;flex:1}
@@ -96,9 +101,12 @@ TEMPLATE = r"""<!DOCTYPE html>
 </style>
 </head>
 <body>
-<header>
-  <h1>📇 Base Outbound — Salons Agroalimentaire</h1>
-  <p>Hello Harel · prospection B2B · généré le __DATE__ · __SALONS__ salon(s) · 1 seul fichier</p>
+<header class="hh-top">
+  <img class="hh-logo" src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <div>
+    <div class="hh-title">Base Outbound — Salons Agroalimentaire</div>
+    <div class="hh-sub">Hello Harel · prospection B2B · généré le __DATE__ · __SALONS__ salon(s)</div>
+  </div>
 </header>
 <div class="wrap">
   <div class="cards" id="cards"></div>
