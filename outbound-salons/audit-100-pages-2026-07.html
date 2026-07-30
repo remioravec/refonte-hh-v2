@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit 100% des pages — Hello Harel · GSC 90 jours</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="hh-brand.css" rel="stylesheet">
+<style>
+  h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris-clair);margin:30px 0 12px}
+  .lead{font-size:1rem;color:var(--gris);max-width:780px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:6px 0}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  .kpi{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:16px}
+  .kpi .n{font-size:1.7rem;font-weight:800;line-height:1}
+  .kpi .l{font-size:.76rem;color:var(--gris-clair);margin-top:4px}
+  .kpi.red .n{color:#dc2626}.kpi.amber .n{color:#d97706}
+  .pri{font-weight:800;border-radius:8px;padding:2px 9px;font-size:.72rem;color:#fff;white-space:nowrap}
+  .p1{background:#dc2626}.p2{background:#d97706}.p3{background:#64748b}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+  .small{font-size:.82rem;color:var(--gris-clair)}
+  ol.steps{margin:6px 0 0;padding-left:20px;color:var(--gris)} ol.steps li{margin:5px 0}
+</style></head>
+<body>
+<div class="hh-top">
+  <img class="hh-logo" src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <div><div class="hh-title">Audit SEO — 100 % des pages</div>
+    <div class="hh-sub">Google Search Console · 28 avr. → 27 juil. 2026 (90 j) · 316 pages avec impressions</div></div>
+</div>
+
+<div class="hh-wrap">
+
+  <p class="lead">Analyse de <b>toutes les pages qui reçoivent des impressions</b> sur Google. Le constat central :
+  le trafic est <b>massivement informationnel</b> (blog prix/coûts), le <b>CTR est très faible</b>, et les
+  <b>pages « money »</b> (métiers, fonctionnalités) sont <b>bloquées en page 2</b>. Trois leviers ressortent nettement.</p>
+
+  <div class="grid">
+    <div class="kpi"><div class="n">316</div><div class="l">pages avec impressions</div></div>
+    <div class="kpi"><div class="n">4 837</div><div class="l">clics (90 j)</div></div>
+    <div class="kpi"><div class="n">443 k</div><div class="l">impressions</div></div>
+    <div class="kpi red"><div class="n">1,1 %</div><div class="l">CTR global — faible</div></div>
+  </div>
+
+  <h2>Le déséquilibre ROI</h2>
+  <div class="hh-card">
+    <p style="margin:0;color:var(--gris)">Le n°1 est un article <b>informationnel</b> : <b>/blog/cout-prix-au-kilo/</b> = 1 637 clics à lui seul (34 % du site).
+    À l'inverse, les <b>33 pages money</b> réunies pèsent <b>~100 clics</b> (≈ 2 %). Le trafic arrive, mais <b>pas là où il se vend</b>.
+    Objectif de l'audit : faire remonter les pages money et convertir le trafic blog vers elles.</p>
+  </div>
+
+  <h2><span class="pri p1">P1</span>&nbsp; Faire remonter le hub /agroalimentaire/ (le plus gros gisement)</h2>
+  <div class="hh-card">
+    <p style="margin:0 0 8px;color:var(--gris)">La page money la plus importante est <b>coincée en page 2</b> avec un CTR catastrophique :</p>
+    <table class="hh"><thead><tr><th>Page money</th><th class="r">Impr.</th><th class="r">Pos.</th><th class="r">CTR</th><th class="r">Clics</th></tr></thead>
+    <tbody>
+      <tr><td><b>/agroalimentaire/</b> (hub)</td><td class="r">12 750</td><td class="r">14,5</td><td class="r">0,3 %</td><td class="r">38</td></tr>
+      <tr><td>/agroalimentaire/maraicher/</td><td class="r">1 205</td><td class="r">25,7</td><td class="r">0,2 %</td><td class="r">3</td></tr>
+      <tr><td>/agroalimentaire/traiteur/</td><td class="r">913</td><td class="r">16,9</td><td class="r">1,0 %</td><td class="r">9</td></tr>
+      <tr><td>/fonctionnalites/crm/</td><td class="r">1 957</td><td class="r">12,1</td><td class="r">0,2 %</td><td class="r">3</td></tr>
+    </tbody></table>
+    <p class="small" style="margin:8px 0 0"><b>12 750 impressions à la position 14,5</b> : passer ce hub en page 1 vaut plusieurs centaines de visites/mois.
+    C'est aussi le cluster « erp agroalimentaire » en cannibalisation avec le blog comparatif (déjà identifié) → consolider le maillage blog→hub + renforcer les liens entrants.</p>
+  </div>
+
+  <h2><span class="pri p1">P1</span>&nbsp; Crise de CTR — réécrire les titres (le levier le plus rapide)</h2>
+  <div class="hh-card">
+    <p style="margin:0 0 8px;color:var(--gris)">Des pages <b>bien classées</b> mais <b>jamais cliquées</b> : le titre/meta ne donne pas envie. Réécriture = gain immédiat sans bouger le classement.</p>
+    <table class="hh"><thead><tr><th>Page</th><th class="r">Impr.</th><th class="r">Pos.</th><th class="r">CTR</th></tr></thead>
+    <tbody>
+      <tr><td>/blog/prix-dachat-definition/</td><td class="r">23 512</td><td class="r">6,9</td><td class="r">0,3 %</td></tr>
+      <tr><td>/blog/min/ <span class="small">(page à investiguer)</span></td><td class="r">22 107</td><td class="r">9,3</td><td class="r">0,2 %</td></tr>
+      <tr><td>/blog/erp-saas/</td><td class="r">5 101</td><td class="r">16,4</td><td class="r">0,0 %</td></tr>
+      <tr><td>/blog/calcul-du-prix-moyen/</td><td class="r">13 642</td><td class="r">6,8</td><td class="r">1,0 %</td></tr>
+      <tr><td>/blog/variation-de-stock-positif-negatif/</td><td class="r">10 355</td><td class="r">7,6</td><td class="r">0,8 %</td></tr>
+    </tbody></table>
+    <p class="small" style="margin:8px 0 0">83 pages ont &gt; 300 impressions et &lt; 0,5 % de CTR. Prioriser les 20 plus gros volumes pour la réécriture de balise title (bénéfice + question + chiffre).</p>
+  </div>
+
+  <h2><span class="pri p2">P2</span>&nbsp; Pages en page 2 proches du top 10 (poussée facile)</h2>
+  <div class="hh-card">
+    <table class="hh"><thead><tr><th>Page</th><th class="r">Impr.</th><th class="r">Pos.</th><th class="r">Clics</th></tr></thead>
+    <tbody>
+      <tr><td>/blog/erp-as400/ <span class="small">(offre ajoutée ✓)</span></td><td class="r">8 593</td><td class="r">9,9</td><td class="r">85</td></tr>
+      <tr><td>/blog/calcul-du-cout-achat/</td><td class="r">7 067</td><td class="r">8,4</td><td class="r">29</td></tr>
+      <tr><td>/blog/ordre-de-fabrication/</td><td class="r">4 716</td><td class="r">8,8</td><td class="r">34</td></tr>
+      <tr><td>/blog/facture-exacompta/</td><td class="r">4 757</td><td class="r">8,8</td><td class="r">61</td></tr>
+      <tr><td>/blog/meilleurs-erp-maraichers-fruits-legumes/</td><td class="r">2 347</td><td class="r">9,5</td><td class="r">45</td></tr>
+    </tbody></table>
+    <p class="small" style="margin:8px 0 0">Un enrichissement ciblé + maillage montant peut basculer ces pages en page 1 (fort effet de levier au voisinage de la position 10).</p>
+  </div>
+
+  <h2><span class="pri p3">P3</span>&nbsp; Artefacts & hygiène</h2>
+  <div class="hh-card">
+    <ol class="steps">
+      <li><b>URLs à fragment</b> (#s-1, #s-2, #hha-s5…) sur <b>/blog/cout-prix-au-kilo/</b> : comptées comme des pages distinctes par GSC (~46 000 impressions fantômes). Ce sont des ancres de sommaire — à ignorer, pas un vrai doublon.</li>
+      <li><b>/blog/min/</b> : 22 107 impressions pour 0,2 % de CTR — vérifier ce qu'est cette page (slug court suspect) : contenu à corriger ou à rediriger.</li>
+      <li><b>Money pages bien classées mais faible demande</b> : /fonctionnalites/facturation/ (pos 3,6) et /vente/ (pos 3,4) rankent en page 1 mais captent peu d'impressions → la demande exacte est faible, viser des requêtes plus larges.</li>
+    </ol>
+  </div>
+
+  <h2>Plan d'action priorisé</h2>
+  <div class="hh-card" style="padding:0;overflow-x:auto">
+  <table class="hh"><thead><tr><th>Prio</th><th>Action</th><th>Cible</th><th>Effet attendu</th></tr></thead>
+  <tbody>
+    <tr><td><span class="pri p1">P1</span></td><td>Remonter le hub /agroalimentaire/ (maillage blog→hub, liens entrants, on-page)</td><td>hub</td><td>+ plusieurs centaines de visites/mois</td></tr>
+    <tr><td><span class="pri p1">P1</span></td><td>Réécrire 20 titres/metas à fort volume &amp; CTR &lt; 0,5 %</td><td>20 pages</td><td>+ clics immédiats, sans changer le rang</td></tr>
+    <tr><td><span class="pri p2">P2</span></td><td>Pousser les 6 pages en position 8-10 vers le top 10</td><td>~6 pages</td><td>bascule page 1</td></tr>
+    <tr><td><span class="pri p2">P2</span></td><td>Convertir le trafic blog (prix/coûts) vers les pages money via CTA + maillage</td><td>cluster prix</td><td>+ conversions</td></tr>
+    <tr><td><span class="pri p3">P3</span></td><td>Investiguer /blog/min/ + ignorer les fragments GSC</td><td>hygiène</td><td>propreté data</td></tr>
+  </tbody></table>
+  </div>
+
+  <div class="hh-foot">Hello Harel — audit 100 % des pages · données GSC 90 j (28/04 → 27/07/2026) · généré le 30/07/2026</div>
+</div>
+</body></html>
