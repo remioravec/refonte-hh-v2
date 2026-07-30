@@ -28,7 +28,14 @@ def bullet(t):
 BLOCK = (
     f'<section class="{MARK}" id="{MARK}" style="background:linear-gradient(135deg,#0090c8,#00B1F5);'
     'padding:44px 0;margin:0;">'
-    '<div style="max-width:1040px;margin:0 auto;padding:0 22px;font-family:Inter,-apple-system,sans-serif">'
+    f'<style>@media(max-width:760px){{'
+    f'#{MARK} .as400-steps{{grid-template-columns:1fr !important;}}'
+    f'#{MARK} .as400-bullets{{grid-template-columns:1fr !important;}}'
+    f'#{MARK} .as400-in{{padding:0 18px !important;}}'
+    f'#{MARK} h2{{font-size:1.4rem !important;}}'
+    f'#{MARK} .as400-cta{{display:block !important;text-align:center !important;}}'
+    f'}}</style>'
+    '<div class="as400-in" style="max-width:1040px;margin:0 auto;padding:0 22px;font-family:Inter,-apple-system,sans-serif">'
     '<span style="display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-weight:700;'
     'font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .8rem;border-radius:999px">'
     'Offre migration AS/400</span>'
@@ -37,18 +44,18 @@ BLOCK = (
     '<p style="color:rgba(255,255,255,.92);font-size:1.08rem;line-height:1.6;max-width:680px;margin:0 0 1.3rem">'
     'Hello Harel migre votre gestion agroalimentaire d\'un AS/400 vieillissant vers un ERP SaaS moderne : '
     'reprise de vos données garantie, accompagnement dédié, zéro rupture d\'exploitation.</p>'
-    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem 2rem;max-width:760px;margin:0 0 1.6rem;'
+    '<div class="as400-bullets" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem 2rem;max-width:760px;margin:0 0 1.6rem;'
     'list-style:none">'
     f'<ul style="margin:0;padding:0;display:grid;gap:.6rem;list-style:none">{bullet("Reprise des données historiques garantie")}{bullet("Accès web, mobile et multi-sites (SaaS)")}</ul>'
     f'<ul style="margin:0;padding:0;display:grid;gap:.6rem;list-style:none">{bullet("Un chef de projet dédié, éditeur français")}{bullet("Traçabilité, DLC et facturation intégrées")}</ul>'
     '</div>'
-    '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 1.6rem">'
+    '<div class="as400-steps" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 1.6rem">'
     + step(1, "Audit de l\'existant", "Cartographie de vos données AS/400, de vos flux et de vos éditions.")
     + step(2, "Reprise des données", "Migration des articles, tiers, stocks et historiques, contrôlée et validée.")
     + step(3, "Paramétrage métier", "Configuration sur votre process agroalimentaire et formation des équipes.")
     + step(4, "Bascule accompagnée", "Mise en production progressive, sans arrêt de votre activité.")
     + '</div>'
-    '<a href="/contact/" style="display:inline-block;background:#fff;color:#0090c8;font-weight:800;'
+    '<a href="/contact/" class="as400-cta" style="display:inline-block;background:#fff;color:#0090c8;font-weight:800;'
     'padding:13px 26px;border-radius:12px;text-decoration:none;font-size:1rem">Demander une démonstration gratuite →</a>'
     '</div></section>\n'
 )

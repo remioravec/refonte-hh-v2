@@ -73,38 +73,65 @@ FEATURES = (
     + '</div>\n</div>\n</section>\n'
 )
 
+# 6 Q&A (must stay 6 = number of cards/panels the drawer JS expects).
 FAQ_QA = [
-    ("Qu'est-ce qu'un logiciel de traçabilité alimentaire ?",
-     "C'est un ERP qui enregistre, pour chaque lot, son origine, sa transformation et sa destination. Il permet de retrouver instantanément d'où vient un produit (traçabilité ascendante) et où il est parti (traçabilité descendante), condition indispensable du Paquet Hygiène et de la norme HACCP."),
-    ("Comment gérer un rappel de lot avec Hello Harel ?",
-     "À partir d'un lot suspect, le logiciel identifie en quelques secondes tous les produits finis qui le contiennent et tous les clients livrés. Vous bloquez les lots, éditez la liste des clients à contacter et le dossier de retrait-rappel."),
-    ("Le logiciel gère-t-il les DLC, DDM et la méthode FEFO ?",
-     "Oui. Chaque lot porte sa DLC ou DDM ; la logique FEFO impose de sortir en priorité les lots les plus proches de la péremption, ce qui réduit les pertes et sécurise vos expéditions."),
-    ("La traçabilité couvre-t-elle l'étiquetage INCO et les allergènes ?",
-     "Oui. Les étiquettes reprennent automatiquement les mentions INCO (allergènes en gras, valeurs nutritionnelles, estampille sanitaire) à partir des recettes et des lots, sans ressaisie."),
-    ("Est-ce adapté aux audits IFS, BRC et au Paquet Hygiène ?",
-     "L'historique complet des lots, des contrôles et des non-conformités est conservé et exportable, ce qui accélère les audits IFS / BRC et prouve votre conformité au Paquet Hygiène."),
+    ("Qu'est-ce qu'un logiciel de traçabilité alimentaire ?", "Comment, traçabilité, logiciel",
+     "Un logiciel de traçabilité alimentaire enregistre, pour chaque lot, son origine, sa transformation et sa destination. Il permet de retrouver instantanément d'où vient un produit (traçabilité ascendante) et où il est parti (traçabilité descendante) — une obligation du Paquet Hygiène et le cœur de la méthode HACCP."),
+    ("Comment gérer un rappel de lot avec Hello Harel ?", "Comment, rappel, lot",
+     "À partir d'un lot suspect, Hello Harel identifie en quelques secondes tous les produits finis qui le contiennent et tous les clients livrés. Vous bloquez les lots concernés, éditez la liste des clients à contacter et générez le dossier de retrait-rappel prêt pour la DGCCRF."),
+    ("Le logiciel gère-t-il les DLC, DDM et la méthode FEFO ?", "DLC, DDM, FEFO",
+     "Oui. Chaque lot porte sa DLC ou sa DDM ; la logique FEFO (First Expired, First Out) impose de sortir en priorité les lots les plus proches de la péremption, ce qui réduit les pertes et sécurise vos expéditions."),
+    ("La traçabilité couvre-t-elle l'étiquetage INCO et les allergènes ?", "Étiquetage, INCO, allergènes",
+     "Oui. Les étiquettes reprennent automatiquement les mentions INCO (allergènes en gras, valeurs nutritionnelles, estampille sanitaire) à partir des recettes et des lots, sans ressaisie et sans risque d'erreur."),
+    ("Est-ce adapté aux audits IFS, BRC et au Paquet Hygiène ?", "Audits, IFS, BRC",
+     "L'historique complet des lots, des contrôles et des non-conformités est conservé et exportable, ce qui accélère les audits IFS et BRC et prouve votre conformité au Paquet Hygiène."),
+    ("Quelle différence entre traçabilité ascendante et descendante ?", "Ascendante, descendante, différence",
+     "La traçabilité ascendante remonte d'un produit fini vers ses matières premières et fournisseurs ; la descendante part d'un lot de matière pour retrouver tous les produits et clients concernés. Hello Harel couvre les deux sens, condition d'un rappel efficace."),
 ]
 
-def faq():
-    items = "".join(
-        f'<details style="background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px 18px;margin:0 0 12px">'
-        f'<summary style="font-weight:700;color:#101828;cursor:pointer;font-size:1.02rem;list-style:none">{q}</summary>'
-        f'<p style="margin:.7rem 0 0;color:#475569;line-height:1.6">{a}</p></details>'
-        for q, a in FAQ_QA)
-    import json
+def faq(src_raw):
+    """Rebuild the FAQ from the template's real drawer structure (cards + overlay
+    + 6 panels + JSON-LD) so the page's global drawer JS keeps working."""
+    import re, json
+    a = src_raw.find('<section class="faq-section"')
+    b = src_raw.find('<section class="reviews-section"')
+    span = src_raw[a:b]
+
+    # section-header labels
+    span = re.sub(r'(<p class="overline">)[^<]*(</p>)', r'\1FAQ Traçabilité\2', span, count=1)
+    span = re.sub(r'(<section class="faq-section"[^>]*>.*?<h2>).*?(</h2>)',
+                  r'\1Les réponses à vos questions sur la traçabilité alimentaire\2', span, count=1, flags=re.S)
+
+    # Replace the 6 card questions + meta, positionally.
+    qi = [0]
+    def repl_card(m):
+        i = qi[0]; qi[0] += 1
+        q, meta, _ = FAQ_QA[i]
+        return (f'<span class="faq-card-question">{q}</span>\n'
+                f'                    <span class="faq-card-meta">{meta}</span>')
+    span = re.sub(r'<span class="faq-card-question">.*?</span>\s*<span class="faq-card-meta">.*?</span>',
+                  repl_card, span, flags=re.S)
+
+    # Replace the 6 panels (h3 + faq-drawer-content), positionally.
+    pi = [0]
+    def repl_panel(m):
+        i = pi[0]; pi[0] += 1
+        q, _, ans = FAQ_QA[i]
+        return (f'{m.group(1)}<h3>{q}</h3>\n            '
+                f'<div class="faq-drawer-content"><p>{ans}</p></div>')
+    span = re.sub(r'(<div class="faq-drawer-panel"[^>]*>\s*)<h3>.*?</h3>\s*'
+                  r'<div class="faq-drawer-content">.*?</div>',
+                  repl_panel, span, flags=re.S)
+
+    # Rebuild the JSON-LD to match.
     ld = {"@context": "https://schema.org", "@type": "FAQPage",
           "mainEntity": [{"@type": "Question", "name": q,
-                          "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ_QA]}
-    return (
-        '<section class="faq-section">\n<div class="container">\n'
-        '<div class="section-header"><p class="overline">FAQ Traçabilité</p>\n'
-        '<h2>Les réponses à vos questions sur la traçabilité alimentaire</h2>\n'
-        '<p>Lots, DLC, rappel et conformité HACCP.</p></div>\n'
-        '<div style="max-width:820px;margin:0 auto">' + items + '</div>\n'
-        '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>\n'
-        '</div>\n</section>\n'
-    )
+                          "acceptedAnswer": {"@type": "Answer", "text": ans}}
+                         for q, _, ans in FAQ_QA]}
+    span = re.sub(r'<script type="application/ld\+json">\s*\{.*?"FAQPage".*?\}\s*</script>',
+                  '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>',
+                  span, count=1, flags=re.S)
+    return span
 
 def span(c, cls_from, cls_to):
     a = c.find('<section class="%s"' % cls_from)
@@ -113,12 +140,15 @@ def span(c, cls_from, cls_to):
         raise SystemExit(f"span not found {cls_from}->{cls_to}")
     return a, b
 
+TARGET_ID = 10968  # existing page to update (avoid creating a duplicate)
+
 def main():
     live = "--live" in sys.argv
-    c = w.get_raw("pages", SRC)["content"]["raw"]
+    src = w.get_raw("pages", SRC)["content"]["raw"]
+    c = src
 
     # Replace FAQ first (largest span) then features then hero — back to front keeps offsets valid.
-    a, b = span(c, "faq-section", "reviews-section"); c = c[:a] + faq() + c[b:]
+    a, b = span(c, "faq-section", "reviews-section"); c = c[:a] + faq(src) + c[b:]
     a, b = span(c, "features-section", "about-card-section"); c = c[:a] + FEATURES + c[b:]
     a, b = span(c, "hero-section", "logos-section"); c = c[:a] + HERO + c[b:]
 
@@ -127,15 +157,19 @@ def main():
                   "https://www.helloharel.com/fonctionnalites/tracabilite-alimentaire/")
     c = re.sub(r'"name"\s*:\s*"(ERP )?Charcutier"', '"name": "Logiciel de traçabilité alimentaire"', c)
 
-    print("Assembled length:", len(c), "| residual 'charcutier' refs:", c.lower().count("charcutier"))
+    # Sanity: drawer integrity (page JS needs matching cards/panels + overlay).
+    checks = {
+        "faqDrawerOverlay": c.count("faqDrawerOverlay"),
+        "faq-drawer-panel": c.count('faq-drawer-panel"') + c.count("faq-drawer-panel "),
+        "faq-card onclick": c.count("openFaqDrawer("),
+        "residual charcutier": c.lower().count("charcutier"),
+    }
+    print("Assembled length:", len(c), "| checks:", checks)
     if not live:
-        print("DRY-RUN — not created. Pass --live to publish.")
+        print("DRY-RUN — pass --live to update page", TARGET_ID)
         return
-    res = w.api("pages", method="POST", data={
-        "slug": SLUG, "title": TITLE, "content": c, "status": "publish",
-        "parent": PARENT, "template": "elementor_canvas",
-    })
-    print("CREATED id", res.get("id"), res.get("link"))
+    res = w.update_content("pages", TARGET_ID, c, live=True)
+    print("UPDATED id", TARGET_ID, "->", res.get("id") if isinstance(res, dict) else res)
 
 if __name__ == "__main__":
     main()
