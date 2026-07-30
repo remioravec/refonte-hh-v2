@@ -35,7 +35,11 @@ CSS = (
     '.hha-art h3{margin:2.4rem 0 .8rem !important}'
     '.hha-art ul,.hha-art ol{margin:1.1rem 0 1.7rem !important}'
     '.hha-art li{margin:.55rem 0 !important;line-height:1.7 !important}'
-    '.hha-art figure,.hha-art img{margin:2.2rem 0 !important}'
+    '.hha-art img{margin:2.2rem 0 !important}'
+    '.hha-art figure{margin:2.6rem 0 !important}'
+    # Infographic figures need generous breathing room (was clobbered to 2.2rem).
+    '.hha-art figure.hha-fig{margin:4.5rem 0 !important}'
+    '.hha-art .hha-fig{margin:4.5rem 0 !important}'
     '</style>'
 )
 
