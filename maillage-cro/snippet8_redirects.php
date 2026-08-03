@@ -1,5 +1,11 @@
 add_action( "wp", function () {
     $map = array(
+            "/migration-as400/" => "/blog/erp-as400/",
+            "/logiciel-de-tracabilite-agroalimentaire/" => "/fonctionnalites/tracabilite-alimentaire/",
+            "/erp-pour-pme/" => "/blog/erp-pme/",
+            "/erp-grossiste/" => "/agroalimentaire/negoce-alimentaire/",
+            "/erp-production-industrielle/" => "/fonctionnalites/fabrication/",
+
             "/blog/calcul-prix-revient-pertes/" => "/blog/cout-de-revient/",
             "/blog/erp-boissons/" => "/negoce/",
             "/blog/gestion-stock-reelle/" => "/blog/maitriser-la-gestion-des-stocks/",
