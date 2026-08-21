@@ -17,7 +17,8 @@
 /** Les IDs des pages de test. Ajouter les nouvelles variantes ici. */
 function hh_ab_test_page_ids() {
     return array(
-        11493, // [TEST A] ERP Import Export — variante SXO de /negoce/
+        11493, // [TEST A] ERP Import Export — variante SXO landing de /negoce/
+        11495, // [TEST B] Comment choisir son ERP de négoce — variante hub
     );
 }
 
