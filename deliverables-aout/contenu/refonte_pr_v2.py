@@ -20,6 +20,9 @@ contenu injecte au clic, <button>/<label>/aria-expanded, aucun decalage de mise 
 page, donnees reelles sourcees.
 
 DRY par defaut ; --live pour pousser.
+
+NOTE : le theme impose #hh-page p{margin:0 !important} — toutes les regles
+d'espacement du corps doivent porter !important, sinon elles sont ecrasees.
 """
 import sys, re, json, importlib.util
 
@@ -47,19 +50,19 @@ CSS = """
 #hh-page .pri{--acc:#0090c8;--acc-d:#00658c;--ink:#0f172a;--ink2:#475569;--ink3:#7c8794;
 --line:#e2e8f0;--wash:#f7f9fb;--ok:#15803d;--no:#b45309;
 font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink2);
-font-size:16.5px;line-height:1.68}
+font-size:17px;line-height:1.8}
 #hh-page .pri *{box-sizing:border-box}
 #hh-page .pri h2{font-size:clamp(1.35rem,2.5vw,1.85rem);line-height:1.22;font-weight:800;
-color:var(--ink);letter-spacing:-.012em;margin:2.6rem 0 .7rem;scroll-margin-top:100px}
+color:var(--ink);letter-spacing:-.012em;margin:4.4rem 0 1.15rem !important;scroll-margin-top:110px;padding:0 !important}
 #hh-page .pri h2:first-child{margin-top:0}
-#hh-page .pri h3{font-size:1.06rem;font-weight:700;color:var(--ink);margin:1.7rem 0 .45rem}
-#hh-page .pri p{margin:0 0 1rem}
+#hh-page .pri h3{font-size:1.08rem !important;font-weight:700 !important;color:var(--ink) !important;margin:2.9rem 0 .8rem !important;padding:0 !important}
+#hh-page .pri p{margin:0 0 1.6rem !important;line-height:1.8 !important}
 #hh-page .pri strong{color:var(--ink);font-weight:600}
 #hh-page .pri a{color:var(--acc-d);font-weight:500}
 
 /* 1 · reponse encadree */
 #hh-page .pri .rep{border:1px solid #cfe3ee;border-left:4px solid var(--acc);background:#f4fafd;
-padding:22px 24px;border-radius:4px;margin:0 0 16px}
+padding:30px 32px;border-radius:4px;margin:0 0 34px}
 #hh-page .pri .rep .lbl{display:block;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
 font-weight:800;color:var(--acc);margin-bottom:.6rem}
 #hh-page .pri .rep p{font-size:1.08rem;line-height:1.6;color:var(--ink);margin:0}
@@ -67,14 +70,14 @@ font-weight:800;color:var(--acc);margin-bottom:.6rem}
 
 /* 2 · chiffre date */
 #hh-page .pri .fait{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
-background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:18px 22px;margin:0 0 30px}
+background:var(--wash);border:1px solid var(--line);border-radius:4px;padding:26px 30px;margin:0 0 54px}
 #hh-page .pri .fait .n{font-size:2.1rem;font-weight:800;color:var(--acc);line-height:1;
 font-variant-numeric:tabular-nums}
 #hh-page .pri .fait p{margin:0;font-size:.95rem;line-height:1.6}
 #hh-page .pri .fait .src{display:block;margin-top:6px;font-size:.8rem;color:var(--ink3)}
 
 /* 5 · calculateur */
-#hh-page .pri .calc{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:0 0 32px;
+#hh-page .pri .calc{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:0 0 58px;
 background:#fff;box-shadow:0 1px 3px rgba(15,23,42,.05)}
 #hh-page .pri .calc-h{background:var(--ink);color:#fff;padding:18px 24px}
 #hh-page .pri .calc-h b{display:block;font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
@@ -105,7 +108,7 @@ color:var(--ink3);font-weight:700;margin-bottom:8px}
 #hh-page .pri .calc-f{padding:12px 24px;border-top:1px solid var(--line);font-size:.82rem;color:var(--ink3)}
 
 /* 3 · sommaire */
-#hh-page .pri .som{border:1px solid var(--line);border-radius:6px;padding:20px 24px;margin:0 0 34px;background:#fff}
+#hh-page .pri .som{border:1px solid var(--line);border-radius:6px;padding:28px 32px;margin:0 0 58px;background:#fff}
 #hh-page .pri .som p{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;
 color:var(--ink3);margin:0 0 12px}
 #hh-page .pri .som ol{margin:0;padding-left:1.15rem;columns:2;column-gap:28px}
@@ -114,7 +117,7 @@ color:var(--ink3);margin:0 0 12px}
 #hh-page .pri .som a:hover{border-bottom-color:var(--acc);color:var(--acc-d)}
 
 /* 4 · tableau triable */
-#hh-page .pri .tbw{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:14px 0 10px;background:#fff}
+#hh-page .pri .tbw{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:30px 0 18px;background:#fff}
 #hh-page .pri .tbc{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);
 align-items:center}
 #hh-page .pri .tbc b{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-right:4px}
@@ -139,20 +142,20 @@ display:inline-flex;align-items:center;gap:5px;letter-spacing:inherit;text-trans
 #hh-page .pri .cap{font-size:.83rem;color:var(--ink3);line-height:1.6;margin:.4rem 0 0}
 
 /* seuil */
-#hh-page .pri .seuil{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 8px}
+#hh-page .pri .seuil{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 18px}
 #hh-page .pri .seuil div{border:1px solid var(--line);border-top:3px solid var(--acc);border-radius:4px;padding:18px 20px;background:#fff}
 #hh-page .pri .seuil b{display:block;color:var(--ink);font-size:1rem;margin-bottom:.35rem}
 #hh-page .pri .seuil p{font-size:.92rem;margin:0}
 
 /* exemple */
-#hh-page .pri .ex{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:16px 0 8px;background:#fff}
+#hh-page .pri .ex{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:32px 0 18px;background:#fff}
 #hh-page .pri .ex table{min-width:0}
 #hh-page .pri .ex tbody td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
 #hh-page .pri .ex tr.t td{background:var(--ink);color:#fff;font-weight:700;border:none}
 #hh-page .pri .ex tr.t td:last-child{color:#fff}
 
 /* suite */
-#hh-page .pri .next{border-top:1px solid var(--line);margin-top:2.4rem;padding-top:1.4rem}
+#hh-page .pri .next{border-top:1px solid var(--line);margin-top:4.6rem;padding-top:2.2rem}
 #hh-page .pri .next a{display:block;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink);
 text-decoration:none;font-weight:600}
 #hh-page .pri .next a:hover{color:var(--acc-d)}
