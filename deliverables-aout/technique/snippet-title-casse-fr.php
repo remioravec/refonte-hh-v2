@@ -17,7 +17,7 @@
  * Règle 0 — aucune modification de leur balisage. On ne corrige donc que les
  * deux pages dont le title a été refondu.
  *
- * PORTÉE : posts 3430 et 5269. Les meta descriptions ne subissent pas la
+ * PORTÉE : posts 3430, 5269 et page 10895. Les meta descriptions ne subissent pas la
  * capitalisation : elles restent gérées dans l'onglet Rank Math.
  * ============================================================================
  */
@@ -26,6 +26,7 @@ function hh_titles_refondus() {
 	return array(
 		3430 => 'Logiciel Prix de Revient • Simulateur Gratuit et Comparatif 2026',
 		5269 => 'ERP pour Distributeurs de Produits Frais • Comparatif 2026',
+		10895 => 'ERP Glacier • Foisonnement, Lots et Coût de Revient au Litre',
 	);
 }
 
