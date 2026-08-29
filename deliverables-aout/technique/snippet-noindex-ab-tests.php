@@ -2,7 +2,9 @@
 /**
  * Hello Harel — noindex sur les pages de test A/B
  *
- * A coller dans Code Snippets, execution « Partout », puis activer.
+ * Depose par REST le 27/08/2026 (extrait 13), actif. Les deux pages sont encore
+ * en brouillon : cet extrait est pose EN AMONT pour qu'aucune publication du test
+ * ne puisse partir sans noindex.
  *
  * POURQUOI : une page de test A/B ne doit jamais entrer dans l'index. Tant que
  * la page reste en brouillon elle est inaccessible au public, donc non indexable.
@@ -18,7 +20,7 @@
 function hh_ab_test_page_ids() {
     return array(
         11493, // [TEST A] ERP Import Export — variante SXO landing de /negoce/
-        11495, // [TEST B] Comment choisir son ERP de négoce — variante hub
+        11495, // [TEST B] ERP Import Export — même contenu que A, UX d'accueil SaaS
     );
 }
 

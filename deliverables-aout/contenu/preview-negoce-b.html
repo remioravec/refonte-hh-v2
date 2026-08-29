@@ -1,0 +1,297 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"><style id="hh-vB">
+#hvb{
+ --brand:#00B1F5; --brand-d:#0090C8; --brand-50:#EFF6FF; --brand-100:#DBEAFE;
+ --ink:#0F172A; --ink2:#475569; --ink3:#64748B; --line:#E2E8F0; --wash:#F8FAFC;
+ --go:#22C55E; --go-d:#16A34A;
+ font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+ color:var(--ink); background:#fff; font-size:16px; line-height:1.6;
+ -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+ display:block; overflow-x:clip}
+#hvb *,#hvb *::before,#hvb *::after{box-sizing:border-box}
+#hvb h1,#hvb h2,#hvb h3,#hvb h4,#hvb p,#hvb ul,#hvb ol,#hvb li,#hvb figure,#hvb table{margin:0;padding:0}
+#hvb ul,#hvb ol{list-style:none}
+#hvb img{max-width:100%;height:auto;display:block}
+#hvb a{color:inherit;text-decoration:none}
+#hvb button{font:inherit;color:inherit}
+
+#hvb .w{max-width:1200px;margin:0 auto;padding:0 24px}
+#hvb .sec{padding:clamp(3.75rem,7.5vw,6.5rem) 0}
+#hvb .sec.wash{background:var(--wash)}
+#hvb .over{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--brand);margin-bottom:.75rem}
+#hvb h2{font-size:clamp(1.85rem,3.9vw,2.7rem);font-weight:900;line-height:1.14;letter-spacing:-.022em;color:var(--ink)}
+#hvb h3{font-size:1.0625rem;font-weight:700;letter-spacing:-.01em}
+#hvb .lead{color:var(--ink2);font-size:1.0625rem;line-height:1.75;margin-top:.9rem;max-width:62ch}
+#hvb .head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,4vw,3.5rem)}
+#hvb .head .lead{margin-left:auto;margin-right:auto}
+
+/* ---- listes a coche ---- */
+#hvb .ticks{display:flex;flex-direction:column;gap:.85rem;margin-top:1.6rem}
+#hvb .tick{display:flex;gap:.7rem;align-items:flex-start}
+#hvb .tick svg{flex:0 0 20px;width:20px;height:20px;margin-top:.15rem;color:var(--brand)}
+#hvb .tick span{color:var(--ink2);font-size:1rem;line-height:1.6}
+#hvb .tick b{color:var(--ink);font-weight:600}
+
+/* ---- boutons ---- */
+#hvb .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+ font-weight:700;font-size:.9375rem;padding:.9rem 1.6rem;border-radius:999px;border:1.5px solid transparent;
+ transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+#hvb .btn-1{background:var(--go);color:#fff;box-shadow:0 6px 18px rgba(34,197,94,.28)}
+#hvb .btn-1:hover{background:var(--go-d);transform:translateY(-1px)}
+#hvb .btn-2{background:#fff;color:var(--ink);border-color:var(--line)}
+#hvb .btn-2:hover{border-color:var(--ink);transform:translateY(-1px)}
+#hvb .btn-3{background:transparent;color:var(--brand-d);border-color:rgba(0,177,245,.4)}
+#hvb .btn-3:hover{background:var(--brand-50)}
+#hvb .btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+#hvb .more{display:inline-flex;align-items:center;gap:.4rem;color:var(--brand-d);font-weight:700;font-size:.9375rem;margin-top:1.6rem}
+#hvb .more svg{width:16px;height:16px;transition:transform .3s ease}
+#hvb .more:hover svg{transform:translateX(5px)}
+
+/* ---- bandeau brouillon ---- */
+#hvb .draft{background:#FEF3C7;border-bottom:1px solid #FDE68A;color:#92400E;
+ font-size:.8125rem;font-weight:600;text-align:center;padding:.6rem 1rem}
+
+/* ---- HERO ---- */
+#hvb .hero{background:linear-gradient(180deg,#F8FAFC 0%,#fff 100%);padding:clamp(3rem,5.5vw,4.75rem) 0 clamp(3rem,5vw,4.5rem)}
+#hvb .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+#hvb .pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand-50);color:var(--brand-d);
+ font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px}
+#hvb .pill i{width:7px;height:7px;border-radius:50%;background:var(--go);display:inline-block}
+#hvb h1{font-size:clamp(2.2rem,4.8vw,3.5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin:1.1rem 0 0}
+#hvb h1 em{font-style:normal;color:var(--brand-d)}
+#hvb .reassure{display:flex;align-items:center;gap:.55rem;margin-top:1.1rem;color:var(--ink3);font-size:.875rem}
+#hvb .reassure svg{width:18px;height:18px;color:var(--ink3);flex:0 0 18px}
+#hvb .hero-media{border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(15,23,42,.18)}
+#hvb .hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* ---- PREUVE + MARQUEE ---- */
+#hvb .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:2.5rem 0 2rem;overflow:hidden}
+#hvb .proof-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem 2rem;text-align:center;margin-bottom:1.75rem}
+#hvb .proof-top p{font-size:1.0625rem;color:var(--ink2)}
+#hvb .proof-top b{color:var(--ink);font-weight:800}
+#hvb .rate{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:700;color:var(--ink)}
+#hvb .rate .stars{color:#F59E0B;letter-spacing:.08em}
+#hvb .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:900px;margin:0 auto 1.9rem}
+#hvb .stat{background:var(--wash);border:1px solid var(--line);border-radius:18px;padding:1.05rem .9rem;text-align:center}
+#hvb .stat b{display:block;font-size:1.5rem;font-weight:900;color:var(--brand);line-height:1.15;font-variant-numeric:tabular-nums}
+#hvb .stat span{display:block;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);margin-top:.3rem;line-height:1.35}
+#hvb .marq{position:relative;width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+#hvb .marq-t{display:flex;width:max-content;align-items:center;gap:3rem;animation:hvb-marq 46s linear infinite}
+#hvb .marq-t img{height:34px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;transition:filter .3s ease,opacity .3s ease}
+#hvb .marq:hover .marq-t img{filter:grayscale(0);opacity:1}
+@keyframes hvb-marq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ---- ONGLETS ---- */
+#hvb .tabbar{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:clamp(2rem,3.5vw,3rem)}
+#hvb .tabbtn{display:inline-flex;align-items:center;gap:.55rem;background:#fff;border:1.5px solid var(--line);
+ border-radius:999px;padding:.7rem 1.15rem;font-size:.9375rem;font-weight:700;color:var(--ink3);cursor:pointer;
+ transition:border-color .25s ease,color .25s ease,background .25s ease}
+#hvb .tabbtn svg{width:18px;height:18px}
+#hvb .tabbtn:hover{color:var(--ink);border-color:#CBD5E1}
+#hvb .tabbtn[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+#hvb .tabpane{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+#hvb .tabpane[hidden]{display:none}
+#hvb .tabpane .shot{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 48px rgba(15,23,42,.12)}
+#hvb .tabpane .shot img{width:100%;aspect-ratio:16/11;object-fit:cover}
+
+/* ---- CALCUL ---- */
+#hvb .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
+#hvb .card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:1.75rem;box-shadow:0 12px 34px rgba(15,23,42,.06)}
+#hvb .card-h{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1.1rem}
+#hvb .lines{width:100%;border-collapse:collapse;font-size:.9375rem}
+#hvb .lines td{padding:.62rem 0;border-bottom:1px solid var(--line);color:var(--ink2)}
+#hvb .lines td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);white-space:nowrap}
+#hvb .lines tr.tot td{border-bottom:none;border-top:2px solid var(--ink);padding-top:.9rem;font-weight:800;color:var(--ink);font-size:1.0625rem}
+#hvb .lines tr.coef td{border-bottom:none;padding-top:.2rem;color:var(--brand-d);font-weight:800}
+#hvb .note{font-size:.8125rem;color:var(--ink3);line-height:1.6;margin-top:1rem}
+#hvb .warn{background:var(--brand-50);border-left:4px solid var(--brand);border-radius:0 16px 16px 0;padding:1.25rem 1.4rem;margin-top:1.5rem}
+#hvb .warn p{color:var(--ink2);font-size:1rem;line-height:1.7}
+#hvb .warn p+p{margin-top:.75rem}
+#hvb .warn b{color:var(--ink);font-weight:700}
+
+/* ---- TERRAIN ---- */
+#hvb .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+#hvb .split .shot{border-radius:24px;overflow:hidden;box-shadow:0 18px 48px rgba(15,23,42,.14)}
+#hvb .split .shot img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* ---- COMPARATIF ---- */
+#hvb .tw{overflow-x:auto;border:1px solid var(--line);border-radius:24px;background:#fff;-webkit-overflow-scrolling:touch}
+#hvb table.cmp{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:720px}
+#hvb table.cmp th,#hvb table.cmp td{padding:.9rem 1.15rem;text-align:left;border-top:1px solid var(--line);color:var(--ink2);vertical-align:top;line-height:1.5}
+#hvb table.cmp thead th{background:var(--wash);border-top:none;color:var(--ink);font-weight:800;font-size:.6875rem;text-transform:uppercase;letter-spacing:.07em}
+#hvb table.cmp thead th:last-child{background:var(--brand-50);color:var(--brand-d)}
+#hvb table.cmp tbody td:first-child{color:var(--ink);font-weight:600}
+#hvb table.cmp tbody td:last-child{background:rgba(239,246,255,.55);color:var(--ink);font-weight:600}
+
+/* ---- MODULES ---- */
+#hvb .mods{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+#hvb .mod{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:24px;
+ overflow:hidden;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s ease}
+#hvb .mod:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(15,23,42,.12)}
+#hvb .mod-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+#hvb .mod-img img{width:100%;height:100%;object-fit:cover}
+#hvb .mod-no{position:absolute;top:.85rem;left:.85rem;background:rgba(15,23,42,.82);color:#fff;font-size:.6875rem;
+ font-weight:800;letter-spacing:.08em;padding:.3rem .6rem;border-radius:8px;backdrop-filter:blur(4px)}
+#hvb .mod-b{padding:1.3rem 1.35rem 1.45rem;display:flex;flex-direction:column;flex:1}
+#hvb .mod-b p{color:var(--ink3);font-size:.9375rem;line-height:1.6;margin-top:.45rem;flex:1}
+#hvb .mod-b .more{margin-top:1.1rem}
+
+/* ---- CTA FINAL ---- */
+#hvb .final{background:var(--ink);border-radius:32px;padding:clamp(2.5rem,5vw,4rem);text-align:center;color:#fff}
+#hvb .final h2{color:#fff}
+#hvb .final .lead{color:#CBD5E1;margin-left:auto;margin-right:auto}
+#hvb .final .btns{justify-content:center}
+#hvb .final .btn-2{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+#hvb .final .btn-2:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ---- FAQ ---- */
+#hvb .faq{max-width:860px;margin:0 auto}
+#hvb .qa{border-bottom:1px solid var(--line)}
+#hvb .qa button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;
+ background:none;border:0;padding:1.3rem 0;text-align:left;cursor:pointer;font-size:1.0625rem;font-weight:700;color:var(--ink)}
+#hvb .qa .ic{position:relative;flex:0 0 24px;width:24px;height:24px}
+#hvb .qa .ic::before,#hvb .qa .ic::after{content:'';position:absolute;left:50%;top:50%;background:var(--brand);
+ border-radius:2px;transform:translate(-50%,-50%);transition:transform .35s cubic-bezier(.25,.8,.25,1),opacity .35s ease}
+#hvb .qa .ic::before{width:14px;height:2px}
+#hvb .qa .ic::after{width:2px;height:14px}
+#hvb .qa[data-open="1"] .ic::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+#hvb .qa .ans{overflow:hidden;max-height:0;opacity:0;transition:max-height .4s cubic-bezier(.25,.8,.25,1),opacity .3s ease}
+#hvb .qa[data-open="1"] .ans{max-height:620px;opacity:1}
+#hvb .qa .ans p{color:var(--ink2);font-size:1rem;line-height:1.75;padding:0 3rem 1.4rem 0}
+
+/* ---- animations ----
+   Regle de securite : rien n'est masque par defaut. L'etat masque n'existe QUE
+   sous .anim-on, classe posee par le script lui-meme. Sans JavaScript, avec un
+   JavaScript en erreur ou sans IntersectionObserver, tout le contenu reste
+   visible — c'est le defaut « scroll-reveal » deja rencontre sur ce site en
+   07/2026, ou du contenu a opacity:0 n'etait jamais revele. */
+#hvb.anim-on [data-anim="rise"]{opacity:0;transform:translateY(46px);
+ transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+#hvb.anim-on [data-anim="rise"].seen{opacity:1;transform:none}
+#hvb [data-anim="words"] .wd{display:inline-block}
+#hvb.anim-on [data-anim="words"] .wd{opacity:0;transform:translateY(14px);
+ transition:opacity .5s cubic-bezier(.25,.46,.45,.94),transform .5s cubic-bezier(.25,.46,.45,.94)}
+#hvb.anim-on [data-anim="words"].seen .wd{opacity:1;transform:none}
+
+/* ---- responsive ---- */
+@media(max-width:980px){
+ #hvb .hero-grid,#hvb .tabpane,#hvb .calc-grid,#hvb .split{grid-template-columns:1fr}
+ #hvb .split .shot{order:-1}
+ #hvb .mods{grid-template-columns:repeat(2,1fr)}
+ #hvb .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+ #hvb .mods{grid-template-columns:1fr}
+ #hvb .tabbar{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.4rem;
+  margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px}
+ #hvb .tabbtn{flex:0 0 auto}
+ #hvb .btns .btn{width:100%}
+ #hvb .qa .ans p{padding-right:0}
+}
+@media(prefers-reduced-motion:reduce){
+ #hvb [data-anim],#hvb [data-anim="words"] .wd{opacity:1!important;transform:none!important;transition:none!important}
+ #hvb .marq-t{animation:none}
+}
+</style><div id="hvb"><div class="draft">VARIANTE B — test A/B, brouillon non indexé. Même contenu que la variante A, UX différente. Ne pas publier sans avoir posé le noindex.</div><section class="hero"><div class="w"><div class="hero-grid"><div><span class="pill"><i></i>Import Export Alimentaire</span><h1 data-anim="words" data-stagger="70"><span class="wd">Le</span> <span class="wd">prix</span> <span class="wd">payé</span> <span class="wd">au</span> <span class="wd">fournisseur</span> <span class="wd">n'est</span> <span class="wd">jamais</span> <span class="wd"><em>votre&nbsp;coût.</em></span> </h1><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Répartissez le <b>fret, la douane, l'assurance et le change</b> sur chaque référence</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Distinguez le stock <b>en transit, sous douane et disponible</b></span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Gérez le <b>poids variable, les DLC et le lot d'origine</b></span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Lisez la <b>marge par conteneur, par client et par référence</b></span></div></div><div class="btns"><a class="btn btn-1" href="/contact/">Voir sur mes opérations</a><a class="btn btn-2" href="/fonctionnalites/import-export/">Le module import export</a></div><p class="reassure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Édité en France depuis 2014. Démonstration de 30 minutes, sans engagement.</p></div><div class="hero-media" data-anim="rise"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-terminal-conteneurs.webp" alt="Terminal à conteneurs au crépuscule, navire porte-conteneurs à quai" loading="lazy" decoding="async"></div></div></div></section><section class="proof"><div class="w"><div class="proof-top"><p>Rejoignez les <b>+200 entreprises agroalimentaires</b> qui pilotent leurs opérations avec Hello Harel</p><span class="rate"><span class="stars">★★★★★</span> 5,0/5 sur 31 avis</span></div><div class="stats"><div class="stat"><b>200+</b><span>entreprises agroalimentaires équipées</span></div><div class="stat"><b>5,0/5</b><span>sur 31 avis clients</span></div><div class="stat"><b>2014</b><span>édité en France depuis</span></div><div class="stat"><b>4–8 sem.</b><span>du cadrage à la bascule</span></div></div></div><div class="marq"><div class="marq-t" id="hvb-marq"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Logo_Pro-inter_Magasins_Orientaux.webp" alt="Pro-Inter" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/1.webp" alt="Leclerc" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.14.24-300x64-1.webp" alt="Corseprim" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.12.46.webp" alt="Les Primeurs" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.10.42-300x226-1.webp" alt="HPS" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.08.48-300x86-1.webp" alt="Kore" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.07.48-300x165-1.webp" alt="Poujauran" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.06.38-300x131-1.webp" alt="Eatmotion" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.03.06-300x170-1.webp" alt="Ciao Gusto" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.04.34-300x103-1.webp" alt="Chef Cheffe" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.01.39-300x163-1.webp" alt="Savary" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-15.00.01-300x218-1.webp" alt="Karine & Jeff" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-14.57.18-300x122-1.webp" alt="Chrono Primeurs" loading="lazy" decoding="async"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/Capture-decran-2026-01-13-a-14.56.24-300x154-1.webp" alt="Maison Aléna" loading="lazy" decoding="async"></div></div></section><section class="sec wash"><div class="w"><div class="head"><p class="over">Huit terrains de vérité</p><h2>Là où les outils généralistes s'arrêtent.</h2><p class="lead">Ce ne sont pas des options : ce sont les points sur lesquels un ERP généraliste facture un développement spécifique, et sur lesquels un TMS ne se prononce pas.</p></div><div class="tabbar" role="tablist" aria-label="Fonctions de l'ERP import export"><button class="tabbtn" role="tab" id="hvb-t0" aria-controls="hvb-p0" aria-selected="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 1v8m0 0v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Coût de revient</button><button class="tabbtn" role="tab" id="hvb-t1" aria-controls="hvb-p1" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>Stock et douane</button><button class="tabbtn" role="tab" id="hvb-t2" aria-controls="hvb-p2" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Marchandise alimentaire</button><button class="tabbtn" role="tab" id="hvb-t3" aria-controls="hvb-p3" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m4 10v-6m4 6V9M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>Marge</button></div><div id="hvb-panes"><div class="tabpane" role="tabpanel" id="hvb-p0" aria-labelledby="hvb-t0"><div><h2>Le coût de revient réel, calculé à la réception</h2><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Fret, assurance, droits de douane, frais de dossier et transitaire <b>répartis sur chaque référence du conteneur</b></span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Répartition <b>au poids, à la valeur ou au volume</b>, selon ce qui est juste pour la marchandise</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Multi-devises : chaque opération porte <b>son taux à la date de l'événement</b></span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>L'écart de change constaté au règlement est <b>enregistré séparément</b>, au lieu d'être noyé dans la marge</span></div></div><a class="more" href="/fonctionnalites/import-export/">Voir le module import export <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></a></div><div class="shot"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-liasse-documentaire.webp" alt="Colis, documents d'expédition et ordinateur portable sur un bureau" loading="lazy" decoding="async"></div></div><div class="tabpane" role="tabpanel" id="hvb-p1" aria-labelledby="hvb-t1" hidden><div><h2>Trois états, trois réalités</h2><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>En transit</b> : partie du fournisseur, pas encore arrivée — un engagement, pas du stock, avec sa date d'arrivée prévue</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>Sous douane</b> : arrivée mais pas dédouanée, donc pas vendable</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>Disponible</b> : ce que vous pouvez réellement engager</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Liasse documentaire <b>contrôlée à chaque étape</b>, avant de découvrir la pièce manquante quand le conteneur est déjà à quai</span></div></div><a class="more" href="/negoce/stocks-multi-depots/">Découvrir les stocks multi-dépôts <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></a></div><div class="shot"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-entrepot-palettes.webp" alt="Allée d'entrepôt avec palettes filmées et racks de stockage" loading="lazy" decoding="async"></div></div><div class="tabpane" role="tabpanel" id="hvb-p2" aria-labelledby="hvb-t2" hidden><div><h2>Ce sur quoi un logiciel d'import généraliste s'arrête</h2><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Lot d'origine, pays de provenance, <b>numéro d'agrément</b> et certificats sanitaires attachés au lot</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>DLC portée par le lot : rotation <b>FEFO</b>, alertes avant péremption et remise ciblée sur les lots qui approchent</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>Poids variable natif</b> : bon de pesée, étiquette et facture sortent de la même donnée</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>En cas de rappel, la liste des clients concernés s'obtient <b>en quelques minutes</b>, sans rouvrir de classeur</span></div></div><a class="more" href="/negoce/tracabilite-lots/">Découvrir la traçabilité des lots <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></a></div><div class="shot"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-cagettes-legumes.webp" alt="Cagettes de légumes frais chargées dans un camion de livraison" loading="lazy" decoding="async"></div></div><div class="tabpane" role="tabpanel" id="hvb-p3" aria-labelledby="hvb-t3" hidden><div><h2>Quelles opérations gagnent de l'argent</h2><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Marge lue <b>par conteneur, par référence, par client et par commercial</b></span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Calculée sur le <b>coût de revient réel</b>, pas sur un coût estimé</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span>Arrêter une ligne de produits qui coûte plus qu'elle ne rapporte redevient <b>un arbitrage possible</b></span></div></div><a class="more" href="/negoce/tarifs-reporting-edi/">Voir les tarifs, reporting et EDI <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></a></div><div class="shot"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-marge-tableau-bord.webp" alt="Analyse d'un graphique de marges sur tablette" loading="lazy" decoding="async"></div></div></div></div></section><section class="sec"><div class="w"><div class="calc-grid"><div><p class="over">Le calcul — ce que personne ne vous montre</p><h2>Sur un conteneur, l'écart dépasse 20 %.</h2><p class="lead">Tant que la répartition des frais d'approche se fait dans un tableur, après coup, la marge inscrite sur vos factures est une estimation. Voici le calcul, poste par poste.</p><div class="warn"><p>Vendre à <b>+15 % du prix fournisseur</b>, sur cet exemple, c'est vendre <b>à perte</b>. C'est l'erreur la plus fréquente du négoce à l'import, et elle ne se voit pas ligne à ligne : elle se voit à la fin du trimestre, quand la marge globale ne correspond plus aux marges affichées.</p><p>Hello Harel applique le coefficient <b>à la réception</b>, référence par référence. La marge se lit ensuite par conteneur, par client et par référence — pas seulement en cumul.</p></div><a class="more" href="/fonctionnalites/import-export/">Le module import export <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></a></div><div class="card" data-anim="rise"><p class="card-h">Conteneur 20 pieds — exemple</p><table class="lines"><tbody><tr><td>Marchandise, prix fournisseur</td><td>32 000 €</td></tr><tr><td>Fret maritime</td><td>2 400 €</td></tr><tr><td>Assurance transport</td><td>310 €</td></tr><tr><td>Droits de douane</td><td>2 560 €</td></tr><tr><td>Transitaire, frais de dossier</td><td>640 €</td></tr><tr><td>Écart de change au règlement</td><td>480 €</td></tr><tr class="tot"><td>Coût de revient réel</td><td>38 390 €</td></tr><tr class="coef"><td>Coefficient appliqué</td><td>× 1,20</td></tr></tbody></table><p class="note">Exemple illustratif. Les postes et la clé de répartition — au poids, à la valeur ou au volume — se paramètrent par type d'opération.</p></div></div></div></section><section class="sec wash"><div class="w"><div class="split"><div class="shot" data-anim="rise"><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-quai-reception.webp" alt="Chariot élévateur déchargeant un camion sur un quai de réception" loading="lazy" decoding="async"></div><div><p class="over">Réception, contrôle, préparation</p><h2>L'outil ne vit pas dans un bureau.</h2><p class="lead">Il vit sur le quai, au contrôle et à la préparation. C'est là qu'il fait gagner du temps — ou qu'il en fait perdre.</p><div class="ticks"><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>À la réception</b> — Pesée, contrôle de température et affectation du lot dès le quai, sur terminal mobile.</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>Au contrôle</b> — Agréage, écarts constatés et photos rattachés au lot, opposables au fournisseur.</span></div><div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M5 13l4 4L19 7"/></svg><span><b>À la préparation</b> — Picking en FEFO, poids réel saisi à la pesée, bon de livraison édité dans la foulée.</span></div></div></div></div></div></section><section class="sec"><div class="w"><div class="head"><p class="over">Se situer — TMS, ERP généraliste, ERP métier</p><h2>Trois outils, trois problèmes différents.</h2><p class="lead">La confusion est fréquente parce que les trois parlent d'import-export. Un TMS sait où est la marchandise ; un ERP métier sait ce qu'elle coûte et ce qu'elle rapporte.</p></div><div class="tw" data-anim="rise"><table class="cmp"><thead><tr><th scope="col">Ce que vous cherchez</th><th scope="col">TMS / transitaire</th><th scope="col">ERP généraliste</th><th scope="col">Hello Harel</th></tr></thead><tbody><tr><td>Suivre l'acheminement</td><td>oui, c'est son métier</td><td>non</td><td>oui, dates et statuts</td></tr><tr><td>Répartir les frais d'approche</td><td>non</td><td>développement spécifique</td><td>natif, à la réception</td></tr><tr><td>Stock sous douane vs vendable</td><td>partiel</td><td>non</td><td>trois états distincts</td></tr><tr><td>Poids variable</td><td>non</td><td>développement spécifique</td><td>natif</td></tr><tr><td>DLC et rotation FEFO</td><td>non</td><td>non</td><td>natif, avec alertes</td></tr><tr><td>Lot d'origine et certificats</td><td>documents seulement</td><td>non</td><td>attaché au lot</td></tr><tr><td>Facturation et marge réelle</td><td>non</td><td>oui, sur coût estimé</td><td>sur coût de revient réel</td></tr></tbody></table></div></div></section><section class="sec wash"><div class="w"><div class="head"><p class="over">Modules — par où entrer</p><h2>Chaque brique du négoce a sa page.</h2></div><div class="mods"><a class="mod" href="/negoce/achats-approvisionnements/"><div class="mod-img"><span class="mod-no">01</span><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-achats-approvisionnements.webp" alt="Opérateur logistique vérifiant une commande sur tablette" loading="lazy" decoding="async"></div><div class="mod-b"><h3>Gérer les achats et approvisionnements</h3><p>Cadenciers fournisseurs, contrats d'achat, engagements et suivi des arrivages.</p><span class="more">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></span></div></a><a class="mod" href="/negoce/stocks-multi-depots/"><div class="mod-img"><span class="mod-no">02</span><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-stocks-multi-depots.webp" alt="Magasinier scannant les références dans les rayonnages" loading="lazy" decoding="async"></div><div class="mod-b"><h3>Stocks multi-dépôts</h3><p>Plusieurs entrepôts, transit, sous douane et marchandise réservée.</p><span class="more">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></span></div></a><a class="mod" href="/negoce/tracabilite-lots/"><div class="mod-img"><span class="mod-no">03</span><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-tracabilite-lots.webp" alt="Palettes identifiées par codes-barres dans un entrepôt" loading="lazy" decoding="async"></div><div class="mod-b"><h3>Traçabilité des lots</h3><p>Lot d'origine, provenance, certificats et rappel produit.</p><span class="more">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></span></div></a><a class="mod" href="/negoce/ventes-devis-commandes/"><div class="mod-img"><span class="mod-no">04</span><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-ventes-devis-commandes.webp" alt="Tablette affichant un tableau de bord commercial sur un bureau" loading="lazy" decoding="async"></div><div class="mod-b"><h3>Ventes, devis et commandes</h3><p>Télévente, devis multi-devises, commandes et bons de livraison.</p><span class="more">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></span></div></a><a class="mod" href="/negoce/tarifs-reporting-edi/"><div class="mod-img"><span class="mod-no">05</span><img src="https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-tarifs-reporting-edi.webp" alt="Écran affichant un reporting de données en temps réel" loading="lazy" decoding="async"></div><div class="mod-b"><h3>Tarifs, reporting et EDI</h3><p>Grilles par client, échanges EDI et reporting de marge.</p><span class="more">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 5l7 7-7 7"/></svg></span></div></a></div></div></section><section class="sec"><div class="w"><div class="final" data-anim="rise"><p class="over" style="color:#7DD3FC">Démonstration</p><h2>Voyez-le sur vos propres conteneurs.</h2><p class="lead">30 minutes, sans engagement, avec quelqu'un qui connaît les incoterms, les frais d'approche et les contraintes de la marchandise alimentaire. On part de vos opérations réelles.</p><div class="btns"><a class="btn btn-1" href="/contact/">Réserver la démonstration</a><a class="btn btn-2" href="/negoce/">Voir toutes les briques du négoce</a></div></div></div></section><section class="sec wash"><div class="w"><div class="head"><p class="over">Questions — les réponses</p><h2>Ce qu'on nous demande avant de choisir.</h2></div><div class="faq"><div class="qa" data-open="1"><button type="button" aria-expanded="true" aria-controls="hvb-a0"><span>Qu'est-ce qu'un logiciel import export ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a0"><p>Un logiciel import export pilote les flux de marchandises entre plusieurs pays : achats en devises, incoterms, acheminement, formalités douanières, stock en transit et facturation multi-devises. Appliqué à l'alimentaire, il ajoute trois exigences que les outils généralistes ne portent pas : le poids variable, les DLC et la traçabilité du lot d'origine.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a1"><span>Quelle différence avec un TMS ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a1"><p>Un TMS pilote le transport — l'acheminement, les documents de transport, la relation avec les transitaires. Il ne calcule ni votre coût de revient, ni votre marge, ni votre stock vendable. Les deux outils sont complémentaires : le TMS sait où est la marchandise, l'ERP sait ce qu'elle vous coûte et ce qu'elle vous rapporte.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a2"><span>Comment sont calculés les frais d'approche ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a2"><p>Le fret, l'assurance, les droits de douane et les frais de dossier sont saisis sur l'opération puis répartis sur chaque référence du conteneur, au poids, à la valeur ou au volume. Le coefficient obtenu s'applique automatiquement au prix d'achat pour donner le coût de revient réel, disponible dès la réception.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a3"><span>Le logiciel gère-t-il les incoterms ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a3"><p>Oui. L'incoterm est porté par la ligne d'achat : il détermine à quel moment la marchandise entre dans votre stock et dans votre coût, et quelles charges vous incombent. C'est aussi ce qui conditionne le transfert de risque, donc la couverture d'assurance.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a4"><span>Peut-on vendre une marchandise encore en transit ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a4"><p>Oui, et c'est courant en négoce alimentaire. La marchandise en route est visible avec sa date d'arrivée prévue, ce qui permet d'engager une vente en connaissance de cause — la distinction avec le stock disponible reste explicite pour éviter de promettre ce qui n'est pas encore là.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a5"><span>Comment est gérée la DLC d'une marchandise importée ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a5"><p>La DLC est portée par le lot, pas par la référence : deux lots du même produit n'ont pas la même date. La rotation se fait en FEFO, avec des alertes avant péremption et la possibilité de déclencher une remise ciblée sur les lots concernés.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a6"><span>Combien de temps dure le déploiement ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a6"><p>Comptez 4 à 8 semaines entre le cadrage et la bascule, reprise des données comprise. Le délai tient parce que les processus de la filière sont préconfigurés : le poids variable, le multi-devises et les DLC n'ont pas à être modélisés.</p></div></div><div class="qa" data-open="0"><button type="button" aria-expanded="false" aria-controls="hvb-a7"><span>Hello Harel est-il un logiciel français ?</span><span class="ic" aria-hidden="true"></span></button><div class="ans" id="hvb-a7"><p>Oui, édité en France depuis 2014 et proposé en SaaS : pas de serveur à administrer, mises à jour incluses, accès depuis le bureau comme depuis l'entrepôt. Plus de 200 entreprises agroalimentaires l'utilisent, avec une note de 5,0 sur 5.</p></div></div></div></div></section></div><script>
+(function () {
+  var r = document.getElementById('hvb');
+  if (!r) { return; }
+  var doux = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Les etats masques n'existent que sous .anim-on : si ce script ne tourne pas,
+     ou s'il casse avant cette ligne, la page reste entierement lisible. */
+  var animable = doux && 'IntersectionObserver' in window;
+  if (animable) { r.classList.add('anim-on'); }
+
+  /* --- titre mot a mot : on echelonne les delais --- */
+  r.querySelectorAll('[data-anim="words"]').forEach(function (el) {
+    var pas = parseInt(el.getAttribute('data-stagger'), 10) || 70;
+    el.querySelectorAll('.wd').forEach(function (m, i) {
+      m.style.transitionDelay = (i * pas) + 'ms';
+    });
+  });
+
+  /* --- apparitions au defilement --- */
+  var cibles = Array.prototype.slice.call(r.querySelectorAll('[data-anim]'));
+  if (!animable) {
+    cibles.forEach(function (el) { el.classList.add('seen'); });
+  } else {
+    var obs = new IntersectionObserver(function (ent) {
+      ent.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('seen'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    cibles.forEach(function (el) { obs.observe(el); });
+
+    /* Filet : au bout de 4 s, tout ce qui n'a pas ete revele l'est d'office.
+       Aucun contenu ne peut rester invisible parce qu'un observateur n'a pas
+       declenche. */
+    setTimeout(function () {
+      cibles.forEach(function (el) {
+        if (!el.classList.contains('seen')) { el.classList.add('seen'); }
+      });
+    }, 4000);
+  }
+
+  /* --- defilement des logos : on duplique la piste pour une boucle sans couture --- */
+  var piste = document.getElementById('hvb-marq');
+  if (piste && !piste.dataset.double) {
+    Array.prototype.slice.call(piste.children).forEach(function (n) {
+      var c = n.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      piste.appendChild(c);
+    });
+    piste.dataset.double = '1';
+  }
+
+  /* --- onglets : clic, clavier, et rotation automatique jusqu'au premier clic --- */
+  var bar = r.querySelector('.tabbar');
+  if (bar) {
+    var bts = Array.prototype.slice.call(bar.querySelectorAll('.tabbtn'));
+    var pans = Array.prototype.slice.call(r.querySelectorAll('.tabpane'));
+    var actif = 0, minuteur = null, arrete = false;
+
+    function montrer(i) {
+      actif = i;
+      bts.forEach(function (b, k) {
+        b.setAttribute('aria-selected', k === i ? 'true' : 'false');
+        b.setAttribute('tabindex', k === i ? '0' : '-1');
+      });
+      pans.forEach(function (p, k) { p.hidden = (k !== i); });
+    }
+    function stop() { arrete = true; clearInterval(minuteur); minuteur = null; }
+
+    bts.forEach(function (b, i) {
+      b.addEventListener('click', function () { stop(); montrer(i); });
+      b.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : (e.key === 'ArrowLeft' ? -1 : 0);
+        if (!d) { return; }
+        e.preventDefault(); stop();
+        var n = (i + d + bts.length) % bts.length;
+        montrer(n); bts[n].focus();
+      });
+    });
+
+    if (doux && 'IntersectionObserver' in window) {
+      var o2 = new IntersectionObserver(function (ent) {
+        ent.forEach(function (e) {
+          if (e.isIntersecting && !arrete && !minuteur) {
+            minuteur = setInterval(function () { montrer((actif + 1) % bts.length); }, 15000);
+            o2.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      o2.observe(bar);
+    }
+  }
+
+  /* --- FAQ en accordeon --- */
+  r.querySelectorAll('.qa button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var qa = b.closest('.qa');
+      var ouvert = qa.getAttribute('data-open') === '1';
+      qa.setAttribute('data-open', ouvert ? '0' : '1');
+      b.setAttribute('aria-expanded', ouvert ? 'false' : 'true');
+    });
+  });
+})();
+</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qu'est-ce qu'un logiciel import export ?", "acceptedAnswer": {"@type": "Answer", "text": "Un logiciel import export pilote les flux de marchandises entre plusieurs pays : achats en devises, incoterms, acheminement, formalités douanières, stock en transit et facturation multi-devises. Appliqué à l'alimentaire, il ajoute trois exigences que les outils généralistes ne portent pas : le poids variable, les DLC et la traçabilité du lot d'origine."}}, {"@type": "Question", "name": "Quelle différence avec un TMS ?", "acceptedAnswer": {"@type": "Answer", "text": "Un TMS pilote le transport — l'acheminement, les documents de transport, la relation avec les transitaires. Il ne calcule ni votre coût de revient, ni votre marge, ni votre stock vendable. Les deux outils sont complémentaires : le TMS sait où est la marchandise, l'ERP sait ce qu'elle vous coûte et ce qu'elle vous rapporte."}}, {"@type": "Question", "name": "Comment sont calculés les frais d'approche ?", "acceptedAnswer": {"@type": "Answer", "text": "Le fret, l'assurance, les droits de douane et les frais de dossier sont saisis sur l'opération puis répartis sur chaque référence du conteneur, au poids, à la valeur ou au volume. Le coefficient obtenu s'applique automatiquement au prix d'achat pour donner le coût de revient réel, disponible dès la réception."}}, {"@type": "Question", "name": "Le logiciel gère-t-il les incoterms ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L'incoterm est porté par la ligne d'achat : il détermine à quel moment la marchandise entre dans votre stock et dans votre coût, et quelles charges vous incombent. C'est aussi ce qui conditionne le transfert de risque, donc la couverture d'assurance."}}, {"@type": "Question", "name": "Peut-on vendre une marchandise encore en transit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, et c'est courant en négoce alimentaire. La marchandise en route est visible avec sa date d'arrivée prévue, ce qui permet d'engager une vente en connaissance de cause — la distinction avec le stock disponible reste explicite pour éviter de promettre ce qui n'est pas encore là."}}, {"@type": "Question", "name": "Comment est gérée la DLC d'une marchandise importée ?", "acceptedAnswer": {"@type": "Answer", "text": "La DLC est portée par le lot, pas par la référence : deux lots du même produit n'ont pas la même date. La rotation se fait en FEFO, avec des alertes avant péremption et la possibilité de déclencher une remise ciblée sur les lots concernés."}}, {"@type": "Question", "name": "Combien de temps dure le déploiement ?", "acceptedAnswer": {"@type": "Answer", "text": "Comptez 4 à 8 semaines entre le cadrage et la bascule, reprise des données comprise. Le délai tient parce que les processus de la filière sont préconfigurés : le poids variable, le multi-devises et les DLC n'ont pas à être modélisés."}}, {"@type": "Question", "name": "Hello Harel est-il un logiciel français ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, édité en France depuis 2014 et proposé en SaaS : pas de serveur à administrer, mises à jour incluses, accès depuis le bureau comme depuis l'entrepôt. Plus de 200 entreprises agroalimentaires l'utilisent, avec une note de 5,0 sur 5."}}]}</script>
