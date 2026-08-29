@@ -1,8 +1,8 @@
 {
  "hero": {
-  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-terminal-conteneurs.webp",
-  "alt": "Terminal à conteneurs au crépuscule, navire porte-conteneurs à quai",
-  "id": 11538
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-entrepot-cagettes-hd.webp",
+  "alt": "Cagettes de produits frais rangées en entrepôt chez un grossiste alimentaire",
+  "id": 11558
  },
  "cout": {
   "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-liasse-documentaire.webp",
@@ -53,5 +53,10 @@
   "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-tarifs-reporting-edi.webp",
   "alt": "Écran affichant un reporting de données en temps réel",
   "id": 11548
+ },
+ "cmd": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-alimentaire-televente.webp",
+  "alt": "Télévendeur avec casque prenant une commande dans un bureau de grossiste",
+  "id": 11557
  }
 }

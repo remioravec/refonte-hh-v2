@@ -28,7 +28,7 @@ import negoce_b_contenu as C
 from negoce_b_css import CSS
 
 PAGE = 11495
-TITRE = "[TEST B] ERP Import Export Alimentaire • Frais d'Approche & Lots"
+TITRE = "[TEST B] ERP Négoce Alimentaire • Poids Réel, DLC et Marge"
 LIVE = "--live" in sys.argv
 IMG = json.load(open(os.path.join(ICI, "images-negoce-b.json"), encoding="utf-8"))
 
@@ -231,7 +231,7 @@ def cta_final():
 
 def faq():
     blocs = []
-    for i, (q, r) in enumerate(C.FAQ):
+    for i, (q, _m, r) in enumerate(C.FAQ):
         blocs.append(
             '<div class="qa" data-open="' + ("1" if i == 0 else "0") + '">'
             '<button type="button" aria-expanded="' + ("true" if i == 0 else "false") + '" '
@@ -365,8 +365,9 @@ def construire():
              + modules() + cta_final() + faq())
     ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q,
-         "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", r)}}
-        for q, r in C.FAQ]}
+         "acceptedAnswer": {"@type": "Answer",
+                            "text": re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", r)).strip()}}
+        for q, _m, r in C.FAQ]}
     return ('<link rel="preconnect" href="https://fonts.googleapis.com">'
             '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
@@ -407,15 +408,23 @@ def controles(html):
             pb.append("Regle 0 — lien vers une page protegee : " + h)
 
     # le fond doit etre celui de la variante A
-    for att in (C.CALC_TOTAL[1], C.CALC_COEF[1], "38 390", "× 1,20"):
+    for att in (C.CALC_TOTAL[1], C.CALC_COEF[1], "17,51 €", "0,51 €", "7 344 €"):
         if att not in html:
             pb.append("valeur du calcul absente : " + att)
-    for q, _r in C.FAQ:
+    for q, _m, _r in C.FAQ:
         if q not in html:
             pb.append("question absente : " + q[:44])
     for _n, _c, href, _t, _d in C.MODULES:
         if 'href="' + href + '"' not in html:
             pb.append("lien de module absent : " + href)
+
+    # aucun reliquat de l'angle import-export
+    texte = re.sub(r"<[^>]+>", " ", html)
+    for mot in ("conteneur", "incoterm", "frais d'approche", "transitaire", "douane",
+                "écart de change", "maraîch", "calibre"):
+        n = len(re.findall(mot, texte, re.I))
+        if n:
+            pb.append("vocabulaire hors persona : %r x%d" % (mot, n))
 
     # accessibilite des onglets et de la FAQ
     if html.count('role="tab"') != 4 or html.count('role="tabpanel"') != 4:
