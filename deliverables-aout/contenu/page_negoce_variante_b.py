@@ -76,8 +76,8 @@ def hero():
         '<h1 data-anim="words" data-stagger="70">' + mots + '</h1>'
         + ticks(C.HERO_TICKS) +
         '<div class="btns">'
-        '<a class="btn btn-1" href="/contact/">Voir sur mes opérations</a>'
-        '<a class="btn btn-2" href="/fonctionnalites/import-export/">Le module import export</a>'
+        '<a class="btn btn-1" href="/contact/">Voir sur mes lignes de commande</a>'
+        '<a class="btn btn-2" href="/negoce/">Voir les modules du négoce</a>'
         '</div>'
         '<p class="reassure">'
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">'
@@ -93,8 +93,9 @@ def hero():
 
 
 def preuve():
-    stats = "".join('<div class="stat"><b>' + v + '</b><span>' + l + '</span></div>'
-                    for v, l in C.STATS)
+    # Le bandeau de quatre chiffres a ete retire de la variante B le 29/08, a la
+    # demande du client. La note 5,0/5 sur 31 avis reste, une seule fois, a cote
+    # de l'accroche : elle y figurait deja et faisait doublon avec la carte.
     # pas de chargement differe sur les logos : ils defilent horizontalement, un
     # logo hors ecran a droite ne serait charge qu'au moment de son entree et
     # apparaitrait par a-coups. Les 14 pesent une centaine de kilo-octets au total.
@@ -105,7 +106,6 @@ def preuve():
         '<div class="w">'
         '<div class="proof-top"><p>' + C.PREUVE + '</p>'
         '<span class="rate"><span class="stars">★★★★★</span> 5,0/5 sur 31 avis</span></div>'
-        '<div class="stats">' + stats + '</div>'
         '</div>'
         '<div class="marq"><div class="marq-t" id="hvb-marq">' + piste + '</div></div>'
         '</section>'
@@ -153,7 +153,8 @@ def calcul():
         '<h2>' + C.CALC_TITRE + '</h2>'
         '<p class="lead">' + C.CALC_INTRO + '</p>'
         '<div class="warn">' + warn + '</div>'
-        + lien_plus("/fonctionnalites/import-export/", "Le module import export") +
+        + lien_plus("/agroalimentaire/negoce-alimentaire/",
+                    "Le calculateur de marge au poids variable") +
         '</div>'
         '<div class="card" data-anim="rise">'
         '<p class="card-h">' + C.CALC_CARTE + '</p>'
@@ -421,10 +422,14 @@ def controles(html):
     # aucun reliquat de l'angle import-export
     texte = re.sub(r"<[^>]+>", " ", html)
     for mot in ("conteneur", "incoterm", "frais d'approche", "transitaire", "douane",
-                "écart de change", "maraîch", "calibre"):
+                "écart de change", "import export", "import-export", "multi-devises",
+                "maraîch", "calibre"):
         n = len(re.findall(mot, texte, re.I))
         if n:
             pb.append("vocabulaire hors persona : %r x%d" % (mot, n))
+
+    if 'class="stat"' in html or "du cadrage à la bascule" in html:
+        pb.append("le bandeau de chiffres est encore present sur la variante B")
 
     # accessibilite des onglets et de la FAQ
     if html.count('role="tab"') != 4 or html.count('role="tabpanel"') != 4:
