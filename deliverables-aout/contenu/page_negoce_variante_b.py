@@ -95,7 +95,10 @@ def hero():
 def preuve():
     stats = "".join('<div class="stat"><b>' + v + '</b><span>' + l + '</span></div>'
                     for v, l in C.STATS)
-    piste = "".join('<img src="' + u + '" alt="' + a + '" loading="lazy" decoding="async">'
+    # pas de chargement differe sur les logos : ils defilent horizontalement, un
+    # logo hors ecran a droite ne serait charge qu'au moment de son entree et
+    # apparaitrait par a-coups. Les 14 pesent une centaine de kilo-octets au total.
+    piste = "".join('<img src="' + u + '" alt="' + a + '" decoding="async">'
                     for u, a in C.LOGOS)
     return (
         '<section class="proof">'
