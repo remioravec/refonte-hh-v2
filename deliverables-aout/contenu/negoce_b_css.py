@@ -55,7 +55,8 @@ CSS = """<style id="hh-vB">
 
 /* ---- HERO ---- */
 #hvb .hero{background:linear-gradient(180deg,#F8FAFC 0%,#fff 100%);padding:clamp(3rem,5.5vw,4.75rem) 0 clamp(3rem,5vw,4.5rem)}
-#hvb .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+#hvb .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,3vw,2.5rem);align-items:start}
+#hvb .hero-band{margin-top:clamp(2rem,3.5vw,3rem)}
 #hvb .pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand-50);color:var(--brand-d);
  font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px}
 #hvb .pill i{width:7px;height:7px;border-radius:50%;background:var(--go);display:inline-block}
@@ -63,8 +64,23 @@ CSS = """<style id="hh-vB">
 #hvb h1 em{font-style:normal;color:var(--brand-d)}
 #hvb .reassure{display:flex;align-items:center;gap:.55rem;margin-top:1.1rem;color:var(--ink3);font-size:.875rem}
 #hvb .reassure svg{width:18px;height:18px;color:var(--ink3);flex:0 0 18px}
-#hvb .hero-media{border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(15,23,42,.18)}
-#hvb .hero-media img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+
+
+/* ---- CAPTURES DU LOGICIEL, EN APLAT ----
+   Pas d'ombre portee, pas de degrade, pas de perspective : une bordure d'un
+   pixel, une barre de titre sobre et la capture a sa taille. C'est le logiciel
+   qu'on montre, pas un objet en trois dimensions. */
+#hvb .shotui{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+#hvb .shotui-bar{display:flex;align-items:center;gap:7px;padding:9px 14px;background:var(--wash);border-bottom:1px solid var(--line)}
+#hvb .shotui-dot{width:9px;height:9px;border-radius:50%;background:#CBD5E1;flex:0 0 9px}
+#hvb .shotui-bar b{margin-left:6px;font-size:.75rem;font-weight:700;letter-spacing:.02em;color:var(--ink3)}
+/* la capture se montre entiere : on neutralise le recadrage impose aux photos
+   d'illustration du hero et des onglets */
+#hvb .shotui img{width:100%;height:auto;display:block;background:#fff;aspect-ratio:auto;object-fit:fill}
+#hvb .shotui figcaption{font-size:.8125rem;line-height:1.5;color:var(--ink3);padding:11px 14px;border-top:1px solid var(--line);background:var(--wash)}
+#hvb .hero-shot{max-width:100%}
+#hvb .calc-shot{margin-top:clamp(1.75rem,3vw,2.5rem)}
 
 /* ---- PREUVE + MARQUEE ---- */
 #hvb .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:2.5rem 0 2rem;overflow:hidden}
@@ -91,10 +107,11 @@ CSS = """<style id="hh-vB">
 #hvb .tabbtn svg{width:18px;height:18px}
 #hvb .tabbtn:hover{color:var(--ink);border-color:#CBD5E1}
 #hvb .tabbtn[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-#hvb .tabpane{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+#hvb .tabpane{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,3vw,2.5rem);align-items:start}
+#hvb .tabpane>div:first-child{max-width:860px}
 #hvb .tabpane[hidden]{display:none}
-#hvb .tabpane .shot{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 48px rgba(15,23,42,.12)}
-#hvb .tabpane .shot img{width:100%;aspect-ratio:16/11;object-fit:cover}
+#hvb .tabpane .shot{border-radius:12px;overflow:hidden}
+
 
 /* ---- CALCUL ---- */
 #hvb .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
@@ -177,7 +194,7 @@ CSS = """<style id="hh-vB">
 
 /* ---- responsive ---- */
 @media(max-width:980px){
- #hvb .hero-grid,#hvb .tabpane,#hvb .calc-grid,#hvb .split{grid-template-columns:1fr}
+ #hvb .calc-grid,#hvb .split{grid-template-columns:1fr}
  #hvb .split .shot{order:-1}
  #hvb .mods{grid-template-columns:repeat(2,1fr)}
  #hvb .stats{grid-template-columns:repeat(2,1fr)}

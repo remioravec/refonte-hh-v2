@@ -58,6 +58,7 @@ ICONES = {
 ONGLETS = [
     {
         "cle": "achats", "onglet": "Achats et cours du jour", "icone": "euro", "img": "cout",
+        "capture": "hh-erp-tableau-de-bord-achats", "ecran": "Hello Harel — Achats",
         "h2": "Le prix d'achat bouge plus vite que votre tarif",
         "ticks": [
             "Achat <b>au cours du jour</b> enregistré à la réception : le coût de revient suit le "
@@ -73,6 +74,7 @@ ONGLETS = [
     },
     {
         "cle": "stock", "onglet": "Stock, dépôts et DLC", "icone": "boite", "img": "stock",
+        "capture": "hh-erp-stock-fefo-peremption", "ecran": "Hello Harel — Stock",
         "h2": "Un stock, ce n'est pas un chiffre : c'est un emplacement, une température et une date",
         "ticks": [
             "<b>Un stock par emplacement</b>, avec sa température : plateforme, chambres positives "
@@ -89,6 +91,7 @@ ONGLETS = [
     },
     {
         "cle": "cmd", "onglet": "Commandes, tournées et EDI", "icone": "cmd", "img": "cmd",
+        "capture": "hh-erp-quantite-manquante-poids", "ecran": "Hello Harel — Préparation",
         "h2": "Quatre canaux de commande, une seule file",
         "ticks": [
             "<b>Cadencier par client</b> à la saisie : le télévendeur ne repart pas d'une page "
@@ -106,6 +109,7 @@ ONGLETS = [
     },
     {
         "cle": "marge", "onglet": "Marge et échéance", "icone": "graph", "img": "marge",
+        "capture": "hh-erp-comptabilite-factures-attente", "ecran": "Hello Harel — Comptabilité",
         "h2": "Ce qui reste vraiment, et quand vous l'encaissez",
         "ticks": [
             "Marge lue <b>par référence, par client, par tournée et par commercial</b>",

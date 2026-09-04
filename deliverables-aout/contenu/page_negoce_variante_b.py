@@ -31,6 +31,9 @@ PAGE = 11495
 TITRE = "[TEST B] ERP Négoce Alimentaire • Poids Réel, DLC et Marge"
 LIVE = "--live" in sys.argv
 IMG = json.load(open(os.path.join(ICI, "images-negoce-b.json"), encoding="utf-8"))
+# Captures reelles du logiciel, tirees de la documentation produit
+# https://doc.harelsystems.io — une par module.
+CAP = json.load(open(os.path.join(ICI, "captures-produit.json"), encoding="utf-8"))
 
 
 # --------------------------------------------------------------------- briques
@@ -61,6 +64,21 @@ def img(cle, classe=""):
             'decoding="async"' + c + '>')
 
 
+def capture(cle, titre=None):
+    """Capture du logiciel en cadre plat : une bordure, une barre de titre sobre,
+    aucune ombre portee, aucune perspective, aucun reflet."""
+    d = CAP[cle]
+    return (
+        '<figure class="shotui">'
+        '<div class="shotui-bar"><span class="shotui-dot"></span><span class="shotui-dot"></span>'
+        '<span class="shotui-dot"></span><b>' + (titre or "Hello Harel") + '</b></div>'
+        '<img src="' + d["url"] + '" alt="' + d["alt"] + '" width="' + str(d["taille"][0]) + '" '
+        'height="' + str(d["taille"][1]) + '" loading="lazy" decoding="async">'
+        '<figcaption>' + d["legende"] + '</figcaption>'
+        '</figure>'
+    )
+
+
 def lien_plus(href, libelle):
     return '<a class="more" href="' + href + '">' + libelle + ' ' + fleche() + '</a>'
 
@@ -87,8 +105,10 @@ def hero():
         '9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>'
         + C.HERO_REASSURE + '</p>'
         '</div>'
-        '<div class="hero-media" data-anim="rise">' + img("hero") + '</div>'
-        '</div></div></section>'
+        '</div>'
+        '<div class="hero-band" data-anim="rise">'
+        + capture("hh-erp-tableau-de-bord-vente", "Hello Harel — Vente") + '</div>'
+        '</div></section>'
     )
 
 
@@ -127,7 +147,7 @@ def onglets():
             '<div class="tabpane" role="tabpanel" id="hvb-p' + str(i) + '" '
             'aria-labelledby="hvb-t' + str(i) + '"' + ("" if i == 0 else " hidden") + '>'
             '<div><h2>' + o["h2"] + '</h2>' + ticks(o["ticks"]) + lien_plus(href, lib) + '</div>'
-            '<div class="shot">' + img(o["img"]) + '</div>'
+            '<div class="shot">' + capture(o["capture"], o["ecran"]) + '</div>'
             '</div>')
     return (
         '<section class="sec wash"><div class="w">'
@@ -156,7 +176,8 @@ def calcul():
         + lien_plus("/agroalimentaire/negoce-alimentaire/",
                     "Le calculateur de marge au poids variable") +
         '</div>'
-        '<div class="card" data-anim="rise">'
+        '<div data-anim="rise">'
+        '<div class="card">'
         '<p class="card-h">' + C.CALC_CARTE + '</p>'
         '<table class="lines"><tbody>' + lignes +
         '<tr class="tot"><td>' + C.CALC_TOTAL[0] + '</td><td>' + C.CALC_TOTAL[1] + '</td></tr>'
@@ -164,7 +185,11 @@ def calcul():
         '</tbody></table>'
         '<p class="note">' + C.CALC_NOTE + '</p>'
         '</div>'
-        '</div></div></section>'
+        '</div>'
+        '</div>'
+        '<div class="calc-shot" data-anim="rise">'
+        + capture("hh-erp-catalogue-tarifs-marge", "Hello Harel — Tarifs") + '</div>'
+        '</div></section>'
     )
 
 
@@ -396,8 +421,19 @@ def controles(html):
     for u in re.findall(r'<img[^>]+src="([^"]+)"', html):
         if not u.startswith("https://www.helloharel.com/"):
             pb.append("image hors mediatheque : " + u[:70])
-    if len(re.findall(r"<img", html)) != 11 + len(C.LOGOS):
-        pb.append("nombre d'images inattendu : %d" % len(re.findall(r"<img", html)))
+    # 6 captures du logiciel + 6 photos (terrain et cartes de modules) + les logos
+    attendu = len(CAP) + 6 + len(C.LOGOS)
+    trouve = len(re.findall(r"<img", html))
+    if trouve != attendu:
+        pb.append("nombre d'images inattendu : %d au lieu de %d" % (trouve, attendu))
+    for cle in CAP:
+        if CAP[cle]["url"] not in html:
+            pb.append("capture du logiciel absente : " + cle)
+    if len(re.findall(r'class="shotui"', html)) != len(CAP):
+        pb.append("toutes les captures ne sont pas en cadre plat")
+    # aplat : aucune ombre portee sur les cadres de capture
+    if re.search(r'\.shotui[^{]*\{[^}]*box-shadow', html):
+        pb.append("une ombre portee subsiste sur le cadre de capture")
     for c in re.findall(r'<img[^>]*alt=""', html):
         pb.append("image sans alternative textuelle")
 
