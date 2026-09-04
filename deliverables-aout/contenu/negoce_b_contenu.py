@@ -25,8 +25,11 @@ from negoce_contenu import SOURCE, DELAIS, FAQ, CALC  # noqa: F401  (fond commun
 
 BADGE = "ERP Négoce Alimentaire"
 
+# Pas d'espace insecable dans le dernier fragment : il rendrait la ligne
+# insecable, et cette ligne imposerait alors sa largeur a toute la colonne —
+# 488 px sur un ecran de 390.
 H1_MOTS = ["Vous", "achetez", "au", "kilo.", "Vous", "facturez", "à", "l'unité.",
-           "<em>C'est&nbsp;là&nbsp;que&nbsp;la&nbsp;marge&nbsp;se&nbsp;perd.</em>"]
+           "<em>C'est là que la marge se perd.</em>"]
 
 HERO_TICKS = [
     "Facturez au <b>poids réellement pesé</b>, pas au poids commandé",

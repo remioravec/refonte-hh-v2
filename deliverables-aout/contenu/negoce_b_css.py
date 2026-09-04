@@ -62,8 +62,10 @@ CSS = """<style id="hh-vB">
 #hvb .pill i{width:7px;height:7px;border-radius:50%;background:var(--go);display:inline-block}
 #hvb h1{font-size:clamp(2.2rem,4.8vw,3.5rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin:1.1rem 0 0}
 #hvb h1 em{font-style:normal;color:var(--brand-d)}
-#hvb .reassure{display:flex;align-items:center;gap:.55rem;margin-top:1.1rem;color:var(--ink3);font-size:.875rem}
-#hvb .reassure svg{width:18px;height:18px;color:var(--ink3);flex:0 0 18px}
+/* une grille et non une rangee flexible : en colonne etroite, le texte etait
+   un element anonyme qui ne pouvait pas se reduire, et debordait du cadre */
+#hvb .reassure{display:grid;grid-template-columns:18px 1fr;gap:.55rem;align-items:start;margin-top:1.1rem;color:var(--ink3);font-size:.875rem;line-height:1.55}
+#hvb .reassure svg{width:18px;height:18px;color:var(--ink3);margin-top:.1rem}
 
 
 

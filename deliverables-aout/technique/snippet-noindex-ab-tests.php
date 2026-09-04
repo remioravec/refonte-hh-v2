@@ -20,7 +20,8 @@
 function hh_ab_test_page_ids() {
     return array(
         11493, // [TEST A] ERP Import Export — variante SXO landing de /negoce/
-        11495, // [TEST B] ERP Import Export — même contenu que A, UX d'accueil SaaS
+        11495, // [TEST B] ERP Négoce — même contenu que A, UX d'accueil SaaS, captures en image
+        11582, // [TEST C] ERP Négoce — même contenu, écrans du logiciel reproduits en HTML/CSS
     );
 }
 
