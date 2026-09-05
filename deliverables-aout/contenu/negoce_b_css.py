@@ -57,6 +57,10 @@ CSS = """<style id="hh-vB">
 #hvb .hero{background:linear-gradient(180deg,#F8FAFC 0%,#fff 100%);padding:clamp(3rem,5.5vw,4.75rem) 0 clamp(3rem,5vw,4.5rem)}
 #hvb .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.75rem,3vw,2.5rem);align-items:start}
 #hvb .hero-band{margin-top:clamp(2rem,3.5vw,3rem)}
+/* le hero porte une photo de situation, en aplat comme le reste : un cadre
+   arrondi, pas d'ombre portee */
+#hvb .hero-photo{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+#hvb .hero-photo img{width:100%;height:auto;display:block}
 #hvb .pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--brand-50);color:var(--brand-d);
  font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px}
 #hvb .pill i{width:7px;height:7px;border-radius:50%;background:var(--go);display:inline-block}

@@ -87,8 +87,11 @@ def controles(html):
         pb.append("un identifiant de la variante B subsiste")
 
     # les six ecrans sont bien codes, et plus aucune capture matricielle du produit
-    if len(re.findall(r'<figure class="ui"', html)) != 6:
-        pb.append("les six ecrans ne sont pas tous presents")
+    # cinq ecrans codes : le hero porte desormais une photo de situation
+    if len(re.findall(r'<figure class="ui"', html)) != 5:
+        pb.append("les cinq ecrans ne sont pas tous presents")
+    if "hero-photo" not in html:
+        pb.append("le hero ne porte pas la photo de situation")
     if 'class="shotui"' in html:
         pb.append("une capture matricielle subsiste")
     for u in re.findall(r'<img[^>]+src="([^"]+)"', html):
@@ -97,7 +100,7 @@ def controles(html):
     for f in re.findall(r'<figure class="ui" role="img" aria-label="([^"]*)"', html):
         if len(f) < 25:
             pb.append("alternative textuelle trop courte sur un ecran")
-    if len(re.findall(r'role="img"', html)) != 6:
+    if len(re.findall(r'role="img"', html)) != 5:
         pb.append("un ecran n'est pas annonce comme illustration")
 
     # aucun marqueur du gabarit de tableau ne doit atteindre le rendu

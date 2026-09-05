@@ -106,8 +106,7 @@ def hero():
         + C.HERO_REASSURE + '</p>'
         '</div>'
         '</div>'
-        '<div class="hero-band" data-anim="rise">'
-        + capture("hh-erp-tableau-de-bord-vente", "Hello Harel — Vente") + '</div>'
+        '<div class="hero-band hero-photo" data-anim="rise">' + img("hero-band") + '</div>'
         '</div></section>'
     )
 
@@ -421,16 +420,23 @@ def controles(html):
     for u in re.findall(r'<img[^>]+src="([^"]+)"', html):
         if not u.startswith("https://www.helloharel.com/"):
             pb.append("image hors mediatheque : " + u[:70])
-    # 6 captures du logiciel + 6 photos (terrain et cartes de modules) + les logos
-    attendu = len(CAP) + 6 + len(C.LOGOS)
+    # Le hero porte une photo de situation ; les cinq autres emplacements portent
+    # un ecran du logiciel. La capture Vente n'est donc plus utilisee.
+    UTILISEES = [c for c in CAP if c != "hh-erp-tableau-de-bord-vente"]
+    # 5 ecrans + 7 photos (hero, terrain, 5 cartes de modules) + les logos
+    attendu = len(UTILISEES) + 7 + len(C.LOGOS)
     trouve = len(re.findall(r"<img", html))
     if trouve != attendu:
         pb.append("nombre d'images inattendu : %d au lieu de %d" % (trouve, attendu))
-    for cle in CAP:
+    for cle in UTILISEES:
         if CAP[cle]["url"] not in html:
-            pb.append("capture du logiciel absente : " + cle)
-    if len(re.findall(r'class="shotui"', html)) != len(CAP):
-        pb.append("toutes les captures ne sont pas en cadre plat")
+            pb.append("ecran du logiciel absent : " + cle)
+    if len(re.findall(r'class="shotui"', html)) != len(UTILISEES):
+        pb.append("tous les ecrans ne sont pas en cadre plat")
+    if IMG["hero-band"]["url"] not in html:
+        pb.append("le hero ne porte pas la photo de situation")
+    if "hh-erp-" in html.split('class="proof"')[0]:
+        pb.append("un ecran du logiciel subsiste dans le hero")
     # aplat : aucune ombre portee sur les cadres de capture
     if re.search(r'\.shotui[^{]*\{[^}]*box-shadow', html):
         pb.append("une ombre portee subsiste sur le cadre de capture")

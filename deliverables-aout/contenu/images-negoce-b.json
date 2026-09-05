@@ -58,5 +58,14 @@
   "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-alimentaire-televente.webp",
   "alt": "Télévendeur avec casque prenant une commande dans un bureau de grossiste",
   "id": 11557
+ },
+ "hero-band": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/erp-negoce-magasinier-entrepot-alimentaire.webp",
+  "alt": "Magasinier conduisant un transpalette entre les rayonnages d'un entrepôt de produits alimentaires",
+  "id": 11592,
+  "taille": [
+   1600,
+   627
+  ]
  }
 }
