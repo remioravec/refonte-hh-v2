@@ -1,0 +1,15 @@
+{
+ "mode": "dry",
+ "items": [
+  {
+   "slug": "conformite-haccp",
+   "status": "dry",
+   "h2": 10
+  },
+  {
+   "slug": "roi-erp",
+   "status": "dry",
+   "h2": 8
+  }
+ ]
+}

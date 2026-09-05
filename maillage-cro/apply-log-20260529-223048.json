@@ -1,0 +1,42 @@
+{
+ "mode": "dry",
+ "count": 4,
+ "items": [
+  {
+   "slug": "alternative-cegid",
+   "status": "dry",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10948
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "dry",
+   "tool": "diagnostic",
+   "visuals": 10,
+   "up": 1,
+   "lateral": 3,
+   "delta": 14024
+  },
+  {
+   "slug": "roi-erp",
+   "status": "dry",
+   "tool": "roi",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12469
+  },
+  {
+   "slug": "calcul-stock-de-securite",
+   "status": "dry",
+   "tool": "safety_stock",
+   "visuals": 18,
+   "up": 0,
+   "lateral": 1,
+   "delta": 20237
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+T1 — Pages émettant une meta description en CSS brut (recensement live du 2026-08-15)
+Total mesuré : 70 URL (l'audit en comptait 55 au 07/08 ; le bug a continué de se propager)
+Critère : la meta description contient { ou } — ACCEPTATION T1 : 0 au recrawl.
+
+== agroalimentaire (métier) (6) ==
+  https://www.helloharel.com/agroalimentaire/brasseur/
+  https://www.helloharel.com/agroalimentaire/chocolatier/
+  https://www.helloharel.com/agroalimentaire/conserverie/
+  https://www.helloharel.com/agroalimentaire/glacier/
+  https://www.helloharel.com/agroalimentaire/negoce-alimentaire/
+  https://www.helloharel.com/agroalimentaire/torrefacteur/
+
+== negoce (6) ==
+  https://www.helloharel.com/negoce/
+  https://www.helloharel.com/negoce/achats-approvisionnements/
+  https://www.helloharel.com/negoce/stocks-multi-depots/
+  https://www.helloharel.com/negoce/tarifs-reporting-edi/
+  https://www.helloharel.com/negoce/tracabilite-lots/
+  https://www.helloharel.com/negoce/ventes-devis-commandes/
+
+== fonctionnalites (6) ==
+  https://www.helloharel.com/fonctionnalites/facturation-automatique-bon-livraison/
+  https://www.helloharel.com/fonctionnalites/gestion-consigne-bouteille-logiciel/
+  https://www.helloharel.com/fonctionnalites/gestion-rendement-matiere-logiciel/
+  https://www.helloharel.com/fonctionnalites/logiciel-devis-commande-bon-livraison/
+  https://www.helloharel.com/fonctionnalites/planification-production-erp/
+  https://www.helloharel.com/fonctionnalites/tracabilite-alimentaire/
+
+== medical (6) ==
+  https://www.helloharel.com/medical/
+  https://www.helloharel.com/medical/dispositifs-medicaux/
+  https://www.helloharel.com/medical/hygiene-professionnelle/
+  https://www.helloharel.com/medical/laboratoires/
+  https://www.helloharel.com/medical/maintien-a-domicile/
+  https://www.helloharel.com/medical/materiel-dentaire/
+
+== ia / intelligence-artificielle (6) ==
+  https://www.helloharel.com/erp-ia/
+  https://www.helloharel.com/ia-analyse-predictive/
+  https://www.helloharel.com/ia-assistant-commercial/
+  https://www.helloharel.com/ia-automatisation-comptable/
+  https://www.helloharel.com/ia-optimisation-stocks/
+  https://www.helloharel.com/intelligence-artificielle/
+
+== implantations (10) ==
+  https://www.helloharel.com/implantation-auvergne-rhone-alpes/
+  https://www.helloharel.com/implantation-belgique/
+  https://www.helloharel.com/implantation-bretagne/
+  https://www.helloharel.com/implantation-hauts-de-france/
+  https://www.helloharel.com/implantation-ile-de-france/
+  https://www.helloharel.com/implantation-maurice/
+  https://www.helloharel.com/implantation-nouvelle-aquitaine/
+  https://www.helloharel.com/implantation-occitanie/
+  https://www.helloharel.com/implantation-reunion/
+  https://www.helloharel.com/implantations/
+
+== comparatifs (2) ==
+  https://www.helloharel.com/comparatifs/meilleur-erp-charcuterie-salaison/
+  https://www.helloharel.com/comparatifs/meilleur-erp-traiteur/
+
+== blog (26) ==
+  https://www.helloharel.com/blog/
+  https://www.helloharel.com/blog/alternatives-cegid-distribution-alimentaire/
+  https://www.helloharel.com/blog/alternatives-copilote-traiteur/
+  https://www.helloharel.com/blog/alternatives-divalto-agroalimentaire/
+  https://www.helloharel.com/blog/alternatives-odoo-agroalimentaire/
+  https://www.helloharel.com/blog/alternatives-sage-agroalimentaire/
+  https://www.helloharel.com/blog/alternatives-silog-agroalimentaire/
+  https://www.helloharel.com/blog/calcul-cout-de-revient-logiciel/
+  https://www.helloharel.com/blog/calcul-freinte-charcuterie-logiciel/
+  https://www.helloharel.com/blog/edi-logiciel-agroalimentaire/
+  https://www.helloharel.com/blog/erp-boissons/
+  https://www.helloharel.com/blog/factur-x-e-facturation-logiciel/
+  https://www.helloharel.com/blog/gestion-decoupe-viande-logiciel/
+  https://www.helloharel.com/blog/grille-tarifaire-negoce-alimentaire/
+  https://www.helloharel.com/blog/hello-harel-vs-divalto/
+  https://www.helloharel.com/blog/hello-harel-vs-odoo/
+  https://www.helloharel.com/blog/hello-harel-vs-sage/
+  https://www.helloharel.com/blog/hello-harel-vs-silog/
+  https://www.helloharel.com/blog/logiciel-grossiste-alimentaire/
+  https://www.helloharel.com/blog/logiciel-maree-mareyeur/
+  https://www.helloharel.com/blog/logiciel-televente-alimentaire/
+  https://www.helloharel.com/blog/penalites-logistiques-gms/
+  https://www.helloharel.com/blog/remplacer-excel-gestion-agroalimentaire/
+  https://www.helloharel.com/blog/reporting-commercial-grossiste/
+  https://www.helloharel.com/blog/tracabilite-lot-dlc-logiciel/
+  https://www.helloharel.com/blog/tracabilite-viande-logiciel/
+
+== autres (2) ==
+  https://www.helloharel.com/integrateurs/
+  https://www.helloharel.com/migration-as400/
+

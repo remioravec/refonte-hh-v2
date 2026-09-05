@@ -1,0 +1,25 @@
+{
+ "mode": "live",
+ "items": [
+  {
+   "slug": "alternative-cegid",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "roi-erp",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "erp-as400",
+   "status": "wrote",
+   "h2": 5
+  }
+ ]
+}
