@@ -59,8 +59,8 @@ HORAIRES = [
     ("Gastronomie et pavillon bio", "lundi au vendredi", 5.0, 13.0, "#A855F7"),
     ("Fruits et légumes", "mardi au vendredi", 5.5, 11.0, "#22C55E"),
     ("Plantes en pot, pépiniéristes", "mercredi, vendredi, samedi", 5.0, 12.0, "#14B8A6"),
-    ("Accessoires et décoration", "lundi et samedi", 6.5, 13.5, "#64748B"),
-    ("Tour administrative", "lundi au vendredi", 6.0, 20.0, "#94A3B8"),
+    ("Accessoires et décoration", "lundi et samedi", 6.5, 13.5, "#94A3B8"),
+    ("Tour administrative", "lundi au vendredi", 6.0, 20.0, "#CBD5E1"),
 ]
 
 CARTE = [

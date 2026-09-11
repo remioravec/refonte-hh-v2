@@ -14,43 +14,72 @@ conteneur du site.
 import blog_rungis_contenu as C
 
 
+def _double(sel):
+    """« .rg-nums » devient « #hh-page .rg-nums, .rg-nums »."""
+    sels = []
+    for x in sel.split(","):
+        x = x.strip()
+        if not x:
+            continue
+        sels.append("#hh-page " + x)
+        sels.append(x)
+    return ", ".join(sels)
+
+
 def _sc(css):
-    """Emet chaque regle dans les deux portees : sous #hh-page et sans."""
+    """Emet chaque regle dans les deux portees, Y COMPRIS dans les @media.
+
+    La version precedente recopiait les blocs @media tels quels : les regles
+    mobiles gardaient leur selecteur simple et perdaient la cascade contre les
+    regles de base portees par #hh-page. Resultat mesure a 390 px : la grille
+    des chiffres restait sur quatre colonnes de 68 px et decoupait « 234 » en
+    « 23 / 4 ». On descend donc d'un niveau dans les media queries.
+    """
+    import re as _re
+    out = []
+    i = 0
+    for m in _re.finditer(r"@media[^{]*\{", css):
+        out.append(_regles(css[i:m.start()]))
+        # fin du bloc @media : on suit la profondeur d'accolades
+        prof, j = 1, m.end()
+        while j < len(css) and prof:
+            prof += 1 if css[j] == "{" else (-1 if css[j] == "}" else 0)
+            j += 1
+        out.append(m.group(0) + _regles(css[m.end():j - 1]) + "}")
+        i = j
+    out.append(_regles(css[i:]))
+    return "".join(out)
+
+
+def _regles(css):
     out = []
     for bloc in css.split("}"):
         if "{" not in bloc:
             out.append(bloc)
             continue
         sel, corps = bloc.split("{", 1)
-        if "@" in sel:
-            out.append(bloc + "}")
-            continue
-        sels = []
-        for s in sel.split(","):
-            s = s.strip()
-            if not s:
-                continue
-            sels.append("#hh-page " + s)
-            sels.append(s)
-        out.append(", ".join(sels) + "{" + corps + "}")
+        out.append(_double(sel) + "{" + corps + "}")
     return "".join(out)
 
 
 CSS = "<style id=\"hh-rungis\">" + _sc("""
-.rg{margin:2.6rem 0 !important;font-family:inherit}
-.rg-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
- flex-wrap:wrap;margin:0 0 1rem !important}
-.rg-k{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
- color:#0891b2;margin:0 !important}
-.rg-s{font-size:.78rem;color:#64748b;margin:0 !important}
-.rg-t{font-size:1.15rem;font-weight:700;color:#0f172a;margin:.25rem 0 0 !important;
- letter-spacing:-.015em;flex:1 1 100%}
+.rg{margin:3.8rem 0 !important;font-family:inherit}
+.rg-h{display:flex;align-items:baseline;justify-content:flex-start;column-gap:.75rem;
+ row-gap:.35rem;flex-wrap:wrap;margin:0 0 1rem !important}
+.rg-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+ text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem;
+ border-radius:99px;margin:0 !important}
+#rg-ecart .rg-k{background:#e7fbf1;color:#0b7a47}
+.rg-s{position:relative;padding-left:.75rem;font-size:.78rem;color:#64748b;margin:0 !important}
+.rg-s::before{content:"";position:absolute;left:0;top:.35em;width:1px;height:1em;background:#cbd5e1}
+.rg-t{font-size:1.3rem;line-height:1.3;font-weight:700;color:#0f172a;
+ margin:.45rem 0 0 !important;letter-spacing:-.018em;flex:1 1 100%}
 
 /* 1 — le marche en chiffres */
 .rg-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;
  border:1px solid #e2e8f0;border-radius:16px;overflow:hidden}
 .rg-num{background:#fff;padding:1.2rem 1rem;text-align:center}
-.rg-num b{display:block;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;color:#00B1F5;
+.rg-num b{display:block;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;color:#007AAE;
  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
 .rg-num i{display:block;font-style:normal;font-size:.78rem;font-weight:700;color:#0f172a;
  margin-top:.35rem}
@@ -59,21 +88,30 @@ CSS = "<style id=\"hh-rungis\">" + _sc("""
 /* 2 — la journee de Rungis */
 .rg-day{border:1px solid #e2e8f0;border-radius:16px;background:#fff;overflow:hidden}
 .rg-scale{display:grid;grid-template-columns:150px 1fr;align-items:center;
- border-bottom:1px solid #eef2f6;background:#f8fafc;font-size:.7rem;color:#64748b}
+ padding-right:.8rem;border-bottom:1px solid #eef2f6;background:#f8fafc;
+ font-size:.7rem;color:#64748b}
 .rg-scale>span:first-child{padding:.5rem .8rem}
 .rg-ticks{position:relative;height:26px}
 .rg-ticks u{position:absolute;top:6px;text-decoration:none;transform:translateX(-50%);
- font-variant-numeric:tabular-nums}
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+.rg-ticks u:first-child{transform:none}
+.rg-ticks u:last-child{transform:translateX(-100%)}
 .rg-row{display:grid;grid-template-columns:150px 1fr;align-items:center;
  border-bottom:1px solid #f1f5f9}
+@media(min-width:761px){
+ .rg-scale,.rg-row{grid-template-columns:200px 1fr}
+ .rg-row{min-height:56px}
+}
 .rg-row:last-child{border-bottom:0}
 .rg-lab{padding:.55rem .8rem;min-width:0}
 .rg-lab b{display:block;font-size:.8rem;font-weight:600;color:#0f172a;line-height:1.25}
 .rg-lab span{display:block;font-size:.68rem;color:#64748b;margin-top:.1rem}
 .rg-track{position:relative;height:30px;margin-right:.8rem}
-.rg-track::before{content:"";position:absolute;inset:13px 0 auto;height:3px;background:#f1f5f9}
-.rg-band{position:absolute;top:8px;height:14px;border-radius:99px;display:flex;
- align-items:center;padding:0 .45rem;color:#fff;font-size:.62rem;font-weight:700;
+.rg-track::before{content:"";position:absolute;inset:0;border-radius:2px;background:
+ linear-gradient(#f1f5f9,#f1f5f9) 0 50%/100% 3px no-repeat,
+ repeating-linear-gradient(90deg,#e9eef4 0 1px,transparent 1px calc(100%/6))}
+.rg-band{position:absolute;top:7px;height:16px;border-radius:99px;display:flex;
+ align-items:center;padding:0 .5rem;color:#0f172a;font-size:.7rem;font-weight:700;
  white-space:nowrap;font-variant-numeric:tabular-nums}
 .rg-src{font-size:.72rem;color:#64748b;padding:.7rem .8rem;border-top:1px solid #eef2f6;
  background:#f8fafc;margin:0 !important}
@@ -89,10 +127,24 @@ CSS = "<style id=\"hh-rungis\">" + _sc("""
 .rg-step span{display:block;font-size:.86rem;color:#475569;margin-top:.25rem;line-height:1.55}
 
 /* 4 — du carreau a la facture */
-.rg-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+.rg-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;counter-reset:fx}
 .rg-node{border:1px solid #e2e8f0;border-top:3px solid #00B1F5;border-radius:12px;
  padding:.9rem .8rem;background:#fff;position:relative}
+.rg-node{counter-increment:fx}
 .rg-node b{display:block;font-size:.85rem;color:#0f172a}
+.rg-node b::before{content:counter(fx);display:inline-grid;place-items:center;width:20px;
+ height:20px;margin-right:.45rem;border-radius:50%;background:#e0f2fe;color:#046C93;
+ font-size:.68rem;font-weight:800;vertical-align:1px}
+.rg-node:nth-child(2) b::before,.rg-node:nth-child(5) b::before{background:#fee2e2;color:#b91c1c}
+.rg-node+.rg-node::before{content:"";position:absolute;left:-.6rem;top:50%;width:.6rem;
+ height:1px;background:#cbd5e1}
+.rg-node+.rg-node::after{content:"";position:absolute;left:-.42rem;top:50%;width:5px;height:5px;
+ border-top:1px solid #94a3b8;border-right:1px solid #94a3b8;
+ transform:translateY(-50%) rotate(45deg)}
+.rg-lg{display:flex;align-items:center;gap:.45rem;font-size:.74rem;color:#64748b;
+ margin:.8rem 0 0 !important}
+.rg-lg i{width:14px;height:14px;border-radius:4px;background:#fef7f7;border:1px solid #fecaca;
+ border-top:3px solid #EF4444;flex:0 0 auto}
 .rg-node span{display:block;font-size:.76rem;color:#475569;margin-top:.3rem;line-height:1.5}
 .rg-node:nth-child(2),.rg-node:nth-child(5){border-top-color:#EF4444;background:#fef7f7}
 
@@ -101,20 +153,29 @@ CSS = "<style id=\"hh-rungis\">" + _sc("""
 .rg-in{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;padding:1.1rem}
 .rg-fld label{display:block;font-size:.76rem;font-weight:600;color:#475569;
  margin:0 0 .3rem !important}
-.rg-fld input{width:100%;font:inherit;font-size:.95rem;padding:.55rem .7rem;
+.rg-fld input{width:100%;font:inherit;font-size:16px;padding:.55rem .7rem;
  border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#0f172a;
  font-variant-numeric:tabular-nums}
 .rg-fld input:focus-visible{outline:2px solid #00B1F5;outline-offset:1px;border-color:#00B1F5}
+.rg-fld input::-webkit-outer-spin-button,.rg-fld input::-webkit-inner-spin-button{
+ -webkit-appearance:none;margin:0}
 .rg-out{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e2e8f0;
  border-top:1px solid #e2e8f0}
 .rg-out div{background:#f8fafc;padding:1rem 1.1rem}
 .rg-out b{display:block;font-size:1.5rem;font-weight:800;color:#0f172a;
  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.rg-out.perte b{color:#b91c1c}
+.rg-out .perte{background:#fef7f7;box-shadow:inset 3px 0 0 #b91c1c}
+.rg-out .perte b{color:#b91c1c}
+.rg-out div:first-child{box-shadow:inset 3px 0 0 #16DB7F}
 .rg-out span{display:block;font-size:.76rem;color:#64748b;margin-top:.2rem}
 
 @media(max-width:760px){
  .rg-nums{grid-template-columns:repeat(2,1fr)}
+ .rg-out{grid-template-columns:1fr}
+ .rg-out b{font-size:clamp(1.35rem,6vw,1.5rem)}
+ .rg-scale{padding:0 .8rem}
+ .rg-node+.rg-node::before{left:50%;top:-.6rem;width:1px;height:.6rem}
+ .rg-node+.rg-node::after{left:50%;top:-.32rem;transform:translateX(-50%) rotate(135deg)}
  .rg-flow{grid-template-columns:1fr}
  .rg-in{grid-template-columns:1fr}
  .rg-scale,.rg-row{grid-template-columns:1fr}
@@ -182,7 +243,8 @@ def flux():
     return ('<figure class="rg" id="rg-flux">'
             '<figcaption class="rg-h"><p class="rg-k">Du carreau à la facture</p>'
             '<p class="rg-t">Les deux étapes où la marge se perd</p></figcaption>'
-            '<div class="rg-flow">' + n + '</div></figure>')
+            '<div class="rg-flow">' + n + '</div>'
+            '<p class="rg-lg"><i></i>Les deux étapes où la marge se perd</p></figure>')
 
 
 # --------------------------------------------------------------- 5. l'ecart
@@ -194,11 +256,11 @@ def ecart():
             '</p></figcaption>'
             '<div class="rg-calc"><div class="rg-in">'
             '<div class="rg-fld"><label for="rg-kg">Kilos achetés par jour</label>'
-            '<input type="number" id="rg-kg" value="1200" min="0" step="10"></div>'
+            '<input type="number" inputmode="decimal" id="rg-kg" value="1200" min="0" step="10"></div>'
             '<div class="rg-fld"><label for="rg-ec">Écart de poids constaté (%)</label>'
-            '<input type="number" id="rg-ec" value="1.5" min="0" max="20" step="0.1"></div>'
+            '<input type="number" inputmode="decimal" id="rg-ec" value="1.5" min="0" max="20" step="0.1"></div>'
             '<div class="rg-fld"><label for="rg-pr">Prix de vente au kilo (€)</label>'
-            '<input type="number" id="rg-pr" value="4.20" min="0" step="0.1"></div>'
+            '<input type="number" inputmode="decimal" id="rg-pr" value="4.20" min="0" step="0.1"></div>'
             '</div><div class="rg-out"><div><b id="rg-r1">75,60 €</b>'
             '<span>de marchandise non facturée par jour</span></div>'
             '<div class="perte"><b id="rg-r2">19 656 €</b>'
