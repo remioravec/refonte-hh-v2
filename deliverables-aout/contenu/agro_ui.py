@@ -71,10 +71,10 @@ CSS = """<style id="hh-agro-fonctionnalites">
 
 #hh-page .hhf .ui-body{display:grid;grid-template-columns:186px 1fr;min-height:236px}
 #hh-page .hhf .ui-side{border-right:1px solid var(--fl);background:#fff}
-#hh-page .hhf .ui-side a{display:flex;align-items:center;gap:9px;padding:9px 13px;font-size:.78rem;
+#hh-page .hhf .ui-side span{display:flex;align-items:center;gap:9px;padding:9px 13px;font-size:.78rem;
  color:#767676;border-bottom:1px solid #F4F6F8;text-decoration:none}
-#hh-page .hhf .ui-side a.on{background:var(--c2);color:#fff;font-weight:600}
-#hh-page .hhf .ui-side a b{width:12px;height:12px;background:currentColor;border-radius:3px;
+#hh-page .hhf .ui-side span.on{background:var(--c2);color:#fff;font-weight:600}
+#hh-page .hhf .ui-side span b{width:12px;height:12px;background:currentColor;border-radius:3px;
  flex:0 0 12px;opacity:.3}
 #hh-page .hhf .ui-main{background:var(--hd);padding:12px;min-width:0}
 #hh-page .hhf .ui-h{display:flex;align-items:center;justify-content:space-between;
@@ -234,8 +234,11 @@ def _top(actif):
 
 
 def _side(items, actif=0):
+    # <span> et non <a> : ce sont les entrees de menu d'une reproduction, pas
+    # des liens. Un <a> sans href pollue la navigation au clavier et le plan
+    # de liens de la page.
     return ('<div class="ui-side">' + "".join(
-        '<a%s><b></b>%s</a>' % (' class="on"' if k == actif else '', t)
+        '<span%s><b></b>%s</span>' % (' class="on"' if k == actif else '', t)
         for k, t in enumerate(items)) + '</div>')
 
 

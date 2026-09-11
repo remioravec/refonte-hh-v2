@@ -78,11 +78,18 @@ def main():
     c = w.get_raw("pages", PAGE)["content"]["raw"]
     print("page %d lue : %d octets" % (PAGE, len(c)))
 
-    # 1 — la section bento devient les ecrans
+    # 1 — la section bento devient les ecrans.
+    #     La borne de fin est le </section> qui ferme le bloc, PAS le <section>
+    #     suivant : entre les deux vivent des blocs <style> qui appartiennent a
+    #     la section d'apres. Couper au <section> suivant emportait la feuille
+    #     de style du quiz, dont les deux boutons d'appel a l'action.
     i = c.find('<section class="features-section"')
-    j = c.find('<section', i + 10)
+    j = c.find('</section>', i)
     if i < 0 or j < 0:
         raise SystemExit("ARRET — section des fonctionnalites introuvable")
+    j += len('</section>')
+    if '<section' in c[i + 10:j]:
+        raise SystemExit("ARRET — section imbriquee, la borne de fin est fausse")
     ancienne = c[i:j]
     entete = re.search(r'<div class="section-header">.*?</div>\s*(?=<div class="bento-grid")',
                        ancienne, re.S)
@@ -96,8 +103,17 @@ def main():
     i = c.find('<section class="hh2-roi"')
     if i < 0:
         raise SystemExit("ARRET — section du simulateur introuvable")
-    j = c.find('<section', i + 10)
-    c = c[:i] + c[j:]
+    j = c.find('</section>', i)
+    if j < 0 or '<section' in c[i + 10:j]:
+        raise SystemExit("ARRET — borne de fin du simulateur incertaine")
+    c = c[:i] + c[j + len('</section>'):]
+
+    # Le calculateur a son <script> POSE APRES son </section> : sans ses
+    # curseurs il levait une exception au chargement, ce qui coupait la suite
+    # du fichier. On le retire avec la section qu'il pilote.
+    for m in list(re.finditer(r'<script(?![^>]*src)[^>]*>(.*?)</script>', c, re.S))[::-1]:
+        if "sliderCA" in m.group(1) or "resDLC" in m.group(1):
+            c = c[:m.start()] + c[m.end():]
     for m in list(re.finditer(r'<style[^>]*>(.*?)</style>', c, re.S))[::-1]:
         sel = set(re.findall(r'\.([a-zA-Z][\w-]+)', m.group(1)))
         if sel and all(x.startswith("hh2-roi") for x in sel):
@@ -166,7 +182,53 @@ def main():
     c = re.sub(r'<link[^>]+cdnjs\.cloudflare\.com[^>]*>', "", c)
     print("icones Font Awesome remplacees par des SVG : %d" % n)
 
-    # 6 — ce qui ne peut pas vivre dans un artefact
+    # 6 — defauts releves en recette, corriges ici. Ils existent AUSSI sur la
+    #     page en ligne : ils sont signales au client, pas corriges en douce.
+    corrections = []
+
+    # a) le carrousel « Des resultats concrets » cherche deux fleches qui
+    #    n'ont jamais ete posees dans le markup. L'exception coupe le script
+    #    juste avant les clics sur les puces : la navigation est morte.
+    for quoi in ("prev", "next"):
+        av = "  %s.addEventListener('click'" % quoi
+        ap = "  if (%s) %s.addEventListener('click'" % (quoi, quoi)
+        if av in c:
+            c = c.replace(av, ap)
+            corrections.append("carrousel des cas clients : %s protege" % quoi)
+
+    # b) les liens sociaux ne portaient que des icones : aucun intitule pour
+    #    un lecteur d'ecran.
+    LIB = {"linkedin.com/in/timothy": "Timothy Jollivet sur LinkedIn",
+           "linkedin.com/in/nicolas": "Nicolas de Cerner sur LinkedIn",
+           "linkedin.com/in/maxence": "Maxence Flavigny sur LinkedIn",
+           "linkedin.com/company": "Hello Harel sur LinkedIn",
+           "youtube.com/@HelloHarel": "Hello Harel sur YouTube"}
+    for motif, lib in LIB.items():
+        for m in list(re.finditer(r'<a href="([^"]*%s[^"]*)"' % re.escape(motif), c)):
+            if 'aria-label' not in c[m.start():m.start() + 220]:
+                c = c[:m.end()] + ' aria-label="%s"' % lib + c[m.end():]
+                corrections.append("intitule accessible : %s" % lib)
+                break
+
+    # c) NON CORRIGE ICI, ET C'EST VOULU : la page enchaine deux fois un h2 sur
+    #    un h4, dans « Une equipe humaine » et dans le pied de page. Le CSS du
+    #    site stylise .team-info h4 et .footer-col h4 : renommer les balises
+    #    dans une maquette casserait la mise en forme sans rien prouver. La
+    #    correction est du ressort de la feuille de style du site. Signale.
+
+    # d) les puces du carrousel mesuraient 10 px : sous le minimum tactile.
+    #    La pastille garde sa taille, c'est la zone de clic qui grandit.
+    c += ("""<style id="hh-recette">
+#hh-page .hh2-cas-clients__dot{position:relative}
+#hh-page .hh2-cas-clients__dot::after{content:"";position:absolute;left:50%;top:50%;
+ transform:translate(-50%,-50%);width:24px;height:24px}
+</style>""")
+    corrections.append("puces du carrousel : zone de clic portee a 24 px")
+
+    for x in corrections:
+        print("   ·", x)
+
+    # 7 — ce qui ne peut pas vivre dans un artefact
     c = re.sub(r'<script[^>]+src="https?://(?!www\.helloharel\.com)[^"]+"[^>]*></script>', "", c)
     c = c.replace('href="https://www.helloharel.com/', 'href="/')
 
@@ -186,6 +248,19 @@ def main():
         pb.append("il reste une icone Font Awesome sans police")
     if html.count("<section") != html.count("</section>"):
         pb.append("sections non refermees")
+    # Un script qui s'adresse a un element absent leve une exception et coupe
+    # tout ce qui le suit dans le meme bloc. C'est le defaut le plus couteux
+    # et le plus silencieux d'une page assemblee a la main.
+    for m in re.finditer(r'<script(?![^>]*src)[^>]*>(.*?)</script>', html, re.S):
+        t = m.group(1)
+        for cible in set(re.findall(r"getElementById\(\s*['\"]([^'\"]+)", t)):
+            if ('id="%s"' % cible) not in html:
+                pb.append("script qui cible #%s, absent du document" % cible)
+        for sel in set(re.findall(r"querySelector\(\s*['\"]\.([A-Za-z][\w-]*)", t)):
+            if ('class="%s' % sel) not in html and (' %s"' % sel) not in html \
+               and (' %s ' % sel) not in html:
+                pb.append("script qui cible .%s, absent du document" % sel)
+
     for x in pb:
         print("   !", x)
     if not pb:
