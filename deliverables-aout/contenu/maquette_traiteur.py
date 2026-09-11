@@ -25,6 +25,7 @@ import sys
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, "/home/user/refonte-hh-v2/maillage-cro")
 sys.path.insert(0, ICI)
+import base64                 # noqa: E402
 import wp_common as w        # noqa: E402
 import agro_ebook            # noqa: E402
 import traiteur_ui           # noqa: E402
@@ -33,6 +34,27 @@ from maquette_agro import (convertir, POLICE, REPOS, SVG_FA,  # noqa: E402
 
 PAGE = 2839   # /agroalimentaire/traiteur/ — 2818 est le charcutier
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
+
+# La photo de hero de la page traiteur est celle d'une autre page : le fichier
+# s'appelle ERP-logiciel-pour-les-grossistes-en-lait.webp et montre un homme en
+# costume dans un entrepot de casiers de lait. Signale au client le 11/09.
+# La version B la remplace par une brigade qui dresse en serie des assiettes
+# identiques sur le passe — la production evenementielle, pas la logistique.
+# Photo Pexels 15671274, recadree en 1920x1080, WebP 133 ko.
+PHOTO = os.path.join(S, "erp-traiteur-dressage-assiettes-serie.webp")
+
+
+def hero_traiteur(c):
+    """Remplace le fond de la section hero. Version B seulement."""
+    m = re.search(r"(<section class=\"hero-section\"[^>]*url\(')([^']+)('\))", c)
+    if not m:
+        raise SystemExit("ARRET — fond de la section hero introuvable")
+    if not os.path.exists(PHOTO):
+        raise SystemExit("ARRET — photo de hero absente : %s" % PHOTO)
+    uri = ("data:image/webp;base64,"
+           + base64.b64encode(open(PHOTO, "rb").read()).decode())
+    return c[:m.start(2)] + uri + c[m.end(2):], m.group(2).split("/")[-1]
+
 
 ENTETE = ('<div class="section-header">'
           '<p class="overline">ERP Traiteur</p>'
@@ -70,6 +92,9 @@ def assembler(c, version):
         if '<section' in c[i + 10:j]:
             raise SystemExit("ARRET — section imbriquee, la borne de fin est fausse")
         c = c[:i] + traiteur_ui.section(ENTETE) + c[j:]
+
+        c, ancienne = hero_traiteur(c)
+        print("   · photo de hero remplacee (avant : %s)" % ancienne)
 
         k = c.rfind('<section class="cta-banner"')
         if k < 0:
