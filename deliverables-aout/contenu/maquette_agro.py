@@ -201,8 +201,12 @@ def controler(html):
             pb.append("feuille de style distante bloquee : " + m.group(1)[:70])
     if re.search(r'<i class="fa[sbr]? ', html):
         pb.append("il reste une icone Font Awesome sans police")
-    if html.count("<section") != html.count("</section>"):
-        pb.append("sections non refermees")
+    # « <section » en simple sous-chaine attrape « i<sections.length » dans un
+    # script : on exige une vraie balise.
+    ouvertes = len(re.findall(r"<section[\s>]", html))
+    fermees = len(re.findall(r"</section\s*>", html))
+    if ouvertes != fermees:
+        pb.append("sections non refermees : %d ouvertes, %d fermees" % (ouvertes, fermees))
     # Un script qui s'adresse a un element absent leve une exception et coupe
     # tout ce qui le suit dans le meme bloc. C'est le defaut le plus couteux
     # et le plus silencieux d'une page assemblee a la main.
