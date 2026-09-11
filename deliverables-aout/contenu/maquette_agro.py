@@ -285,7 +285,9 @@ def main():
     k = c.rfind('<section class="cta-banner"')
     if k < 0:
         k = c.rfind('</div>')
-    c = c[:k] + agro_ebook.section() + c[k:]
+    c = c[:k] + agro_ebook.section(
+        couverture=agro_ebook.en_data_uri(
+            os.path.join(S, "couverture-agroalimentaire.webp"))) + c[k:]
     print("section guide inseree")
 
     # 4 — les images, integrees

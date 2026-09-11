@@ -64,20 +64,26 @@ ENTETE = ('<div class="section-header">'
 
 GUIDE_TITRE = "Comment choisir un ERP traiteur"
 GUIDE_HUB = "/comparatifs/meilleur-erp-traiteur/"
-GUIDE_CHAPO = ("Cinq questions décident du choix, et aucune ne porte sur le nombre de "
+GUIDE_COUVERTURE = os.path.join(S, "couverture-traiteur.webp")
+GUIDE_CHAPO = ("Six questions décident du choix, et aucune ne porte sur le nombre de "
                "fonctionnalités. Chaque chapitre répond à l'une d'elles, puis le comparatif "
                "des ERP traiteur vous donne le classement.")
+# Le guide remplace le bloc « Pour approfondir » : il reprend d'abord SES
+# QUATRE LIENS, pour qu'aucun lien interne ne soit perdu au passage, puis
+# ajoute les deux questions qui manquaient avant le comparatif.
 GUIDE_CHAPITRES = [
+    ("Structurer vos nomenclatures multi-niveaux",
+     "/blog/logiciel-gestion-recette-multi-niveaux-traiteur/"),
     ("Le coût au couvert : ce qu'un logiciel de caisse ne calcule pas",
      "/blog/logiciel-calcul-cout-de-revient-traiteur/"),
-    ("Allergènes et DLC : le test qui élimine la moitié des candidats",
+    ("Les DLC courtes : le test qui élimine la moitié des candidats",
      "/blog/logiciel-tracabilite-dlc-traiteur/"),
+    ("Vendre vos plats cuisinés en grande distribution",
+     "/blog/logiciel-commande-grande-surface-traiteur/"),
     ("La facture d'événement, du devis au solde",
      "/blog/facture-traiteur/"),
     ("Ce que coûte vraiment un ERP, au-delà des licences",
      "/blog/roi-erp/"),
-    ("Cloud ou serveur : la question à trancher avant de comparer",
-     "/blog/erp-cloud-saas-vs-on-premise/"),
 ]
 
 
@@ -96,10 +102,26 @@ def assembler(c, version):
         c, ancienne = hero_traiteur(c)
         print("   · photo de hero remplacee (avant : %s)" % ancienne)
 
-        k = c.rfind('<section class="cta-banner"')
-        if k < 0:
-            k = c.rfind('</div>')
-        c = c[:k] + agro_ebook.section(GUIDE_TITRE, GUIDE_CHAPITRES, GUIDE_HUB, GUIDE_CHAPO) + c[k:]
+        # Le bloc « Pour approfondir » — un paragraphe dense de liens de blog
+        # separes par des points mediansy juste avant le pied de page — cede sa
+        # place au guide. Ses quatre liens sont repris dans le sommaire : on
+        # change la forme, on ne perd pas une seule destination.
+        guide = agro_ebook.section(GUIDE_TITRE, GUIDE_CHAPITRES, GUIDE_HUB, GUIDE_CHAPO,
+                                   agro_ebook.en_data_uri(GUIDE_COUVERTURE))
+        i = c.find("Pour approfondir")
+        if i < 0:
+            raise SystemExit("ARRET — bloc « Pour approfondir » introuvable")
+        deb = c.rfind("<section", 0, i)
+        fin = c.find("</section>", i) + len("</section>")
+        perdus = set(re.findall(r'href="([^"]+)"', c[deb:fin]))
+        repris = {u for _, u in GUIDE_CHAPITRES} | {GUIDE_HUB}
+        manquants = [u for u in perdus
+                     if u.replace("https://www.helloharel.com", "") not in repris]
+        if manquants:
+            raise SystemExit("ARRET — liens perdus au remplacement : %s" % manquants)
+        c = c[:deb] + guide + c[fin:]
+        print("   · bloc « Pour approfondir » remplace par le guide, %d liens repris"
+              % len(perdus))
 
     # les deux versions subissent le meme traitement d'artefact, sinon la
     # comparaison porterait sur le traitement et non sur la page
