@@ -228,7 +228,10 @@ def controler(html):
                 cible.lstrip(".#") in html)
             if present:
                 continue
-            protege = re.search(r"if\s*\(\s*!?\s*%s\s*[)&]" % re.escape(var), t) \
+            # La variable peut etre testee n'importe ou dans une condition, pas
+            # seulement juste apres le if : « if (a && b && r2) » protege r2.
+            protege = any(re.search(r"\b%s\b" % re.escape(var), cond)
+                          for cond in re.findall(r"if\s*\(([^)]*)\)", t)) \
                 or re.search(r"%s\s*&&" % re.escape(var), t)
             usage = re.search(r"\b%s\s*\." % re.escape(var), t)
             if usage and not protege:
