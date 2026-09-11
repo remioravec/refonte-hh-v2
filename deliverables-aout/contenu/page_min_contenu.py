@@ -51,6 +51,10 @@ TITLE = "MIN : les 17 Marchés d'Intérêt National et leur Gestion"
 DESC = ("Les 17 MIN de France dans un tableau triable, et ce que le carreau impose à "
         "la gestion d'un grossiste : poids réellement pesé, DLC du lot, stocks éclatés.")
 H1 = "MIN : les 17 marchés d'intérêt national, et ce qu'ils imposent à votre gestion"
+# La page est la MERE d'un silo de 17 filles, une par marche :
+#   /negoce/marches-interet-national/rungis/  … /agen/
+# Chaque fille reprendra la fiche de sa mere, l'enrichira de ses horaires, de
+# ses secteurs et de ses grossistes, et pointera vers la mere en retour.
 CHAPO = ("Rungis, Nantes, Rouen, Toulouse : dix-sept marchés d'intérêt national "
          "approvisionnent la France en produits frais. Voici où ils sont, et les trois "
          "contraintes que le travail sur un carreau impose à la gestion d'un grossiste.")

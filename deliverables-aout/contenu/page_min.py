@@ -26,6 +26,8 @@ sys.path.insert(0, ICI)
 import wp_common as w                # noqa: E402
 import page_min_contenu as C         # noqa: E402
 import page_min_visuels as V         # noqa: E402
+import min_fiches as F               # noqa: E402
+import min_data as D                 # noqa: E402
 import agro_ui as UI                 # noqa: E402
 from maquette_agro import convertir, POLICE, REPOS, SVG_FA, nettoyer, reparer, controler  # noqa: E402
 
@@ -40,18 +42,47 @@ def corps():
 
     # H2 1 — le tableau, module interactif au-dessus du 2e ecran.
     # Lien mere dans les 100 premiers mots.
+    t = D.totaux()
     a('<h2 id="liste">Les 17 MIN de France, marché par marché</h2>')
     a('<p>Un <a href="/blog/min/">marché d\'intérêt national</a> est un marché de gros au '
-      'statut public, réservé aux professionnels. Il y en a dix-sept en France, et si vous '
-      'travaillez sur l\'un d\'eux, votre gestion en subit les règles : c\'est précisément ce '
-      'qu\'un <a href="/negoce/">ERP négoce alimentaire</a> prend en charge. Commençons par '
-      'la carte.</p>')
-    a(V.tableau())
+      'statut public, réservé aux professionnels. Il y en a dix-sept en France, ils traitent '
+      '<strong>%s tonnes par an sur %.0f hectares</strong>, et si vous travaillez sur l\'un '
+      'd\'eux, votre gestion en subit les règles : c\'est précisément ce qu\'un '
+      '<a href="/negoce/">ERP négoce alimentaire</a> prend en charge. Commençons par la '
+      'carte.</p>' % (format(t["tonnage"], ",d").replace(",", " "), t["surface"]))
+    a('<figure class="mn" id="mn-fiches">'
+      '<figcaption class="mn-h"><p class="mn-k">Les 17 marchés</p>'
+      '<p class="mn-s">Superficie et tonnage : fédération des marchés de gros de France</p>'
+      '<p class="mn-t">Une fiche par marché, cliquez pour le détail</p></figcaption>'
+      + F.toutes() + '</figure>')
     a('<p>La commune ne suit pas toujours le nom : le MIN de Nantes est à Rezé, celui de Lyon '
       'à Corbas, et Rungis est à cheval sur Rungis et Chevilly-Larue. '
       '<span class="hha-src">Source : %s.</span></p>' % C.SOURCE)
 
-    # H2 2 — les contraintes + le flux
+    # H2 2 — ce que revele la comparaison : la donnee proprietaire
+    a('<h2 id="comparaison">Ce que révèle la comparaison des dix-sept</h2>')
+    a('<p>Mis sur la même grille, les marchés ne se ressemblent pas. '
+      '<strong>Rungis pèse %d %% du tonnage</strong> à lui seul. Mais rapporté à la surface, '
+      'ce n\'est pas le plus dense : Rungis traite %s tonnes par hectare quand Lyon-Corbas en '
+      'traite %s, soit <strong>trois fois plus sur douze hectares</strong>. La densité va de '
+      '%s à %s tonnes par hectare d\'un marché à l\'autre.</p>'
+      % (round(1862000 / t["tonnage"] * 100),
+         format(round(1862000 / 234), ",d").replace(",", " "),
+         format(round(305000 / 12), ",d").replace(",", " "),
+         format(round(86000 / 25.5), ",d").replace(",", " "),
+         format(round(305000 / 12), ",d").replace(",", " ")))
+    a(V.densites())
+    a('<p>Cette densité n\'est pas une curiosité : elle décrit la pression sur les quais. Plus '
+      'un marché est dense, moins la marchandise y stationne, et plus l\'écart entre le stock '
+      'théorique et le stock réel se creuse vite. C\'est le premier argument pour tenir ses '
+      '<a href="/negoce/stocks-multi-depots/">stocks multi-dépôts</a> en temps réel plutôt '
+      'qu\'à l\'inventaire.</p>')
+    a('<p class="hha-src">Superficie et tonnage : %s, relevés le %s. Quinze marchés sur '
+      'dix-sept publient les deux. Trois valeurs publiées nous paraissent douteuses et sont '
+      'signalées sur leur fiche plutôt que recopiées.</p>'
+      % (D.SOURCES["federation"][0], D.RELEVE))
+
+    # H2 3 — les contraintes + le flux
     a('<h2 id="carreau">Ce que le carreau impose à votre gestion</h2>')
     a('<p>Travailler sur un marché d\'intérêt national, ce n\'est pas acheter autrement : '
       'c\'est acheter dans des conditions que votre logiciel doit savoir encaisser. Trois '
@@ -174,7 +205,7 @@ def main():
     # --- le corps remplace la features-section
     contenu = corps()
     bloc = ('<section class="features-section" id="min"><div class="container">'
-            + V.CSS + FAQ_CSS + UI.CSS
+            + V.CSS + F.CSS + FAQ_CSS + UI.CSS
             + '<div class="hha-art" style="max-width:820px;margin:0 auto">'
             + contenu + '</div></div></section>')
     c = remplacer_section(c, "features-section", bloc)

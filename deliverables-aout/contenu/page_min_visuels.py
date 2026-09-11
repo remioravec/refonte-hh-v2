@@ -23,6 +23,7 @@ import os
 import page_min_contenu as C
 import blog_min_contenu as M     # la liste des 17 MIN, source unique
 import agro_ui as UI             # les briques du kit d'ecrans
+import min_data as M2
 
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
 
@@ -137,6 +138,20 @@ CSS = "<style id=\"hh-min-page\">" + _sc("""
 .mn-c em{display:block;font-style:normal;font-size:.8rem;color:#b91c1c;font-weight:600;
  margin-top:.5rem;padding-top:.5rem;border-top:1px dashed #fecaca}
 
+/* --- densites --- */
+.mn-dens{border:1px solid #e2e8f0;border-radius:16px;background:#fff;overflow:hidden;
+ padding:.5rem 0 0}
+.mn-dr{display:grid;grid-template-columns:150px 1fr 78px;align-items:center;gap:.7rem;
+ padding:.4rem 1rem}
+.mn-dn{font-size:.82rem;font-weight:600;color:#0f172a;min-width:0;overflow:hidden;
+ text-overflow:ellipsis;white-space:nowrap}
+.mn-dt{display:block;height:12px;border-radius:99px;background:#f1f5f9;overflow:hidden}
+.mn-dt i{display:block;height:100%;border-radius:99px;
+ background:linear-gradient(90deg,#00B1F5,#0079b8)}
+.mn-dv{font-size:.8rem;font-weight:700;color:#0f172a;text-align:right;
+ font-variant-numeric:tabular-nums}
+.mn-dens .mn-cap{margin-top:.5rem !important}
+
 /* --- chronologie du lot --- */
 .mn-tl{border:1px solid #e2e8f0;border-radius:16px;background:#fff;overflow:hidden}
 .mn-step{display:grid;grid-template-columns:64px 1fr;gap:0;border-bottom:1px solid #f1f5f9;
@@ -156,6 +171,8 @@ CSS = "<style id=\"hh-min-page\">" + _sc("""
  .mn-node+.mn-node::after{left:50%;top:-.32rem;transform:translateX(-50%) rotate(135deg)}
  .mn-tab{font-size:.8rem}
  .mn-tab th,.mn-tab td{padding:.5rem .6rem}
+ .mn-dr{grid-template-columns:1fr 62px;row-gap:.2rem}
+ .mn-dn{grid-column:1 / -1}
 }
 """) + "</style>"
 
@@ -220,6 +237,29 @@ def contraintes():
             + '<div class="mn-tri">' + c + '</div>'
             + '<div class="mn-flow">' + n + '</div>'
             '<p class="mn-lg"><i></i>Les deux étapes où la marge se perd</p></figure>')
+
+
+def densites():
+    """Barres de densite : le tonnage rapporte a la surface, marche par marche.
+
+    C'est le chiffre que personne ne publie — il se calcule, il ne se recopie pas.
+    """
+    d = sorted(M2.avec_donnees(), key=lambda m: -(m[5] / m[4]))
+    maxi = d[0][5] / d[0][4]
+    lignes = ""
+    for m in d:
+        v = m[5] / m[4]
+        lignes += ('<div class="mn-dr"><span class="mn-dn">%s</span>'
+                   '<span class="mn-dt"><i style="width:%.1f%%"></i></span>'
+                   '<span class="mn-dv">%s</span></div>'
+                   % (m[1], v / maxi * 100, format(round(v), ",d").replace(",", " ")))
+    return ('<figure class="mn" id="mn-dens">'
+            + _tete("Tonnes par hectare", "La densité va du simple au sept fois plus",
+                    "Calculé sur les 15 marchés qui publient les deux chiffres")
+            + '<div class="mn-dens">' + lignes
+            + '<p class="mn-cap">Tonnage annuel rapporté à la superficie. '
+              'Source des deux données : fédération des marchés de gros de France, '
+              'relevé le 11 septembre 2026.</p></div></figure>')
 
 
 def chronologie():
