@@ -85,10 +85,12 @@ CSS = """<style id="hh-agro-guide">
 </style>"""
 
 
-def section():
+def section(titre="Comment choisir un ERP agroalimentaire", chapitres=None, hub=HUB,
+            chapo=None):
+    chapitres = chapitres or CHAPITRES
     som = "".join(
         '<li><a href="%s"><b>%02d</b><span>%s</span></a></li>' % (u, k + 1, t)
-        for k, (t, u) in enumerate(CHAPITRES))
+        for k, (t, u) in enumerate(chapitres))
     return (CSS + '<section class="hhg" id="guide-erp-agroalimentaire"><div class="container">'
             '<div class="hhg-in">'
             '<div class="hhg-book"><div class="hhg-cover" role="img" '
@@ -98,12 +100,12 @@ def section():
             '<em>5 chapitres · édition 2026</em></div></div>'
             '<div class="hhg-txt">'
             '<p class="hhg-kick">Le guide</p>'
-            '<h2>Comment choisir un ERP agroalimentaire</h2>'
+            '<h2>' + titre + '</h2>'
             '<p class="hhg-chapo">Cinq questions décident du choix, et aucune ne porte sur le '
             'nombre de fonctionnalités. Chaque chapitre répond à l\'une d\'elles, chiffres et '
             'sources à l\'appui, puis le comparatif par métier vous donne le classement.</p>'
             '<ul class="hhg-som">' + som + '</ul>'
-            '<a class="hhg-cta" href="' + HUB + '">Ouvrir le comparatif par métier →</a>'
+            '<a class="hhg-cta" href="' + hub + '">Ouvrir le comparatif par métier →</a>'
             '<span class="hhg-note">Lecture libre, sans formulaire. '
             'Comparatifs mis à jour en 2026.</span>'
             '</div></div></div></section>')

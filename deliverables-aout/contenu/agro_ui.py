@@ -486,19 +486,21 @@ COURTS = ["Traçabilité des lots", "DLC et DLUO", "Coût de revient",
           "Stocks sensibles", "Conformité HACCP"]
 
 
-def section(entete):
-    """entete : le bloc .section-header existant, repris tel quel.
+def section(entete, blocs=None, courts=None):
+    """entete : le bloc .section-header, blocs et courts : le contenu du metier.
 
     Les cinq fonctionnalites tiennent dans un seul ecran de page : on choisit
     celle qu'on veut voir au lieu de derouler cinq fois la meme mise en page.
     C'est ce qui retient la session plutot que de la rendre a la SERP.
     """
+    blocs = blocs or BLOCS
+    courts = courts or COURTS
     radios, onglets, panneaux = [], [], []
-    for k, (titre, chapo, points, fabrique) in enumerate(BLOCS):
+    for k, (titre, chapo, points, fabrique) in enumerate(blocs):
         n = k + 1
         radios.append('<input class="hhf-pick" type="radio" name="hhf-onglet" id="hhf-o%d"%s>'
                       % (n, ' checked' if k == 0 else ''))
-        onglets.append('<label for="hhf-o%d"><b>%02d</b>%s</label>' % (n, n, COURTS[k]))
+        onglets.append('<label for="hhf-o%d"><b>%02d</b>%s</label>' % (n, n, courts[k]))
         pts = "".join("<li>%s%s</li>" % (_check(), p) for p in points)
         panneaux.append(
             '<div class="hhf-row">'
@@ -511,6 +513,6 @@ def section(entete):
             + '<div class="hhf">' + "".join(radios)
             + '<div class="hhf-bar">' + "".join(onglets) + '</div>'
             + '<div class="hhf-panels">' + "".join(panneaux) + '</div>'
-            + '<p class="hhf-aide">Cinq fonctionnalités, cinq écrans réels du logiciel. '
-              'Choisissez la vôtre.</p>'
+            + '<p class="hhf-aide">%d fonctionnalités, %d écrans réels du logiciel. '
+              'Choisissez la vôtre.</p>' % (len(blocs), len(blocs))
             + '</div></div></section>')
