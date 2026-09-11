@@ -22,7 +22,7 @@ C = {"c": "#2CBAE7", "c2": "#36BDE8", "hd": "#ECF0F5", "fl": "#D3D6D9",
      "rd": "#DD4B39", "al": "#F2DEDE"}
 
 CSS = """<style id="hh-agro-fonctionnalites">
-#hh-page .hhf{display:flex;flex-direction:column;gap:5rem !important;margin:0 !important}
+#hh-page .hhf{display:block;margin:0 !important}
 #hh-page .hhf-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
  gap:2.75rem;align-items:center}
 /* rangee inversee : la capture reste dans la colonne large, sinon les tableaux
@@ -96,7 +96,10 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf .ui-ring{width:96px;height:96px;border-radius:50%%;flex:0 0 96px;position:relative}
 #hh-page .hhf .ui-ring::after{content:"";position:absolute;inset:26px;background:#fff;border-radius:50%%}
 #hh-page .hhf .ui-leg{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;font-size:.72rem}
-#hh-page .hhf .ui-leg div{display:flex;align-items:center;gap:6px}
+#hh-page .hhf .ui-leg div{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+/* en colonne etroite le libelle passe sur sa propre ligne : il etait reduit
+   a zero par le chiffre et le pourcentage, et disparaissait completement */
+#hh-page .hhf .ui-leg u{flex:1 1 7rem}
 #hh-page .hhf .ui-leg i{width:8px;height:8px;border-radius:50%%;flex:0 0 8px}
 #hh-page .hhf .ui-leg u{text-decoration:none;color:#3C8DBC;flex:1;min-width:0;overflow:hidden;
  text-overflow:ellipsis;white-space:nowrap}
@@ -144,7 +147,6 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf .ui-btn.pr{background:var(--bl);border-color:var(--bl);color:#fff}
 
 @media(max-width:980px){
- #hh-page .hhf{gap:3.5rem !important}
  #hh-page .hhf-row{grid-template-columns:1fr;gap:1.6rem}
  #hh-page .hhf-row.rev>.hhf-txt{order:0}
  #hh-page .hhf .ui-body{grid-template-columns:1fr}
@@ -163,6 +165,50 @@ CSS = """<style id="hh-agro-fonctionnalites">
  #hh-page .hhf .ui-ring::after{inset:21px}
  #hh-page .hhf .ui-leg{width:100%%;font-size:.68rem}
  #hh-page .hhf .ui-main,#hh-page .hhf .ui-in{padding:9px}
+}
+
+/* ------------------------------------------------------- module a onglets */
+/* Le module marche SANS JavaScript : ce sont des boutons radio caches et des
+   labels. Sans CSS, les cinq panneaux s'affichent a la suite — rien ne
+   disparait jamais du document, ni pour un moteur, ni pour un lecteur
+   d'ecran. Aucun contenu n'est injecte au clic. */
+#hh-page .hhf-pick{position:absolute;opacity:0;width:1px;height:1px;margin:-1px;
+ overflow:hidden;clip-path:inset(50%%);pointer-events:none}
+#hh-page .hhf-bar{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:thin;
+ padding:.35rem;margin:0 0 2.25rem !important;background:#f1f5f9;border-radius:999px}
+#hh-page .hhf-bar label{display:flex;align-items:center;gap:.55rem;white-space:nowrap;
+ padding:.72rem 1.15rem;border-radius:999px;font-size:.93rem;font-weight:600;color:#475569;
+ cursor:pointer;transition:background .18s ease,color .18s ease;user-select:none;margin:0 !important}
+#hh-page .hhf-bar label:hover{background:#e2e8f0;color:#0f172a}
+#hh-page .hhf-bar label b{font-variant-numeric:tabular-nums;font-size:.72rem;font-weight:800;
+ color:#94a3b8;letter-spacing:.04em}
+#hh-page .hhf-panel{display:none}
+#hh-page .hhf-panel.on{display:grid}
+#hh-page .hhf-pick:nth-of-type(1):checked ~ .hhf-bar label[for="hhf-o1"]{background:#00B1F5;color:#fff;box-shadow:0 8px 18px -10px rgba(0,177,245,.9)}
+#hh-page .hhf-pick:nth-of-type(1):checked ~ .hhf-bar label[for="hhf-o1"] b{color:rgba(255,255,255,.8)}
+#hh-page .hhf-pick:nth-of-type(1):checked ~ .hhf-panels > .hhf-row:nth-child(1){display:grid}
+#hh-page .hhf-pick:nth-of-type(1):focus-visible ~ .hhf-bar label[for="hhf-o1"]{outline:3px solid #0f172a;outline-offset:2px}
+#hh-page .hhf-pick:nth-of-type(2):checked ~ .hhf-bar label[for="hhf-o2"]{background:#00B1F5;color:#fff;box-shadow:0 8px 18px -10px rgba(0,177,245,.9)}
+#hh-page .hhf-pick:nth-of-type(2):checked ~ .hhf-bar label[for="hhf-o2"] b{color:rgba(255,255,255,.8)}
+#hh-page .hhf-pick:nth-of-type(2):checked ~ .hhf-panels > .hhf-row:nth-child(2){display:grid}
+#hh-page .hhf-pick:nth-of-type(2):focus-visible ~ .hhf-bar label[for="hhf-o2"]{outline:3px solid #0f172a;outline-offset:2px}
+#hh-page .hhf-pick:nth-of-type(3):checked ~ .hhf-bar label[for="hhf-o3"]{background:#00B1F5;color:#fff;box-shadow:0 8px 18px -10px rgba(0,177,245,.9)}
+#hh-page .hhf-pick:nth-of-type(3):checked ~ .hhf-bar label[for="hhf-o3"] b{color:rgba(255,255,255,.8)}
+#hh-page .hhf-pick:nth-of-type(3):checked ~ .hhf-panels > .hhf-row:nth-child(3){display:grid}
+#hh-page .hhf-pick:nth-of-type(3):focus-visible ~ .hhf-bar label[for="hhf-o3"]{outline:3px solid #0f172a;outline-offset:2px}
+#hh-page .hhf-pick:nth-of-type(4):checked ~ .hhf-bar label[for="hhf-o4"]{background:#00B1F5;color:#fff;box-shadow:0 8px 18px -10px rgba(0,177,245,.9)}
+#hh-page .hhf-pick:nth-of-type(4):checked ~ .hhf-bar label[for="hhf-o4"] b{color:rgba(255,255,255,.8)}
+#hh-page .hhf-pick:nth-of-type(4):checked ~ .hhf-panels > .hhf-row:nth-child(4){display:grid}
+#hh-page .hhf-pick:nth-of-type(4):focus-visible ~ .hhf-bar label[for="hhf-o4"]{outline:3px solid #0f172a;outline-offset:2px}
+#hh-page .hhf-pick:nth-of-type(5):checked ~ .hhf-bar label[for="hhf-o5"]{background:#00B1F5;color:#fff;box-shadow:0 8px 18px -10px rgba(0,177,245,.9)}
+#hh-page .hhf-pick:nth-of-type(5):checked ~ .hhf-bar label[for="hhf-o5"] b{color:rgba(255,255,255,.8)}
+#hh-page .hhf-pick:nth-of-type(5):checked ~ .hhf-panels > .hhf-row:nth-child(5){display:grid}
+#hh-page .hhf-pick:nth-of-type(5):focus-visible ~ .hhf-bar label[for="hhf-o5"]{outline:3px solid #0f172a;outline-offset:2px}
+#hh-page .hhf-panels > .hhf-row{display:none}
+#hh-page .hhf-aide{margin:2rem 0 0 !important;font-size:.9rem;color:#64748b;text-align:center}
+@media(max-width:700px){
+ #hh-page .hhf-bar{border-radius:16px}
+ #hh-page .hhf-bar label{padding:.6rem .85rem;font-size:.86rem}
 }
 </style>""" % C
 
@@ -275,7 +321,7 @@ def ecran_dlc():
         + _side(["Tableau de bord", "Produits stockés", "Tout le stock", "Emplacements",
                  "Inventaires", "Transferts"], 2)
         + '<div class="ui-main"><div class="ui-h"><span>Dates limites</span><em>+ ⎙</em></div>'
-        '<div class="ui-grid">'
+        '<div class="ui-grid one">'
         + _card("Stratégie de prélèvement appliquée",
                 '<span class="ui-donut">' + _ring([("#FA8F92", 71), ("#FFDDA8", 29)])
                 + _leg([("#FA8F92", "FEFO — au plus près de la DLC", "71 %", "34"),
@@ -301,7 +347,7 @@ def ecran_cout():
         + _side(["Tableau de bord", "Ordres de fabrication", "Nomenclatures", "Recettes",
                  "Coût de revient", "Rendements"], 4)
         + '<div class="ui-main"><div class="ui-h"><span>Coût de revient — 0142 Terrine</span>'
-        '<em>⎙</em></div><div class="ui-grid">'
+        '<em>⎙</em></div><div class="ui-grid one">'
         + _card("Décomposition du coût au kilo",
                 '<span class="ui-donut">'
                 + _ring([("#FA8F92", 61), ("#3C8DBC", 19), ("#FFDDA8", 11), ("#3ECF8E", 9)])
@@ -433,16 +479,35 @@ BLOCS = [
 ]
 
 
+COURTS = ["Traçabilité des lots", "DLC et DLUO", "Coût de revient",
+          "Stocks sensibles", "Conformité HACCP"]
+
+
 def section(entete):
-    """entete : le bloc .section-header existant, repris tel quel."""
-    rows = []
+    """entete : le bloc .section-header existant, repris tel quel.
+
+    Les cinq fonctionnalites tiennent dans un seul ecran de page : on choisit
+    celle qu'on veut voir au lieu de derouler cinq fois la meme mise en page.
+    C'est ce qui retient la session plutot que de la rendre a la SERP.
+    """
+    radios, onglets, panneaux = [], [], []
     for k, (titre, chapo, points, fabrique) in enumerate(BLOCS):
+        n = k + 1
+        radios.append('<input class="hhf-pick" type="radio" name="hhf-onglet" id="hhf-o%d"%s>'
+                      % (n, ' checked' if k == 0 else ''))
+        onglets.append('<label for="hhf-o%d"><b>%02d</b>%s</label>' % (n, n, COURTS[k]))
         pts = "".join("<li>%s%s</li>" % (_check(), p) for p in points)
-        txt = ('<div class="hhf-txt">'
-               '<p class="hhf-num"><b>%02d</b>Fonctionnalité</p>'
-               '<h3>%s</h3><p>%s</p><ul class="hhf-pts">%s</ul></div>'
-               % (k + 1, titre, chapo, pts))
-        rows.append('<div class="hhf-row%s">%s<div class="hhf-shot">%s</div></div>'
-                    % (" rev" if k % 2 else "", txt, fabrique()))
+        panneaux.append(
+            '<div class="hhf-row">'
+            '<div class="hhf-txt"><p class="hhf-num"><b>%02d</b>Fonctionnalité</p>'
+            '<h3>%s</h3><p>%s</p><ul class="hhf-pts">%s</ul></div>'
+            '<div class="hhf-shot">%s</div></div>' % (n, titre, chapo, pts, fabrique()))
+
     return (CSS + '<section class="features-section" id="fonctionnalites"><div class="container">'
-            + entete + '<div class="hhf">' + "".join(rows) + '</div></div></section>')
+            + entete
+            + '<div class="hhf">' + "".join(radios)
+            + '<div class="hhf-bar">' + "".join(onglets) + '</div>'
+            + '<div class="hhf-panels">' + "".join(panneaux) + '</div>'
+            + '<p class="hhf-aide">Cinq fonctionnalités, cinq écrans réels du logiciel. '
+              'Choisissez la vôtre.</p>'
+            + '</div></div></section>')

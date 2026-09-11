@@ -91,14 +91,34 @@ def main():
     c = c[:i] + agro_ui.section(entete.group(0)) + c[j:]
     print("bento remplace : %d octets -> %d octets" % (len(ancienne), len(agro_ui.section(entete.group(0)))))
 
-    # 2 — le guide, juste avant la banniere finale
+    # 2 — le simulateur de ROI est retire : apres le quiz, on enchaine
+    #     directement sur « a propos ». Son bloc de style dedie part avec lui.
+    i = c.find('<section class="hh2-roi"')
+    if i < 0:
+        raise SystemExit("ARRET — section du simulateur introuvable")
+    j = c.find('<section', i + 10)
+    c = c[:i] + c[j:]
+    for m in list(re.finditer(r'<style[^>]*>(.*?)</style>', c, re.S))[::-1]:
+        sel = set(re.findall(r'\.([a-zA-Z][\w-]+)', m.group(1)))
+        if sel and all(x.startswith("hh2-roi") for x in sel):
+            c = c[:m.start()] + c[m.end():]
+    # Les regles CSS du simulateur survivent dans la grande feuille commune :
+    # sans markup pour les porter, elles sont inertes. Ce qui compte, c'est
+    # qu'il ne reste aucune trace dans le corps de la page.
+    hors_css = re.sub(r'<style[^>]*>.*?</style>', "", c, flags=re.S)
+    reste = len(re.findall(r'hh2-roi', hors_css))
+    print("simulateur de ROI retire (%d reference(s) dans le corps)" % reste)
+    if reste:
+        raise SystemExit("ARRET — il reste des references au simulateur dans le corps")
+
+    # 3 — le guide, juste avant la banniere finale
     k = c.rfind('<section class="cta-banner"')
     if k < 0:
         k = c.rfind('</div>')
     c = c[:k] + agro_ebook.section() + c[k:]
     print("section guide inseree")
 
-    # 3 — les images, integrees
+    # 4 — les images, integrees
     urls = set(re.findall(r'(?:src|data-src)="(https?://[^"]+\.(?:png|jpe?g|webp|svg|gif))"', c))
     urls |= set(re.findall(r"url\('?(https?://[^)']+\.(?:png|jpe?g|webp|svg|gif))'?\)", c))
     urls |= set(re.findall(r"url\(&#039;(https?://[^&]+\.(?:png|jpe?g|webp|svg|gif))&#039;\)", c))
@@ -113,7 +133,7 @@ def main():
             print("   ! image non recuperee :", u[:90])
     print("images integrees : %d (%d en echec)" % (ok, ko))
 
-    # 4 — Font Awesome est servi par un CDN que la politique de securite des
+    # 5 — Font Awesome est servi par un CDN que la politique de securite des
     #     artefacts refuse pour les feuilles de style. Les 34 icones sont donc
     #     remplacees par des SVG en ligne, qui ne dependent de personne.
     SVG = {
@@ -146,7 +166,7 @@ def main():
     c = re.sub(r'<link[^>]+cdnjs\.cloudflare\.com[^>]*>', "", c)
     print("icones Font Awesome remplacees par des SVG : %d" % n)
 
-    # 5 — ce qui ne peut pas vivre dans un artefact
+    # 6 — ce qui ne peut pas vivre dans un artefact
     c = re.sub(r'<script[^>]+src="https?://(?!www\.helloharel\.com)[^"]+"[^>]*></script>', "", c)
     c = c.replace('href="https://www.helloharel.com/', 'href="/')
 
