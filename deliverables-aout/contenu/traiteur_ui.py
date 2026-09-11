@@ -2,16 +2,11 @@
 """
 Les cinq fonctionnalites de la page traiteur, avec leur ecran du logiciel.
 
-CONSTAT DU 11/09/2026 : la section fonctionnalites de /agroalimentaire/traiteur/
-n'est pas celle d'un traiteur. L'overline dit « ERP Charcutier », le titre dit
-« L'ERP concu pour la charcuterie », et les cinq cartes parlent de numeros
-veterinaires, de dates d'abattage, de poids apres cuisson et de pertes au
-tranchage. C'est le bloc charcutier repris tel quel, sans meme renommer les
-titres. Meme cause que sur glacier et negoce : un gabarit d'un autre metier.
-
-Le contenu ci-dessous est celui du metier : la fiche technique au gramme par
-convive, le devis d'evenement, le cout au couvert, les quatorze allergenes et
-le chargement par tournee.
+Les cinq fonctionnalites sont celles que la page porte deja — planning
+d'evenements, achats et stocks evenementiels, cout et marge par evenement,
+tracabilite et HACCP, devis et fiches techniques. Seule la forme change : un
+module a onglets et un ecran du logiciel par fonctionnalite, au lieu d'une
+grille de cartes de texte.
 
 Le kit graphique — palette, briques, CSS — est celui de agro_ui : une seule
 mise en forme pour tout le parc.
@@ -113,6 +108,32 @@ def ecran_cout():
         "Données de démonstration.")
 
 
+def ecran_achats():
+    corps = (
+        _top("Produits") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Besoins par événement", "Liste d'approvisionnement",
+                 "Commandes fournisseurs", "Stock", "Dates limites"], 1)
+        + '<div class="ui-main"><div class="ui-h">'
+        '<span>Besoins à couvrir — semaine 38</span><em>+ ⎙</em></div>'
+        '<div class="ui-grid one">'
+        + _card("Déduits des événements confirmés",
+                _tab(["Matière", "Événements", "^Besoin", "^En stock", "^À commander", "DLC du stock"],
+                     [["!@0311 — Saumon fumé", "@EVT-041, EVT-044", "^18,4 kg", "^6,0 kg",
+                       "^12,4 kg", "14/09/2026"],
+                      ["@0407 — Fromages affinés", "@EVT-041", "^7,2 kg", "^0 kg", "^7,2 kg", "—"],
+                      ["~@0290 — Effiloché de porc", "@EVT-041, EVT-052", "^11,0 kg", "^11,0 kg",
+                       "^0 kg", "22/09/2026"],
+                      ["@0512 — Base mignardises", "@EVT-041, EVT-044", "^24,0 kg", "^30,0 kg",
+                       "^0 kg", "05/10/2026"]]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Besoins par événement de Hello Harel : quatre matières, le "
+        "besoin déduit des prestations confirmées, le stock disponible et ce qui reste à commander",
+        corps, "Hello Harel — Achats",
+        "Le besoin vient des événements confirmés, pas d'une estimation. La ligne rouge périme "
+        "avant la prestation. Données de démonstration.")
+
+
 def ecran_allergenes():
     corps = (
         _top("Qualité") + '<div class="ui-body">'
@@ -168,29 +189,57 @@ def ecran_logistique():
         "Données de démonstration.")
 
 
+def ecran_tracabilite():
+    corps = (
+        '<div class="ui-modal">'
+        '<p>Contrôle à réception<em>Arrivage PUR/2609214 — pour EVT/2609-041</em></p>'
+        '<div class="ui-warn">Un point de contrôle est hors tolérance : la validation est bloquée.</div>'
+        + _tab(["", "Point de contrôle", "Attendu", "Relevé", "Statut"],
+               [["✓", "@Température du camion", "≤ 4 °C", "3,1 °C",
+                 '<span class="ui-pill a">Conforme</span>'],
+                ["~✓", "@Numéro de lot fournisseur", "Renseigné", "F-88417",
+                 '<span class="ui-pill a">Conforme</span>'],
+                ["!✕", "@DLC restante à réception", "≥ 8 jours", "5 jours",
+                 '<span class="ui-pill b">Hors tolérance</span>']])
+        + '<div class="ui-opts">'
+        '<span><i class="on"></i>Refuser le lot, éditer la non-conformité et prévenir le '
+        'fournisseur</span>'
+        '<span><i></i>Accepter sous dérogation, avec motif et signature du responsable</span>'
+        '</div>'
+        '<div class="ui-acts"><span class="ui-btn">Annuler</span>'
+        '<span class="ui-btn pr">Enregistrer ➜</span></div>'
+        '</div>')
+    return _fig(
+        "Reproduction de l'écran Contrôle à réception de Hello Harel : trois points de contrôle "
+        "sur un arrivage destiné à une prestation, dont un hors tolérance",
+        corps, "Hello Harel — Qualité",
+        "Le lot est rattaché à la prestation qu'il sert. L'enregistrement est daté et nominatif. "
+        "Données de démonstration.")
+
+
 # ------------------------------------------------------------------- montage
-COURTS = ["Fiches techniques", "Devis et événements", "Coût au couvert",
-          "Allergènes et INCO", "Chargement et livraison"]
+COURTS = ["Planning des événements", "Achats et stocks", "Coût et marge",
+          "Traçabilité et HACCP", "Devis et fiches techniques"]
 
 BLOCS = [
-    ("Fiches techniques et grammages",
-     "La recette se saisit au gramme par convive. Passez de 85 à 260 couverts et tout se "
-     "recalcule : les quantités, les achats à lancer et le coût de la prestation.",
-     ["Grammage par couvert, décliné par nombre de convives",
-      "Coût de la fiche technique mis à jour au prix d'achat réel",
-      "Besoins d'achat déduits des événements confirmés"],
-     ecran_fiches),
-
-    ("Devis, commandes et événements",
-     "Le devis, la commande et la prestation sont le même objet, suivi par date d'événement. "
-     "Vous voyez la semaine qui arrive avec ses couverts, ses montants et ce qui n'est pas "
-     "encore confirmé.",
-     ["Planning par date de prestation, pas par date de commande",
+    ("Gestion des événements multiples",
+     "Le planning se lit par date de prestation, pas par date de commande. Vous voyez la semaine "
+     "qui arrive avec ses couverts, ses montants et ce qui n'est pas encore confirmé, et les "
+     "conflits de personnel se voient avant d'être un problème.",
+     ["Planning multi-événements par date de prestation",
       "Options, devis en attente et confirmations distingués",
-      "Relance automatique des devis sans réponse"],
+      "Besoins en personnel et en matières anticipés par événement"],
      ecran_evenements),
 
-    ("Coût de revient au couvert",
+    ("Achats et stocks événementiels",
+     "Le besoin d'achat est déduit des prestations confirmées, pas estimé. Le stock porte ses "
+     "dates limites, et l'alerte tombe quand un lot périme avant la prestation qu'il devait servir.",
+     ["Besoins déduits des événements confirmés",
+      "Alertes DLC sur les matières sensibles",
+      "Liste d'approvisionnement générée depuis le planning"],
+     ecran_achats),
+
+    ("Coûts et marges par événement",
      "Denrées, personnel, location de matériel, transport : le coût d'un couvert se décompose "
      "poste par poste. La marge de chaque prestation se lit avant de facturer, pas au bilan.",
      ["Coût au couvert et à la prestation",
@@ -198,21 +247,22 @@ BLOCS = [
       "Marge comparée à votre seuil, événement par événement"],
      ecran_cout),
 
-    ("Allergènes et étiquetage INCO",
-     "Les quatorze allergènes remontent des lots de matières premières jusqu'à la recette et "
-     "jusqu'au menu remis au client. Vous ne les ressaisissez pas, et vous ne les oubliez pas.",
-     ["Remontée automatique depuis le lot fournisseur",
-      "Distinction ingrédient et traces possibles",
-      "Menu client et étiquettes générés depuis la même source"],
-     ecran_allergenes),
+    ("Traçabilité et conformité HACCP",
+     "Chaque lot est rattaché à la prestation qu'il sert. Les contrôles à réception sont "
+     "enregistrés, datés et nominatifs, et un lot hors tolérance bloque la validation au lieu "
+     "de passer inaperçu.",
+     ["Lot rattaché à l'événement livré",
+      "Points de contrôle paramétrables par matière",
+      "Documents sanitaires générés pour les contrôles"],
+     ecran_tracabilite),
 
-    ("Production, chargement et livraison",
-     "Le planning de production se cale sur les dates d'événement, et le camion se charge dans "
-     "l'ordre inverse des livraisons. Les bons et les étiquettes de bac sortent dans cet ordre-là.",
-     ["Planning de production par date de prestation",
-      "Ordre de chargement inverse de l'ordre de livraison",
-      "Bons de livraison et étiquettes de bac édités ensemble"],
-     ecran_logistique),
+    ("Devis et fiches techniques",
+     "La recette se saisit au gramme par convive. Passez de 85 à 260 couverts et tout se "
+     "recalcule : les quantités, les achats à lancer, le coût de la prestation et le devis.",
+     ["Grammage par couvert, décliné par nombre de convives",
+      "Coût de la fiche technique au prix d'achat réel",
+      "Devis chiffré depuis la fiche technique, marge affichée"],
+     ecran_fiches),
 ]
 
 

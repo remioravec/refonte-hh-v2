@@ -10,11 +10,10 @@ Deux maquettes de /agroalimentaire/traiteur/, pour comparaison :
 MAQUETTES, PAS MISE EN LIGNE. La page 2818 est protegee par la regle 0 :
 ce script la lit, il ne l'ecrit jamais.
 
-CE QUE LA VERSION A DONNE A VOIR, ET QUI EST UN DEFAUT : sa section
-fonctionnalites est celle du charcutier. Overline « ERP Charcutier », titre
-« L'ERP concu pour la charcuterie », cartes sur les numeros veterinaires, les
-dates d'abattage et les pertes au tranchage. La version B la remplace par le
-contenu du metier.
+La version B reprend les CINQ MEMES fonctionnalites que la page porte deja —
+planning d'evenements, achats et stocks evenementiels, cout et marge par
+evenement, tracabilite et HACCP, devis et fiches techniques. Seule la forme
+change : un module a onglets et un ecran du logiciel par fonctionnalite.
 
 Usage :  python3 maquette_traiteur.py
 """
@@ -32,13 +31,13 @@ import traiteur_ui           # noqa: E402
 from maquette_agro import (convertir, POLICE, REPOS, SVG_FA,  # noqa: E402
                            nettoyer, reparer, controler, remplacer_video)
 
-PAGE = 2818
+PAGE = 2839   # /agroalimentaire/traiteur/ — 2818 est le charcutier
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
 
 ENTETE = ('<div class="section-header">'
           '<p class="overline">ERP Traiteur</p>'
           '<h2>L\'ERP conçu pour les traiteurs</h2>'
-          '<p>Fiches techniques au couvert, événements, coût de revient, allergènes</p>'
+          '<p>Événements, fiches techniques, coûts et conformité</p>'
           '</div>')
 
 GUIDE_TITRE = "Comment choisir un ERP traiteur"
