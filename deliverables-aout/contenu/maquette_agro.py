@@ -89,6 +89,12 @@ SVG_FA = {
                    '<path d="M12 11v3.2h5.3a4.6 4.6 0 01-4.5 3.4 5.1 5.1 0 110-10.2c1.3 0 2.5.5'
                    ' 3.4 1.3l2.3-2.3A8.4 8.4 0 1012 20.5c4.8 0 8.2-3.4 8.2-8.2 0-.5 0-.9-.1-1.3z"'
                    '/></svg>',
+    'fas fa-quote-left': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" '
+                       'style="width:1em;height:1em;display:inline-block;vertical-align:-.125em">'
+                       '<path d="M9.6 5.6A7.5 7.5 0 003 12.8V18a1 1 0 001 1h5.2a1 1 0 001-1v-5.2a1 '
+                       '1 0 00-1-1H6.1c.2-1.9 1.5-3.4 3.5-3.9zM20.1 5.6a7.5 7.5 0 00-6.6 7.2V18a1 1 '
+                       '0 001 1h5.2a1 1 0 001-1v-5.2a1 1 0 00-1-1h-3.1c.2-1.9 1.5-3.4 3.5-3.9z"/>'
+                       '</svg>',
     'fab fa-youtube': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" '
                    'style="width:1em;height:1em;display:inline-block;vertical-align:-.125em">'
                    '<path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8'
