@@ -67,10 +67,10 @@ CSS = "<style id=\"hh-rungis\">" + _sc("""
 .rg-h{display:flex;align-items:baseline;justify-content:flex-start;column-gap:.75rem;
  row-gap:.35rem;flex-wrap:wrap;margin:0 0 1rem !important}
 .rg-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
- text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem;
+ text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem !important;
  border-radius:99px;margin:0 !important}
 #rg-ecart .rg-k{background:#e7fbf1;color:#0b7a47}
-.rg-s{position:relative;padding-left:.75rem;font-size:.78rem;color:#64748b;margin:0 !important}
+.rg-s{position:relative;padding-left:.75rem !important;font-size:.78rem;color:#64748b;margin:0 !important}
 .rg-s::before{content:"";position:absolute;left:0;top:.35em;width:1px;height:1em;background:#cbd5e1}
 .rg-t{font-size:1.3rem;line-height:1.3;font-weight:700;color:#0f172a;
  margin:.45rem 0 0 !important;letter-spacing:-.018em;flex:1 1 100%}
@@ -113,7 +113,7 @@ CSS = "<style id=\"hh-rungis\">" + _sc("""
 .rg-band{position:absolute;top:7px;height:16px;border-radius:99px;display:flex;
  align-items:center;padding:0 .5rem;color:#0f172a;font-size:.7rem;font-weight:700;
  white-space:nowrap;font-variant-numeric:tabular-nums}
-.rg-src{font-size:.72rem;color:#64748b;padding:.7rem .8rem;border-top:1px solid #eef2f6;
+.rg-src{font-size:.72rem;color:#64748b;padding:.7rem .8rem !important;border-top:1px solid #eef2f6;
  background:#f8fafc;margin:0 !important}
 
 /* 3 — le parcours de la carte */

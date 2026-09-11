@@ -70,9 +70,9 @@ CSS = "<style id=\"hh-min-page\">" + _sc("""
 .mn-h{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:.75rem;row-gap:.35rem;
  margin:0 0 1.1rem !important}
 .mn-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
- text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem;
+ text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem !important;
  border-radius:99px;margin:0 !important}
-.mn-s{position:relative;padding-left:.75rem;font-size:.78rem;color:#64748b;margin:0 !important}
+.mn-s{position:relative;padding-left:.75rem !important;font-size:.78rem;color:#64748b;margin:0 !important}
 .mn-s::before{content:"";position:absolute;left:0;top:.35em;width:1px;height:1em;background:#cbd5e1}
 .mn-t{flex:1 1 100%;font-size:1.3rem;line-height:1.3;font-weight:700;color:#0f172a;
  letter-spacing:-.018em;margin:.45rem 0 0 !important}
@@ -81,7 +81,7 @@ CSS = "<style id=\"hh-min-page\">" + _sc("""
 .mn-ph{margin:0 !important;border-radius:18px;overflow:hidden;border:1px solid #e2e8f0;
  background:#f1f5f9;line-height:0}
 .mn-ph img{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover}
-.mn-cap{font-size:.78rem;color:#64748b;padding:.75rem .95rem;background:#f8fafc;
+.mn-cap{font-size:.78rem;color:#64748b;padding:.75rem .95rem !important;background:#f8fafc;
  border-top:1px solid #e2e8f0;line-height:1.5;margin:0 !important}
 
 /* --- tableau des 17 MIN --- */

@@ -140,6 +140,132 @@ def remplacer_video(c):
     return c, faits
 
 
+
+def _jumeler(c, tag, remplacant):
+    """Duplique chaque regle CSS qui vise <tag> pour viser aussi le remplacant.
+
+    Permet de changer un niveau de titre sans perdre sa mise en forme : on
+    ajoute des regles, on n'en retire aucune.
+    """
+    n = 0
+    for m in list(re.finditer(r"<style[^>]*>(.*?)</style>", c, re.S))[::-1]:
+        css, sup = m.group(1), []
+        for r in re.finditer(r"([^{}]+)\{([^{}]*)\}", css):
+            sel = r.group(1)
+            if re.search(r"\b%s\b" % tag, sel):
+                sup.append(re.sub(r"\b%s\b" % tag, remplacant, sel).strip()
+                           + "{" + r.group(2) + "}")
+                n += 1
+        if sup:
+            c = c[:m.end(1)] + "".join(sup) + c[m.end(1):]
+    return c, n
+
+
+def qualite(c):
+    """Les correctifs releves par l'agent qualite, poses pour TOUTES les pages.
+
+    Ils sont ici et non dans une rustine de fin de fichier : ce sont des
+    defauts du gabarit du site, pas de la page produite.
+    """
+    faits = []
+
+    # --- 1. Le pied de page passe SOUS le bouton flottant en mobile : trois
+    #        liens legaux etaient inaccessibles.
+    # --- 2. La barre d'onglets de l'ecran reproduit coupait « Producti » et
+    #        masquait l'onglet actif sous 560 px.
+    # --- 3. Le triangle de l'onglet actif etait ecrete par l'overflow du
+    #        conteneur : remplace par un soulignement.
+    # --- 4. Contrastes sous 4,5:1 sur les surtitres, les liens de carte, les
+    #        sources d'avis et les deux appels a l'action du hero.
+    # --- 5. Trente-six cibles tactiles sous 24 px dans le pied de page.
+    # --- 6. En-tete transparent quand le menu mobile est ouvert.
+    # --- 7. Aucun indice de defilement sur les tableaux des ecrans.
+    c += ('<style id="hh-qualite">'
+          '@media(max-width:1023px){#hh-page > footer{padding-bottom:8rem !important}}'
+          '@media(max-width:560px){'
+          '#hh-page .hhf .ui-nav span{display:none !important}'
+          '#hh-page .hhf .ui-nav span.on{display:flex !important}}'
+          '#hh-page .hhf .ui-nav span.on::after{left:0 !important;right:0 !important;'
+          'bottom:0 !important;width:auto !important;height:2px !important;'
+          'background:#fff !important;border:0 !important;transform:none !important}'
+          '#hh-page .section-header .overline,#hh-page .card-link{color:#046C93 !important}'
+          '#hh-page .section-label,#hh-page .review-source,'
+          '#hh-page .testimonial-card cite{color:#64748B !important}'
+          '#hh-page .hero-cta-sub{color:rgba(255,255,255,.92) !important;'
+          'text-shadow:0 1px 3px rgba(0,0,0,.55) !important}'
+          '#hh-page .hero-cta-primary,#hh-page .btn-demo-header{background:#15803D !important}'
+          '#hh-page .hero-cta-secondary{background:transparent !important;'
+          'border:2px solid #fff !important;color:#fff !important}'
+          '#hh-page > footer a{display:inline-block !important;padding-block:5px !important;'
+          'min-height:24px !important}'
+          '#hh-page .card-link{padding-block:2px !important;min-height:24px !important}'
+          'body.menu-open #hh-page .site-header{background:#0f172a !important;'
+          'box-shadow:none !important}'
+          '#hh-page .hhf .ui-tw{background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)),'
+          'linear-gradient(270deg,#fff 30%,rgba(255,255,255,0)) 100% 0,'
+          'linear-gradient(90deg,rgba(15,23,42,.12),rgba(15,23,42,0)) 100% 0 !important;'
+          'background-repeat:no-repeat !important;'
+          'background-size:24px 100%,24px 100%,12px 100% !important;'
+          'background-attachment:local,local,scroll !important}'
+          '</style>')
+    faits.append("pied de page degage du bouton flottant, contrastes, cibles tactiles")
+
+    # --- 8. Le bouton du menu mobile etait deref sans garde : si l'id
+    #        disparait, l'exception coupe le reveal et le carrousel.
+    av = "document.getElementById('hamburgerBtn').addEventListener('click',"
+    if av in c:
+        c = c.replace(av, "(document.getElementById('hamburgerBtn')||{addEventListener:"
+                          "function(){}}).addEventListener('click',")
+        faits.append("bouton du menu mobile protege")
+
+    # --- 9. Code mort : le tiroir de FAQ du gabarit n'est appele nulle part,
+    #        et son contenu n'a rien a voir avec la page.
+    if "openFaqDrawer(" not in re.sub(r"function openFaqDrawer[^)]*\)", "", c):
+        for motif in (r'<div class="faq-drawer-overlay".*?</div>',
+                      r'<div class="faq-drawer".*?</div>\s*</div>'):
+            c2 = re.sub(motif, "", c, flags=re.S)
+            if c2 != c:
+                c = c2
+        c2 = re.sub(r'<script>\s*var faqData=.*?</script>', "", c, flags=re.S)
+        if c2 != c:
+            c, _ = c2, faits.append("tiroir de FAQ inutilise retire")
+
+    # --- 10. Sauts de niveau de titre : un h2 suivi d'un h4. On duplique
+    #         d'abord les regles CSS pour que h3 herite de la mise en forme,
+    #         PUIS on change la balise. L'inverse casserait l'affichage.
+    c, n = _jumeler(c, "h4", "h3")
+    for cls in ("team-section", "reviews-section"):
+        i = c.find('<section class="%s"' % cls)
+        if i < 0:
+            continue
+        j = c.find("</section>", i)
+        z = c[i:j]
+        if "<h4" in z:
+            c = c[:i] + z.replace("<h4", "<h3").replace("</h4>", "</h3>") + c[j:]
+    i = c.find("<footer")
+    if i > 0:
+        j = c.find("</footer>", i)
+        z = c[i:j]
+        if "<h4" in z:
+            c = c[:i] + z.replace("<h4", "<h3").replace("</h4>", "</h3>") + c[j:]
+    if n:
+        faits.append("h4 ramenes en h3 (%d regles CSS jumelees)" % n)
+
+    # --- 11. Le mega-menu ouvrait des h5 AVANT le h1 de la page. Ce sont des
+    #         intertitres visuels, pas des niveaux de plan.
+    c, n5 = _jumeler(c, "h5", ".mega-col-title")
+    i = c.find('<header class="site-header"')
+    if i > 0:
+        j = c.find("</header>", i)
+        z = c[i:j]
+        if "<h5" in z:
+            c = (c[:i] + z.replace("<h5", '<p class="mega-col-title"').replace("</h5>", "</p>")
+                 + c[j:])
+            faits.append("h5 du mega-menu passes en intertitres (%d regles jumelees)" % n5)
+
+    return c, faits
+
+
 def nettoyer(c):
     """Ce qui ne peut pas vivre dans un artefact : scripts tiers, liens absolus."""
     c = re.sub(r'<script[^>]+src="https?://(?!www\.helloharel\.com)[^"]+"[^>]*></script>', "", c)
@@ -191,6 +317,9 @@ def reparer(c):
           'left:50%;top:50%;transform:translate(-50%,-50%);width:24px;height:24px}'
           '</style>')
     faits.append("puces du carrousel : zone de clic portee a 24 px")
+
+    c, q = qualite(c)
+    faits += q
     return c, faits
 
 

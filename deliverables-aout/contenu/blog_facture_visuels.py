@@ -59,13 +59,13 @@ CSS = "<style id=\"hh-fac\">" + _sc("""
 .fa2-h{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:.75rem;row-gap:.35rem;
  margin:0 0 1.1rem !important}
 .fa2-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
- text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem;
+ text-transform:uppercase;color:#046C93;background:#e6f7fe;padding:.25rem .6rem !important;
  border-radius:99px;margin:0 !important}
-.fa2-s{position:relative;padding-left:.75rem;font-size:.78rem;color:#64748b;margin:0 !important}
+.fa2-s{position:relative;padding-left:.75rem !important;font-size:.78rem;color:#64748b;margin:0 !important}
 .fa2-s::before{content:"";position:absolute;left:0;top:.35em;width:1px;height:1em;background:#cbd5e1}
 .fa2-t{flex:1 1 100%;font-size:1.3rem;line-height:1.3;font-weight:700;color:#0f172a;
  letter-spacing:-.018em;margin:.45rem 0 0 !important}
-.fa2-src{font-size:.76rem;color:#64748b;padding:.75rem .95rem;background:#f8fafc;
+.fa2-src{font-size:.76rem;color:#64748b;padding:.75rem .95rem !important;background:#f8fafc;
  border-top:1px solid #eef2f6;line-height:1.5;margin:0 !important}
 
 /* 1 — checklist */
@@ -82,7 +82,7 @@ CSS = "<style id=\"hh-fac\">" + _sc("""
 .ck-rst:hover{border-color:#00B1F5;color:#0f172a}
 .ck-rst:focus-visible{outline:2px solid #0f172a;outline-offset:2px}
 .ck-g{font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
- color:#64748b;background:#f1f5f9;padding:.45rem 1.1rem;margin:0 !important}
+ color:#64748b;background:#f1f5f9;padding:.45rem 1.1rem !important;margin:0 !important}
 .ck-i{display:flex;align-items:flex-start;gap:.8rem;padding:.7rem 1.1rem;
  border-bottom:1px solid #f1f5f9;cursor:pointer}
 .ck-i:last-of-type{border-bottom:0}

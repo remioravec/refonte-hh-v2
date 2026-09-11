@@ -86,8 +86,8 @@ CSS = """<style id="hh-agro-fonctionnalites">
 
 #hh-page .hhf .ui-card{background:#fff;border:1px solid var(--fl);border-top:3px solid var(--c);min-width:0}
 #hh-page .hhf .ui-card>p{display:flex;align-items:center;justify-content:space-between;gap:8px;
- padding:9px 12px;border-bottom:1px solid #F0F2F4;font-size:.8125rem;color:#444;
- font-weight:400;margin:0 !important}
+ padding:9px 12px !important;border-bottom:1px solid #F0F2F4;font-size:.8125rem;
+ color:#444;font-weight:400;margin:0 !important}
 #hh-page .hhf .ui-card>p em{font-style:normal;color:#B4BCC4;font-size:.9rem}
 #hh-page .hhf .ui-in{padding:11px 12px}
 #hh-page .hhf .ui-tw{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%%}

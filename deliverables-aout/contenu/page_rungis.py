@@ -175,14 +175,14 @@ def corps():
 
     # H2 6 — l'ecran
     a('<h2 id="logiciel">Ce que ça donne dans Hello Harel</h2>')
-    a('<p>Les trois contraintes se règlent sur le même écran : ce qui périme le plus tôt sort '
+    a('<p>Les trois contraintes se règlent sur le même écran. Ce qui périme le plus tôt sort '
       'en premier, le poids réel remonte dans la ligne, et le stock reste juste quel que soit '
       'l\'emplacement.</p>')
     a(V.ecran())
     a('<p>Les grossistes en <a href="/agroalimentaire/maraicher/">fruits et légumes</a> et les '
       'professionnels de la <a href="/agroalimentaire/poissonnier/">poissonnerie</a> sont les '
-      'premiers concernés à Rungis : ce sont les deux secteurs qui ouvrent le plus tôt et qui '
-      'subissent à la fois le poids variable, la DLC courte et le prix du jour.</p>')
+      'premiers concernés à Rungis. Ce sont les deux secteurs qui ouvrent le plus tôt, et les '
+      'seuls à subir à la fois le poids variable, la DLC courte et le prix du jour.</p>')
 
     return "".join(p)
 
