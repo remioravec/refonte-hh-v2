@@ -63,7 +63,7 @@ def _regles(css):
 
 
 CSS = "<style id=\"hh-rungis\">" + _sc("""
-.rg{margin:3.8rem 0 !important;font-family:inherit}
+.rg{margin:3.2rem 0 !important;font-family:inherit}
 .rg-h{display:flex;align-items:baseline;justify-content:flex-start;column-gap:.75rem;
  row-gap:.35rem;flex-wrap:wrap;margin:0 0 1rem !important}
 .rg-k{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
@@ -221,8 +221,9 @@ def journee():
             '<p class="rg-t">Onze secteurs, onze horaires différents</p></figcaption>'
             '<div class="rg-day"><div class="rg-scale"><span>Secteur</span>'
             '<span class="rg-ticks">' + ticks + '</span></div>' + lignes +
-            '<p class="rg-src">La marée ouvre à 2 h, les fruits et légumes à 5 h 30 : '
-            'un acheteur qui fait deux secteurs passe sa nuit sur le marché. '
+            '<p class="rg-src">Bleu soutenu : la marée et les fruits et légumes, les deux '
+            'secteurs qui encadrent la journée. Bleu clair : les autres produits frais. '
+            'Gris : fleurs, plantes, accessoires et services. '
             'Source : ' + C.SOURCE + '.</p></div></figure>')
 
 

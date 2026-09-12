@@ -72,8 +72,8 @@ PHOTOS = {
 
 # Les trois contraintes du carreau, avec ce qu'elles cassent et la reponse.
 CONTRAINTES = [
-    ("Le poids", "Vous achetez au kilo pesé, vous facturez au colis annoncé.",
-     "L'écart part en marge à chaque ligne."),
+    ("Le poids", "Le colis annoncé à 10 kg en pèse 9,7 : vous le payez plein, vous le livrez plein.",
+     "L'écart part en marge aux deux bouts."),
     ("La date", "Les DLC sont courtes, parfois trois jours après l'arrivage.",
      "Un lot prélevé dans le mauvais ordre finit en perte."),
     ("Le lieu", "La marchandise est sur le carreau, en chambre froide et déjà chargée.",

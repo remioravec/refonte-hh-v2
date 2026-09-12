@@ -51,15 +51,15 @@ CHIFFRES = [
 # secteur, jours, debut (heure decimale), fin, couleur
 HORAIRES = [
     ("Marée — pavillon A4", "mardi au samedi", 2.0, 6.0, "#0EA5E9"),
-    ("Marée — tour de glace", "mardi au samedi", 2.0, 7.0, "#38BDF8"),
-    ("Boucherie, porc, triperie", "lundi au vendredi", 3.0, 9.0, "#EF4444"),
-    ("Volaille et gibier", "mardi au samedi", 3.0, 9.0, "#F97316"),
-    ("Fleurs coupées", "mardi au samedi", 4.0, 11.0, "#EC4899"),
-    ("Produits laitiers", "lundi au vendredi", 5.0, 13.0, "#FACC15"),
-    ("Gastronomie et pavillon bio", "lundi au vendredi", 5.0, 13.0, "#A855F7"),
-    ("Fruits et légumes", "mardi au vendredi", 5.5, 11.0, "#22C55E"),
-    ("Plantes en pot, pépiniéristes", "mercredi, vendredi, samedi", 5.0, 12.0, "#14B8A6"),
-    ("Accessoires et décoration", "lundi et samedi", 6.5, 13.5, "#94A3B8"),
+    ("Marée — tour de glace", "mardi au samedi", 2.0, 7.0, "#0EA5E9"),
+    ("Boucherie, porc, triperie", "lundi au vendredi", 3.0, 9.0, "#7DD3FC"),
+    ("Volaille et gibier", "mardi au samedi", 3.0, 9.0, "#7DD3FC"),
+    ("Fleurs coupées", "mardi au samedi", 4.0, 11.0, "#CBD5E1"),
+    ("Produits laitiers", "lundi au vendredi", 5.0, 13.0, "#7DD3FC"),
+    ("Gastronomie et pavillon bio", "lundi au vendredi", 5.0, 13.0, "#7DD3FC"),
+    ("Fruits et légumes", "mardi au vendredi", 5.5, 11.0, "#0EA5E9"),
+    ("Plantes en pot, pépiniéristes", "mercredi, vendredi, samedi", 5.0, 12.0, "#CBD5E1"),
+    ("Accessoires et décoration", "lundi et samedi", 6.5, 13.5, "#CBD5E1"),
     ("Tour administrative", "lundi au vendredi", 6.0, 20.0, "#CBD5E1"),
 ]
 

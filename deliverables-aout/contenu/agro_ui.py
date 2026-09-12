@@ -17,9 +17,9 @@ chaque marge y est marquee !important : le theme applique
 et ecrase sinon toute mise en page injectee.
 """
 
-C = {"c": "#2CBAE7", "c2": "#36BDE8", "hd": "#ECF0F5", "fl": "#D3D6D9",
-     "co": "#FA8F92", "am": "#FFDDA8", "ok": "#00A65A", "bl": "#3C8DBC",
-     "rd": "#DD4B39", "al": "#F2DEDE"}
+C = {"c": "#0079B8", "c2": "#046C93", "hd": "#ECF0F5", "fl": "#D3D6D9",
+     "co": "#FA8F92", "am": "#FFDDA8", "ok": "#0F7A45", "bl": "#275E80",
+     "rd": "#C0392B", "al": "#F2DEDE"}
 
 CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf{display:block;margin:0 !important}
@@ -80,7 +80,7 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf .ui-h{display:flex;align-items:center;justify-content:space-between;
  margin:0 0 11px !important;padding:0 2px}
 #hh-page .hhf .ui-h span{font-size:1.05rem;font-weight:400;color:#444}
-#hh-page .hhf .ui-h em{font-style:normal;color:#9AA3AC;font-size:1.1rem;letter-spacing:.18em}
+#hh-page .hhf .ui-h em{font-style:normal;color:#5A6570;font-size:1.1rem;letter-spacing:.18em}
 #hh-page .hhf .ui-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 #hh-page .hhf .ui-grid.one{grid-template-columns:1fr}
 
@@ -101,7 +101,7 @@ CSS = """<style id="hh-agro-fonctionnalites">
    a zero par le chiffre et le pourcentage, et disparaissait completement */
 #hh-page .hhf .ui-leg u{flex:1 1 7rem}
 #hh-page .hhf .ui-leg i{width:8px;height:8px;border-radius:50%%;flex:0 0 8px}
-#hh-page .hhf .ui-leg u{text-decoration:none;color:#3C8DBC;flex:1;min-width:0;overflow:hidden;
+#hh-page .hhf .ui-leg u{text-decoration:none;color:#275E80;flex:1;min-width:0;overflow:hidden;
  text-overflow:ellipsis;white-space:nowrap}
 #hh-page .hhf .ui-leg b{color:#444;font-weight:600;font-variant-numeric:tabular-nums}
 #hh-page .hhf .ui-leg s{text-decoration:none;color:#767676;font-variant-numeric:tabular-nums;
@@ -112,13 +112,13 @@ CSS = """<style id="hh-agro-fonctionnalites">
  padding:7px 9px;border-bottom:1px solid var(--fl);white-space:nowrap}
 #hh-page .hhf .ui-tab td{padding:7px 9px;border-bottom:1px solid #F0F2F4;color:#555;vertical-align:middle}
 #hh-page .hhf .ui-tab tr:last-child td{border-bottom:none}
-#hh-page .hhf .ui-tab .lk{color:#3C8DBC}
+#hh-page .hhf .ui-tab .lk{color:#275E80}
 #hh-page .hhf .ui-tab .nb{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 #hh-page .hhf .ui-tab tr.alert td{background:var(--al)}
 #hh-page .hhf .ui-tab tr.zebra td{background:#FAFBFC}
 
 #hh-page .hhf .ui-box{display:flex;align-items:stretch;border:1px solid var(--fl);background:#fff;min-height:54px}
-#hh-page .hhf .ui-box i{width:54px;flex:0 0 54px;display:flex;align-items:center;justify-content:center;
+#hh-page .hhf .ui-box i{width:62px;flex:0 0 62px;display:flex;align-items:center;justify-content:center;
  color:#fff;font-size:.95rem;font-weight:800;font-style:normal;font-variant-numeric:tabular-nums}
 #hh-page .hhf .ui-box div{padding:7px 11px;font-size:.72rem;color:#555;display:flex;
  flex-direction:column;justify-content:center;gap:2px}
@@ -133,8 +133,8 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf .ui-modal>p:first-child{display:flex;align-items:center;justify-content:space-between;
  padding:11px 14px;border-bottom:1px solid var(--fl);font-size:.85rem;color:#333;
  font-weight:600;margin:0 !important}
-#hh-page .hhf .ui-modal>p:first-child em{font-style:normal;color:#9AA3AC;font-weight:400;font-size:.78rem}
-#hh-page .hhf .ui-warn{background:#F39C12;color:#fff;font-size:.74rem;padding:7px 14px;margin:0 !important}
+#hh-page .hhf .ui-modal>p:first-child em{font-style:normal;color:#5A6570;font-weight:400;font-size:.78rem}
+#hh-page .hhf .ui-warn{background:#A35B00;color:#fff;font-size:.74rem;padding:7px 14px;margin:0 !important}
 #hh-page .hhf .ui-opts{padding:11px 14px;font-size:.74rem;color:#555;display:flex;
  flex-direction:column;gap:8px}
 #hh-page .hhf .ui-opts span{display:flex;align-items:flex-start;gap:8px;line-height:1.45}
@@ -354,9 +354,9 @@ def ecran_cout():
         '<em>⎙</em></div><div class="ui-grid one">'
         + _card("Décomposition du coût au kilo",
                 '<span class="ui-donut">'
-                + _ring([("#FA8F92", 61), ("#3C8DBC", 19), ("#FFDDA8", 11), ("#3ECF8E", 9)])
+                + _ring([("#FA8F92", 61), ("#275E80", 19), ("#FFDDA8", 11), ("#3ECF8E", 9)])
                 + _leg([("#FA8F92", "Matières premières", "4,88 €", "61 %"),
-                        ("#3C8DBC", "Main-d'œuvre", "1,52 €", "19 %"),
+                        ("#275E80", "Main-d'œuvre", "1,52 €", "19 %"),
                         ("#FFDDA8", "Emballage", "0,88 €", "11 %"),
                         ("#3ECF8E", "Énergie et pertes", "0,72 €", "9 %")])
                 + '</span>')
@@ -379,11 +379,11 @@ def ecran_cout():
 
 def ecran_stocks_sensibles():
     boxes = ('<div class="ui-boxes">'
-             '<span class="ui-box"><i style="background:#3C8DBC">2°</i>'
+             '<span class="ui-box"><i style="background:#275E80">2°</i>'
              '<div><b>Chambre froide A</b>Consigne 0 à 4 °C</div></span>'
-             '<span class="ui-box"><i style="background:#00A65A">-19°</i>'
+             '<span class="ui-box"><i style="background:#0F7A45">-19°</i>'
              '<div><b>Congélation B</b>Consigne −18 °C max</div></span>'
-             '<span class="ui-box"><i style="background:#DD4B39">9°</i>'
+             '<span class="ui-box"><i style="background:#C0392B">9°</i>'
              '<div><b>Chambre froide C</b>Hors consigne depuis 40 min</div></span>'
              '</div>')
     corps = (

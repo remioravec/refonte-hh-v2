@@ -80,9 +80,9 @@ TITLE = "MIN de Rungis : le Logiciel du Carreau, Module par Module"
 DESC = ("Le MIN de Rungis vu du carreau : les sept étapes de la journée d'un grossiste, "
         "l'écran de chacune, les horaires par secteur et ce que le marché pèse.")
 H1 = "MIN de Rungis : la journée d'un grossiste, et le logiciel qui la tient"
-CHAPO = ("Sur le carreau, la marge se perd à deux endroits : le poids qu'on ne repèse pas et "
-         "la date qu'on ne suit pas. Voici les sept étapes de la journée d'un grossiste de "
-         "Rungis, et l'écran qui répond à chacune.")
+CHAPO = ("Le colis qu'on ne repèse pas, la date qu'on ne suit pas, le prix qu'on ne compare "
+         "pas : le carreau impose trois contraintes, et elles se règlent dans la journée. "
+         "Voici les sept étapes d'un grossiste de Rungis, et l'écran de chacune.")
 
 MERE = "/negoce/marches-interet-national/"
 LIENS = [MERE, "/negoce/", "/blog/min/", "/negoce/tracabilite-lots/",
@@ -96,33 +96,38 @@ def corps():
 
     # ------------------------------------------------ H2 1 : intro + schema
     # Chez Bellon : un H2 d'introduction et un schema d'ensemble. Meme geste,
-    # mais le schema porte une donnee et pas un dessin d'architecture.
+    # mais le schema porte une donnee et pas un dessin d'architecture. Et il
+    # s'arrete aux trois contraintes : le flux en cinq etapes de la page mere
+    # entrerait en concurrence avec les sept onglets du bloc suivant.
     a('<h2 id="carreau">Ce que le carreau de Rungis impose à un grossiste</h2>')
     a('<p>Rungis est le plus grand des <a href="%s">dix-sept marchés d\'intérêt national</a> '
-      'français. Pour celui qui y achète, le marché n\'est pas un décor : il impose trois '
-      'contraintes que la gestion doit absorber le jour même. Le poids réel n\'est pas le '
-      'poids annoncé, la date limite appartient au lot et non au produit, et le prix du '
-      'carreau bouge dans la matinée. C\'est ce que prend en charge un '
-      '<a href="/negoce/">ERP de négoce alimentaire</a>.</p>' % MERE)
-    a(V.contraintes())
-    a('<p>Le statut du marché n\'est pas commercial mais public : un '
-      '<a href="/blog/min/">marché d\'intérêt national</a> est un service public de gestion '
-      'de marché au sens des articles L761-1 à L761-11 du Code de commerce. Les prix, eux, '
-      'sont publics aussi : FranceAgriMer publie chaque jour les '
+      'français. Pour celui qui y achète, le marché impose trois contraintes que la gestion '
+      'absorbe le jour même : le colis annoncé pèse rarement ce qu\'il annonce, la date limite '
+      'appartient au lot et non à la référence, et le prix du carreau bouge dans la matinée. '
+      'C\'est ce que prend en charge un <a href="/negoce/">ERP de négoce alimentaire</a>.</p>'
+      % MERE)
+    a(MOD.schema())
+    a('<p>Le statut du marché est public : un <a href="/blog/min/">marché d\'intérêt '
+      'national</a> est un service public de gestion de marché au sens des articles L761-1 à '
+      'L761-11 du Code de commerce. <span class="hha-src">Source : Légifrance, Code de '
+      'commerce, partie législative, livre VII, titre VI.</span> Les prix sont publics eux '
+      'aussi : le réseau des nouvelles des marchés de FranceAgriMer publie chaque jour les '
       '<a href="https://rnm.franceagrimer.fr/prix?M0123:MARCHE" target="_blank" '
       'rel="noopener">cours des grossistes relevés sur le MIN de Rungis</a>. '
-      '<span class="hha-src">Source : %s.</span></p>' % R.SOURCE)
+      '<span class="hha-src">Source : RNM — FranceAgriMer, cotation quotidienne.</span></p>')
 
     # ------------------------------- H2 2 : le coeur, le module a onglets
     a('<h2 id="modules">Les sept étapes de la journée, et l\'écran de chacune</h2>')
-    a('<p>Une journée de carreau se lit dans l\'ordre : on achète, on pèse, on suit le lot, '
-      'on prépare, on livre, on facture, on mesure. Chaque étape a son écran. Choisissez la '
-      'vôtre — les sept sont dans la page, aucune n\'attend un clic pour exister.</p>')
+    a('<p>Une journée de carreau se lit dans l\'ordre : on achète, on pèse, on suit le lot, on '
+      'prépare, on livre, on facture, on mesure. Les sept écrans ci-dessous racontent la même '
+      'journée — celle du jeudi 10 septembre 2026 — avec les quatre mêmes lots, du carreau '
+      'jusqu\'à la marge.</p>')
     a(MOD.section())
-    a('<p>Les grossistes en <a href="/agroalimentaire/maraicher/">fruits et légumes</a> et les '
-      'professionnels de la <a href="/agroalimentaire/poissonnier/">poissonnerie</a> sont les '
-      'premiers concernés : ce sont les deux secteurs qui ouvrent le plus tôt à Rungis, et les '
-      'seuls à subir en même temps le poids variable, la DLC courte et le prix du jour.</p>')
+    a('<p>La marée ouvre à 2 h, les fruits et légumes à 5 h 30 : les deux secteurs encadrent la '
+      'journée du marché. Ce sont aussi les deux qui cumulent le poids variable et la date '
+      'limite la plus courte, ce qui fait des grossistes en '
+      '<a href="/agroalimentaire/maraicher/">fruits et légumes</a> et des professionnels de la '
+      '<a href="/agroalimentaire/poissonnier/">poissonnerie</a> les premiers concernés.</p>')
 
     # ------------------- H2 3 : l'ancrage editorial 1, la frise des horaires
     a('<h2 id="horaires">Les horaires de Rungis, secteur par secteur</h2>')
@@ -141,11 +146,12 @@ def corps():
     a('<p>Le chiffre d\'affaires et la surface du marché sont publiés partout. Le tonnage '
       'rapporté aux seize autres MIN, non : il se calcule.</p>')
     a(A.comparatif())
-    a('<p>Rungis écrase le réseau en volume, mais un carreau y est moins dense qu\'ailleurs : '
-      'la marchandise y stationne plus longtemps. C\'est ce qui rend le suivi des '
+    a('<p>Rungis écrase le réseau en volume, mais étale ce volume sur près de vingt fois la '
+      'surface de Lyon-Corbas. Le stock y est donc plus dispersé : entre le carreau, la chambre '
+      'froide et le quai. C\'est ce qui rend le suivi des '
       '<a href="/negoce/stocks-multi-depots/">stocks multi-dépôts</a> et de la '
       '<a href="/negoce/tracabilite-lots/">traçabilité des lots</a> plus sensible ici que sur '
-      'un marché comme Lyon-Corbas, et ce qui fait de l\'étape '
+      'un marché compact, et ce qui fait de l\'étape '
       '<a href="/negoce/achats-approvisionnements/">achats et approvisionnements</a> le point '
       'où la marge se gagne.</p>')
 
@@ -154,22 +160,24 @@ def corps():
 
 FAQ = [
     ("Quel logiciel pour un grossiste du MIN de Rungis ?",
-     "Il faut un outil qui facture au poids réellement pesé et non au poids commandé, qui "
-     "suive la <strong>DLC du lot</strong> et non la date du produit, et qui réconcilie un "
+     "Il faut un outil qui facture au poids réellement pesé, qui suive la <strong>date "
+     "limite du lot</strong> et non celle de la référence produit, et qui réconcilie un "
      "stock éclaté entre le carreau, la chambre froide et le camion. C'est ce que couvre un "
-     "ERP de négoce alimentaire, et ce qu'un logiciel de facturation généraliste ne sait pas "
-     "faire."),
+     "ERP de négoce alimentaire ; un logiciel de facturation généraliste s'arrête à la "
+     "première de ces trois contraintes."),
     ("À quelle heure ouvre le MIN de Rungis ?",
      "Cela dépend du secteur. La marée ouvre à <strong>2 h</strong>, la boucherie et la "
      "volaille à <strong>3 h</strong>, les fleurs coupées à <strong>4 h</strong>, les produits "
      "laitiers et la gastronomie à <strong>5 h</strong>, les fruits et légumes à "
      "<strong>5 h 30</strong>. La marée et la volaille fonctionnent du mardi au samedi, la "
-     "boucherie du lundi au vendredi."),
+     "boucherie du lundi au vendredi. <em>Source : rungisinternational.com, horaires relevés "
+     "le 11 septembre 2026.</em>"),
     ("Comment gérer l'écart entre le poids annoncé et le poids pesé ?",
-     "En le constatant à quai, pas en fin de mois. Un colis annoncé à 10 kg qui en pèse "
-     "<strong>9,7 kg</strong> représente <strong>3 %</strong> offerts sur chaque ligne. "
-     "L'agréage enregistre les deux poids sur la même ligne de réception et ouvre la "
-     "réclamation fournisseur tant qu'elle est recevable."),
+     "En le constatant à quai. Un colis annoncé à 10 kg qui en pèse 9,7 laisse "
+     "<strong>300 grammes</strong> sur le quai ; sur l'écran d'agréage de cette page, l'écart "
+     "du matin atteint <strong>21,6 kg sur 840 kg annoncés</strong>. L'agréage enregistre les "
+     "deux poids sur la même ligne de réception et ouvre la réclamation fournisseur tant "
+     "qu'elle est recevable."),
     ("Qui peut acheter au MIN de Rungis ?",
      "Uniquement les professionnels, sur présentation d'une <strong>carte d'acheteur</strong> "
      "délivrée contre un justificatif d'activité : commerçants de détail, métiers de bouche, "
@@ -178,8 +186,9 @@ FAQ = [
     ("Que pèse le MIN de Rungis face aux autres marchés d'intérêt national ?",
      "<strong>1,86 million de tonnes</strong> par an, soit <strong>43 %</strong> du tonnage "
      "des dix-sept MIN français, sur <strong>234 hectares</strong>. Mais pas le plus dense : "
-     "<strong>7 957 tonnes par hectare</strong>, contre <strong>25 417</strong> à Lyon-Corbas. "
-     "Relevé le 11 septembre 2026."),
+     "<strong>7 957 tonnes par hectare</strong>, contre <strong>25 417</strong> à Lyon-Corbas "
+     "sur douze hectares. <em>Source : fédération des marchés de gros de France, relevé le "
+     "11 septembre 2026.</em>"),
 ]
 
 

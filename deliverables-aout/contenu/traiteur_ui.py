@@ -85,9 +85,9 @@ def ecran_cout():
         '<div class="ui-grid one">'
         + _card("Décomposition du coût d'un couvert",
                 '<span class="ui-donut">'
-                + _ring([("#FA8F92", 54), ("#3C8DBC", 27), ("#FFDDA8", 11), ("#3ECF8E", 8)])
+                + _ring([("#FA8F92", 54), ("#275E80", 27), ("#FFDDA8", 11), ("#3ECF8E", 8)])
                 + _leg([("#FA8F92", "Matières et denrées", "6,81 €", "54 %"),
-                        ("#3C8DBC", "Personnel de production et de service", "3,40 €", "27 %"),
+                        ("#275E80", "Personnel de production et de service", "3,40 €", "27 %"),
                         ("#FFDDA8", "Location de matériel et vaisselle", "1,39 €", "11 %"),
                         ("#3ECF8E", "Transport et logistique", "1,01 €", "8 %")])
                 + '</span>')
