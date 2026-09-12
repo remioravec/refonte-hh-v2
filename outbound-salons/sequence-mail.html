@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Séquence mail — Hello Harel (ERP agroalimentaire)</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bleu:#00B1F5;--bleu-fonce:#0090c8;--ink:#0f172a;--gris:#334155;--gris-clair:#64748b;--bord:#e2e8f0;--bg:#eef2f6}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink)}
+  /* ---- VIEWER CHROME (aperçu uniquement, non envoyé) ---- */
+  .topbar{background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu));color:#fff;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
+  .topbar img{height:26px}
+  .topbar .title{font-weight:700;font-size:15px}
+  .topbar .spacer{flex:1}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .tab{background:rgba(255,255,255,.18);color:#fff;border:0;padding:8px 14px;border-radius:8px;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}
+  .tab.active{background:#fff;color:var(--bleu-fonce)}
+  .toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:#cbd5e1}
+  .switch{position:relative;width:44px;height:24px;background:#475569;border-radius:999px;cursor:pointer;transition:.2s}
+  .switch.on{background:var(--bleu)}
+  .switch:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:.2s}
+  .switch.on:after{left:23px}
+  .stage{max-width:1080px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:600px 1fr;gap:24px;align-items:start}
+  @media(max-width:1000px){.stage{grid-template-columns:1fr}}
+  .why{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:20px;position:sticky;top:84px}
+  .why h3{margin:0 0 10px;font-size:14px;color:var(--bleu-fonce);text-transform:uppercase;letter-spacing:.04em}
+  .why .meta{font-size:13px;color:var(--gris-clair);margin-bottom:14px}
+  .why ul{margin:0;padding-left:18px}
+  .why li{font-size:13.5px;color:var(--gris);margin-bottom:8px;line-height:1.5}
+  .why .kpi{display:inline-block;background:rgba(0,177,245,.12);color:var(--bleu-fonce);font-weight:700;border-radius:6px;padding:1px 7px;font-size:12px}
+  .email-wrap{display:none}
+  .email-wrap.active{display:block}
+  .v{background:rgba(0,177,245,.14);border-radius:4px;padding:0 3px;font-weight:600;color:var(--bleu-fonce)}
+  body.filled .v{background:transparent;padding:0;font-weight:inherit;color:inherit}
+  .note{max-width:1080px;margin:0 auto 30px;padding:0 16px;font-size:12.5px;color:var(--gris-clair)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <span class="title">Séquence outbound · ERP agroalimentaire</span>
+  <span class="spacer"></span>
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-e="1">E1 · J0</button>
+    <button class="tab" data-e="2">E2 · J3</button>
+    <button class="tab" data-e="3">E3 · J10</button>
+    <button class="tab" data-e="4">E4 · J17</button>
+  </div>
+  <div class="toggle"><span>Variables</span><div class="switch" id="sw"></div><span>Aperçu rempli</span></div>
+</div>
+
+<div class="stage">
+  <div id="emails">
+    <!-- ============================= EMAIL 1 ============================= -->
+    <div class="email-wrap active" data-e="1">
+      <!-- EMAIL-SAFE TEMPLATE (copier ce <table> dans votre outil d'envoi) -->
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;font-family:'Inter',Arial,sans-serif">
+        <tr><td style="background:linear-gradient(135deg,#0090c8,#00B1F5);padding:22px 28px" align="left">
+          <img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel" height="26" style="height:26px">
+        </td></tr>
+        <tr><td style="padding:30px 28px 8px;color:#0f172a;font-size:16px;line-height:1.6">
+          <p style="margin:0 0 14px">Bonjour <span class="v" data-k="prenom">{{prenom}}</span>,</p>
+          <p style="margin:0 0 14px">J'ai repéré <span class="v" data-k="nom_entreprise">{{nom_entreprise}}</span> parmi les exposants de <span class="v" data-k="salon">{{salon}}</span>. On accompagne des PME <span class="v" data-k="secteur_metier">{{secteur_metier}}</span> (souvent autour de <span class="v" data-k="ville">{{ville}}</span>) sur le même point de friction : la <strong>traçabilité</strong>, le <strong>coût de revient réel</strong> et les <strong>étiquettes INCO</strong> gérés dans des fichiers Excel séparés.</p>
+          <p style="margin:0 0 22px">Hello Harel réunit tout ça dans un seul ERP <strong>pensé pour l'alimentaire</strong> — poids variable, rendements, FEFO, allergènes propagés.</p>
+        </td></tr>
+        <tr><td style="padding:0 28px 26px" align="left">
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#00B1F5;border-radius:10px">
+            <a href="{{lien_demo}}" style="display:inline-block;padding:14px 28px;color:#fff;font-weight:700;font-size:15px;text-decoration:none">Voir une démo adaptée à <span class="v" data-k="nom_entreprise">{{nom_entreprise}}</span></a>
+          </td></tr></table>
+        </td></tr>
+        <tr><td style="padding:0 28px 28px;color:#334155;font-size:15px;line-height:1.6">
+          <p style="margin:0">Ça vaut 15 min d'échange ?</p>
+          <p style="margin:8px 0 0"><span class="v" data-k="prenom_commercial">{{prenom_commercial}}</span> — Hello Harel</p>
+        </td></tr>
+        <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 28px;color:#94a3b8;font-size:12px;line-height:1.5" align="center">
+          Hello Harel · l'ERP des PME agroalimentaires<br>
+          <a href="{{lien_desinscription}}" style="color:#94a3b8">Se désinscrire</a>
+        </td></tr>
+      </table>
+    </div>
+
+    <!-- ============================= EMAIL 2 ============================= -->
+    <div class="email-wrap" data-e="2">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;font-family:'Inter',Arial,sans-serif">
+        <tr><td style="background:linear-gradient(135deg,#0090c8,#00B1F5);padding:22px 28px"><img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel" height="26" style="height:26px"></td></tr>
+        <tr><td style="padding:30px 28px 8px;color:#0f172a;font-size:16px;line-height:1.6">
+          <p style="margin:0 0 14px">Bonjour <span class="v" data-k="prenom">{{prenom}}</span>,</p>
+          <p style="margin:0 0 14px">Un repère concret : les PME <span class="v" data-k="secteur_metier">{{secteur_metier}}</span> qui passent d'une gestion manuelle à un ERP spécialisé ramènent leurs pertes sur DLC de 3-5 % à <strong>moins de 1,5 % du CA</strong>, et regagnent <strong>2 à 5 points de marge</strong> en pilotant leur PRI en temps réel.</p>
+          <p style="margin:0 0 22px">J'ai préparé une page qui résume ce que ça donnerait pour <span class="v" data-k="nom_entreprise">{{nom_entreprise}}</span> :</p>
+        </td></tr>
+        <tr><td style="padding:0 28px 26px"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#00B1F5;border-radius:10px"><a href="{{lien_demo}}" style="display:inline-block;padding:14px 28px;color:#fff;font-weight:700;font-size:15px;text-decoration:none">Voir la page de <span class="v" data-k="nom_entreprise">{{nom_entreprise}}</span></a></td></tr></table></td></tr>
+        <tr><td style="padding:0 28px 28px;color:#334155;font-size:15px;line-height:1.6"><p style="margin:0">Utile d'en discuter cette semaine ?</p><p style="margin:8px 0 0"><span class="v" data-k="prenom_commercial">{{prenom_commercial}}</span></p></td></tr>
+        <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 28px;color:#94a3b8;font-size:12px;line-height:1.5" align="center">Hello Harel · l'ERP des PME agroalimentaires<br><a href="{{lien_desinscription}}" style="color:#94a3b8">Se désinscrire</a></td></tr>
+      </table>
+    </div>
+
+    <!-- ============================= EMAIL 3 ============================= -->
+    <div class="email-wrap" data-e="3">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;font-family:'Inter',Arial,sans-serif">
+        <tr><td style="background:linear-gradient(135deg,#0090c8,#00B1F5);padding:22px 28px"><img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel" height="26" style="height:26px"></td></tr>
+        <tr><td style="padding:30px 28px 8px;color:#0f172a;font-size:16px;line-height:1.6">
+          <p style="margin:0 0 14px">Bonjour <span class="v" data-k="prenom">{{prenom}}</span>,</p>
+          <p style="margin:0 0 14px">Question rapide : aujourd'hui, combien de temps vous faut-il pour être « audit-ready » (<strong>HACCP, IFS, INCO, EGALIM</strong>) si la DDPP ou un client GMS débarque ?</p>
+          <p style="margin:0 0 22px">Avec Hello Harel, enregistrements qualité, allergènes et certificats sont centralisés → dossier sorti en quelques clics au lieu de 3 jours.</p>
+        </td></tr>
+        <tr><td style="padding:0 28px 26px"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#00B1F5;border-radius:10px"><a href="{{lien_demo}}" style="display:inline-block;padding:14px 28px;color:#fff;font-weight:700;font-size:15px;text-decoration:none">Je vous montre sur un de vos produits</a></td></tr></table></td></tr>
+        <tr><td style="padding:0 28px 28px;color:#334155;font-size:15px;line-height:1.6"><p style="margin:0"><span class="v" data-k="prenom_commercial">{{prenom_commercial}}</span></p></td></tr>
+        <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 28px;color:#94a3b8;font-size:12px;line-height:1.5" align="center">Hello Harel · l'ERP des PME agroalimentaires<br><a href="{{lien_desinscription}}" style="color:#94a3b8">Se désinscrire</a></td></tr>
+      </table>
+    </div>
+
+    <!-- ============================= EMAIL 4 ============================= -->
+    <div class="email-wrap" data-e="4">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;font-family:'Inter',Arial,sans-serif">
+        <tr><td style="background:linear-gradient(135deg,#0090c8,#00B1F5);padding:22px 28px"><img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel" height="26" style="height:26px"></td></tr>
+        <tr><td style="padding:30px 28px 8px;color:#0f172a;font-size:16px;line-height:1.6">
+          <p style="margin:0 0 14px">Bonjour <span class="v" data-k="prenom">{{prenom}}</span>,</p>
+          <p style="margin:0 0 14px">Pas de retour de votre côté — c'est sûrement que ce n'est pas le moment, et c'est ok.</p>
+          <p style="margin:0 0 22px">Je clos le suivi pour ne pas encombrer votre boîte. Si la traçabilité ou les marges deviennent un sujet chez <span class="v" data-k="nom_entreprise">{{nom_entreprise}}</span>, ma porte reste ouverte :</p>
+        </td></tr>
+        <tr><td style="padding:0 28px 26px"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="background:#ffffff;border:2px solid #00B1F5;border-radius:10px"><a href="{{lien_demo}}" style="display:inline-block;padding:12px 26px;color:#0090c8;font-weight:700;font-size:15px;text-decoration:none">Réserver un échange quand vous voulez</a></td></tr></table></td></tr>
+        <tr><td style="padding:0 28px 28px;color:#334155;font-size:15px;line-height:1.6"><p style="margin:0">Belle continuation,</p><p style="margin:8px 0 0"><span class="v" data-k="prenom_commercial">{{prenom_commercial}}</span> — Hello Harel</p></td></tr>
+        <tr><td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 28px;color:#94a3b8;font-size:12px;line-height:1.5" align="center">Hello Harel · l'ERP des PME agroalimentaires<br><a href="{{lien_desinscription}}" style="color:#94a3b8">Se désinscrire</a></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- WHY PANEL (étude par email) -->
+  <div class="why" id="why"></div>
+</div>
+
+<p class="note">⚠️ Pour l'envoi : copiez uniquement le bloc <code>&lt;table&gt;</code> de l'email choisi (le bandeau d'onglets et la bascule ci-dessus sont l'outil d'aperçu, non envoyés). Objets recommandés dans <code>sequence-mail.md</code>. Variables : <code>{{prenom}} · {{nom_entreprise}} · {{secteur_metier}} · {{ville}} · {{salon}} · {{lien_demo}} · {{prenom_commercial}} · {{lien_desinscription}}</code>.</p>
+
+<script>
+const SAMPLE={prenom:"Marie",nom_entreprise:"Maison Dupont",secteur_metier:"fromagerie",ville:"Nantes",salon:"Serbotel",prenom_commercial:"Rémi",lien_demo:"#",lien_desinscription:"#"};
+const WHY={
+ 1:{obj:'<b>Objet :</b> « {{nom_entreprise}} — vu au salon {{salon}} »',meta:'J0 · Accroche · objectif : réponse',pts:[
+   'Référence salon + métier + ville en 1ʳᵉ ligne : la perso <b>au-delà du prénom</b> fait <span class="kpi">+340 %</span> de réponses.',
+   'Objet court (&lt; 50 car.) avec le nom de l\'entreprise : <span class="kpi">+133 %</span> de réponse vs objet générique.',
+   'Corps &lt; 110 mots, <b>un seul CTA</b> : les emails courts répondent mieux.']},
+ 2:{obj:'<b>Objet :</b> « Re: {{nom_entreprise}} — vu au salon {{salon}} » (même fil)',meta:'J3 · Preuve chiffrée · relance n°1',pts:[
+   'La 1ʳᵉ relance capte une <b>large part des réponses</b> ; ne jamais s\'arrêter à E1.',
+   'Garder le même fil (Re:) maintient le contexte et l\'ouverture.',
+   'Preuve chiffrée (pertes &lt; 1,5 %, +2-5 pts marge) → crédibilité métier.']},
+ 3:{obj:'<b>Objet :</b> « audit IFS / INCO chez {{nom_entreprise}} ? »',meta:'J10 · Angle douleur · relance n°2',pts:[
+   'Nouvel angle (conformité) pour ne pas répéter E1/E2.',
+   'Question ouverte = invite à répondre.',
+   '<span class="kpi">93 %</span> des réponses arrivent ≤ J10 : c\'est la fenêtre clé. + LinkedIn le même jour (multicanal) double souvent le taux.']},
+ 4:{obj:'<b>Objet :</b> « je referme le dossier {{nom_entreprise}} ? »',meta:'J17 · Break-up · dernière chance',pts:[
+   'Le « break-up » crée une <b>aversion à la perte</b> et génère un pic de réponses tardives.',
+   'Ton léger, sans pression : préserve la marque et la délivrabilité.',
+   'Laisse la porte ouverte (lien) pour les recontacts futurs.']}
+};
+const emails=document.querySelectorAll('.email-wrap'), tabs=document.querySelectorAll('.tab'), why=document.getElementById('why');
+function renderWhy(e){const w=WHY[e];why.innerHTML='<h3>Pourquoi ça marche</h3><div class="meta">'+w.meta+'<br>'+w.obj+'</div><ul>'+w.pts.map(p=>'<li>'+p+'</li>').join('')+'</ul>';}
+function show(e){emails.forEach(x=>x.classList.toggle('active',x.dataset.e===e));tabs.forEach(t=>t.classList.toggle('active',t.dataset.e===e));renderWhy(e);}
+tabs.forEach(t=>t.onclick=()=>show(t.dataset.e));
+// toggle variables <-> filled
+const sw=document.getElementById('sw');let filled=false;
+function applyFill(){document.querySelectorAll('.v').forEach(s=>{const k=s.dataset.k;s.textContent=filled?(SAMPLE[k]??('{{'+k+'}}')):('{{'+k+'}}');});}
+sw.onclick=()=>{filled=!filled;sw.classList.toggle('on',filled);document.body.classList.toggle('filled',filled);applyFill();};
+renderWhy('1');applyFill();
+</script>
+</body>
+</html>

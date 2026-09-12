@@ -27,5 +27,6 @@ source,target,type,code,match,hits,title
 /erp-qualite-agroalimentaire/,/blog/kpi-qualite-agroalimentaire/,url,301,url,0,"ERP qualite -> KPI qualite"
 /erp-agro-alimentaire/production/,/fonctionnalites/fabrication/,url,301,url,0,"ERP agro production -> Fabrication"
 /erp-agro-alimentaire/tracabilite/,/blog/erp-tracabilite-agroalimentaire/,url,301,url,0,"ERP agro tracabilite -> Article tracabilite"
-/logiciel-maree-mareyeur/,/blog/logiciel-maree-mareyeur/,url,301,url,0,"Page maree -> Article maree"
+/logiciel-maree-mareyeur/,/blog/logiciel-grossiste-alimentaire/,url,301,url,0,"Page maree -> Grossiste alimentaire (cible vivante)"
+/blog/logiciel-maree-mareyeur/,/blog/logiciel-grossiste-alimentaire/,url,301,url,0,"Article maree 404 -> Grossiste alimentaire"
 /negoce/boissons/,/negoce/,url,301,url,0,"Negoce boissons 404 -> Negoce"

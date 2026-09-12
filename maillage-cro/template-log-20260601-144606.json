@@ -1,0 +1,500 @@
+{
+ "mode": "live",
+ "items": [
+  {
+   "slug": "tracabilite-viande-logiciel",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "calcul-freinte-charcuterie-logiciel",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "gestion-decoupe-viande-logiciel",
+   "status": "wrote",
+   "h2": 9
+  },
+  {
+   "slug": "logiciel-gestion-calibre-fruits-legumes",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "logiciel-prix-du-jour-fruits-legumes",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "logiciel-tracabilite-dlc-traiteur",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "logiciel-calcul-cout-de-revient-traiteur",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "logiciel-commande-grande-surface-traiteur",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "logiciel-gestion-recette-multi-niveaux-traiteur",
+   "status": "wrote",
+   "h2": 2
+  },
+  {
+   "slug": "gestion-stock-multi-entrepots",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "alternatives-copilote-traiteur",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternatives-silog-agroalimentaire",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternatives-divalto-agroalimentaire",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternatives-sage-agroalimentaire",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "hello-harel-vs-sage",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "hello-harel-vs-odoo",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "hello-harel-vs-silog",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "hello-harel-vs-divalto",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "remplacer-excel-gestion-agroalimentaire",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "alternatives-cegid-distribution-alimentaire",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "alternatives-odoo-agroalimentaire",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "calcul-cout-de-revient-logiciel",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "logiciel-grossiste-alimentaire",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "erp-boissons",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "factur-x-e-facturation-logiciel",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "logiciel-televente-alimentaire",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "tracabilite-lot-dlc-logiciel",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "erp-cloud-saas-vs-on-premise",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "logiciel-maree-mareyeur",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "alternative-cegid",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-viande-volaille",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "alternative-sage-erp",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternative-akanea-erp",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "meilleurs-erp-gestion-approvisionnements",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "meilleurs-erp-import-export",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "meilleurs-erp-maraichers-fruits-legumes",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternative-archipelia",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "alternative-vif-erp",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-decoupe-viande-poisson",
+   "status": "wrote",
+   "h2": 4
+  },
+  {
+   "slug": "erp-conformite-agroalimentaire",
+   "status": "wrote",
+   "h2": 4
+  },
+  {
+   "slug": "migration-erp-agroalimentaire",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "integrateur-erp-lyon",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "integrateur-erp-paris",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "cuisine-centrale",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "partenariat-toncarton",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-saas",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "difference-prix-dachat-et-prix-de-revient",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "prix-dachat-definition",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "gestion-automatisee-des-variations-de-stock",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "variation-de-stock-positif-negatif",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "enregistrement-comptable-variation-de-stock",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "meilleurs-erp-boulangerie",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "erp-agroalimentaire",
+   "status": "wrote",
+   "h2": 4
+  },
+  {
+   "slug": "erp-pme",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "reapprovisionnement-stocks",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "opc-ua",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "ordonnancement-planification",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-saas-cloud",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "min",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "dlc-ddm-dluo",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-grossiste-distributeur",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "agreage-agroalimentaire",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "processus-agroalimentaire-guide",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "conditionnement-alimentaire-erp",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-tracabilite-agroalimentaire",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "alerte-stock-securite",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "gestion-des-inventaires",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "relance-client",
+   "status": "wrote",
+   "h2": 15
+  },
+  {
+   "slug": "roi-erp",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "kpi-qualite-agroalimentaire",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "plan-de-controle-alimentaire",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "cout-prix-au-kilo",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "cout-marginal",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "calcul-du-cout-achat",
+   "status": "wrote",
+   "h2": 10
+  },
+  {
+   "slug": "cout-de-revient",
+   "status": "wrote",
+   "h2": 8
+  },
+  {
+   "slug": "couts-de-production",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "alerte-date-peremption",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "calcul-stock-moyen",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "erp-as400",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "bon-de-commande-traiteur",
+   "status": "wrote",
+   "h2": 7
+  },
+  {
+   "slug": "facture-traiteur",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "tracabilite-de-la-viande",
+   "status": "wrote",
+   "h2": 4
+  },
+  {
+   "slug": "calculer-le-prix-de-revient-en-boulangerie",
+   "status": "wrote",
+   "h2": 6
+  },
+  {
+   "slug": "bon-de-livraison",
+   "status": "wrote",
+   "h2": 9
+  },
+  {
+   "slug": "bon-de-commande",
+   "status": "wrote",
+   "h2": 28
+  },
+  {
+   "slug": "maitriser-la-gestion-des-stocks",
+   "status": "wrote",
+   "h2": 35
+  },
+  {
+   "slug": "optimisation-entrepot",
+   "status": "wrote",
+   "h2": 26
+  },
+  {
+   "slug": "numeros-de-lot",
+   "status": "wrote",
+   "h2": 29
+  },
+  {
+   "slug": "ordre-de-fabrication",
+   "status": "wrote",
+   "h2": 14
+  },
+  {
+   "slug": "calcul-variations-de-stock",
+   "status": "wrote",
+   "h2": 22
+  },
+  {
+   "slug": "calcul-stock-de-securite",
+   "status": "wrote",
+   "h2": 18
+  },
+  {
+   "slug": "calcul-du-prix-moyen",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "facture-exacompta",
+   "status": "wrote",
+   "h2": 11
+  },
+  {
+   "slug": "contraintes-reglementations-logiciel-agroalimentaire",
+   "status": "wrote",
+   "h2": 5
+  },
+  {
+   "slug": "fifo-fefo-lifo",
+   "status": "wrote",
+   "h2": 7
+  }
+ ]
+}

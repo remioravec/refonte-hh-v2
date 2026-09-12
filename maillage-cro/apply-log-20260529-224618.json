@@ -1,0 +1,411 @@
+{
+ "mode": "live",
+ "count": 45,
+ "items": [
+  {
+   "slug": "tracabilite-viande-logiciel",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 2,
+   "delta": 6446
+  },
+  {
+   "slug": "logiciel-gestion-calibre-fruits-legumes",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 2,
+   "delta": 6312
+  },
+  {
+   "slug": "logiciel-prix-du-jour-fruits-legumes",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 0,
+   "up": 3,
+   "lateral": 3,
+   "delta": 6586
+  },
+  {
+   "slug": "logiciel-commande-grande-surface-traiteur",
+   "status": "wrote",
+   "tool": "quote",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6528
+  },
+  {
+   "slug": "logiciel-gestion-recette-multi-niveaux-traiteur",
+   "status": "wrote",
+   "tool": "quote",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6474
+  },
+  {
+   "slug": "alternatives-copilote-traiteur",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 5427
+  },
+  {
+   "slug": "alternatives-silog-agroalimentaire",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 5414
+  },
+  {
+   "slug": "alternatives-divalto-agroalimentaire",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 1,
+   "delta": 6274
+  },
+  {
+   "slug": "alternatives-sage-agroalimentaire",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 0,
+   "delta": 5764
+  },
+  {
+   "slug": "hello-harel-vs-sage",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 1,
+   "delta": 6232
+  },
+  {
+   "slug": "hello-harel-vs-odoo",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 2,
+   "delta": 6354
+  },
+  {
+   "slug": "hello-harel-vs-silog",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 1,
+   "delta": 5894
+  },
+  {
+   "slug": "hello-harel-vs-divalto",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 3,
+   "delta": 6140
+  },
+  {
+   "slug": "alternatives-cegid-distribution-alimentaire",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 5414
+  },
+  {
+   "slug": "alternatives-odoo-agroalimentaire",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 5414
+  },
+  {
+   "slug": "logiciel-grossiste-alimentaire",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 5293
+  },
+  {
+   "slug": "erp-boissons",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 1,
+   "delta": 6197
+  },
+  {
+   "slug": "logiciel-televente-alimentaire",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 2,
+   "delta": 5932
+  },
+  {
+   "slug": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 5,
+   "up": 2,
+   "lateral": 0,
+   "delta": 9824
+  },
+  {
+   "slug": "logiciel-maree-mareyeur",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10111
+  },
+  {
+   "slug": "alternative-cegid",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11473
+  },
+  {
+   "slug": "alternative-sage-erp",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11465
+  },
+  {
+   "slug": "alternative-akanea-erp",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11911
+  },
+  {
+   "slug": "meilleurs-erp-gestion-approvisionnements",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11432
+  },
+  {
+   "slug": "meilleurs-erp-import-export",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11390
+  },
+  {
+   "slug": "meilleurs-erp-maraichers-fruits-legumes",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 10348
+  },
+  {
+   "slug": "alternative-archipelia",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11043
+  },
+  {
+   "slug": "alternative-vif-erp",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11212
+  },
+  {
+   "slug": "erp-conformite-agroalimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 0,
+   "delta": 8730
+  },
+  {
+   "slug": "cuisine-centrale",
+   "status": "wrote",
+   "tool": "quote",
+   "visuals": 10,
+   "up": 1,
+   "lateral": 3,
+   "delta": 14669
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 10,
+   "up": 1,
+   "lateral": 3,
+   "delta": 14536
+  },
+  {
+   "slug": "meilleurs-erp-boulangerie",
+   "status": "wrote",
+   "tool": "compare",
+   "visuals": 8,
+   "up": 1,
+   "lateral": 1,
+   "delta": 12745
+  },
+  {
+   "slug": "min",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12570
+  },
+  {
+   "slug": "erp-grossiste-distributeur",
+   "status": "wrote",
+   "tool": "margin",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10974
+  },
+  {
+   "slug": "agreage-agroalimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 3,
+   "delta": 9426
+  },
+  {
+   "slug": "processus-agroalimentaire-guide",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 10268
+  },
+  {
+   "slug": "conditionnement-alimentaire-erp",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9500
+  },
+  {
+   "slug": "erp-tracabilite-agroalimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 10292
+  },
+  {
+   "slug": "kpi-qualite-agroalimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 9,
+   "up": 0,
+   "lateral": 3,
+   "delta": 13688
+  },
+  {
+   "slug": "plan-de-controle-alimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11941
+  },
+  {
+   "slug": "bon-de-commande-traiteur",
+   "status": "wrote",
+   "tool": "quote",
+   "visuals": 7,
+   "up": 2,
+   "lateral": 0,
+   "delta": 11378
+  },
+  {
+   "slug": "facture-traiteur",
+   "status": "wrote",
+   "tool": "quote",
+   "visuals": 6,
+   "up": 2,
+   "lateral": 1,
+   "delta": 11142
+  },
+  {
+   "slug": "tracabilite-de-la-viande",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 2,
+   "delta": 9362
+  },
+  {
+   "slug": "numeros-de-lot",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 29,
+   "up": 0,
+   "lateral": 2,
+   "delta": 29669
+  },
+  {
+   "slug": "contraintes-reglementations-logiciel-agroalimentaire",
+   "status": "wrote",
+   "tool": "haccp",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10314
+  }
+ ]
+}
