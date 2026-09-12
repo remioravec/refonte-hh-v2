@@ -221,6 +221,8 @@ def main():
     k = c.find("<p", i)
     if 0 < k < j:
         c = c[:k] + "<p>" + CHAPO + c[j:]
+    c = c.replace('<div class="hero-badge"><span class="dot"></span>ERP Négoce — Traçabilité</div>',
+                  '<div class="hero-badge"><span class="dot"></span>ERP Négoce — MIN de Rungis</div>')
     print("hero pose")
 
     contenu = corps()

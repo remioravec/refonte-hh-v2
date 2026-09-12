@@ -318,8 +318,142 @@ def reparer(c):
           '</style>')
     faits.append("puces du carrousel : zone de clic portee a 24 px")
 
+    c, g = gabarit(c)
+    faits += g
     c, q = qualite(c)
     faits += q
+    return c, faits
+
+
+def _bloc(c, ouvrant, balise="div"):
+    """Retourne (debut, fin) du bloc ouvert par `ouvrant`, accolades equilibrees."""
+    i = c.find(ouvrant)
+    if i < 0:
+        return None
+    prof, j = 0, i
+    o, f = "<%s" % balise, "</%s>" % balise
+    while j < len(c):
+        a = c.find(o, j)
+        b = c.find(f, j)
+        if b < 0:
+            return None
+        if 0 <= a < b:
+            prof += 1
+            j = a + len(o)
+        else:
+            prof -= 1
+            j = b + len(f)
+            if prof == 0:
+                return i, j
+    return None
+
+
+def gabarit(c):
+    """Defauts du GABARIT, releves par l'agent de controle UX le 12/09/2026.
+
+    Ils viennent de la page modele, donc ils sont sur toutes les pages du site.
+    Corriges ici dans la maquette, signales au client, jamais touches en ligne.
+    """
+    faits = []
+
+    # 1. Le H1 et le chapo du hero n'ont aucune classe : ils heritent du
+    #    #hh-page{color:#101828} au lieu des .hero-title / .hero-description
+    #    qui existent et valent #fff. Mesure sur la photo : 2,88:1 pour le H1
+    #    (seuil 3), 2,83:1 pour le chapo (seuil 4,5).
+    i = c.find('<section class="hero-section')
+    if i > 0:
+        j = c.find("</section>", i)
+        h = c[i:j]
+        n = h
+        if "<h1>" in n:
+            n = n.replace("<h1>", '<h1 class="hero-title">', 1)
+        k = n.find("</h1>")
+        if k > 0 and "<p>" in n[k:]:
+            m = n.index("<p>", k)
+            n = n[:m] + '<p class="hero-description">' + n[m + 3:]
+        if n != h:
+            c = c[:i] + n + c[j:]
+            faits.append("hero : classes .hero-title et .hero-description posees")
+
+    # 2. Les douze cartes d'equipe floutees. Un mur de portraits illisibles
+    #    marques opacity .45 et filter:blur : la page annonce quinze personnes
+    #    et en montre trois. On garde les trois reelles.
+    n = 0
+    while True:
+        b = _bloc(c, '<div class="team-card scroll-reveal" style="opacity:0.45;')
+        if not b:
+            break
+        c = c[:b[0]] + c[b[1]:]
+        n += 1
+    if n:
+        faits.append("equipe : %d cartes floutees retirees" % n)
+
+    # 3. Les accents manquants du carrousel des metiers. Sur une page
+    #    francophone, c'est le signal « genere » le plus visible.
+    ACC = {"Stocks Multi-Depots": "Stocks multi-dépôts",
+           "Tracabilite par lots": "Traçabilité par lots",
+           "inter-depots": "inter-dépôts",
+           "conformite reglementaire": "conformité réglementaire",
+           "EDI integre": "EDI intégré",
+           "negociation tarifaire": "négociation tarifaire",
+           "temps reel": "temps réel"}
+    n = 0
+    for a, b in ACC.items():
+        if ">" + a in c or " " + a in c:
+            n += c.count(a)
+            c = c.replace(a, b)
+    if n:
+        faits.append("carrousel des metiers : %d libelles reaccentues" % n)
+
+    # 4. Le nom et la fonction colles dans le temoignage.
+    if "<strong>Julien Benguigui</strong>Co-fondateur" in c:
+        c = c.replace("<strong>Julien Benguigui</strong>Co-fondateur",
+                      "<strong>Julien Benguigui</strong> — Co-fondateur")
+        faits.append("temoignage : separateur entre le nom et la fonction")
+
+    # 5. Doublon : « Ils nous font confiance » en petit sous le hero ET en H2
+    #    de la section des avis.
+    if c.count("Ils nous font confiance") > 1:
+        i = c.find('<section class="reviews-section')
+        if i < 0:
+            i = c.find('<section class="testimonial-section')
+        if i > 0:
+            j = c.find("Ils nous font confiance", i)
+            if j > 0:
+                c = c[:j] + "Ce qu'en disent nos clients" + c[j + len("Ils nous font confiance"):]
+                faits.append("doublon « Ils nous font confiance » leve")
+
+    # 6. Tout le reste passe par la feuille : specificite, contraste, rayons.
+    c += """<style id="hh-gabarit">
+/* rythme de l'article : .hha-art h2 etait battu par #hh-page h2{margin:0} */
+#hh-page .hha-art h2{margin:3.2rem 0 1.2rem !important;font-size:1.75rem !important;line-height:1.25 !important}
+#hh-page .hha-art h3{margin:2.4rem 0 .8rem !important}
+#hh-page .hha-art p{margin:0 0 1.25rem !important}
+#hh-page .hha-art ul,#hh-page .hha-art ol{margin:1.1rem 0 1.7rem !important;padding-left:1.4rem !important}
+#hh-page .hha-art li{margin:.55rem 0 !important}
+/* le bouton flottant couvrait le contenu au centre de l'ecran */
+#hh-page .sticky-cta,.sticky-cta{left:auto !important;right:1.5rem !important;transform:none !important}
+#hh-page .sticky-cta a,.sticky-cta a{color:#06283D !important}
+@media(max-width:700px){#hh-page .sticky-cta,.sticky-cta{right:.75rem !important;bottom:.75rem !important}}
+/* un seul bleu de texte, un seul bleu de fond porteur de blanc */
+#hh-page .overline,#hh-page .card-link,#hh-page .section-label{color:#046C93 !important}
+#hh-page .timeline-circle,#hh-page .review-avatar{background:#0079B8 !important}
+/* les liens de carte etaient a des hauteurs differentes selon la longueur du texte */
+#hh-page .metier-slide{display:flex !important;flex-direction:column !important}
+#hh-page .metier-slide .card-link{margin-top:auto !important}
+/* deux niveaux de carte, un seul rayon, une seule bordure */
+#hh-page .metier-slide,#hh-page .timeline-card,#hh-page .team-card,
+#hh-page .about-card,#hh-page .review-card{border-radius:16px !important;
+ border:1px solid #E2E8F0 !important;box-shadow:0 1px 3px rgba(16,24,40,.08) !important}
+/* les fleches du carrousel mordaient sur la premiere carte, et disparaissaient en mobile */
+#hh-page .carousel-prev{left:-20px !important}
+#hh-page .carousel-next{right:-20px !important}
+@media(max-width:1023px){#hh-page .carousel-arrow{display:none !important}}
+/* le tableau des ecrans se coupait sans le dire : on degrade le bord droit */
+@media(max-width:560px){#hh-page .hhf .ui-tw{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent);
+ mask-image:linear-gradient(to right,#000 calc(100% - 26px),transparent)}}
+</style>"""
+    faits.append("gabarit : rythme, contraste, rayons et debordements corriges en feuille")
     return c, faits
 
 

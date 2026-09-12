@@ -155,7 +155,11 @@ def ecran_dlc():
         + UI._side(["Tableau de bord", "Produits stockés", "Tout le stock", "Emplacements",
                     "Inventaires", "Transferts"], 2)
         + '<div class="ui-main"><div class="ui-h"><span>Dates limites — %s</span>'
-          '<em>+ ⎙</em></div><div class="ui-grid one">' % JOUR
+          '<em>+ ⎙</em></div>' % JOUR
+        + _boxes([("#C0392B", "1", "lot à sortir", "Le bar de ligne, date limite au 11/09"),
+                  ("#275E80", "304", "kg en stock", "Sur les quatre lots du carreau"),
+                  ("#0F7A45", "3,5", "jours en moyenne", "Avant date limite, tous lots confondus")])
+        + '<div class="ui-grid one">'
         + UI._card("Stratégie de prélèvement appliquée",
                    '<span class="ui-donut">' + UI._ring([("#FA8F92", 71), ("#FFDDA8", 29)])
                    + UI._leg([("#FA8F92", "Par date limite — au plus près de la DLC",
@@ -282,13 +286,15 @@ def ecran_marge():
                     "Démarque", "Exports"], 1)
         + '<div class="ui-main"><div class="ui-h">'
         '<span>Marge par lot — semaine du 7 au 11 septembre</span><em>⎙</em></div>'
-        '<div class="ui-grid one">'
+        + _boxes([("#0F7A45", "26,5", "% de marge", "Après écart de poids et démarque"),
+                  ("#B45309", "135", "€ de perte", "Démarque sur date limite"),
+                  ("#C0392B", "1", "lot en perte", "La courgette, −18,8 %")])
+        + '<div class="ui-grid one">'
         + UI._card("Où la marge théorique est partie",
                    '<span class="ui-donut">'
-                   + UI._ring([("#0F7A45", 85), ("#B45309", 10), ("#CBD5E1", 5)])
-                   + UI._leg([("#0F7A45", "Marge réalisée", "85 %", "1 251 €"),
-                              ("#B45309", "Perte sur DLC", "10 %", "135 €"),
-                              ("#CBD5E1", "Remises de fin de tournée", "5 %", "74 €")])
+                   + UI._ring([("#0F7A45", 90), ("#B45309", 10)])
+                   + UI._leg([("#0F7A45", "Marge réalisée", "90 %", "1 251 €"),
+                              ("#B45309", "Perte sur date limite", "10 %", "135 €")])
                    + '</span>')
         + UI._card("Lot par lot, au poids pesé",
                    UI._tab(["Lot", "Produit", "^Acheté", "^Vendu", "^Perte", "^Taux de marge"],
@@ -405,7 +411,7 @@ def schema():
 # ------------------------------------------------------------------ la feuille
 def _css(n):
     base = """
-.mnm{display:block;margin:0 !important}
+.mnm{display:block;margin:0 !important;background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:1.5rem}
 .mnm-pick{position:absolute;opacity:0;width:1px;height:1px;margin:-1px;overflow:hidden;
  clip-path:inset(50%);pointer-events:none}
 .mnm-bar{display:flex;gap:.4rem;overflow-x:auto;scrollbar-width:thin;padding:.3rem;
@@ -423,7 +429,7 @@ def _css(n):
 .mnm-p>*{margin:0 !important}
 .mnm-n{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
  color:#046C93;margin:0 0 .7rem !important}
-.mnm-p h3{font-size:clamp(1.1rem,1.8vw,1.3rem);line-height:1.3;color:#101828;
+.mnm-p h3{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.3;color:#101828;
  font-weight:700;margin:0 0 .75rem !important;letter-spacing:-.02em}
 .mnm-c{color:#101828;font-size:1rem;line-height:1.68;margin:0 0 1.2rem !important}
 .mnm-l{list-style:none;padding:0 !important;margin:0 0 1.6rem !important;display:grid;
@@ -432,8 +438,8 @@ def _css(n):
  line-height:1.5;margin:0 !important;padding:0 !important}
 .mnm-l li svg{width:18px;height:18px;flex:0 0 18px;margin-top:2px;color:#0ea5e9}
 .mnm-aide{margin:1.6rem 0 0 !important;font-size:.87rem;color:#546174;text-align:center}
-@media(max-width:700px){
- .mnm-bar{border-radius:16px}
+@media(max-width:820px){
+ .mnm-bar{flex-wrap:wrap;justify-content:center;overflow:visible;border-radius:20px}
  .mnm-bar label{padding:.5rem .8rem;font-size:.84rem}
  .mnm-l{grid-template-columns:1fr}
 }
