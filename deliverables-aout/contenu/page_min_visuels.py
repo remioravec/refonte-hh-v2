@@ -85,7 +85,7 @@ CSS = "<style id=\"hh-min-page\">" + _sc("""
  border-top:1px solid #e2e8f0;line-height:1.5;margin:0 !important}
 
 /* --- tableau des 17 MIN --- */
-.mn-bar{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1rem !important}
+.mn-bar{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin:0 0 1rem !important}
 .mn-f{font:inherit;font-size:.82rem;font-weight:600;padding:.42rem .85rem;border:1px solid #d7dde3;
  background:#fff;color:#475569;border-radius:999px;cursor:pointer}
 .mn-f:hover{border-color:#00B1F5;color:#0f172a}

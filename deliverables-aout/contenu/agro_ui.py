@@ -175,7 +175,8 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf-pick{position:absolute;opacity:0;width:1px;height:1px;margin:-1px;
  overflow:hidden;clip-path:inset(50%%);pointer-events:none}
 #hh-page .hhf-bar{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:thin;
- padding:.35rem;margin:0 0 2.25rem !important;background:#f1f5f9;border-radius:999px}
+ padding:.35rem;margin:0 auto 2.25rem !important;background:#f1f5f9;border-radius:999px;
+ width:max-content;max-width:100%%}
 #hh-page .hhf-bar label{display:flex;align-items:center;gap:.55rem;white-space:nowrap;
  padding:.72rem 1.15rem;border-radius:999px;font-size:.93rem;font-weight:600;color:#475569;
  cursor:pointer;transition:background .18s ease,color .18s ease;user-select:none;margin:0 !important}

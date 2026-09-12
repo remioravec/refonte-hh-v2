@@ -93,7 +93,7 @@ def module():
 
 
 CSS = """<style id="hha-min">
-#hh-page .minbar{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1rem !important}
+#hh-page .minbar{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin:0 0 1rem !important}
 #hh-page .minf{font:inherit;font-size:.82rem;font-weight:600;padding:.42rem .85rem;
  border:1px solid #d7dde3;background:#fff;color:#475569;border-radius:999px;cursor:pointer}
 #hh-page .minf:hover{border-color:#00B1F5;color:#0f172a}
