@@ -206,6 +206,10 @@ CSS = """<style id="hh-agro-fonctionnalites">
 #hh-page .hhf-pick:nth-of-type(5):checked ~ .hhf-panels > .hhf-row:nth-child(5){display:grid}
 #hh-page .hhf-pick:nth-of-type(5):focus-visible ~ .hhf-bar label[for="hhf-o5"]{outline:3px solid #0f172a;outline-offset:2px}
 #hh-page .hhf-panels > .hhf-row{display:none}
+#hh-page .hhf-lien{display:inline-flex;align-items:center;gap:.4rem;
+ margin:1.1rem 1.1rem 0 0 !important;
+ font-size:.92rem;font-weight:700;color:#046C93;text-decoration:none}
+#hh-page .hhf-lien:hover{text-decoration:underline}
 #hh-page .hhf-aide{margin:2rem 0 0 !important;font-size:.9rem;color:#64748b;text-align:center}
 @media(max-width:700px){
  #hh-page .hhf-bar{border-radius:16px}
@@ -497,7 +501,12 @@ def section(entete, blocs=None, courts=None):
     blocs = blocs or BLOCS
     courts = courts or COURTS
     radios, onglets, panneaux = [], [], []
-    for k, (titre, chapo, points, fabrique) in enumerate(blocs):
+    for k, bloc in enumerate(blocs):
+        # un bloc porte 4 elements, ou 5 quand la carte d'origine avait un lien
+        # de maillage interne : il ne doit surtout pas se perdre a la conversion.
+        titre, chapo, points, fabrique = bloc[:4]
+        lien = bloc[4] if len(bloc) > 4 else ""
+
         n = k + 1
         radios.append('<input class="hhf-pick" type="radio" name="hhf-onglet" id="hhf-o%d"%s>'
                       % (n, ' checked' if k == 0 else ''))
@@ -506,8 +515,9 @@ def section(entete, blocs=None, courts=None):
         panneaux.append(
             '<div class="hhf-row">'
             '<div class="hhf-txt"><p class="hhf-num"><b>%02d</b>Fonctionnalité</p>'
-            '<h3>%s</h3><p>%s</p><ul class="hhf-pts">%s</ul></div>'
-            '<div class="hhf-shot">%s</div></div>' % (n, titre, chapo, pts, fabrique()))
+            '<h3>%s</h3><p>%s</p><ul class="hhf-pts">%s</ul>%s</div>'
+            '<div class="hhf-shot">%s</div></div>'
+            % (n, titre, chapo, pts, lien, fabrique()))
 
     return (CSS + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete
