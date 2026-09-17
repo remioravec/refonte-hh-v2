@@ -47,47 +47,37 @@ PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 # (url, id de page, libelle, [candidats Pexels], note eventuelle)
 PLAN = [
  ("/agroalimentaire/", 1726, "Agroalimentaire — page mère",
-  [2889093, 32578355, 11679687, 8877381], ""),
+  [2889093, 32578355, 11679687, 8877381]),
  ("/agroalimentaire/boulanger/", 3309, "Boulanger",
-  [36445171, 36445354, 36445548, 30918892], ""),
+  [36445171, 36445354, 36445548, 30918892]),
  ("/agroalimentaire/brasseur/", 10896, "Brasseur",
-  [5532998, 5532995, 5532988, 1267348], ""),
+  [5532998, 5532995, 5532988, 1267348]),
  ("/agroalimentaire/charcutier/", 2818, "Charcutier",
-  [7163993, 29346647, 18882519, 30557313], ""),
+  [7163993, 29346647, 18882519, 30557313]),
  ("/agroalimentaire/chocolatier/", 10894, "Chocolatier",
-  [6035326, 6035334, 6035990, 29188957], ""),
- ("/agroalimentaire/conserverie/", 10933, "Conserverie",
-  [5532660, 5532719, 5532711, 5532675],
-  "Pexels n'a pas de scène de conserverie avec un opérateur : les quatre "
-  "propositions sont des vues de ligne. À défaut, une photo de terrain serait "
-  "à commander."),
+  [6035326, 6035334, 6035990, 29188957]),
  ("/agroalimentaire/fromager/", 10867, "Fromager",
-  [8287391, 5953721, 9424540, 8287395], ""),
+  [16214484, 5953725, 5953758, 19196908]),
  ("/agroalimentaire/glacier/", 10895, "Glacier",
-  [4916466, 449730, 20732658, 1028432],
-  "Le fonds est pauvre : l'essentiel des photos de glace sont des cornets en "
-  "studio. Les quatre retenues sont ce qui se rapproche le plus d'un labo."),
+  [37176404, 5108033, 5108030, 18003564]),
  ("/agroalimentaire/industrie-laitiere/", 5470, "Industrie laitière",
-  [5953801, 5953805, 5953794, 5953685], ""),
+  [5953801, 5953805, 5953794, 5953685]),
  ("/agroalimentaire/maraicher/", 2824, "Fruits et légumes",
-  [8475178, 11678431, 34936950, 12519455], ""),
+  [8475178, 11678431, 34936950, 12519455]),
  ("/agroalimentaire/patissier/", 10865, "Pâtissier",
-  [33393555, 5908284, 20194906, 19498989], ""),
+  [33393555, 5908284, 20194906, 19498989]),
  ("/agroalimentaire/plats-cuisines-industriels/", 5477, "Plats cuisinés",
-  [29226707, 7124346, 17318176, 5531288], ""),
+  [29226707, 7124346, 17318176, 5531288]),
  ("/agroalimentaire/poissonnier/", 10868, "Poissonnier",
-  [8352778, 30811293, 8352350, 21813752], ""),
+  [8352778, 30811293, 8352350, 21813752]),
  ("/agroalimentaire/torrefacteur/", 10935, "Torréfacteur",
-  [4820817, 4820732, 4820655, 7176000], ""),
+  [4820817, 4820732, 4820655, 7176000]),
  ("/agroalimentaire/traiteur/", 2839, "Traiteur",
-  [15671274, 2977515, 15671410, 2696064], ""),
+  [15671274, 2977515, 15671410, 2696064]),
  ("/agroalimentaire/viande/", 11332, "Viande",
-  [7163987, 7163988, 7163991, 7163990], ""),
+  [7163987, 7163988, 7163991, 7163990]),
  ("/negoce/", 5957, "Négoce alimentaire",
-  [4487382, 4487365, 4481531, 4483861],
-  "La photo posée le 16/09 à votre demande — l'épicier et ses cagettes — est "
-  "celle qui est en place ci-contre. Les quatre propositions sont des "
-  "alternatives entrepôt, si vous voulez un registre plus négoce."),
+  [11772036, 34756097, 8069554, 34936950]),
 ]
 
 
@@ -196,7 +186,7 @@ def main():
     os.makedirs(CACHE_HERO, exist_ok=True)
     os.makedirs(CACHE_PX, exist_ok=True)
     blocs, pb = [], []
-    for url, pid, libelle, cands, note in PLAN:
+    for url, pid, libelle, cands in PLAN:
         uri, nom = hero(pid)
         if not uri:
             pb.append("%s : hero illisible (%s)" % (url, nom))
@@ -219,13 +209,12 @@ def main():
             '<div class="cadre">%s</div>'
             '<figcaption><span class="lab act">En place aujourd\'hui</span>%s</figcaption>'
             '</figure></div>'
-            '<div class="cands">%s</div></div>%s</section>'
+            '<div class="cands">%s</div></div></section>'
             % (libelle, url,
                '<span class="tag">protégée</span>' if pid in PROTEGEES else '',
                ('<img src="%s" alt="Hero actuel de la page %s">' % (uri, libelle))
                if uri else '<div style="aspect-ratio:16/9"></div>',
-               html.escape(nom), vign,
-               ('<p class="note">%s</p>' % note) if note else ''))
+               html.escape(nom), vign))
 
     doc = ('<title>Héros métier — actuel et propositions</title>' + CSS
            + '<div class="wrap"><header class="t">'
@@ -234,28 +223,8 @@ def main():
              '<p class="s">Pour chaque page métier, la photo de hero en place aujourd\'hui, '
              'lue en direct sur le site, et quatre remplaçantes libres de droit.</p>'
              '</header>'
-           + '<div class="methode"><b>Comment les candidates ont été choisies.</b> '
-             'Quatre requêtes Pexels orientées production par métier, une quinzaine de '
-             'photos remontées, montées en planche contact et regardées une par une. '
-             'Ce qui a fait le tri :'
-             '<ul><li>un vrai lieu de travail, pas un décor de studio ni une cuisine '
-             'de maison ;</li>'
-             '<li>un geste de métier lisible — le fournier qui enfourne, la main dans le '
-             'bac de refroidissement du torréfacteur, le tranchage du caillé, le dressage '
-             'en série, la palette qu\'on tire dans l\'allée ;</li>'
-             '<li>un décor crédible en Europe, aux codes du métier ;</li>'
-             '<li>format paysage, au moins 1600 px de large.</li></ul>'
-             '<p style="margin:.7rem 0 0">Je n\'ai pas trié les personnes sur leur couleur '
-             'de peau : le tri porte sur le lieu, le geste et la crédibilité de la scène. '
-             'Le choix final vous revient — dites-moi les numéros Pexels retenus et je les '
-             'pose, recadrées en 1920 × 1080, avec leur alternative textuelle.</p></div>'
            + "".join(blocs)
-           + '<footer class="f"><b>Licence.</b> Toutes les propositions viennent de Pexels : '
-             'utilisation commerciale libre, sans attribution obligatoire. Le photographe est '
-             'cité quand même, et chaque vignette renvoie à sa page d\'origine. '
-             '<b>Pages protégées.</b> Cinq pages portent la mention : aucune photo n\'y sera '
-             'remplacée sans votre feu vert explicite.</footer>'
-             '</div>')
+           + '</div>')
     open(SORTIE, "w", encoding="utf-8").write(doc)
     print("ecrit : %s (%d ko, %d metiers, %d vignettes)"
           % (SORTIE, len(doc) // 1024, len(PLAN), doc.count("<figure>")))

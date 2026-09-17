@@ -35,57 +35,13 @@ S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c
 
 # metier -> (libelle, [requetes])
 METIERS = {
- "agroalimentaire": ("Agroalimentaire (page mère)", [
-    "food factory production line workers", "food processing plant employees",
-    "food manufacturing workers hygiene", "industrial food production workers"]),
- "boulanger": ("Boulanger", [
-    "professional bakery baker oven", "bakery production bread trays worker",
-    "baker loading bread oven bakery", "artisan bakery workshop baker working"]),
- "brasseur": ("Brasseur", [
-    "brewery worker stainless tanks", "craft brewery brewer working tanks",
-    "brewery production hall", "brewer checking fermentation tank"]),
- "charcutier": ("Charcutier", [
-    "butcher shop cutting meat professional", "charcuterie sausage production workshop",
-    "butcher working meat counter", "meat curing sausages hanging workshop"]),
- "chocolatier": ("Chocolatier", [
-    "chocolate workshop chocolatier working", "chocolate production tempering workshop",
-    "chocolate maker moulds workshop", "chocolate factory worker"]),
- "conserverie": ("Conserverie", [
-    "canning factory production line jars", "food preserving jars workshop worker",
-    "cannery workers production", "glass jars food production line"]),
- "fromager": ("Fromager", [
-    "cheese maker dairy working wheels", "cheese ripening cellar shelves",
-    "cheese production workshop worker", "cheese shop counter seller"]),
- "glacier": ("Glacier", [
-    "ice cream production workshop", "gelato artisan making workshop",
-    "ice cream shop professional maker", "frozen dessert production"]),
- "industrie-laitiere": ("Industrie laitière", [
-    "dairy processing plant worker", "milk factory production line",
-    "dairy plant stainless tanks worker", "milk tank dairy industry"]),
- "maraicher": ("Fruits et légumes", [
-    "wholesale market vegetables crates worker", "produce warehouse vegetables pallets",
-    "vegetable sorting packing warehouse", "greengrocer market stall professional"]),
- "patissier": ("Pâtissier", [
-    "pastry chef professional kitchen piping", "patisserie production pastry chef",
-    "pastry kitchen chef trays", "pastry chef decorating professional"]),
- "plats-cuisines": ("Plats cuisinés", [
-    "industrial kitchen meal production", "catering kitchen large pots cooking",
-    "commercial kitchen workers cooking", "ready meals production line"]),
- "poissonnier": ("Poissonnier", [
-    "fish market ice fishmonger", "fish wholesale market crates worker",
-    "fishmonger cutting fish counter", "seafood market stall professional"]),
- "torrefacteur": ("Torréfacteur", [
-    "coffee roasting machine roaster working", "coffee roastery worker beans",
-    "coffee roasting drum professional", "coffee roaster checking beans"]),
- "traiteur": ("Traiteur", [
-    "catering kitchen chef trays", "caterer plating dishes professional kitchen",
-    "banquet kitchen chefs working", "catering buffet preparation kitchen"]),
- "viande": ("Viande", [
-    "meat processing plant worker", "butcher cutting carcass workshop",
-    "meat cutting room professional", "meat industry worker knife"]),
- "negoce": ("Négoce alimentaire", [
-    "food wholesale warehouse crates worker", "warehouse worker pallets food",
-    "wholesale food distribution warehouse", "forklift warehouse food crates"]),
+ "negoce3": ("Négoce alimentaire — alimentaire", [
+    "fruit vegetable wholesale market crates worker",
+    "cold storage warehouse food boxes worker",
+    "produce distribution center boxes vegetables worker",
+    "market hall wholesale fruit boxes men",
+    "banana boxes warehouse worker loading",
+    "vegetable crates truck loading market"]),
 }
 
 
