@@ -28,7 +28,7 @@ def main():
     ok, pb = 0, []
     for k, x in enumerate(cibles, 1):
         u = x["link"]
-        r = subprocess.run(["curl", "-sS", "-m", "25", "-w", "\n%{http_code}", u],
+        r = subprocess.run(["curl", "-sSL", "-m", "25", "-w", "\n%{http_code}", u],
                            capture_output=True, text=True)
         s = r.stdout
         code = s.rsplit("\n", 1)[-1].strip()
