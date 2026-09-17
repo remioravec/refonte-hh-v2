@@ -78,8 +78,9 @@ ICO = {
 #   ce qui rend la divergence impossible.
 MENU = [
  {"cle": "metiers", "libelle": "Métiers", "href": "/agroalimentaire/",
-  "note": "Seize métiers couverts, du fournil au carreau du marché de gros. "
-          "Chaque page décrit la gestion telle qu'elle se pose dans le métier.",
+  "note": "Quinze métiers de l'agroalimentaire, du fournil à la ligne de "
+          "conditionnement. Chaque page décrit la gestion telle qu'elle se pose "
+          "dans le métier.",
   "cta": ("Voir l'ERP agroalimentaire", "/agroalimentaire/"),
   "colonnes": [
     {"titre": "Métiers de bouche", "double": True, "liens": [
@@ -94,7 +95,7 @@ MENU = [
       ("Fruits et légumes", "/agroalimentaire/maraicher/", "legume"),
       ("Torréfaction", "/agroalimentaire/torrefacteur/", "cafe"),
     ]},
-    {"titre": "Industrie agroalimentaire", "liens": [
+    {"titre": "Industrie et transformation", "liens": [
       ("ERP agroalimentaire", "/agroalimentaire/", "usine"),
       ("Viande", "/agroalimentaire/viande/", "viande"),
       ("Industrie laitière", "/agroalimentaire/industrie-laitiere/", "lait"),
@@ -102,19 +103,11 @@ MENU = [
       ("Conserverie", "/agroalimentaire/conserverie/", "bocal"),
       ("Brasserie", "/agroalimentaire/brasseur/", "biere"),
     ]},
-    {"titre": "Négoce et médical", "liens": [
-      ("Négoce alimentaire", "/negoce/", "camion"),
-      ("Dispositifs médicaux", "/medical/", "croix"),
-      ("Laboratoires", "/medical/laboratoires/", "labo"),
-      ("Matériel dentaire", "/medical/materiel-dentaire/", "dent"),
-      ("Maintien à domicile", "/medical/maintien-a-domicile/", "maison"),
-      ("Hygiène professionnelle", "/medical/hygiene-professionnelle/", "spray"),
-    ]},
   ]},
 
  {"cle": "fonctions", "libelle": "Fonctionnalités", "href": "/fonctionnalites/",
-  "note": "Huit modules de gestion, et cinq briques propres au négoce "
-          "alimentaire — poids variable, lots, dépôts multiples.",
+  "note": "Huit modules de gestion, du devis à l'écriture comptable, "
+          "conçus pour le poids variable, les lots et les dates limites.",
   "cta": ("Voir toutes les fonctionnalités", "/fonctionnalites/"),
   "colonnes": [
     {"titre": "Vendre et facturer", "liens": [
@@ -126,15 +119,10 @@ MENU = [
       ("Fabrication", "/fonctionnalites/fabrication/", "engrenage"),
       ("Gestion des stocks", "/fonctionnalites/gestion-de-stock/", "stock"),
       ("Logistique", "/fonctionnalites/logistique/", "camion"),
+    ]},
+    {"titre": "Acheter et échanger", "liens": [
       ("Achats", "/fonctionnalites/achat/", "panier"),
       ("Import-export", "/fonctionnalites/import-export/", "echange"),
-    ]},
-    {"titre": "Propre au négoce", "liens": [
-      ("Achats et approvisionnements", "/negoce/achats-approvisionnements/", "panier"),
-      ("Ventes, devis et commandes", "/negoce/ventes-devis-commandes/", "facture"),
-      ("Stocks multi-dépôts", "/negoce/stocks-multi-depots/", "stock"),
-      ("Traçabilité des lots", "/negoce/tracabilite-lots/", "loupe"),
-      ("Tarifs, reporting et EDI", "/negoce/tarifs-reporting-edi/", "serveur"),
     ]},
   ]},
 ]
@@ -167,11 +155,13 @@ def desktop(logo):
                      '<div class="hhm-liste%s">%s</div></div>'
                      % (c["titre"], " est-double" if c.get("double") else "",
                         _liens(c["liens"])))
-        panneaux += ('<div class="hhm-mega" id="hhm-%s" data-ouvert="false">'
+        panneaux += ('<div class="hhm-mega" id="hhm-%s" data-ouvert="false" '
+                     'data-cols="%d">'
                      '<div class="hhm-cols">%s</div>'
                      '<div class="hhm-bas"><p class="hhm-note">%s</p>'
                      '<a class="hhm-btn hhm-cta" href="%s">%s</a></div></div>'
-                     % (m["cle"], cols, m["note"], m["cta"][1], m["cta"][0]))
+                     % (m["cle"], len(m["colonnes"]), cols, m["note"],
+                        m["cta"][1], m["cta"][0]))
 
     decl = "".join(
         '<a href="%s" class="hhm-decl" data-mega aria-expanded="false" '
@@ -259,7 +249,10 @@ CSS = """<style id="hh-mega-menu">
  pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s}
 #hhm-header .hhm-mega[data-ouvert="true"]{opacity:1;visibility:visible;pointer-events:auto;
  transform:translateX(-50%) translateY(0)}
-#hhm-header .hhm-cols{display:grid;grid-template-columns:1.75fr 1fr 1.15fr;gap:1.75rem}
+#hhm-header .hhm-cols{display:grid;gap:1.75rem}
+#hhm-header .hhm-mega[data-cols="2"]{width:min(880px,calc(100vw - 2rem))}
+#hhm-header .hhm-mega[data-cols="2"] .hhm-cols{grid-template-columns:1.85fr 1fr}
+#hhm-header .hhm-mega[data-cols="3"] .hhm-cols{grid-template-columns:1.2fr 1fr 1fr}
 #hhm-header .hhm-col h4{margin:0 0 .7rem;font-size:.72rem;font-weight:800;letter-spacing:.11em;
  text-transform:uppercase;color:#046C93}
 #hhm-header .hhm-liste{display:grid;gap:.1rem}
