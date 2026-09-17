@@ -47,41 +47,41 @@ PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 # (url, id de page, libelle, [candidats Pexels], note eventuelle)
 PLAN = [
  ("/agroalimentaire/", 1726, "Agroalimentaire — page mère",
-  [2889093, 32578355, 11679687, 8877381]),
+  [2889093, 32578355, 11679687, 8877381, 38336747, 5953729, 5953714, 5953827]),
  ("/agroalimentaire/boulanger/", 3309, "Boulanger",
-  [36445171, 36445354, 36445548, 30918892]),
+  [36445171, 36445354, 36445548, 30918892, 30918891, 19859271, 19142261, 35893440]),
  ("/agroalimentaire/brasseur/", 10896, "Brasseur",
   [5532998, 5532995, 5532988, 1267348]),
  ("/agroalimentaire/charcutier/", 2818, "Charcutier",
-  [7163993, 29346647, 18882519, 30557313]),
+  [7163993, 29346647, 18882519, 30557313, 11686671, 10330689, 8250416, 4637551]),
  ("/agroalimentaire/chocolatier/", 10894, "Chocolatier",
   [6035326, 6035334, 6035990, 29188957]),
  ("/agroalimentaire/fromager/", 10867, "Fromager",
-  [16214484, 5953725, 5953758, 19196908]),
+  [16214484, 5953725, 5953758, 19196908, 39213896, 35474462, 29412671]),
  ("/agroalimentaire/glacier/", 10895, "Glacier",
-  [37176404, 5108033, 5108030, 18003564]),
+  [37176404, 5108033, 5108030, 18003564, 33431371, 29863509, 32636633, 33123250]),
  ("/agroalimentaire/industrie-laitiere/", 5470, "Industrie laitière",
   [5953801, 5953805, 5953794, 5953685]),
  ("/agroalimentaire/maraicher/", 2824, "Fruits et légumes",
-  [8475178, 11678431, 34936950, 12519455]),
+  [8475178, 11678431, 34936950, 12519455, 15062131, 4946998, 13833980, 8475149]),
  ("/agroalimentaire/patissier/", 10865, "Pâtissier",
-  [33393555, 5908284, 20194906, 19498989]),
+  [33393555, 5908284, 20194906, 19498989, 4906454, 6514904, 39213897, 20372619]),
  ("/agroalimentaire/plats-cuisines-industriels/", 5477, "Plats cuisinés",
-  [29226707, 7124346, 17318176, 5531288]),
+  [29226707, 7124346, 17318176, 5531288, 18429457, 2544830, 8629127, 8629106]),
  ("/agroalimentaire/poissonnier/", 10868, "Poissonnier",
-  [8352778, 30811293, 8352350, 21813752]),
+  [8352778, 30811293, 8352350, 21813752, 38104426, 37803897, 20121107, 29133874]),
  ("/agroalimentaire/torrefacteur/", 10935, "Torréfacteur",
-  [4820817, 4820732, 4820655, 7176000]),
+  [4820817, 4820732, 4820655, 7176000, 9623567, 6205583, 7487360, 12149886]),
  ("/agroalimentaire/traiteur/", 2839, "Traiteur",
-  [15671274, 2977515, 15671410, 2696064]),
+  [15671274, 2977515, 15671410, 2696064, 1485805, 15120599, 18281681, 2337843]),
  ("/agroalimentaire/viande/", 11332, "Viande",
-  [7163987, 7163988, 7163991, 7163990]),
+  [7163987, 7163988, 7163991, 7163990, 37673928, 16853021, 12884549, 30036993]),
  ("/negoce/", 5957, "Négoce alimentaire",
-  [11772036, 34756097, 8069554, 34936950]),
+  [11772036, 34756097, 8069554, 22816196, 22816192, 30036999, 16154014, 28100001]),
 ]
 
 
-def _uri(im, q=62, maxi=95_000):
+def _uri(im, q=58, maxi=62_000):
     b = _io.BytesIO()
     for qq in (q, 54, 46, 38):
         b = _io.BytesIO()
@@ -106,8 +106,8 @@ def hero(pid):
         im = Image.open(f).convert("RGB")
     except Exception:
         return None, nom
-    r = 460 / im.width
-    return _uri(im.resize((460, round(im.height * r)), Image.LANCZOS)), nom
+    r = 390 / im.width
+    return _uri(im.resize((390, round(im.height * r)), Image.LANCZOS)), nom
 
 
 META = {}
@@ -128,9 +128,9 @@ def candidat(pid):
         im = Image.open(f).convert("RGB")
     except Exception:
         return None
-    r = 460 / im.width
+    r = 390 / im.width
     e = META.get(pid, {})
-    return {"uri": _uri(im.resize((460, round(im.height * r)), Image.LANCZOS)),
+    return {"uri": _uri(im.resize((390, round(im.height * r)), Image.LANCZOS)),
             "id": pid, "ph": e.get("ph", "Pexels"),
             "url": e.get("url", "https://www.pexels.com/photo/%d/" % pid),
             "dim": "%s × %s" % (e.get("w", "?"), e.get("h", "?")),

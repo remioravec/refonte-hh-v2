@@ -35,13 +35,54 @@ S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c
 
 # metier -> (libelle, [requetes])
 METIERS = {
- "negoce3": ("Négoce alimentaire — alimentaire", [
-    "fruit vegetable wholesale market crates worker",
-    "cold storage warehouse food boxes worker",
-    "produce distribution center boxes vegetables worker",
-    "market hall wholesale fruit boxes men",
-    "banana boxes warehouse worker loading",
-    "vegetable crates truck loading market"]),
+ "fr-agro": ("Agroalimentaire", [
+    "usine agroalimentaire", "european food factory workers",
+    "food production plant europe", "atelier agroalimentaire production"]),
+ "fr-boulanger": ("Boulanger", [
+    "boulangerie francaise", "french bakery baguette shop",
+    "boulangerie artisanale four", "baguettes bakery shelves shop"]),
+ "fr-brasseur": ("Brasseur", [
+    "brasserie artisanale biere", "european craft brewery worker",
+    "microbrasserie cuves", "brewery europe brewing hall"]),
+ "fr-charcutier": ("Charcutier", [
+    "charcuterie boutique", "french butcher shop counter",
+    "boucherie charcuterie etal", "saucisson charcuterie shop"]),
+ "fr-chocolatier": ("Chocolatier", [
+    "chocolaterie artisanale", "french chocolate shop artisan",
+    "chocolat atelier artisan", "chocolate shop counter europe"]),
+ "fr-fromager": ("Fromager", [
+    "fromagerie francaise", "french cheese shop counter",
+    "cremerie fromage boutique", "cheese market stall europe"]),
+ "fr-glacier": ("Glacier", [
+    "gelateria counter italy", "glacier artisanal boutique",
+    "ice cream shop europe counter", "gelato shop italy worker"]),
+ "fr-laitiere": ("Industrie laitière", [
+    "laiterie fromagerie production", "european dairy plant worker",
+    "dairy processing europe", "fromage production laiterie"]),
+ "fr-maraicher": ("Fruits et légumes", [
+    "primeur france legumes", "marche francais legumes etal",
+    "french market vegetables stall", "marche de gros legumes"]),
+ "fr-patissier": ("Pâtissier", [
+    "patisserie francaise vitrine", "french pastry shop display",
+    "patisserie boutique gateaux", "pastry shop europe counter"]),
+ "fr-plats": ("Plats cuisinés", [
+    "cuisine centrale collectivite", "european commercial kitchen brigade",
+    "cuisine professionnelle france", "restaurant kitchen europe chefs"]),
+ "fr-poissonnier": ("Poissonnier", [
+    "poissonnerie francaise", "french fish market stall",
+    "marche aux poissons etal", "fish shop europe counter"]),
+ "fr-torrefacteur": ("Torréfacteur", [
+    "torrefaction cafe artisan", "european coffee roastery worker",
+    "torrefacteur cafe machine", "coffee roastery europe"]),
+ "fr-traiteur": ("Traiteur", [
+    "traiteur francais buffet", "french catering kitchen chef",
+    "traiteur cuisine preparation", "catering europe chefs plating"]),
+ "fr-viande": ("Viande", [
+    "boucherie francaise etal", "french meat shop butcher",
+    "boucherie viande comptoir", "meat shop europe counter"]),
+ "fr-negoce": ("Négoce alimentaire", [
+    "marche de gros alimentaire", "rungis marche gros",
+    "grossiste alimentaire entrepot", "wholesale food market europe crates"]),
 }
 
 
