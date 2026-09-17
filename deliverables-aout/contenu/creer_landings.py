@@ -164,6 +164,10 @@ def main():
             c += FAQ_CSS
 
         # ---- controles
+        # ATTENTION — ce controle porte sur le CONTENU, pas sur la page rendue.
+        # Il ne voit pas ce que le theme ajoute autour : c'est exactement ce qui
+        # a laisse passer le second H1. Le controle qui compte est celui de la
+        # page en ligne.
         d = []
         if c.count("<h1") != 1:
             d.append("%d H1" % c.count("<h1"))
@@ -189,8 +193,12 @@ def main():
         open("%s/landing-%s.html" % (S, cle), "w", encoding="utf-8").write(c)
 
         if LIVE:
+            # le gabarit « elementor_canvas » est ce qui retire l'habillage du
+            # theme. Sans lui, WordPress ajoute son propre <h1 class="entry-title">
+            # au-dessus du contenu : la page sort avec DEUX H1.
             r = w.api("pages", "POST", {
                 "title": v["titre_page"], "slug": cle, "parent": PARENT,
+                "template": "elementor_canvas",
                 "status": "draft", "content": c})
             print("      creee en brouillon : id %d — %s" % (r["id"], r["link"]))
 
