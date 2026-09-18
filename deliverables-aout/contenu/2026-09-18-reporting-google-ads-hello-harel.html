@@ -1,0 +1,254 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Google Ads Hello Harel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;
+ --action:#1a73e8;--action-hover:#1b66c9;--focus:#aecbfa;--orange:#E37400;
+ --vert:#188038;--rouge:#c5221f;
+ --bg:#fff;--surface:#f8f9fa;--surface-2:#f1f3f4;
+ --ink:#1f1f1f;--ink-2:#5f6368;--line:#e8eaed;
+ --r-card:28px;--r-md:16px;--r-pill:999px;
+ --shadow:0 1px 2px rgba(60,64,67,.08),0 1px 3px rgba(60,64,67,.06);
+ --shadow-h:0 6px 18px rgba(60,64,67,.12),0 2px 6px rgba(60,64,67,.08);
+ --max:1180px;
+ --display:'Google Sans Flex','Google Sans','Product Sans','Roboto',system-ui,sans-serif;
+ --body:'Roboto',system-ui,'Segoe UI',Arial,sans-serif;
+ --mono:'Roboto Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+ font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;margin:0;font-weight:600}
+p,ul,figure{margin:0}ul{list-style:none;padding:0}
+a{color:var(--action);text-decoration:none}a:hover{color:var(--action-hover)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:24px}
+.sec{padding-block:clamp(32px,5vw,56px)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--ink-2);margin-bottom:8px}
+.sec>.wrap>h2{font-size:clamp(1.35rem,2.6vw,1.9rem);margin-bottom:8px}
+.sec>.wrap>h2+p{color:var(--ink-2);margin-bottom:24px;max-width:76ch}
+.sec>.wrap>h2+p b{color:var(--ink);font-weight:500}
+code{font-family:var(--mono);font-size:.84rem;background:var(--surface-2);padding:2px 7px;
+ border-radius:6px}
+
+.hdr{background:linear-gradient(180deg,#f8f9fa,#fff);border-bottom:1px solid var(--line)}
+.hdr .wrap{padding-block:40px 32px}
+.hdr h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700}
+.hdr .sous{color:var(--ink-2);margin-top:8px;max-width:80ch}
+.puce{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;
+ letter-spacing:.1em;text-transform:uppercase;color:#174ea6;background:#e8f0fe;
+ padding:6px 14px;border-radius:var(--r-pill);margin-bottom:16px}
+
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.tuile{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;
+ box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s}
+.tuile:hover{box-shadow:var(--shadow-h);transform:translateY(-2px)}
+.tuile--ok{background:#e6f4ea;border-color:#ceead6}
+.tuile--ko{background:#fef7e0;border-color:#feefc3}
+.tuile-v{font-family:var(--display);font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;
+ line-height:1.08;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tuile--ok .tuile-v{color:var(--vert)}.tuile--ko .tuile-v{color:#976700}
+.tuile-l{font-weight:500;margin-top:4px}
+.tuile-d{color:var(--ink-2);font-size:.84rem;margin-top:6px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);
+ padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
+.card+.card{margin-top:16px}
+.card h3{font-size:1.05rem;margin-bottom:4px}
+.card h3+p{color:var(--ink-2);font-size:.88rem;margin-bottom:20px}
+.grille2{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.grille2{grid-template-columns:1.3fr .7fr}}
+
+.jours{display:flex;align-items:flex-end;gap:3px;height:190px}
+.jc{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
+ height:100%;gap:4px;border-radius:6px 6px 0 0;position:relative}
+.jc:hover,.jc:focus-visible{background:var(--surface)}
+.jc-b{width:100%;max-width:26px;background:#1a73e8;border-radius:4px 4px 0 0;min-height:3px}
+.jc-c{position:absolute;top:0;font-family:var(--mono);font-size:.62rem;font-weight:600;
+ color:#fff;background:var(--vert);border-radius:var(--r-pill);padding:1px 6px}
+.jc-l{font-family:var(--mono);font-size:.6rem;color:var(--ink-2)}
+@media(max-width:700px){.jc-l{display:none}}
+.leg{display:flex;flex-wrap:wrap;gap:20px;font-size:.82rem;color:var(--ink-2);margin-top:16px;
+ padding-top:16px;border-top:1px solid var(--line)}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:7px;
+ vertical-align:-1px}
+
+.barres{display:grid;gap:9px}
+.barre{display:grid;grid-template-columns:var(--lib) 1fr auto;align-items:center;gap:12px;
+ font-size:.86rem;border-radius:8px;padding:2px 4px}
+.barre:hover,.barre:focus-visible{background:var(--surface)}
+.barre-l{font-family:var(--mono);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;
+ white-space:nowrap}
+.barre-p{background:var(--surface-2);border-radius:var(--r-pill);height:13px;position:relative}
+.barre-p i{position:absolute;inset:0 auto 0 0;border-radius:var(--r-pill);display:block}
+.barre-v{font-variant-numeric:tabular-nums;font-weight:500;min-width:74px;text-align:right}
+@media(max-width:720px){.barre{grid-template-columns:1fr auto;
+ grid-template-areas:"l v" "p p"}.barre-l{grid-area:l}.barre-v{grid-area:v}.barre-p{grid-area:p}}
+
+.anneau{width:clamp(126px,20vw,160px);height:auto;display:block;margin:0 auto 14px}
+.anneau-t{font-family:var(--display);font-size:26px;font-weight:700;fill:var(--ink)}
+
+.qs li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:13px 0;
+ border-bottom:1px solid var(--line)}
+.qs li:last-child{border-bottom:0;padding-bottom:0}
+.q{font-family:var(--mono);font-size:.86rem;font-weight:500}
+.q-p{font-family:var(--mono);font-size:.84rem;text-align:right;font-variant-numeric:tabular-nums;
+ font-weight:600}
+.q-i{font-size:.76rem;color:var(--ink-2)}
+.q-d{font-size:.78rem;text-align:right}
+.q-d.down{color:#976700}
+
+.fiche{display:grid;gap:14px}
+.fiche-l{display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:start;
+ padding:16px 0;border-bottom:1px solid var(--line)}
+.fiche-l:last-child{border-bottom:0}
+.fiche-l i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
+ font-family:var(--mono);font-size:.78rem;font-weight:700;font-style:normal;color:#fff}
+.fiche-l.ko i{background:var(--rouge)}.fiche-l.ok i{background:var(--vert)}
+.fiche-l.att i{background:var(--orange)}
+.fiche-l>div>b{display:block;font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:2px}
+.fiche-l p b{font-weight:600;color:var(--ink)}
+.fiche-l p{color:var(--ink-2);font-size:.9rem;margin-top:4px}
+.fiche-l p+p{margin-top:8px}
+.verdict{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+ text-transform:uppercase;padding:3px 10px;border-radius:var(--r-pill);margin-top:8px;
+ font-weight:500}
+.v-ko{background:#fce8e6;color:#a50e0e}.v-ok{background:#e6f4ea;color:#0d652d}
+.v-att{background:#fef7e0;color:#976700}
+
+.note{display:flex;gap:14px;align-items:flex-start;background:#e8f0fe;border:1px solid #d2e3fc;
+ border-radius:var(--r-md);padding:18px 22px;font-size:.92rem}
+.note svg{flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--action)}
+.pied{border-top:1px solid var(--line);background:var(--surface)}
+.pied .wrap{padding-block:28px;font-size:.84rem;color:var(--ink-2)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.001ms !important}}
+</style></head><body>
+
+<header class="hdr"><div class="wrap">
+ <p class="puce">Google Ads · compte 804-418-7703</p>
+ <h1>HELLO HAREL — 30 derniers jours</h1>
+ <p class="sous">Une campagne active, <b>HH | Search | ERP x Metiers</b>, 6 groupes d'annonces,
+ budget 30,00 €/jour. Relevé du 18 septembre 2026 par l'API Google Ads.
+ <b>Aucune écriture n'a été faite sur le compte.</b></p>
+</div></header>
+
+<main>
+
+<section class="sec"><div class="wrap"><div class="tuiles"><div class="tuile"><p class="tuile-v">916,86 €</p><p class="tuile-l">dépensés sur 30 jours</p><p class="tuile-d">budget 30,00 €/jour · 935 clics</p></div><div class="tuile"><p class="tuile-v">27</p><p class="tuile-l">conversions</p><p class="tuile-d">soit 33,96 € par conversion</p></div><div class="tuile tuile--ko"><p class="tuile-v">312,04 €</p><p class="tuile-l">sur des requêtes à 0 conversion</p><p class="tuile-d">127 termes · 64 % du coût analysé</p></div><div class="tuile tuile--ok"><p class="tuile-v">115,17 €</p><p class="tuile-l">récupérables sans risque</p><p class="tuile-d">38 exclusions, aucune ne touche une conversion</p></div></div></div></section>
+
+<section class="sec"><div class="wrap">
+ <p class="eyebrow">Dépense</p>
+ <h2>Jour par jour</h2>
+ <p>13 129 impressions, 935 clics à 0,98 € en moyenne, 916,86 € dépensés,
+ <b>27 conversions</b> — soit <b>33,96 € par conversion</b>. Le budget plafonne à
+ 30,00 € : les journées à 60 € sont des jours où Google a doublé la mise, ce qu'il
+ s'autorise sur une moyenne mensuelle.</p>
+ <div class="card">
+  <div class="jours"><div class="jc" tabindex="0" title="2026-08-20 — 0,77 € dépensés, 2 clics, 0 conversion(s)"><span class="jc-b" style="height:1.3%"></span><span class="jc-l">20</span></div><div class="jc" tabindex="0" title="2026-08-21 — 0,42 € dépensés, 1 clics, 0 conversion(s)"><span class="jc-b" style="height:0.7%"></span><span class="jc-l">21</span></div><div class="jc" tabindex="0" title="2026-08-22 — 9,81 € dépensés, 5 clics, 1 conversion(s)"><span class="jc-b" style="height:16.4%"></span><span class="jc-c">1</span><span class="jc-l">22</span></div><div class="jc" tabindex="0" title="2026-08-23 — 59,99 € dépensés, 39 clics, 1 conversion(s)"><span class="jc-b" style="height:100.0%"></span><span class="jc-c">1</span><span class="jc-l">23</span></div><div class="jc" tabindex="0" title="2026-08-24 — 59,74 € dépensés, 25 clics, 1 conversion(s)"><span class="jc-b" style="height:99.6%"></span><span class="jc-c">1</span><span class="jc-l">24</span></div><div class="jc" tabindex="0" title="2026-08-25 — 59,99 € dépensés, 37 clics, 1 conversion(s)"><span class="jc-b" style="height:100.0%"></span><span class="jc-c">1</span><span class="jc-l">25</span></div><div class="jc" tabindex="0" title="2026-08-26 — 43,60 € dépensés, 36 clics, 1 conversion(s)"><span class="jc-b" style="height:72.7%"></span><span class="jc-c">1</span><span class="jc-l">26</span></div><div class="jc" tabindex="0" title="2026-08-27 — 26,80 € dépensés, 19 clics, 2 conversion(s)"><span class="jc-b" style="height:44.7%"></span><span class="jc-c">2</span><span class="jc-l">27</span></div><div class="jc" tabindex="0" title="2026-08-28 — 28,93 € dépensés, 20 clics, 0 conversion(s)"><span class="jc-b" style="height:48.2%"></span><span class="jc-l">28</span></div><div class="jc" tabindex="0" title="2026-08-29 — 28,28 € dépensés, 21 clics, 1 conversion(s)"><span class="jc-b" style="height:47.1%"></span><span class="jc-c">1</span><span class="jc-l">29</span></div><div class="jc" tabindex="0" title="2026-08-30 — 29,33 € dépensés, 35 clics, 1 conversion(s)"><span class="jc-b" style="height:48.9%"></span><span class="jc-c">1</span><span class="jc-l">30</span></div><div class="jc" tabindex="0" title="2026-08-31 — 24,07 € dépensés, 41 clics, 0 conversion(s)"><span class="jc-b" style="height:40.1%"></span><span class="jc-l">31</span></div><div class="jc" tabindex="0" title="2026-09-01 — 41,47 € dépensés, 49 clics, 1 conversion(s)"><span class="jc-b" style="height:69.1%"></span><span class="jc-c">1</span><span class="jc-l">01</span></div><div class="jc" tabindex="0" title="2026-09-02 — 34,96 € dépensés, 54 clics, 1 conversion(s)"><span class="jc-b" style="height:58.3%"></span><span class="jc-c">1</span><span class="jc-l">02</span></div><div class="jc" tabindex="0" title="2026-09-03 — 10,48 € dépensés, 17 clics, 0 conversion(s)"><span class="jc-b" style="height:17.5%"></span><span class="jc-l">03</span></div><div class="jc" tabindex="0" title="2026-09-04 — 13,14 € dépensés, 21 clics, 0 conversion(s)"><span class="jc-b" style="height:21.9%"></span><span class="jc-l">04</span></div><div class="jc" tabindex="0" title="2026-09-05 — 49,57 € dépensés, 64 clics, 5 conversion(s)"><span class="jc-b" style="height:82.6%"></span><span class="jc-c">5</span><span class="jc-l">05</span></div><div class="jc" tabindex="0" title="2026-09-06 — 37,25 € dépensés, 57 clics, 1 conversion(s)"><span class="jc-b" style="height:62.1%"></span><span class="jc-c">1</span><span class="jc-l">06</span></div><div class="jc" tabindex="0" title="2026-09-07 — 29,46 € dépensés, 41 clics, 0 conversion(s)"><span class="jc-b" style="height:49.1%"></span><span class="jc-l">07</span></div><div class="jc" tabindex="0" title="2026-09-08 — 42,50 € dépensés, 58 clics, 1 conversion(s)"><span class="jc-b" style="height:70.8%"></span><span class="jc-c">1</span><span class="jc-l">08</span></div><div class="jc" tabindex="0" title="2026-09-09 — 40,56 € dépensés, 45 clics, 2 conversion(s)"><span class="jc-b" style="height:67.6%"></span><span class="jc-c">2</span><span class="jc-l">09</span></div><div class="jc" tabindex="0" title="2026-09-10 — 35,04 € dépensés, 44 clics, 0 conversion(s)"><span class="jc-b" style="height:58.4%"></span><span class="jc-l">10</span></div><div class="jc" tabindex="0" title="2026-09-11 — 16,36 € dépensés, 23 clics, 0 conversion(s)"><span class="jc-b" style="height:27.3%"></span><span class="jc-l">11</span></div><div class="jc" tabindex="0" title="2026-09-12 — 6,51 € dépensés, 8 clics, 0 conversion(s)"><span class="jc-b" style="height:10.9%"></span><span class="jc-l">12</span></div><div class="jc" tabindex="0" title="2026-09-13 — 5,18 € dépensés, 8 clics, 0 conversion(s)"><span class="jc-b" style="height:8.6%"></span><span class="jc-l">13</span></div><div class="jc" tabindex="0" title="2026-09-14 — 59,87 € dépensés, 57 clics, 3 conversion(s)"><span class="jc-b" style="height:99.8%"></span><span class="jc-c">3</span><span class="jc-l">14</span></div><div class="jc" tabindex="0" title="2026-09-15 — 53,82 € dépensés, 46 clics, 3 conversion(s)"><span class="jc-b" style="height:89.7%"></span><span class="jc-c">3</span><span class="jc-l">15</span></div><div class="jc" tabindex="0" title="2026-09-16 — 34,44 € dépensés, 31 clics, 1 conversion(s)"><span class="jc-b" style="height:57.4%"></span><span class="jc-c">1</span><span class="jc-l">16</span></div><div class="jc" tabindex="0" title="2026-09-17 — 33,64 € dépensés, 30 clics, 0 conversion(s)"><span class="jc-b" style="height:56.1%"></span><span class="jc-l">17</span></div><div class="jc" tabindex="0" title="2026-09-18 — 34,98 € dépensés, 56 clics, 0 conversion(s)"><span class="jc-b" style="height:58.3%"></span><span class="jc-l">18</span></div></div>
+  <div class="leg"><span><i style="background:#1a73e8"></i>Coût du jour</span>
+  <span><i style="background:#188038"></i>Conversions du jour</span></div>
+ </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <p class="eyebrow">Requêtes</p>
+ <h2>Où part l'argent</h2>
+ <p>Sur les 400 termes de recherche relevés (491,40 € de coût attribué),
+ <b>127 termes n'ont produit aucune conversion</b> et coûtent 312,04 €.
+ Le motif dominant : des requêtes en anglais ou en allemand, et des requêtes
+ génériques sans rapport avec l'agroalimentaire.</p>
+ <div class="grille2">
+  <div class="card">
+   <h3>Ce que coûtent les exclusions proposées</h3>
+   <p>Mesuré sur 30 jours · seules les lignes ≥ 0,50 € sont affichées</p>
+   <div class="barres" style="--lib:270px"><div class="barre" tabindex="0" title="logiciel gestion pme — 18,86 € · 6 termes"><span class="barre-l">logiciel gestion pme</span><span class="barre-p"><i style="width:100.0%;background:#E37400"></i></span><span class="barre-v">18,86 €</span></div><div class="barre" tabindex="0" title="logiciel gestion entreprise — 15,98 € · 10 termes"><span class="barre-l">logiciel gestion entreprise</span><span class="barre-p"><i style="width:84.7%;background:#E37400"></i></span><span class="barre-v">15,98 €</span></div><div class="barre" tabindex="0" title="restauration collective — 14,20 € · 1 terme"><span class="barre-l">restauration collective</span><span class="barre-p"><i style="width:75.3%;background:#E37400"></i></span><span class="barre-v">14,20 €</span></div><div class="barre" tabindex="0" title="logiciel indispensable entreprise — 9,45 € · 2 termes"><span class="barre-l">logiciel indispensable entreprise</span><span class="barre-p"><i style="width:50.1%;background:#E37400"></i></span><span class="barre-v">9,45 €</span></div><div class="barre" tabindex="0" title="unternehmenssoftware — 8,88 € · 3 termes"><span class="barre-l">unternehmenssoftware</span><span class="barre-p"><i style="width:47.1%;background:#E37400"></i></span><span class="barre-v">8,88 €</span></div><div class="barre" tabindex="0" title="outils entreprise — 8,62 € · 2 termes"><span class="barre-l">outils entreprise</span><span class="barre-p"><i style="width:45.7%;background:#E37400"></i></span><span class="barre-v">8,62 €</span></div><div class="barre" tabindex="0" title="softwarelösungen — 7,74 € · 4 termes"><span class="barre-l">softwarelösungen</span><span class="barre-p"><i style="width:41.0%;background:#E37400"></i></span><span class="barre-v">7,74 €</span></div><div class="barre" tabindex="0" title="logiciel pilotage entreprise — 7,21 € · 3 termes"><span class="barre-l">logiciel pilotage entreprise</span><span class="barre-p"><i style="width:38.2%;background:#E37400"></i></span><span class="barre-v">7,21 €</span></div><div class="barre" tabindex="0" title="b2b — 6,35 € · 2 termes"><span class="barre-l">b2b</span><span class="barre-p"><i style="width:33.7%;background:#E37400"></i></span><span class="barre-v">6,35 €</span></div><div class="barre" tabindex="0" title="logiciels de gestion — 5,66 € · 3 termes"><span class="barre-l">logiciels de gestion</span><span class="barre-p"><i style="width:30.0%;background:#E37400"></i></span><span class="barre-v">5,66 €</span></div><div class="barre" tabindex="0" title="supply chain — 4,71 € · 1 terme"><span class="barre-l">supply chain</span><span class="barre-p"><i style="width:25.0%;background:#E37400"></i></span><span class="barre-v">4,71 €</span></div><div class="barre" tabindex="0" title="order entry — 4,11 € · 1 terme"><span class="barre-l">order entry</span><span class="barre-p"><i style="width:21.8%;background:#E37400"></i></span><span class="barre-v">4,11 €</span></div><div class="barre" tabindex="0" title="kolecto — 3,99 € · 2 termes"><span class="barre-l">kolecto</span><span class="barre-p"><i style="width:21.2%;background:#E37400"></i></span><span class="barre-v">3,99 €</span></div><div class="barre" tabindex="0" title="cahier des charges — 3,92 € · 1 terme"><span class="barre-l">cahier des charges</span><span class="barre-p"><i style="width:20.8%;background:#E37400"></i></span><span class="barre-v">3,92 €</span></div><div class="barre" tabindex="0" title="solution logicielle — 3,54 € · 2 termes"><span class="barre-l">solution logicielle</span><span class="barre-p"><i style="width:18.8%;background:#E37400"></i></span><span class="barre-v">3,54 €</span></div><div class="barre" tabindex="0" title="logiciel de gestion pour pme — 3,07 € · 3 termes"><span class="barre-l">logiciel de gestion pour pme</span><span class="barre-p"><i style="width:16.3%;background:#E37400"></i></span><span class="barre-v">3,07 €</span></div><div class="barre" tabindex="0" title="henrri — 2,82 € · 1 terme"><span class="barre-l">henrri</span><span class="barre-p"><i style="width:15.0%;background:#E37400"></i></span><span class="barre-v">2,82 €</span></div><div class="barre" tabindex="0" title="billing — 2,55 € · 1 terme"><span class="barre-l">billing</span><span class="barre-p"><i style="width:13.5%;background:#E37400"></i></span><span class="barre-v">2,55 €</span></div><div class="barre" tabindex="0" title="axonaut — 1,78 € · 2 termes"><span class="barre-l">axonaut</span><span class="barre-p"><i style="width:9.4%;background:#E37400"></i></span><span class="barre-v">1,78 €</span></div><div class="barre" tabindex="0" title="odoo — 1,12 € · 13 termes"><span class="barre-l">odoo</span><span class="barre-p"><i style="width:5.9%;background:#E37400"></i></span><span class="barre-v">1,12 €</span></div><div class="barre" tabindex="0" title="management system — 0,72 € · 4 termes"><span class="barre-l">management system</span><span class="barre-p"><i style="width:3.8%;background:#E37400"></i></span><span class="barre-v">0,72 €</span></div><div class="barre" tabindex="0" title="restaurant — 0,55 € · 1 terme"><span class="barre-l">restaurant</span><span class="barre-p"><i style="width:2.9%;background:#E37400"></i></span><span class="barre-v">0,55 €</span></div></div>
+  </div>
+  <div class="card">
+   <h3>Part du coût sans conversion</h3>
+   <p>Sur les termes relevés</p>
+   <svg viewBox="0 0 128 128" class="anneau" role="img" aria-label="64 % du coût"><circle cx="64" cy="64" r="54" fill="none" stroke="#e8eaed" stroke-width="16"/><circle cx="64" cy="64" r="54" fill="none" stroke="#E37400" stroke-width="16" stroke-linecap="round" stroke-dasharray="215.5 339.3" transform="rotate(-90 64 64)"/><text x="64" y="70" text-anchor="middle" class="anneau-t">64 %</text></svg>
+   <div class="note" style="margin-top:8px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+     stroke-linecap="round"><path d="M12 16v-4m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <span>Le compte n'a <b>aucune liste d'exclusion partagée</b> : 16 exclusions au
+    niveau de la campagne et 73 au niveau des groupes, rien de mutualisé.</span>
+   </div>
+  </div>
+ </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <p class="eyebrow">À arbitrer</p>
+ <h2>Les cinq exclusions que je ne pose pas sans ton accord</h2>
+ <p>Elles coupent le plus de dépense, mais elles touchent aussi des conversions.
+ Les poser en bloc ferait perdre <b>8 des 12 conversions</b> du relevé de termes.</p>
+ <div class="card"><ul class="qs"><li><span class="q">business</span><span class="q-p">159,41 €</span><span class="q-i">56 termes</span><span class="q-d down">5 conversions en jeu</span></li><li><span class="q">software</span><span class="q-p">97,38 €</span><span class="q-i">41 termes</span><span class="q-d down">3 conversions en jeu</span></li><li><span class="q">logiciel entreprise</span><span class="q-p">56,46 €</span><span class="q-i">18 termes</span><span class="q-d down">1 conversion en jeu</span></li><li><span class="q">tools</span><span class="q-p">32,07 €</span><span class="q-i">11 termes</span><span class="q-d down">1 conversion en jeu</span></li><li><span class="q">enterprise</span><span class="q-p">2,91 €</span><span class="q-i">4 termes</span><span class="q-d down">1 conversion en jeu</span></li></ul></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+ <p class="eyebrow">Tes quatre demandes</p>
+ <h2>Ce qui est faisable, et ce qui ne l'est pas</h2>
+ <div class="card"><div class="fiche">
+
+  <div class="fiche-l ko"><i>1</i><div>
+   <b>Favicon sur les annonces</b>
+   <p>Ce n'est pas un réglage : Google affiche le favicon automatiquement, à deux
+   conditions — que l'identité de l'annonceur soit <b>vérifiée</b> dans le compte, et qu'il
+   trouve une icône sur le domaine. L'API n'expose aucun champ pour l'activer.</p>
+   <p>Le site déclare bien ses icônes (<code>hello-harel-favicon-512x512</code>, 32 px et
+   192 px), mais <code>/favicon.ico</code> répond en redirection 302 au lieu de servir un
+   fichier. Deux actions, aucune dans Ads : servir un vrai <code>/favicon.ico</code> à la
+   racine, et vérifier l'annonceur dans le compte.</p>
+   <span class="verdict v-ko">Pas faisable par l'API</span>
+  </div></div>
+
+  <div class="fiche-l ko"><i>2</i><div>
+   <b>Étoiles des avis Google sur les annonces</b>
+   <p>Ce sont les <b>évaluations du vendeur</b>. Elles ne s'activent pas non plus : Google
+   les affiche quand le domaine réunit <b>au moins 100 avis sur douze mois</b> auprès d'une
+   source agréée, et une note d'au moins 3,5.</p>
+   <p>Hello Harel affiche <b>31 avis Google</b> — et les avis de la fiche Google Business ne
+   comptent pas comme source agréée pour cette extension. Le chemin réaliste passe par
+   Google Customer Reviews ou un tiers agréé, et par le franchissement du seuil de 100.</p>
+   <span class="verdict v-ko">Seuil non atteint — 31 avis sur 100</span>
+  </div></div>
+
+  <div class="fiche-l att"><i>3</i><div>
+   <b>Liste d'exclusion de mots-clés</b>
+   <p>Il n'y a <b>rien à mettre à jour</b> : aucune liste partagée n'existe sur le compte.
+   J'ai construit la liste à partir des 400 termes réellement déclenchés.</p>
+   <p><b>38 exclusions sans risque</b>, qui ne touchent aucun terme ayant converti :
+   71 termes couverts, <b>115,17 € de dépense évitée sur 30 jours</b>.
+   La requête a été validée en <code>validate_only</code> : elle passe sans erreur.
+   Rien n'est appliqué tant que tu n'as pas dit oui.</p>
+   <span class="verdict v-att">Prêt — en attente de ton feu vert</span>
+  </div></div>
+
+  <div class="fiche-l ok"><i>4</i><div>
+   <b>Reporting</b>
+   <p>C'est ce document. En bonus, deux constats qui ne venaient pas de ta liste :
+   la campagne ne diffuse que <b>3 liens annexes</b> et 2 accroches,
+   là où Google en demande quatre minimum pour un affichage complet — et il n'y a
+   <b>ni extrait structuré, ni logo, ni extension d'appel</b>.</p>
+   <p>Chaque groupe d'annonces ne porte qu'<b>une seule annonce responsive</b>. Sans
+   deuxième annonce, Google n'a rien à comparer.</p>
+   <span class="verdict v-ok">Livré</span>
+  </div></div>
+
+ </div></div>
+</div></section>
+
+</main>
+
+<footer class="pied"><div class="wrap">
+ <p><b>Source.</b> API Google Ads via Composio, compte HELLO HAREL (804-418-7703), requêtes
+ GAQL du 18/09/2026, fenêtre LAST_30_DAYS. Les conversions sont celles déclarées dans le
+ compte ; leur qualité n'est pas vérifiable depuis l'API — et les formulaires du site
+ n'envoient plus de mail depuis le 10/08, ce qui doit être gardé en tête avant de raisonner
+ sur le coût par conversion. Aucune modification n'a été apportée au compte : la seule
+ mutation lancée l'a été en <code>validate_only</code>.</p>
+</div></footer>
+</body></html>
