@@ -15,7 +15,10 @@ source de la page 1726.
    9. « Une equipe humaine » : deja identique aux soeurs, rien a faire ;
   10. l'appel a l'action « demo personnalisee » est retire ;
   11. les avis passent en carrousel continu, deux colonnes ;
-  12. « Pour approfondir » est retire.
+  12. « Pour approfondir » est retire ;
+  13. une section guide est ajoutee tout en bas, sous la banniere d'appel a
+      l'action : une couverture de livre blanc batie sur la photo du hero, un
+      sommaire de cinq chapitres et un bouton vers le hub /comparatifs/.
 
 Aucune donnee n'est inventee. Les logos sont ceux de la mediatheque, nommes
 d'apres ce qu'on lit dessus ; les questions et reponses de la FAQ sont celles
@@ -38,6 +41,7 @@ sys.path.insert(0, ICI)
 import wp_common as w      # noqa: E402
 import maquette_agro as M  # noqa: E402  (SVG_FA, remplacer_video)
 import refonte_agro as R   # noqa: E402  (convertir, qui rend aussi les dimensions)
+import agro_ebook          # noqa: E402  (la section guide)
 
 PAGE = 1726
 SOEUR = 10867                      # /agroalimentaire/fromager/, page soeur de reference
@@ -449,6 +453,29 @@ def main():
     c = c[:b[0]] + c[b[1]:]
     print("   · 12. « Pour approfondir »                      retirée")
 
+    # ─── 13 — la section guide, tout en bas, sous la banniere d'appel a l'action
+    #
+    # La couverture reprend la photo du hero : c'est elle que le lecteur
+    # reconnait avant de lire le titre. Le voile sombre du gabarit monte du bas,
+    # le titre reste donc lisible sur cette photo comme sur une autre.
+    # Le cadrage a ete choisi sur le rendu, cinq essais compares : au centre,
+    # le recadrage 3/4 d'une photo paysage coupait le visage.
+    HERO = "2026/08/Screenshot-2026-02-14-08.34.42.webp"
+    couv, _, _ = R.convertir(UP + HERO, 900, 74)
+    if not couv:
+        raise SystemExit("ARRET — photo du hero introuvable pour la couverture")
+    i = c.find("<footer")
+    if i < 0:
+        raise SystemExit("ARRET — pied de page introuvable")
+    if c.rfind('<section class="cta-banner"') > i:
+        raise SystemExit("ARRET — la bannière d'appel à l'action n'est pas avant le pied")
+    c = c[:i] + agro_ebook.section(
+        titre="Comment bien choisir son ERP agroalimentaire",
+        couverture=couv, cadrage="center 25%") + c[i:]
+    liens = re.findall(r'href="([^"]+)"', agro_ebook.section(titre="x", couverture=None))
+    print("   · 13. section guide ajoutée sous la bannière (%d liens, hub %s)"
+          % (len(liens), agro_ebook.HUB))
+
     # ─── ce qu'impose l'artefact, et rien d'autre
     print()
     urls = set(re.findall(r'(?:src|data-src)="(https?://[^"]+\.(?:png|jpe?g|webp|svg|gif))"', c))
@@ -501,6 +528,12 @@ def main():
             pb.append("%s : %d ouvertes, %d fermées" % (t, o, f))
     if html.count("<h1") != 1:
         pb.append("il faut un seul H1, il y en a %d" % html.count("<h1"))
+    ig, ib, ip = (html.find('id="guide-erp-agroalimentaire"'),
+                  html.rfind('<section class="cta-banner"'), html.find("<footer"))
+    if ig < 0:
+        pb.append("la section guide est absente")
+    elif not (ib < ig < ip):
+        pb.append("la section guide n'est pas entre la bannière et le pied de page")
     for parti in ("hh2-quiz", "hh2-roi", "hh2-compare", "hh2-trust", "hh-demo-cta",
                   "hh2-cas-clients", "Pour approfondir"):
         corps = re.sub(r"<(style|script)[^>]*>.*?</\1>", "", html, flags=re.S)

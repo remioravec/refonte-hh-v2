@@ -92,16 +92,20 @@ CSS = """<style id="hh-agro-guide">
  border-radius:14px;overflow:hidden}
 #hh-page .hhg-som li, .hhg-som li{margin:0 !important;background:rgba(4,38,58,.72)}
 #hh-page .hhg-som a, .hhg-som a{display:flex;align-items:center;gap:1rem;padding:.95rem 1.25rem;
- color:#d6ecf8;text-decoration:none;font-size:.97rem;line-height:1.45;transition:background .18s ease}
+ min-height:48px;box-sizing:border-box;
+ color:#d6ecf8 !important;text-decoration:none;font-size:.97rem;line-height:1.45;
+ transition:background .18s ease}
 #hh-page .hhg-som a:hover, .hhg-som a:hover, #hh-page .hhg-som a:focus-visible, .hhg-som a:focus-visible{background:rgba(0,177,245,.16);color:#fff}
 #hh-page .hhg-som b, .hhg-som b{font-variant-numeric:tabular-nums;font-size:.76rem;font-weight:800;
  color:#16DB7F;flex:0 0 auto;letter-spacing:.04em}
 #hh-page .hhg-som a>span, .hhg-som a>span{flex:1;min-width:0}
 #hh-page .hhg-som a::after, .hhg-som a::after{content:"→";color:#5fa9cd;flex:0 0 auto;font-size:.95rem}
-#hh-page .hhg-cta, .hhg-cta{display:inline-flex;align-items:center;gap:.6rem;background:#16DB7F;color:#04263a;
+#hh-page .hhg-cta, .hhg-cta{display:inline-flex;align-items:center;gap:.6rem;
+ background:#16DB7F !important;color:#04263a !important;
  font-weight:700;font-size:1rem;padding:.95rem 1.7rem;border-radius:999px;text-decoration:none;
  box-shadow:0 14px 30px -14px rgba(22,219,127,.8)}
-#hh-page .hhg-cta:hover, .hhg-cta:hover, #hh-page .hhg-cta:focus-visible, .hhg-cta:focus-visible{background:#0fc971;color:#04263a}
+#hh-page .hhg-cta:hover, .hhg-cta:hover, #hh-page .hhg-cta:focus-visible, .hhg-cta:focus-visible{
+ background:#0fc971 !important;color:#04263a !important}
 #hh-page .hhg-note, .hhg-note{display:block;margin:.95rem 0 0 !important;font-size:.83rem;color:#7fb1cd}
 
 /* Le bloc peut vivre HORS de #hh-page — c'est le cas juste avant le pied de
@@ -120,7 +124,13 @@ CSS = """<style id="hh-agro-guide">
 
 
 def section(titre="Comment choisir un ERP agroalimentaire", chapitres=None, hub=HUB,
-            chapo=None, couverture=None):
+            chapo=None, couverture=None, cadrage="center"):
+    """cadrage : le point de la photo qu'on garde une fois recadree en 3/4.
+
+    Une photo de metier est presque toujours en paysage, la couverture est en
+    portrait : la recadrer au centre coupe les visages. Le cadrage se choisit
+    donc a l'oeil, sur le rendu, pas au jugé.
+    """
     chapitres = chapitres or CHAPITRES
     som = "".join(
         '<li><a href="%s"><b>%02d</b><span>%s</span></a></li>' % (u, k + 1, t)
@@ -129,8 +139,8 @@ def section(titre="Comment choisir un ERP agroalimentaire", chapitres=None, hub=
             '<div class="hhg-in">'
             '<div class="hhg-book"><div class="hhg-cover" role="img" '
             'aria-label="Couverture du guide : ' + titre.lower() + '">'
-            + ('<span class="ph" style="background-image:url(%s)"></span>' % couverture
-               if couverture else '')
+            + ('<span class="ph" style="background-image:url(%s);background-position:%s">'
+               '</span>' % (couverture, cadrage) if couverture else '')
             + '<span class="vo"></span>'
             '<span class="kick">Guide Hello Harel</span>'
             '<span class="bas"><strong>' + titre + '</strong><hr>'
