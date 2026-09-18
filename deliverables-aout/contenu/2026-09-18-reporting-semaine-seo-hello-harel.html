@@ -1,17 +1,17 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reporting SEO Hello Harel</title>
+<title>Positions métier Hello Harel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
  color-scheme:light;
- --g-blue:#4285F4;--g-red:#EA4335;--g-yellow:#FBBC04;--g-green:#34A853;
  --action:#1a73e8;--action-hover:#1b66c9;--focus:#aecbfa;--orange:#E37400;
+ --vert:#188038;--rouge:#c5221f;
  --bg:#fff;--surface:#f8f9fa;--surface-2:#f1f3f4;
  --ink:#1f1f1f;--ink-2:#5f6368;--line:#e8eaed;
- --r-card:28px;--r-md:16px;--r-sm:12px;--r-pill:999px;
+ --r-card:28px;--r-md:16px;--r-pill:999px;
  --shadow:0 1px 2px rgba(60,64,67,.08),0 1px 3px rgba(60,64,67,.06);
  --shadow-h:0 6px 18px rgba(60,64,67,.12),0 2px 6px rgba(60,64,67,.08);
  --max:1180px;
@@ -22,122 +22,108 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.01em;margin:0;font-weight:600}
-p,ul,ol,figure{margin:0}ul{list-style:none;padding:0}
-a{color:var(--action);text-decoration:none}
-a:hover{color:var(--action-hover)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;margin:0;font-weight:600}
+p,ul,figure{margin:0}ul{list-style:none;padding:0}
+a{color:var(--action);text-decoration:none}a:hover{color:var(--action-hover)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+sup{font-size:.62em}
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:24px}
 .sec{padding-block:clamp(32px,5vw,56px)}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
  color:var(--ink-2);margin-bottom:8px}
 .sec>.wrap>h2{font-size:clamp(1.35rem,2.6vw,1.9rem);margin-bottom:8px}
-.sec>.wrap>h2+p{color:var(--ink-2);margin-bottom:24px;max-width:70ch}
+.sec>.wrap>h2+p{color:var(--ink-2);margin-bottom:24px;max-width:74ch}
+.sec>.wrap>h2+p b{color:var(--ink);font-weight:500}
 
-/* ───────────────────────────────────────────────── en-tête */
 .hdr{background:linear-gradient(180deg,#f8f9fa,#fff);border-bottom:1px solid var(--line)}
 .hdr .wrap{padding-block:40px 32px}
-.hdr h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700}
-.hdr .sous{color:var(--ink-2);margin-top:8px;font-size:1.05rem}
+.hdr h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700}
+.hdr .sous{color:var(--ink-2);margin-top:8px;max-width:78ch}
 .puce{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;
  letter-spacing:.1em;text-transform:uppercase;color:#174ea6;background:#e8f0fe;
  padding:6px 14px;border-radius:var(--r-pill);margin-bottom:16px}
 
-/* ───────────────────────────────────────────────── tuiles */
-.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
 .tuile{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;
  box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s}
 .tuile:hover{box-shadow:var(--shadow-h);transform:translateY(-2px)}
-.tuile--a{background:#e8f0fe;border-color:#d2e3fc}
+.tuile--ok{background:#e6f4ea;border-color:#ceead6}
+.tuile--ko{background:#fce8e6;border-color:#fad2cf}
 .tuile-v{font-family:var(--display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:700;
  line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.tuile--a .tuile-v{color:var(--action)}
+.tuile--ok .tuile-v{color:var(--vert)}.tuile--ko .tuile-v{color:var(--rouge)}
 .tuile-l{font-weight:500;margin-top:4px}
 .tuile-d{color:var(--ink-2);font-size:.84rem;margin-top:6px}
 
-/* ───────────────────────────────────────────────── cartes */
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);
  padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
-.card+.card{margin-top:16px}
-.grille2{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:900px){.grille2{grid-template-columns:1.25fr .75fr}}
 .card h3{font-size:1.05rem;margin-bottom:4px}
-.card h3+p{color:var(--ink-2);font-size:.9rem;margin-bottom:20px}
+.card h3+p{color:var(--ink-2);font-size:.88rem;margin-bottom:20px}
 
-/* ───────────────────────────────────────────────── barres */
-.barres{display:grid;gap:10px}
-.barre{display:grid;grid-template-columns:var(--lib) 1fr auto;align-items:center;gap:12px;
- font-size:.88rem;border-radius:8px;padding:2px 4px}
-.barre:hover,.barre:focus-visible{background:var(--surface)}
-.barre-l{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
- font-family:var(--mono);font-size:.78rem}
-.barre-p{background:var(--surface-2);border-radius:var(--r-pill);height:14px;position:relative}
-.barre-p i{position:absolute;inset:0 auto 0 0;border-radius:var(--r-pill);display:block}
-.barre-v{font-variant-numeric:tabular-nums;font-weight:500;min-width:58px;text-align:right}
-.barre-n{display:none}
-@media(max-width:720px){.barre{grid-template-columns:1fr auto;grid-template-areas:"l v" "p p"}
- .barre-l{grid-area:l}.barre-v{grid-area:v}.barre-p{grid-area:p}}
+.graph{width:100%;height:auto;display:block;overflow:visible}
+.graph .g{stroke:var(--line);stroke-width:1}
+.graph .ax{font-family:var(--mono);font-size:11px;fill:var(--ink-2);text-anchor:middle}
+.graph .ax--y{text-anchor:end}
+.graph .e{font-size:8px;baseline-shift:super}
+.graph .val{font-family:var(--display);font-size:14px;font-weight:600;fill:var(--ink)}
+.graph .pt{fill:#fff;stroke:#1a73e8;stroke-width:2.5}
+.graph .pt:hover{fill:#1a73e8}
+.graph .pt--part{stroke-dasharray:3 2}
+.axe-note{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);margin-top:20px;
+ padding-top:16px;border-top:1px solid var(--line)}
+.imp{display:flex;align-items:flex-end;gap:5px;height:54px;margin-top:8px}
+.imp-b{flex:1;background:#d2e3fc;border-radius:4px 4px 0 0;min-height:4px}
+.imp-b:hover{background:#8ab4f8}
+.imp-b--part{background:repeating-linear-gradient(135deg,#d2e3fc 0 4px,#fff 4px 8px)}
 
-/* ───────────────────────────────────────────────── colonnes */
-.colonnes{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,2vw,20px);
- align-items:end;height:220px;margin-bottom:16px}
-.col{display:flex;flex-direction:column;height:100%;justify-content:flex-end;gap:10px}
-.col-p{display:flex;align-items:flex-end;justify-content:center;gap:4px;height:100%}
-.col-b{width:clamp(18px,3.4vw,38px);border-radius:6px 6px 0 0;position:relative;
- display:block;min-height:6px;border:2px solid #fff}
-.col-b b{position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);
- font-size:.76rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
-.col-b--a{background-image:repeating-linear-gradient(135deg,
- rgba(255,255,255,.55) 0 3px,transparent 3px 7px)}
-.col-l{text-align:center;font-family:var(--mono);font-size:.76rem;color:var(--ink-2)}
-.legende{display:flex;flex-wrap:wrap;gap:20px;font-size:.84rem;color:var(--ink-2)}
-.legende i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:7px;
- vertical-align:-2px}
-.legende i.hach{background-image:repeating-linear-gradient(135deg,
- rgba(255,255,255,.55) 0 3px,transparent 3px 7px)}
-.legende b{color:var(--ink);font-family:var(--mono);font-size:.76rem;font-weight:500}
+.halteres{display:grid;gap:18px}
+.halt{display:grid;grid-template-columns:250px 1fr 66px;align-items:center;gap:16px;
+ padding:8px 4px;border-radius:10px}
+.halt:hover,.halt:focus-visible{background:var(--surface)}
+.halt-l{font-size:.92rem;font-weight:500;line-height:1.3}
+.halt-l em{display:block;font-style:normal;font-family:var(--mono);font-size:.7rem;
+ color:var(--ink-2);margin-top:2px}
+.halt-p{position:relative;height:36px}
+.halt-t{position:absolute;top:16px;height:4px;border-radius:2px;opacity:.55}
+.halt-a,.halt-b{position:absolute;top:11px;width:14px;height:14px;border-radius:50%;
+ transform:translateX(-7px);border:2px solid #fff}
+.halt-a{background:#9aa0a6}
+.halt-a b,.halt-b b{position:absolute;left:50%;transform:translateX(-50%);
+ font-family:var(--mono);font-size:.68rem;font-weight:500;white-space:nowrap}
+.halt-a b{top:-18px;color:var(--ink-2)}
+.halt-b b{top:17px;color:var(--ink);font-weight:600}
+.halt-d{text-align:right;font-family:var(--mono);font-size:.86rem;font-weight:500;
+ font-variant-numeric:tabular-nums}
+.halt-d.up{color:var(--vert)}.halt-d.down{color:var(--rouge)}
+@media(max-width:760px){.halt{grid-template-columns:1fr 62px;
+ grid-template-areas:"l d" "p p"}.halt-l{grid-area:l}.halt-d{grid-area:d}
+ .halt-p{grid-area:p;margin-top:10px}}
+.legende{display:flex;flex-wrap:wrap;gap:20px;font-size:.82rem;color:var(--ink-2);
+ margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
+.legende i.rond{display:inline-block;width:12px;height:12px;border-radius:50%;
+ margin-right:7px;vertical-align:-1px}
 
-/* ───────────────────────────────────────────────── anneau */
-.anneau{width:clamp(130px,20vw,168px);height:auto;display:block;margin:0 auto 12px}
-.anneau-t{font-family:var(--display);font-size:26px;font-weight:700;fill:var(--ink)}
-.repart{display:grid;gap:10px;margin-top:4px}
-.repart div{display:flex;align-items:center;gap:10px;font-size:.9rem}
-.repart i{width:12px;height:12px;border-radius:4px;flex:0 0 12px}
-.repart b{margin-left:auto;font-variant-numeric:tabular-nums}
+.duo{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.duo{grid-template-columns:1fr 1fr}}
+.qs li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:13px 0;
+ border-bottom:1px solid var(--line)}
+.qs li:last-child{border-bottom:0;padding-bottom:0}
+.q{font-size:.92rem;font-weight:500}
+.q-p{font-family:var(--mono);font-size:.82rem;text-align:right;
+ font-variant-numeric:tabular-nums}
+.q-p b{font-weight:600}.q-p em{font-style:normal;color:var(--ink-2)}
+.q-i{font-size:.76rem;color:var(--ink-2)}
+.q-d{font-family:var(--mono);font-size:.78rem;font-weight:500;text-align:right}
+.q-d.up{color:var(--vert)}.q-d.down{color:var(--rouge)}
 
-/* ───────────────────────────────────────────────── tableau */
-.tab-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md)}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:.88rem}
-th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-thead th{background:var(--surface);font-family:var(--display);font-weight:500;font-size:.82rem;
- color:var(--ink-2)}
-tbody tr:last-child td{border-bottom:0}
-tbody tr:hover{background:var(--surface)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding:2px 7px;
- border-radius:6px}
-.rang{display:inline-grid;place-items:center;min-width:30px;height:26px;padding:0 8px;
- border-radius:var(--r-pill);background:#e8f0fe;color:#174ea6;font-weight:600}
-
-/* ───────────────────────────────────────────────── encart */
-.note{display:flex;gap:14px;align-items:flex-start;background:var(--surface);
- border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;
- font-size:.9rem;color:var(--ink-2)}
-.note b{color:var(--ink)}
+.note{display:flex;gap:14px;align-items:flex-start;background:#fef7e0;
+ border:1px solid #feefc3;border-radius:var(--r-md);padding:18px 22px;font-size:.92rem}
 .note svg{flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--orange)}
-.flux{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
- margin-top:20px}
-.flux-b{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);
- padding:16px 20px}
-.flux-b b{display:block;font-family:var(--mono);font-size:.78rem}
-.flux-b span{font-size:.85rem;color:var(--ink-2)}
-.flux-b--ko{background:#fef7e0;border-color:#feefc3}
-.flux-f{font-size:1.6rem;color:var(--orange)}
-@media(max-width:720px){.flux{grid-template-columns:1fr}.flux-f{transform:rotate(90deg);
- text-align:center}}
+.note b{font-weight:600}
+.note code{font-family:var(--mono);font-size:.82rem;background:#fff;padding:2px 7px;
+ border-radius:6px}
 
-/* ───────────────────────────────────────────────── kanban */
-.kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
 .kan{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;
  box-shadow:var(--shadow)}
 .kan h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:16px;
@@ -146,7 +132,7 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
  background:var(--surface-2);color:var(--ink-2);padding:2px 9px;border-radius:var(--r-pill);
  margin-left:auto}
 .kan h3::before{content:"";width:10px;height:10px;border-radius:50%;flex:0 0 10px}
-.kan--fait h3::before{background:var(--g-green)}
+.kan--fait h3::before{background:var(--vert)}
 .kan--cours h3::before{background:var(--action)}
 .kan--todo h3::before{background:var(--orange)}
 .kan li{padding:12px 0;border-bottom:1px solid var(--line)}
@@ -154,18 +140,17 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
 .kan li b{display:block;font-weight:500;font-size:.92rem}
 .kan li span{display:block;color:var(--ink-2);font-size:.84rem;margin-top:3px}
 
-/* ───────────────────────────────────────────────── artefacts */
-.artes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.artes{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
 .arte{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);
- border-radius:var(--r-card);padding:24px;box-shadow:var(--shadow);color:var(--ink);
+ border-radius:var(--r-card);padding:28px;box-shadow:var(--shadow);color:var(--ink);
  transition:box-shadow .25s,transform .25s}
 .arte:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);color:var(--ink)}
 .arte-k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
- color:var(--action)}
-.arte b{font-family:var(--display);font-size:1.08rem;font-weight:600}
+ color:#174ea6}
+.arte b{font-family:var(--display);font-size:1.15rem;font-weight:600}
 .arte-s{color:var(--ink-2);font-size:.9rem}
-.arte-d{font-size:.84rem;color:var(--ink-2);margin-top:6px;flex:1}
-.arte-c{margin-top:14px;color:var(--action);font-weight:500;font-size:.9rem}
+.arte-d{font-size:.86rem;color:var(--ink-2);margin-top:8px;flex:1}
+.arte-c{margin-top:16px;color:var(--action);font-weight:500;font-size:.9rem}
 
 .pied{border-top:1px solid var(--line);background:var(--surface)}
 .pied .wrap{padding-block:28px;font-size:.84rem;color:var(--ink-2)}
@@ -173,111 +158,82 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
 </style></head><body>
 
 <header class="hdr"><div class="wrap">
- <p class="puce">Reporting hebdomadaire</p>
- <h1>Hello Harel — semaine du 12 → 18 septembre 2026</h1>
- <p class="sous">Relevé de positions du 18 septembre 2026 · France, français · 40 pages du site
- apparaissent dans les résultats.</p>
+ <p class="puce">Requêtes métier · Search Console</p>
+ <h1>Évolution des positions</h1>
+ <p class="sous">19 août → 15 septembre 2026, comparé à 22 juillet → 18 août 2026 · 118 requêtes qui associent un
+ métier et une intention d'outil · 4 362 impressions.</p>
 </div></header>
 
 <main>
 
-<section class="sec"><div class="wrap">
- <div class="tuiles"><div class="tuile"><p class="tuile-v">332</p><p class="tuile-l">requêtes positionnées</p><p class="tuile-d">hors marque · relevé du 18 septembre 2026</p></div><div class="tuile"><p class="tuile-v">127</p><p class="tuile-l">dans le top 10</p><p class="tuile-d">38 % des requêtes suivies</p></div><div class="tuile"><p class="tuile-v">3 238</p><p class="tuile-l">visites/mois estimées</p><p class="tuile-d">estimation DataForSEO, pas des clics GSC</p></div><div class="tuile tuile--a"><p class="tuile-v">22</p><p class="tuile-l">requêtes BOFU en jeu</p><p class="tuile-d">14 150 de volume cumulé</p></div></div>
-</div></section>
+<section class="sec"><div class="wrap"><div class="tuiles"><div class="tuile"><p class="tuile-v">118</p><p class="tuile-l">requêtes métier suivies</p><p class="tuile-d">4 362 impressions, contre 4 024</p></div><div class="tuile tuile--ko"><p class="tuile-v">21,5</p><p class="tuile-l">position moyenne</p><p class="tuile-d">−0,5 — elle était à 21,0</p></div><div class="tuile tuile--ok"><p class="tuile-v">20</p><p class="tuile-l">requêtes en page 1</p><p class="tuile-d">+7 — elles étaient 13</p></div><div class="tuile"><p class="tuile-v">56 / 33</p><p class="tuile-l">progressent / reculent</p><p class="tuile-d">sur 96 requêtes suivies · 22 nouvelles</p></div></div></div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Clics</p>
- <h2>Le trafic, et d'où il vient</h2>
- <p>Search Console n'est pas connectée à cet environnement : aucun chiffre de clics réels
- n'est affiché ici. Ce qui suit est une <b>estimation</b> de trafic calculée par DataForSEO
- à partir des positions et des volumes. À traiter comme un ordre de grandeur et une
- répartition, pas comme un compteur.</p>
- <div class="grille2">
-  <div class="card">
-   <h3>Trafic estimé par page</h3>
-   <p>Visites/mois estimées · 8 premières pages sur 40</p>
-   <div class="barres" style="--lib:300px"><div class="barre" tabindex="0" title="/blog/cout-prix-au-kilo/ — 1 087"><span class="barre-l">/blog/cout-prix-au-kilo/</span><span class="barre-p"><i style="width:100.0%;background:#1a73e8"></i></span><span class="barre-v">1 087</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/cout-marginal/ — 560"><span class="barre-l">/blog/cout-marginal/</span><span class="barre-p"><i style="width:51.5%;background:#1a73e8"></i></span><span class="barre-v">560</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/calcul-du-prix-moyen/ — 310"><span class="barre-l">/blog/calcul-du-prix-moyen/</span><span class="barre-p"><i style="width:28.5%;background:#1a73e8"></i></span><span class="barre-v">310</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/erp-as400/ — 250"><span class="barre-l">/blog/erp-as400/</span><span class="barre-p"><i style="width:23.0%;background:#1a73e8"></i></span><span class="barre-v">250</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/numeros-de-lot/ — 226"><span class="barre-l">/blog/numeros-de-lot/</span><span class="barre-p"><i style="width:20.8%;background:#1a73e8"></i></span><span class="barre-v">226</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/min/ — 159"><span class="barre-l">/blog/min/</span><span class="barre-p"><i style="width:14.6%;background:#1a73e8"></i></span><span class="barre-v">159</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/prix-dachat-definition/ — 151"><span class="barre-l">/blog/prix-dachat-definition/</span><span class="barre-p"><i style="width:13.9%;background:#1a73e8"></i></span><span class="barre-v">151</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="/blog/fifo-fefo-lifo/ — 93"><span class="barre-l">/blog/fifo-fefo-lifo/</span><span class="barre-p"><i style="width:8.6%;background:#1a73e8"></i></span><span class="barre-v">93</span><span class="barre-n"></span></div></div>
-  </div>
-  <div class="card">
-   <h3>Blog contre pages qui vendent</h3>
-   <p>Part du trafic estimé</p>
-   <svg viewBox="0 0 128 128" class="anneau" role="img" aria-label="98.6 % du trafic estimé"><circle cx="64" cy="64" r="54" fill="none" stroke="#e8eaed" stroke-width="16"/><circle cx="64" cy="64" r="54" fill="none" stroke="#1a73e8" stroke-width="16" stroke-linecap="round" stroke-dasharray="334.7 339.3" transform="rotate(-90 64 64)"/><text x="64" y="70" text-anchor="middle" class="anneau-t">99 %</text></svg>
-   <div class="repart">
-    <div><i style="background:#1a73e8"></i>Blog<b>98.6 %</b></div>
-    <div><i style="background:#E37400"></i>Pages business<b>1.2 %</b></div>
-   </div>
-   <div class="note" style="margin-top:20px">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-     stroke-linecap="round"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0
-     1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-    <span>Sur <b>3 238</b> visites/mois estimées, <b>38</b> arrivent sur une page
-    qui vend.</span>
-   </div>
-  </div>
+ <p class="eyebrow">Évolution</p>
+ <h2>La position moyenne, semaine après semaine</h2>
+ <p>Le site est passé de la <b>17,2<sup>e</sup></b> place fin juin à un creux de
+ <b>23,3<sup>e</sup></b> mi-août, puis remonte à <b>21,1<sup>e</sup></b>.
+ Sur la même période les impressions montent : le site apparaît sur <b>plus</b> de
+ requêtes, mais <b>plus bas</b>.</p>
+ <div class="card">
+  <h3>Position moyenne pondérée par les impressions</h3>
+  <p>Axe inversé : la 1<sup>re</sup> place est en haut. Dernier point = semaine incomplète.</p>
+  <svg viewBox="0 0 980 260" class="graph" role="img" aria-label="Position moyenne par semaine sur les requêtes métier, de la semaine du 2026-06-15 à celle du 2026-09-14"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a73e8" stop-opacity=".16"/><stop offset="1" stop-color="#1a73e8" stop-opacity="0"/></linearGradient></defs><line x1="48" y1="77.7" x2="964" y2="77.7" class="g"/><line x1="48" y1="143.3" x2="964" y2="143.3" class="g"/><line x1="48" y1="208.9" x2="964" y2="208.9" class="g"/><path d="M48.0 106.6 L118.5 119.7 L188.9 59.4 L259.4 89.5 L329.8 96.1 L400.3 92.2 L470.8 146.0 L541.2 181.4 L611.7 168.3 L682.2 186.6 L752.6 177.5 L823.1 159.1 L893.5 157.8 L964.0 142.0 L964.0 226.0 L48.0 226.0 Z" fill="url(#ga)"/><path d="M48.0 106.6 L118.5 119.7 L188.9 59.4 L259.4 89.5 L329.8 96.1 L400.3 92.2 L470.8 146.0 L541.2 181.4 L611.7 168.3 L682.2 186.6 L752.6 177.5 L823.1 159.1 L893.5 157.8 L964.0 142.0" fill="none" stroke="#1a73e8" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="48.0" cy="106.6" r="5" class="pt"><title>Semaine du 2026-06-15 — position moyenne 17,2, 409 impressions</title></circle><circle cx="118.5" cy="119.7" r="5" class="pt"><title>Semaine du 2026-06-22 — position moyenne 18,2, 919 impressions</title></circle><circle cx="188.9" cy="59.4" r="5" class="pt"><title>Semaine du 2026-06-29 — position moyenne 13,6, 856 impressions</title></circle><circle cx="259.4" cy="89.5" r="5" class="pt"><title>Semaine du 2026-07-06 — position moyenne 15,9, 917 impressions</title></circle><circle cx="329.8" cy="96.1" r="5" class="pt"><title>Semaine du 2026-07-13 — position moyenne 16,4, 824 impressions</title></circle><circle cx="400.3" cy="92.2" r="5" class="pt"><title>Semaine du 2026-07-20 — position moyenne 16,1, 936 impressions</title></circle><circle cx="470.8" cy="146.0" r="5" class="pt"><title>Semaine du 2026-07-27 — position moyenne 20,2, 926 impressions</title></circle><circle cx="541.2" cy="181.4" r="5" class="pt"><title>Semaine du 2026-08-03 — position moyenne 22,9, 1 126 impressions</title></circle><circle cx="611.7" cy="168.3" r="5" class="pt"><title>Semaine du 2026-08-10 — position moyenne 21,9, 1 006 impressions</title></circle><circle cx="682.2" cy="186.6" r="5" class="pt"><title>Semaine du 2026-08-17 — position moyenne 23,3, 1 074 impressions</title></circle><circle cx="752.6" cy="177.5" r="5" class="pt"><title>Semaine du 2026-08-24 — position moyenne 22,6, 1 055 impressions</title></circle><circle cx="823.1" cy="159.1" r="5" class="pt"><title>Semaine du 2026-08-31 — position moyenne 21,2, 1 208 impressions</title></circle><circle cx="893.5" cy="157.8" r="5" class="pt"><title>Semaine du 2026-09-07 — position moyenne 21,1, 1 057 impressions</title></circle><circle cx="964.0" cy="142.0" r="6" class="pt pt--part"><title>Semaine du 2026-09-14 — position moyenne 19,9, 355 impressions (semaine incomplète)</title></circle><text x="38" y="81.7" class="ax ax--y">15<tspan class="e">e</tspan></text><text x="38" y="147.3" class="ax ax--y">20<tspan class="e">e</tspan></text><text x="38" y="212.9" class="ax ax--y">25<tspan class="e">e</tspan></text><text x="48.0" y="250" class="ax">15/06</text><text x="188.9" y="250" class="ax">29/06</text><text x="329.8" y="250" class="ax">13/07</text><text x="470.8" y="250" class="ax">27/07</text><text x="611.7" y="250" class="ax">10/08</text><text x="752.6" y="250" class="ax">24/08</text><text x="893.5" y="250" class="ax">07/09</text><text x="964.0" y="250" class="ax">14/09</text><text x="56.0" y="93.6" class="val" text-anchor="start">17,2</text><text x="682.2" y="173.6" class="val" text-anchor="middle">23,3</text><text x="956.0" y="129.0" class="val" text-anchor="end">19,9</text></svg>
+  <p class="axe-note">Impressions par semaine</p>
+  <div class="imp"><span class="imp-b" style="height:34%" tabindex="0" title="Semaine du 2026-06-15 — 409 impressions"></span><span class="imp-b" style="height:76%" tabindex="0" title="Semaine du 2026-06-22 — 919 impressions"></span><span class="imp-b" style="height:71%" tabindex="0" title="Semaine du 2026-06-29 — 856 impressions"></span><span class="imp-b" style="height:76%" tabindex="0" title="Semaine du 2026-07-06 — 917 impressions"></span><span class="imp-b" style="height:68%" tabindex="0" title="Semaine du 2026-07-13 — 824 impressions"></span><span class="imp-b" style="height:77%" tabindex="0" title="Semaine du 2026-07-20 — 936 impressions"></span><span class="imp-b" style="height:77%" tabindex="0" title="Semaine du 2026-07-27 — 926 impressions"></span><span class="imp-b" style="height:93%" tabindex="0" title="Semaine du 2026-08-03 — 1 126 impressions"></span><span class="imp-b" style="height:83%" tabindex="0" title="Semaine du 2026-08-10 — 1 006 impressions"></span><span class="imp-b" style="height:89%" tabindex="0" title="Semaine du 2026-08-17 — 1 074 impressions"></span><span class="imp-b" style="height:87%" tabindex="0" title="Semaine du 2026-08-24 — 1 055 impressions"></span><span class="imp-b" style="height:100%" tabindex="0" title="Semaine du 2026-08-31 — 1 208 impressions"></span><span class="imp-b" style="height:88%" tabindex="0" title="Semaine du 2026-09-07 — 1 057 impressions"></span><span class="imp-b imp-b--part" style="height:29%" tabindex="0" title="Semaine du 2026-09-14 — 355 impressions (semaine incomplète)"></span></div>
  </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Positions</p>
- <h2>Où se situent les 40 pages, hors marque</h2>
- <p>Deux lectures de la même réalité. Le rang organique ignore les blocs de Google ;
- le rang affiché est celui que voit l'internaute. <b>28 requêtes sont dans le top 3
- organique, 11 seulement sont vraiment affichées dans les trois premiers résultats.</b></p>
- <div class="card"><div class="colonnes"><div class="col"><div class="col-p"><span class="col-b" style="height:28%;background:#1a73e8" title="rang organique 1–3 : 28 requêtes"><b>28</b></span><span class="col-b col-b--a" style="height:11%;background:#E37400" title="rang affiché 1–3 : 11 requêtes"><b>11</b></span></div><p class="col-l">1–3</p></div><div class="col"><div class="col-p"><span class="col-b" style="height:100%;background:#1a73e8" title="rang organique 4–10 : 99 requêtes"><b>99</b></span><span class="col-b col-b--a" style="height:88%;background:#E37400" title="rang affiché 4–10 : 87 requêtes"><b>87</b></span></div><p class="col-l">4–10</p></div><div class="col"><div class="col-p"><span class="col-b" style="height:84%;background:#1a73e8" title="rang organique 11–20 : 83 requêtes"><b>83</b></span><span class="col-b col-b--a" style="height:91%;background:#E37400" title="rang affiché 11–20 : 90 requêtes"><b>90</b></span></div><p class="col-l">11–20</p></div><div class="col"><div class="col-p"><span class="col-b" style="height:87%;background:#1a73e8" title="rang organique 21–50 : 86 requêtes"><b>86</b></span><span class="col-b col-b--a" style="height:90%;background:#E37400" title="rang affiché 21–50 : 89 requêtes"><b>89</b></span></div><p class="col-l">21–50</p></div><div class="col"><div class="col-p"><span class="col-b" style="height:36%;background:#1a73e8" title="rang organique 51+ : 36 requêtes"><b>36</b></span><span class="col-b col-b--a" style="height:56%;background:#E37400" title="rang affiché 51+ : 55 requêtes"><b>55</b></span></div><p class="col-l">51+</p></div></div><div class="legende"><span><i style="background:#1a73e8"></i>Rang organique <b>(rank_group)</b></span><span><i class="hach" style="background:#E37400"></i>Rang réellement affiché <b>(rank_absolute)</b></span></div></div>
+ <p class="eyebrow">Par métier</p>
+ <h2>Qui monte, qui descend</h2>
+ <p>Chaque ligne relie la position d'avant à celle d'aujourd'hui. <b>Le négoce et la
+ boulangerie gagnent plus de dix places</b> ; l'agroalimentaire générique et la viande
+ reculent.</p>
+ <div class="card"><div class="halteres"><div class="halt" tabindex="0" title="Agroalimentaire (générique) — recule : 18,6 puis 19,8"><span class="halt-l">Agroalimentaire (générique) <em>47 requêtes · 2 749 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:37.2%;width:2.4%;background:#c5221f"></i><i class="halt-a" style="left:37.2%"><b>18,6</b></i><i class="halt-b" style="left:39.6%;background:#c5221f"><b>19,8</b></i></span><span class="halt-d down">−1,2</span></div><div class="halt" tabindex="0" title="Fruits & légumes — progresse : 18,3 puis 17,3"><span class="halt-l">Fruits & légumes <em>17 requêtes · 780 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:34.6%;width:2.0%;background:#188038"></i><i class="halt-a" style="left:36.6%"><b>18,3</b></i><i class="halt-b" style="left:34.6%;background:#188038"><b>17,3</b></i></span><span class="halt-d up">+1,0</span></div><div class="halt" tabindex="0" title="Négoce / grossiste — progresse : 46,0 puis 35,6"><span class="halt-l">Négoce / grossiste <em>17 requêtes · 301 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:71.2%;width:20.8%;background:#188038"></i><i class="halt-a" style="left:92.0%"><b>46,0</b></i><i class="halt-b" style="left:71.2%;background:#188038"><b>35,6</b></i></span><span class="halt-d up">+10,4</span></div><div class="halt" tabindex="0" title="Boulangerie / pâtisserie — progresse : 37,2 puis 25,4"><span class="halt-l">Boulangerie / pâtisserie <em>21 requêtes · 236 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:50.8%;width:23.6%;background:#188038"></i><i class="halt-a" style="left:74.4%"><b>37,2</b></i><i class="halt-b" style="left:50.8%;background:#188038"><b>25,4</b></i></span><span class="halt-d up">+11,8</span></div><div class="halt" tabindex="0" title="Traiteur / plats cuisinés — progresse : 32,0 puis 30,9"><span class="halt-l">Traiteur / plats cuisinés <em>7 requêtes · 157 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:61.8%;width:2.2%;background:#188038"></i><i class="halt-a" style="left:64.0%"><b>32,0</b></i><i class="halt-b" style="left:61.8%;background:#188038"><b>30,9</b></i></span><span class="halt-d up">+1,1</span></div><div class="halt" tabindex="0" title="Viande / charcuterie / boucherie — recule : 22,8 puis 30,7"><span class="halt-l">Viande / charcuterie / boucherie <em>6 requêtes · 105 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:45.6%;width:15.8%;background:#c5221f"></i><i class="halt-a" style="left:45.6%"><b>22,8</b></i><i class="halt-b" style="left:61.4%;background:#c5221f"><b>30,7</b></i></span><span class="halt-d down">−7,9</span></div><div class="halt" tabindex="0" title="Laitier / fromagerie — recule : 28,8 puis 30,0"><span class="halt-l">Laitier / fromagerie <em>3 requêtes · 34 impr.</em></span><span class="halt-p"><i class="halt-t" style="left:57.6%;width:2.4%;background:#c5221f"></i><i class="halt-a" style="left:57.6%"><b>28,8</b></i><i class="halt-b" style="left:60.0%;background:#c5221f"><b>30,0</b></i></span><span class="halt-d down">−1,2</span></div></div><div class="legende"><span><i class="rond" style="background:#9aa0a6"></i>Position sur 22 juillet → 18 août 2026</span><span><i class="rond" style="background:#188038"></i>Aujourd'hui — progression</span><span><i class="rond" style="background:#c5221f"></i>Aujourd'hui — recul</span></div></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Pages business</p>
- <h2>Les pages qui vendent, hors marque</h2>
- <p>Sur 40 pages positionnées, <b>4 seulement</b> sont des pages métier,
- fonctionnalité ou comparatif. Le reste est du blog.</p>
- <div class="card" style="padding-inline:0;padding-block:0;border:0;box-shadow:none">
- <div class="tab-wrap"><table>
-  <thead><tr><th>Page</th><th>Requête</th><th class="num">Volume/mois</th>
-  <th class="num">Rang affiché</th><th class="num">Rang organique</th></tr></thead>
-  <tbody><tr><td><code>/agroalimentaire/</code></td><td>erp agroalimentaire</td><td class="num">390</td><td class="num"><b class="rang">5</b></td><td class="num">3</td></tr><tr><td><code>/fonctionnalites/crm/</code></td><td>crm agroalimentaire</td><td class="num">70</td><td class="num"><b class="rang">24</b></td><td class="num">20</td></tr><tr><td><code>/fonctionnalites/</code></td><td>morel chr</td><td class="num">70</td><td class="num"><b class="rang">65</b></td><td class="num">58</td></tr><tr><td><code>/agroalimentaire/boulanger/</code></td><td>h2a boulangerie</td><td class="num">40</td><td class="num"><b class="rang">76</b></td><td class="num">68</td></tr></tbody>
- </table></div></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
- <p class="eyebrow">BOFU</p>
- <h2>Les requêtes à travailler</h2>
- <p><b>22 requêtes d'achat</b> (erp, logiciel, AS/400, comparatif) sont déjà
- positionnées, pour 14 150 de volume mensuel cumulé. <b>21 d'entre elles
- atterrissent sur le blog</b>, pas sur la page qui convertit.</p>
- <div class="card">
-  <h3>Volume mensuel et position affichée</h3>
-  <p>12 premières requêtes commerciales positionnées</p>
-  <div class="barres" style="--lib:330px"><div class="barre" tabindex="0" title="as 400  (position 16) — 5 400"><span class="barre-l">as 400  (position 16)</span><span class="barre-p"><i style="width:100.0%;background:#E37400"></i></span><span class="barre-v">5 400</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as400  (position 29) — 5 400"><span class="barre-l">as400  (position 29)</span><span class="barre-p"><i style="width:100.0%;background:#E37400"></i></span><span class="barre-v">5 400</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as 400 logiciel  (position 4) — 880"><span class="barre-l">as 400 logiciel  (position 4)</span><span class="barre-p"><i style="width:16.3%;background:#E37400"></i></span><span class="barre-v">880</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="erp agroalimentaire  (position 5) — 390"><span class="barre-l">erp agroalimentaire  (position 5)</span><span class="barre-p"><i style="width:7.2%;background:#E37400"></i></span><span class="barre-v">390</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="erp as saas  (position 9) — 210"><span class="barre-l">erp as saas  (position 9)</span><span class="barre-p"><i style="width:3.9%;background:#E37400"></i></span><span class="barre-v">210</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="erp and saas  (position 11) — 210"><span class="barre-l">erp and saas  (position 11)</span><span class="barre-p"><i style="width:3.9%;background:#E37400"></i></span><span class="barre-v">210</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="erp saas  (position 14) — 210"><span class="barre-l">erp saas  (position 14)</span><span class="barre-p"><i style="width:3.9%;background:#E37400"></i></span><span class="barre-v">210</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as400 c'est quoi  (position 15) — 140"><span class="barre-l">as400 c'est quoi  (position 15)</span><span class="barre-p"><i style="width:2.6%;background:#E37400"></i></span><span class="barre-v">140</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as400 c est quoi  (position 22) — 140"><span class="barre-l">as400 c est quoi  (position 22)</span><span class="barre-p"><i style="width:2.6%;background:#E37400"></i></span><span class="barre-v">140</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as400 erp  (position 6) — 110"><span class="barre-l">as400 erp  (position 6)</span><span class="barre-p"><i style="width:2.0%;background:#E37400"></i></span><span class="barre-v">110</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="bon de commande logiciel  (position 4) — 110"><span class="barre-l">bon de commande logiciel  (position 4)</span><span class="barre-p"><i style="width:2.0%;background:#E37400"></i></span><span class="barre-v">110</span><span class="barre-n"></span></div><div class="barre" tabindex="0" title="as 400 erp  (position 7) — 110"><span class="barre-l">as 400 erp  (position 7)</span><span class="barre-p"><i style="width:2.0%;background:#E37400"></i></span><span class="barre-v">110</span><span class="barre-n"></span></div></div>
-  <div class="flux">
-   <div class="flux-b"><b>12 requêtes AS/400</b>
-    <span>12 610 recherches/mois — la plus grosse grappe commerciale du site</span></div>
-   <div class="flux-f">→</div>
-   <div class="flux-b flux-b--ko"><b>/blog/erp-as400/</b>
-    <span>Tout y atterrit. La page qui convertit, <code>/migration-as400/</code>,
-    n'en reçoit aucune.</span></div>
-  </div>
+ <p class="eyebrow">Détail</p>
+ <h2>Les six plus gros mouvements, dans chaque sens</h2>
+ <div class="duo">
+  <div class="card"><h3>Ce qui progresse</h3><p>Position aujourd'hui ← position d'avant</p>
+  <ul class="qs"><li><span class="q">erp négoce</span><span class="q-p"><b>38,3</b> <em>← 53,4</em></span><span class="q-i">165 impressions</span><span class="q-d up">+15,1</span></li><li><span class="q">logiciel de gestion boulangerie</span><span class="q-p"><b>17,3</b> <em>← 38,2</em></span><span class="q-i">39 impressions</span><span class="q-d up">+21,0</span></li><li><span class="q">logiciel boulangerie</span><span class="q-p"><b>32,6</b> <em>← 44,3</em></span><span class="q-i">56 impressions</span><span class="q-d up">+11,7</span></li><li><span class="q">logiciel erp agroalimentaire</span><span class="q-p"><b>9,4</b> <em>← 12,3</em></span><span class="q-i">215 impressions</span><span class="q-d up">+2,8</span></li><li><span class="q">erp pme agroalimentaire</span><span class="q-p"><b>20,2</b> <em>← 25,4</em></span><span class="q-i">111 impressions</span><span class="q-d up">+5,2</span></li><li><span class="q">logiciel gestion boulangerie</span><span class="q-p"><b>25,4</b> <em>← 35,4</em></span><span class="q-i">51 impressions</span><span class="q-d up">+10,1</span></li></ul></div>
+  <div class="card"><h3>Ce qui recule</h3><p>Position aujourd'hui ← position d'avant</p>
+  <ul class="qs"><li><span class="q">erp agroalimentaire</span><span class="q-p"><b>20,0</b> <em>← 15,6</em></span><span class="q-i">1 117 impressions</span><span class="q-d down">−4,5</span></li><li><span class="q">logiciel agroalimentaire</span><span class="q-p"><b>17,4</b> <em>← 15,4</em></span><span class="q-i">287 impressions</span><span class="q-d down">−2,1</span></li><li><span class="q">crm agroalimentaire</span><span class="q-p"><b>45,5</b> <em>← 42,6</em></span><span class="q-i">182 impressions</span><span class="q-d down">−2,9</span></li><li><span class="q">logiciel grossiste agroalimentaire</span><span class="q-p"><b>38,5</b> <em>← 15,4</em></span><span class="q-i">20 impressions</span><span class="q-d down">−23,0</span></li><li><span class="q">erp fruits et légumes</span><span class="q-p"><b>26,1</b> <em>← 24,0</em></span><span class="q-i">210 impressions</span><span class="q-d down">−2,0</span></li><li><span class="q">erp pour exportateurs de fruits et légumes</span><span class="q-p"><b>20,1</b> <em>← 13,9</em></span><span class="q-i">30 impressions</span><span class="q-d down">−6,2</span></li></ul></div>
+ </div>
+ <div class="note" style="margin-top:20px">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+   stroke-linecap="round"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0
+   1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+  <span><b>La priorité tient en une requête.</b> <code>erp agroalimentaire</code> pèse
+  1 117 impressions à elle seule — un quart du total métier — et passe de la
+  15,6<sup>e</sup> à la 20<sup>e</sup> place. Elle a rapporté <b>2 clics</b> en 28 jours.
+  Tant qu'elle reste en page 2, les gains ailleurs ne compensent pas : sur l'ensemble,
+  5 clics contre 9.</span>
  </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
  <p class="eyebrow">Roadmap</p>
  <h2>Où en sont les chantiers</h2>
- <div class="kanban"><div class="kan kan--fait"><h3>Terminé cette semaine <em>5</em></h3><ul><li><b>Méga-menu unifié posé sur 174 contenus</b><span>16 métiers, desktop et mobile</span></li><li><b>Bentos → module à onglets sur 31 pages</b><span>fonctionnalités + fiches métier</span></li><li><b>3 landings de septembre publiées</b><span>PME en croissance, fruits &amp; légumes, produits de la mer — en noindex</span></li><li><b>Bug d'intégration corrigé</b><span>les 3 landings sortaient avec deux H1</span></li><li><b>/agroalimentaire/ : copie, refonte, remaniement</b><span>4 maquettes livrées</span></li></ul></div><div class="kan kan--cours"><h3>En cours <em>2</em></h3><ul><li><b>Refonte SEO /agroalimentaire/</b><span>maquette remaniée validée — reste la décision de mise en ligne (page protégée)</span></li><li><b>Photos de héros des pages métier</b><span>16 planches de candidats livrées, en attente de ton choix</span></li></ul></div><div class="kan kan--todo"><h3>Planifié / bloqué <em>5</em></h3><ul><li><b>Anti-spam formulaires (PHP)</b><span>le fichier est prêt — il doit être installé côté serveur, le classificateur bloque l'écriture</span></li><li><b>Délivrabilité e-mail</b><span>SPF en double, ni DKIM ni DMARC — 0 mail depuis le 10/08</span></li><li><b>Casse des titles des 3 landings</b><span>rendus en Title Case, 651–673 px au lieu de 528–551 px</span></li><li><b>16 pages filles MIN</b><span>Nantes en tête de file</span></li><li><b>5 pages sans menu</b><span>CGU, mentions légales, confidentialité, comparatifs, loi TVA</span></li></ul></div></div>
+ <div class="kanban"><div class="kan kan--fait"><h3>Terminé cette semaine <em>4</em></h3><ul><li><b>Méga-menu unifié sur 174 contenus</b><span>16 métiers, desktop et mobile</span></li><li><b>Bentos → module à onglets sur 31 pages</b><span>fonctionnalités + fiches métier</span></li><li><b>3 landings de septembre publiées</b><span>PME en croissance, fruits &amp; légumes, produits de la mer — en noindex</span></li><li><b>/agroalimentaire/ : copie, refonte, remaniement</b><span>4 maquettes livrées</span></li></ul></div><div class="kan kan--cours"><h3>En cours <em>2</em></h3><ul><li><b>Refonte /agroalimentaire/</b><span>maquette remaniée validée — reste la décision de mise en ligne (page protégée)</span></li><li><b>Photos de héros des pages métier</b><span>planches livrées, en attente de ton choix</span></li></ul></div><div class="kan kan--todo"><h3>À traiter, par ordre d'impact <em>4</em></h3><ul><li><b>« erp agroalimentaire » : 15,6 → 20,0</b><span>1 117 impressions, 2 clics — la requête n° 1 décroche, c'est la priorité</span></li><li><b>Anti-spam formulaires (PHP)</b><span>fichier prêt, installation serveur à faire</span></li><li><b>Délivrabilité e-mail</b><span>SPF en double, ni DKIM ni DMARC — 0 mail depuis le 10/08</span></li><li><b>16 pages filles MIN</b><span>Nantes en tête de file</span></li></ul></div></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
  <p class="eyebrow">Livrables</p>
- <h2>Artefacts de la semaine</h2>
- <p>Trois maquettes de /agroalimentaire/. Aucune n'est en ligne : la page est protégée.</p>
- <div class="artes"><a class="arte" href="https://claude.ai/artifact/8G26R12e7m4qXkHFccK8Fd" target="_blank" rel="noopener"><span class="arte-k">Artefact</span><b>Copie conforme de /agroalimentaire/</b><span class="arte-s">La page telle quelle, hors ligne</span><span class="arte-d">18 sections · 118 liens · 3 357 mots, identiques à la source</span><span class="arte-c">Ouvrir →</span></a><a class="arte" href="https://claude.ai/artifact/XSMvyCT6bTPWnAhB4FJFe7" target="_blank" rel="noopener"><span class="arte-k">Artefact</span><b>Page remaniée</b><span class="arte-s">Les 13 demandes appliquées</span><span class="arte-d">Mur de 25 logos · FAQ des pages sœurs · avis en carrousel · section guide</span><span class="arte-c">Ouvrir →</span></a><a class="arte" href="https://claude.ai/artifact/39mAUf1g4JgxeVZvXS6bzD" target="_blank" rel="noopener"><span class="arte-k">Artefact</span><b>Refonte complète</b><span class="arte-s">Proposition de nouveau gabarit</span><span class="arte-d">Système de design unique, 128 ko de CSS remplacés</span><span class="arte-c">Ouvrir →</span></a></div>
+ <h2>Artefacts</h2>
+ <div class="artes"><a class="arte" href="https://claude.ai/artifact/SM5JQeFuzGp1NhbNRB4LCY" target="_blank" rel="noopener"><span class="arte-k">Artefact</span><b>Image héros</b><span class="arte-s">Photos des pages métier</span><span class="arte-d">L'image actuelle de chaque page métier et ses remplaçantes proposées, libres de droit — en attente de ton choix.</span><span class="arte-c">Ouvrir →</span></a><a class="arte" href="https://claude.ai/artifact/XSMvyCT6bTPWnAhB4FJFe7" target="_blank" rel="noopener"><span class="arte-k">Artefact</span><b>Refonte ERP agroalimentaire</b><span class="arte-s">/agroalimentaire/ remaniée</span><span class="arte-d">Les treize demandes appliquées : mur de 25 logos, FAQ des pages sœurs, avis en carrousel continu, section guide vers le hub.</span><span class="arte-c">Ouvrir →</span></a></div>
 </div></section>
 
 </main>
 
 <footer class="pied"><div class="wrap">
- <p><b>Sources.</b> Positions, volumes et trafic estimé : DataForSEO Labs, relevé du 18 septembre 2026,
- France / français, 333 requêtes. Roadmap : fichiers du dépôt et travaux de la semaine.
- Les clics Search Console ne figurent pas dans ce rapport : la propriété n'est pas connectée.</p>
+ <p><b>Source.</b> Google Search Console, propriété https://www.helloharel.com/, recherche
+ web, données finales. Période 19 août → 15 septembre 2026 comparée à 22 juillet → 18 août 2026. La position est la
+ moyenne pondérée par les impressions. Périmètre : les requêtes portant à la fois un métier
+ et une intention d'outil (erp, logiciel, progiciel, solution, crm) — 118 requêtes,
+ 4 362 impressions. Les données GSC accusent deux à trois jours de retard : la
+ dernière semaine est incomplète et signalée comme telle.</p>
 </div></footer>
 </body></html>

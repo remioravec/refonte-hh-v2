@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Reporting hebdomadaire Hello Harel — semaine du 12 au 18 septembre 2026.
+Reporting hebdomadaire Hello Harel — requêtes métier, évolution des positions.
 
-Peu de texte, beaucoup de visuel. Chaque chiffre affiche vient d'un releve
-date : rien n'est saisi a la main dans le HTML, tout est lu dans les fichiers
-produits par les appels DataForSEO du 18/09.
+Source unique : Google Search Console, propriété https://www.helloharel.com/,
+lue via Composio. Aucune estimation, aucun chiffre de tiers.
 
-Ce que le rapport NE fait PAS : il n'annonce pas de clics Search Console. La
-propriete GSC n'est pas connectee a cet environnement ; le rapport le dit et
-montre a la place le trafic ESTIME de DataForSEO, nomme comme tel.
+Périmètre : les requêtes qui portent A LA FOIS un métier (agroalimentaire,
+fruits et légumes, boulangerie, négoce, traiteur, viande, laitier, marée…) ET
+une intention d'outil (erp, logiciel, progiciel, solution, crm). C'est ce que
+cherche quelqu'un qui va acheter, pas quelqu'un qui révise un calcul de prix.
+
+Comparaison : 28 jours (19/08 → 15/09) contre les 28 jours précédents
+(22/07 → 18/08). La position est la moyenne pondérée par les impressions —
+une moyenne simple donnerait le même poids à une requête vue 1 117 fois et à
+une requête vue 3 fois.
 
 DA Google Store (client.json : "da": "google-store").
-Palette des graphiques validee par scripts/validate_palette.js du skill dataviz.
+Palette validée par scripts/validate_palette.js du skill dataviz.
 
 Usage :  python3 reporting_semaine.py
 """
@@ -24,258 +29,256 @@ import re
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
 SORTIE = os.path.join(S, "reporting-semaine.html")
 
-RELEVE = "18 septembre 2026"
-SEMAINE = "12 → 18 septembre 2026"
+PERIODE = "19 août → 15 septembre 2026"
+PRECEDENT = "22 juillet → 18 août 2026"
 
-BIZ = re.compile(r"^/(agroalimentaire|negoce|medical|migration-as400|comparatifs"
-                 r"|fonctionnalites|tarifs)")
-MARQUE = re.compile(r"hello\s*harel|helloharel", re.I)
-
-# Paire categorielle, validee : DeltaE normal 36,9 · protan 30,3 · tritan 30,8
-DUO = ("#1a73e8", "#E37400")
+# Paire catégorielle validée : ΔE normal 36,9 · protan 30,3 · tritan 30,8
+BLEU, ORANGE = "#1a73e8", "#E37400"
+VERT, ROUGE = "#188038", "#c5221f"
 
 
-def charger():
-    kw = json.load(open(os.path.join(S, "kw.json"), encoding="utf-8"))
-    hm = [l for l in kw if not MARQUE.search(l["requete"])]
-    bofu = json.load(open(os.path.join(S, "bofu-strict.json"), encoding="utf-8"))
-    return hm, bofu
+def nb(v):
+    return "{:,}".format(int(round(v))).replace(",", " ")
+
+
+def virg(v):
+    return ("%.1f" % v).replace(".", ",")
+
+
+def signe(v):
+    return ("+" if v > 0 else "−") + virg(abs(v))
 
 
 # ═══════════════════════════════════════════════════════ briques visuelles
-def tuile(valeur, libelle, detail, accent=False):
+def tuile(valeur, libelle, detail, ton=""):
     return ('<div class="tuile%s"><p class="tuile-v">%s</p>'
             '<p class="tuile-l">%s</p><p class="tuile-d">%s</p></div>'
-            % (" tuile--a" if accent else "", valeur, libelle, detail))
+            % ((" tuile--" + ton) if ton else "", valeur, libelle, detail))
 
 
-def barres_h(lignes, maxi=None, unite="", couleur="#1a73e8", largeur_lib=None):
-    """lignes : [(libelle, valeur, note)] — barres horizontales, valeur en bout.
+def courbe(semaines):
+    """La position dans le temps. L'axe est INVERSÉ : la 1re place est en haut.
 
-    La valeur est ecrite au bout de chaque barre : c'est l'encodage secondaire
-    qui rend le graphique lisible sans distinguer les teintes.
+    Une courbe de position tracée à l'endroit se lit à l'envers — « ça monte »
+    voudrait dire « ça se dégrade ». On inverse l'axe, et on le dit sous le titre.
     """
-    maxi = maxi or max([v for _, v, _ in lignes] + [1])
-    lib = largeur_lib or "190px"
-    out = ['<div class="barres" style="--lib:%s">' % lib]
-    for label, v, note in lignes:
-        pc = max(1.2, 100.0 * v / maxi)
-        out.append(
-            '<div class="barre" tabindex="0" title="%s — %s%s%s">'
-            '<span class="barre-l">%s</span>'
-            '<span class="barre-p"><i style="width:%.1f%%;background:%s"></i></span>'
-            '<span class="barre-v">%s%s</span>'
-            '<span class="barre-n">%s</span></div>'
-            % (label, "{:,}".format(v).replace(",", " "), unite,
-               (" · " + note) if note else "",
-               label, pc, couleur,
-               "{:,}".format(v).replace(",", " "), unite, note or ""))
-    out.append("</div>")
-    return "".join(out)
+    L, H = 980.0, 260.0
+    mg, mh, md, mb = 48, 20, 16, 34
+    pos = [s["pos"] for s in semaines]
+    hi, lo = max(1.0, min(pos) - 3), max(pos) + 3
+    x = lambda i: mg + i * (L - mg - md) / max(1, len(semaines) - 1)
+    y = lambda p: mh + (p - hi) * (H - mh - mb) / (lo - hi)
+
+    grille = etiq = ""
+    for p in range(5, int(lo) + 5, 5):
+        if not (hi <= p <= lo):
+            continue
+        grille += ('<line x1="%.0f" y1="%.1f" x2="%.0f" y2="%.1f" class="g"/>'
+                   % (mg, y(p), L - md, y(p)))
+        etiq += ('<text x="%.0f" y="%.1f" class="ax ax--y">%d<tspan class="e">e</tspan>'
+                 '</text>' % (mg - 10, y(p) + 4, p))
+
+    d = " ".join(("M" if i == 0 else "L") + "%.1f %.1f" % (x(i), y(s["pos"]))
+                 for i, s in enumerate(semaines))
+    aire = d + " L%.1f %.1f L%.1f %.1f Z" % (x(len(semaines) - 1), H - mb, x(0), H - mb)
+
+    pts = xs = ""
+    for i, s in enumerate(semaines):
+        der = i == len(semaines) - 1
+        pts += ('<circle cx="%.1f" cy="%.1f" r="%d" class="pt%s">'
+                '<title>Semaine du %s — position moyenne %s, %s impressions%s</title>'
+                '</circle>'
+                % (x(i), y(s["pos"]), 6 if der else 5, " pt--part" if der else "",
+                   s["semaine"], virg(s["pos"]), nb(s["imp"]),
+                   " (semaine incomplète)" if der else ""))
+        if i % 2 == 0 or der:
+            xs += ('<text x="%.1f" y="%.0f" class="ax">%s</text>'
+                   % (x(i), H - 10, s["semaine"][8:10] + "/" + s["semaine"][5:7]))
+
+    # On n'étiquette que le début, le pire et la fin : jamais tous les points.
+    pire = max(range(len(semaines)), key=lambda i: semaines[i]["pos"])
+    lab = ""
+    for i in sorted({0, pire, len(semaines) - 1}):
+        ancre = "start" if i == 0 else ("end" if i == len(semaines) - 1 else "middle")
+        dx = 8 if i == 0 else (-8 if i == len(semaines) - 1 else 0)
+        lab += ('<text x="%.1f" y="%.1f" class="val" text-anchor="%s">%s</text>'
+                % (x(i) + dx, y(semaines[i]["pos"]) - 13, ancre, virg(semaines[i]["pos"])))
+
+    return ('<svg viewBox="0 0 %d %d" class="graph" role="img" '
+            'aria-label="Position moyenne par semaine sur les requêtes métier, '
+            'de la semaine du %s à celle du %s">'
+            '<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1">'
+            '<stop offset="0" stop-color="%s" stop-opacity=".16"/>'
+            '<stop offset="1" stop-color="%s" stop-opacity="0"/></linearGradient></defs>'
+            '%s<path d="%s" fill="url(#ga)"/>'
+            '<path d="%s" fill="none" stroke="%s" stroke-width="2.5" '
+            'stroke-linejoin="round" stroke-linecap="round"/>%s%s%s%s</svg>'
+            % (int(L), int(H), semaines[0]["semaine"], semaines[-1]["semaine"],
+               BLEU, BLEU, grille, aire, d, BLEU, pts, etiq, xs, lab))
 
 
-def bandes(hm, champ):
-    tranches = [("1–3", 1, 3), ("4–10", 4, 10), ("11–20", 11, 20),
-                ("21–50", 21, 50), ("51+", 51, 9999)]
-    return [(lab, len([l for l in hm if a <= l[champ] <= b]))
-            for lab, a, b in tranches]
+def barres_imp(semaines):
+    maxi = max(s["imp"] for s in semaines)
+    b = ""
+    for i, s in enumerate(semaines):
+        der = i == len(semaines) - 1
+        b += ('<span class="imp-b%s" style="height:%.0f%%" tabindex="0" '
+              'title="Semaine du %s — %s impressions%s"></span>'
+              % (" imp-b--part" if der else "", 100.0 * s["imp"] / maxi,
+                 s["semaine"], nb(s["imp"]), " (semaine incomplète)" if der else ""))
+    return '<div class="imp">%s</div>' % b
 
 
-def colonnes_bandes(hm):
-    """Deux lectures de la meme realite : rang organique et rang affiche.
-
-    Sur une SERP a blocs, une position 3 s'affiche 5e. Comparer les deux
-    colonnes est la seule facon de ne pas se raconter d'histoire.
-    """
-    g = bandes(hm, "rank_group")
-    a = bandes(hm, "rank_absolute")
-    maxi = max([v for _, v in g] + [v for _, v in a])
-    cols = ""
-    for k in range(5):
-        lab, vg = g[k]
-        _, va = a[k]
-        cols += (
-            '<div class="col">'
-            '<div class="col-p">'
-            '<span class="col-b" style="height:%.0f%%;background:%s" '
-            'title="rang organique %s : %d requêtes"><b>%d</b></span>'
-            '<span class="col-b col-b--a" style="height:%.0f%%;background:%s" '
-            'title="rang affiché %s : %d requêtes"><b>%d</b></span>'
-            '</div><p class="col-l">%s</p></div>'
-            % (100.0 * vg / maxi, DUO[0], lab, vg, vg,
-               100.0 * va / maxi, DUO[1], lab, va, va, lab))
-    return ('<div class="colonnes">%s</div>'
+def haltere(metiers):
+    """Avant / après sur le même axe : la distance EST la variation."""
+    maxi = max(max(m["pos"], m["pos0"]) for m in metiers) + 4
+    li = ""
+    for m in metiers:
+        a, b = m["pos0"], m["pos"]
+        mieux = b < a
+        x1, x2 = 100.0 * min(a, b) / maxi, 100.0 * max(a, b) / maxi
+        li += (
+            '<div class="halt" tabindex="0" title="%s — %s : %s puis %s">'
+            '<span class="halt-l">%s <em>%d requêtes · %s impr.</em></span>'
+            '<span class="halt-p">'
+            '<i class="halt-t" style="left:%.1f%%;width:%.1f%%;background:%s"></i>'
+            '<i class="halt-a" style="left:%.1f%%"><b>%s</b></i>'
+            '<i class="halt-b" style="left:%.1f%%;background:%s"><b>%s</b></i>'
+            '</span><span class="halt-d %s">%s</span></div>'
+            % (m["metier"], "progresse" if mieux else "recule", virg(a), virg(b),
+               m["metier"], m["n"], nb(m["imp"]),
+               x1, max(0.6, x2 - x1), VERT if mieux else ROUGE,
+               100.0 * a / maxi, virg(a),
+               100.0 * b / maxi, VERT if mieux else ROUGE, virg(b),
+               "up" if mieux else "down", signe(m["delta"])))
+    return ('<div class="halteres">%s</div>'
             '<div class="legende">'
-            '<span><i style="background:%s"></i>Rang organique <b>(rank_group)</b></span>'
-            '<span><i class="hach" style="background:%s"></i>Rang réellement affiché '
-            '<b>(rank_absolute)</b></span></div>' % (cols, DUO[0], DUO[1]))
+            '<span><i class="rond" style="background:#9aa0a6"></i>Position sur %s</span>'
+            '<span><i class="rond" style="background:%s"></i>Aujourd\'hui — progression</span>'
+            '<span><i class="rond" style="background:%s"></i>Aujourd\'hui — recul</span>'
+            '</div>' % (li, PRECEDENT, VERT, ROUGE))
 
 
-def anneau(part, total, couleur, fond="#e8eaed"):
-    pc = 100.0 * part / total
-    c = 2 * 3.14159 * 54
-    return ('<svg viewBox="0 0 128 128" class="anneau" role="img" '
-            'aria-label="%.1f %% du trafic estimé">'
-            '<circle cx="64" cy="64" r="54" fill="none" stroke="%s" stroke-width="16"/>'
-            '<circle cx="64" cy="64" r="54" fill="none" stroke="%s" stroke-width="16" '
-            'stroke-linecap="round" stroke-dasharray="%.1f %.1f" '
-            'transform="rotate(-90 64 64)"/>'
-            '<text x="64" y="70" text-anchor="middle" class="anneau-t">%.0f %%</text>'
-            '</svg>' % (pc, fond, couleur, c * pc / 100, c, pc))
+def liste_q(items, sens):
+    li = ""
+    for x in items:
+        li += ('<li><span class="q">%s</span>'
+               '<span class="q-p"><b>%s</b> <em>← %s</em></span>'
+               '<span class="q-i">%s impressions</span>'
+               '<span class="q-d %s">%s</span></li>'
+               % (x["q"], virg(x["pos"]), virg(x["pos0"]), nb(x["imp"]), sens,
+                  signe(x["delta"])))
+    return '<ul class="qs">%s</ul>' % li
 
 
-# ═══════════════════════════════════════════════════════ contenu du rapport
+# ═══════════════════════════════════════════════════════ contenu éditorial
 ROADMAP = [
     ("Terminé cette semaine", "fait", [
-        ("Méga-menu unifié posé sur 174 contenus", "16 métiers, desktop et mobile"),
+        ("Méga-menu unifié sur 174 contenus", "16 métiers, desktop et mobile"),
         ("Bentos → module à onglets sur 31 pages", "fonctionnalités + fiches métier"),
         ("3 landings de septembre publiées", "PME en croissance, fruits &amp; légumes, "
                                              "produits de la mer — en noindex"),
-        ("Bug d'intégration corrigé", "les 3 landings sortaient avec deux H1"),
         ("/agroalimentaire/ : copie, refonte, remaniement", "4 maquettes livrées"),
     ]),
     ("En cours", "cours", [
-        ("Refonte SEO /agroalimentaire/", "maquette remaniée validée — reste la décision "
-                                          "de mise en ligne (page protégée)"),
-        ("Photos de héros des pages métier", "16 planches de candidats livrées, en attente "
-                                             "de ton choix"),
+        ("Refonte /agroalimentaire/", "maquette remaniée validée — reste la décision de "
+                                      "mise en ligne (page protégée)"),
+        ("Photos de héros des pages métier", "planches livrées, en attente de ton choix"),
     ]),
-    ("Planifié / bloqué", "todo", [
-        ("Anti-spam formulaires (PHP)", "le fichier est prêt — il doit être installé côté "
-                                        "serveur, le classificateur bloque l'écriture"),
+    ("À traiter, par ordre d'impact", "todo", [
+        ("« erp agroalimentaire » : 15,6 → 20,0", "1 117 impressions, 2 clics — la requête "
+                                                  "n° 1 décroche, c'est la priorité"),
+        ("Anti-spam formulaires (PHP)", "fichier prêt, installation serveur à faire"),
         ("Délivrabilité e-mail", "SPF en double, ni DKIM ni DMARC — 0 mail depuis le 10/08"),
-        ("Casse des titles des 3 landings", "rendus en Title Case, 651–673 px au lieu de "
-                                            "528–551 px"),
         ("16 pages filles MIN", "Nantes en tête de file"),
-        ("5 pages sans menu", "CGU, mentions légales, confidentialité, comparatifs, loi TVA"),
     ]),
 ]
 
 ARTEFACTS = [
-    ("Copie conforme de /agroalimentaire/", "La page telle quelle, hors ligne",
-     "18 sections · 118 liens · 3 357 mots, identiques à la source",
-     "https://claude.ai/artifact/8G26R12e7m4qXkHFccK8Fd"),
-    ("Page remaniée", "Les 13 demandes appliquées",
-     "Mur de 25 logos · FAQ des pages sœurs · avis en carrousel · section guide",
+    ("Image héros", "Photos des pages métier",
+     "L'image actuelle de chaque page métier et ses remplaçantes proposées, libres de "
+     "droit — en attente de ton choix.",
+     "https://claude.ai/artifact/SM5JQeFuzGp1NhbNRB4LCY"),
+    ("Refonte ERP agroalimentaire", "/agroalimentaire/ remaniée",
+     "Les treize demandes appliquées : mur de 25 logos, FAQ des pages sœurs, avis en "
+     "carrousel continu, section guide vers le hub.",
      "https://claude.ai/artifact/XSMvyCT6bTPWnAhB4FJFe7"),
-    ("Refonte complète", "Proposition de nouveau gabarit",
-     "Système de design unique, 128 ko de CSS remplacés",
-     "https://claude.ai/artifact/39mAUf1g4JgxeVZvXS6bzD"),
 ]
 
 
 def main():
-    hm, bofu = charger()
+    d = json.load(open(os.path.join(S, "gsc-metier.json"), encoding="utf-8"))
+    sem = json.load(open(os.path.join(S, "gsc-semaines.json"), encoding="utf-8"))
+    g = d["global"]
 
-    top10 = len([l for l in hm if l["rank_group"] <= 10])
-    etv = sum(l["etv"] for l in hm)
-    etv_blog = sum(l["etv"] for l in hm if (l["url"] or "").startswith("/blog"))
-    etv_biz = sum(l["etv"] for l in hm if BIZ.match(l["url"] or ""))
-    pages = len({l["url"] for l in hm})
-
-    # trafic estime par page, les huit premieres
-    par = {}
-    for l in hm:
-        par[l["url"]] = par.get(l["url"], 0) + l["etv"]
-    top_pages = sorted(par.items(), key=lambda x: -x[1])[:8]
-
-    # les pages business qui apparaissent, et a quel rang
-    biz_l = sorted([l for l in hm if BIZ.match(l["url"] or "")],
-                   key=lambda x: x["rank_group"])
-
-    as400 = [x for x in bofu if re.search(r"as.?400|s400", x["requete"], re.I)]
-    bofu_blog = [x for x in bofu if (x["url"] or "").startswith("/blog")]
-
-    nb = lambda v: "{:,}".format(int(round(v))).replace(",", " ")
-
-    # ── les blocs
     tuiles = "".join([
-        tuile(nb(len(hm)), "requêtes positionnées", "hors marque · relevé du " + RELEVE),
-        tuile(nb(top10), "dans le top 10", "%d %% des requêtes suivies"
-              % round(100 * top10 / len(hm))),
-        tuile(nb(etv), "visites/mois estimées", "estimation DataForSEO, pas des clics GSC"),
-        tuile(nb(len(bofu)), "requêtes BOFU en jeu", "%s de volume cumulé"
-              % nb(sum(x["volume"] for x in bofu)), accent=True),
+        tuile(nb(g["n"]), "requêtes métier suivies",
+              "%s impressions, contre %s" % (nb(g["imp"]), nb(g["imp0"]))),
+        tuile(virg(g["pos"]), "position moyenne",
+              "%s — elle était à %s" % (signe(g["delta"]), virg(g["pos0"])),
+              ton="ko" if g["delta"] < 0 else "ok"),
+        tuile(nb(g["top10"]), "requêtes en page 1",
+              "+%d — elles étaient %d" % (g["top10"] - g["top10_0"], g["top10_0"]), ton="ok"),
+        tuile("%d / %d" % (g["progressent"], g["reculent"]), "progressent / reculent",
+              "sur %d requêtes suivies · %d nouvelles" % (g["suivies"], g["nouvelles"])),
     ])
 
-    b_pages = barres_h(
-        [(u if len(u) < 40 else u[:38] + "…", int(round(v)), "") for u, v in top_pages],
-        unite="", couleur=DUO[0], largeur_lib="300px")
-
-    b_bofu = barres_h(
-        [("%s  (position %d)" % (x["requete"], x["rank_absolute"]), x["volume"], "")
-         for x in bofu[:12]], unite="", couleur=DUO[1], largeur_lib="330px")
-
-    lignes_biz = "".join(
-        '<tr><td><code>%s</code></td><td>%s</td><td class="num">%s</td>'
-        '<td class="num"><b class="rang">%d</b></td><td class="num">%d</td></tr>'
-        % (l["url"], l["requete"], nb(l["volume"]), l["rank_absolute"], l["rank_group"])
-        for l in biz_l)
-
-    road = ""
-    for titre, cl, items in ROADMAP:
-        li = "".join('<li><b>%s</b><span>%s</span></li>' % (t, d) for t, d in items)
-        road += ('<div class="kan kan--%s"><h3>%s <em>%d</em></h3><ul>%s</ul></div>'
-                 % (cl, titre, len(items), li))
-
-    arte = "".join(
-        '<a class="arte" href="%s" target="_blank" rel="noopener">'
-        '<span class="arte-k">Artefact</span><b>%s</b><span class="arte-s">%s</span>'
-        '<span class="arte-d">%s</span><span class="arte-c">Ouvrir →</span></a>'
-        % (u, t, s, d) for t, s, d, u in ARTEFACTS)
-
     valeurs = dict(
-        semaine=SEMAINE, releve=RELEVE,
-        tuiles=tuiles,
-        pages=nb(pages),
-        b_pages=b_pages,
-        etv=nb(etv), etv_blog=nb(etv_blog), etv_biz="%.0f" % etv_biz,
-        anneau_blog=anneau(etv_blog, etv, DUO[0]),
-        pc_blog="%.1f" % (100 * etv_blog / etv),
-        pc_biz="%.1f" % (100 * etv_biz / etv),
-        colonnes=colonnes_bandes(hm),
-        nb_g3=len([l for l in hm if l["rank_group"] <= 3]),
-        nb_a3=len([l for l in hm if l["rank_absolute"] <= 3]),
-        lignes_biz=lignes_biz, nb_biz=len(biz_l),
-        b_bofu=b_bofu,
-        nb_bofu=len(bofu), vol_bofu=nb(sum(x["volume"] for x in bofu)),
-        nb_bofu_blog=len(bofu_blog),
-        nb_as400=len(as400), vol_as400=nb(sum(x["volume"] for x in as400)),
-        road=road, arte=arte,
+        periode=PERIODE, precedent=PRECEDENT, tuiles=tuiles,
+        courbe=courbe(sem), imp=barres_imp(sem),
+        pos_debut=virg(sem[0]["pos"]), pos_fin=virg(sem[-2]["pos"]),
+        pos_pire=virg(max(s["pos"] for s in sem)),
+        haltere=haltere(d["metiers"]),
+        gagne=liste_q(d["gagne"][:6], "up"), perd=liste_q(d["perd"][:6], "down"),
+        nb_q=nb(g["n"]), imp_tot=nb(g["imp"]), clics=g["clics"], clics0=g["clics0"],
+        road="".join(
+            '<div class="kan kan--%s"><h3>%s <em>%d</em></h3><ul>%s</ul></div>'
+            % (cl, t, len(it), "".join('<li><b>%s</b><span>%s</span></li>' % (a, b)
+                                       for a, b in it))
+            for t, cl, it in ROADMAP),
+        arte="".join(
+            '<a class="arte" href="%s" target="_blank" rel="noopener">'
+            '<span class="arte-k">Artefact</span><b>%s</b><span class="arte-s">%s</span>'
+            '<span class="arte-d">%s</span><span class="arte-c">Ouvrir →</span></a>'
+            % (u, t, s, x) for t, s, x, u in ARTEFACTS),
     )
+
     html = GABARIT
     for cle, val in valeurs.items():
         html = html.replace("{{%s}}" % cle, str(val))
     reste = re.findall(r"\{\{(\w+)\}\}", html)
     if reste:
         raise SystemExit("ARRÊT — jeton non remplacé : %s" % sorted(set(reste)))
+
     open(SORTIE, "w", encoding="utf-8").write(html)
     print("écrit : %s (%d ko)" % (SORTIE, len(html) // 1024))
 
     pb = []
     if re.search(r'<img[^>]+src="https?://', html):
         pb.append("image distante")
-    for t in ("section", "div", "table", "svg"):
+    for t in ("section", "div", "svg", "ul", "li"):
         o, f = len(re.findall(r"<%s[\s>]" % t, html)), len(re.findall(r"</%s>" % t, html))
         if o != f:
             pb.append("%s : %d ouvertes, %d fermées" % (t, o, f))
+    if html.count("<h1") != 1:
+        pb.append("il faut un seul H1")
     print("contrôles : %s" % ("tout est vert" if not pb else pb))
 
 
 GABARIT = """<!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Reporting SEO Hello Harel</title>
+<title>Positions métier Hello Harel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
  color-scheme:light;
- --g-blue:#4285F4;--g-red:#EA4335;--g-yellow:#FBBC04;--g-green:#34A853;
  --action:#1a73e8;--action-hover:#1b66c9;--focus:#aecbfa;--orange:#E37400;
+ --vert:#188038;--rouge:#c5221f;
  --bg:#fff;--surface:#f8f9fa;--surface-2:#f1f3f4;
  --ink:#1f1f1f;--ink-2:#5f6368;--line:#e8eaed;
- --r-card:28px;--r-md:16px;--r-sm:12px;--r-pill:999px;
+ --r-card:28px;--r-md:16px;--r-pill:999px;
  --shadow:0 1px 2px rgba(60,64,67,.08),0 1px 3px rgba(60,64,67,.06);
  --shadow-h:0 6px 18px rgba(60,64,67,.12),0 2px 6px rgba(60,64,67,.08);
  --max:1180px;
@@ -286,122 +289,108 @@ GABARIT = """<!doctype html><html lang="fr"><head><meta charset="utf-8">
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.01em;margin:0;font-weight:600}
-p,ul,ol,figure{margin:0}ul{list-style:none;padding:0}
-a{color:var(--action);text-decoration:none}
-a:hover{color:var(--action-hover)}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.01em;margin:0;font-weight:600}
+p,ul,figure{margin:0}ul{list-style:none;padding:0}
+a{color:var(--action);text-decoration:none}a:hover{color:var(--action-hover)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
+sup{font-size:.62em}
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:24px}
 .sec{padding-block:clamp(32px,5vw,56px)}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
  color:var(--ink-2);margin-bottom:8px}
 .sec>.wrap>h2{font-size:clamp(1.35rem,2.6vw,1.9rem);margin-bottom:8px}
-.sec>.wrap>h2+p{color:var(--ink-2);margin-bottom:24px;max-width:70ch}
+.sec>.wrap>h2+p{color:var(--ink-2);margin-bottom:24px;max-width:74ch}
+.sec>.wrap>h2+p b{color:var(--ink);font-weight:500}
 
-/* ───────────────────────────────────────────────── en-tête */
 .hdr{background:linear-gradient(180deg,#f8f9fa,#fff);border-bottom:1px solid var(--line)}
 .hdr .wrap{padding-block:40px 32px}
-.hdr h1{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700}
-.hdr .sous{color:var(--ink-2);margin-top:8px;font-size:1.05rem}
+.hdr h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700}
+.hdr .sous{color:var(--ink-2);margin-top:8px;max-width:78ch}
 .puce{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;
  letter-spacing:.1em;text-transform:uppercase;color:#174ea6;background:#e8f0fe;
  padding:6px 14px;border-radius:var(--r-pill);margin-bottom:16px}
 
-/* ───────────────────────────────────────────────── tuiles */
-.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.tuiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
 .tuile{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;
  box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s}
 .tuile:hover{box-shadow:var(--shadow-h);transform:translateY(-2px)}
-.tuile--a{background:#e8f0fe;border-color:#d2e3fc}
+.tuile--ok{background:#e6f4ea;border-color:#ceead6}
+.tuile--ko{background:#fce8e6;border-color:#fad2cf}
 .tuile-v{font-family:var(--display);font-size:clamp(2rem,4.5vw,2.9rem);font-weight:700;
  line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.tuile--a .tuile-v{color:var(--action)}
+.tuile--ok .tuile-v{color:var(--vert)}.tuile--ko .tuile-v{color:var(--rouge)}
 .tuile-l{font-weight:500;margin-top:4px}
 .tuile-d{color:var(--ink-2);font-size:.84rem;margin-top:6px}
 
-/* ───────────────────────────────────────────────── cartes */
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);
  padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
-.card+.card{margin-top:16px}
-.grille2{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:900px){.grille2{grid-template-columns:1.25fr .75fr}}
 .card h3{font-size:1.05rem;margin-bottom:4px}
-.card h3+p{color:var(--ink-2);font-size:.9rem;margin-bottom:20px}
+.card h3+p{color:var(--ink-2);font-size:.88rem;margin-bottom:20px}
 
-/* ───────────────────────────────────────────────── barres */
-.barres{display:grid;gap:10px}
-.barre{display:grid;grid-template-columns:var(--lib) 1fr auto;align-items:center;gap:12px;
- font-size:.88rem;border-radius:8px;padding:2px 4px}
-.barre:hover,.barre:focus-visible{background:var(--surface)}
-.barre-l{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
- font-family:var(--mono);font-size:.78rem}
-.barre-p{background:var(--surface-2);border-radius:var(--r-pill);height:14px;position:relative}
-.barre-p i{position:absolute;inset:0 auto 0 0;border-radius:var(--r-pill);display:block}
-.barre-v{font-variant-numeric:tabular-nums;font-weight:500;min-width:58px;text-align:right}
-.barre-n{display:none}
-@media(max-width:720px){.barre{grid-template-columns:1fr auto;grid-template-areas:"l v" "p p"}
- .barre-l{grid-area:l}.barre-v{grid-area:v}.barre-p{grid-area:p}}
+.graph{width:100%;height:auto;display:block;overflow:visible}
+.graph .g{stroke:var(--line);stroke-width:1}
+.graph .ax{font-family:var(--mono);font-size:11px;fill:var(--ink-2);text-anchor:middle}
+.graph .ax--y{text-anchor:end}
+.graph .e{font-size:8px;baseline-shift:super}
+.graph .val{font-family:var(--display);font-size:14px;font-weight:600;fill:var(--ink)}
+.graph .pt{fill:#fff;stroke:#1a73e8;stroke-width:2.5}
+.graph .pt:hover{fill:#1a73e8}
+.graph .pt--part{stroke-dasharray:3 2}
+.axe-note{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);margin-top:20px;
+ padding-top:16px;border-top:1px solid var(--line)}
+.imp{display:flex;align-items:flex-end;gap:5px;height:54px;margin-top:8px}
+.imp-b{flex:1;background:#d2e3fc;border-radius:4px 4px 0 0;min-height:4px}
+.imp-b:hover{background:#8ab4f8}
+.imp-b--part{background:repeating-linear-gradient(135deg,#d2e3fc 0 4px,#fff 4px 8px)}
 
-/* ───────────────────────────────────────────────── colonnes */
-.colonnes{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,2vw,20px);
- align-items:end;height:220px;margin-bottom:16px}
-.col{display:flex;flex-direction:column;height:100%;justify-content:flex-end;gap:10px}
-.col-p{display:flex;align-items:flex-end;justify-content:center;gap:4px;height:100%}
-.col-b{width:clamp(18px,3.4vw,38px);border-radius:6px 6px 0 0;position:relative;
- display:block;min-height:6px;border:2px solid #fff}
-.col-b b{position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);
- font-size:.76rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
-.col-b--a{background-image:repeating-linear-gradient(135deg,
- rgba(255,255,255,.55) 0 3px,transparent 3px 7px)}
-.col-l{text-align:center;font-family:var(--mono);font-size:.76rem;color:var(--ink-2)}
-.legende{display:flex;flex-wrap:wrap;gap:20px;font-size:.84rem;color:var(--ink-2)}
-.legende i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:7px;
- vertical-align:-2px}
-.legende i.hach{background-image:repeating-linear-gradient(135deg,
- rgba(255,255,255,.55) 0 3px,transparent 3px 7px)}
-.legende b{color:var(--ink);font-family:var(--mono);font-size:.76rem;font-weight:500}
+.halteres{display:grid;gap:18px}
+.halt{display:grid;grid-template-columns:250px 1fr 66px;align-items:center;gap:16px;
+ padding:8px 4px;border-radius:10px}
+.halt:hover,.halt:focus-visible{background:var(--surface)}
+.halt-l{font-size:.92rem;font-weight:500;line-height:1.3}
+.halt-l em{display:block;font-style:normal;font-family:var(--mono);font-size:.7rem;
+ color:var(--ink-2);margin-top:2px}
+.halt-p{position:relative;height:36px}
+.halt-t{position:absolute;top:16px;height:4px;border-radius:2px;opacity:.55}
+.halt-a,.halt-b{position:absolute;top:11px;width:14px;height:14px;border-radius:50%;
+ transform:translateX(-7px);border:2px solid #fff}
+.halt-a{background:#9aa0a6}
+.halt-a b,.halt-b b{position:absolute;left:50%;transform:translateX(-50%);
+ font-family:var(--mono);font-size:.68rem;font-weight:500;white-space:nowrap}
+.halt-a b{top:-18px;color:var(--ink-2)}
+.halt-b b{top:17px;color:var(--ink);font-weight:600}
+.halt-d{text-align:right;font-family:var(--mono);font-size:.86rem;font-weight:500;
+ font-variant-numeric:tabular-nums}
+.halt-d.up{color:var(--vert)}.halt-d.down{color:var(--rouge)}
+@media(max-width:760px){.halt{grid-template-columns:1fr 62px;
+ grid-template-areas:"l d" "p p"}.halt-l{grid-area:l}.halt-d{grid-area:d}
+ .halt-p{grid-area:p;margin-top:10px}}
+.legende{display:flex;flex-wrap:wrap;gap:20px;font-size:.82rem;color:var(--ink-2);
+ margin-top:28px;padding-top:16px;border-top:1px solid var(--line)}
+.legende i.rond{display:inline-block;width:12px;height:12px;border-radius:50%;
+ margin-right:7px;vertical-align:-1px}
 
-/* ───────────────────────────────────────────────── anneau */
-.anneau{width:clamp(130px,20vw,168px);height:auto;display:block;margin:0 auto 12px}
-.anneau-t{font-family:var(--display);font-size:26px;font-weight:700;fill:var(--ink)}
-.repart{display:grid;gap:10px;margin-top:4px}
-.repart div{display:flex;align-items:center;gap:10px;font-size:.9rem}
-.repart i{width:12px;height:12px;border-radius:4px;flex:0 0 12px}
-.repart b{margin-left:auto;font-variant-numeric:tabular-nums}
+.duo{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.duo{grid-template-columns:1fr 1fr}}
+.qs li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:13px 0;
+ border-bottom:1px solid var(--line)}
+.qs li:last-child{border-bottom:0;padding-bottom:0}
+.q{font-size:.92rem;font-weight:500}
+.q-p{font-family:var(--mono);font-size:.82rem;text-align:right;
+ font-variant-numeric:tabular-nums}
+.q-p b{font-weight:600}.q-p em{font-style:normal;color:var(--ink-2)}
+.q-i{font-size:.76rem;color:var(--ink-2)}
+.q-d{font-family:var(--mono);font-size:.78rem;font-weight:500;text-align:right}
+.q-d.up{color:var(--vert)}.q-d.down{color:var(--rouge)}
 
-/* ───────────────────────────────────────────────── tableau */
-.tab-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md)}
-table{border-collapse:collapse;width:100%;min-width:640px;font-size:.88rem}
-th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
-thead th{background:var(--surface);font-family:var(--display);font-weight:500;font-size:.82rem;
- color:var(--ink-2)}
-tbody tr:last-child td{border-bottom:0}
-tbody tr:hover{background:var(--surface)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding:2px 7px;
- border-radius:6px}
-.rang{display:inline-grid;place-items:center;min-width:30px;height:26px;padding:0 8px;
- border-radius:var(--r-pill);background:#e8f0fe;color:#174ea6;font-weight:600}
-
-/* ───────────────────────────────────────────────── encart */
-.note{display:flex;gap:14px;align-items:flex-start;background:var(--surface);
- border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;
- font-size:.9rem;color:var(--ink-2)}
-.note b{color:var(--ink)}
+.note{display:flex;gap:14px;align-items:flex-start;background:#fef7e0;
+ border:1px solid #feefc3;border-radius:var(--r-md);padding:18px 22px;font-size:.92rem}
 .note svg{flex:0 0 20px;width:20px;height:20px;margin-top:2px;color:var(--orange)}
-.flux{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;
- margin-top:20px}
-.flux-b{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);
- padding:16px 20px}
-.flux-b b{display:block;font-family:var(--mono);font-size:.78rem}
-.flux-b span{font-size:.85rem;color:var(--ink-2)}
-.flux-b--ko{background:#fef7e0;border-color:#feefc3}
-.flux-f{font-size:1.6rem;color:var(--orange)}
-@media(max-width:720px){.flux{grid-template-columns:1fr}.flux-f{transform:rotate(90deg);
- text-align:center}}
+.note b{font-weight:600}
+.note code{font-family:var(--mono);font-size:.82rem;background:#fff;padding:2px 7px;
+ border-radius:6px}
 
-/* ───────────────────────────────────────────────── kanban */
-.kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.kanban{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
 .kan{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;
  box-shadow:var(--shadow)}
 .kan h3{display:flex;align-items:center;gap:10px;font-size:1rem;margin-bottom:16px;
@@ -410,7 +399,7 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
  background:var(--surface-2);color:var(--ink-2);padding:2px 9px;border-radius:var(--r-pill);
  margin-left:auto}
 .kan h3::before{content:"";width:10px;height:10px;border-radius:50%;flex:0 0 10px}
-.kan--fait h3::before{background:var(--g-green)}
+.kan--fait h3::before{background:var(--vert)}
 .kan--cours h3::before{background:var(--action)}
 .kan--todo h3::before{background:var(--orange)}
 .kan li{padding:12px 0;border-bottom:1px solid var(--line)}
@@ -418,18 +407,17 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
 .kan li b{display:block;font-weight:500;font-size:.92rem}
 .kan li span{display:block;color:var(--ink-2);font-size:.84rem;margin-top:3px}
 
-/* ───────────────────────────────────────────────── artefacts */
-.artes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.artes{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
 .arte{display:flex;flex-direction:column;gap:6px;background:#fff;border:1px solid var(--line);
- border-radius:var(--r-card);padding:24px;box-shadow:var(--shadow);color:var(--ink);
+ border-radius:var(--r-card);padding:28px;box-shadow:var(--shadow);color:var(--ink);
  transition:box-shadow .25s,transform .25s}
 .arte:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);color:var(--ink)}
 .arte-k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
- color:var(--action)}
-.arte b{font-family:var(--display);font-size:1.08rem;font-weight:600}
+ color:#174ea6}
+.arte b{font-family:var(--display);font-size:1.15rem;font-weight:600}
 .arte-s{color:var(--ink-2);font-size:.9rem}
-.arte-d{font-size:.84rem;color:var(--ink-2);margin-top:6px;flex:1}
-.arte-c{margin-top:14px;color:var(--action);font-weight:500;font-size:.9rem}
+.arte-d{font-size:.86rem;color:var(--ink-2);margin-top:8px;flex:1}
+.arte-c{margin-top:16px;color:var(--action);font-weight:500;font-size:.9rem}
 
 .pied{border-top:1px solid var(--line);background:var(--surface)}
 .pied .wrap{padding-block:28px;font-size:.84rem;color:var(--ink-2)}
@@ -437,90 +425,59 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
 </style></head><body>
 
 <header class="hdr"><div class="wrap">
- <p class="puce">Reporting hebdomadaire</p>
- <h1>Hello Harel — semaine du {{semaine}}</h1>
- <p class="sous">Relevé de positions du {{releve}} · France, français · {{pages}} pages du site
- apparaissent dans les résultats.</p>
+ <p class="puce">Requêtes métier · Search Console</p>
+ <h1>Évolution des positions</h1>
+ <p class="sous">{{periode}}, comparé à {{precedent}} · {{nb_q}} requêtes qui associent un
+ métier et une intention d'outil · {{imp_tot}} impressions.</p>
 </div></header>
 
 <main>
 
-<section class="sec"><div class="wrap">
- <div class="tuiles">{{tuiles}}</div>
-</div></section>
+<section class="sec"><div class="wrap"><div class="tuiles">{{tuiles}}</div></div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Clics</p>
- <h2>Le trafic, et d'où il vient</h2>
- <p>Search Console n'est pas connectée à cet environnement : aucun chiffre de clics réels
- n'est affiché ici. Ce qui suit est une <b>estimation</b> de trafic calculée par DataForSEO
- à partir des positions et des volumes. À traiter comme un ordre de grandeur et une
- répartition, pas comme un compteur.</p>
- <div class="grille2">
-  <div class="card">
-   <h3>Trafic estimé par page</h3>
-   <p>Visites/mois estimées · 8 premières pages sur {{pages}}</p>
-   {{b_pages}}
-  </div>
-  <div class="card">
-   <h3>Blog contre pages qui vendent</h3>
-   <p>Part du trafic estimé</p>
-   {{anneau_blog}}
-   <div class="repart">
-    <div><i style="background:#1a73e8"></i>Blog<b>{{pc_blog}} %</b></div>
-    <div><i style="background:#E37400"></i>Pages business<b>{{pc_biz}} %</b></div>
-   </div>
-   <div class="note" style="margin-top:20px">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-     stroke-linecap="round"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0
-     1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-    <span>Sur <b>{{etv}}</b> visites/mois estimées, <b>{{etv_biz}}</b> arrivent sur une page
-    qui vend.</span>
-   </div>
-  </div>
+ <p class="eyebrow">Évolution</p>
+ <h2>La position moyenne, semaine après semaine</h2>
+ <p>Le site est passé de la <b>{{pos_debut}}<sup>e</sup></b> place fin juin à un creux de
+ <b>{{pos_pire}}<sup>e</sup></b> mi-août, puis remonte à <b>{{pos_fin}}<sup>e</sup></b>.
+ Sur la même période les impressions montent : le site apparaît sur <b>plus</b> de
+ requêtes, mais <b>plus bas</b>.</p>
+ <div class="card">
+  <h3>Position moyenne pondérée par les impressions</h3>
+  <p>Axe inversé : la 1<sup>re</sup> place est en haut. Dernier point = semaine incomplète.</p>
+  {{courbe}}
+  <p class="axe-note">Impressions par semaine</p>
+  {{imp}}
  </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Positions</p>
- <h2>Où se situent les {{pages}} pages, hors marque</h2>
- <p>Deux lectures de la même réalité. Le rang organique ignore les blocs de Google ;
- le rang affiché est celui que voit l'internaute. <b>{{nb_g3}} requêtes sont dans le top 3
- organique, {{nb_a3}} seulement sont vraiment affichées dans les trois premiers résultats.</b></p>
- <div class="card">{{colonnes}}</div>
+ <p class="eyebrow">Par métier</p>
+ <h2>Qui monte, qui descend</h2>
+ <p>Chaque ligne relie la position d'avant à celle d'aujourd'hui. <b>Le négoce et la
+ boulangerie gagnent plus de dix places</b> ; l'agroalimentaire générique et la viande
+ reculent.</p>
+ <div class="card">{{haltere}}</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
- <p class="eyebrow">Pages business</p>
- <h2>Les pages qui vendent, hors marque</h2>
- <p>Sur {{pages}} pages positionnées, <b>{{nb_biz}} seulement</b> sont des pages métier,
- fonctionnalité ou comparatif. Le reste est du blog.</p>
- <div class="card" style="padding-inline:0;padding-block:0;border:0;box-shadow:none">
- <div class="tab-wrap"><table>
-  <thead><tr><th>Page</th><th>Requête</th><th class="num">Volume/mois</th>
-  <th class="num">Rang affiché</th><th class="num">Rang organique</th></tr></thead>
-  <tbody>{{lignes_biz}}</tbody>
- </table></div></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
- <p class="eyebrow">BOFU</p>
- <h2>Les requêtes à travailler</h2>
- <p><b>{{nb_bofu}} requêtes d'achat</b> (erp, logiciel, AS/400, comparatif) sont déjà
- positionnées, pour {{vol_bofu}} de volume mensuel cumulé. <b>{{nb_bofu_blog}} d'entre elles
- atterrissent sur le blog</b>, pas sur la page qui convertit.</p>
- <div class="card">
-  <h3>Volume mensuel et position affichée</h3>
-  <p>12 premières requêtes commerciales positionnées</p>
-  {{b_bofu}}
-  <div class="flux">
-   <div class="flux-b"><b>{{nb_as400}} requêtes AS/400</b>
-    <span>{{vol_as400}} recherches/mois — la plus grosse grappe commerciale du site</span></div>
-   <div class="flux-f">→</div>
-   <div class="flux-b flux-b--ko"><b>/blog/erp-as400/</b>
-    <span>Tout y atterrit. La page qui convertit, <code>/migration-as400/</code>,
-    n'en reçoit aucune.</span></div>
-  </div>
+ <p class="eyebrow">Détail</p>
+ <h2>Les six plus gros mouvements, dans chaque sens</h2>
+ <div class="duo">
+  <div class="card"><h3>Ce qui progresse</h3><p>Position aujourd'hui ← position d'avant</p>
+  {{gagne}}</div>
+  <div class="card"><h3>Ce qui recule</h3><p>Position aujourd'hui ← position d'avant</p>
+  {{perd}}</div>
+ </div>
+ <div class="note" style="margin-top:20px">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+   stroke-linecap="round"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0
+   1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+  <span><b>La priorité tient en une requête.</b> <code>erp agroalimentaire</code> pèse
+  1 117 impressions à elle seule — un quart du total métier — et passe de la
+  15,6<sup>e</sup> à la 20<sup>e</sup> place. Elle a rapporté <b>2 clics</b> en 28 jours.
+  Tant qu'elle reste en page 2, les gains ailleurs ne compensent pas : sur l'ensemble,
+  {{clics}} clics contre {{clics0}}.</span>
  </div>
 </div></section>
 
@@ -532,17 +489,19 @@ code{font-family:var(--mono);font-size:.8rem;background:var(--surface-2);padding
 
 <section class="sec"><div class="wrap">
  <p class="eyebrow">Livrables</p>
- <h2>Artefacts de la semaine</h2>
- <p>Trois maquettes de /agroalimentaire/. Aucune n'est en ligne : la page est protégée.</p>
+ <h2>Artefacts</h2>
  <div class="artes">{{arte}}</div>
 </div></section>
 
 </main>
 
 <footer class="pied"><div class="wrap">
- <p><b>Sources.</b> Positions, volumes et trafic estimé : DataForSEO Labs, relevé du {{releve}},
- France / français, 333 requêtes. Roadmap : fichiers du dépôt et travaux de la semaine.
- Les clics Search Console ne figurent pas dans ce rapport : la propriété n'est pas connectée.</p>
+ <p><b>Source.</b> Google Search Console, propriété https://www.helloharel.com/, recherche
+ web, données finales. Période {{periode}} comparée à {{precedent}}. La position est la
+ moyenne pondérée par les impressions. Périmètre : les requêtes portant à la fois un métier
+ et une intention d'outil (erp, logiciel, progiciel, solution, crm) — {{nb_q}} requêtes,
+ {{imp_tot}} impressions. Les données GSC accusent deux à trois jours de retard : la
+ dernière semaine est incomplète et signalée comme telle.</p>
 </div></footer>
 </body></html>"""
 
