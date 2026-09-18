@@ -3,9 +3,13 @@
 """
 Reporting Google Ads — compte HELLO HAREL (8044187703), 30 derniers jours.
 
-Source unique : API Google Ads via Composio, requêtes GAQL du 18/09/2026.
-Aucune écriture n'a été faite sur le compte. La seule opération de mutation
-lancée l'a été en validate_only : Google valide la requête et n'applique rien.
+Source : API Google Ads via Composio, requêtes GAQL du 18/09/2026.
+
+UNE écriture a été faite, sur accord explicite du 18/09 : les 38 exclusions
+sans risque, posées au niveau de la campagne 24061100837. Elles ont d'abord
+été validées en validate_only, puis appliquées, puis relues sur le compte :
+54 exclusions au total, 16 d'avant plus les 38 nouvelles, toutes ENABLED.
+Rien d'autre n'a été touché.
 
 Rappel de cadrage : « Google Ads est hors périmètre » est une règle du dossier.
 Elle est levée par la demande du 18/09, et ce document en est la trace.
@@ -284,7 +288,8 @@ code{font-family:var(--mono);font-size:.84rem;background:var(--surface-2);paddin
  <h1>HELLO HAREL — 30 derniers jours</h1>
  <p class="sous">Une campagne active, <b>{{campagne}}</b>, {{groupes}} groupes d'annonces,
  budget {{budget}}/jour. Relevé du 18 septembre 2026 par l'API Google Ads.
- <b>Aucune écriture n'a été faite sur le compte.</b></p>
+ <b>Les 38 exclusions ont été posées</b> après ton accord ; rien d'autre n'a été
+ touché.</p>
 </div></header>
 
 <main>
@@ -368,20 +373,22 @@ code{font-family:var(--mono);font-size:.84rem;background:var(--surface-2);paddin
    <span class="verdict v-ko">Seuil non atteint — 31 avis sur 100</span>
   </div></div>
 
-  <div class="fiche-l att"><i>3</i><div>
+  <div class="fiche-l ok"><i>3</i><div>
    <b>Liste d'exclusion de mots-clés</b>
    <p>Il n'y a <b>rien à mettre à jour</b> : aucune liste partagée n'existe sur le compte.
    J'ai construit la liste à partir des {{t_n}} termes réellement déclenchés.</p>
    <p><b>{{prop_n}} exclusions sans risque</b>, qui ne touchent aucun terme ayant converti :
-   {{prop_termes}} termes couverts, <b>{{prop_eco}} de dépense évitée sur 30 jours</b>.
-   La requête a été validée en <code>validate_only</code> : elle passe sans erreur.
-   Rien n'est appliqué tant que tu n'as pas dit oui.</p>
-   <span class="verdict v-att">Prêt — en attente de ton feu vert</span>
+   {{prop_termes}} termes couverts, <b>{{prop_eco}} de dépense évitée sur 30 jours</b>.</p>
+   <p>Validées en <code>validate_only</code>, puis <b>appliquées le 18/09 sur ton accord</b>,
+   puis relues sur le compte : la campagne porte désormais <b>54 exclusions</b> — les 16
+   d'avant plus les 38 nouvelles, toutes actives.</p>
+   <span class="verdict v-ok">Posé le 18/09 · 54 exclusions actives</span>
   </div></div>
 
   <div class="fiche-l ok"><i>4</i><div>
    <b>Reporting</b>
-   <p>C'est ce document. En bonus, deux constats qui ne venaient pas de ta liste :
+   <p>C'est ce document, mis à jour après la pose des exclusions. En bonus, deux constats
+   qui ne venaient pas de ta liste :
    la campagne ne diffuse que <b>{{sitelinks}} liens annexes</b> et {{callouts}} accroches,
    là où Google en demande quatre minimum pour un affichage complet — et il n'y a
    <b>ni extrait structuré, ni logo, ni extension d'appel</b>.</p>
@@ -400,8 +407,9 @@ code{font-family:var(--mono);font-size:.84rem;background:var(--surface-2);paddin
  GAQL du 18/09/2026, fenêtre LAST_30_DAYS. Les conversions sont celles déclarées dans le
  compte ; leur qualité n'est pas vérifiable depuis l'API — et les formulaires du site
  n'envoient plus de mail depuis le 10/08, ce qui doit être gardé en tête avant de raisonner
- sur le coût par conversion. Aucune modification n'a été apportée au compte : la seule
- mutation lancée l'a été en <code>validate_only</code>.</p>
+ sur le coût par conversion. Une seule modification a été apportée au compte, sur accord
+ explicite : les 38 exclusions du point 3, relues après application. Ni budget, ni
+ enchère, ni annonce, ni extension n'ont été touchés.</p>
 </div></footer>
 </body></html>"""
 
