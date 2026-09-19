@@ -285,6 +285,151 @@ def avis_carrousel(cartes):
             '<div class="avis-piste"><ul class="avis-file">%s%s</ul></div>' % (file, cache))
 
 
+# ══════════════════════════════════════════════════════ l'equipe
+#
+# Trois personnes reelles, avec leur photo, leur poste et leur LinkedIn :
+# elles passent en cartes, dans un rail qui se fait glisser. En dessous, une
+# rangee d'avatars pour dire le nombre — et rien d'autre.
+#
+# Les douze cartes floutees de la page d'origine portaient des initiales et
+# des postes inventes : « M. D., Developpeur Full-Stack ». Elles ne sont pas
+# reprises. Les avatars qui les remplacent sont la silhouette neutre que le
+# site utilise deja, sans nom ni poste, et marques aria-hidden : ils disent
+# une quantite, ils ne pretendent identifier personne.
+
+AVATAR = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' "
+          "height='72' viewBox='0 0 150 150'%3E%3Crect fill='hsl(202,45%25,90%25)' "
+          "width='150' height='150' rx='75'/%3E%3Ccircle cx='75' cy='55' r='22' "
+          "fill='hsl(202,40%25,72%25)'/%3E%3Cellipse cx='75' cy='120' rx='35' ry='28' "
+          "fill='hsl(202,40%25,72%25)'/%3E%3C/svg%3E")
+
+CSS_EQUIPE = """<style id="hh-equipe">
+#hh-page .team-section,.team-section{padding:clamp(36px,5vw,60px) 0 !important}
+#hh-page .team-section .section-header,.team-section .section-header{
+ margin-bottom:1.5rem !important}
+#hh-page .eq,.eq{position:relative;margin:0 !important}
+#hh-page .eq-rail,.eq-rail{display:flex !important;gap:1.25rem !important;
+ overflow-x:auto !important;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+ justify-content:safe center !important;
+ padding:.5rem .25rem 1.25rem !important;margin:0 !important;list-style:none !important;
+ scrollbar-width:none}
+#hh-page .eq-rail::-webkit-scrollbar,.eq-rail::-webkit-scrollbar{display:none}
+#hh-page .eq-rail>li,.eq-rail>li{margin:0 !important;padding:0 !important;
+ flex:0 0 min(300px,78vw);scroll-snap-align:center}
+#hh-page .eq-c,.eq-c{display:grid !important;place-items:center !important;
+ gap:.35rem !important;height:100% !important;padding:1.9rem 1.5rem 1.6rem !important;
+ background:#fff !important;border:1px solid #e2e8f0 !important;border-radius:20px !important;
+ text-align:center !important;
+ box-shadow:0 10px 26px -20px rgba(15,23,42,.45) !important;
+ transition:box-shadow .2s,transform .2s !important}
+#hh-page .eq-c:hover,.eq-c:hover{transform:translateY(-3px) !important;
+ box-shadow:0 18px 34px -22px rgba(15,23,42,.5) !important}
+#hh-page .eq-c img,.eq-c img{width:118px !important;height:118px !important;
+ border-radius:50% !important;object-fit:cover !important;
+ border:3px solid #E0F2FE !important;margin:0 0 .35rem !important}
+#hh-page .eq-c b,.eq-c b{font-size:1.18rem !important;font-weight:700 !important;
+ color:#0f172a !important;line-height:1.2 !important}
+#hh-page .eq-c span,.eq-c span{font-size:.92rem !important;color:#64748b !important}
+#hh-page .eq-c a,.eq-c a{display:inline-flex !important;align-items:center !important;
+ justify-content:center !important;gap:.4rem !important;min-height:40px !important;
+ margin-top:.5rem !important;padding:0 1rem !important;border-radius:999px !important;
+ background:#E0F2FE !important;color:#075985 !important;font-size:.84rem !important;
+ font-weight:600 !important;text-decoration:none !important}
+#hh-page .eq-c a:hover,.eq-c a:hover{background:#BAE6FD !important}
+#hh-page .eq-c a svg,.eq-c a svg{width:15px;height:15px}
+/* Les fleches ne servent que si le rail deborde : le script les retire sinon,
+   plutot que de laisser deux boutons qui ne font rien. */
+#hh-page .eq-fl,.eq-fl{position:absolute;top:44%;display:none;place-items:center;
+ width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid #e2e8f0;
+ color:#0f172a;cursor:pointer;box-shadow:0 8px 20px -12px rgba(15,23,42,.6);z-index:2}
+#hh-page .eq[data-deborde="1"] .eq-fl,.eq[data-deborde="1"] .eq-fl{display:grid}
+#hh-page .eq-fl svg,.eq-fl svg{width:20px;height:20px}
+#hh-page .eq-fl--p,.eq-fl--p{left:-6px}
+#hh-page .eq-fl--n,.eq-fl--n{right:-6px}
+#hh-page .eq-fl[disabled],.eq-fl[disabled]{opacity:.35;cursor:default}
+
+#hh-page .eq-plus,.eq-plus{display:flex !important;flex-wrap:wrap !important;
+ align-items:center !important;justify-content:center !important;gap:1rem !important;
+ margin:.75rem 0 0 !important;padding-top:1.5rem !important;
+ border-top:1px solid #e2e8f0 !important}
+#hh-page .eq-av,.eq-av{display:flex !important;margin:0 !important;padding:0 !important;
+ list-style:none !important}
+#hh-page .eq-av li,.eq-av li{margin:0 0 0 -10px !important;padding:0 !important}
+#hh-page .eq-av li:first-child,.eq-av li:first-child{margin-left:0 !important}
+#hh-page .eq-av img,.eq-av img{width:34px !important;height:34px !important;
+ border-radius:50% !important;border:2px solid #fff !important;display:block !important;
+ box-shadow:0 1px 3px rgba(15,23,42,.18) !important}
+#hh-page .eq-txt,.eq-txt{font-size:.98rem !important;color:#475569 !important;
+ margin:0 !important}
+#hh-page .eq-txt b,.eq-txt b{color:#0f172a !important;font-weight:700 !important}
+@media (max-width:640px){
+ #hh-page .eq-av img,.eq-av img{width:28px !important;height:28px !important}
+ #hh-page .eq-plus,.eq-plus{gap:.75rem !important}}
+@media (prefers-reduced-motion:reduce){
+ #hh-page .eq-rail,.eq-rail{scroll-behavior:auto}}
+</style>"""
+
+LINKEDIN = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+            '<path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zm7 0h3.8'
+            'v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0'
+            '-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></svg>')
+
+MEMBRES = [
+    ("Timothy", "Gérant", "Timothy Jollivet",
+     "https://fr.linkedin.com/in/timothy-jollivet-80516070"),
+    ("Nicolas", "Responsable partenariats", "Nicolas",
+     "https://fr.linkedin.com/in/nicolas-de-cerner-mercimax"),
+    ("Maxence", "Responsable commercial", "Maxence",
+     "https://fr.linkedin.com/in/maxence-flavigny-5a5549120"),
+]
+
+AVATARS = 14     # une rangee, pas un trombinoscope
+
+
+def equipe(photos):
+    """photos : [data URI] dans l'ordre de MEMBRES."""
+    cartes = ""
+    for (prenom, poste, alt, lien), d in zip(MEMBRES, photos):
+        cartes += ('<li><div class="eq-c">'
+                   '<img src="%s" alt="%s" width="118" height="118" loading="lazy">'
+                   '<b>%s</b><span>%s</span>'
+                   '<a href="%s" target="_blank" rel="noopener">%sLinkedIn</a>'
+                   '</div></li>' % (d, alt, prenom, poste, lien, LINKEDIN))
+    av = "".join('<li><img src="%s" alt="" width="34" height="34"></li>' % AVATAR
+                 for _ in range(AVATARS))
+    fl = ('<button class="eq-fl eq-fl--%s" type="button" aria-label="%s" data-eq="%s">'
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+          'stroke-linecap="round" stroke-linejoin="round"><path d="M%s"/></svg></button>')
+    return (CSS_EQUIPE +
+            '<section class="team-section"><div class="container">'
+            '<div class="section-header">'
+            '<p class="overline">Notre équipe</p><h2>Une équipe humaine</h2>'
+            '<p>Disponible et à l\'écoute !</p></div>'
+            '<div class="eq" data-deborde="0">'
+            + fl % ("p", "Membre précédent", "-1", "15 19l-7-7 7-7")
+            + '<ul class="eq-rail">%s</ul>' % cartes
+            + fl % ("n", "Membre suivant", "1", "9 5l7 7-7 7")
+            + '<div class="eq-plus"><ul class="eq-av" aria-hidden="true">%s</ul>' % av
+            + '<p class="eq-txt">… et <b>plus d\'une vingtaine de membres</b> '
+              'à votre service.</p></div>'
+            '</div></div></section>'
+            '<script>'
+            '(function(){var eq=document.querySelector(".eq");if(!eq)return;'
+            'var r=eq.querySelector(".eq-rail");if(!r)return;'
+            'var fl=Array.prototype.slice.call(eq.querySelectorAll(".eq-fl"));'
+            'function etat(){'
+            'eq.setAttribute("data-deborde",r.scrollWidth>r.clientWidth+4?"1":"0");'
+            'var p=fl[0],n=fl[1];'
+            'if(p)p.disabled=r.scrollLeft<=2;'
+            'if(n)n.disabled=r.scrollLeft>=r.scrollWidth-r.clientWidth-2}'
+            'fl.forEach(function(b){b.addEventListener("click",function(){'
+            'var pas=(r.querySelector("li")||{}).offsetWidth||280;'
+            'r.scrollBy({left:(+b.getAttribute("data-eq"))*(pas+20),behavior:"smooth"})})});'
+            'r.addEventListener("scroll",etat);'
+            'window.addEventListener("resize",etat);etat()})();'
+            '</script>')
+
+
 # ══════════════════════════════════════════════════════ la FAQ des soeurs
 ICONES = [
     'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.656-1.79 3-4 3-.197 0-.391-.007'
@@ -504,12 +649,22 @@ def main():
     c = c[:b[0]] + faq_soeur(list(zip(qs, rs))) + c[b[1]:]
     print("   · 8. FAQ → composant des pages sœurs, %d questions reprises" % len(qs))
 
-    # ─── 9 — l'equipe : deja identique aux soeurs
-    ea = section(c, '<section class="team-section"')
-    es = section(s, '<section class="team-section"')
-    pareil = ea and es and c[ea[0]:ea[1]] == s[es[0]:es[1]]
-    print("   · 9. « Une équipe humaine » %s"
-          % ("déjà identique aux sœurs, inchangée" if pareil else "DIFFÈRE des sœurs"))
+    # ─── 9 — l'equipe : trois cartes qui glissent, puis le nombre
+    b = section(c, '<section class="team-section"')
+    if not b:
+        raise SystemExit("ARRET — section equipe introuvable")
+    avant = c[b[0]:b[1]]
+    photos = []
+    for f in ("Timothy-Jolliver-President-de-Hello-Harel-150x150-1.webp",
+              "Nicolas-150x150-1.webp", "Maxence-150x150-1.webp"):
+        d, _, _ = R.convertir(UP + "2026/08/" + f, 280, 84)
+        if not d:
+            raise SystemExit("ARRET — photo d'equipe introuvable : " + f)
+        photos.append(d)
+    c = c[:b[0]] + equipe(photos) + c[b[1]:]
+    floutees = len(re.findall(r'filter:blur', avant))
+    print("   · 9. équipe → 3 cartes en carrousel + %d avatars ; %d cartes floutées "
+          "retirées" % (AVATARS, floutees // 4))
 
     # ─── 10 — l'appel a l'action de bas de page
     c = retirer(c, '<section class="hh-demo-cta"', "10. CTA « démo personnalisée »",
