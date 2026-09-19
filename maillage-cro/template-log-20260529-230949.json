@@ -1,0 +1,25 @@
+{
+ "mode": "dry",
+ "items": [
+  {
+   "slug": "alternative-cegid",
+   "status": "dry",
+   "h2": 6
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "dry",
+   "h2": 10
+  },
+  {
+   "slug": "roi-erp",
+   "status": "dry",
+   "h2": 8
+  },
+  {
+   "slug": "erp-as400",
+   "status": "dry",
+   "h2": 5
+  }
+ ]
+}

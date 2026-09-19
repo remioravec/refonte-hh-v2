@@ -1,0 +1,71 @@
+{
+ "hero": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-entrepot-cagettes-hd.webp",
+  "alt": "Cagettes de produits frais rangées en entrepôt chez un grossiste alimentaire",
+  "id": 11558
+ },
+ "cout": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-liasse-documentaire.webp",
+  "alt": "Colis, documents d'expédition et ordinateur portable sur un bureau",
+  "id": 11539
+ },
+ "stock": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-entrepot-palettes.webp",
+  "alt": "Allée d'entrepôt avec palettes filmées et racks de stockage",
+  "id": 11540
+ },
+ "alim": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-cagettes-legumes.webp",
+  "alt": "Cagettes de légumes frais chargées dans un camion de livraison",
+  "id": 11541
+ },
+ "marge": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-marge-tableau-bord.webp",
+  "alt": "Analyse d'un graphique de marges sur tablette",
+  "id": 11542
+ },
+ "terrain": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-import-export-quai-reception.webp",
+  "alt": "Chariot élévateur déchargeant un camion sur un quai de réception",
+  "id": 11543
+ },
+ "m-achats": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-achats-approvisionnements.webp",
+  "alt": "Opérateur logistique vérifiant une commande sur tablette",
+  "id": 11544
+ },
+ "m-stocks": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-stocks-multi-depots.webp",
+  "alt": "Magasinier scannant les références dans les rayonnages",
+  "id": 11545
+ },
+ "m-trace": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-tracabilite-lots.webp",
+  "alt": "Palettes identifiées par codes-barres dans un entrepôt",
+  "id": 11546
+ },
+ "m-ventes": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-ventes-devis-commandes.webp",
+  "alt": "Tablette affichant un tableau de bord commercial sur un bureau",
+  "id": 11547
+ },
+ "m-edi": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-tarifs-reporting-edi.webp",
+  "alt": "Écran affichant un reporting de données en temps réel",
+  "id": 11548
+ },
+ "cmd": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/08/erp-negoce-alimentaire-televente.webp",
+  "alt": "Télévendeur avec casque prenant une commande dans un bureau de grossiste",
+  "id": 11557
+ },
+ "hero-band": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/erp-negoce-magasinier-entrepot-alimentaire.webp",
+  "alt": "Magasinier conduisant un transpalette entre les rayonnages d'un entrepôt de produits alimentaires",
+  "id": 11592,
+  "taille": [
+   1600,
+   627
+  ]
+ }
+}
