@@ -95,56 +95,140 @@ LOGOS = [
 ]
 
 CSS_MUR = """<style id="hh-mur-logos">
-#hh-page .mur-section,.mur-section{padding:clamp(48px,7vw,84px) 0 !important;
+/* Quatre logos de front, et ils coulissent — comme la bande du haut de page.
+   La largeur d'une vignette se calcule sur la piste, pas sur la fenetre :
+   dans une rangee en width:max-content, un pourcentage n'a aucun sens et
+   laisserait depasser une cinquieme vignette. */
+#hh-page .mur-section,.mur-section{padding:clamp(40px,6vw,72px) 0 !important;
  background:#f8fafc !important}
-#hh-page .mur,.mur{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;
- gap:clamp(12px,1.6vw,20px) !important;margin:0 !important;padding:0 !important;
- list-style:none !important}
-#hh-page .mur li,.mur li{margin:0 !important;padding:0 !important}
-#hh-page .mur figure,.mur figure{display:grid !important;grid-template-rows:92px auto !important;
- align-items:center !important;justify-items:center !important;gap:.6rem !important;
- height:100% !important;min-height:152px !important;
- padding:clamp(14px,2vw,22px) !important;background:#fff !important;
- border:1px solid #e2e8f0 !important;border-radius:14px !important;margin:0 !important;
- transition:border-color .18s,box-shadow .18s,transform .18s !important}
-#hh-page .mur figure:hover,.mur figure:hover{border-color:#00B1F5 !important;
- transform:translateY(-2px) !important;box-shadow:0 12px 26px -18px rgba(15,23,42,.45) !important}
-#hh-page .mur img,.mur img{max-width:100% !important;width:auto !important;
- object-fit:contain !important;opacity:.9 !important;transition:opacity .18s,transform .18s !important}
-#hh-page .mur figure:hover img,.mur figure:hover img{opacity:1 !important;
- transform:scale(1.04) !important}
-#hh-page .mur figcaption,.mur figcaption{font-size:.76rem !important;font-weight:600 !important;
- color:#475569 !important;text-align:center !important;line-height:1.35 !important;
- margin:0 !important}
-/* Trois colonnes tiennent sur un ecran de bureau, pas sur un telephone :
-   la grille tombe a deux puis a une, sans jamais deborder. */
-@media (max-width:900px){#hh-page .mur,.mur{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
-@media (max-width:480px){#hh-page .mur,.mur{grid-template-columns:1fr !important}
- #hh-page .mur figure,.mur figure{min-height:128px !important}}
+#hh-page .mur,.mur{--piste:1100px;--jour:14px;
+ max-width:var(--piste) !important;margin:0 auto !important;
+ display:grid !important;gap:var(--jour) !important;padding:0 !important;
+ list-style:none !important;overflow:hidden !important;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+ mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+#hh-page .mur-b,.mur-b{display:flex !important;gap:var(--jour) !important;
+ width:max-content !important;margin:0 !important;padding:0 !important;
+ list-style:none !important;animation:hh-mur 42s linear infinite}
+/* Une rangee sur deux part dans l'autre sens : le mur respire au lieu de
+   defiler d'un bloc. */
+#hh-page .mur-b--rev,.mur-b--rev{animation-name:hh-mur-rev;animation-duration:50s}
+#hh-page .mur:hover .mur-b,.mur:hover .mur-b,
+#hh-page .mur:focus-within .mur-b,.mur:focus-within .mur-b{animation-play-state:paused}
+#hh-page .mur-b>li,.mur-b>li{margin:0 !important;padding:0 !important;
+ flex:0 0 calc((var(--piste) - 3 * var(--jour)) / 4)}
+#hh-page .mur-b figure,.mur-b figure{display:grid !important;place-items:center !important;
+ height:72px !important;margin:0 !important;padding:10px 14px !important;
+ background:#fff !important;border:1px solid #e2e8f0 !important;
+ border-radius:12px !important;transition:border-color .18s,box-shadow .18s !important}
+#hh-page .mur-b figure:hover,.mur-b figure:hover{border-color:#00B1F5 !important;
+ box-shadow:0 8px 18px -14px rgba(15,23,42,.5) !important}
+#hh-page .mur-b img,.mur-b img{max-width:100% !important;width:auto !important;
+ object-fit:contain !important;
+ opacity:.88 !important;transition:opacity .18s !important}
+#hh-page .mur-b figure:hover img,.mur-b figure:hover img{opacity:1 !important}
+/* La piste est doublee : on la decale d'exactement une moitie, gouttiere
+   comprise, pour que la boucle se referme sans saut. */
+@keyframes hh-mur{from{transform:none}to{transform:translateX(calc(-50% - var(--jour)/2))}}
+@keyframes hh-mur-rev{from{transform:translateX(calc(-50% - var(--jour)/2))}to{transform:none}}
+@media (max-width:1180px){#hh-page .mur,.mur{--piste:calc(100vw - 3rem)}}
+@media (max-width:700px){
+ #hh-page .mur-b>li,.mur-b>li{flex:0 0 calc((var(--piste) - 2 * var(--jour)) / 3)}
+ #hh-page .mur-b figure,.mur-b figure{height:60px !important;padding:8px 10px !important}
+ #hh-page .mur-b img,.mur-b img{max-height:34px !important}}
+@media (prefers-reduced-motion:reduce){
+ #hh-page .mur-b,.mur-b{animation:none !important}
+ #hh-page .mur,.mur{overflow-x:auto !important;
+  -webkit-mask-image:none;mask-image:none}}
 </style>"""
 
 
-SURFACE = 9800          # px carres vises par logo
-MINI, MAXI = 42, 86     # bornes de hauteur, pour que la grille reste reguliere
+def logo_net(url, largeur=260, qualite=82):
+    """Le logo, debarrasse de la marge vide que son fichier porte.
+
+    Plusieurs fichiers de la mediatheque sont des captures : le logo occupe le
+    tiers de l'image, le reste est du blanc. A surface egale, ces logos-la
+    paraissent trois fois plus petits que les autres. On rogne donc la bordure
+    unie — transparente ou quasi blanche — avant de mesurer.
+    """
+    import base64
+    import io
+    import subprocess
+    from PIL import Image, ImageChops
+
+    os.makedirs(R.CACHE, exist_ok=True)
+    nom = re.sub(r"[^A-Za-z0-9._-]", "_", url.split("/")[-1])
+    brut = os.path.join(R.CACHE, nom)
+    if not os.path.exists(brut) or os.path.getsize(brut) < 200:
+        subprocess.run(["curl", "-sL", "-A", "Mozilla/5.0", url, "-o", brut], timeout=90)
+    if not os.path.exists(brut) or os.path.getsize(brut) < 200:
+        return None, 0, 0
+    try:
+        im = Image.open(brut)
+        im = im.convert("RGBA")
+        # Un pixel compte comme vide s'il est transparent OU tres clair.
+        alpha = im.getchannel("A")
+        gris = im.convert("L").point(lambda v: 0 if v > 244 else 255)
+        masque = ImageChops.lighter(gris, alpha.point(lambda v: 0 if v < 12 else 255)
+                                    .point(lambda v: 255 - v))
+        boite = ImageChops.lighter(gris, alpha.point(lambda v: 255 if v > 12 else 0)
+                                   .point(lambda v: 0)).getbbox() or masque.getbbox()
+        boite = masque.getbbox()
+        if boite:
+            # une marge de 2 px evite de raboter un trait qui touche le bord
+            x0, y0, x1, y1 = boite
+            im = im.crop((max(0, x0 - 2), max(0, y0 - 2),
+                          min(im.width, x1 + 2), min(im.height, y1 + 2)))
+        fond = Image.new("RGB", im.size, (255, 255, 255))
+        fond.paste(im, mask=im.getchannel("A"))
+        im = fond
+        if im.width > largeur:
+            im = im.resize((largeur, round(im.height * largeur / im.width)), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, "WEBP", quality=qualite, method=6)
+        return ("data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode(),
+                im.width, im.height)
+    except Exception:
+        return R.convertir(url, largeur, qualite)
+
+
+RANGEES = 3      # trois bandes qui coulissent, pas une grille figee
+SURFACE = 3400   # px carres vises par logo, format reduit
+MINI, MAXI = 26, 48
 
 
 def hauteur_egale(lg, ht):
     """La hauteur qui donne a ce logo la meme surface qu'aux autres."""
     if not lg or not ht:
-        return 62
-    h = (SURFACE * ht / lg) ** 0.5
-    return int(max(MINI, min(MAXI, round(h))))
+        return 36
+    return int(max(MINI, min(MAXI, round((SURFACE * ht / lg) ** 0.5))))
 
 
 def mur_logos(images):
-    """images : [(data URI, nom, largeur, hauteur)]"""
-    li = ""
-    for d, n, lg, ht in images:
-        h = hauteur_egale(lg, ht)
-        w = max(30, round(h * lg / max(ht, 1)))
-        li += ('<li><figure><img src="%s" alt="Logo %s" width="%d" height="%d" '
-               'style="height:%dpx" loading="lazy">'
-               '<figcaption>%s</figcaption></figure></li>' % (d, n, w, h, h, n))
+    """images : [(data URI, nom, largeur, hauteur)]
+
+    Pas de legende : le logo se reconnait, le nom sous le logo alourdit le mur
+    et double la hauteur de chaque vignette. Le nom reste dans l'alt, donc
+    lisible par un lecteur d'ecran.
+    """
+    paquets = [images[k::RANGEES] for k in range(RANGEES)]
+    bandes = ""
+    for n, paquet in enumerate(paquets):
+        if not paquet:
+            continue
+        vign = ""
+        for d, nom, lg, ht in paquet:
+            h = hauteur_egale(lg, ht)
+            w = max(20, round(h * lg / max(ht, 1)))
+            vign += ('<li><figure><img src="%s" alt="Logo %s" width="%d" height="%d" '
+                     'style="height:%dpx !important;width:auto !important" '
+                     'decoding="async"></figure></li>'
+                     % (d, nom, w, h, h))
+        # La bande est doublee a l'identique : c'est ce qui rend la boucle
+        # continue. La copie est masquee aux lecteurs d'ecran.
+        cache = vign.replace("<li>", '<li aria-hidden="true">')
+        bandes += ('<ul class="mur-b%s">%s%s</ul>'
+                   % (" mur-b--rev" if n % 2 else "", vign, cache))
     return (CSS_MUR +
             '<section class="mur-section"><div class="container">'
             '<div class="section-header">'
@@ -152,8 +236,9 @@ def mur_logos(images):
             '<h2>Des PME agroalimentaires de tous les métiers</h2>'
             '<p>Charcutiers, primeurs, traiteurs, grossistes, pastiers, torréfacteurs — '
             'quelques-uns des clients Hello Harel.</p></div>'
-            '<ul class="mur">%s</ul>'
-            '</div></section>' % li)
+            '<div class="mur">%s</div>'
+            '</div></section>' % bandes)
+
 
 
 # ══════════════════════════════════════════════════════ les avis en carrousel
@@ -389,7 +474,7 @@ def main():
         raise SystemExit("ARRET — section des cas clients introuvable")
     images = []
     for rel, nom in LOGOS:
-        d, lg, ht = R.convertir(UP + rel, 480, 88)
+        d, lg, ht = logo_net(UP + rel)
         if d:
             images.append((d, nom, lg, ht))
         else:
@@ -398,7 +483,7 @@ def main():
     for m in list(re.finditer(r"<script(?![^>]*src)[^>]*>(.*?)</script>", c, re.S))[::-1]:
         if "casTrack" in m.group(1) or "hh2-cas" in m.group(1) or "casClients" in m.group(1):
             c = c[:m.start()] + c[m.end():]
-    print("   · 6. cas clients → mur de %d logos, trois colonnes" % len(images))
+    print("   · 6. cas clients → mur de %d logos, quatre de front, en défilement" % len(images))
 
     # ─── 7 — la bande presse
     c = retirer(c, '<section class="hh2-trust-section"', "7. bande presse et garanties",
