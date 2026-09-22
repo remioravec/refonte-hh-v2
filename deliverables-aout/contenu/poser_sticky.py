@@ -45,6 +45,22 @@ def main():
             raise SystemExit("ARRET — page %d protegee par la regle 0" % page)
         c = w.get_raw("pages", page)["content"]["raw"]
 
+        # La feuille et le script du module vivent AVANT et APRES la section.
+        # Remplacer la seule section les laisserait en place : une regle
+        # supprimee d'une version a l'autre continuerait de s'appliquer depuis
+        # l'ancienne feuille, et l'ancien script tournerait en meme temps que
+        # le neuf. On les retire donc tous, avant de poser la version du jour.
+        # Les premieres versions du script n'avaient pas d'identifiant : on
+        # les reconnait a ce qu'elles pilotent, pas a leur etiquette.
+        avant = c
+        for motif in (r'<style id="hh-scrollytelling">.*?</style>',
+                      r'<script(?![^>]*\ssrc)[^>]*>(?:(?!</script>).)*?'
+                      r'querySelectorAll\("\.sy-ecrans'
+                      r'(?:(?!</script>).)*?</script>'):
+            c = re.sub(motif, "", c, flags=re.S)
+        vieux = len(re.findall(r'<style id="hh-scrollytelling">', avant)) \
+            + len(re.findall(r'querySelectorAll\("\.sy-ecrans', avant))
+
         i = c.find('<section class="features-section"')
         j = c.find("</section>", i) + len("</section>")
         if i < 0 or j <= i:
@@ -62,6 +78,12 @@ def main():
             raise SystemExit("ARRET — %s ne porte aucun module connu" % url)
 
         neuf = c[:i] + SY.section(entete, ecrans, liens, C.CONTENU[cle]) + c[j:]
+
+        # La feuille et le script du module vivent AVANT et APRES la section :
+        # remplacer la seule section les laisserait en double, et une regle
+        # supprimee d'une version a l'autre continuerait de s'appliquer depuis
+        # l'ancienne feuille. On retire donc les anciens exemplaires, en
+        # gardant le dernier — celui qu'on vient de poser.
 
         # Aucun lien ne doit se perdre a la conversion : c'est le maillage.
         corps = lambda t: re.sub(r"<(style|script)[^>]*>.*?</\1>", "", t, flags=re.S)
@@ -81,14 +103,21 @@ def main():
                              "(attendu %d) sur %s"
                              % (len(ecrans), ap_ui, 2 * len(ecrans), url))
 
+        for motif, quoi in ((r'<style id="hh-scrollytelling">', "feuille"),
+                            (r'querySelectorAll\("\.sy-ecrans', "script")):
+            n = len(re.findall(motif, neuf))
+            if n != 1:
+                raise SystemExit("ARRET — %d %s(s) du module sur %s" % (n, quoi, url))
+
         avis = neuf.count('class="sy-avis"')
-        print("%-42s %d etapes · %d H2 · %d liens · %d avis reels · %+d ko"
-              % (url, len(ecrans), neuf.count("<h2>") - c.count("<h2>") + 1,
-                 len(ap), avis, (len(neuf) - len(c)) // 1024))
+        print("%-42s %d etapes · %d liens · %d avis reels · %d bloc(s) "
+              "obsolete(s) retire(s) · %+d ko"
+              % (url, len(ecrans), len(ap), avis, vieux - 2,
+                 (len(neuf) - len(avant)) // 1024))
 
         if not poser:
             continue
-        open(os.path.join(SAUV, "avant-%d.html" % page), "w", encoding="utf-8").write(c)
+        open(os.path.join(SAUV, "avant-%d.html" % page), "w", encoding="utf-8").write(avant)
         w.update_content("pages", page, neuf, live=True)
         print("   pose (sauvegarde : sticky-avant/avant-%d.html)" % page)
 

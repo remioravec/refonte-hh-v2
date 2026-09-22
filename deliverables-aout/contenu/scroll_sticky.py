@@ -195,24 +195,91 @@ CSS = """<style id="hh-scrollytelling">
  transform-origin:top left;transition:transform .3s ease}
 
 
-/* ── telephone : on retire la colle, chaque ecran suit son texte ────────── */
+/* -- telephone : un carrousel de cartes, l'ecran d'abord ----------------- */
+/* Ce qu'on vient voir sur un telephone, c'est le tableau de bord. Il passe
+   donc AU-DESSUS du texte, en pleine largeur de carte, entier — plus de
+   glissement horizontal pour en voir la moitie. Les quatre puces longues
+   cedent la place a trois pastilles : meme information, moins de lecture.
+   Le DOM ne change pas : ni H2 ni avis dupliques, seule la mise en page. */
 @media (max-width:900px){
  #hh-page .sy-grille,.sy-grille{grid-template-columns:minmax(0,1fr) !important}
- #hh-page .sy-pas,.sy-pas,#hh-page .sy-pas>li,.sy-pas>li{min-width:0 !important}
- #hh-page .sy-mob,.sy-mob{overflow-x:auto !important;-webkit-overflow-scrolling:touch;
-  contain:paint;border-radius:16px}
- #hh-page .sy-mob .ui,.sy-mob .ui{min-width:480px !important;width:480px !important;
-  transform:none !important}
- #hh-page .sy-mob::after,.sy-mob::after{content:"Faites glisser l'écran →";
-  display:block;position:sticky;left:0;margin-top:.5rem;font-size:.74rem;
-  color:#64748b;font-style:italic}
  #hh-page .sy-colle,.sy-colle{display:none !important}
- #hh-page .sy-pas>li,.sy-pas>li{min-height:0 !important;display:block !important;
-  padding-bottom:3rem !important}
- #hh-page .sy-t,.sy-t{opacity:1 !important}
- #hh-page .sy-mob,.sy-mob{display:block !important;margin-top:1.75rem !important}
+
+ /* le rail deborde le conteneur : les cartes prennent toute la largeur
+    de l'ecran, et la suivante depasse juste assez pour se laisser deviner */
+ #hh-page .sy-pas,.sy-pas{display:flex !important;gap:.85rem !important;
+  overflow-x:auto !important;-webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;scrollbar-width:none;
+  width:100vw !important;margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+  padding:.4rem 8vw 1rem !important;min-width:0 !important}
+ #hh-page .sy-pas::-webkit-scrollbar,.sy-pas::-webkit-scrollbar{display:none}
+ #hh-page .sy-pas>li,.sy-pas>li{flex:0 0 84vw !important;max-width:420px !important;
+  min-width:0 !important;scroll-snap-align:center;min-height:0 !important;
+  margin:0 !important;padding:0 !important;background:#fff !important;
+  border:1px solid #e2e8f0 !important;border-radius:20px !important;
+  overflow:hidden !important;
+  box-shadow:0 14px 32px -24px rgba(15,23,42,.6) !important}
+ #hh-page .sy-t,.sy-t{opacity:1 !important;display:flex !important;
+  flex-direction:column !important;padding:0 1.05rem 1.15rem !important}
+
+ /* le tableau de bord, en tete de carte et en entier */
+ #hh-page .sy-mob,.sy-mob{display:block !important;order:-1 !important;position:relative;
+  margin:0 -1.05rem 1rem !important;padding:12px !important;
+  box-sizing:border-box !important;
+  background:#F8FAFC !important;border-bottom:1px solid #e2e8f0 !important}
+ #hh-page .sy-cadre,.sy-cadre{overflow:hidden !important;contain:paint}
+ /* 480px est la largeur plancher : en dessous, une colonne du tableau se
+    replie. On garde donc cette mise en page et on la reduit — jamais on ne
+    la comprime. */
+ #hh-page .sy-mob .ui,.sy-mob .ui{width:480px !important;min-width:480px !important;
+  transform:scale(var(--km,1)) !important;transform-origin:top left !important}
+ /* agrandi : on rend sa taille reelle a l'ecran, et on le fait glisser */
+ #hh-page .sy-mob[data-grand="1"] .sy-cadre,.sy-mob[data-grand="1"] .sy-cadre{
+  overflow-x:auto !important;-webkit-overflow-scrolling:touch;
+  height:auto !important;max-height:62vh}
+ #hh-page .sy-mob[data-grand="1"] .ui,.sy-mob[data-grand="1"] .ui{
+  transform:none !important}
+ #hh-page .sy-loupe,.sy-loupe{position:absolute !important;right:14px !important;
+  bottom:14px !important;z-index:2;display:inline-flex !important;
+  align-items:center !important;gap:.32rem !important;
+  padding:.42rem .74rem !important;margin:0 !important;
+  border:1px solid #CBD5E1 !important;border-radius:999px !important;
+  background:rgba(255,255,255,.95) !important;color:#0C4A6E !important;
+  font-size:.74rem !important;font-weight:700 !important;line-height:1 !important;
+  cursor:pointer !important;box-shadow:0 4px 12px -6px rgba(15,23,42,.5) !important}
+ #hh-page .sy-loupe svg,.sy-loupe svg{width:14px;height:14px;flex:0 0 14px}
+
+ #hh-page .sy-n,.sy-n{margin:.95rem 0 .5rem !important}
+ #hh-page .sy-t h2,.sy-t h2{font-size:1.16rem !important;line-height:1.3 !important;
+  margin:0 !important}
+ #hh-page .sy-t>p,.sy-t>p{font-size:.95rem !important;margin:.6rem 0 0 !important}
+ #hh-page .sy-t .hhf-pts,.sy-t .hhf-pts{display:none !important}
+ #hh-page .sy-ch,.sy-ch{display:flex !important}
+ #hh-page .sy-t .hhf-lien,.sy-t .hhf-lien{margin-top:1rem !important}
+ #hh-page .sy-avis,.sy-avis{margin-top:1rem !important}
+ #hh-page .sy-pts,.sy-pts{display:flex !important}
 }
 #hh-page .sy-mob,.sy-mob{display:none}
+
+/* pastilles courtes : telephone seulement */
+#hh-page .sy-ch,.sy-ch{display:none;flex-wrap:wrap;gap:.4rem;list-style:none;
+ padding:0 !important;margin:.75rem 0 0 !important}
+#hh-page .sy-ch li,.sy-ch li{display:inline-flex !important;align-items:center;
+ gap:.34rem;margin:0 !important;padding:.34rem .62rem !important;
+ border-radius:999px !important;background:#F0F9FF !important;
+ border:1px solid #BAE6FD !important;color:#075985 !important;
+ font-size:.78rem !important;font-weight:600 !important;line-height:1.2 !important}
+#hh-page .sy-ch li svg,.sy-ch li svg{width:13px;height:13px;flex:0 0 13px;
+ color:#0369A1 !important}
+
+/* reperes du carrousel */
+#hh-page .sy-pts,.sy-pts{display:none;justify-content:center;gap:.4rem;
+ margin:.1rem 0 0 !important}
+#hh-page .sy-pts i,.sy-pts i{width:7px;height:7px;border-radius:50%;
+ background:#CBD5E1;transition:width .25s ease,background .25s ease}
+#hh-page .sy-pts i[data-actif="1"],.sy-pts i[data-actif="1"]{width:20px;
+ border-radius:999px;background:#0369A1}
 
 /* ── sans JavaScript, tout reste lisible ────────────────────────────────── */
 #hh-page .sy:not([data-js="1"]) .sy-ecrans>li,.sy:not([data-js="1"]) .sy-ecrans>li{
@@ -227,7 +294,7 @@ CSS = """<style id="hh-scrollytelling">
 }
 </style>"""
 
-JS = """<script>
+JS = """<script id="hh-scrollytelling-js">
 (function(){
  var sy=document.querySelector(".sy"); if(!sy) return;
  var pas=Array.prototype.slice.call(sy.querySelectorAll(".sy-pas>li"));
@@ -263,8 +330,70 @@ JS = """<script>
    li.style.height = Math.round(h*k)+"px";
   });
  }
- ajuster();
- window.addEventListener("resize",ajuster);
+ /* Sur telephone, le meme ecran remplit la largeur de la carte. On le
+    reduit depuis sa largeur de reference (480px) jusqu'a la carte : la
+    mise en page interne ne se replie pas, et le tableau de bord se voit
+    en entier, sans glissement horizontal. */
+ var MOB=480;
+ var mobs=Array.prototype.slice.call(sy.querySelectorAll(".sy-mob"));
+ function ajusterMob(){
+  var hauteurs=[];
+  mobs.forEach(function(m){
+   var cad=m.querySelector(".sy-cadre"), ui=m.querySelector(".ui");
+   if(!cad||!ui) return;
+   if(!m.offsetParent){ui.style.removeProperty("--km");cad.style.height="";return}
+   if(m.getAttribute("data-grand")==="1"){cad.style.height="";return}
+   var w=cad.clientWidth; if(w<=0) return;
+   var k=Math.min(1,w/MOB);
+   ui.style.setProperty("--km",k.toFixed(4));
+   /* offsetHeight : la hauteur de mise en page, avant la reduction */
+   hauteurs.push(Math.round(ui.offsetHeight*k));
+  });
+  /* Toutes les cartes montrent leur ecran sur la meme hauteur : le texte
+     demarre au meme endroit d'une carte a l'autre, et le carrousel ne
+     sautille pas quand on le fait defiler. */
+  if(!hauteurs.length) return;
+  var H=Math.max.apply(null,hauteurs);
+  mobs.forEach(function(m){
+   var cad=m.querySelector(".sy-cadre"); if(!cad) return;
+   if(m.getAttribute("data-grand")==="1"){cad.style.height="";return}
+   cad.style.height=H+"px";
+  });
+ }
+ /* « Agrandir » : l'ecran reprend sa taille reelle et se fait glisser. On
+    ne peut pas tout rendre lisible dans 330px de large — on rend donc la
+    vue d'ensemble par defaut, et le detail a la demande. */
+ Array.prototype.forEach.call(sy.querySelectorAll(".sy-loupe"),function(b){
+  b.addEventListener("click",function(){
+   var m=b.parentNode, grand=m.getAttribute("data-grand")==="1";
+   m.setAttribute("data-grand",grand?"0":"1");
+   b.setAttribute("aria-expanded",grand?"false":"true");
+   var t=b.querySelector("span"); if(t) t.textContent=grand?"Agrandir":"Réduire";
+   ajusterMob();
+  });
+ });
+ /* Les reperes suivent la carte la plus proche du centre du carrousel. */
+ var rail=sy.querySelector(".sy-pas"), pts=sy.querySelector(".sy-pts");
+ function reperer(){
+  if(!rail||!pts||!pts.offsetParent) return;
+  var mid=rail.getBoundingClientRect().left+rail.clientWidth/2, best=0, d=1e9;
+  pas.forEach(function(p,i){
+   var r=p.getBoundingClientRect(), e=Math.abs((r.left+r.right)/2-mid);
+   if(e<d){d=e;best=i}
+  });
+  Array.prototype.forEach.call(pts.children,function(c,i){
+   c.setAttribute("data-actif",i===best?"1":"0");
+  });
+ }
+ if(rail) rail.addEventListener("scroll",function(){
+  window.requestAnimationFrame(reperer);
+ },{passive:true});
+ function tout(){ajuster();ajusterMob();reperer()}
+ tout();
+ window.addEventListener("resize",tout);
+ /* Les captures se mettent en place apres les polices : on remesure. */
+ window.addEventListener("load",tout);
+ if(document.fonts&&document.fonts.ready) document.fonts.ready.then(tout);
  /* Le pas actif est celui dont le milieu est le plus proche du milieu de
     l'ecran : c'est ce que l'oeil lit, et ca ne depend pas d'un seuil. */
  var attente=false;
@@ -291,6 +420,10 @@ ETOILE = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
           '<path d="M12 2l2.9 6.26 6.85.78-5.09 4.64 1.4 6.74L12 17.1l-6.06 3.32 1.4-6.74'
           'L2.25 9.04l6.85-.78z"/></svg>')
 
+LOUPE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
+         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" '
+         'd="M21 21l-4.3-4.3M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6M8 11h6"/></svg>')
+
 COCHE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" '
          'd="M5 13l4 4L19 7"/></svg>')
@@ -312,28 +445,37 @@ def section(entete, ecrans, liens, contenu):
         raise SystemExit("ARRET — %d ecrans pour %d blocs de contenu"
                          % (len(ecrans), len(contenu)))
     pas, col = "", ""
-    for k, (ecran, (h2, puces, avis)) in enumerate(zip(ecrans, contenu), 1):
+    for k, (ecran, (h2, puces, avis, courtes)) in enumerate(zip(ecrans, contenu), 1):
         pts = "".join("<li>%s%s</li>" % (COCHE, x) for x in puces)
+        # Sur telephone, les puces longues cedent la place aux pastilles.
+        pst = "".join("<li>%s%s</li>" % (COCHE, x) for x in courtes)
         # les liens de maillage sont distribues dans l'ordre, un par etape
         lien = liens[k - 1] if k - 1 < len(liens) else ""
-        txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>%s%s'
-               % (h2, pts, lien, bloc_avis(avis)))
+        txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>'
+               '<ul class="sy-ch">%s</ul>%s%s'
+               % (h2, pts, pst, lien, bloc_avis(avis)))
         pas += ('<li data-actif="%s"><div class="sy-t">'
                 '<p class="sy-n"><b>%02d</b>Fonctionnalité</p>%s'
-                '<div class="sy-mob">%s</div></div></li>'
-                % ("1" if k == 1 else "0", k, txt, ecran))
+                '<div class="sy-mob"><div class="sy-cadre">%s</div>'
+                '<button class="sy-loupe" type="button" aria-expanded="false">'
+                '%s<span>Agrandir</span></button></div></div></li>'
+                % ("1" if k == 1 else "0", k, txt, ecran, LOUPE))
         col += ('<li data-actif="%s" aria-hidden="%s">%s</li>'
                 % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
     ecrans, pas_ = col, pas
     pas = pas_
+    # Les reperes du carrousel telephone : un par carte, caches au bureau.
+    points = ('<div class="sy-pts" aria-hidden="true">%s</div>'
+              % "".join('<i data-actif="%s"></i>' % ("1" if n == 0 else "0")
+                        for n in range(len(contenu))))
     return (CSS
             + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete
             + '<div class="sy hhf"><div class="sy-grille">'
               '<ul class="sy-pas">%s</ul>'
               '<div class="sy-colle"><ul class="sy-ecrans">%s</ul></div>'
-              '</div></div>'
-              '</div></section>' % (pas, ecrans)
+              '</div>%s</div>'
+              '</div></section>' % (pas, ecrans, points)
             + JS)
 
 
