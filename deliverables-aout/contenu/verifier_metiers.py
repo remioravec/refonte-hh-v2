@@ -34,6 +34,9 @@ import scroll_sticky as SY       # noqa: E402
 ATTENDU = ["hero-section", "logos-section", "features-section", "about-card-section",
            "process-section", "metiers-section", "team-section", "faq-section",
            "reviews-section"]
+# La page pilier garde son composant de FAQ, a la demande : « ajuste au
+# gabarit sans toucher a la FAQ ».
+EQUIVALENTS = {"hh2-faq-section": "faq-section"}
 PLAFOND = 275_000
 TEL = "06 18 06 00 18"
 ADRESSE = "6 avenue de Rueil"
@@ -106,7 +109,8 @@ def examiner(pid, url):
     maux = []
 
     # 1. les sections, et leur ordre
-    vus = [m.group(1).split()[0] for m in re.finditer(r'<section class="([^"]+)"', b)]
+    vus = [EQUIVALENTS.get(m.group(1).split()[0], m.group(1).split()[0])
+           for m in re.finditer(r'<section class="([^"]+)"', b)]
     manque = [x for x in ATTENDU if x not in vus]
     rang = [ATTENDU.index(x) for x in vus if x in ATTENDU]
     if not vus:
@@ -140,8 +144,17 @@ def examiner(pid, url):
             maux.append("%s etape(s) pour %s ecran(s)" % (n_pas, n_ecr))
 
     # 4. la FAQ, ouverte dans le HTML
+    #
+    # Deux composants coexistent : l'accordeon <details> du gabarit, et
+    # celui de la page pilier, qui ouvre ses reponses par un <button>. Les
+    # deux portent leurs reponses dans le HTML — c'est ce qui compte.
     i = b.find('<section class="faq-section"')
-    nq = b[i:b.find("</section>", i)].count("<details") if i >= 0 else 0
+    if i >= 0:
+        nq = b[i:b.find("</section>", i)].count("<details")
+    else:
+        i = b.find('<section class="hh2-faq-section')
+        nq = (b[i:b.find("</section>", i)].count('class="hh2-faq-item"')
+              if i >= 0 else 0)
     if nq < 5:
         maux.append("FAQ a %d question(s) servies" % nq)
 
