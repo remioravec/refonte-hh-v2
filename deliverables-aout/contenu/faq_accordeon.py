@@ -44,6 +44,28 @@ def FRAIS():
     import random
     return "?hh=%d" % random.randrange(10 ** 9)
 
+
+def lire_page(url):
+    """La page servie, en entier.
+
+    Le transfert est parfois coupe en route : on a deja lu 170 ko d'une page
+    qui en fait 364, et le controle a annonce un echec qui n'existait pas.
+    On redemande tant que la page ne se termine pas.
+    """
+    import time
+    for essai in range(4):
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(
+                "https://www.helloharel.com" + url + FRAIS(),
+                headers={"User-Agent": "Mozilla/5.0"}),
+                timeout=90).read().decode("utf-8", "replace")
+            if "</html>" in h:
+                return h
+        except Exception:
+            pass
+        time.sleep(2 * (essai + 1))
+    raise SystemExit("ARRET — page %s illisible en entier apres 4 essais" % url)
+
 CSS = """<style id="hh-faq-accordeon">
 #hh-page .fa2,.fa2{max-width:860px !important;margin:0 auto !important;
  display:grid !important;gap:.85rem !important}
@@ -205,9 +227,7 @@ def main():
     import time
     time.sleep(4)
     for cle, (page, url) in SY.PAGES.items():
-        req = urllib.request.Request("https://www.helloharel.com" + url + FRAIS(),
-                                     headers={"User-Agent": "Mozilla/5.0"})
-        h = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+        h = lire_page(url)
         det, cartes = h.count("<details"), h.count('class="faq-card"')
         ld = h.count('"@type": "FAQPage"') + h.count('"@type":"FAQPage"')
         ok = det >= 6 and cartes == 0 and "faqDrawerOverlay" not in h and ld >= 1

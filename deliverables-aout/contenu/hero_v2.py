@@ -42,6 +42,28 @@ def FRAIS():
     return "?hh=%d" % random.randrange(10 ** 9)
 
 
+def lire_page(url):
+    """La page servie, en entier.
+
+    Le transfert est parfois coupe en route : on a deja lu 170 ko d'une page
+    qui en fait 364, et le controle a annonce un echec qui n'existait pas.
+    On redemande tant que la page ne se termine pas.
+    """
+    import time
+    for essai in range(4):
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(
+                "https://www.helloharel.com" + url + FRAIS(),
+                headers={"User-Agent": "Mozilla/5.0"}),
+                timeout=90).read().decode("utf-8", "replace")
+            if "</html>" in h:
+                return h
+        except Exception:
+            pass
+        time.sleep(2 * (essai + 1))
+    raise SystemExit("ARRET — page %s illisible en entier apres 4 essais" % url)
+
+
 COCHE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" '
          'd="M5 13l4 4L19 7"/></svg>')
@@ -235,9 +257,7 @@ def main():
     import time
     time.sleep(5)
     for cle, (page, url) in SY.PAGES.items():
-        h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url + FRAIS(),
-            headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
+        h = lire_page(url)
         p = len(re.findall(r'<ul class="hh-hl">', h))
         g = h.count('"hh-tete hh-tete-g hh-conf-g"')
         ok = p == 1 and g == 1 and "hh-conf-t" not in h

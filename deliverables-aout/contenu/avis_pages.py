@@ -41,6 +41,28 @@ def FRAIS():
     import random
     return "?hh=%d" % random.randrange(10 ** 9)
 
+
+def lire_page(url):
+    """La page servie, en entier.
+
+    Le transfert est parfois coupe en route : on a deja lu 170 ko d'une page
+    qui en fait 364, et le controle a annonce un echec qui n'existait pas.
+    On redemande tant que la page ne se termine pas.
+    """
+    import time
+    for essai in range(4):
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(
+                "https://www.helloharel.com" + url + FRAIS(),
+                headers={"User-Agent": "Mozilla/5.0"}),
+                timeout=90).read().decode("utf-8", "replace")
+            if "</html>" in h:
+                return h
+        except Exception:
+            pass
+        time.sleep(2 * (essai + 1))
+    raise SystemExit("ARRET — page %s illisible en entier apres 4 essais" % url)
+
 CSS_TETE = """<style id="hh-avis-avatars">
 #hh-page .review-avatar,.review-avatar{overflow:hidden !important;padding:0 !important;
  font-size:0 !important;background:transparent !important}
@@ -142,9 +164,7 @@ def main():
     import time
     time.sleep(4)
     for cle, (page, url) in SY.PAGES.items():
-        h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url + FRAIS(),
-            headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
+        h = lire_page(url)
         piste = h.count('class="avis-file"')
         tetes = len(re.findall(r'<div class="review-avatar"><i class="hh-tete', h))
         grille = h.count('class="reviews-grid"')

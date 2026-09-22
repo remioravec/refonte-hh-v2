@@ -40,6 +40,28 @@ def FRAIS():
     import random
     return "?hh=%d" % random.randrange(10 ** 9)
 
+
+def lire_page(url):
+    """La page servie, en entier.
+
+    Le transfert est parfois coupe en route : on a deja lu 170 ko d'une page
+    qui en fait 364, et le controle a annonce un echec qui n'existait pas.
+    On redemande tant que la page ne se termine pas.
+    """
+    import time
+    for essai in range(4):
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(
+                "https://www.helloharel.com" + url + FRAIS(),
+                headers={"User-Agent": "Mozilla/5.0"}),
+                timeout=90).read().decode("utf-8", "replace")
+            if "</html>" in h:
+                return h
+        except Exception:
+            pass
+        time.sleep(2 * (essai + 1))
+    raise SystemExit("ARRET — page %s illisible en entier apres 4 essais" % url)
+
 PHOTO_MAXENCE = "https://www.helloharel.com/wp-content/uploads/2026/08/Maxence-150x150-1.webp"
 
 # Pas de formatage par % ici : la chaine EST pleine de %, et melanger les
@@ -233,9 +255,7 @@ def main():
     import time
     time.sleep(5)
     for cle, (page, url) in SY.PAGES.items():
-        h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url + FRAIS(),
-            headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
+        h = lire_page(url)
         ok = h.count('class="hh-conf"') == 1 and h.count('class="hh-max"') == 1
         print("   %-42s %s  bandeau %d · Maxence %d · bouton %d"
               % (url, "OK " if ok else "KO ", h.count('class="hh-conf"'),

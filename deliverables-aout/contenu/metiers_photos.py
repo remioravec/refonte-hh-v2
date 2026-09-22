@@ -36,6 +36,28 @@ def FRAIS():
     return "?hh=%d" % random.randrange(10 ** 9)
 
 
+def lire_page(url):
+    """La page servie, en entier.
+
+    Le transfert est parfois coupe en route : on a deja lu 170 ko d'une page
+    qui en fait 364, et le controle a annonce un echec qui n'existait pas.
+    On redemande tant que la page ne se termine pas.
+    """
+    import time
+    for essai in range(4):
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(
+                "https://www.helloharel.com" + url + FRAIS(),
+                headers={"User-Agent": "Mozilla/5.0"}),
+                timeout=90).read().decode("utf-8", "replace")
+            if "</html>" in h:
+                return h
+        except Exception:
+            pass
+        time.sleep(2 * (essai + 1))
+    raise SystemExit("ARRET — page %s illisible en entier apres 4 essais" % url)
+
+
 CSS = """<style id="hh-metiers-photos">
 #hh-page .metier-slide,.metier-slide{padding:0 !important;overflow:hidden !important;
  display:flex !important;flex-direction:column !important}
@@ -157,9 +179,7 @@ def main():
     import time
     time.sleep(6)
     for cle, (page, url) in SY.PAGES.items():
-        h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url + FRAIS(),
-            headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
+        h = lire_page(url)
         v = len(re.findall(r'<span class="mt-v">', h))
         ic = len(re.findall(r'<a href="[^"]+" class="metier-slide[^"]*">\s*'
                             r'<div class="tilted-icon">', h))
