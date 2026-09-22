@@ -129,9 +129,10 @@ def main():
             perdus = [x for x in reste if reste.count(x) > ap.count(x)]
             raise SystemExit("ARRET — lien(s) perdu(s) hors section sur %s : %s"
                              % (url, sorted(set(perdus))[:4]))
-        # Les ecrans non plus. Depuis que la colonne colle aussi sur
-        # telephone, le module ne les porte plus qu'UNE fois : un seul jeu
-        # sert les deux tailles d'ecran.
+        # Les ecrans non plus. Le module les porte DEUX fois : une dans la
+        # colonne collee de l'ordinateur, une sous chaque texte pour le
+        # telephone, ou le titre doit arriver avant son tableau de bord. Un
+        # seul des deux jeux s'affiche a la fois.
         ap_ui = corps(neuf).count('class="ui"')
         if ap_ui != len(ecrans):
             raise SystemExit("ARRET — %d etapes extraites, %d ecrans en sortie "
@@ -172,6 +173,11 @@ def main():
     attendu = re.sub(r"^<script[^>]*>|</script>$", "", SY.JS.strip())
     for cle, (page, url) in SY.PAGES.items():
         h = lire_page(url)
+        # Le rendu lache au-dela d'environ 280 ko de contenu : le site sert
+        # alors un document complet, en-tete et pied compris, mais vide de
+        # ses sections. Constate le 22/09 en ajoutant 18 ko. On compte donc
+        # les sections servies, pas seulement la notre.
+        sect = h.count('<section class=')
         pas = h.count('class="sy-pas"')
         ecr = len(re.findall(r'<li data-actif="[01]" aria-hidden=', h))
         onglets = h.count('class="hhf-bar"')
@@ -190,9 +196,11 @@ def main():
                     break
             else:
                 detail = "ABIME (%d octets servis, %d attendus)" % (len(servi), len(attendu))
-        ok = pas == 1 and ecr >= 5 and onglets == 0 and hhf and intact
-        print("   %-42s %s  %d pas · %d ecrans · onglets %d · .hhf %s · script %s"
-              % (url, "OK " if ok else "KO ", pas, ecr, onglets,
+        ok = (pas == 1 and ecr >= 5 and onglets == 0 and hhf and intact
+              and sect >= 8)
+        print("   %-42s %s  %d sections servies · %d pas · %d ecrans · "
+              ".hhf %s · script %s"
+              % (url, "OK " if ok else "KO ", sect, pas, ecr,
                  "oui" if hhf else "NON", detail))
 
 

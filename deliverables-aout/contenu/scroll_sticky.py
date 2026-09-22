@@ -194,41 +194,36 @@ CSS = """<style id="hh-scrollytelling">
  transform-origin:top left;transition:transform .3s ease}
 
 
-/* -- telephone : la colle aussi, mais en haut ------------------------- */
-/* Meme mise en scene que sur ordinateur, pivotee d'un quart de tour : le
-   tableau de bord se colle en haut de l'ecran, le texte defile dessous et
-   le tableau change de fonctionnalite au passage. L'ecran duplique sous
-   chaque etape n'a plus d'objet — c'est la colonne collee qui le porte.
-   Moins de texte : trois pastilles courtes au lieu des quatre puces. */
+/* -- telephone : pas de colle, le titre puis l'ecran -------------------- */
+/* La colle a ete essayee sur telephone et ecartee : elle mangeait la moitie
+   de la hauteur vue et rendait la lecture inconfortable. On empile donc —
+   titre, pastilles, avis, puis tableau de bord — et on descend
+   tranquillement. L'ecran n'est pas duplique : le script le DEPLACE sous
+   son texte, et lui donne la classe .sy-ec-mob. L'ordinateur garde sa
+   colle. */
 @media (max-width:900px){
- #hh-page .sy,.sy{--haut:64px}
- #hh-page .sy-grille,.sy-grille{display:flex !important;
-  flex-direction:column !important;gap:0 !important}
+ #hh-page .sy-grille,.sy-grille{grid-template-columns:minmax(0,1fr) !important}
  #hh-page .sy-pas,.sy-pas,#hh-page .sy-pas>li,.sy-pas>li{min-width:0 !important}
+ /* Le berceau ne se vide QUE si le script a fait son travail : sans lui,
+    les ecrans y sont encore, et les cacher les ferait disparaitre. */
+ #hh-page .sy[data-js="1"] .sy-colle,.sy[data-js="1"] .sy-colle{display:none !important}
+ #hh-page .sy-pas>li,.sy-pas>li{min-height:0 !important;display:block !important;
+  padding-bottom:3rem !important}
+ #hh-page .sy-t,.sy-t{opacity:1 !important}
 
- /* la colonne collee passe devant le texte, et s'y tient */
- #hh-page .sy-colle,.sy-colle{display:grid !important;order:-1 !important;
-  position:sticky !important;top:var(--haut) !important;
-  height:auto !important;min-height:var(--hc,46vh) !important;
-  align-content:center !important;justify-items:center !important;
-  z-index:2;padding:.6rem 0 .9rem !important;
-  background:#fff !important;
-  box-shadow:0 14px 18px -18px rgba(15,23,42,.55) !important}
- /* un liseré qui montre ou on en est dans la section */
- #hh-page .sy-colle::after,.sy-colle::after{content:"";position:absolute;
-  left:50%;transform:translateX(-50%);bottom:.2rem;width:44px;height:3px;
-  border-radius:3px;background:#E0F2FE}
-
- /* les etapes : assez hautes pour que le defilement pilote le changement */
- #hh-page .sy-pas>li,.sy-pas>li{min-height:58vh !important;
-  display:flex !important;flex-direction:column !important;
-  justify-content:center !important;padding:1rem 0 !important}
- #hh-page .sy-pas>li:last-child,.sy-pas>li:last-child{min-height:44vh !important}
- #hh-page .sy-t,.sy-t{opacity:.34}
- #hh-page .sy-pas>li[data-actif="1"] .sy-t,.sy-pas>li[data-actif="1"] .sy-t{opacity:1}
- #hh-page .sy-t h2,.sy-t h2{font-size:1.32rem !important;line-height:1.28 !important}
+ /* l'ecran, descendu sous son texte, entier et sans rien a faire glisser */
+ #hh-page .sy-ec-mob,.sy-ec-mob{display:block !important;position:static !important;
+  opacity:1 !important;transform:none !important;pointer-events:auto !important;
+  grid-area:auto !important;margin:1.5rem 0 0 !important;padding:12px !important;
+  box-sizing:border-box !important;overflow:hidden !important;contain:paint;
+  background:#F8FAFC !important;border:1px solid #e2e8f0 !important;
+  border-radius:18px !important;transition:none !important}
+ #hh-page .sy-ec-mob .ui,.sy-ec-mob .ui{width:480px !important;min-width:480px !important;
+  transform:scale(var(--km,1)) !important;transform-origin:top left !important;
+  transition:none !important}
 
  /* moins de texte : les pastilles remplacent les puces longues */
+ #hh-page .sy-t h2,.sy-t h2{font-size:1.32rem !important;line-height:1.28 !important}
  #hh-page .sy-t .hhf-pts,.sy-t .hhf-pts{display:none !important}
  #hh-page .sy-ch,.sy-ch{display:flex !important}
 }
@@ -283,8 +278,11 @@ JS = """<script id="hh-scrollytelling-js">
  function surTelephone(){ return window.innerWidth<=900 }
  function ajuster(){
   if(!colle) return;
+  /* Sur telephone la colonne collee est masquee : rien a calculer ici, tout
+     se passe dans ajusterMob(). */
+  if(surTelephone()) return;
   var dw=colle.clientWidth; if(!dw) return;
-  var tel=surTelephone();
+  var tel=false;
   /* Sur telephone le panneau colle en haut : sa hauteur n'est pas donnee
      par la fenetre mais par nous. On lui reserve 46% de la hauteur vue —
      assez pour lire le tableau de bord, assez pour lire le texte dessous.
@@ -308,7 +306,42 @@ JS = """<script id="hh-scrollytelling-js">
   if(tel) sy.style.setProperty("--hc", Math.round(hmax*kc+24)+"px");
   else sy.style.removeProperty("--hc");
  }
- function tout(){ajuster()}
+ /* Sur telephone, l'ecran DESCEND sous son texte. On le deplace, on n'en
+    fait pas de copie : le meme noeud sert les deux tailles d'ecran, et le
+    contenu de la page ne grossit pas d'un octet. */
+ var berceau=ecr.length?ecr[0].parentNode:null;
+ function placer(){
+  if(!berceau) return;
+  var tel=surTelephone();
+  ecr.forEach(function(li,i){
+   if(tel){
+    var t=pas[i]?pas[i].querySelector(".sy-t"):null;
+    if(t){ if(li.parentNode!==t){ t.appendChild(li); } }
+    li.className="sy-ec-mob";
+    li.style.height="";
+   } else {
+    if(li.parentNode!==berceau){ berceau.appendChild(li); }
+    li.className="";
+   }
+  });
+ }
+ /* 480px est la largeur plancher de la maquette : en dessous, une colonne
+    du tableau se replie. On la garde, et on la reduit a la colonne. */
+ var MOB=480;
+ function ajusterMob(){
+  if(!surTelephone()) return;
+  ecr.forEach(function(li){
+   var ui=li.querySelector(".ui"); if(!ui) return;
+   var w=li.clientWidth; if(w<=0) return;
+   var k=Math.min(1,w/MOB);
+   ui.style.setProperty("--km",k.toFixed(4));
+   ui.style.removeProperty("--k");
+   ui.style.removeProperty("--dx");
+   /* offsetHeight : la hauteur de mise en page, avant la reduction */
+   li.style.height=Math.round(ui.offsetHeight*k)+"px";
+  });
+ }
+ function tout(){placer();ajuster();ajusterMob()}
  tout();
  window.addEventListener("resize",tout);
  /* Les captures se mettent en place apres les polices : on remesure. */
@@ -323,12 +356,7 @@ JS = """<script id="hh-scrollytelling-js">
  var attente=false;
  function mesurer(){
   attente=false;
-  /* Le lecteur lit sous le panneau colle : c'est le milieu de CETTE zone
-     qui designe l'etape en cours, pas le milieu de la fenetre. */
-  var bas = 0;
-  if(surTelephone()){ if(colle) bas = colle.getBoundingClientRect().bottom }
-  if(bas<0) bas=0;
-  var mid=bas+(window.innerHeight-bas)/2, best=0, d=1e9;
+  var mid=window.innerHeight/2, best=0, d=1e9;
   pas.forEach(function(p,i){
    var r=p.getBoundingClientRect();
    var e=Math.abs((r.top+r.bottom)/2-mid);
@@ -348,6 +376,10 @@ JS = """<script id="hh-scrollytelling-js">
 ETOILE = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
           '<path d="M12 2l2.9 6.26 6.85.78-5.09 4.64 1.4 6.74L12 17.1l-6.06 3.32 1.4-6.74'
           'L2.25 9.04l6.85-.78z"/></svg>')
+
+LOUPE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
+         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" '
+         'd="M21 21l-4.3-4.3M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6M8 11h6"/></svg>')
 
 COCHE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" '
@@ -388,10 +420,12 @@ def section(entete, ecrans, liens, contenu):
         txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>'
                '<ul class="sy-ch">%s</ul>%s'
                % (h2, pts, pst, bloc_avis(avis)))
-        # L'ecran n'est porte qu'une fois, par la colonne collee : elle sert
-        # aussi bien au telephone qu'a l'ordinateur depuis qu'elle colle des
-        # deux cotes. Le dupliquer sous chaque etape doublait le poids de la
-        # section pour rien.
+        # L'ecran n'est ecrit QU'UNE FOIS, dans la colonne collee. Sur
+        # telephone, le script le deplace sous son texte — il n'en fabrique
+        # pas de copie. Le 22/09, un second jeu d'ecrans a fait passer le
+        # contenu de 262 a 280 ko et le site a cesse de rendre la page : il
+        # servait un document complet, en-tete et pied compris, mais vide de
+        # ses neuf sections. On ne rejoue pas ca pour une question d'ordre.
         pas += ('<li data-actif="%s"><div class="sy-t">'
                 '<p class="sy-n"><b>%02d</b>Fonctionnalité</p>%s'
                 '</div></li>' % ("1" if k == 1 else "0", k, txt))
