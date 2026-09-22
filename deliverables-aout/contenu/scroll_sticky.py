@@ -34,6 +34,7 @@ sys.path.insert(0, "/home/user/refonte-hh-v2/maillage-cro")
 sys.path.insert(0, ICI)
 import wp_common as w        # noqa: E402
 import maquette_agro as M    # noqa: E402  (SVG_FA, convertir)
+import avatars as AV
 import contenu_sticky as C   # noqa: E402  (titres, puces, avis reels)
 
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
@@ -164,10 +165,8 @@ CSS = """<style id="hh-scrollytelling">
  padding:.95rem 1.1rem !important;background:#F0F9FF !important;
  border:1px solid #E0F2FE !important;border-left:3px solid #00B1F5 !important;
  border-radius:0 12px 12px 0 !important;max-width:46ch}
-#hh-page .sy-avis i,.sy-avis i{display:grid !important;place-items:center !important;
- width:36px !important;height:36px !important;flex:0 0 36px !important;
- border-radius:50% !important;background:#0369A1 !important;color:#fff !important;
- font-style:normal !important;font-weight:700 !important;font-size:.78rem !important}
+#hh-page .sy-avis .sy-tete,.sy-avis .sy-tete{width:44px !important;height:44px !important;
+ flex:0 0 44px !important}
 #hh-page .sy-avis p,.sy-avis p{margin:0 !important;font-size:.9rem !important;
  line-height:1.5 !important;color:#0f172a !important;font-style:italic !important}
 #hh-page .sy-avis b,.sy-avis b{display:block !important;margin-top:.3rem !important;
@@ -355,9 +354,11 @@ def bloc_avis(cle):
     if not cle or cle not in C.AVIS:
         return ""
     nom, ini, texte = C.AVIS[cle]
-    return ('<div class="sy-avis"><i aria-hidden="true">%s</i>'
+    # Un avatar dessine plutot que les initiales : ca anime la citation. Il
+    # est decoratif et marque comme tel — le nom est juste a cote, en clair.
+    return ('<div class="sy-avis">%s'
             '<p>« %s »<b>%s%s · avis Google</b></p></div>'
-            % (ini, texte, ETOILE * 5, nom))
+            % (AV.balise(nom, "sy-tete"), texte, ETOILE * 5, nom))
 
 
 def section(entete, ecrans, liens, contenu):
@@ -386,7 +387,10 @@ def section(entete, ecrans, liens, contenu):
                 % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
     ecrans, pas_ = col, pas
     pas = pas_
-    return (CSS
+    # La feuille des avatars ne porte que les personnes effectivement citees.
+    tetes = AV.feuille([C.AVIS[x[2]][0] for x in contenu if x[2] and x[2] in C.AVIS],
+                       "hh-sy-tetes")
+    return (CSS + tetes
             + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete
             + '<div class="sy hhf"><div class="sy-grille">'

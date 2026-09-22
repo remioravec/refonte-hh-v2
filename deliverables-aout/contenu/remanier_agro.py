@@ -253,14 +253,20 @@ CSS_AVIS = """<style id="hh-avis-carrousel">
  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
 #hh-page .avis-file,.avis-file{display:flex !important;gap:var(--jour) !important;
  width:max-content !important;margin:0 !important;padding:0 !important;list-style:none !important;
- animation:hh-avis 52s linear infinite}
+ /* Le theme pose des regles d'animation en !important : sans le meme poids,
+    la piste reste figee. Constate au rendu, pas devine. */
+ animation:hh-avis 52s linear infinite !important}
 #hh-page .avis-piste:hover .avis-file,.avis-piste:hover .avis-file,
 #hh-page .avis-piste:focus-within .avis-file,.avis-piste:focus-within .avis-file{
- animation-play-state:paused}
+ animation-play-state:paused !important}
+/* La carte ne se voit PAS imposer height:100% : contre un parent de hauteur
+   indefinie, elle se resout a une valeur trop courte et la piste, qui coupe
+   ce qui depasse, tranche le bas de la carte. On empile plutot : l'element
+   de liste s'etire a la plus haute carte, la carte remplit l'element. */
 #hh-page .avis-file>li,.avis-file>li{margin:0 !important;padding:0 !important;
- flex:0 0 calc((var(--piste) - var(--jour))/2)}
-#hh-page .avis-file .review-card,.avis-file .review-card{height:100% !important;
- margin:0 !important}
+ display:flex !important;flex:0 0 calc((var(--piste) - var(--jour))/2)}
+#hh-page .avis-file .review-card,.avis-file .review-card{height:auto !important;
+ flex:1 1 auto !important;margin:0 !important}
 /* La piste est doublee : on la decale d'exactement une moitie, gouttiere
    comprise, pour que la boucle se referme sans saut. */
 @keyframes hh-avis{from{transform:none}to{transform:translateX(calc(-50% - var(--jour)/2))}}
