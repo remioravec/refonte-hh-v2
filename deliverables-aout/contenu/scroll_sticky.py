@@ -100,17 +100,21 @@ def extraire(contenu):
 
 # ═══════════════════════════════════════════════════════════════ le module
 CSS = """<style id="hh-scrollytelling">
-#hh-page .sy,.sy{--haut:104px;position:relative;margin:0 !important}
+#hh-page .sy,.sy{--haut:104px;position:relative;
+ margin:clamp(1.5rem,4vw,3.25rem) auto 0 !important;
+ padding:clamp(1.25rem,3vw,2.5rem) clamp(0px,2vw,1.75rem) !important;
+ max-width:1140px}
 #hh-page .sy-grille,.sy-grille{display:grid !important;
- grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
- gap:clamp(2rem,5vw,4.5rem) !important;align-items:start !important;margin:0 !important}
+ grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+ gap:clamp(1.25rem,2.4vw,2.25rem) !important;align-items:start !important;
+ margin:0 !important}
 
 /* ── colonne de gauche : les etapes, qui defilent normalement ───────────── */
 #hh-page .sy-pas,.sy-pas{margin:0 !important;padding:0 !important;list-style:none !important}
 #hh-page .sy-pas>li,.sy-pas>li{margin:0 !important;padding:0 !important;
- min-height:78vh;display:flex !important;flex-direction:column !important;
+ min-height:70vh;display:flex !important;flex-direction:column !important;
  justify-content:center !important}
-#hh-page .sy-pas>li:last-child,.sy-pas>li:last-child{min-height:56vh}
+#hh-page .sy-pas>li:last-child,.sy-pas>li:last-child{min-height:50vh}
 #hh-page .sy-t,.sy-t{opacity:.34;transition:opacity .45s ease}
 #hh-page .sy-pas>li[data-actif="1"] .sy-t,.sy-pas>li[data-actif="1"] .sy-t{opacity:1}
 #hh-page .sy-n,.sy-n{display:inline-flex !important;align-items:center;gap:.6rem;
@@ -132,9 +136,10 @@ CSS = """<style id="hh-scrollytelling">
 
 /* ── colonne de droite : l'ecran, colle ─────────────────────────────────── */
 #hh-page .sy-colle,.sy-colle{position:sticky;top:var(--haut);
- height:calc(100vh - var(--haut) - 2rem);display:grid !important;align-content:center}
+ height:calc(100vh - var(--haut) - 5rem);display:grid !important;align-content:center;
+ justify-items:center}
 #hh-page .sy-ecrans,.sy-ecrans{display:grid !important;margin:0 !important;padding:0 !important;
- list-style:none !important}
+ list-style:none !important;width:100% !important}
 /* Les cinq ecrans occupent LA MEME cellule : aucun saut de mise en page
    quand on passe de l'un a l'autre, quelle que soit leur hauteur. */
 #hh-page .sy-ecrans>li,.sy-ecrans>li{grid-area:1/1;margin:0 !important;padding:0 !important;
@@ -142,9 +147,13 @@ CSS = """<style id="hh-scrollytelling">
  transition:opacity .5s ease,transform .5s ease}
 #hh-page .sy-ecrans>li[data-actif="1"],.sy-ecrans>li[data-actif="1"]{opacity:1;
  transform:none;pointer-events:auto}
+#hh-page .sy-ecrans>li,.sy-ecrans>li{overflow:hidden}
+#hh-page .sy-ecrans .ui,.sy-ecrans .ui{width:720px !important;
+ transform:scale(var(--k,1)) translateX(var(--dx,0px));
+ transform-origin:top left;transition:transform .3s ease}
 
 /* ── le rail de progression ─────────────────────────────────────────────── */
-#hh-page .sy-rail,.sy-rail{position:absolute;left:-30px;top:0;bottom:0;width:3px;
+#hh-page .sy-rail,.sy-rail{position:absolute;left:-14px;top:0;bottom:0;width:3px;
  background:#e2e8f0;border-radius:2px}
 #hh-page .sy-jauge,.sy-jauge{position:absolute;inset:0 0 auto 0;height:0;background:#00B1F5;
  border-radius:2px;transition:height .25s ease}
@@ -197,6 +206,26 @@ JS = """<script>
   if(jauge) jauge.style.height=((n+1)/pas.length*100)+"%";
  }
  poser(0);
+ /* L'ecran le plus charge depasse la hauteur du panneau colle. On mesure sa
+    hauteur naturelle et on le reduit juste ce qu'il faut — jamais au-dela
+    de 1, on n'agrandit pas une capture. */
+ var LARGE=720;   /* la largeur ou les tableaux de l'ecran tiennent sans se replier */
+ function ajuster(){
+  var colle=sy.querySelector(".sy-colle"); if(!colle) return;
+  var dh=colle.clientHeight, dw=colle.clientWidth;
+  if(!dh||!dw) return;
+  ecr.forEach(function(li){
+   var ui=li.querySelector(".ui"); if(!ui) return;
+   var h=ui.offsetHeight; if(!h) return;
+   var k=Math.min(1, dw/LARGE, (dh-12)/h);
+   ui.style.setProperty("--k", k.toFixed(4));
+   /* recentrage : l'origine est en haut a gauche, on rattrape a la main */
+   ui.style.setProperty("--dx", ((dw-LARGE*k)/2/k).toFixed(1)+"px");
+   li.style.height = Math.round(h*k)+"px";
+  });
+ }
+ ajuster();
+ window.addEventListener("resize",ajuster);
  /* Le pas actif est celui dont le milieu est le plus proche du milieu de
     l'ecran : c'est ce que l'oeil lit, et ca ne depend pas d'un seuil. */
  var attente=false;
