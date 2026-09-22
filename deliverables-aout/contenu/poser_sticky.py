@@ -28,6 +28,7 @@ sys.path.insert(0, "/home/user/refonte-hh-v2/maillage-cro")
 sys.path.insert(0, ICI)
 import wp_common as w         # noqa: E402
 import scroll_sticky as SY    # noqa: E402
+import contenu_sticky as C    # noqa: E402
 
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
 SAUV = os.path.join(S, "sticky-avant")
@@ -50,11 +51,17 @@ def main():
             raise SystemExit("ARRET — section introuvable sur %s" % url)
         if "<section" in c[i + 10:j]:
             raise SystemExit("ARRET — section imbriquee sur %s" % url)
-        if 'class="hhf-bar"' not in c[i:j]:
-            raise SystemExit("ARRET — %s ne porte pas le module a onglets" % url)
+        if 'class="sy-ecrans"' in c:
+            entete, ecrans, liens = SY.extraire_sticky(c)
+        elif 'class="hhf-bar"' in c[i:j]:
+            entete, blocs = SY.extraire(c)
+            ecrans = [b[2] for b in blocs]
+            liens = [m for b in blocs
+                     for m in re.findall(r'(<a class="hhf-lien".*?</a>)', b[1], re.S)]
+        else:
+            raise SystemExit("ARRET — %s ne porte aucun module connu" % url)
 
-        entete, blocs = SY.extraire(c)
-        neuf = c[:i] + SY.section(entete, blocs) + c[j:]
+        neuf = c[:i] + SY.section(entete, ecrans, liens, C.CONTENU[cle]) + c[j:]
 
         # Aucun lien ne doit se perdre a la conversion : c'est le maillage.
         corps = lambda t: re.sub(r"<(style|script)[^>]*>.*?</\1>", "", t, flags=re.S)
@@ -68,14 +75,16 @@ def main():
         # dans la colonne collee du bureau, une sous chaque texte pour le
         # telephone. Un seul des deux jeux s'affiche a la fois — mais les
         # deux pesent dans la page, et c'est le prix de cette mise en scene.
-        av_ui, ap_ui = corps(c).count('class="ui"'), corps(neuf).count('class="ui"')
-        if ap_ui != 2 * av_ui:
-            raise SystemExit("ARRET — %d ecrans avant, %d apres (attendu %d) sur %s"
-                             % (av_ui, ap_ui, 2 * av_ui, url))
+        ap_ui = corps(neuf).count('class="ui"')
+        if ap_ui != 2 * len(ecrans):
+            raise SystemExit("ARRET — %d etapes extraites, %d ecrans en sortie "
+                             "(attendu %d) sur %s"
+                             % (len(ecrans), ap_ui, 2 * len(ecrans), url))
 
-        print("%-42s %d fonctionnalites · %d liens · %d ecrans (%d affiches a la fois)"
-              " · %+d ko"
-              % (url, len(blocs), len(ap), ap_ui, av_ui, (len(neuf) - len(c)) // 1024))
+        avis = neuf.count('class="sy-avis"')
+        print("%-42s %d etapes · %d H2 · %d liens · %d avis reels · %+d ko"
+              % (url, len(ecrans), neuf.count("<h2>") - c.count("<h2>") + 1,
+                 len(ap), avis, (len(neuf) - len(c)) // 1024))
 
         if not poser:
             continue

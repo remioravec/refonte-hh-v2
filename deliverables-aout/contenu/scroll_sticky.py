@@ -34,6 +34,7 @@ sys.path.insert(0, "/home/user/refonte-hh-v2/maillage-cro")
 sys.path.insert(0, ICI)
 import wp_common as w        # noqa: E402
 import maquette_agro as M    # noqa: E402  (SVG_FA, convertir)
+import contenu_sticky as C   # noqa: E402  (titres, puces, avis reels)
 
 S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c/scratchpad"
 SITE = "https://www.helloharel.com"
@@ -63,6 +64,28 @@ def bloc_ferme(t, i, tag="div"):
         if n == 0:
             return k
     raise SystemExit("ARRET — <%s> non referme" % tag)
+
+
+def extraire_sticky(contenu):
+    """Meme sortie, depuis le module de defilement deja pose.
+
+    Une fois la section convertie, il n'y a plus d'onglets a lire : les
+    ecrans vivent dans .sy-ecrans et le lien de maillage dans .sy-t.
+    """
+    i = contenu.find('<section class="features-section"')
+    j = contenu.find("</section>", i) + len("</section>")
+    sec = contenu[i:j]
+    ent = re.search(r'<div class="section-header">.*?</div>\s*(?=<div class="sy )', sec, re.S)
+    if not ent:
+        raise SystemExit("ARRET — en-tete introuvable dans le module de defilement")
+    ecrans = []
+    for m in re.finditer(r'<li data-actif="[01]" aria-hidden="(?:true|false)">', sec):
+        fin = bloc_ferme(sec, m.start(), "li")
+        ecrans.append(sec[m.end():fin - len("</li>")])
+    liens = re.findall(r'(<a class="hhf-lien".*?</a>)', sec, re.S)
+    if not ecrans:
+        raise SystemExit("ARRET — aucun ecran dans le module de defilement")
+    return ent.group(0), ecrans, liens
 
 
 def extraire(contenu):
@@ -122,7 +145,7 @@ CSS = """<style id="hh-scrollytelling">
  color:#0369A1;margin:0 0 1rem !important}
 #hh-page .sy-n b,.sy-n b{display:grid;place-items:center;width:28px;height:28px;
  border-radius:9px;background:#E0F2FE;color:#075985;font-size:.8rem;letter-spacing:0}
-#hh-page .sy-t h3,.sy-t h3{font-size:clamp(1.45rem,2.9vw,2.1rem) !important;line-height:1.14;
+#hh-page .sy-t h2,.sy-t h2{font-size:clamp(1.4rem,2.7vw,1.95rem) !important;line-height:1.16;
  color:#0f172a;font-weight:800;letter-spacing:-.025em;margin:0 0 .9rem !important}
 #hh-page .sy-t>p,.sy-t>p{color:#475569;font-size:1.04rem;line-height:1.7;
  margin:0 0 1.35rem !important;max-width:46ch}
@@ -133,6 +156,25 @@ CSS = """<style id="hh-scrollytelling">
 #hh-page .sy-t .hhf-pts li svg,.sy-t .hhf-pts li svg{width:19px;height:19px;flex:0 0 19px;
  margin-top:2px;color:#16DB7F}
 #hh-page .sy-t .hhf-lien,.sy-t .hhf-lien{margin-top:1.35rem !important}
+/* L'avis : une vraie citation Google, posee sous les puces de la
+   fonctionnalite dont elle parle. Les etapes sans avis correspondant n'en
+   portent pas — on n'en fabrique pas pour remplir. */
+#hh-page .sy-avis,.sy-avis{display:flex !important;gap:.85rem !important;
+ align-items:flex-start !important;margin:1.5rem 0 0 !important;
+ padding:.95rem 1.1rem !important;background:#F0F9FF !important;
+ border:1px solid #E0F2FE !important;border-left:3px solid #00B1F5 !important;
+ border-radius:0 12px 12px 0 !important;max-width:46ch}
+#hh-page .sy-avis i,.sy-avis i{display:grid !important;place-items:center !important;
+ width:36px !important;height:36px !important;flex:0 0 36px !important;
+ border-radius:50% !important;background:#0369A1 !important;color:#fff !important;
+ font-style:normal !important;font-weight:700 !important;font-size:.78rem !important}
+#hh-page .sy-avis p,.sy-avis p{margin:0 !important;font-size:.9rem !important;
+ line-height:1.5 !important;color:#0f172a !important;font-style:italic !important}
+#hh-page .sy-avis b,.sy-avis b{display:block !important;margin-top:.3rem !important;
+ font-style:normal !important;font-size:.76rem !important;font-weight:600 !important;
+ color:#64748b !important}
+#hh-page .sy-avis svg,.sy-avis svg{width:12px;height:12px;color:#F59E0B;
+ vertical-align:-1px;margin-right:1px}
 
 /* ── colonne de droite : l'ecran, colle ─────────────────────────────────── */
 #hh-page .sy-colle,.sy-colle{position:sticky;top:var(--haut);
@@ -152,19 +194,18 @@ CSS = """<style id="hh-scrollytelling">
  transform:scale(var(--k,1)) translateX(var(--dx,0px));
  transform-origin:top left;transition:transform .3s ease}
 
-/* ── le rail de progression ─────────────────────────────────────────────── */
-#hh-page .sy-rail,.sy-rail{position:absolute;left:-14px;top:0;bottom:0;width:3px;
- background:#e2e8f0;border-radius:2px}
-#hh-page .sy-jauge,.sy-jauge{position:absolute;inset:0 0 auto 0;height:0;background:#00B1F5;
- border-radius:2px;transition:height .25s ease}
-@media (max-width:1240px){#hh-page .sy-rail,.sy-rail{display:none}}
 
 /* ── telephone : on retire la colle, chaque ecran suit son texte ────────── */
 @media (max-width:900px){
  #hh-page .sy-grille,.sy-grille{grid-template-columns:minmax(0,1fr) !important}
  #hh-page .sy-pas,.sy-pas,#hh-page .sy-pas>li,.sy-pas>li{min-width:0 !important}
- #hh-page .sy-mob,.sy-mob{overflow-x:auto !important;-webkit-overflow-scrolling:touch}
- #hh-page .sy-mob .ui,.sy-mob .ui{min-width:520px !important}
+ #hh-page .sy-mob,.sy-mob{overflow-x:auto !important;-webkit-overflow-scrolling:touch;
+  contain:paint;border-radius:16px}
+ #hh-page .sy-mob .ui,.sy-mob .ui{min-width:480px !important;width:480px !important;
+  transform:none !important}
+ #hh-page .sy-mob::after,.sy-mob::after{content:"Faites glisser l'écran →";
+  display:block;position:sticky;left:0;margin-top:.5rem;font-size:.74rem;
+  color:#64748b;font-style:italic}
  #hh-page .sy-colle,.sy-colle{display:none !important}
  #hh-page .sy-pas>li,.sy-pas>li{min-height:0 !important;display:block !important;
   padding-bottom:3rem !important}
@@ -191,7 +232,6 @@ JS = """<script>
  var sy=document.querySelector(".sy"); if(!sy) return;
  var pas=Array.prototype.slice.call(sy.querySelectorAll(".sy-pas>li"));
  var ecr=Array.prototype.slice.call(sy.querySelectorAll(".sy-ecrans>li"));
- var jauge=sy.querySelector(".sy-jauge");
  if(!pas.length||pas.length!==ecr.length) return;
  sy.setAttribute("data-js","1");
  var courant=-1;
@@ -203,7 +243,6 @@ JS = """<script>
    e.setAttribute("data-actif",i===n?"1":"0");
    e.setAttribute("aria-hidden",i===n?"false":"true");
   });
-  if(jauge) jauge.style.height=((n+1)/pas.length*100)+"%";
  }
  poser(0);
  /* L'ecran le plus charge depasse la hauteur du panneau colle. On mesure sa
@@ -248,20 +287,49 @@ JS = """<script>
 </script>"""
 
 
-def section(entete, blocs):
-    pas, ecrans = "", ""
-    for k, (court, txt, ecran) in enumerate(blocs, 1):
+ETOILE = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+          '<path d="M12 2l2.9 6.26 6.85.78-5.09 4.64 1.4 6.74L12 17.1l-6.06 3.32 1.4-6.74'
+          'L2.25 9.04l6.85-.78z"/></svg>')
+
+COCHE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
+         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" '
+         'd="M5 13l4 4L19 7"/></svg>')
+
+
+def bloc_avis(cle):
+    """Un avis Google reel, ou rien. On n'en fabrique pas pour remplir."""
+    if not cle or cle not in C.AVIS:
+        return ""
+    nom, ini, texte = C.AVIS[cle]
+    return ('<div class="sy-avis"><i aria-hidden="true">%s</i>'
+            '<p>« %s »<b>%s%s · avis Google</b></p></div>'
+            % (ini, texte, ETOILE * 5, nom))
+
+
+def section(entete, ecrans, liens, contenu):
+    """contenu : [(titre H2, [puces], cle d'avis)] — un par ecran."""
+    if len(ecrans) != len(contenu):
+        raise SystemExit("ARRET — %d ecrans pour %d blocs de contenu"
+                         % (len(ecrans), len(contenu)))
+    pas, col = "", ""
+    for k, (ecran, (h2, puces, avis)) in enumerate(zip(ecrans, contenu), 1):
+        pts = "".join("<li>%s%s</li>" % (COCHE, x) for x in puces)
+        # les liens de maillage sont distribues dans l'ordre, un par etape
+        lien = liens[k - 1] if k - 1 < len(liens) else ""
+        txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>%s%s'
+               % (h2, pts, lien, bloc_avis(avis)))
         pas += ('<li data-actif="%s"><div class="sy-t">'
-                '<p class="sy-n"><b>%02d</b>%s</p>%s'
+                '<p class="sy-n"><b>%02d</b>Fonctionnalité</p>%s'
                 '<div class="sy-mob">%s</div></div></li>'
-                % ("1" if k == 1 else "0", k, court, txt, ecran))
-        ecrans += ('<li data-actif="%s" aria-hidden="%s">%s</li>'
-                   % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
+                % ("1" if k == 1 else "0", k, txt, ecran))
+        col += ('<li data-actif="%s" aria-hidden="%s">%s</li>'
+                % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
+    ecrans, pas_ = col, pas
+    pas = pas_
     return (CSS
             + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete
-            + '<div class="sy hhf"><div class="sy-rail"><i class="sy-jauge"></i></div>'
-              '<div class="sy-grille">'
+            + '<div class="sy hhf"><div class="sy-grille">'
               '<ul class="sy-pas">%s</ul>'
               '<div class="sy-colle"><ul class="sy-ecrans">%s</ul></div>'
               '</div></div>'
@@ -277,12 +345,18 @@ def main():
     c = w.get_raw("pages", page)["content"]["raw"]
     print("page %d (%s) : %d octets" % (page, url, len(c)))
 
-    entete, blocs = extraire(c)
-    print("extrait : %d fonctionnalites — %s" % (len(blocs), ", ".join(b[0] for b in blocs)))
+    if 'class="sy-ecrans"' in c:
+        entete, ecrans, liens = extraire_sticky(c)
+    else:
+        entete, blocs = extraire(c)
+        ecrans = [b[2] for b in blocs]
+        liens = [m for b in blocs
+                 for m in re.findall(r'(<a class="hhf-lien".*?</a>)', b[1], re.S)]
+    print("extrait : %d ecrans, %d lien(s) de maillage" % (len(ecrans), len(liens)))
 
     i = c.find('<section class="features-section"')
     j = c.find("</section>", i) + len("</section>")
-    c = c[:i] + section(entete, blocs) + c[j:]
+    c = c[:i] + section(entete, ecrans, liens, C.CONTENU[cle]) + c[j:]
 
     urls = set(re.findall(r'(?:src|data-src)="(https?://[^"]+\.(?:png|jpe?g|webp|svg|gif))"', c))
     urls |= set(re.findall(r"url\('?(https?://[^)']+\.(?:png|jpe?g|webp|svg|gif))'?\)", c))
