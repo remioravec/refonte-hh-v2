@@ -136,9 +136,19 @@ CSS_CTA = """<style id="hh-blog-cta">
 
 
 def bloc_cta(cartes):
-    """cartes : [(titre, texte, libelle du lien, href)]"""
-    li = "".join('<li><a href="%s"><b>%s</b><span>%s</span><em>%s →</em></a></li>'
-                 % (h, t, d, lib) for t, d, lib, h in cartes)
+    """cartes : [(titre, texte, libelle du lien, href)]
+
+    La carte n'est PAS un lien. Un soulignement se transmet du lien a tout
+    ce qu'il contient, et un descendant ne peut pas l'annuler : l'ancienne
+    version soulignait le titre, le texte et le bouton. Seul le bouton est
+    donc un lien, et la carte est un simple conteneur.
+    """
+    # Le second bouton est marque dans le balisage et non deduit de sa
+    # position : un selecteur par rang se fait battre trop facilement.
+    li = "".join('<li><div class="hhb-c"><b>%s</b><span>%s</span>'
+                 '<a class="hhb-b%s" href="%s">%s →</a></div></li>'
+                 % (t, d, ("" if k == 0 else " hhb-b2"), h, lib)
+                 for k, (t, d, lib, h) in enumerate(cartes))
     return (CSS_CTA + '<h2 class="hhb-cta-t">Passer à la suite</h2>'
             '<ul class="hhb-cta">%s</ul>' % li)
 
