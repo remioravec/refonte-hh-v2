@@ -37,6 +37,13 @@ S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c
 SAUV = os.path.join(S, "faq-avant")
 PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 
+
+def FRAIS():
+    """Une URL unique par controle : le cache du site sert sinon la
+    version d'avant la pose, et le controle annonce un echec faux."""
+    import random
+    return "?hh=%d" % random.randrange(10 ** 9)
+
 CSS = """<style id="hh-faq-accordeon">
 #hh-page .fa2,.fa2{max-width:860px !important;margin:0 auto !important;
  display:grid !important;gap:.85rem !important}
@@ -198,7 +205,7 @@ def main():
     import time
     time.sleep(4)
     for cle, (page, url) in SY.PAGES.items():
-        req = urllib.request.Request("https://www.helloharel.com" + url,
+        req = urllib.request.Request("https://www.helloharel.com" + url + FRAIS(),
                                      headers={"User-Agent": "Mozilla/5.0"})
         h = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
         det, cartes = h.count("<details"), h.count('class="faq-card"')

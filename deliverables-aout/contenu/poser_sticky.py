@@ -35,6 +35,13 @@ SAUV = os.path.join(S, "sticky-avant")
 PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 
 
+def FRAIS():
+    """Une URL unique par controle : le cache du site sert sinon la
+    version d'avant la pose, et le controle annonce un echec faux."""
+    import random
+    return "?hh=%d" % random.randrange(10 ** 9)
+
+
 def main():
     poser = "--poser" in sys.argv
     os.makedirs(SAUV, exist_ok=True)
@@ -85,14 +92,21 @@ def main():
         # l'ancienne feuille. On retire donc les anciens exemplaires, en
         # gardant le dernier — celui qu'on vient de poser.
 
-        # Aucun lien ne doit se perdre a la conversion : c'est le maillage.
+        # Les seuls liens autorises a disparaitre sont ceux de la section
+        # elle-meme, retires a la demande le 22/09. Tout autre lien qui
+        # manque arrete la pose : c'est le maillage du reste de la page.
         corps = lambda t: re.sub(r"<(style|script)[^>]*>.*?</\1>", "", t, flags=re.S)
+        attendus = re.findall(r'href="([^"]+)"', " ".join(liens))
         av = re.findall(r'href="([^"]+)"', corps(c))
         ap = re.findall(r'href="([^"]+)"', corps(neuf))
-        if sorted(av) != sorted(ap):
-            perdus = set(av) - set(ap)
-            raise SystemExit("ARRET — %d lien(s) perdu(s) sur %s : %s"
-                             % (len(perdus), url, list(perdus)[:4]))
+        reste = list(av)
+        for x in attendus:
+            if x in reste:
+                reste.remove(x)
+        if sorted(reste) != sorted(ap):
+            perdus = [x for x in reste if reste.count(x) > ap.count(x)]
+            raise SystemExit("ARRET — lien(s) perdu(s) hors section sur %s : %s"
+                             % (url, sorted(set(perdus))[:4]))
         # Les ecrans non plus. Depuis que la colonne colle aussi sur
         # telephone, le module ne les porte plus qu'UNE fois : un seul jeu
         # sert les deux tailles d'ecran.
@@ -109,9 +123,9 @@ def main():
                 raise SystemExit("ARRET — %d %s(s) du module sur %s" % (n, quoi, url))
 
         avis = neuf.count('class="sy-avis"')
-        print("%-42s %d etapes · %d liens · %d avis reels · %d bloc(s) "
-              "obsolete(s) retire(s) · %+d ko"
-              % (url, len(ecrans), len(ap), avis, vieux - 2,
+        print("%-42s %d etapes · %d lien(s) de section retire(s) · %d liens "
+              "restants · %d avis · %+d ko"
+              % (url, len(ecrans), len(attendus), len(ap), avis,
                  (len(neuf) - len(avant)) // 1024))
 
         if not poser:
@@ -128,7 +142,7 @@ def main():
     import time
     time.sleep(4)
     for cle, (page, url) in SY.PAGES.items():
-        req = urllib.request.Request("https://www.helloharel.com" + url,
+        req = urllib.request.Request("https://www.helloharel.com" + url + FRAIS(),
                                      headers={"User-Agent": "Mozilla/5.0"})
         h = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
         pas = h.count('class="sy-pas"')

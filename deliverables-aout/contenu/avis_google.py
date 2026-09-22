@@ -28,6 +28,13 @@ SAUV = os.path.join(S, "avis-google-avant")
 PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 
 
+def FRAIS():
+    """Une URL unique par controle : le cache du site sert sinon la
+    version d'avant la pose, et le controle annonce un echec faux."""
+    import random
+    return "?hh=%d" % random.randrange(10 ** 9)
+
+
 def main():
     poser = "--poser" in sys.argv
     os.makedirs(SAUV, exist_ok=True)
@@ -87,7 +94,7 @@ def main():
     time.sleep(5)
     for cle, (page, url) in SY.PAGES.items():
         h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url,
+            "https://www.helloharel.com" + url + FRAIS(),
             headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
         g = len(re.findall(r'class="hh-tete hh-tete-g"', h))
         reste = len(re.findall(r'hh-tete t[0-9a-f]{8}', h))

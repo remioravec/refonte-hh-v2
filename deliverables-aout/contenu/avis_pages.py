@@ -34,6 +34,13 @@ S = "/tmp/claude-0/-home-user-refonte-hh-v2/b317f75d-1f06-5053-a6cf-6b758c5a645c
 SAUV = os.path.join(S, "avis-avant")
 PROTEGEES = {1726, 2818, 2839, 5477, 11162}
 
+
+def FRAIS():
+    """Une URL unique par controle : le cache du site sert sinon la
+    version d'avant la pose, et le controle annonce un echec faux."""
+    import random
+    return "?hh=%d" % random.randrange(10 ** 9)
+
 CSS_TETE = """<style id="hh-avis-avatars">
 #hh-page .review-avatar,.review-avatar{overflow:hidden !important;padding:0 !important;
  font-size:0 !important;background:transparent !important}
@@ -136,7 +143,7 @@ def main():
     time.sleep(4)
     for cle, (page, url) in SY.PAGES.items():
         h = urllib.request.urlopen(urllib.request.Request(
-            "https://www.helloharel.com" + url,
+            "https://www.helloharel.com" + url + FRAIS(),
             headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read().decode("utf-8", "replace")
         piste = h.count('class="avis-file"')
         tetes = len(re.findall(r'<div class="review-avatar"><i class="hh-tete', h))

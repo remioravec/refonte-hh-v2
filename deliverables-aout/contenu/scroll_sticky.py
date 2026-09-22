@@ -363,7 +363,11 @@ def bloc_avis(cle):
 
 
 def section(entete, ecrans, liens, contenu):
-    """contenu : [(titre H2, [puces], cle d'avis)] — un par ecran."""
+    """contenu : [(titre H2, [puces], cle d'avis, [pastilles])] — un par ecran.
+
+    `liens` n'est plus pose dans la section : il reste au parametre pour que
+    l'appelant sache ce qu'il perd et puisse le controler.
+    """
     if len(ecrans) != len(contenu):
         raise SystemExit("ARRET — %d ecrans pour %d blocs de contenu"
                          % (len(ecrans), len(contenu)))
@@ -372,11 +376,13 @@ def section(entete, ecrans, liens, contenu):
         pts = "".join("<li>%s%s</li>" % (COCHE, x) for x in puces)
         # Sur telephone, les puces longues cedent la place aux pastilles.
         pst = "".join("<li>%s%s</li>" % (COCHE, x) for x in courtes)
-        # les liens de maillage sont distribues dans l'ordre, un par etape
-        lien = liens[k - 1] if k - 1 < len(liens) else ""
+        # Pas de lien de maillage ici : decide le 22/09. Cette section
+        # raconte le produit, elle n'envoie pas ailleurs. Les liens recus
+        # sont donc volontairement laisses de cote — le controle de pose
+        # sait lesquels et refuse toute autre disparition.
         txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>'
-               '<ul class="sy-ch">%s</ul>%s%s'
-               % (h2, pts, pst, lien, bloc_avis(avis)))
+               '<ul class="sy-ch">%s</ul>%s'
+               % (h2, pts, pst, bloc_avis(avis)))
         # L'ecran n'est porte qu'une fois, par la colonne collee : elle sert
         # aussi bien au telephone qu'a l'ordinateur depuis qu'elle colle des
         # deux cotes. Le dupliquer sous chaque etape doublait le poids de la
