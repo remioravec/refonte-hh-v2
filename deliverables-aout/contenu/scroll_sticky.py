@@ -195,53 +195,44 @@ CSS = """<style id="hh-scrollytelling">
  transform-origin:top left;transition:transform .3s ease}
 
 
-/* -- telephone : on retire la colle, chaque ecran suit son texte -------- */
-/* Retour a l'empilement vertical : le carrousel de cartes a ete essaye et
-   ecarte. Ce qui reste de l'essai, ce sont les deux choses qui tenaient :
-   moins de texte — trois pastilles courtes au lieu des quatre puces — et
-   un tableau de bord qu'on voit en entier, ajuste a la largeur de l'ecran
-   au lieu d'etre a faire glisser. Le detail reste accessible au bouton. */
+/* -- telephone : la colle aussi, mais en haut ------------------------- */
+/* Meme mise en scene que sur ordinateur, pivotee d'un quart de tour : le
+   tableau de bord se colle en haut de l'ecran, le texte defile dessous et
+   le tableau change de fonctionnalite au passage. L'ecran duplique sous
+   chaque etape n'a plus d'objet — c'est la colonne collee qui le porte.
+   Moins de texte : trois pastilles courtes au lieu des quatre puces. */
 @media (max-width:900px){
- #hh-page .sy-grille,.sy-grille{grid-template-columns:minmax(0,1fr) !important}
+ #hh-page .sy,.sy{--haut:64px}
+ #hh-page .sy-grille,.sy-grille{display:flex !important;
+  flex-direction:column !important;gap:0 !important}
  #hh-page .sy-pas,.sy-pas,#hh-page .sy-pas>li,.sy-pas>li{min-width:0 !important}
- #hh-page .sy-colle,.sy-colle{display:none !important}
- #hh-page .sy-pas>li,.sy-pas>li{min-height:0 !important;display:block !important;
-  padding-bottom:3rem !important}
- #hh-page .sy-t,.sy-t{opacity:1 !important}
 
- /* le tableau de bord, entier, sans rien a faire glisser */
- #hh-page .sy-mob,.sy-mob{display:block !important;position:relative;
-  margin-top:1.5rem !important;padding:12px !important;
-  box-sizing:border-box !important;background:#F8FAFC !important;
-  border:1px solid #e2e8f0 !important;border-radius:18px !important}
- #hh-page .sy-cadre,.sy-cadre{overflow:hidden !important;contain:paint;
-  border-radius:10px}
- /* 480px est la largeur plancher de la maquette : en dessous, une colonne
-    du tableau se replie. On la garde donc, et on la reduit. */
- #hh-page .sy-mob .ui,.sy-mob .ui{width:480px !important;min-width:480px !important;
-  transform:scale(var(--km,1)) !important;transform-origin:top left !important}
- /* agrandi : taille reelle, et on le fait glisser */
- #hh-page .sy-mob[data-grand="1"] .sy-cadre,.sy-mob[data-grand="1"] .sy-cadre{
-  overflow-x:auto !important;-webkit-overflow-scrolling:touch;
-  height:auto !important;max-height:70vh}
- #hh-page .sy-mob[data-grand="1"] .ui,.sy-mob[data-grand="1"] .ui{
-  transform:none !important}
- #hh-page .sy-loupe,.sy-loupe{position:absolute !important;right:16px !important;
-  bottom:16px !important;z-index:2;display:inline-flex !important;
-  align-items:center !important;gap:.32rem !important;
-  padding:.44rem .78rem !important;margin:0 !important;
-  border:1px solid #CBD5E1 !important;border-radius:999px !important;
-  background:rgba(255,255,255,.96) !important;color:#0C4A6E !important;
-  font-size:.75rem !important;font-weight:700 !important;line-height:1 !important;
-  cursor:pointer !important;box-shadow:0 4px 12px -6px rgba(15,23,42,.5) !important}
- #hh-page .sy-loupe svg,.sy-loupe svg{width:14px;height:14px;flex:0 0 14px}
+ /* la colonne collee passe devant le texte, et s'y tient */
+ #hh-page .sy-colle,.sy-colle{display:grid !important;order:-1 !important;
+  position:sticky !important;top:var(--haut) !important;
+  height:auto !important;min-height:var(--hc,46vh) !important;
+  align-content:center !important;justify-items:center !important;
+  z-index:2;padding:.6rem 0 .9rem !important;
+  background:#fff !important;
+  box-shadow:0 14px 18px -18px rgba(15,23,42,.55) !important}
+ /* un liseré qui montre ou on en est dans la section */
+ #hh-page .sy-colle::after,.sy-colle::after{content:"";position:absolute;
+  left:50%;transform:translateX(-50%);bottom:.2rem;width:44px;height:3px;
+  border-radius:3px;background:#E0F2FE}
+
+ /* les etapes : assez hautes pour que le defilement pilote le changement */
+ #hh-page .sy-pas>li,.sy-pas>li{min-height:58vh !important;
+  display:flex !important;flex-direction:column !important;
+  justify-content:center !important;padding:1rem 0 !important}
+ #hh-page .sy-pas>li:last-child,.sy-pas>li:last-child{min-height:44vh !important}
+ #hh-page .sy-t,.sy-t{opacity:.34}
+ #hh-page .sy-pas>li[data-actif="1"] .sy-t,.sy-pas>li[data-actif="1"] .sy-t{opacity:1}
+ #hh-page .sy-t h2,.sy-t h2{font-size:1.32rem !important;line-height:1.28 !important}
 
  /* moins de texte : les pastilles remplacent les puces longues */
- #hh-page .sy-t h2,.sy-t h2{font-size:1.3rem !important;line-height:1.3 !important}
  #hh-page .sy-t .hhf-pts,.sy-t .hhf-pts{display:none !important}
  #hh-page .sy-ch,.sy-ch{display:flex !important}
 }
-#hh-page .sy-mob,.sy-mob{display:none}
 
 /* pastilles courtes : telephone seulement */
 #hh-page .sy-ch,.sy-ch{display:none;flex-wrap:wrap;gap:.45rem;list-style:none;
@@ -289,52 +280,36 @@ JS = """<script id="hh-scrollytelling-js">
     hauteur naturelle et on le reduit juste ce qu'il faut — jamais au-dela
     de 1, on n'agrandit pas une capture. */
  var LARGE=720;   /* la largeur ou les tableaux de l'ecran tiennent sans se replier */
+ var colle=sy.querySelector(".sy-colle");
+ function surTelephone(){ return window.innerWidth<=900 }
  function ajuster(){
-  var colle=sy.querySelector(".sy-colle"); if(!colle) return;
-  var dh=colle.clientHeight, dw=colle.clientWidth;
-  if(!dh||!dw) return;
-  ecr.forEach(function(li){
-   var ui=li.querySelector(".ui"); if(!ui) return;
-   var h=ui.offsetHeight; if(!h) return;
-   var k=Math.min(1, dw/LARGE, (dh-12)/h);
+  if(!colle) return;
+  var dw=colle.clientWidth; if(!dw) return;
+  var tel=surTelephone();
+  /* Sur telephone le panneau colle en haut : sa hauteur n'est pas donnee
+     par la fenetre mais par nous. On lui reserve 46% de la hauteur vue —
+     assez pour lire le tableau de bord, assez pour lire le texte dessous.
+     Et une seule echelle pour les cinq ecrans : deux tailles differentes
+     d'une etape a l'autre, ca se voit. */
+  var budget = tel ? window.innerHeight*0.46 : colle.clientHeight;
+  if(!budget) return;
+  var hauts=ecr.map(function(li){
+   var ui=li.querySelector(".ui"); return ui?ui.offsetHeight:0;
+  });
+  var hmax=Math.max.apply(null,hauts); if(!hmax) return;
+  var kc = tel ? Math.min(1, dw/LARGE, budget/hmax) : 0;
+  ecr.forEach(function(li,i){
+   var ui=li.querySelector(".ui"), h=hauts[i]; if(!ui||!h) return;
+   var k = tel ? kc : Math.min(1, dw/LARGE, (budget-12)/h);
    ui.style.setProperty("--k", k.toFixed(4));
    /* recentrage : l'origine est en haut a gauche, on rattrape a la main */
    ui.style.setProperty("--dx", ((dw-LARGE*k)/2/k).toFixed(1)+"px");
    li.style.height = Math.round(h*k)+"px";
   });
+  if(tel) sy.style.setProperty("--hc", Math.round(hmax*kc+24)+"px");
+  else sy.style.removeProperty("--hc");
  }
- /* Sur telephone, le meme ecran remplit la largeur de la carte. On le
-    reduit depuis sa largeur de reference (480px) jusqu'a la carte : la
-    mise en page interne ne se replie pas, et le tableau de bord se voit
-    en entier, sans glissement horizontal. */
- var MOB=480;
- var mobs=Array.prototype.slice.call(sy.querySelectorAll(".sy-mob"));
- function ajusterMob(){
-  mobs.forEach(function(m){
-   var cad=m.querySelector(".sy-cadre"), ui=m.querySelector(".ui");
-   if(!cad||!ui) return;
-   if(!m.offsetParent){ui.style.removeProperty("--km");cad.style.height="";return}
-   if(m.getAttribute("data-grand")==="1"){cad.style.height="";return}
-   var w=cad.clientWidth; if(w<=0) return;
-   var k=Math.min(1,w/MOB);
-   ui.style.setProperty("--km",k.toFixed(4));
-   /* offsetHeight : la hauteur de mise en page, avant la reduction */
-   cad.style.height=Math.round(ui.offsetHeight*k)+"px";
-  });
- }
- /* « Agrandir » : l'ecran reprend sa taille reelle et se fait glisser. On
-    ne peut pas tout rendre lisible dans 330px de large — on rend donc la
-    vue d'ensemble par defaut, et le detail a la demande. */
- Array.prototype.forEach.call(sy.querySelectorAll(".sy-loupe"),function(b){
-  b.addEventListener("click",function(){
-   var m=b.parentNode, grand=m.getAttribute("data-grand")==="1";
-   m.setAttribute("data-grand",grand?"0":"1");
-   b.setAttribute("aria-expanded",grand?"false":"true");
-   var t=b.querySelector("span"); if(t) t.textContent=grand?"Agrandir":"Réduire";
-   ajusterMob();
-  });
- });
- function tout(){ajuster();ajusterMob()}
+ function tout(){ajuster()}
  tout();
  window.addEventListener("resize",tout);
  /* Les captures se mettent en place apres les polices : on remesure. */
@@ -345,7 +320,11 @@ JS = """<script id="hh-scrollytelling-js">
  var attente=false;
  function mesurer(){
   attente=false;
-  var mid=window.innerHeight/2, best=0, d=1e9;
+  /* Le lecteur lit sous le panneau colle : c'est le milieu de CETTE zone
+     qui designe l'etape en cours, pas le milieu de la fenetre. */
+  var bas = surTelephone() && colle ? colle.getBoundingClientRect().bottom : 0;
+  if(bas<0) bas=0;
+  var mid=bas+(window.innerHeight-bas)/2, best=0, d=1e9;
   pas.forEach(function(p,i){
    var r=p.getBoundingClientRect();
    var e=Math.abs((r.top+r.bottom)/2-mid);
@@ -365,10 +344,6 @@ JS = """<script id="hh-scrollytelling-js">
 ETOILE = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
           '<path d="M12 2l2.9 6.26 6.85.78-5.09 4.64 1.4 6.74L12 17.1l-6.06 3.32 1.4-6.74'
           'L2.25 9.04l6.85-.78z"/></svg>')
-
-LOUPE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
-         '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" '
-         'd="M21 21l-4.3-4.3M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6M8 11h6"/></svg>')
 
 COCHE = ('<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">'
          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" '
@@ -400,12 +375,13 @@ def section(entete, ecrans, liens, contenu):
         txt = ('<h2>%s</h2><ul class="hhf-pts">%s</ul>'
                '<ul class="sy-ch">%s</ul>%s%s'
                % (h2, pts, pst, lien, bloc_avis(avis)))
+        # L'ecran n'est porte qu'une fois, par la colonne collee : elle sert
+        # aussi bien au telephone qu'a l'ordinateur depuis qu'elle colle des
+        # deux cotes. Le dupliquer sous chaque etape doublait le poids de la
+        # section pour rien.
         pas += ('<li data-actif="%s"><div class="sy-t">'
                 '<p class="sy-n"><b>%02d</b>Fonctionnalité</p>%s'
-                '<div class="sy-mob"><div class="sy-cadre">%s</div>'
-                '<button class="sy-loupe" type="button" aria-expanded="false">'
-                '%s<span>Agrandir</span></button></div></div></li>'
-                % ("1" if k == 1 else "0", k, txt, ecran, LOUPE))
+                '</div></li>' % ("1" if k == 1 else "0", k, txt))
         col += ('<li data-actif="%s" aria-hidden="%s">%s</li>'
                 % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
     ecrans, pas_ = col, pas

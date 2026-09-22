@@ -93,15 +93,14 @@ def main():
             perdus = set(av) - set(ap)
             raise SystemExit("ARRET — %d lien(s) perdu(s) sur %s : %s"
                              % (len(perdus), url, list(perdus)[:4]))
-        # Les ecrans non plus. Le nouveau module les porte DEUX fois : une
-        # dans la colonne collee du bureau, une sous chaque texte pour le
-        # telephone. Un seul des deux jeux s'affiche a la fois — mais les
-        # deux pesent dans la page, et c'est le prix de cette mise en scene.
+        # Les ecrans non plus. Depuis que la colonne colle aussi sur
+        # telephone, le module ne les porte plus qu'UNE fois : un seul jeu
+        # sert les deux tailles d'ecran.
         ap_ui = corps(neuf).count('class="ui"')
-        if ap_ui != 2 * len(ecrans):
+        if ap_ui != len(ecrans):
             raise SystemExit("ARRET — %d etapes extraites, %d ecrans en sortie "
                              "(attendu %d) sur %s"
-                             % (len(ecrans), ap_ui, 2 * len(ecrans), url))
+                             % (len(ecrans), ap_ui, len(ecrans), url))
 
         for motif, quoi in ((r'<style id="hh-scrollytelling">', "feuille"),
                             (r'querySelectorAll\("\.sy-ecrans', "script")):
