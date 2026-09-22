@@ -224,8 +224,12 @@ CSS = """<style id="hh-scrollytelling">
 
  /* moins de texte : les pastilles remplacent les puces longues */
  #hh-page .sy-t h2,.sy-t h2{font-size:1.32rem !important;line-height:1.28 !important}
- #hh-page .sy-t .hhf-pts,.sy-t .hhf-pts{display:none !important}
- #hh-page .sy-ch,.sy-ch{display:flex !important}
+ /* Les puces longues ne cedent la place aux pastilles que si la page en
+    porte. Sans pastilles, ce sont les puces qu'on lit — mieux vaut un peu
+    de texte qu'un blanc. */
+ #hh-page .sy[data-court="1"] .sy-t .hhf-pts,.sy[data-court="1"] .sy-t .hhf-pts{
+  display:none !important}
+ #hh-page .sy[data-court="1"] .sy-ch,.sy[data-court="1"] .sy-ch{display:flex !important}
 }
 
 /* pastilles courtes : telephone seulement */
@@ -405,11 +409,18 @@ def section(entete, ecrans, liens, contenu):
     `liens` n'est plus pose dans la section : il reste au parametre pour que
     l'appelant sache ce qu'il perd et puisse le controler.
     """
+    # Les pastilles courtes ont ete ecrites a la main pour les trois pages
+    # pilotes. Ailleurs, on garde les puces de la page telles quelles : on
+    # ne fabrique pas de libelle court a partir d'un texte qu'on n'a pas
+    # relu. Le gabarit s'adapte, le contenu ne s'invente pas.
+    court = "1" if any(len(x) > 3 and x[3] for x in contenu) else "0"
     if len(ecrans) != len(contenu):
         raise SystemExit("ARRET — %d ecrans pour %d blocs de contenu"
                          % (len(ecrans), len(contenu)))
     pas, col = "", ""
-    for k, (ecran, (h2, puces, avis, courtes)) in enumerate(zip(ecrans, contenu), 1):
+    for k, (ecran, bloc) in enumerate(zip(ecrans, contenu), 1):
+        h2, puces, avis = bloc[0], bloc[1], bloc[2]
+        courtes = bloc[3] if len(bloc) > 3 else []
         pts = "".join("<li>%s%s</li>" % (COCHE, x) for x in puces)
         # Sur telephone, les puces longues cedent la place aux pastilles.
         pst = "".join("<li>%s%s</li>" % (COCHE, x) for x in courtes)
@@ -437,11 +448,11 @@ def section(entete, ecrans, liens, contenu):
     return (CSS + tetes
             + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete
-            + '<div class="sy hhf"><div class="sy-grille">'
-              '<ul class="sy-pas">%s</ul>'
-              '<div class="sy-colle"><ul class="sy-ecrans">%s</ul></div>'
-              '</div></div>'
-              '</div></section>' % (pas, ecrans)
+            + ('<div class="sy hhf" data-court="%s"><div class="sy-grille">'
+               '<ul class="sy-pas">%s</ul>'
+               '<div class="sy-colle"><ul class="sy-ecrans">%s</ul></div>'
+               '</div></div>'
+               '</div></section>' % (court, pas, ecrans))
             + JS)
 
 
