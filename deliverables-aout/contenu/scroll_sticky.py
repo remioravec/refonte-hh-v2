@@ -354,11 +354,12 @@ def bloc_avis(cle):
     if not cle or cle not in C.AVIS:
         return ""
     nom, ini, texte = C.AVIS[cle]
-    # Un avatar dessine plutot que les initiales : ca anime la citation. Il
-    # est decoratif et marque comme tel — le nom est juste a cote, en clair.
+    # La marque Google plutot qu'un visage : aucune image ne peut
+    # honnêtement representer cette personne, mais la source, elle, est
+    # verifiable.
     return ('<div class="sy-avis">%s'
             '<p>« %s »<b>%s%s · avis Google</b></p></div>'
-            % (AV.balise(nom, "sy-tete"), texte, ETOILE * 5, nom))
+            % (AV.balise_google("sy-tete"), texte, ETOILE * 5, nom))
 
 
 def section(entete, ecrans, liens, contenu):
@@ -387,9 +388,7 @@ def section(entete, ecrans, liens, contenu):
                 % ("1" if k == 1 else "0", "false" if k == 1 else "true", ecran))
     ecrans, pas_ = col, pas
     pas = pas_
-    # La feuille des avatars ne porte que les personnes effectivement citees.
-    tetes = AV.feuille([C.AVIS[x[2]][0] for x in contenu if x[2] and x[2] in C.AVIS],
-                       "hh-sy-tetes")
+    tetes = AV.feuille_google("hh-sy-tetes")
     return (CSS + tetes
             + '<section class="features-section" id="fonctionnalites"><div class="container">'
             + entete

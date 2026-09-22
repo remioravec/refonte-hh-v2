@@ -131,6 +131,48 @@ def feuille(noms, ident="hh-avatars"):
             "%s\n</style>" % (ident, "\n".join(regles)))
 
 
+# ── la marque Google, a la place d'un visage ────────────────────────────────
+#
+# Le choix retenu le 22/09 : ces avis portent des noms de vraies personnes,
+# et aucune image ne peut honnêtement les representer — ni un visage dessine,
+# ni la photo d'un inconnu. La marque de la source, elle, dit une chose vraie
+# et verifiable : cet avis vient de Google.
+
+MARQUE_G = (
+    "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='48' height='48'>"
+    "<path fill='#4285F4' d='M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06"
+    " 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z'/>"
+    "<path fill='#34A853' d='M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49"
+    " 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z'/>"
+    "<path fill='#FBBC05' d='M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7"
+    "H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z'/>"
+    "<path fill='#EA4335' d='M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93"
+    " 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z'/></svg>"
+)
+
+
+def google():
+    return "data:image/svg+xml," + urllib.parse.quote(
+        MARQUE_G, safe="=:/,;'()*-_.~ +![]{}|^`@$&?")
+
+
+def balise_google(classe=""):
+    """Le medaillon a la marque Google. Une seule classe, une seule image."""
+    cl = ("hh-tete hh-tete-g" + ((" " + classe) if classe else "")).strip()
+    return '<i class="%s" aria-hidden="true"></i>' % cl
+
+
+def feuille_google(ident="hh-tetes-google"):
+    return ('<style id="%s">\n'
+            "#hh-page .hh-tete,.hh-tete{display:block !important;flex:none;"
+            "border-radius:50%% !important;margin:0 !important;"
+            "font-style:normal !important}\n"
+            "#hh-page .hh-tete-g,.hh-tete-g{background:#fff no-repeat center !important;"
+            'background-image:url("%s") !important;background-size:56%% !important;'
+            "border:1px solid #e2e8f0 !important;box-sizing:border-box !important}\n"
+            "</style>" % (ident, google()))
+
+
 if __name__ == "__main__":
     noms = ["Julien B.", "Marie C.", "Philippe D.", "Sophie L.",
             "Thomas R.", "Claire M.", "Antoine V.", "Nadia K."]
