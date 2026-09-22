@@ -313,7 +313,11 @@ JS = """<script id="hh-scrollytelling-js">
  window.addEventListener("resize",tout);
  /* Les captures se mettent en place apres les polices : on remesure. */
  window.addEventListener("load",tout);
- if(document.fonts&&document.fonts.ready) document.fonts.ready.then(tout);
+ /* Pas un seul « et » commercial dans ce script : WordPress le transforme
+    en entite HTML a l'enregistrement, et le script ne s'execute plus du
+    tout. Constate le 22/09 sur les trois pages. On ecrit donc en conditions
+    imbriquees, ce qui ne coute rien. */
+ if(document.fonts){ if(document.fonts.ready) document.fonts.ready.then(tout) }
  /* Le pas actif est celui dont le milieu est le plus proche du milieu de
     l'ecran : c'est ce que l'oeil lit, et ca ne depend pas d'un seuil. */
  var attente=false;
@@ -321,7 +325,8 @@ JS = """<script id="hh-scrollytelling-js">
   attente=false;
   /* Le lecteur lit sous le panneau colle : c'est le milieu de CETTE zone
      qui designe l'etape en cours, pas le milieu de la fenetre. */
-  var bas = surTelephone() && colle ? colle.getBoundingClientRect().bottom : 0;
+  var bas = 0;
+  if(surTelephone()){ if(colle) bas = colle.getBoundingClientRect().bottom }
   if(bas<0) bas=0;
   var mid=bas+(window.innerHeight-bas)/2, best=0, d=1e9;
   pas.forEach(function(p,i){

@@ -140,7 +140,14 @@ def main():
 
     print("\n--- verification en ligne ---")
     import time
-    time.sleep(4)
+    time.sleep(6)
+    # Le script SERVI, et non celui qu'on croit avoir pose. WordPress reecrit
+    # le contenu a l'enregistrement : il a transforme les « et » commerciaux
+    # du script en entites HTML, ce qui l'a rendu inexecutable sur les trois
+    # pages — bureau compris — sans qu'aucun controle ne s'en apercoive. Tous
+    # portaient sur un apercu construit localement, qui ne passe jamais par
+    # WordPress. Desormais on compare octet pour octet ce que le site sert.
+    attendu = re.sub(r"^<script[^>]*>|</script>$", "", SY.JS.strip())
     for cle, (page, url) in SY.PAGES.items():
         req = urllib.request.Request("https://www.helloharel.com" + url + FRAIS(),
                                      headers={"User-Agent": "Mozilla/5.0"})
@@ -149,9 +156,24 @@ def main():
         ecr = len(re.findall(r'<li data-actif="[01]" aria-hidden=', h))
         onglets = h.count('class="hhf-bar"')
         hhf = 'class="sy hhf"' in h
-        ok = pas == 1 and ecr >= 5 and onglets == 0 and hhf
-        print("   %-42s %s  %d pas · %d ecrans · onglets restants %d · .hhf %s"
-              % (url, "OK " if ok else "KO ", pas, ecr, onglets, "oui" if hhf else "NON"))
+        m = re.search(r'<script id="hh-scrollytelling-js">(.*?)</script>', h, re.S)
+        servi = m.group(1) if m else ""
+        intact = bool(m) and servi == attendu
+        detail = "intact"
+        if not m:
+            detail = "ABSENT"
+        elif not intact:
+            detail = "ABIME"
+            for e in ("&#038;", "&#8217;", "&#8221;", "&#8211;", "&gt;", "&lt;", "&amp;"):
+                if e in servi:
+                    detail = "ABIME (%s dedans)" % e
+                    break
+            else:
+                detail = "ABIME (%d octets servis, %d attendus)" % (len(servi), len(attendu))
+        ok = pas == 1 and ecr >= 5 and onglets == 0 and hhf and intact
+        print("   %-42s %s  %d pas · %d ecrans · onglets %d · .hhf %s · script %s"
+              % (url, "OK " if ok else "KO ", pas, ecr, onglets,
+                 "oui" if hhf else "NON", detail))
 
 
 if __name__ == "__main__":
