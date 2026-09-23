@@ -44,7 +44,12 @@ final class HH_Mailer {
 	}
 
 	private function __construct() {
-		add_action( 'phpmailer_init', array( $this, 'configurer_smtp' ) );
+		// Priorite maximale, et non la priorite par defaut. WP Mail SMTP
+		// s'accroche au meme evenement ; les extensions se chargent par ordre
+		// alphabetique, donc « wp-mail-smtp » passe APRES « hh-mailer » et
+		// ecrasait silencieusement l'hote, l'identifiant et l'expediteur poses
+		// ici. On repasse en dernier.
+		add_action( 'phpmailer_init', array( $this, 'configurer_smtp' ), PHP_INT_MAX );
 		add_filter( 'wp_mail_from', array( $this, 'expediteur' ), 99 );
 		add_filter( 'wp_mail_from_name', array( $this, 'nom_expediteur' ), 99 );
 		add_filter( 'wp_mail', array( $this, 'mettre_en_page' ), 99 );
@@ -54,6 +59,57 @@ final class HH_Mailer {
 		add_action( 'admin_menu', array( $this, 'menu' ) );
 		add_action( 'admin_init', array( $this, 'reglages' ) );
 		add_action( 'admin_post_hh_mailer_test', array( $this, 'envoyer_un_test' ) );
+		add_action( 'rest_api_init', array( $this, 'route_etat' ) );
+	}
+
+	/* ---------------------------------------------------------------- */
+	/*  Etat, en lecture seule                                           */
+	/* ---------------------------------------------------------------- */
+
+	/**
+	 * Savoir si l'envoi est pris en charge ne devrait pas demander d'ouvrir
+	 * l'administration. La route ne rend JAMAIS le mot de passe : seulement
+	 * s'il y en a un, d'ou il vient, et les dernieres lignes du journal.
+	 */
+	public function route_etat() {
+		register_rest_route( 'hh-mailer/v1', '/etat', array(
+			'methods'             => 'GET',
+			'permission_callback' => function () { return current_user_can( 'manage_options' ); },
+			'callback'            => array( $this, 'etat' ),
+		) );
+	}
+
+	public function etat() {
+		$j = get_option( self::JOURNAL, array() );
+		return array(
+			'utilisateur'    => $this->utilisateur(),
+			'mot_de_passe'   => $this->mot_de_passe() ? 'present' : 'ABSENT',
+			'origine_du_mdp' => ( defined( 'HH_SMTP_PASS' ) && HH_SMTP_PASS )
+				? 'wp-config.php' : ( $this->opt( 'pass' ) ? 'reglages' : '-' ),
+			'hote'           => $this->opt( 'host', 'smtp.gmail.com' ),
+			'port'           => (int) $this->opt( 'port', 587 ),
+			'prend_la_main'  => ( $this->utilisateur() && $this->mot_de_passe() ),
+			'concurrents'    => $this->concurrents(),
+			'journal'        => is_array( $j ) ? array_slice( $j, 0, 15 ) : array(),
+		);
+	}
+
+	/**
+	 * Les autres extensions qui se branchent sur le meme evenement. Deux
+	 * expediteurs SMTP actifs, c'est le dernier charge qui gagne — et ce
+	 * n'est pas forcement celui qu'on croit.
+	 */
+	public function concurrents() {
+		$out = array();
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		foreach ( array( 'wp-mail-smtp/wp_mail_smtp.php', 'post-smtp/postman-smtp.php',
+			'easy-wp-smtp/easy-wp-smtp.php', 'fluent-smtp/fluent-smtp.php',
+			'wp-smtp/wp-smtp.php' ) as $p ) {
+			if ( is_plugin_active( $p ) ) { $out[] = $p; }
+		}
+		return $out;
 	}
 
 	/* ---------------------------------------------------------------- */
@@ -89,8 +145,20 @@ final class HH_Mailer {
 			$user = $this->utilisateur();
 			$pass = $this->mot_de_passe();
 			// Sans identifiants, on ne touche a rien : le site retombe sur son
-			// comportement d'origine au lieu de partir en erreur.
-			if ( ! $user || ! $pass ) { return; }
+			// comportement d'origine au lieu de partir en erreur. Mais on le
+			// DIT — une extension qui se tait quand elle ne fait rien est une
+			// extension qu'on croit active alors qu'elle est inerte.
+			if ( ! $user || ! $pass ) {
+				if ( ! get_transient( 'hh_mailer_muet' ) ) {
+					set_transient( 'hh_mailer_muet', 1, HOUR_IN_SECONDS );
+					$this->journal( 'inerte', sprintf(
+						'Aucun envoi pris en charge : %s. Le message part avec la '
+						. 'configuration d\'origine du site.',
+						! $user ? 'identifiant SMTP absent' : 'mot de passe absent'
+					) );
+				}
+				return;
+			}
 
 			$phpmailer->isSMTP();
 			$phpmailer->Host        = $this->opt( 'host', 'smtp.gmail.com' );
