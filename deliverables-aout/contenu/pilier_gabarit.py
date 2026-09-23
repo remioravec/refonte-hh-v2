@@ -43,6 +43,7 @@ sys.path.insert(0, "/home/user/refonte-hh-v2/maillage-cro")
 sys.path.insert(0, ICI)
 import wp_common as w            # noqa: E402
 import deployer_gabarit as D     # noqa: E402
+import alleger_css as A          # noqa: E402
 import nap_pied as NAP           # noqa: E402
 
 PID = 1726
@@ -91,7 +92,13 @@ def vider_les_orphelins(c, notes):
         if "id=" in m.group(2) or "src=" in m.group(2) or "ld+json" in m.group(2):
             continue
         corps = m.group(3)
-        vises = set(re.findall(r"\.(hh2?-[\w-]+)\b", corps))
+        # TOUTES les classes visees, pas seulement celles prefixees « hh- ».
+        # La premiere version ne regardait que ce prefixe : une feuille de
+        # quatre-vingt-dix-huit kilo-octets, dont deux classes seulement le
+        # portaient, se retrouvait declaree morte en entier — le hero, la
+        # FAQ et les cartes seraient partis avec elle.
+        vises = set(re.findall(r"\.([a-zA-Z][\w-]+)", corps))
+        vises |= set(re.findall(r"#([a-zA-Z][\w-]+)", corps)) - A.ENVELOPPES
         vises |= set(re.findall(r"getElementById\(['\"]([\w-]+)", corps))
         vises |= set(re.findall(r"querySelector(?:All)?\(['\"][.#]([\w-]+)", corps))
         if not vises:
