@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+outbound-salons/pages-perso/
+
+# copie autonome de la variante B : 1,2 Mo de data: URI, reconstructible par
+# deliverables-aout/contenu/inline_artifact_negoce_b.py
+deliverables-aout/contenu/artifact-negoce-b.html
