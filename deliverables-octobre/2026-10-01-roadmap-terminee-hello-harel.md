@@ -148,11 +148,20 @@ les titles »** (`capitalize_titles`), puis enregistrer.
 Je n'ai pas pu le faire moi-même : l'écriture de ce réglage a été refusée côté
 sécurité de ma session. Je n'ai pas cherché de contournement.
 
-Les **9 pages livrées ce mois** (les 8 de la roadmap contenu + `/comparatifs/`)
-ne t'attendent pas : leur title est figé dans l'extrait « Casse française des
-titles » et sort déjà dans la bonne casse. Même mécanisme pour
+**Aucune page que j'ai touchée ne t'attend** : les 9 pages livrées ce mois
+(les 8 de la roadmap contenu + `/comparatifs/`) et les 23 titles corrigés
+ci-dessus sont figés dans l'extrait « Casse française des titles » et sortent
+déjà dans la bonne casse — vérifié sur la page servie. Même mécanisme pour
 `/agroalimentaire/charcutier/` et `/migration-as400/`, dont le title est figé
 **à l'octet près** pour que la bascule du réglage ne les touche pas — Règle 0.
+
+Pourquoi ce verrou temporaire : écrire la bonne casse en base **sans** le
+verrou rendait le site mesurablement *pire*. « Tarifs ERP Agro • Transparent &
+**Sans** Engagement » comptait une faute ; corrigé en base en « Transparent
+**et sans** engagement », Rank Math en produisait deux. Les 23 pages sont donc
+servies depuis l'extrait en attendant le clic. Le jour où la case est
+décochée, l'array `hh_titles_casse_en_attente()` devient inutile et peut être
+vidé sans rien changer au rendu — c'est écrit dans l'extrait.
 
 ### T13 · Le balisage structuré dupliqué — **TERMINE, et le chiffre du matin était faux**
 
@@ -257,11 +266,32 @@ manquait (il lisait `.offsetWidth` sur un `.pricing-card` supposé présent).
 
 ### Trouvé en route : cinq images cassées sur quatre pages
 
-Trois fichiers référencés dans le contenu répondent **404**. L'avatar de
-Timothy `timothy-jollivet-hello-harel.jpg` est appelé par la signature de
+Trois fichiers référencés dans le contenu répondaient **404**. L'avatar de
+Timothy `timothy-jollivet-hello-harel.jpg` était appelé par la signature de
 `/fonctionnalites/facturation-automatique-bon-livraison/` et des **deux pages
 comparatives** — les trois pages affichaient une image cassée sous le nom de
 l'auteur, exactement là où le lecteur cherche la preuve d'expertise.
+
+Réparé : l'avatar pointe vers le fichier WebP de Timothy déjà présent dans la
+médiathèque ; « Logiciel Gestion des stocks » pointe vers la capture de
+gestion de stock convertie par T14, même sujet et même `alt` ; la capture de
+page d'accueil a été retirée avec sa `<figure>` — aucune image équivalente en
+médiathèque, et une figure vide dans un article sur la variation de stock
+n'apporte rien.
+
+### Trouvé en route, corrigé : dix titles d'implantation fautifs
+
+« Implantation **Auvergne Rhone Alpes** », « **Ile De France** »,
+« **Reunion** », « **Nouvelle Aquitaine** » — ni accents ni traits d'union, et
+aucun ne portait une expression que quelqu'un taperait. `/implantations/`
+servait par ailleurs un title de 186 px, sous le plancher de 200 px. Les dix
+sont réécrits en « ERP agroalimentaire en <région> ».
+
+Je n'ai **pas** touché à leurs descriptions, qui restent quasi identiques
+entre elles — même phrase, seul le nom de la région change. Ce n'est pas un
+problème de balise : ces dix pages locales sont minces, et dix variantes de la
+même phrase ne les rendraient pas moins minces. Le sujet mérite une ligne de
+roadmap contenu, pas un passage de balisage.
 
 ---
 
@@ -314,9 +344,30 @@ l'auteur, exactement là où le lecteur cherche la preuve d'expertise.
 | descriptions > 985 px | 88 | **0** |
 | descriptions < 400 px | 1 | **0** |
 | titles > 561 px | 1 | **0** |
+| titles < 200 px | 4 | **3** |
+| titles en casse anglaise | 41 | **27**, dont 2 voulus |
 | pages sans H1 | 4 | 4 |
 | pages à deux H1 | 1 | **0** |
 | pages avec un FAQPage | 69 | **74** |
+| images servies hors WebP | 207 | **0** |
 | pages déclarant deux fois la note | 33 | **2** (décision) |
 | blocs JSON-LD illisibles | 1 | **0** |
-| pages > 300 ko servis | 48 | 48 |
+| pages > 300 ko de HTML servi | 48 | 48 |
+
+Sur les 27 titles en casse anglaise, deux sont **voulus** : « ERP
+agroalimentaire à **La** Réunion » est un nom propre, et `/migration-as400/`
+est figé par la Règle 0. Les 25 autres attendent la case à cocher.
+
+Les trois titles sous 200 px sont `/blog/`, `/medical/` et
+`/medical/laboratoires/` — « Blog », « Medical », « Laboratoires ». Les deux
+derniers sont dans le périmètre médical, dont tu m'as demandé de sortir le
+site : je ne les ai pas réécrits en attendant ta décision sur ces pages.
+
+### Une précaution de lecture
+
+Ce relevé est fait en **rendu frais**, avec un paramètre d'URL qui contourne
+le cache. Le cache LiteSpeed sert encore les anciens titles sur une partie des
+pages : une mise à jour de contenu purge sa page, mais une modification
+d'extrait de code ou d'une balise Rank Math ne purge rien. Un **« Purger tout »**
+depuis la barre d'admin LiteSpeed aligne le servi sur le réel en une fois.
+→ [Purger le cache](https://www.helloharel.com/wp-admin/admin.php?page=litespeed-dash)
