@@ -40,9 +40,9 @@ ORIGINE = os.environ.get('HH_ORIGINE', '/tmp/t/avant-snippet6.php')
 SAUVE = os.environ.get('HH_SAUVE', '/tmp/t/avant-bouton.php')
 
 VIEUX_TO = "    $to       = 'maxence@helloharel.com';"
-NEUF_TO = """    /* Mode test : tout part chez Rémi, et seulement chez lui. Repasser la
-       constante à false pour la diffusion décidée au point du 03/10/2026. */
-    if ( ! defined( 'HH_LEADS_TEST' ) ) { define( 'HH_LEADS_TEST', true ); }
+NEUF_TO = """    /* Diffusion décidée au point du 03/10/2026. Passer la constante à true
+       pour renvoyer temporairement tout chez Rémi, et seulement chez lui. */
+    if ( ! defined( 'HH_LEADS_TEST' ) ) { define( 'HH_LEADS_TEST', false ); }
 
     if ( HH_LEADS_TEST ) {
         $to       = 'administration@remi-oravec.fr';
