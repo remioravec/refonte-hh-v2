@@ -117,9 +117,10 @@ add_filter( 'wp_mail', function ( $atts ) {
         if ( preg_match( '/Répondre à ([^<]+)</u', $html, $m ) ) {
             $nom = trim( html_entity_decode( $m[1], ENT_QUOTES, 'UTF-8' ) );
         }
-        $lien = ( defined( 'HH_CRM_LEAD_URL' ) && HH_CRM_LEAD_URL )
-            ? HH_CRM_LEAD_URL
-            : admin_url( 'edit.php?post_type=hh_lead' . ( $nom ? '&s=' . rawurlencode( $nom ) : '' ) );
+        $wp = admin_url( 'edit.php?post_type=hh_lead' . ( $nom ? '&s=' . rawurlencode( $nom ) : '' ) );
+        /* HH_CRM_LEAD_URL = le tableau de bord. Si elle porte %s, le nom y est
+           inséré et le bouton ouvre la fiche ; sinon il ouvre le tableau de
+           bord, et un lien discret mène à la fiche brute dans WordPress. */
 
         $bouton = '<div style="margin:24px 0 0;">'
             . '<a href="' . esc_url( $lien ) . '" style="display:inline-block;background:#0f172a;'
