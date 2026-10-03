@@ -4,15 +4,21 @@ Generates FAQ drawer HTML, JS, CSS and JSON-LD schema for Hello Harel pages.
 Injects the FAQ content into WordPress pages via REST API.
 """
 
+import os
 import json
 import re
 import urllib.request
 import base64
 import time
 
-SITE = "https://www.helloharel.com"
-USER = "administration@remi-oravec.fr"
-PASS = "I9xb KzTA qqPR Altw YquG hNoI"
+# Credentials are read from environment variables, never hardcoded.
+#   export WP_USER="administration@remi-oravec.fr"
+#   export WP_PASS="xxxx xxxx xxxx xxxx xxxx xxxx"   # WP Application Password
+SITE = os.environ.get("WP_SITE", "https://www.helloharel.com")
+USER = os.environ.get("WP_USER")
+PASS = os.environ.get("WP_PASS")
+if not USER or not PASS:
+    raise SystemExit("Missing WP_USER / WP_PASS environment variables.")
 AUTH = base64.b64encode(f"{USER}:{PASS}".encode()).decode()
 
 
