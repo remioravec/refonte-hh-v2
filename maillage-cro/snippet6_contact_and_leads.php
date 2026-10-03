@@ -3,6 +3,13 @@
  * Endpoint REST custom pour le formulaire de contact /contact/.
  * Reçoit un POST JSON, valide, envoie un mail via wp_mail() (SMTP du site).
  */
+/* Tableau de bord des leads. Si l'URL contient %s, l'identifiant ou le nom du
+   demandeur y est inséré et le bouton ouvre la fiche ; sinon elle est utilisée
+   telle quelle et le bouton ouvre le tableau de bord. */
+if ( ! defined( 'HH_CRM_LEAD_URL' ) ) {
+    define( 'HH_CRM_LEAD_URL', 'https://remi-oravec-attribution.lovable.app/' );
+}
+
 add_action('rest_api_init', function() {
     register_rest_route('hh/v1', '/contact', [
         'methods'             => 'POST',
@@ -52,11 +59,22 @@ function hh_handle_contact_form( $request ) {
     }
 
     // ===== Composition du mail =====
-    $to       = 'maxence@helloharel.com';
-    $cc_addrs = [
+    /* Diffusion décidée au point du 03/10/2026. Passer la constante à true
+       pour renvoyer temporairement tout chez Rémi, et seulement chez lui. */
+    if ( ! defined( 'HH_LEADS_TEST' ) ) { define( 'HH_LEADS_TEST', false ); }
+
+    if ( HH_LEADS_TEST ) {
+        $to       = 'administration@remi-oravec.fr';
+    } else {
+        /* Maxence sort de la diffusion, Nicolas la reçoit. Rémi et Timothy
+           restent en copie : si l'adresse de Nicolas est la mauvaise, la
+           demande arrive quand même. */
+        $to       = 'ndecerner@gmail.com';
+    }
+    $cc_addrs = HH_LEADS_TEST ? array() : array(
         'administration@remi-oravec.fr',
         'timothy.jollivet@harelsystems.com',
-    ];
+    );
 
     $subject = sprintf(
         'Demande de demo - %s%s',
@@ -113,8 +131,93 @@ function hh_handle_contact_form( $request ) {
         return new WP_REST_Response( [ 'success' => false, 'message' => 'Envoi echoue cote serveur' ], 500 );
     }
 
+    /* Accusé de réception au demandeur. Point du 03/10/2026.
+       DÉSACTIVÉ tant que le domaine expéditeur n'a pas SPF, DKIM et DMARC, et
+       tant que helloharel.com publie deux SPF en conflit : sans eux, ces mails
+       partent en spam et dégradent la réputation qui fait arriver la
+       notification. L'échec est volontairement ignoré : une demande ne peut
+       pas être perdue parce que le mail de courtoisie n'est pas parti. */
+    if ( defined( 'HH_ACCUSE_RECEPTION' ) && HH_ACCUSE_RECEPTION ) {
+        $ar_corps = implode( "\n", array(
+            'Bonjour ' . $name . ',',
+            '',
+            'Nous avons bien reçu votre demande de démonstration pour ' . $company . '.',
+            'Un membre de l\'équipe vous rappelle pour convenir d\'un créneau.',
+            '',
+            'Si vous souhaitez ajouter une précision, répondez simplement à ce message.',
+            '',
+            'Bien à vous,',
+            'L\'équipe Hello Harel',
+            'https://www.helloharel.com/',
+        ) );
+        @wp_mail( $email, 'Votre demande de démonstration — Hello Harel', $ar_corps, array(
+            'From: Hello Harel <' . $from_email . '>',
+            'Reply-To: ' . $to,
+            'Content-Type: text/plain; charset=UTF-8',
+        ) );
+    }
+
     return new WP_REST_Response( [ 'success' => true, 'message' => 'Mail envoye' ], 200 );
 }
+
+/**
+ * Bouton « tableau de bord » ajouté au gabarit de hh-mailer.
+ *
+ * Priorité 100 : hh-mailer met en page en 99, on intervient juste après, sur
+ * son HTML. Le plugin n'est pas touché — un seul gabarit, un seul endroit où
+ * la mise en page se décide.
+ *
+ * L'ancre est le bloc du bouton « Répondre à » ; le nôtre se place juste
+ * avant. Ancre absente, on ne touche à rien.
+ */
+add_filter( 'wp_mail', function ( $atts ) {
+    try {
+        $sujet = isset( $atts['subject'] ) ? (string) $atts['subject'] : '';
+        if ( false === stripos( $sujet, 'demande de demo' ) ) { return $atts; }
+        $html = isset( $atts['message'] ) ? (string) $atts['message'] : '';
+        $ancre = '<div style="margin:26px 0 0;">';
+        if ( false === strpos( $html, $ancre ) ) { return $atts; }
+
+        /* Le nom, relu dans le bouton du gabarit, sert au filtre WordPress.
+           L'e-mail, relu dans le premier mailto:, est l'identifiant du lead
+           dans le tableau de bord d'attribution. */
+        $nom = '';
+        if ( preg_match( '/Répondre à ([^<]+)</u', $html, $m ) ) {
+            $nom = trim( html_entity_decode( $m[1], ENT_QUOTES, 'UTF-8' ) );
+        }
+        $mail_lead = '';
+        if ( preg_match( '/mailto:([^"\']+)/', $html, $m ) ) {
+            $mail_lead = trim( html_entity_decode( $m[1], ENT_QUOTES, 'UTF-8' ) );
+        }
+        $wp = admin_url( 'edit.php?post_type=hh_lead' . ( $nom ? '&s=' . rawurlencode( $nom ) : '' ) );
+
+        if ( defined( 'HH_CRM_LEAD_URL' ) && HH_CRM_LEAD_URL ) {
+            $motif   = (string) HH_CRM_LEAD_URL;
+            $cible   = ( false !== strpos( $motif, '%s' ) && $mail_lead )
+                ? sprintf( $motif, rawurlencode( $mail_lead ) )
+                : $motif;
+            $libelle = ( false !== strpos( $motif, '%s' ) && $mail_lead )
+                ? 'Ouvrir la demande dans le tableau de bord'
+                : 'Ouvrir le tableau de bord';
+        } else {
+            $cible   = $wp;
+            $libelle = 'Ouvrir la demande dans le tableau de bord';
+        }
+
+        $bouton = '<div style="margin:24px 0 0;">'
+            . '<a href="' . esc_url( $cible ) . '" style="display:inline-block;background:#0f172a;'
+            . 'color:#ffffff;text-decoration:none;font-weight:700;font-size:15px;'
+            . 'padding:13px 26px;border-radius:999px;">' . esc_html( $libelle ) . '</a>'
+            . ( $cible === $wp ? '' :
+                '<div style="margin-top:9px;"><a href="' . esc_url( $wp ) . '" '
+                . 'style="color:#94a3b8;text-decoration:none;font-size:12px;">'
+                . 'Voir la fiche brute dans WordPress</a></div>' )
+            . '</div>';
+
+        $atts['message'] = substr_replace( $html, $bouton, strpos( $html, $ancre ), 0 );
+    } catch ( \Throwable $e ) { /* jamais bloquer un envoi */ }
+    return $atts;
+}, 100 );
 
 
 /* ===================================================================
