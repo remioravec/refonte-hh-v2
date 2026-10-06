@@ -1,0 +1,62 @@
+{
+ "hh-erp-tableau-de-bord-vente": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-tableau-de-bord-vente.webp",
+  "alt": "Tableau de bord Vente de Hello Harel : top des clients et produits les plus vendus",
+  "legende": "Vente — devis, commandes, préparations, livraisons",
+  "id": 11572,
+  "taille": [
+   1245,
+   438
+  ]
+ },
+ "hh-erp-catalogue-tarifs-marge": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-catalogue-tarifs-marge.webp",
+  "alt": "Catalogue tarifaire Hello Harel : 1 576 tarifs définis, marge globale suivie par ligne",
+  "legende": "Tarifs — 1 576 tarifs définis, marge suivie par ligne",
+  "id": 11573,
+  "taille": [
+   1207,
+   611
+  ]
+ },
+ "hh-erp-stock-fefo-peremption": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-stock-fefo-peremption.webp",
+  "alt": "Tableau de bord Stock de Hello Harel : stratégies de prélèvement FIFO et FEFO, éléments à retirer avec date de péremption",
+  "legende": "Stock — stratégies FIFO / FEFO et dates de péremption",
+  "id": 11574,
+  "taille": [
+   1189,
+   379
+  ]
+ },
+ "hh-erp-comptabilite-factures-attente": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-comptabilite-factures-attente.webp",
+  "alt": "Tableau de bord Comptabilité de Hello Harel : chiffre d'affaires et factures de vente en attente",
+  "legende": "Comptabilité — encours, balance âgée, suivi des factures",
+  "id": 11575,
+  "taille": [
+   1192,
+   525
+  ]
+ },
+ "hh-erp-quantite-manquante-poids": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-quantite-manquante-poids.webp",
+  "alt": "Écran Quantité manquante de Hello Harel : 10 kg commandés, 7 kg préparés, 3 kg manquants",
+  "legende": "Écart entre le commandé et le préparé, au kilo",
+  "id": 11576,
+  "taille": [
+   881,
+   323
+  ]
+ },
+ "hh-erp-tableau-de-bord-achats": {
+  "url": "https://www.helloharel.com/wp-content/uploads/2026/09/hh-erp-tableau-de-bord-achats.webp",
+  "alt": "Tableau de bord Achats de Hello Harel : top des fournisseurs et derniers arrivages validés",
+  "legende": "Achats — fournisseurs, arrivages, approvisionnements",
+  "id": 11577,
+  "taille": [
+   1188,
+   439
+  ]
+ }
+}

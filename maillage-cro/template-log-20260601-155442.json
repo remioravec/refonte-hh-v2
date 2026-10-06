@@ -1,0 +1,30 @@
+{
+ "mode": "dry",
+ "items": [
+  {
+   "slug": "migration-erp-agroalimentaire",
+   "status": "dry",
+   "h2": 6
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "dry",
+   "h2": 10
+  },
+  {
+   "slug": "roi-erp",
+   "status": "dry",
+   "h2": 8
+  },
+  {
+   "slug": "cout-de-revient",
+   "status": "dry",
+   "h2": 8
+  },
+  {
+   "slug": "fifo-fefo-lifo",
+   "status": "dry",
+   "h2": 7
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporting perf — Hello Harel · 10 juillet 2026</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bleu:#00B1F5;--bleu-fonce:#0090c8;--ink:#0f172a;--gris:#334155;--gris-clair:#64748b;--bord:#e2e8f0;--bg:#f8fafc;
+        --vert:#16a34a;--rouge:#dc2626;--orange:#d97706}
+  *{box-sizing:border-box} body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .top{background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu));color:#fff;padding:18px 26px;display:flex;align-items:center;gap:14px}
+  .top img{height:28px} .top b{font-size:1.1rem} .top span{color:rgba(255,255,255,.85);font-size:.82rem}
+  .wrap{max-width:900px;margin:0 auto;padding:22px 18px 50px}
+  h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris-clair);margin:26px 0 10px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:14px}
+  .kpi .n{font-size:1.7rem;font-weight:800} .kpi .l{font-size:.72rem;color:var(--gris-clair);text-transform:uppercase;letter-spacing:.03em}
+  .kpi .t{font-size:.8rem;font-weight:700;margin-top:2px}
+  .down{color:var(--rouge)} .up{color:var(--vert)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--bord);border-radius:16px;padding:18px}
+  .card h3{margin:0 0 4px;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+  .badge{font-size:.7rem;font-weight:800;border-radius:999px;padding:3px 10px;color:#fff}
+  .b-ok{background:var(--vert)} .b-wait{background:var(--orange)} .b-todo{background:#64748b} .b-alert{background:var(--rouge)}
+  .card p{margin:8px 0 0;font-size:.9rem;color:var(--gris)}
+  .card .say{margin-top:8px;font-size:.86rem;color:var(--bleu-fonce);font-weight:600}
+  ul{margin:8px 0 0;padding-left:0;list-style:none;font-size:.88rem;color:var(--gris)}
+  li{padding:3px 0} li b{color:var(--ink)}
+  .foot{margin-top:22px;font-size:.75rem;color:var(--gris-clair);text-align:center}
+  .roi{background:#f0faff;border:1px solid #bae6fd;border-radius:16px;padding:18px}
+  .roi h3{color:#0c4a6e} .roi p{color:#0c4a6e}
+</style></head>
+<body>
+<div class="top"><img src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <div><b>Reporting perf SEO</b><br><span>10 juillet 2026 · données Google Search Console (28 j vs 28 j précédents)</span></div></div>
+
+<div class="wrap">
+
+  <h2>Performance globale</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="n">1 295</div><div class="l">Clics (28 j)</div><div class="t down">▼ −27 %</div></div>
+    <div class="kpi"><div class="n">83 k</div><div class="l">Impressions</div><div class="t down">▼ −28 %</div></div>
+    <div class="kpi"><div class="n">9,6</div><div class="l">Position moy.</div><div class="t down">▼ 8,8 → 9,6</div></div>
+    <div class="kpi"><div class="n">1,6 %</div><div class="l">CTR moyen</div><div class="t">≈ stable</div></div>
+  </div>
+  <p style="font-size:.85rem;color:var(--gris);margin-top:8px">Baisse à surveiller : mélange de <b>saisonnalité (été)</b> + un <b>pic en juin</b> dans la période de référence. Pas de chute brutale = pas de pénalité.</p>
+
+  <h2>Le point ROI (lecture BOFU)</h2>
+  <div class="roi">
+    <h3>💡 Le trafic monte, mais pas là où il rapporte</h3>
+    <p>Le n°1 est un article <b>informationnel</b> — <b>/cout-prix-au-kilo</b> : 473 clics (pos 5,4). Fort volume, <b>faible intention d'achat</b>.<br>
+    Les pages <b>« money » (/agroalimentaire/ métiers)</b> captent des impressions mais <b>peu de clics</b> (hub : 3 924 impr, pos 14 ; maraîcher pos 22).<br>
+    <b>→ Levier ROI :</b> faire ranker les pages métier (BOFU) et convertir le trafic blog vers elles. Le maillage blog→money est déjà posé.</p>
+  </div>
+
+  <h2>Indexation &amp; Cohérence technique</h2>
+  <div class="grid">
+    <div class="card"><h3>Indexation <span class="badge b-wait">EN COURS</span></h3>
+      <p><b>0 / 6</b> nouvelles pages métier indexées (« Discovered, not indexed »).</p>
+      <div class="say">→ Cause = contenu dupliqué. Corrigé le 10/07 (différenciation + sitemap resoumis). Re-check auto le 16/07.</div>
+    </div>
+    <div class="card"><h3>Maillage interne <span class="badge b-ok">OK</span></h3>
+      <p>In-degree <b>12/12</b> sur toutes les pages métier. 0 orpheline. Hub → 12/12.</p>
+      <div class="say">→ Rien à faire, cohérent.</div>
+    </div>
+    <div class="card"><h3>Cannibalisation <span class="badge b-wait">PARTIEL</span></h3>
+      <p>17 % des requêtes touchées. Liens de consolidation posés (prix/coûts, variation de stock).</p>
+      <div class="say">→ Reste : valider fusions/canonicals (ta décision).</div>
+    </div>
+    <div class="card"><h3>Contenu <span class="badge b-ok">À JOUR</span></h3>
+      <p>6 pages métier publiées + différenciées · 3 MàJ (maraîcher/charcutier/plats).</p>
+      <div class="say">→ Reste : titres Rank Math à affiner (hors API).</div>
+    </div>
+  </div>
+
+  <h2>Roadmap — avancement de la semaine</h2>
+  <div class="card">
+    <ul>
+      <li>🟢 <b>Maillage</b> — complet &amp; vérifié</li>
+      <li>🟢 <b>6 pages métier</b> — créées, différenciées, publiées</li>
+      <li>🟢 <b>3 mises à jour</b> (fruits&amp;légumes P1, charcutier P2, plats P3) — faites, mots-clés GSC intégrés</li>
+      <li>🟠 <b>Cannibalisation</b> — liens posés ; fusions à valider</li>
+      <li>🕒 <b>Indexation</b> — débloquée, recrawl en attente (check 16/07)</li>
+      <li>⏸️ <b>Outbound Lemlist</b> — base 581 emails prête, prêt à lancer</li>
+    </ul>
+  </div>
+
+  <div class="foot">Hello Harel — reporting généré depuis la data GSC · prochaine mesure d'impact après recrawl (≈ 16-20 juillet)</div>
+</div>
+</body></html>
