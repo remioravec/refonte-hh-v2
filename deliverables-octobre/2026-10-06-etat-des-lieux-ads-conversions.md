@@ -216,3 +216,79 @@ du budget de « Négoce ».
 69 % le sont sur le classement. Mettre plus d'argent aujourd'hui, c'est acheter
 plus de clics chez les partenaires sur `logiciels commerciaux`. Le budget est le
 dernier levier à toucher, pas le premier.
+
+---
+
+# Addendum du 6 octobre, 16h45 — deux vérifications
+
+## 1. L'envoi de mail fonctionne — vérifié de bout en bout
+
+Test réel : formulaire de `/contact/` rempli et soumis dans un navigateur
+Chromium sur le site en production, diffusion basculée sur Rémi seul le temps
+du test, puis remise en production.
+
+| Étape | Résultat |
+|---|---|
+| `POST /wp-json/hh/v1/lead` | **200** `{"ok":true}` — fiche créée |
+| `POST /wp-json/hh/v1/contact` | **200** `{"success":true,"message":"Mail envoye"}` |
+| Redirection | `/contact/?envoye=1` — chemin de succès |
+| Fiche en base | #13039 créée, puis supprimée après contrôle |
+| **Mail reçu** | **oui**, à 16h38, mis en page par le plugin, bouton tableau de bord présent |
+
+La chaîne est saine. Diffusion remise en production : destinataire
+`ndecerner@gmail.com`, Rémi et Timothy en copie.
+
+## 2. Correction de ce que j'ai écrit plus haut
+
+J'ai écrit que « 47 mots-clés sur 60 sont en large » et que le fichier
+expression/exact n'avait jamais été importé. **C'est faux, et la nuance change
+la correction à faire.**
+
+Mon chiffre venait du rapport de performance, qui ne montre que les mots-clés
+ayant servi sur la période. En lisant la structure complète de la campagne :
+
+| Type | Mots-clés actifs |
+|---|---|
+| Large | **56** |
+| Exact | 45 |
+| Expression | 12 |
+
+**Les versions exactes existent déjà.** Elles ont bien été créées. Ce qui n'a
+pas été fait, c'est de **mettre les larges en pause**. Tant qu'un mot-clé large
+coexiste avec son jumeau exact, c'est le large qui rafle les impressions.
+
+Vérification faite : **les 56 larges ont tous leur jumeau exact ou expression
+dans le même groupe d'annonces. Zéro orphelin.** Les mettre en pause ne retire
+donc aucune requête de la couverture — cela retire seulement le comportement
+d'élargissement.
+
+### Le fichier
+
+`2026-10-06-ads-mettre-en-pause-les-larges.csv` — 56 lignes, format Google Ads
+Editor : `Campaign, Ad Group, Keyword, Criterion Type, Status`.
+
+Dans Google Ads Editor : Compte → Importer → Coller le texte, puis vérifier
+l'aperçu avant de publier. Aucune création, que des mises en pause.
+
+Je peux aussi le faire directement par l'API — changer un statut est une
+opération permise, contrairement au type de correspondance. Un mot de ta part
+suffit.
+
+## 3. Ce qui reste inexpliqué
+
+Le lead Yannick Pederiva de 14h27 a créé **deux fiches** et **aucun mail**, alors
+que la chaîne marche. Deux pistes, dans l'ordre de vraisemblance :
+
+1. **Le piège à robots s'appelle `website`.** Le serveur renvoie un faux succès
+   et n'envoie rien dès que ce champ est rempli. Or `website` est un nom de
+   champ que les gestionnaires de mots de passe et les navigateurs remplissent
+   automatiquement. Un prospect réel peut donc être avalé en silence.
+   **Correction proposée : renommer le champ en quelque chose qu'aucun
+   remplissage automatique ne connaît.**
+2. **La limite d'un envoi par IP toutes les 30 secondes.** Deux fiches à la même
+   minute : le second envoi est refusé en 429. Mais cela n'explique pas
+   l'absence du premier mail.
+
+Pour trancher il faut un **journal d'envoi côté serveur** : date, destinataire,
+retour de `wp_mail`, et le détail du refus quand il y en a un. Sans ce journal
+on restera sur des hypothèses. C'est le prochain ticket que je propose.
