@@ -2730,5 +2730,16 @@
       ]
     },
     "unversioned": []
-  }
+  },
+  "renders": {
+    "latest": {
+      "id": "24e45b0b-edae-481b-88d6-17427da62a5f",
+      "completedAt": 1792163397578,
+      "output": "/home/user/refonte-hh-v2/videos/hello-harel-promo/renders/hello-harel-journee-type.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
 }
