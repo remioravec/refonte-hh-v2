@@ -1,0 +1,641 @@
+[
+ {
+  "url": "https://www.helloharel.com/blog/agreage-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 8,
+  "js": 1,
+  "cibles": 13,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alerte-date-peremption/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 11,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alerte-stock-securite/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 18,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alternative-akanea-erp/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 14,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alternative-archipelia/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alternative-cegid/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 10,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alternative-sage-erp/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 13,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/alternative-vif-erp/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/bon-de-commande-traiteur/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/bon-de-commande/",
+  "code": 200,
+  "href": 0,
+  "jump": 54,
+  "js": 1,
+  "cibles": 27,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/bon-de-livraison/",
+  "code": 200,
+  "href": 0,
+  "jump": 16,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 17,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-du-cout-achat/",
+  "code": 200,
+  "href": 0,
+  "jump": 20,
+  "js": 1,
+  "cibles": 10,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-du-prix-moyen/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 6,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-stock-de-securite/",
+  "code": 200,
+  "href": 0,
+  "jump": 36,
+  "js": 1,
+  "cibles": 18,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-stock-moyen/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calcul-variations-de-stock/",
+  "code": 200,
+  "href": 0,
+  "jump": 44,
+  "js": 1,
+  "cibles": 22,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/calculer-le-prix-de-revient-en-boulangerie/",
+  "code": 200,
+  "href": 0,
+  "jump": 21,
+  "js": 1,
+  "cibles": 7,
+  "som": 3
+ },
+ {
+  "url": "https://www.helloharel.com/blog/conditionnement-alimentaire-erp/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 13,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/conformite-haccp/",
+  "code": 200,
+  "href": 0,
+  "jump": 18,
+  "js": 1,
+  "cibles": 23,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/contraintes-reglementations-logiciel-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 10,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/cout-marginal/",
+  "code": 200,
+  "href": 0,
+  "jump": 16,
+  "js": 1,
+  "cibles": 13,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/cout-prix-au-kilo/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 8,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/couts-de-production/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 12,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/cuisine-centrale/",
+  "code": 200,
+  "href": 0,
+  "jump": 18,
+  "js": 1,
+  "cibles": 18,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/difference-prix-dachat-et-prix-de-revient/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 16,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/dlc-ddm-dluo/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 5,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/enregistrement-comptable-variation-de-stock/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 6,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-as400/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 9,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-cloud-saas-vs-on-premise/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 6,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-conformite-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 6,
+  "js": 1,
+  "cibles": 3,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-decoupe-viande-poisson/",
+  "code": 200,
+  "href": 0,
+  "jump": 6,
+  "js": 1,
+  "cibles": 3,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-grossiste-distributeur/",
+  "code": 200,
+  "href": 0,
+  "jump": 18,
+  "js": 1,
+  "cibles": 6,
+  "som": 3
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-pme/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 16,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-saas-cloud/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 19,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-saas/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-tracabilite-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 17,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/erp-viande-volaille/",
+  "code": 200,
+  "href": 0,
+  "jump": 8,
+  "js": 1,
+  "cibles": 6,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/facture-exacompta/",
+  "code": 200,
+  "href": 0,
+  "jump": 22,
+  "js": 1,
+  "cibles": 21,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/facture-traiteur/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 12,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/fifo-fefo-lifo/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/gestion-automatisee-des-variations-de-stock/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 14,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/gestion-des-inventaires/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 22,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/gestion-stock-multi-entrepots/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 14,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/integrateur-erp-lyon/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 8,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/integrateur-erp-paris/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 6,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/kpi-qualite-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 18,
+  "js": 1,
+  "cibles": 16,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises/",
+  "code": 200,
+  "href": 0,
+  "jump": 8,
+  "js": 1,
+  "cibles": 4,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/maitriser-la-gestion-des-stocks/",
+  "code": 200,
+  "href": 0,
+  "jump": 70,
+  "js": 1,
+  "cibles": 35,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/meilleurs-erp-boulangerie/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 19,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/meilleurs-erp-gestion-approvisionnements/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 11,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/meilleurs-erp-import-export/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 13,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/meilleurs-erp-maraichers-fruits-legumes/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 16,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/migration-erp-agroalimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 10,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/min/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 18,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/numeros-de-lot/",
+  "code": 200,
+  "href": 0,
+  "jump": 58,
+  "js": 1,
+  "cibles": 36,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/opc-ua/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 20,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/optimisation-entrepot/",
+  "code": 200,
+  "href": 0,
+  "jump": 52,
+  "js": 1,
+  "cibles": 26,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/ordonnancement-planification/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 20,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/ordre-de-fabrication/",
+  "code": 200,
+  "href": 0,
+  "jump": 26,
+  "js": 1,
+  "cibles": 15,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/partenariat-toncarton/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/plan-de-controle-alimentaire/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 7,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/prix-dachat-definition/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 14,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/processus-agroalimentaire-guide/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 14,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/reapprovisionnement-stocks/",
+  "code": 200,
+  "href": 0,
+  "jump": 12,
+  "js": 1,
+  "cibles": 19,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/relance-client/",
+  "code": 200,
+  "href": 0,
+  "jump": 28,
+  "js": 1,
+  "cibles": 31,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/roi-erp/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 11,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/tracabilite-de-la-viande/",
+  "code": 200,
+  "href": 0,
+  "jump": 8,
+  "js": 1,
+  "cibles": 12,
+  "som": 2
+ },
+ {
+  "url": "https://www.helloharel.com/blog/variation-de-stock-positif-negatif/",
+  "code": 200,
+  "href": 0,
+  "jump": 14,
+  "js": 1,
+  "cibles": 18,
+  "som": 2
+ }
+]

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit code — 177 pages · Hello Harel</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="hh-brand.css" rel="stylesheet">
+<style>
+  h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris-clair);margin:28px 0 12px}
+  .lead{font-size:1rem;color:var(--gris);max-width:800px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  .kpi{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:15px}
+  .kpi .n{font-size:1.7rem;font-weight:800;line-height:1}.kpi .l{font-size:.75rem;color:var(--gris-clair);margin-top:4px}
+  .kpi.green .n{color:#16a34a}.kpi.red .n{color:#dc2626}
+  .find{border:1px solid var(--bord);border-left-width:5px;border-radius:12px;padding:14px 17px;margin:0 0 11px;background:#fff}
+  .find.done{border-left-color:#16a34a}.find.p1{border-left-color:#dc2626}.find.p2{border-left-color:#d97706}.find.p3{border-left-color:#64748b}
+  .find h3{margin:0 0 5px;font-size:1.02rem}.find p{margin:.3rem 0 0;color:var(--gris);font-size:.93rem;line-height:1.55}
+  .tag{font-weight:800;border-radius:7px;padding:2px 8px;font-size:.7rem;color:#fff}
+  .t-done{background:#16a34a}.t-p1{background:#dc2626}.t-p2{background:#d97706}.t-p3{background:#64748b}
+  code{background:#f1f5f9;padding:1px 5px;border-radius:5px;font-size:.86em}
+</style></head>
+<body>
+<div class="hh-top">
+  <img class="hh-logo" src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <div><div class="hh-title">Audit code — 177 pages</div>
+    <div class="hh-sub">Scan statique de tout le site · JS, IDs, contenu mixte, balises, images, H1 · 30 juillet 2026</div></div>
+</div>
+<div class="hh-wrap">
+
+  <p class="lead">Scan automatisé du code des <b>177 pages &amp; articles publiés</b>. Bonne nouvelle : la structure est
+  <b>globalement saine</b> — <b>0 contenu mixte (http/https), 0 ID dupliqué, 0 balise mal fermée, 0 image sans source</b>.
+  Les vrais problèmes sont concentrés sur <b>11 pages</b>, dont un bug important sur la page métier n°1.</p>
+
+  <div class="grid">
+    <div class="kpi"><div class="n">177</div><div class="l">pages scannées</div></div>
+    <div class="kpi green"><div class="n">166</div><div class="l">sans problème de code</div></div>
+    <div class="kpi red"><div class="n">11</div><div class="l">pages avec un souci</div></div>
+    <div class="kpi green"><div class="n">4</div><div class="l">corrigées à l'instant</div></div>
+  </div>
+
+  <h2>🔴 Corrigé — bug critique sur la page métier n°1</h2>
+  <div class="find done"><h3><span class="tag t-done">CORRIGÉ</span> &nbsp;<code>/agroalimentaire/</code> — erreur JS au chargement</h3>
+    <p>Un <code>&lt;script&gt;</code> orphelin faisait <code>getElementById('faqDrawerOverlay').addEventListener(...)</code>
+    au chargement alors que l'élément n'existe plus → <b>TypeError qui stoppait le reste du JavaScript</b> (même classe de bug
+    que la page qui avait « sauté »). <b>Script supprimé.</b></p>
+    <p>Le <b>widget diagnostic</b> de cette page a aussi son JS qui appelle des éléments manquants (<code>diagRing</code>,
+    <code>diagScoreNum</code>, <code>diagEmpty</code>…) : <b>JS sécurisé</b> (plus d'erreur au clic). ⚠️ Sa « boîte de résultat »
+    HTML a été perdue → à <b>reconstruire</b> pour que le diagnostic réaffiche un score (fix testé à faire ensuite).</p></div>
+
+  <h2>🟠 Corrigé — titres multiples (SEO)</h2>
+  <div class="find done"><h3><span class="tag t-done">CORRIGÉ</span> &nbsp;Plusieurs <code>&lt;h1&gt;</code> par page</h3>
+    <p>3 articles avaient plusieurs H1 (dont <code>/blog/calcul-du-prix-moyen/</code> avec <b>5 H1</b>). Un seul H1 par page est
+    la règle. <b>H1 en trop rétrogradés en H2</b> sur relance-client, calcul-variations-de-stock, calcul-du-prix-moyen.
+    Reste <code>/comparatifs/</code> (2ᵉ H1 hors contenu éditable — à voir côté template).</p></div>
+
+  <h2>🟡 À traiter — liens morts</h2>
+  <div class="find p3"><h3><span class="tag t-p3">P3</span> &nbsp;<code>href="#"</code> / liens vides</h3>
+    <p>6 articles ont des liens qui ne mènent nulle part (<code>href="#"</code>) : surtout <code>/blog/min/</code> (14),
+    <code>/blog/meilleurs-erp-boulangerie/</code> (8), <code>/blog/agreage-agroalimentaire/</code> (4). Ce ne sont pas des
+    crashs, mais des <b>contrôles qui ne font rien au clic</b> (souvent d'anciens sommaires). À nettoyer, et
+    <code>/blog/min/</code> (slug suspect, 22 k impressions / 0,2 % CTR) est <b>à investiguer / rediriger</b>.</p></div>
+
+  <h2>✅ Déjà nettoyé (passe site-wide précédente)</h2>
+  <div class="find done"><h3><span class="tag t-done">FAIT</span> &nbsp;Sur les 172 pages</h3>
+    <p>Rognage des citations (glyphe guillemet superposé), espacement des paragraphes/images/infographies, émojis-icônes,
+    tiroir FAQ &amp; bannière cookies sur mobile. Vérifié : <b>vitesse intacte</b> (article corrigé à <b>99/100</b> Lighthouse),
+    <b>CLS ~0</b>, <b>SEO 100</b>.</p></div>
+
+  <h2>Ce qui est sain (aucune action)</h2>
+  <div class="hh-card"><p style="margin:0;color:var(--gris)">
+    <b>0</b> contenu mixte http/https · <b>0</b> ID HTML dupliqué · <b>0</b> section mal fermée · <b>0</b> image sans <code>src</code> ·
+    <b>0</b> double-slash d'URL. 166 pages sur 177 passent le scan sans le moindre souci de code.</p></div>
+
+  <div class="hh-foot">Hello Harel — audit code (scan statique 177 pages) · 30/07/2026</div>
+</div>
+</body></html>

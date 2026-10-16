@@ -1,0 +1,24 @@
+{
+ "mode": "live",
+ "count": 2,
+ "items": [
+  {
+   "slug": "alternative-cegid",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10948
+  },
+  {
+   "slug": "roi-erp",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12469
+  }
+ ]
+}

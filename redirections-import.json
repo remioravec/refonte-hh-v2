@@ -28,7 +28,8 @@
     { "source": "/erp-qualite-agroalimentaire/", "target": "/blog/kpi-qualite-agroalimentaire/", "code": 301 },
     { "source": "/erp-agro-alimentaire/production/", "target": "/fonctionnalites/fabrication/", "code": 301 },
     { "source": "/erp-agro-alimentaire/tracabilite/", "target": "/blog/erp-tracabilite-agroalimentaire/", "code": 301 },
-    { "source": "/logiciel-maree-mareyeur/", "target": "/blog/logiciel-maree-mareyeur/", "code": 301 },
+    { "source": "/logiciel-maree-mareyeur/", "target": "/blog/logiciel-grossiste-alimentaire/", "code": 301 },
+    { "source": "/blog/logiciel-maree-mareyeur/", "target": "/blog/logiciel-grossiste-alimentaire/", "code": 301 },
     { "source": "/negoce/boissons/", "target": "/negoce/", "code": 301 }
   ]
 }
