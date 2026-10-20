@@ -112,3 +112,67 @@ rien changé. À faire si l'arbitrage va dans l'autre sens.
 
 Les trois lignes de roadmap restent au 26/10 ; seules leur nature et leur URL changent.
 Rien n'est écrit sur le site tant que l'arbitrage n'est pas rendu.
+
+---
+
+## Ce qui a été posé, le 20/10
+
+Les trois contenus sont en ligne, dans leur nature corrigée. Vérifié sur le rendu public.
+
+### `/agroalimentaire/` — mise à jour `erp agroalimentaire`
+
+- **« +150 Clients » devient « +200 »**, à trois endroits. L'AI Overview de
+  « erp agroalimentaire » est en position absolue 1 et recopiait fidèlement ce que la page
+  écrivait. Ce n'est pas l'AIO qui se trompait, c'est la page qui était périmée.
+- **Une carte « 49 € HT / mois / utilisateur » entre dans le bandeau de chiffres.** L'AIO
+  annonce « dès 29 €/mois », un prix qui n'existe plus ; il le tirait d'ailleurs, faute de
+  source fraîche ici.
+- **Le bloc « Conformité HACCP » gagne deux points citables** : la traçabilité ascendante
+  et descendante telle que l'exige l'article 18 du règlement CE 178/2002, et les relevés
+  horodatés face à un audit IFS ou BRC. C'est le volet qualité, posé sur la page qui tient
+  déjà la position 15 sur ce champ plutôt que sur une page neuve.
+
+### `/fonctionnalites/tracabilite-alimentaire/` — mise à jour
+
+- **« Plus de 100 clients » devient « Plus de 200 ».** Le site annonçait **trois chiffres
+  différents** : 200 sur l'accueil, 150 sur `/agroalimentaire/`, 100 ici. C'est exactement
+  ce qui nourrit les erreurs d'un AI Overview.
+- **Les six questions gagnent leur balisage FAQPage.** Elles existaient en `<details>` sans
+  aucune donnée structurée : lisibles par un humain, invisibles pour un moteur. La page
+  servait trois blocs JSON-LD, elle en sert quatre.
+- **Un bloc « Un rappel de lot, étape par étape » entre avant la FAQ.** C'est la différence
+  que la fille doit faire avec la mère : la mère vend le secteur, la fille vend la
+  procédure — cinq étapes, du lot suspect à la liste des clients à prévenir.
+
+### `/blog/conformite-haccp/` — volet maillage
+
+L'article était déjà bien équipé — FAQPage posé, chiffre client juste, trois liens vers
+`/agroalimentaire/`. Mais **aucun lien vers la page traçabilité**, alors que c'est le cœur
+du sujet. Un lien contextuel a été posé, ancre exact match
+« logiciel de traçabilité alimentaire », dans la phrase qui parlait déjà de traçabilité
+ascendante et descendante. Un article en position 24,2 qui renvoie vers une page en 35,6.
+
+### Balisage
+
+| Page | Title | Description |
+|---|---|---|
+| `/agroalimentaire/` | 468 px | 937 px |
+| `/fonctionnalites/tracabilite-alimentaire/` | 489 px | 944 px |
+
+Les deux dans les bornes. **Les deux titles sont épinglés dans l'extrait 12** : le réglage
+« Capitaliser les titles » de Rank Math est toujours actif et servait
+« Coût **De** Revient » et « Lots, DLC **Et** Rappels ».
+
+### Roadmap
+
+Les trois lignes du 26/10 portent leur nature réelle et sont passées à TERMINE, en vert.
+La ligne `erp agroalimentaire` du 02/11 passe aussi à TERMINE, faite en avance.
+
+## Deux choses signalées, non corrigées
+
+**`/agroalimentaire/` promet « ROI moyen : 150 à 300% sur 3 ans ».** C'est une promesse
+chiffrée de performance sans source. Je ne l'ai pas retirée — ce n'était pas dans le
+mandat — mais elle devrait l'être ou être sourcée.
+
+**Le réglage « Capitaliser les titles » reste à décocher.** Chaque page refondue doit être
+épinglée à la main pour le contourner ; on en est à 31.
