@@ -1,0 +1,5 @@
+# Local dry-run artifacts (regenerable); keep the repo lean.
+preview-apply/
+
+__pycache__/
+*.pyc

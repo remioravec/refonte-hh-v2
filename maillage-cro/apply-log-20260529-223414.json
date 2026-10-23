@@ -1,0 +1,897 @@
+{
+ "mode": "live",
+ "count": 99,
+ "items": [
+  {
+   "slug": "tracabilite-viande-logiciel",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 2,
+   "delta": 5963
+  },
+  {
+   "slug": "calcul-freinte-charcuterie-logiciel",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6672
+  },
+  {
+   "slug": "gestion-decoupe-viande-logiciel",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 2,
+   "delta": 6005
+  },
+  {
+   "slug": "logiciel-gestion-calibre-fruits-legumes",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 2,
+   "delta": 5892
+  },
+  {
+   "slug": "logiciel-prix-du-jour-fruits-legumes",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 3,
+   "lateral": 3,
+   "delta": 6163
+  },
+  {
+   "slug": "logiciel-tracabilite-dlc-traiteur",
+   "status": "wrote",
+   "tool": "fefo",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6473
+  },
+  {
+   "slug": "logiciel-calcul-cout-de-revient-traiteur",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 0,
+   "up": 3,
+   "lateral": 2,
+   "delta": 6683
+  },
+  {
+   "slug": "logiciel-commande-grande-surface-traiteur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6180
+  },
+  {
+   "slug": "logiciel-gestion-recette-multi-niveaux-traiteur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 3,
+   "delta": 6132
+  },
+  {
+   "slug": "gestion-stock-multi-entrepots",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 0,
+   "delta": 11078
+  },
+  {
+   "slug": "alternatives-copilote-traiteur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4908
+  },
+  {
+   "slug": "alternatives-silog-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4894
+  },
+  {
+   "slug": "alternatives-divalto-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 1,
+   "delta": 5753
+  },
+  {
+   "slug": "alternatives-sage-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 0,
+   "delta": 5250
+  },
+  {
+   "slug": "hello-harel-vs-sage",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 1,
+   "delta": 5712
+  },
+  {
+   "slug": "hello-harel-vs-odoo",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 1,
+   "lateral": 2,
+   "delta": 5832
+  },
+  {
+   "slug": "hello-harel-vs-silog",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 1,
+   "delta": 5367
+  },
+  {
+   "slug": "hello-harel-vs-divalto",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 3,
+   "delta": 5622
+  },
+  {
+   "slug": "remplacer-excel-gestion-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4889
+  },
+  {
+   "slug": "alternatives-cegid-distribution-alimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4897
+  },
+  {
+   "slug": "alternatives-odoo-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4899
+  },
+  {
+   "slug": "calcul-cout-de-revient-logiciel",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 1,
+   "delta": 5991
+  },
+  {
+   "slug": "logiciel-grossiste-alimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 0,
+   "delta": 4895
+  },
+  {
+   "slug": "erp-boissons",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 2,
+   "lateral": 1,
+   "delta": 5799
+  },
+  {
+   "slug": "factur-x-e-facturation-logiciel",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 2,
+   "delta": 5506
+  },
+  {
+   "slug": "logiciel-televente-alimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 2,
+   "delta": 5531
+  },
+  {
+   "slug": "tracabilite-lot-dlc-logiciel",
+   "status": "wrote",
+   "tool": "fefo",
+   "visuals": 0,
+   "up": 0,
+   "lateral": 1,
+   "delta": 5736
+  },
+  {
+   "slug": "logiciel-grossiste-boissons-cave-maitrisez-vos-consignes-et-accises",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 5,
+   "up": 2,
+   "lateral": 0,
+   "delta": 9415
+  },
+  {
+   "slug": "erp-cloud-saas-vs-on-premise",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11193
+  },
+  {
+   "slug": "logiciel-maree-mareyeur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 3,
+   "delta": 9702
+  },
+  {
+   "slug": "alternative-cegid",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10948
+  },
+  {
+   "slug": "erp-viande-volaille",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 5,
+   "up": 2,
+   "lateral": 2,
+   "delta": 10100
+  },
+  {
+   "slug": "alternative-sage-erp",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10936
+  },
+  {
+   "slug": "alternative-akanea-erp",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11387
+  },
+  {
+   "slug": "meilleurs-erp-gestion-approvisionnements",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10903
+  },
+  {
+   "slug": "meilleurs-erp-import-export",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 10869
+  },
+  {
+   "slug": "meilleurs-erp-maraichers-fruits-legumes",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9823
+  },
+  {
+   "slug": "alternative-archipelia",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10515
+  },
+  {
+   "slug": "alternative-vif-erp",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10689
+  },
+  {
+   "slug": "erp-decoupe-viande-poisson",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 4,
+   "up": 1,
+   "lateral": 2,
+   "delta": 9278
+  },
+  {
+   "slug": "erp-conformite-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 0,
+   "delta": 8217
+  },
+  {
+   "slug": "migration-erp-agroalimentaire",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 2,
+   "delta": 10752
+  },
+  {
+   "slug": "integrateur-erp-lyon",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 1,
+   "delta": 11012
+  },
+  {
+   "slug": "integrateur-erp-paris",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 1,
+   "delta": 11035
+  },
+  {
+   "slug": "cuisine-centrale",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 10,
+   "up": 1,
+   "lateral": 3,
+   "delta": 14333
+  },
+  {
+   "slug": "conformite-haccp",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 10,
+   "up": 1,
+   "lateral": 3,
+   "delta": 14024
+  },
+  {
+   "slug": "partenariat-toncarton",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9768
+  },
+  {
+   "slug": "erp-saas",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11550
+  },
+  {
+   "slug": "difference-prix-dachat-et-prix-de-revient",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 8,
+   "up": 2,
+   "lateral": 3,
+   "delta": 13153
+  },
+  {
+   "slug": "prix-dachat-definition",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 8,
+   "up": 2,
+   "lateral": 3,
+   "delta": 13189
+  },
+  {
+   "slug": "gestion-automatisee-des-variations-de-stock",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11897
+  },
+  {
+   "slug": "variation-de-stock-positif-negatif",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 8,
+   "up": 1,
+   "lateral": 3,
+   "delta": 12605
+  },
+  {
+   "slug": "impact-de-la-variation-de-stock-sur-le-resultat-fiscal-explications-et-exemples-2025",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11821
+  },
+  {
+   "slug": "calcul-de-la-variation-de-stock-methode-cump-explications-et-exemples-2025",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 8,
+   "up": 1,
+   "lateral": 3,
+   "delta": 12491
+  },
+  {
+   "slug": "enregistrement-comptable-variation-de-stock",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 8,
+   "up": 1,
+   "lateral": 3,
+   "delta": 12646
+  },
+  {
+   "slug": "meilleurs-erp-boulangerie",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 8,
+   "up": 1,
+   "lateral": 1,
+   "delta": 12220
+  },
+  {
+   "slug": "erp-agroalimentaire",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 3,
+   "delta": 9172
+  },
+  {
+   "slug": "erp-pme",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11529
+  },
+  {
+   "slug": "reapprovisionnement-stocks",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 7,
+   "up": 1,
+   "lateral": 3,
+   "delta": 12065
+  },
+  {
+   "slug": "opc-ua",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 2,
+   "lateral": 3,
+   "delta": 11860
+  },
+  {
+   "slug": "ordonnancement-planification",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 3,
+   "delta": 11043
+  },
+  {
+   "slug": "erp-saas-cloud",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12374
+  },
+  {
+   "slug": "min",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12158
+  },
+  {
+   "slug": "dlc-ddm-dluo",
+   "status": "wrote",
+   "tool": "fefo",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10934
+  },
+  {
+   "slug": "erp-grossiste-distributeur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10563
+  },
+  {
+   "slug": "agreage-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 3,
+   "delta": 8914
+  },
+  {
+   "slug": "processus-agroalimentaire-guide",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9758
+  },
+  {
+   "slug": "conditionnement-alimentaire-erp",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 0,
+   "delta": 8991
+  },
+  {
+   "slug": "erp-tracabilite-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9780
+  },
+  {
+   "slug": "alerte-stock-securite",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10886
+  },
+  {
+   "slug": "gestion-des-inventaires",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11673
+  },
+  {
+   "slug": "relance-client",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 14,
+   "up": 2,
+   "lateral": 3,
+   "delta": 17363
+  },
+  {
+   "slug": "roi-erp",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 3,
+   "delta": 12469
+  },
+  {
+   "slug": "kpi-qualite-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 9,
+   "up": 0,
+   "lateral": 3,
+   "delta": 13176
+  },
+  {
+   "slug": "plan-de-controle-alimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11428
+  },
+  {
+   "slug": "cout-prix-au-kilo",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 0,
+   "delta": 10407
+  },
+  {
+   "slug": "cout-marginal",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 1,
+   "delta": 12575
+  },
+  {
+   "slug": "calcul-du-cout-achat",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 10,
+   "up": 0,
+   "lateral": 0,
+   "delta": 13711
+  },
+  {
+   "slug": "cout-de-revient",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 8,
+   "up": 0,
+   "lateral": 0,
+   "delta": 12077
+  },
+  {
+   "slug": "couts-de-production",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 0,
+   "delta": 11269
+  },
+  {
+   "slug": "alerte-date-peremption",
+   "status": "wrote",
+   "tool": "fefo",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10203
+  },
+  {
+   "slug": "calcul-stock-moyen",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 0,
+   "lateral": 3,
+   "delta": 10629
+  },
+  {
+   "slug": "erp-as400",
+   "status": "wrote",
+   "tool": "roi",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 2,
+   "delta": 9880
+  },
+  {
+   "slug": "bon-de-commande-traiteur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 7,
+   "up": 2,
+   "lateral": 0,
+   "delta": 11040
+  },
+  {
+   "slug": "facture-traiteur",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 6,
+   "up": 2,
+   "lateral": 1,
+   "delta": 10802
+  },
+  {
+   "slug": "tracabilite-de-la-viande",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 4,
+   "up": 0,
+   "lateral": 2,
+   "delta": 8848
+  },
+  {
+   "slug": "calculer-le-prix-de-revient-en-boulangerie",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 6,
+   "up": 1,
+   "lateral": 1,
+   "delta": 11229
+  },
+  {
+   "slug": "bon-de-livraison",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 9,
+   "up": 2,
+   "lateral": 2,
+   "delta": 13158
+  },
+  {
+   "slug": "bon-de-commande",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 28,
+   "up": 0,
+   "lateral": 3,
+   "delta": 28480
+  },
+  {
+   "slug": "maitriser-la-gestion-des-stocks",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 35,
+   "up": 0,
+   "lateral": 3,
+   "delta": 33962
+  },
+  {
+   "slug": "optimisation-entrepot",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 26,
+   "up": 0,
+   "lateral": 2,
+   "delta": 26701
+  },
+  {
+   "slug": "numeros-de-lot",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 29,
+   "up": 0,
+   "lateral": 2,
+   "delta": 29160
+  },
+  {
+   "slug": "ordre-de-fabrication",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 13,
+   "up": 0,
+   "lateral": 3,
+   "delta": 16155
+  },
+  {
+   "slug": "calcul-variations-de-stock",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 22,
+   "up": 0,
+   "lateral": 3,
+   "delta": 23343
+  },
+  {
+   "slug": "calcul-stock-de-securite",
+   "status": "wrote",
+   "tool": "safety_stock",
+   "visuals": 18,
+   "up": 0,
+   "lateral": 1,
+   "delta": 20237
+  },
+  {
+   "slug": "calcul-du-prix-moyen",
+   "status": "wrote",
+   "tool": "cost",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 0,
+   "delta": 9564
+  },
+  {
+   "slug": "facture-exacompta",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 11,
+   "up": 0,
+   "lateral": 3,
+   "delta": 14596
+  },
+  {
+   "slug": "contraintes-reglementations-logiciel-agroalimentaire",
+   "status": "wrote",
+   "tool": "diagnostic",
+   "visuals": 5,
+   "up": 0,
+   "lateral": 3,
+   "delta": 9800
+  },
+  {
+   "slug": "fifo-fefo-lifo",
+   "status": "wrote",
+   "tool": "fefo",
+   "visuals": 7,
+   "up": 0,
+   "lateral": 3,
+   "delta": 11657
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Harel — plan 06 — 06-tracabilite-rappel</title>
+  </head>
+  <body>
+    <template>
+      <style>@font-face{font-family:'Urbanist';font-style:normal;font-weight:400;font-display:block;src:url('../../assets/fonts/urbanist-400.woff2') format('woff2')}
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:600;font-display:block;src:url('../../assets/fonts/urbanist-600.woff2') format('woff2')}
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:700;font-display:block;src:url('../../assets/fonts/urbanist-700.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:block;src:url('../../assets/fonts/inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:block;src:url('../../assets/fonts/inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:block;src:url('../../assets/fonts/inter-600.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:block;src:url('../../assets/fonts/inter-700.woff2') format('woff2')}
+
+#root{position:absolute;inset:0;width:1920px;height:1080px;background:#FFFFFF;
+  overflow:hidden;font-family:Inter,ui-sans-serif,sans-serif;color:#0F172A;
+  -webkit-font-smoothing:antialiased}
+#root *{box-sizing:border-box}
+.stage{position:absolute;inset:0;padding:86px 104px 104px}
+.col-l{position:absolute;left:104px;top:214px;width:690px}
+.col-r{position:absolute;right:104px;top:150px}
+.clock{position:absolute;left:104px;top:82px;display:inline-flex;align-items:center;gap:14px;
+  padding:13px 30px 13px 24px;border-radius:100px;background:rgba(0,177,245,.08);
+  border:1.5px solid rgba(0,177,245,.2);font-family:Urbanist,sans-serif;font-weight:700;
+  font-size:34px;letter-spacing:-.01em;color:#0079B8}
+.clock i{width:12px;height:12px;border-radius:50%;background:#00B1F5;display:block}
+.eyebrow{font-weight:600;font-size:18px;letter-spacing:.09em;text-transform:uppercase;
+  color:#0079B8;margin-bottom:22px}
+h2.t{font-family:Urbanist,sans-serif;font-weight:600;font-size:60px;line-height:1.08;
+  letter-spacing:-.025em;color:#0F172A;margin:0 0 26px}
+h2.t em{font-style:normal;color:#0096D6}
+p.sub{font-size:25px;line-height:1.58;color:#64748B;margin:0}
+.pain{margin-top:34px;padding:24px 28px;border-radius:14px;background:rgba(0,177,245,.04);
+  border:1.5px solid rgba(0,177,245,.2)}
+.pain div{display:flex;align-items:flex-start;gap:14px;font-size:21px;line-height:1.5;
+  color:#334155;padding:9px 0}
+.pain div s{text-decoration:none;color:#dc2626;font-weight:700;flex:none;width:20px}
+.answer{margin-top:30px;display:inline-flex;align-items:center;gap:12px;padding:12px 26px;
+  border-radius:100px;background:rgba(34,197,94,.1);border:1.5px solid rgba(34,197,94,.35);
+  color:#15803d;font-weight:600;font-size:21px}
+.dash{position:relative;transform-origin:top right;overflow:hidden;border-radius:16px;border:1.5px solid #E2E8F0}
+.dash-in{transform-origin:top left}
+.inset{position:absolute;transform-origin:bottom right;z-index:3}
+.daybar{position:absolute;left:0;right:0;bottom:0;height:6px;background:#E2E8F0}
+.daybar i{position:absolute;left:0;top:0;bottom:0;background:#00B1F5;display:block;width:0}
+.stamp{position:absolute;right:104px;bottom:52px;font-size:17px;letter-spacing:.06em;
+  text-transform:uppercase;color:#64748B;font-weight:500}
+
+.elementor-screen-only, .screen-reader-text, .screen-reader-text span, .ui-helper-hidden-accessible { height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: -10000em; width: 1px; clip: rect(0px, 0px, 0px, 0px); border: 0px; }
+#hh-page .hhf .ui { --c: #0079B8; --c2: #046C93; --hd: #ECF0F5; --fl: #D3D6D9; --co: #FA8F92; --am: #FFDDA8; --ok: #0F7A45; --bl: #275E80; --rd: #C0392B; --al: #F2DEDE; background: rgb(255, 255, 255); border: 1px solid rgb(226, 232, 240); border-radius: 16px; overflow: hidden; color: rgb(51, 51, 51); box-shadow: rgba(15, 23, 42, 0.34) 0px 18px 44px -24px; margin: 0px !important; }
+#hh-page .hhf .ui * { box-sizing: border-box; }
+#hh-page .hhf .ui-bar { display: flex; align-items: center; gap: 7px; padding: 9px 14px; background: rgb(248, 250, 252); border-bottom: 1px solid rgb(226, 232, 240); }
+#hh-page .hhf .ui-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgb(203, 213, 225); display: block; flex: 0 0 9px; }
+#hh-page .hhf .ui-bar b { margin-left: 6px; font-size: 0.75rem; font-weight: 700; color: rgb(100, 116, 139); }
+#hh-page .hhf .ui-cap { font-size: 0.8rem; line-height: 1.5; color: rgb(100, 116, 139); padding: 11px 14px; border-top: 1px solid rgb(226, 232, 240); background: rgb(248, 250, 252); margin: 0px !important; }
+#hh-page .hhf .ui-top { display: flex; align-items: center; gap: 22px; background: var(--c); color: rgb(255, 255, 255); padding: 0px 14px; height: 44px; font-size: 0.8125rem; }
+#hh-page .hhf .ui-logo { display: flex; align-items: center; gap: 7px; font-weight: 800; font-size: 0.95rem; letter-spacing: -0.01em; padding-right: 6px; }
+#hh-page .hhf .ui-logo svg { width: 22px; height: 22px; }
+#hh-page .hhf .ui-nav { display: flex; gap: 18px; flex: 1 1 0%; min-width: 0px; overflow: hidden; }
+#hh-page .hhf .ui-nav span { display: flex; align-items: center; gap: 5px; white-space: nowrap; opacity: 1; }
+#hh-page .hhf .ui-nav span.on { opacity: 1; font-weight: 700; position: relative; }
+#hh-page .hhf .ui-nav span.on::after { content: ""; position: absolute; left: 50%; bottom: -13px; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: transparent transparent rgb(255, 255, 255); border-image: initial; }
+#hh-page .hhf .ui-me { display: flex; align-items: center; gap: 12px; white-space: nowrap; opacity: 0.95; }
+#hh-page .hhf .ui-body { display: grid; grid-template-columns: 186px 1fr; min-height: 236px; }
+#hh-page .hhf .ui-side { border-right: 1px solid var(--fl); background: rgb(255, 255, 255); }
+#hh-page .hhf .ui-side span { display: flex; align-items: center; gap: 9px; padding: 9px 13px; font-size: 0.78rem; color: rgb(118, 118, 118); border-bottom: 1px solid rgb(244, 246, 248); text-decoration: none; }
+#hh-page .hhf .ui-side span.on { background: var(--c2); color: rgb(255, 255, 255); font-weight: 600; }
+#hh-page .hhf .ui-side span b { width: 12px; height: 12px; background: currentcolor; border-radius: 3px; flex: 0 0 12px; opacity: 0.3; }
+#hh-page .hhf .ui-main { background: var(--hd); padding: 12px; min-width: 0px; }
+#hh-page .hhf .ui-h { display: flex; align-items: center; justify-content: space-between; padding: 0px 2px; margin: 0px 0px 11px !important; }
+#hh-page .hhf .ui-h span { font-size: 1.05rem; font-weight: 400; color: rgb(68, 68, 68); }
+#hh-page .hhf .ui-h em { font-style: normal; color: rgb(90, 101, 112); font-size: 1.1rem; letter-spacing: 0.18em; }
+#hh-page .hhf .ui-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+#hh-page .hhf .ui-grid.one { grid-template-columns: 1fr; }
+#hh-page .hhf .ui-card { background: rgb(255, 255, 255); border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-left-color: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-top: 3px solid var(--c); min-width: 0px; }
+#hh-page .hhf .ui-card > p { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid rgb(240, 242, 244); font-size: 0.8125rem; color: rgb(68, 68, 68); font-weight: 400; padding: 9px 12px !important; margin: 0px !important; }
+#hh-page .hhf .ui-card > p em { font-style: normal; color: rgb(100, 116, 139); font-size: 0.9rem; }
+#hh-page .hhf .ui-in { padding: 11px 12px; }
+#hh-page .hhf .ui-tw { overflow-x: auto; max-width: 100%; }
+#hh-page .hhf .ui-donut { display: flex; align-items: center; gap: 14px; }
+#hh-page .hhf .ui-ring { width: 96px; height: 96px; border-radius: 50%; flex: 0 0 96px; position: relative; }
+#hh-page .hhf .ui-ring::after { content: ""; position: absolute; inset: 26px; background: rgb(255, 255, 255); border-radius: 50%; }
+#hh-page .hhf .ui-leg { flex: 1 1 0%; min-width: 0px; display: flex; flex-direction: column; gap: 6px; font-size: 0.72rem; }
+#hh-page .hhf .ui-leg div { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+#hh-page .hhf .ui-leg u { flex: 1 1 7rem; }
+#hh-page .hhf .ui-leg i { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px; }
+#hh-page .hhf .ui-leg u { text-decoration: none; color: rgb(39, 94, 128); flex: 1 1 0%; min-width: 0px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#hh-page .hhf .ui-leg b { color: rgb(68, 68, 68); font-weight: 600; font-variant-numeric: tabular-nums; }
+#hh-page .hhf .ui-leg s { text-decoration: none; color: rgb(118, 118, 118); font-variant-numeric: tabular-nums; min-width: 40px; text-align: right; }
+#hh-page .hhf .ui-tab { width: 100%; border-collapse: collapse; font-size: 0.72rem; margin: 0px !important; }
+#hh-page .hhf .ui-tab th { background: var(--hd); color: rgb(68, 68, 68); font-weight: 600; text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--fl); white-space: nowrap; }
+#hh-page .hhf .ui-tab td { padding: 7px 9px; border-bottom: 1px solid rgb(240, 242, 244); color: rgb(85, 85, 85); vertical-align: middle; }
+#hh-page .hhf .ui-tab tr:last-child td { border-bottom: none; }
+#hh-page .hhf .ui-tab .lk { color: rgb(39, 94, 128); }
+#hh-page .hhf .ui-tab .nb { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#hh-page .hhf .ui-tab tr.alert td { background: var(--al); }
+#hh-page .hhf .ui-tab tr.zebra td { background: rgb(250, 251, 252); }
+#hh-page .hhf .ui-box { display: flex; align-items: stretch; border: 1px solid var(--fl); background: rgb(255, 255, 255); min-height: 54px; }
+#hh-page .hhf .ui-box i { width: 62px; flex: 0 0 62px; display: flex; align-items: center; justify-content: center; color: rgb(255, 255, 255); font-size: 0.95rem; font-weight: 800; font-style: normal; font-variant-numeric: tabular-nums; }
+#hh-page .hhf .ui-box div { padding: 7px 11px; font-size: 0.72rem; color: rgb(85, 85, 85); display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+#hh-page .hhf .ui-box div b { color: rgb(51, 51, 51); font-weight: 700; font-variant-numeric: tabular-nums; }
+#hh-page .hhf .ui-boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 11px !important; }
+#hh-page .hhf .ui-pill { display: inline-block; font-size: 0.66rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; }
+#hh-page .hhf .ui-pill.a { background: rgb(232, 245, 238); color: rgb(27, 122, 72); }
+#hh-page .hhf .ui-pill.b { background: rgb(253, 236, 234); color: rgb(176, 42, 27); }
+#hh-page .hhf .ui-pill.c { background: rgb(254, 246, 230); color: rgb(150, 101, 14); }
+#hh-page .hhf .ui-modal { background: rgb(255, 255, 255); }
+#hh-page .hhf .ui-modal > p:first-child { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; border-bottom: 1px solid var(--fl); font-size: 0.85rem; color: rgb(51, 51, 51); font-weight: 600; margin: 0px !important; }
+#hh-page .hhf .ui-modal > p:first-child em { font-style: normal; color: rgb(90, 101, 112); font-weight: 400; font-size: 0.78rem; }
+#hh-page .hhf .ui-warn { background: rgb(163, 91, 0); color: rgb(255, 255, 255); font-size: 0.74rem; padding: 7px 14px; margin: 0px !important; }
+#hh-page .hhf .ui-opts { padding: 11px 14px; font-size: 0.74rem; color: rgb(85, 85, 85); display: flex; flex-direction: column; gap: 8px; }
+#hh-page .hhf .ui-opts span { display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+#hh-page .hhf .ui-opts i { position: relative; width: 13px; height: 13px; border-radius: 50%; border: 2px solid var(--ok); flex: 0 0 13px; margin-top: 2px; }
+#hh-page .hhf .ui-opts i.on::after { content: ""; position: absolute; inset: 1.5px; background: var(--ok); border-radius: 50%; }
+#hh-page .hhf .ui-acts { display: flex; justify-content: space-between; padding: 11px 14px; border-top: 1px solid var(--fl); }
+#hh-page .hhf .ui-btn { font-size: 0.74rem; font-weight: 600; padding: 6px 14px; border: 1px solid var(--fl); background: rgb(255, 255, 255); color: rgb(85, 85, 85); border-radius: 3px; }
+#hh-page .hhf .ui-btn.pr { background: var(--bl); border-color: var(--bl); color: rgb(255, 255, 255); }
+#hh-page .sy-ecrans .ui, .sy-ecrans .ui { transform: scale(var(--k,1)) translateX(var(--dx,0px)); transform-origin: left top; width: 720px !important; }</style>
+      <div id="root" data-composition-id="f06" data-width="1920" data-height="1080" data-duration="11.5">
+
+    <div class="stage">
+      <div class="clock" id="clock"><i></i>14:00</div>
+      <div class="col-l">
+        <p class="eyebrow" id="eb">Rappel produit</p>
+        <h2 class="t" id="ttl">Remonter un lot.<br>Redescendre à ses<br><em>clients livrés</em>.</h2>
+        <p class="sub" id="sb">Au classeur, c'est l'après-midi. Ici, c'est quelques secondes.</p>
+        <div class="pain" id="pain"><div><s>✕</s><span>Trois matières premières à retrouver en amont</span></div><div><s>✕</s><span>Trois clients à prévenir en aval</span></div><div><s>✕</s><span>Et l'horloge qui tourne</span></div></div>
+        <div class="answer" id="answer">✓&nbsp;&nbsp;Amont et aval, d'un seul lot</div>
+      </div>
+      <div class="col-r" style="top:244px">
+        <div class="dash" id="dash" style="width:952px;height:662px">
+          <div class="dash-in" style="transform:scale(1.1333);width:840px">
+            <div id="hh-page"><div class="hhf"><figure class="ui" role="img" aria-label="Reproduction de l'écran Traçabilité de Hello Harel : un lot de terrine remonté à ses trois matières premières et redescendu à ses trois clients livrés"><div class="ui-bar"><i></i><i></i><i></i><b>Hello Harel — Traçabilité</b></div><div class="ui-top"><span class="ui-logo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 18H6a4 4 0 010-8 5.5 5.5 0 0110.5-1.5A3.5 3.5 0 0119 18z"></path></svg>Hello Harel</span><span class="ui-nav"><span>Produits</span><span>Production</span><span>Stock</span><span class="on">Qualité</span><span>Comptabilité</span></span><span class="ui-me">Paul Dupont ▾</span></div><div class="ui-body"><div class="ui-side"><span><b></b>Tableau de bord</span><span><b></b>Lots</span><span><b></b>Traçabilité amont</span><span class="on"><b></b>Traçabilité aval</span><span><b></b>Rappels</span><span><b></b>Contrôles</span><span><b></b>Non-conformités</span></div><div class="ui-main"><div class="ui-h"><span>Traçabilité aval — lot L2609-114</span><em>⎙</em></div><div class="ui-grid one"><div class="ui-card"><p>Où est parti ce lot<em>×</em></p><div class="ui-in"><div class="ui-tw"><table class="ui-tab"><thead><tr><th>Produit fini</th><th>Lot sortant</th><th class="nb">Quantité</th><th>Client</th><th>Bon de livraison</th><th>Date</th></tr></thead><tbody><tr><td class="lk">0142 — Terrine de campagne</td><td class="lk">L2609-114</td><td class="nb">86 kg</td><td class="lk">0021 — Grossiste Ouest</td><td class="lk">BL/2609-341</td><td>04/09/2026</td></tr><tr class="zebra"><td class="lk">0142 — Terrine de campagne</td><td class="lk">L2609-114</td><td class="nb">54 kg</td><td class="lk">0008 — Enseigne régionale</td><td class="lk">BL/2609-348</td><td>05/09/2026</td></tr><tr><td class="lk">0142 — Terrine de campagne</td><td class="lk">L2609-114</td><td class="nb">31 kg</td><td class="lk">0034 — Traiteur Le Verger</td><td class="lk">BL/2609-352</td><td>05/09/2026</td></tr></tbody></table></div></div></div><div class="ui-card"><p>D’où vient ce lot<em>×</em></p><div class="ui-in"><div class="ui-tw"><table class="ui-tab"><thead><tr><th>Matière première</th><th>Lot fournisseur</th><th>Fournisseur</th><th>Réception</th><th class="nb">Quantité</th></tr></thead><tbody><tr><td class="lk">0004 — Épaule de porc</td><td class="lk">F-88214</td><td class="lk">0003 — Abattoir Val de Loire</td><td>01/09/2026</td><td class="nb">120 kg</td></tr><tr class="zebra"><td class="lk">0019 — Sel nitrité</td><td class="lk">F-51007</td><td class="lk">0011 — Épices &amp; Co</td><td>22/08/2026</td><td class="nb">3,2 kg</td></tr><tr><td class="lk">0027 — Vin blanc de cuisine</td><td class="lk">F-77420</td><td class="lk">0011 — Épices &amp; Co</td><td>22/08/2026</td><td class="nb">8 L</td></tr></tbody></table></div></div></div></div></div></div><figcaption class="ui-cap">Traçabilité aval et amont d’un même lot, sur un seul écran. Données de démonstration.</figcaption></figure></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="stamp">Hello&nbsp;Harel — écran réel du produit</p>
+      <div class="daybar"><i id="bar"></i></div>
+    </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#clock",{opacity:0,x:-26},{opacity:1,x:0,duration:.6,ease:"power3.out"},0);
+      tl.fromTo("#eb",{opacity:0,y:18},{opacity:1,y:0,duration:.5,ease:"power2.out"},.18);
+      tl.fromTo("#ttl",{opacity:0,y:34},{opacity:1,y:0,duration:.75,ease:"power3.out"},.32);
+      tl.fromTo("#sb",{opacity:0,y:24},{opacity:1,y:0,duration:.65,ease:"power3.out"},.72);
+      tl.fromTo("#dash",{opacity:0,x:64,scale:.965},{opacity:1,x:0,scale:1,duration:.95,ease:"power3.out"},.55);
+      
+      const root=document.querySelector('#root');
+      const boxes=root.querySelectorAll('#dash .ui-box');
+      if(boxes.length) tl.fromTo(boxes,{opacity:0,y:16,scale:.94},
+        {opacity:1,y:0,scale:1,duration:.45,stagger:.1,ease:"power2.out"},1.25);
+      const rows=root.querySelectorAll('#dash .ui-tab tbody tr');
+      if(rows.length) tl.fromTo(rows,{opacity:0,y:12},
+        {opacity:1,y:0,duration:.34,stagger:.09,ease:"power2.out"},1.55);
+      const cards=root.querySelectorAll('#dash .ui-card');
+      if(cards.length>1) tl.fromTo(cards,{opacity:0,y:18},
+        {opacity:1,y:0,duration:.45,stagger:.16,ease:"power2.out"},1.1);
+      const flag=root.querySelector('#dash .alert, #dash .ui-warn, #dash tr.pr');
+      if(flag) tl.fromTo(flag,{boxShadow:"inset 0 0 0 0 rgba(220,38,38,0)"},
+        {boxShadow:"inset 0 0 0 2px rgba(220,38,38,.85)",duration:.5,
+          repeat:1,yoyo:true,ease:"power2.inOut"},2.7);
+      tl.fromTo("#pain",{opacity:0,y:22},{opacity:1,y:0,duration:.6,ease:"power3.out"},1.35);
+      tl.fromTo("#answer",{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:"back.out(1.4)"},8.10);
+      tl.fromTo("#bar",{width:"44.0%"},{width:"66.0%",duration:11.50,ease:"none"},0);
+        window.__timelines["f06"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

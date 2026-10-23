@@ -1,0 +1,57 @@
+Campaign,Ad Group,Keyword,Criterion Type,Status
+HH | Search | ERP x Metiers,Boulangerie (surveillé),erp biscuiterie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),erp boulangerie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),erp chocolaterie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),erp patisserie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),logiciel boulangerie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),logiciel boulangerie patisserie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),logiciel gestion boulangerie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),logiciel gestion production boulangerie,Broad,Paused
+HH | Search | ERP x Metiers,Boulangerie (surveillé),logiciel patisserie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp brasserie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp fromagerie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp industrie agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp pme agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,erp production alimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel brasserie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel fromagerie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel gestion production agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel laiterie,Broad,Paused
+HH | Search | ERP x Metiers,ERP Agroalimentaire,logiciel mes agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,erp grossiste,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,erp grossiste alimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,erp negoce,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,erp négoce,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel fruits et legumes,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel gestion stock agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel grossiste,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel negoce,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel négoce,Broad,Paused
+HH | Search | ERP x Metiers,ERP Négoce & Grossiste,logiciel primeur,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,erp abattoir,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,erp boucherie,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,erp caviste,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel boucherie,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel caviste,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel charcuterie,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel fromagerie,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel poissonnerie,Broad,Paused
+HH | Search | ERP x Metiers,Métiers longue traîne,logiciel primeur,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,erp cuisine centrale,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,erp restauration collective,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,erp traiteur,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel cuisine centrale,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel fiche technique cuisine,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel gestion production traiteur,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel gestion traiteur,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel traiteur,Broad,Paused
+HH | Search | ERP x Metiers,Traiteur & Plats cuisinés,logiciel traiteur evenementiel,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,erp dlc,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,erp haccp,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,logiciel gestion des lots,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,logiciel tracabilite,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,logiciel tracabilite haccp,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,logiciel traçabilité agroalimentaire,Broad,Paused
+HH | Search | ERP x Metiers,Traçabilité & Lots,logiciel traçabilité alimentaire,Broad,Paused

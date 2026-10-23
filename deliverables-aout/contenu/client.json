@@ -1,0 +1,45 @@
+{
+  "client": "Hello Harel",
+  "url": "https://www.helloharel.com/",
+  "secteur": "Éditeur d'ERP SaaS spécialisé agroalimentaire (PME : charcuterie, boulangerie, traiteur, maraîchers, négoce, industrie laitière, produits de la mer)",
+  "cible": "Dirigeants et responsables production/qualité de PME agroalimentaires (20-300 salariés) évaluant un ERP métier",
+  "ton": "Expert métier, concret, orienté preuve — traçabilité, coût de revient, poids variable, DLC/DDM, rendement matière",
+  "eeat": [
+    "+200 entreprises agroalimentaires équipées",
+    "Noté 5,0/5 sur 31 avis",
+    "ERP SaaS français spécialisé agroalimentaire",
+    "Démonstration métier gratuite"
+  ],
+  "langue": "fr",
+  "pays": "FR",
+  "da": "google-store",
+
+  "gsc_property": "https://www.helloharel.com/",
+  "sitemap": "https://www.helloharel.com/sitemap_index.xml",
+
+  "title_max": 60,
+  "meta_max": 155,
+  "liens_max": 8,
+  "liens_entrants_min": 2,
+  "faq_min": 7,
+  "cta_min": 2,
+
+  "concurrents": ["vif.fr", "akanea.com", "infologic-copilote.fr", "archipelia.com"],
+  "autorite_client": 40,
+
+  "exclusions": [
+    "aucune offre commerciale (démo/CTA vente) sur les pages TOFU : /blog/cout-prix-au-kilo/, prix-de-revient-boulangerie, facture-traiteur, devis traiteur",
+    "ne jamais réintroduire le terme 'HACCP' retiré des titles",
+    "typographie française : espaces insécables, guillemets français, accents sur les majuscules",
+    "pas de promesse de résultat chiffrée non sourcée"
+  ],
+  "vigilance": [
+    "PAGES PROTÉGÉES — ne jamais modifier URL/gabarit/balisage : /agroalimentaire/ (#3, cité AI Overview), /agroalimentaire/traiteur|charcutier|plats-cuisines-industriels/ (#2), /migration-as400/ (#1)",
+    "ne jamais éditer post_content d'une page à layout Elementor (_elementor_data non vide) — passer par _elementor_data ; les pages self-contained (canvas, _elementor_data vide) sont sûres",
+    "04/2026 refonte — redirections jamais appliquées : chute de trafic ; vérifier le maillage entrant réellement posé à J+21",
+    "07/2026 — bug scroll-reveal : contenu à opacity:0 jamais révélé hors écran = invisible",
+    "08/2026 — générateur de meta Elementor/Rank Math sort du CSS brut en meta description (55 pages) : ne pas rédiger de balise avant correction du générateur (ticket T1)",
+    "règle : jamais raisonner sur l'agrégat — toujours requête + position ; ne jamais écarter un sujet sur volume Ads nul (GSC mesure la demande)"
+  ],
+  "validations": [4, 7]
+}

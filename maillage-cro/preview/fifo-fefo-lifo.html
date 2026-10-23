@@ -1,0 +1,177 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preview CRO — FIFO, FEFO & LIFO • Méthodes de Stock • Guide 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>body{background:#eef3f8;margin:0;padding:2rem 1rem}h1{font-family:Inter;max-width:680px;margin:0 auto 1rem;color:#0f172a}
+.note{font-family:Inter;max-width:680px;margin:0 auto 1.5rem;color:#64748b;font-size:.85rem;background:#fff;border-radius:10px;padding:.75rem 1rem}</style>
+</head><body>
+<h1>FIFO, FEFO & LIFO • Méthodes de Stock • Guide 2026</h1>
+<div class="note">Preview DRY-RUN — outil interactif (haut d'article), visuel inter-H2, échelle de CTA. Aucune écriture WordPress.</div>
+<!-- HH-CRO:tool:fefo -->
+<section class="hh-tool" data-tool="fefo">
+  <div class="hh-tool-head">
+    <span class="hh-tool-badge">Outil interactif</span>
+    <h2 class="hh-tool-title">Quelle méthode de rotation pour vos stocks ?</h2>
+    <p class="hh-tool-intro">FIFO, FEFO ou LIFO ? Répondez à 2 questions pour connaître la méthode adaptée à vos produits.</p>
+  </div>
+  <div class="hh-tool-body">
+    <div class="hh-field"><label>Type de produit</label>
+      <select id="fe_t">
+        <option value="dlc">Produit frais à DLC courte</option>
+        <option value="ddm">Produit à DDM (épicerie, surgelé)</option>
+        <option value="lot">Matière première stockable</option>
+      </select></div>
+    <div class="hh-field"><label>Forte saisonnalité / promotions ?</label>
+      <select id="fe_s"><option value="non">Non</option><option value="oui">Oui</option></select></div>
+    <div class="hh-result">
+      <div class="lbl">Méthode de rotation conseillée</div>
+      <div class="big" id="fe_out">—</div>
+      <p style="margin:.4rem 0 0;color:#475569;font-size:.85rem" id="fe_note"></p>
+      <a class="hh-cta" href="/fonctionnalites/gestion-de-stock/">Appliquer le FEFO automatiquement →</a>
+    </div></div>
+</section>
+<style>
+.hh-tool{font-family:'Inter',sans-serif;max-width:760px;margin:1.5rem auto 2.5rem;background:linear-gradient(180deg,#f8fbff,#fff);
+border:1px solid #e2e8f0;border-radius:18px;box-shadow:0 10px 30px rgba(0,60,120,.07);overflow:hidden}
+.hh-tool-head{padding:1.5rem 1.75rem .5rem}
+.hh-tool-badge{display:inline-block;background:#00B1F51a;color:#00B1F5;font-weight:700;font-size:.72rem;
+letter-spacing:.05em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px}
+.hh-tool-title{font-size:1.3rem;font-weight:800;color:#0f172a;margin:.6rem 0 .3rem}
+.hh-tool-intro{color:#475569;font-size:.95rem;margin:0}
+.hh-tool-body{padding:1.25rem 1.75rem 1.75rem}
+.hh-field{margin-bottom:.9rem}
+.hh-field label{display:block;font-size:.82rem;font-weight:600;color:#334155;margin-bottom:.3rem}
+.hh-field input,.hh-field select{width:100%;padding:.6rem .75rem;border:1px solid #cbd5e1;border-radius:10px;font-size:.95rem;box-sizing:border-box}
+.hh-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.hh-result{margin-top:1rem;padding:1rem 1.25rem;background:#00B1F50d;border:1px solid #00B1F533;border-radius:12px}
+.hh-result .big{font-size:1.8rem;font-weight:800;color:#00B1F5;line-height:1.1}
+.hh-result .lbl{font-size:.8rem;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.hh-tool .hh-cta{display:inline-block;margin-top:1rem;background:linear-gradient(135deg,#22C55E,#16a34a);color:#fff;
+padding:.7rem 1.5rem;border-radius:10px;font-weight:700;text-decoration:none;font-size:.92rem}
+@media(max-width:600px){.hh-grid{grid-template-columns:1fr}}
+</style>
+<script>(function(){
+    function f(){var t=document.getElementById('fe_t').value,s=document.getElementById('fe_s').value,m,n;
+    if(t==='dlc'){m='FEFO';n='Premier périmé, premier sorti : impératif sur les DLC courtes pour limiter la casse.';}
+    else if(t==='ddm'){m=(s==='oui')?'FEFO':'FIFO';n='FIFO suffit hors promotions ; basculez en FEFO si les pics créent des écarts de dates.';}
+    else{m='FIFO';n='Rotation par ancienneté ; le LIFO ne se justifie qu\'en logique comptable, pas physique en agro.';}
+    document.getElementById('fe_out').textContent=m;document.getElementById('fe_note').textContent=n;}
+    ['fe_t','fe_s'].forEach(function(i){document.getElementById(i).addEventListener('change',f)});f();})();</script>
+
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Les 3 méthodes de rotation des stocks</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:0 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:62%;background:#00B1F5"></span></div>
+  <figcaption>Les 3 méthodes de rotation des stocks</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #00B1F5;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Qu’est-ce que la méthode FIFO ?</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:1 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:78%;background:#22C55E"></span></div>
+  <figcaption>Qu’est-ce que la méthode FIFO ?</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #22C55E;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Qu’est-ce que la méthode FEFO ?</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:2 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:45%;background:#6366f1"></span></div>
+  <figcaption>Qu’est-ce que la méthode FEFO ?</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #6366f1;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Qu’est-ce que la méthode LIFO ?</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:3 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:88%;background:#f59e0b"></span></div>
+  <figcaption>Qu’est-ce que la méthode LIFO ?</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #f59e0b;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Différences entre FIFO, FEFO et LIFO</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:4 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:70%;background:#ec4899"></span></div>
+  <figcaption>Différences entre FIFO, FEFO et LIFO</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #ec4899;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">Cas d’usage dans l’agroalimentaire</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:5 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:62%;background:#00B1F5"></span></div>
+  <figcaption>Cas d’usage dans l’agroalimentaire</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #00B1F5;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<h2 style="font-family:Inter;max-width:680px;margin:2rem auto 0;color:#0f172a">FAQ – FIFO FEFO LIFO</h2><p style="font-family:Inter;max-width:680px;margin:.5rem auto;color:#475569">[…contenu éditorial de la section…]</p>
+<!-- HH-CRO:visual:6 -->
+<figure class="hh-visual" aria-hidden="true">
+  <div class="hh-visual-bar"><span style="width:78%;background:#22C55E"></span></div>
+  <figcaption>FAQ – FIFO FEFO LIFO</figcaption>
+  <style>
+  .hh-visual{font-family:'Inter',sans-serif;max-width:680px;margin:1.5rem auto;padding:1.1rem 1.25rem;
+  background:#fff;border:1px solid #eef2f7;border-left:4px solid #22C55E;border-radius:12px;box-shadow:0 4px 16px rgba(0,40,80,.05)}
+  .hh-visual-bar{height:10px;background:#eef2f7;border-radius:999px;overflow:hidden;margin-bottom:.6rem}
+  .hh-visual-bar span{display:block;height:100%;border-radius:999px;transition:width .8s ease}
+  .hh-visual figcaption{font-size:.85rem;color:#64748b;font-weight:600}
+  </style>
+</figure>
+<!-- HH-CRO:cta-ladder -->
+<section class="hh-ctal">
+  <h2 class="hh-ctal-title">Selon votre niveau d'avancement</h2>
+  <div class="hh-ctal-grid">
+    <a class="hh-ctal-card lvl1" href="/fonctionnalites/gestion-de-stock/"><span>J'explore</span><b>Ressources & guides liés</b></a>
+    <a class="hh-ctal-card lvl2" href="/comparatifs/"><span>Je compare</span><b>Comparatif des ERP</b></a>
+    <a class="hh-ctal-card lvl3" href="/tarifs/"><span>Je me décide</span><b>Voir les tarifs</b></a>
+    <a class="hh-ctal-card lvl4" href="/contact/"><span>Je suis prêt</span><b>Demander une démo</b></a>
+  </div>
+  <style>
+  .hh-ctal{font-family:'Inter',sans-serif;max-width:880px;margin:2.5rem auto}
+  .hh-ctal-title{font-size:1.15rem;font-weight:800;color:#0f172a;text-align:center;margin-bottom:1rem}
+  .hh-ctal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+  .hh-ctal-card{display:flex;flex-direction:column;gap:.25rem;padding:1rem;border-radius:14px;text-decoration:none;
+  border:1px solid #e2e8f0;background:#fff;transition:transform .2s,box-shadow .2s}
+  .hh-ctal-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,40,80,.12)}
+  .hh-ctal-card span{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
+  .hh-ctal-card b{font-size:.95rem;color:#0f172a}
+  .hh-ctal-card.lvl4{background:linear-gradient(135deg,#22C55E,#16a34a);border-color:transparent}
+  .hh-ctal-card.lvl4 span{color:#dcfce7} .hh-ctal-card.lvl4 b{color:#fff}
+  .hh-ctal-card.lvl3{border-color:#00B1F555}
+  @media(max-width:760px){.hh-ctal-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</section>
+</body></html>

@@ -1,0 +1,251 @@
+{
+ "ok": [
+  "/medical/dispositifs-medicaux/",
+  "/medical/hygiene-professionnelle/",
+  "/medical/laboratoires/",
+  "/medical/maintien-a-domicile/",
+  "/medical/materiel-dentaire/",
+  "/migration-as400/",
+  "/negoce/",
+  "/negoce/achats-approvisionnements/",
+  "/negoce/stocks-multi-depots/",
+  "/negoce/tarifs-reporting-edi/",
+  "/negoce/tracabilite-lots/",
+  "/negoce/ventes-devis-commandes/"
+ ],
+ "skip": [
+  [
+   "/agroalimentaire/brasseur/",
+   "déjà propre"
+  ],
+  [
+   "/agroalimentaire/chocolatier/",
+   "déjà propre"
+  ],
+  [
+   "/agroalimentaire/conserverie/",
+   "déjà propre"
+  ],
+  [
+   "/agroalimentaire/glacier/",
+   "déjà propre"
+  ],
+  [
+   "/agroalimentaire/negoce-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/agroalimentaire/torrefacteur/",
+   "déjà propre"
+  ],
+  [
+   "/blog/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-cegid-distribution-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-copilote-traiteur/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-divalto-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-odoo-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-sage-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/alternatives-silog-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/calcul-cout-de-revient-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/blog/calcul-freinte-charcuterie-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/blog/edi-logiciel-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/erp-boissons/",
+   "déjà propre"
+  ],
+  [
+   "/blog/factur-x-e-facturation-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/blog/gestion-decoupe-viande-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/blog/grille-tarifaire-negoce-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/hello-harel-vs-divalto/",
+   "déjà propre"
+  ],
+  [
+   "/blog/hello-harel-vs-odoo/",
+   "déjà propre"
+  ],
+  [
+   "/blog/hello-harel-vs-sage/",
+   "déjà propre"
+  ],
+  [
+   "/blog/hello-harel-vs-silog/",
+   "déjà propre"
+  ],
+  [
+   "/blog/logiciel-grossiste-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/logiciel-maree-mareyeur/",
+   "déjà propre"
+  ],
+  [
+   "/blog/logiciel-televente-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/penalites-logistiques-gms/",
+   "déjà propre"
+  ],
+  [
+   "/blog/remplacer-excel-gestion-agroalimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/blog/reporting-commercial-grossiste/",
+   "déjà propre"
+  ],
+  [
+   "/blog/tracabilite-lot-dlc-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/blog/tracabilite-viande-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/comparatifs/meilleur-erp-charcuterie-salaison/",
+   "déjà propre"
+  ],
+  [
+   "/comparatifs/meilleur-erp-traiteur/",
+   "déjà propre"
+  ],
+  [
+   "/erp-ia/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/facturation-automatique-bon-livraison/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/gestion-consigne-bouteille-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/gestion-rendement-matiere-logiciel/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/logiciel-devis-commande-bon-livraison/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/planification-production-erp/",
+   "déjà propre"
+  ],
+  [
+   "/fonctionnalites/tracabilite-alimentaire/",
+   "déjà propre"
+  ],
+  [
+   "/ia-analyse-predictive/",
+   "déjà propre"
+  ],
+  [
+   "/ia-assistant-commercial/",
+   "déjà propre"
+  ],
+  [
+   "/ia-automatisation-comptable/",
+   "déjà propre"
+  ],
+  [
+   "/ia-optimisation-stocks/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-auvergne-rhone-alpes/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-belgique/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-bretagne/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-hauts-de-france/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-ile-de-france/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-maurice/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-nouvelle-aquitaine/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-occitanie/",
+   "déjà propre"
+  ],
+  [
+   "/implantation-reunion/",
+   "déjà propre"
+  ],
+  [
+   "/implantations/",
+   "déjà propre"
+  ],
+  [
+   "/integrateurs/",
+   "déjà propre"
+  ],
+  [
+   "/intelligence-artificielle/",
+   "déjà propre"
+  ],
+  [
+   "/medical/",
+   "déjà propre"
+  ]
+ ],
+ "fail": []
+}

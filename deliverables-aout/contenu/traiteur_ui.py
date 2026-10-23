@@ -1,0 +1,270 @@
+# -*- coding: utf-8 -*-
+"""
+Les cinq fonctionnalites de la page traiteur, avec leur ecran du logiciel.
+
+Les cinq fonctionnalites sont celles que la page porte deja — planning
+d'evenements, achats et stocks evenementiels, cout et marge par evenement,
+tracabilite et HACCP, devis et fiches techniques. Seule la forme change : un
+module a onglets et un ecran du logiciel par fonctionnalite, au lieu d'une
+grille de cartes de texte.
+
+Le kit graphique — palette, briques, CSS — est celui de agro_ui : une seule
+mise en forme pour tout le parc.
+"""
+
+from agro_ui import CSS, _check, _card, _fig, _leg, _ring, _side, _tab, _nuage  # noqa: F401
+import agro_ui
+
+
+def _top(actif):
+    items = ["Produits", "Production", "Vente", "Qualité", "Comptabilité"]
+    nav = "".join('<span%s>%s</span>' % (' class="on"' if i == actif else '', i) for i in items)
+    return ('<div class="ui-top"><span class="ui-logo">' + _nuage() + 'Hello Harel</span>'
+            '<span class="ui-nav">' + nav + '</span>'
+            '<span class="ui-me">Paul Dupont ▾</span></div>')
+
+
+# -------------------------------------------------------------------- ecrans
+def ecran_fiches():
+    corps = (
+        _top("Production") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Fiches techniques", "Recettes", "Nomenclatures",
+                 "Ordres de fabrication", "Rendements"], 1)
+        + '<div class="ui-main"><div class="ui-h">'
+        '<span>Fiche technique — Cocktail dînatoire 120 couverts</span><em>+ ⎙</em></div>'
+        '<div class="ui-grid one">'
+        + _card("Composants et grammages",
+                _tab(["Composant", "Unité", "^Par couvert", "^Pour 120", "^Coût unitaire", "^Total"],
+                     [["@0212 — Mini-burger effiloché", "pièce", "^3", "^360", "^0,62 €", "^223,20 €"],
+                      ["~@0218 — Verrine saumon aneth", "pièce", "^2", "^240", "^0,84 €", "^201,60 €"],
+                      ["@0231 — Wrap végétarien", "pièce", "^2", "^240", "^0,51 €", "^122,40 €"],
+                      ["~@0407 — Plateau fromages affinés", "kg", "^0,06", "^7,2 kg", "^18,40 €", "^132,48 €"],
+                      ["@0512 — Mignardises assorties", "pièce", "^3", "^360", "^0,38 €", "^136,80 €"]]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Fiche technique de Hello Harel : les composants d'un cocktail "
+        "dînatoire, leur grammage par couvert et le total pour 120 convives",
+        corps, "Hello Harel — Fiche technique",
+        "Le grammage est saisi par couvert. Changez le nombre de convives, tout se recalcule. "
+        "Données de démonstration.")
+
+
+def ecran_evenements():
+    corps = (
+        _top("Vente") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Devis", "Commandes", "Événements", "Préparations",
+                 "Livraisons", "Journal des ventes"], 3)
+        + '<div class="ui-main"><div class="ui-h"><span>Événements — semaine 38</span>'
+        '<em>+ ⎙</em></div><div class="ui-grid one">'
+        + _card("Prestations programmées",
+                _tab(["Événement", "Date", "Client", "^Couverts", "^Montant HT", "Statut"],
+                     [["@EVT/2609-041", "19/09/2026", "@Mairie de Vaucresson", "^120", "^2 640,00 €",
+                       '<span class="ui-pill a">Confirmé</span>'],
+                      ["~@EVT/2609-044", "20/09/2026", "@Groupe Lafarge", "^260", "^7 150,00 €",
+                       '<span class="ui-pill a">Confirmé</span>'],
+                      ["!@EVT/2609-047", "21/09/2026", "@Mariage Berthier", "^85", "^3 315,00 €",
+                       '<span class="ui-pill b">Devis en attente</span>'],
+                      ["@EVT/2609-052", "24/09/2026", "@Clinique du Parc", "^45", "^810,00 €",
+                       '<span class="ui-pill c">Option posée</span>']]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Événements de Hello Harel : quatre prestations d'une même "
+        "semaine avec leur date, leur nombre de couverts, leur montant et leur statut",
+        corps, "Hello Harel — Événements",
+        "Le devis, la commande et la prestation sont le même objet, suivi par date. "
+        "Données de démonstration.")
+
+
+def ecran_cout():
+    corps = (
+        _top("Comptabilité") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Coût de revient", "Marges", "Facturation",
+                 "Règlements", "Journal"], 1)
+        + '<div class="ui-main"><div class="ui-h">'
+        '<span>Coût au couvert — EVT/2609-041</span><em>⎙</em></div>'
+        '<div class="ui-grid one">'
+        + _card("Décomposition du coût d'un couvert",
+                '<span class="ui-donut">'
+                + _ring([("#FA8F92", 54), ("#275E80", 27), ("#FFDDA8", 11), ("#3ECF8E", 8)])
+                + _leg([("#FA8F92", "Matières et denrées", "6,81 €", "54 %"),
+                        ("#275E80", "Personnel de production et de service", "3,40 €", "27 %"),
+                        ("#FFDDA8", "Location de matériel et vaisselle", "1,39 €", "11 %"),
+                        ("#3ECF8E", "Transport et logistique", "1,01 €", "8 %")])
+                + '</span>')
+        + _card("Marge par prestation",
+                _tab(["Événement", "^Couverts", "^Revient/couvert", "^Vendu/couvert", "^Marge", "Statut"],
+                     [["@EVT/2609-041", "^120", "^12,61 €", "^22,00 €", "^42,7 %",
+                       '<span class="ui-pill a">Dans la cible</span>'],
+                      ["~@EVT/2609-044", "^260", "^17,04 €", "^27,50 €", "^38,0 %",
+                       '<span class="ui-pill a">Dans la cible</span>'],
+                      ["!@EVT/2609-047", "^85", "^32,10 €", "^39,00 €", "^17,7 %",
+                       '<span class="ui-pill b">Sous le seuil</span>']]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Coût au couvert de Hello Harel : décomposition du coût d'un "
+        "couvert en quatre postes et marge de trois prestations dont une sous le seuil",
+        corps, "Hello Harel — Coût au couvert",
+        "La marge se lit prestation par prestation, avant la facture et non après. "
+        "Données de démonstration.")
+
+
+def ecran_achats():
+    corps = (
+        _top("Produits") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Besoins par événement", "Liste d'approvisionnement",
+                 "Commandes fournisseurs", "Stock", "Dates limites"], 1)
+        + '<div class="ui-main"><div class="ui-h">'
+        '<span>Besoins à couvrir — semaine 38</span><em>+ ⎙</em></div>'
+        '<div class="ui-grid one">'
+        + _card("Déduits des événements confirmés",
+                _tab(["Matière", "Événements", "^Besoin", "^En stock", "^À commander", "DLC du stock"],
+                     [["!@0311 — Saumon fumé", "@EVT-041, EVT-044", "^18,4 kg", "^6,0 kg",
+                       "^12,4 kg", "14/09/2026"],
+                      ["@0407 — Fromages affinés", "@EVT-041", "^7,2 kg", "^0 kg", "^7,2 kg", "—"],
+                      ["~@0290 — Effiloché de porc", "@EVT-041, EVT-052", "^11,0 kg", "^11,0 kg",
+                       "^0 kg", "22/09/2026"],
+                      ["@0512 — Base mignardises", "@EVT-041, EVT-044", "^24,0 kg", "^30,0 kg",
+                       "^0 kg", "05/10/2026"]]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Besoins par événement de Hello Harel : quatre matières, le "
+        "besoin déduit des prestations confirmées, le stock disponible et ce qui reste à commander",
+        corps, "Hello Harel — Achats",
+        "Le besoin vient des événements confirmés, pas d'une estimation. La ligne rouge périme "
+        "avant la prestation. Données de démonstration.")
+
+
+def ecran_allergenes():
+    corps = (
+        _top("Qualité") + '<div class="ui-body">'
+        + _side(["Tableau de bord", "Allergènes", "Étiquetage INCO", "Contrôles",
+                 "Non-conformités", "Rappels"], 1)
+        + '<div class="ui-main"><div class="ui-h">'
+        '<span>Allergènes — Cocktail dînatoire 120 couverts</span><em>⎙</em></div>'
+        '<div class="ui-grid one">'
+        + _card("Déclaration remontée des matières premières",
+                _tab(["Recette", "Allergène", "Origine", "Présence", "Étiquette"],
+                     [["@0212 — Mini-burger effiloché", "Gluten", "@Pain brioché — lot F-90211",
+                       "Ingrédient", '<span class="ui-pill b">À déclarer</span>'],
+                      ["~@0218 — Verrine saumon aneth", "Poisson", "@Saumon fumé — lot F-88417",
+                       "Ingrédient", '<span class="ui-pill b">À déclarer</span>'],
+                      ["@0218 — Verrine saumon aneth", "Lait", "@Crème épaisse — lot F-88602",
+                       "Ingrédient", '<span class="ui-pill b">À déclarer</span>'],
+                      ["~@0231 — Wrap végétarien", "Fruits à coque", "@Atelier partagé",
+                       "Traces possibles", '<span class="ui-pill c">Mention traces</span>'],
+                      ["@0512 — Mignardises assorties", "Œuf", "@Appareil à génoise — lot F-91004",
+                       "Ingrédient", '<span class="ui-pill b">À déclarer</span>']]))
+        + '</div></div></div>')
+    return _fig(
+        "Reproduction de l'écran Allergènes de Hello Harel : cinq recettes d'un même menu, "
+        "l'allergène détecté, le lot de matière première d'où il vient et la mention à porter",
+        corps, "Hello Harel — Allergènes",
+        "L'allergène remonte du lot de matière première, il n'est pas ressaisi à la main. "
+        "Données de démonstration.")
+
+
+def ecran_logistique():
+    corps = (
+        '<div class="ui-modal">'
+        '<p>Chargement de la tournée<em>Vendredi 19/09 — camion 2</em></p>'
+        '<div class="ui-warn">Deux prestations partent du même camion : '
+        'le chargement suit l\'ordre inverse des livraisons.</div>'
+        + _tab(["Ordre", "Événement", "Client", "Heure sur place", "^Bacs", "Température"],
+               [["3", "@EVT/2609-052", "Clinique du Parc", "18 h 30", "^6", "0 à 4 °C"],
+                ["~2", "@EVT/2609-044", "Groupe Lafarge", "12 h 00", "^24", "0 à 4 °C"],
+                ["1", "@EVT/2609-041", "Mairie de Vaucresson", "09 h 45", "^11", "0 à 4 °C"]])
+        + '<div class="ui-opts">'
+        '<span><i class="on"></i>Éditer les bons de livraison et les étiquettes de bac dans '
+        'l\'ordre de chargement</span>'
+        '<span><i></i>Éditer dans l\'ordre de préparation</span>'
+        '</div>'
+        '<div class="ui-acts"><span class="ui-btn">Annuler</span>'
+        '<span class="ui-btn pr">Éditer ➜</span></div>'
+        '</div>')
+    return _fig(
+        "Reproduction de l'écran Chargement de tournée de Hello Harel : trois prestations d'une "
+        "même journée chargées dans l'ordre inverse des livraisons",
+        corps, "Hello Harel — Logistique",
+        "Le dernier livré est chargé en premier. C'est une règle de camion, pas de tableur. "
+        "Données de démonstration.")
+
+
+def ecran_tracabilite():
+    corps = (
+        '<div class="ui-modal">'
+        '<p>Contrôle à réception<em>Arrivage PUR/2609214 — pour EVT/2609-041</em></p>'
+        '<div class="ui-warn">Un point de contrôle est hors tolérance : la validation est bloquée.</div>'
+        + _tab(["", "Point de contrôle", "Attendu", "Relevé", "Statut"],
+               [["✓", "@Température du camion", "≤ 4 °C", "3,1 °C",
+                 '<span class="ui-pill a">Conforme</span>'],
+                ["~✓", "@Numéro de lot fournisseur", "Renseigné", "F-88417",
+                 '<span class="ui-pill a">Conforme</span>'],
+                ["!✕", "@DLC restante à réception", "≥ 8 jours", "5 jours",
+                 '<span class="ui-pill b">Hors tolérance</span>']])
+        + '<div class="ui-opts">'
+        '<span><i class="on"></i>Refuser le lot, éditer la non-conformité et prévenir le '
+        'fournisseur</span>'
+        '<span><i></i>Accepter sous dérogation, avec motif et signature du responsable</span>'
+        '</div>'
+        '<div class="ui-acts"><span class="ui-btn">Annuler</span>'
+        '<span class="ui-btn pr">Enregistrer ➜</span></div>'
+        '</div>')
+    return _fig(
+        "Reproduction de l'écran Contrôle à réception de Hello Harel : trois points de contrôle "
+        "sur un arrivage destiné à une prestation, dont un hors tolérance",
+        corps, "Hello Harel — Qualité",
+        "Le lot est rattaché à la prestation qu'il sert. L'enregistrement est daté et nominatif. "
+        "Données de démonstration.")
+
+
+# ------------------------------------------------------------------- montage
+COURTS = ["Planning des événements", "Achats et stocks", "Coût et marge",
+          "Traçabilité et HACCP", "Devis et fiches techniques"]
+
+BLOCS = [
+    ("Gestion des événements multiples",
+     "Le planning se lit par date de prestation, pas par date de commande. Vous voyez la semaine "
+     "qui arrive avec ses couverts, ses montants et ce qui n'est pas encore confirmé, et les "
+     "conflits de personnel se voient avant d'être un problème.",
+     ["Planning multi-événements par date de prestation",
+      "Options, devis en attente et confirmations distingués",
+      "Besoins en personnel et en matières anticipés par événement"],
+     ecran_evenements),
+
+    ("Achats et stocks événementiels",
+     "Le besoin d'achat est déduit des prestations confirmées, pas estimé. Le stock porte ses "
+     "dates limites, et l'alerte tombe quand un lot périme avant la prestation qu'il devait servir.",
+     ["Besoins déduits des événements confirmés",
+      "Alertes DLC sur les matières sensibles",
+      "Liste d'approvisionnement générée depuis le planning"],
+     ecran_achats),
+
+    ("Coûts et marges par événement",
+     "Denrées, personnel, location de matériel, transport : le coût d'un couvert se décompose "
+     "poste par poste. La marge de chaque prestation se lit avant de facturer, pas au bilan.",
+     ["Coût au couvert et à la prestation",
+      "Personnel de production et de service intégrés au calcul",
+      "Marge comparée à votre seuil, événement par événement"],
+     ecran_cout),
+
+    ("Traçabilité et conformité HACCP",
+     "Chaque lot est rattaché à la prestation qu'il sert. Les contrôles à réception sont "
+     "enregistrés, datés et nominatifs, et un lot hors tolérance bloque la validation au lieu "
+     "de passer inaperçu.",
+     ["Lot rattaché à l'événement livré",
+      "Points de contrôle paramétrables par matière",
+      "Documents sanitaires générés pour les contrôles"],
+     ecran_tracabilite),
+
+    ("Devis et fiches techniques",
+     "La recette se saisit au gramme par convive. Passez de 85 à 260 couverts et tout se "
+     "recalcule : les quantités, les achats à lancer, le coût de la prestation et le devis.",
+     ["Grammage par couvert, décliné par nombre de convives",
+      "Coût de la fiche technique au prix d'achat réel",
+      "Devis chiffré depuis la fiche technique, marge affichée"],
+     ecran_fiches),
+]
+
+
+def section(entete):
+    return agro_ui.section(entete, BLOCS, COURTS)
