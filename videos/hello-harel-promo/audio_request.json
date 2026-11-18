@@ -1,0 +1,53 @@
+{
+  "provider": "elevenlabs",
+  "speed": "1.0",
+  "lines": [
+    {
+      "id": "01",
+      "text": "Six heures trente. Le camion est à quai. À partir de maintenant, tout ce que vous ne mesurez pas vous coûte quelque chose."
+    },
+    {
+      "id": "02",
+      "text": "Le contrôle à réception, vous le faites sur un carnet. Huit jours de DLC exigés, cinq jours livrés : personne ne le verra avant la cuisson."
+    },
+    {
+      "id": "03",
+      "text": "Huit heures quinze. L'entrepôt, deux dépôts, le carreau. Quatre endroits, quatre vérités, et un seul client qui attend sa palette."
+    },
+    {
+      "id": "04",
+      "text": "Dix heures. La date limite, vous la découvrez en prenant le bac. Au plus près de la DLC d'abord : c'est une règle, pas une habitude — et elle se tient toute seule."
+    },
+    {
+      "id": "05",
+      "text": "Onze heures trente. Un grossiste veut son prix. Vous cherchez dans vos mails ce que votre ERP devrait afficher en une ligne."
+    },
+    {
+      "id": "06",
+      "text": "Quatorze heures. Un rappel. Il faut remonter un lot de terrine à ses matières premières et redescendre à ses clients. Au classeur, c'est l'après-midi. Ici, c'est quelques secondes."
+    },
+    {
+      "id": "07",
+      "text": "Quinze heures trente. La commande du partenaire arrive, et quelqu'un la retape. Chaque ressaisie est une erreur qui attend son tour."
+    },
+    {
+      "id": "08",
+      "text": "Seize heures trente. Un ERP généraliste facture le poids commandé. Vous avez livré autre chose. L'écart, vous le payez sans jamais le voir."
+    },
+    {
+      "id": "09",
+      "text": "Dix-huit heures. Le coût de revient au centime, poste par poste. Et la marge du jour, aujourd'hui — pas le mois prochain."
+    },
+    {
+      "id": "10",
+      "text": "Plus de deux cents PME agroalimentaires françaises travaillent déjà comme ça. Hello Harel. Demandez une démo."
+    }
+  ],
+  "bgm": {
+    "mode": "retrieve",
+    "query": "calm-building-corporate",
+    "blob": "Une journée de production agroalimentaire coûte en lots perdus, en marge invisible et en coups de téléphone — Hello Harel la remet en ordre, écran par écran",
+    "arc": "6h30 l'accroche → la galère de chaque heure, suivie de son écran → 18h00 la marge enfin lisible → preuve et demande de démo"
+  },
+  "voice": "cjVigY5qzO86Huf0OWal"
+}

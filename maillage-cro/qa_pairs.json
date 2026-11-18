@@ -1,0 +1,352 @@
+[
+ {
+  "slug": "tracabilite-viande-logiciel",
+  "h2": "",
+  "schema_title": "Le test de traçabilité 4h : comment le réussir",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "tracabilite-viande-logiciel",
+  "h2": "Combien coûte la traçabilité logiciel ? Quel ROI ?",
+  "schema_title": "Combien coûte la traçabilité logiciel ? Quel ROI ?",
+  "schema_sub": "Gains typiques observés après le déploiement d'un ERP métier.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "remplacer-excel-gestion-agroalimentaire",
+  "h2": "Tableau comparatif : Excel vs ERP agroalimentaire",
+  "schema_title": "Tableau comparatif : Excel vs ERP agroalimentaire",
+  "schema_sub": "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "remplacer-excel-gestion-agroalimentaire",
+  "h2": "La migration pas a pas : d'Excel a un ERP agroalimentaire",
+  "schema_title": "La migration pas a pas : d'Excel a un ERP agroalimentaire",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "alternatives-cegid-distribution-alimentaire",
+  "h2": "Migrer de Cegid vers un ERP cloud agroalimentaire",
+  "schema_title": "Migrer de Cegid vers un ERP cloud agroalimentaire",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "alternatives-odoo-agroalimentaire",
+  "h2": "Migrer d'Odoo vers un ERP agroalimentaire : les etapes",
+  "schema_title": "Migrer d'Odoo vers un ERP agroalimentaire : les etapes",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "calcul-cout-de-revient-logiciel",
+  "h2": "Les specificites du cout de revient en agroalimentaire",
+  "schema_title": "Les specificites du cout de revient en agroalimentaire",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "calcul-cout-de-revient-logiciel",
+  "h2": "Comment un logiciel ERP calcule le cout de revient en temps reel ?",
+  "schema_title": "Comment un logiciel ERP calcule le cout de revient en temps reel ?",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "tracabilite-lot-dlc-logiciel",
+  "h2": "FEFO, FIFO : quelle méthode de rotation pour vos stocks ?",
+  "schema_title": "FEFO, FIFO : quelle méthode de rotation pour vos stocks ?",
+  "schema_sub": "Le flux FEFO : premier périmé, premier sorti.",
+  "kind": "flow"
+ },
+ {
+  "slug": "tracabilite-lot-dlc-logiciel",
+  "h2": "",
+  "schema_title": "Hello Harel : tracabilite lot et DLC integree",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "alternative-akanea-erp",
+  "h2": "Migration ERP : Comment changer sans paralyser votre activité ?",
+  "schema_title": "Migration ERP : Comment changer sans paralyser votre activité ?",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "erp-decoupe-viande-poisson",
+  "h2": "",
+  "schema_title": "Améliorer la Traçabilité et la Rentabilité avec l’ERP en Découpe",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "erp-conformite-agroalimentaire",
+  "h2": "Mettre en Place un ERP pour Réussir vos Audits de Certification",
+  "schema_title": "Mettre en Place un ERP pour Réussir vos Audits de Certification",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "migration-erp-agroalimentaire",
+  "h2": "Les 6 Étapes Clés d’une Migration ERP SaaS Réussie dans l’Agroalimentaire",
+  "schema_title": "Les 6 Étapes Clés d’une Migration ERP SaaS Réussie dans l’Agroalimentaire",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "integrateur-erp-lyon",
+  "h2": "Les étapes d’un projet ERP réussi avec Hello Harel Lyon",
+  "schema_title": "Les étapes d’un projet ERP réussi avec Hello Harel Lyon",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "integrateur-erp-paris",
+  "h2": "Les étapes de l’intégration ERP Hello Harel",
+  "schema_title": "Les étapes de l’intégration ERP Hello Harel",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "cuisine-centrale",
+  "h2": "Centraliser la production et la traçabilité alimentaire",
+  "schema_title": "Centraliser la production et la traçabilité alimentaire",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "cuisine-centrale",
+  "h2": "Contrôler la conformité HACCP et la sécurité sanitaire",
+  "schema_title": "Contrôler la conformité HACCP et la sécurité sanitaire",
+  "schema_sub": "Les piliers d'un plan HACCP opérationnel.",
+  "kind": "flow"
+ },
+ {
+  "slug": "conformite-haccp",
+  "h2": "🔢 Les 7 Principes HACCP",
+  "schema_title": "🔢 Les 7 Principes HACCP",
+  "schema_sub": "Les piliers d'un plan HACCP opérationnel.",
+  "kind": "flow"
+ },
+ {
+  "slug": "conformite-haccp",
+  "h2": "💻 Comment un logiciel facilite la conformité HACCP ?",
+  "schema_title": "💻 Comment un logiciel facilite la conformité HACCP ?",
+  "schema_sub": "Les piliers d'un plan HACCP opérationnel.",
+  "kind": "flow"
+ },
+ {
+  "slug": "difference-prix-dachat-et-prix-de-revient",
+  "h2": "Comprendre le prix de revient",
+  "schema_title": "Comprendre le prix de revient",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "difference-prix-dachat-et-prix-de-revient",
+  "h2": "Pourquoi bien distinguer prix d’achat et prix de revient ?",
+  "schema_title": "Pourquoi bien distinguer prix d’achat et prix de revient ?",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "prix-dachat-definition",
+  "h2": "Différence entre prix d’achat, prix de revient et prix de vente",
+  "schema_title": "Différence entre prix d’achat, prix de revient et prix de vente",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "reapprovisionnement-stocks",
+  "h2": "Qu’est-ce que le réapprovisionnement des stocks ?",
+  "schema_title": "Qu’est-ce que le réapprovisionnement des stocks ?",
+  "schema_sub": "Du besoin quotidien au point de commande automatique.",
+  "kind": "flow"
+ },
+ {
+  "slug": "reapprovisionnement-stocks",
+  "h2": "",
+  "schema_title": "Comment calculer le réapprovisionnement optimal ?",
+  "schema_sub": "Du besoin quotidien au point de commande automatique.",
+  "kind": "flow"
+ },
+ {
+  "slug": "erp-saas-cloud",
+  "h2": "🧮 Comparateur ERP SaaS vs On-Premise",
+  "schema_title": "🧮 Comparateur ERP SaaS vs On-Premise",
+  "schema_sub": "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "erp-saas-cloud",
+  "h2": "",
+  "schema_title": "ERP SaaS vs ERP On-Premise : lequel choisir ?",
+  "schema_sub": "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "processus-agroalimentaire-guide",
+  "h2": "Tableau : étapes du process agro vs enjeux qualité et rôle ERP",
+  "schema_title": "Tableau : étapes du process agro vs enjeux qualité et rôle ERP",
+  "schema_sub": "Couverture fonctionnelle pour les métiers de l'agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "erp-tracabilite-agroalimentaire",
+  "h2": "Pourquoi la traçabilité est critique pour votre activité ?",
+  "schema_title": "Pourquoi la traçabilité est critique pour votre activité ?",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "erp-tracabilite-agroalimentaire",
+  "h2": "Cas concret : traçabilité réussie avec Hello Harel",
+  "schema_title": "Cas concret : traçabilité réussie avec Hello Harel",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "alerte-stock-securite",
+  "h2": "Comment calculer le stock de sécurité ?",
+  "schema_title": "Comment calculer le stock de sécurité ?",
+  "schema_sub": "Du besoin quotidien au point de commande automatique.",
+  "kind": "flow"
+ },
+ {
+  "slug": "alerte-stock-securite",
+  "h2": "ROI d’un logiciel d’alerte de stock sécurité",
+  "schema_title": "ROI d’un logiciel d’alerte de stock sécurité",
+  "schema_sub": "Gains typiques observés après le déploiement d'un ERP métier.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "roi-erp",
+  "h2": "Quels bénéfices peuvent être mesurés concrètement avec un ERP ?",
+  "schema_title": "Quels bénéfices peuvent être mesurés concrètement avec un ERP ?",
+  "schema_sub": "Gains typiques observés après le déploiement d'un ERP métier.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "roi-erp",
+  "h2": "",
+  "schema_title": "3 erreurs classiques dans l’évaluation du ROI d’un ERP",
+  "schema_sub": "Gains typiques observés après le déploiement d'un ERP métier.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "kpi-qualite-agroalimentaire",
+  "h2": "Les 7 indicateurs qualité incontournables dans l’agroalimentaire",
+  "schema_title": "Les 7 indicateurs qualité incontournables dans l’agroalimentaire",
+  "schema_sub": "Les indicateurs qualité à suivre en agroalimentaire.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "kpi-qualite-agroalimentaire",
+  "h2": "Les erreurs fréquentes dans le suivi des KPIs qualité (et comment les éviter)",
+  "schema_title": "Les erreurs fréquentes dans le suivi des KPIs qualité (et comment les éviter)",
+  "schema_sub": "Les indicateurs qualité à suivre en agroalimentaire.",
+  "kind": "kpis"
+ },
+ {
+  "slug": "cout-de-revient",
+  "h2": "💰 Calculateur de Coût de Revient",
+  "schema_title": "💰 Calculateur de Coût de Revient",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "cout-de-revient",
+  "h2": "🔎 Coût de Revient : La Formule Magique",
+  "schema_title": "🔎 Coût de Revient : La Formule Magique",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "erp-as400",
+  "h2": "",
+  "schema_title": "🔹 3. Les étapes pour migrer de l’ERP As400 à un ERP SaaS",
+  "schema_sub": "Les étapes clés d'un déploiement ERP maîtrisé.",
+  "kind": "flow"
+ },
+ {
+  "slug": "tracabilite-de-la-viande",
+  "h2": "Les Étiquettes de Traçabilité : Que Contiennent-elles ?",
+  "schema_title": "Les Étiquettes de Traçabilité : Que Contiennent-elles ?",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "tracabilite-de-la-viande",
+  "h2": "Comment Améliorer la Traçabilité de la Viande ?",
+  "schema_title": "Comment Améliorer la Traçabilité de la Viande ?",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "calculer-le-prix-de-revient-en-boulangerie",
+  "h2": "Calculateur de Coût de Revient",
+  "schema_title": "Calculateur de Coût de Revient",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "calculer-le-prix-de-revient-en-boulangerie",
+  "h2": "",
+  "schema_title": "Étude de Cas: Calcul du Prix de Revient pour une Boulangerie/Pâtisserie",
+  "schema_sub": "Décomposition type d'un prix de vente agroalimentaire.",
+  "kind": "bars"
+ },
+ {
+  "slug": "bon-de-commande",
+  "h2": "Q2 : Le logiciel peut-il gérer la traçabilité des produits alimentaires ?",
+  "schema_title": "Q2 : Le logiciel peut-il gérer la traçabilité des produits alimentaires ?",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "numeros-de-lot",
+  "h2": "Identification des lots et traçabilité des produits alimentaires",
+  "schema_title": "Identification des lots et traçabilité des produits alimentaires",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "numeros-de-lot",
+  "h2": "Enjeux de la Traçabilité",
+  "schema_title": "Enjeux de la Traçabilité",
+  "schema_sub": "Traçabilité ascendante et descendante, du fournisseur au client.",
+  "kind": "flow"
+ },
+ {
+  "slug": "calcul-stock-de-securite",
+  "h2": "Définition du stock de sécurité",
+  "schema_title": "Définition du stock de sécurité",
+  "schema_sub": "Du besoin quotidien au point de commande automatique.",
+  "kind": "flow"
+ },
+ {
+  "slug": "calcul-stock-de-securite",
+  "h2": "Méthodes de calcul du stock de sécurité",
+  "schema_title": "Méthodes de calcul du stock de sécurité",
+  "schema_sub": "Du besoin quotidien au point de commande automatique.",
+  "kind": "flow"
+ },
+ {
+  "slug": "fifo-fefo-lifo",
+  "h2": "Qu’est-ce que la méthode FIFO ?",
+  "schema_title": "Qu’est-ce que la méthode FIFO ?",
+  "schema_sub": "Le flux FEFO : premier périmé, premier sorti.",
+  "kind": "flow"
+ },
+ {
+  "slug": "fifo-fefo-lifo",
+  "h2": "",
+  "schema_title": "Qu’est-ce que la méthode LIFO ?",
+  "schema_sub": "Méthodes de rotation des stocks : FIFO, FEFO et LIFO comparées.",
+  "kind": "flow"
+ }
+]

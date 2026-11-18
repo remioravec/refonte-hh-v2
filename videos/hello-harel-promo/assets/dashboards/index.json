@@ -1,0 +1,101 @@
+[
+ {
+  "n": 0,
+  "slug": "controle-reception",
+  "file": "assets/dashboards/00-controle-reception.html",
+  "w": 490,
+  "h": 404,
+  "label": "Reproduction de l'écran Contrôle à réception de Hello Harel : trois points de contrôle dont un hors tolérance, avec refus du lot ou dérogation signée",
+  "page": "/negoce/"
+ },
+ {
+  "n": 1,
+  "slug": "stock-consolide",
+  "file": "assets/dashboards/01-stock-consolide.html",
+  "w": 954,
+  "h": 455,
+  "label": "Reproduction de l'écran Stock consolidé de Hello Harel : la répartition de quatre produits entre l'entrepôt, deux dépôts et le carreau",
+  "page": "/negoce/"
+ },
+ {
+  "n": 2,
+  "slug": "marge",
+  "file": "assets/dashboards/02-marge.html",
+  "w": 951,
+  "h": 623,
+  "label": "Reproduction de l'écran Marge de Hello Harel : la répartition de la marge théorique et le taux de marge des quatre lots du carreau, dont un lot vendu en perte",
+  "page": "/negoce/"
+ },
+ {
+  "n": 3,
+  "slug": "flux-edi",
+  "file": "assets/dashboards/03-flux-edi.html",
+  "w": 944,
+  "h": 467,
+  "label": "Reproduction de l'écran Flux EDI de Hello Harel : les messages échangés avec les partenaires dans la journée, et ceux qui restent en anomalie",
+  "page": "/negoce/"
+ },
+ {
+  "n": 4,
+  "slug": "tracabilite",
+  "file": "assets/dashboards/04-tracabilite.html",
+  "w": 840,
+  "h": 584,
+  "label": "Reproduction de l'écran Traçabilité de Hello Harel : un lot de terrine remonté à ses trois matières premières et redescendu à ses trois clients livrés",
+  "page": "/negoce/"
+ },
+ {
+  "n": 5,
+  "slug": "dates-limites",
+  "file": "assets/dashboards/05-dates-limites.html",
+  "w": 631,
+  "h": 608,
+  "label": "Reproduction de l'écran Dates limites de Hello Harel : répartition FEFO et FIFO, et la liste des éléments de stock à prélever en priorité avec leur DLC",
+  "page": "/agroalimentaire/"
+ },
+ {
+  "n": 6,
+  "slug": "cout-de-revient",
+  "file": "assets/dashboards/06-cout-de-revient.html",
+  "w": 641,
+  "h": 590,
+  "label": "Reproduction de l'écran Coût de revient de Hello Harel : décomposition du coût au kilo en quatre postes, et marge de trois produits finis dont un sous le seuil",
+  "page": "/agroalimentaire/"
+ },
+ {
+  "n": 7,
+  "slug": "emplacements",
+  "file": "assets/dashboards/07-emplacements.html",
+  "w": 893,
+  "h": 467,
+  "label": "Reproduction de l'écran Emplacements de Hello Harel : trois chambres suivies en température, dont une hors consigne, et le tableau des derniers relevés",
+  "page": "/agroalimentaire/"
+ },
+ {
+  "n": 8,
+  "slug": "fiche-client",
+  "file": "assets/dashboards/08-fiche-client.html",
+  "w": 882,
+  "h": 654,
+  "label": "Reproduction de l'écran Fiche client de Hello Harel : l'historique des commandes d'un grossiste, son encours et ses conditions tarifaires négociées",
+  "page": "/fonctionnalites/tracabilite-alimentaire/"
+ },
+ {
+  "n": 9,
+  "slug": "facture",
+  "file": "assets/dashboards/09-facture.html",
+  "w": 1049,
+  "h": 526,
+  "label": "Reproduction de l'écran Facture de Hello Harel : quatre lignes facturées au poids réellement livré, pour un total de 499,49 euros hors taxes",
+  "page": "/fonctionnalites/gestion-de-stock/"
+ },
+ {
+  "n": 10,
+  "slug": "chargement-tournee",
+  "file": "assets/dashboards/10-chargement-tournee.html",
+  "w": 584,
+  "h": 395,
+  "label": "Reproduction de l'écran Chargement de tournée de Hello Harel : trois prestations d'une même journée chargées dans l'ordre inverse des livraisons",
+  "page": "/fonctionnalites/import-export/"
+ }
+]

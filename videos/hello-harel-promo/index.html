@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Hello Harel — une journée dans un atelier agroalimentaire</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:400;font-display:block;src:url('assets/fonts/urbanist-400.woff2') format('woff2')}
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/urbanist-600.woff2') format('woff2')}
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:700;font-display:block;src:url('assets/fonts/urbanist-700.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:block;src:url('assets/fonts/inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:block;src:url('assets/fonts/inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:block;src:url('assets/fonts/inter-600.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:block;src:url('assets/fonts/inter-700.woff2') format('woff2')}
+      *{margin:0;padding:0;box-sizing:border-box}
+      html,body{width:1920px;height:1080px;overflow:hidden;background:#FFFFFF}
+      #root{position:relative;width:1920px;height:1080px;background:#FFFFFF}
+      .clip{position:absolute;inset:0}
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0"
+         data-duration="92.5" data-width="1920" data-height="1080">
+      <div class="clip" id="plan-01" data-composition-id="f01"
+           data-composition-src="compositions/frames/01-0630-quai.html"
+           data-start="0" data-duration="8"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-02" data-composition-id="f02"
+           data-composition-src="compositions/frames/02-reception.html"
+           data-start="8" data-duration="10"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-03" data-composition-id="f03"
+           data-composition-src="compositions/frames/03-stock-eclate.html"
+           data-start="18" data-duration="8.5"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-04" data-composition-id="f04"
+           data-composition-src="compositions/frames/04-dlc-fefo.html"
+           data-start="26.5" data-duration="11"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-05" data-composition-id="f05"
+           data-composition-src="compositions/frames/05-fiche-client.html"
+           data-start="37.5" data-duration="8"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-06" data-composition-id="f06"
+           data-composition-src="compositions/frames/06-tracabilite-rappel.html"
+           data-start="45.5" data-duration="11.5"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-07" data-composition-id="f07"
+           data-composition-src="compositions/frames/07-edi.html"
+           data-start="57" data-duration="9.5"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-08" data-composition-id="f08"
+           data-composition-src="compositions/frames/08-facture-poids.html"
+           data-start="66.5" data-duration="9"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-09" data-composition-id="f09"
+           data-composition-src="compositions/frames/09-cout-marge.html"
+           data-start="75.5" data-duration="9"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+      <div class="clip" id="plan-10" data-composition-id="f10"
+           data-composition-src="compositions/frames/10-preuve-cta.html"
+           data-start="84.5" data-duration="8"
+           data-track-index="0" data-width="1920" data-height="1080"></div>
+
+      <audio id="vo01" src="assets/voice/01.wav"
+             data-start="0.25" data-duration="7.549" data-track-index="4"></audio>
+      <audio id="vo02" src="assets/voice/02.wav"
+             data-start="8.25" data-duration="9.242" data-track-index="4"></audio>
+      <audio id="vo03" src="assets/voice/03.wav"
+             data-start="18.25" data-duration="8.081" data-track-index="4"></audio>
+      <audio id="vo04" src="assets/voice/04.wav"
+             data-start="26.75" data-duration="10.632" data-track-index="4"></audio>
+      <audio id="vo05" src="assets/voice/05.wav"
+             data-start="37.75" data-duration="7.384" data-track-index="4"></audio>
+      <audio id="vo06" src="assets/voice/06.wav"
+             data-start="45.75" data-duration="11.099" data-track-index="4"></audio>
+      <audio id="vo07" src="assets/voice/07.wav"
+             data-start="57.25" data-duration="8.856" data-track-index="4"></audio>
+      <audio id="vo08" src="assets/voice/08.wav"
+             data-start="66.75" data-duration="8.542" data-track-index="4"></audio>
+      <audio id="vo09" src="assets/voice/09.wav"
+             data-start="75.75" data-duration="7.654" data-track-index="4"></audio>
+      <audio id="vo10" src="assets/voice/10.wav"
+             data-start="84.75" data-duration="6.504" data-track-index="4"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

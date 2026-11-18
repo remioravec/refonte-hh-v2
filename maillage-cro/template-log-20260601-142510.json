@@ -1,0 +1,15 @@
+{
+ "mode": "dry",
+ "items": [
+  {
+   "slug": "roi-erp",
+   "status": "dry",
+   "h2": 8
+  },
+  {
+   "slug": "fifo-fefo-lifo",
+   "status": "dry",
+   "h2": 7
+  }
+ ]
+}

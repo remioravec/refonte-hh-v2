@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stratégie marketing — Hello Harel</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== charte commune Hello Harel (cf. hh-brand.css) ===== */
+  :root{--bleu:#00B1F5;--bleu-fonce:#0090c8;--ink:#0f172a;--gris:#334155;
+        --gris-clair:#64748b;--bord:#e2e8f0;--bg:#f8fafc;--card:#fff}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+       color:var(--gris);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--bleu-fonce);text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+  /* bandeau commun */
+  .hh-top{background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu));color:#fff;
+          padding:16px 26px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:50}
+  .hh-top .hh-logo{height:28px}
+  .hh-top .hh-sub{color:rgba(255,255,255,.9);font-size:.82rem;font-weight:600}
+  .hh-top .nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+  .hh-top .nav a{color:#fff;font-size:.8rem;font-weight:600;background:rgba(255,255,255,.16);
+                 padding:6px 12px;border-radius:8px}
+  .hh-top .nav a:hover{background:#fff;color:var(--bleu-fonce)}
+  @media(max-width:720px){.hh-top .nav{display:none}}
+
+  /* hero */
+  .hero{text-align:center;padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2rem,4vw,3rem)}
+  .eyebrow{display:inline-block;background:rgba(0,177,245,.12);color:var(--bleu-fonce);
+           font-weight:700;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+           padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem}
+  .hero h1{font-size:clamp(1.8rem,4.5vw,2.9rem);color:var(--ink);font-weight:800;line-height:1.15;margin:0 0 1rem}
+  .hero h1 .hl{color:var(--bleu)}
+  .hero p{font-size:clamp(1.02rem,2vw,1.18rem);max-width:660px;margin:0 auto}
+  .kpis{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+  .kpi{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:16px 22px;min-width:150px}
+  .kpi .n{font-size:1.9rem;font-weight:800;color:var(--bleu)}
+  .kpi .l{font-size:.8rem;color:var(--gris-clair);margin-top:2px}
+
+  /* overview flow */
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin:1rem 0 2rem}
+  .flow .box{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:18px;text-align:center}
+  .flow .box .t{font-weight:700;color:var(--ink);font-size:.95rem}
+  .flow .box .d{font-size:.82rem;color:var(--gris-clair);margin-top:4px}
+  .flow .arrow{color:var(--bleu);font-size:1.4rem;font-weight:800;text-align:center}
+  @media(max-width:760px){.flow{grid-template-columns:1fr}.flow .arrow{transform:rotate(90deg)}}
+
+  /* pillars */
+  section.pillar{padding:clamp(2rem,4vw,3rem) 0;border-top:1px solid var(--bord)}
+  .ph{display:flex;align-items:center;gap:16px;margin-bottom:1.4rem}
+  .ph .num{flex:none;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu));
+           color:#fff;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .ph h2{margin:0;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--ink);font-weight:800}
+  .ph .tag{font-size:.78rem;color:var(--bleu-fonce);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--bord);border-radius:14px;padding:18px}
+  .card h3{margin:0 0 .5rem;font-size:1rem;color:var(--ink);font-weight:700}
+  .card p{margin:0;font-size:.92rem}
+  ul.checks{list-style:none;margin:.6rem 0 0;padding:0}
+  ul.checks li{padding-left:1.6rem;position:relative;margin-bottom:.5rem;font-size:.92rem}
+  ul.checks li:before{content:"✓";position:absolute;left:0;color:var(--bleu);font-weight:800}
+  .pill-kpi{display:inline-block;background:#ecfeff;color:#0e7490;font-weight:700;border-radius:8px;padding:3px 10px;font-size:.82rem;margin:.2rem .3rem 0 0}
+
+  /* accordion (Lemlist) */
+  .acc{background:var(--card);border:1px solid var(--bord);border-radius:14px;overflow:hidden;margin-top:14px}
+  .acc .item+.item{border-top:1px solid var(--bord)}
+  .acc button{all:unset;display:flex;width:100%;justify-content:space-between;align-items:center;
+              cursor:pointer;padding:16px 18px;font-weight:700;color:var(--ink);font-size:.98rem}
+  .acc button .chev{color:var(--bleu);transition:transform .2s}
+  .acc .item.open button .chev{transform:rotate(180deg)}
+  .acc .body{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px}
+  .acc .item.open .body{max-height:420px;padding:0 18px 16px}
+  .acc .body p,.acc .body ul{font-size:.92rem;margin:.3rem 0}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .hh-foot{border-top:1px solid var(--bord);padding:22px 26px;text-align:center;color:var(--gris-clair);font-size:.82rem;margin-top:2rem}
+  .lead-note{background:#f0faff;border:1px solid #bae6fd;border-radius:12px;padding:14px 18px;font-size:.9rem;color:#0c4a6e;margin-top:1rem}
+</style>
+</head>
+<body>
+
+<div class="hh-top">
+  <img class="hh-logo" src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <span class="hh-sub">Stratégie marketing</span>
+  <nav class="nav">
+    <a href="#p1">SEO BOFU</a>
+    <a href="#p2">Salons</a>
+    <a href="#p3">Lemlist</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">Plan d'acquisition · PME agroalimentaires</span>
+    <h1>Deux moteurs d'acquisition,<br><span class="hl">un pilote commun</span></h1>
+    <p>On capte la demande existante avec le <strong>SEO BOFU</strong>, on va chercher la demande avec le <strong>marketing salon</strong>, et on orchestre l'outbound avec <strong>Lemlist</strong>.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="n" data-count="100" data-suffix="+">0</div><div class="l">articles BOFU en ligne</div></div>
+      <div class="kpi"><div class="n" data-count="581">0</div><div class="l">emails exposants vérifiés</div></div>
+      <div class="kpi"><div class="n" data-count="2">0</div><div class="l">salons exploités</div></div>
+      <div class="kpi"><div class="n" data-count="4">0</div><div class="l">touches / séquence</div></div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="flow">
+      <div class="box"><div class="t">① SEO BOFU</div><div class="d">capte la demande chaude</div></div>
+      <div class="arrow">＋</div>
+      <div class="box"><div class="t">② Salons</div><div class="d">crée la demande (ICP ciblé)</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="t">③ Lemlist</div><div class="d">délivre & convertit</div></div>
+    </div>
+  </div>
+
+  <!-- PILIER 1 -->
+  <section class="pillar reveal" id="p1">
+    <div class="ph">
+      <div class="num">1</div>
+      <div><div class="tag">Socle · long terme</div><h2>SEO — Contenu BOFU</h2></div>
+    </div>
+    <p>Le <strong>socle organique</strong> qui compose dans le temps : du contenu <em>Bottom of Funnel</em> qui capte les recherches à forte intention d'achat (« meilleur ERP agroalimentaire », « ERP boulangerie », coût de revient, traçabilité, FEFO…).</p>
+    <div class="grid">
+      <div class="card"><h3>🎯 Objectif</h3><p>Être trouvé au moment où le prospect compare déjà des solutions — l'intention d'achat est maximale.</p></div>
+      <div class="card"><h3>🛠️ Ce qui est en place</h3>
+        <ul class="checks"><li>100+ articles + comparatifs</li><li>Maillage interne / CRO</li><li>3 articles créés cette semaine, 103 mis à jour</li></ul></div>
+      <div class="card"><h3>📈 Pourquoi ça marche</h3><p>Trafic gratuit et récurrent, crédibilité métier, et coût d'acquisition décroissant à mesure que le contenu se positionne.</p></div>
+    </div>
+    <div style="margin-top:12px">
+      <span class="pill-kpi">Trafic durable</span><span class="pill-kpi">Intention haute</span><span class="pill-kpi">CAC décroissant</span>
+    </div>
+  </section>
+
+  <!-- PILIER 2 -->
+  <section class="pillar reveal" id="p2">
+    <div class="ph">
+      <div class="num">2</div>
+      <div><div class="tag">Outbound · ciblé</div><h2>Marketing salon — Emailing des exposants</h2></div>
+    </div>
+    <p>Les salons agroalimentaires sont des <strong>annuaires d'ICP purs</strong> : chaque exposant est un prospect qualifié. On extrait la liste, on enrichit et on <strong>vérifie les emails</strong>, puis on adresse une séquence personnalisée.</p>
+    <div class="grid">
+      <div class="card"><h3>🗂️ La base</h3>
+        <ul class="checks"><li>661 exposants (Serbotel + Medfel)</li><li>581 emails MX-vérifiés</li><li>Segmentés par ICP & statut</li></ul></div>
+      <div class="card"><h3>✉️ Les assets</h3>
+        <ul class="checks"><li>Séquence 4 touches (J0/J3/J10/J17)</li><li>Page perso par prospect</li><li>Charte + logo Hello Harel</li></ul></div>
+      <div class="card"><h3>🔁 Reproductible</h3><p>Le même pipeline s'applique à chaque nouveau salon : liste → enrichissement → vérification → séquence.</p></div>
+    </div>
+    <div style="margin-top:12px">
+      <span class="pill-kpi">ICP pur</span><span class="pill-kpi">581 contacts prêts</span><span class="pill-kpi">Scalable / salon</span>
+    </div>
+  </section>
+
+  <!-- PILIER 3 -->
+  <section class="pillar reveal" id="p3">
+    <div class="ph">
+      <div class="num">3</div>
+      <div><div class="tag">Outil d'exécution</div><h2>Lemlist</h2></div>
+    </div>
+    <p>L'outil qui <strong>exécute</strong> l'outbound : envoi, personnalisation, relances automatiques et suivi — tout en protégeant la délivrabilité.</p>
+    <div class="acc" id="acc">
+      <div class="item open">
+        <button>Qu'est-ce que Lemlist ? <span class="chev">▾</span></button>
+        <div class="body">
+          <p>Une plateforme d'<strong>outreach multicanal</strong> (cold email + LinkedIn) pensée pour la prospection à froid :</p>
+          <ul class="checks">
+            <li><strong>Séquences automatisées</strong> : relances envoyées toutes seules selon le calendrier (J0/J3/J10/J17).</li>
+            <li><strong>Personnalisation à grande échelle</strong> : variables <code>{{nom_entreprise}}</code>, images & pages perso par destinataire.</li>
+            <li><strong>Warm-up & délivrabilité</strong> : chauffe du domaine d'envoi pour éviter les spams.</li>
+            <li><strong>A/B testing & analytics</strong> : objets, accroches, taux de réponse / RDV.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <button>Comment on va l'utiliser ? <span class="chev">▾</span></button>
+        <div class="body">
+          <ul class="checks">
+            <li><strong>Import</strong> de la base outbound (CSV des exposants vérifiés).</li>
+            <li><strong>Chargement</strong> de la séquence 4 touches + objets A/B (déjà rédigés).</li>
+            <li><strong>Mapping des variables</strong> de personnalisation depuis les colonnes (entreprise, salon, secteur, ville).</li>
+            <li><strong>Lien vers la page perso</strong> de chaque prospect dans l'email.</li>
+            <li><strong>Warm-up</strong> du domaine puis montée en volume progressive (~40-50/jour/boîte).</li>
+            <li><strong>Pilotage</strong> au taux de réponse, A/B sur les objets, recalibrage après ~250 envois.</li>
+          </ul>
+          <div class="lead-note">Projection sur la base actuelle (581 emails) : <strong>~29 à 70 réponses → ~9 à 21 RDV</strong> selon le taux de réponse (5-12 %).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="hh-foot">Hello Harel — l'ERP des PME agroalimentaires · Stratégie marketing</div>
+
+<script>
+  // compteurs animés
+  function animate(el){
+    const target=+el.dataset.count, suffix=el.dataset.suffix||'', dur=1100, t0=performance.now();
+    function step(t){const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(p*target)+suffix;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  // reveal au scroll + déclenche compteurs
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+      e.target.querySelectorAll&&e.target.querySelectorAll('[data-count]').forEach(animate);
+      io.unobserve(e.target);}});
+  },{threshold:.15});
+  document.querySelectorAll('.reveal,.pillar').forEach(x=>io.observe(x));
+  // compteurs du hero (visibles d'emblée)
+  document.querySelectorAll('.hero [data-count]').forEach(animate);
+  // accordéon
+  document.querySelectorAll('#acc .item button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# artefacts de contrôle et de rendu, régénérables
+.hyperframes/artifacts/
+node_modules/
+renders/work-*/
+renders/.*hf-transaction*/
+
+# captures de référence lourdes : le DOM et les partiels suffisent à rejouer le film
+capture/screenshots/

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit UX — pages métier · Hello Harel</title>
+<link rel="icon" href="https://www.helloharel.com/wp-content/uploads/2019/06/hello-harel-favicon-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="hh-brand.css" rel="stylesheet">
+<style>
+  h2{font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris-clair);margin:30px 0 12px}
+  .lead{font-size:1rem;color:var(--gris);max-width:780px}
+  .pri{font-weight:800;border-radius:8px;padding:2px 9px;font-size:.72rem;color:#fff;white-space:nowrap}
+  .p1{background:#dc2626}.p2{background:#d97706}.p3{background:#64748b}.ok{background:#16a34a}
+  .find{border:1px solid var(--bord);border-left-width:5px;border-radius:12px;padding:15px 18px;margin:0 0 12px;background:#fff}
+  .find.p1{border-left-color:#dc2626}.find.p2{border-left-color:#d97706}.find.p3{border-left-color:#64748b}.find.ok{border-left-color:#16a34a}
+  .find h3{margin:0 0 5px;font-size:1.03rem;display:flex;gap:9px;align-items:center}
+  .find p{margin:.35rem 0 0;color:var(--gris);font-size:.94rem;line-height:1.6}
+  .find .fix{margin-top:.5rem;font-size:.9rem;color:var(--bleu-fonce);font-weight:600}
+  td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+</style></head>
+<body>
+<div class="hh-top">
+  <img class="hh-logo" src="https://www.helloharel.com/wp-content/uploads/2019/05/hello-harel-logo-white.svg" alt="Hello Harel">
+  <div><div class="hh-title">Audit UX — pages métier</div>
+    <div class="hh-sub">/agroalimentaire/&lt;métier&gt; · analyse visuelle (captures réelles) + data GSC · 30 juillet 2026</div></div>
+</div>
+
+<div class="hh-wrap">
+
+  <p class="lead">Audit des <b>pages métier</b> (patissier, charcutier, boulanger, maraîcher…), qui partagent le même template.
+  Le design est <b>solide et cohérent</b> (hero fort, preuve sociale, bento de fonctionnalités, FAQ). Les points ci-dessous
+  sont des <b>gains d'ergonomie et de conversion</b> — d'autant plus utiles que ces pages « money » sous-performent en clics
+  (GSC : positions 14-25, CTR 0,2-1 %).</p>
+
+  <h2>Ce qui est bon</h2>
+  <div class="find ok"><h3><span class="pri ok">OK</span> Base design cohérente</h3>
+    <p>Hero clair (badge + H1 fort + sous-titre), bandeau <b>« Ils nous font confiance »</b> (Poujauran, Savary, Storia Sapori…),
+    bento de fonctionnalités avec check-lists, sections « Nos secteurs / Notre équipe / FAQ ». Typo Inter, charte cyan respectée. <b>CLS ~0</b> (aucun décalage).</p></div>
+
+  <h2>Priorité 1 — conversion (ces pages doivent transformer)</h2>
+
+  <div class="find p1"><h3><span class="pri p1">P1</span> Deux CTA verts de même poids → aucune action primaire claire</h3>
+    <p>Dans le hero, « <b>Demander une démo</b> » et « <b>Essayez</b> » sont deux boutons verts pleins identiques. L'œil ne sait pas
+    lequel est prioritaire. Règle UX : <b>un seul CTA primaire</b>, le secondaire en style ghost/outline.</p>
+    <p class="fix">→ « Demander une démo » plein (primaire) · « Essayez » en outline blanc (secondaire).</p></div>
+
+  <div class="find p1"><h3><span class="pri p1">P1</span> Pas de formulaire on-page ni de CTA collant</h3>
+    <p>La conversion passe par la page contact / une modale. Sur une money page, chaque scroll sans point de conversion visible = fuite.</p>
+    <p class="fix">→ Mini-formulaire (email + secteur) en section, ou <b>barre CTA collante</b> « Demander une démo » qui suit le scroll.</p></div>
+
+  <div class="find p1"><h3><span class="pri p1">P1</span> Titres &amp; balises = clics perdus (data GSC)</h3>
+    <p>Les pages métier captent des impressions mais <b>très peu de clics</b> (maraîcher CTR 0,2 %, charcutier 0,6 %). Le title/meta
+    ne donne pas envie de cliquer, alors que le classement existe (page 2, proche du top 10).</p>
+    <p class="fix">→ Réécrire les titles avec bénéfice + preuve (« ERP pâtisserie — prix de revient au gramme, noté 5/5 »).</p></div>
+
+  <h2>Priorité 2 — robustesse &amp; ergonomie</h2>
+
+  <div class="find p2"><h3><span class="pri p2">P2</span> Dépendance forte au « scroll-reveal »</h3>
+    <p>Presque toutes les cartes démarrent à <b>opacity:0</b> et n'apparaissent qu'au scroll via JavaScript. Risques : contenu invisible
+    si le JS tarde/échoue (c'est exactement ce qui a cassé une page récemment), effet « vide » perçu, et pas de respect de
+    <b>prefers-reduced-motion</b>.</p>
+    <p class="fix">→ Révéler par défaut si JS absent (fallback opacity:1) + désactiver l'animation en reduced-motion.</p></div>
+
+  <div class="find p2"><h3><span class="pri p2">P2</span> Hero très haut (80vh) + image de fond floue/pâteuse</h3>
+    <p>Le hero occupe ~80 % de l'écran avec une image de fond <b>très floutée et peu qualitative</b>. Les bénéfices concrets sont repoussés
+    sous la ligne de flottaison.</p>
+    <p class="fix">→ Image nette de meilleure qualité (ou visuel produit) + réduire un peu la hauteur pour montrer le 1ᵉʳ bénéfice plus tôt.</p></div>
+
+  <div class="find p2"><h3><span class="pri p2">P2</span> Mobile — tiroir FAQ &amp; bannière cookies</h3>
+    <p>Le tiroir FAQ (540px) débordait sur mobile quand on tape une question. <b>Correctif déjà déployé site-wide</b> (largeur 100 %) ainsi que le clamp de la bannière cookies.</p>
+    <p class="fix">✔ Corrigé — à re-vérifier après purge du cache.</p></div>
+
+  <h2>Priorité 3 — finitions &amp; performance</h2>
+
+  <div class="find p3"><h3><span class="pri p3">P3</span> Détails de contenu</h3>
+    <p>Coquilles d'accent (« matieres » → « matières »), quelques libellés de liens un peu génériques (« Découvrir l'ERP boulangerie » sur une page pâtisserie).
+    Émojis-icônes : <b>retirés site-wide</b>.</p></div>
+
+  <div class="find p3"><h3><span class="pri p3">P3</span> Poids &amp; vitesse</h3>
+    <p>Pages lourdes (<b>~4,5 Mo</b>, images non-WebP, ressources bloquantes) → <b>LCP 3-4 s</b>. CLS excellent (~0,01).</p>
+    <p class="fix">→ WebP + lazy-load, compression Brotli/Gzip, defer CSS/JS (via LiteSpeed déjà installé).</p></div>
+
+  <h2>Plan priorisé</h2>
+  <div class="hh-card" style="padding:0;overflow-x:auto">
+  <table class="hh"><thead><tr><th>Prio</th><th>Action UX</th><th>Effet attendu</th></tr></thead>
+  <tbody>
+    <tr><td><span class="pri p1">P1</span></td><td>Hiérarchiser les CTA du hero (1 primaire + 1 ghost)</td><td>+ clics démo</td></tr>
+    <tr><td><span class="pri p1">P1</span></td><td>Barre CTA collante / mini-formulaire on-page</td><td>+ conversions</td></tr>
+    <tr><td><span class="pri p1">P1</span></td><td>Réécrire titles/metas (bénéfice + preuve 5/5)</td><td>+ CTR immédiat</td></tr>
+    <tr><td><span class="pri p2">P2</span></td><td>Fallback scroll-reveal + reduced-motion</td><td>robustesse</td></tr>
+    <tr><td><span class="pri p2">P2</span></td><td>Hero : image nette + hauteur réduite</td><td>bénéfice plus tôt</td></tr>
+    <tr><td><span class="pri p3">P3</span></td><td>WebP + lazy-load + compression</td><td>LCP &lt; 2,5 s</td></tr>
+  </tbody></table>
+  </div>
+
+  <div class="hh-foot">Hello Harel — audit UX pages métier · captures réelles (patissier) + data GSC · 30/07/2026</div>
+</div>
+</body></html>
